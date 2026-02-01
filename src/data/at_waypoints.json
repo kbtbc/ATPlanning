@@ -1,0 +1,182 @@
+[
+  {
+    "mile": 0.0,
+    "name": "Springer Mountain",
+    "type": "Landmark",
+    "elevation": 3782,
+    "lat": 34.6267,
+    "lon": -84.1936,
+    "amenities": []
+  },
+  {
+    "mile": 2.8,
+    "name": "Stover Creek Shelter",
+    "type": "Shelter",
+    "elevation": 2850,
+    "lat": 34.6460,
+    "lon": -84.1920,
+    "amenities": ["Shelter", "Water"]
+  },
+  {
+    "mile": 8.1,
+    "name": "Hawk Mountain Shelter",
+    "type": "Shelter",
+    "elevation": 3200,
+    "lat": 34.6648,
+    "lon": -84.1378,
+    "amenities": ["Shelter", "Water", "Privy"]
+  },
+  {
+    "mile": 15.8,
+    "name": "Gooch Mountain Shelter",
+    "type": "Shelter",
+    "elevation": 2780,
+    "lat": 34.6975,
+    "lon": -84.0560,
+    "amenities": ["Shelter", "Water", "Privy"]
+  },
+  {
+    "mile": 20.5,
+    "name": "Woody Gap",
+    "type": "Landmark",
+    "elevation": 3160,
+    "lat": 34.6778,
+    "lon": -84.0019,
+    "amenities": ["Parking", "Privy"]
+  },
+  {
+    "mile": 31.3,
+    "name": "Neels Gap (Mountain Crossings)",
+    "type": "Town",
+    "elevation": 3109,
+    "lat": 34.7354,
+    "lon": -83.9168,
+    "amenities": ["Hostel", "Resupply", "Shower", "Gear"]
+  },
+  {
+    "mile": 40.5,
+    "name": "Whitley Gap Shelter",
+    "type": "Shelter",
+    "elevation": 3000,
+    "lat": 34.7820,
+    "lon": -83.8450,
+    "amenities": ["Shelter", "Water"]
+  },
+  {
+    "mile": 50.0,
+    "name": "Blue Mountain Shelter",
+    "type": "Shelter",
+    "elevation": 3800,
+    "lat": 34.8230,
+    "lon": -83.7850,
+    "amenities": ["Shelter", "Water"]
+  },
+  {
+    "mile": 69.2,
+    "name": "Dick's Creek Gap (Hiawassee)",
+    "type": "Town",
+    "elevation": 2675,
+    "lat": 34.9142,
+    "lon": -83.6117,
+    "amenities": ["Lodging", "Resupply", "Food", "Shuttle"]
+  },
+  {
+    "mile": 109.8,
+    "name": "Franklin, NC (Winding Stair Gap)",
+    "type": "Town",
+    "elevation": 3800,
+    "lat": 35.1205,
+    "lon": -83.5480,
+    "amenities": ["Lodging", "Resupply", "Food", "Post Office"]
+  },
+  {
+    "mile": 164.7,
+    "name": "Fontana Dam",
+    "type": "Town",
+    "elevation": 1750,
+    "lat": 35.4384,
+    "lon": -83.8207,
+    "amenities": ["Lodging", "Resupply", "Post Office", "Shower"]
+  },
+  {
+    "mile": 200.0,
+    "name": "Clingmans Dome",
+    "type": "Landmark",
+    "elevation": 6643,
+    "lat": 35.5628,
+    "lon": -83.4985,
+    "amenities": ["View"]
+  },
+  {
+    "mile": 274.4,
+    "name": "Hot Springs, NC",
+    "type": "Town",
+    "elevation": 1326,
+    "lat": 35.8916,
+    "lon": -82.8277,
+    "amenities": ["Lodging", "Resupply", "Food", "Laundry"]
+  },
+  {
+    "mile": 470.2,
+    "name": "Damascus, VA",
+    "type": "Town",
+    "elevation": 1940,
+    "lat": 36.6340,
+    "lon": -81.7940,
+    "amenities": ["Lodging", "Resupply", "Food", "Gear", "Festival"]
+  },
+  {
+    "mile": 700.0,
+    "name": "McAfee Knob",
+    "type": "Landmark",
+    "elevation": 3197,
+    "lat": 37.3929,
+    "lon": -80.0366,
+    "amenities": ["View"]
+  },
+  {
+    "mile": 1025.5,
+    "name": "Harpers Ferry, WV",
+    "type": "Town",
+    "elevation": 249,
+    "lat": 39.3255,
+    "lon": -77.7405,
+    "amenities": ["ATC HQ", "Lodging", "Resupply", "Train"]
+  },
+  {
+    "mile": 1500.0,
+    "name": "High Point, NJ",
+    "type": "Landmark",
+    "elevation": 1803,
+    "lat": 41.3209,
+    "lon": -74.6621,
+    "amenities": ["View"]
+  },
+  {
+    "mile": 1700.0,
+    "name": "Kent, CT",
+    "type": "Town",
+    "elevation": 350,
+    "lat": 41.7245,
+    "lon": -73.4759,
+    "amenities": ["Lodging", "Resupply", "Food"]
+  },
+  {
+    "mile": 2000.0,
+    "name": "Monson, ME",
+    "type": "Town",
+    "elevation": 860,
+    "lat": 45.2891,
+    "lon": -69.5005,
+    "amenities": ["Lodging", "Last Resupply", "Food"]
+  },
+  {
+    "mile": 2190.9,
+    "name": "Katahdin (Baxter Peak)",
+    "type": "Landmark",
+    "elevation": 5267,
+    "lat": 45.9044,
+    "lon": -68.9216,
+    "amenities": ["View", "Finish"]
+  }
+]
