@@ -1,6 +1,6 @@
 import { useState, useCallback, useMemo } from 'react';
 import { generateHikePlan, TRAIL_LENGTH } from '../data';
-import { Direction } from '../types';
+import type { Direction } from '../types';
 
 interface HikePlannerState {
   startMile: number;

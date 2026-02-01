@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { findNearestMileFromCoordinates } from '../data';
-import { Waypoint } from '../types';
+import type { Waypoint } from '../types';
 
 interface GeolocationState {
   latitude: number | null;

@@ -1,4 +1,4 @@
-import { Waypoint, Shelter, ResupplyPoint } from '../types';
+import type { Waypoint, Shelter, ResupplyPoint } from '../types';
 import { shelters, SHELTER_COUNT, TRAIL_LENGTH, AT_STATES, STATE_BOUNDARIES } from './shelters';
 import { resupplyPoints, RESUPPLY_COUNT } from './resupply';
 import { features, FEATURE_COUNT } from './features';

@@ -1,4 +1,4 @@
-import { Waypoint } from '../types';
+import type { Waypoint } from '../types';
 
 // Notable features and landmarks along the AT
 export const features: Waypoint[] = [

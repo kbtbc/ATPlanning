@@ -1,4 +1,4 @@
-import { Waypoint, Shelter, ResupplyPoint } from '../types';
+import type { Shelter } from '../types';
 
 // Trail total length
 export const TRAIL_LENGTH = 2197.4;

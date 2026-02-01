@@ -1,5 +1,5 @@
 import { useState, useCallback, useMemo } from 'react';
-import { Waypoint, FilterOptions, WaypointType } from '../types';
+import type { FilterOptions, WaypointType } from '../types';
 import { allWaypoints, TRAIL_LENGTH, AT_STATES } from '../data';
 
 const defaultFilters: FilterOptions = {

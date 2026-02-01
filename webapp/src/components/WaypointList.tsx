@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, X, Mountain, Package, MapPin, Droplets, Tent, Star } from 'lucide-react';
 import { useWaypointFilters } from '../hooks/useWaypointFilters';
 import { cn, formatMile, formatElevation, getWaypointTypeColor } from '../lib/utils';
-import { WaypointType, Waypoint } from '../types';
+import type { WaypointType, Waypoint } from '../types';
 import { TRAIL_LENGTH } from '../data';
 
 const waypointTypes: { type: WaypointType; label: string; icon: React.ReactNode }[] = [
@@ -291,11 +291,11 @@ export function WaypointList({ onWaypointSelect, initialMileRange }: WaypointLis
                 </div>
               )}
 
-              {'services' in selectedWaypoint && (selectedWaypoint as any).services && (
+              {selectedWaypoint.services && selectedWaypoint.services.length > 0 && (
                 <div className="mb-4">
                   <p className="text-sm text-[var(--foreground-muted)] mb-2">Services</p>
                   <div className="flex flex-wrap gap-2">
-                    {((selectedWaypoint as any).services as string[]).map((service: string) => (
+                    {selectedWaypoint.services.map((service) => (
                       <span
                         key={service}
                         className="px-2 py-1 rounded-lg bg-[var(--background-secondary)] text-sm"

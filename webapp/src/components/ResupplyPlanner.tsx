@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { Package, MapPin, Store, Mail, Bed, Utensils, ShowerHead, Shirt, ArrowRight } from 'lucide-react';
-import { resupplyPoints, getNearestResupply, TRAIL_LENGTH } from '../data';
+import { Package, Store, Mail, Bed, Utensils, ShowerHead, Shirt, ArrowRight } from 'lucide-react';
+import { resupplyPoints, getNearestResupply } from '../data';
 import { cn, formatMile, formatDistance } from '../lib/utils';
-import { ResupplyPoint } from '../types';
+import type { ResupplyPoint } from '../types';
 
 interface ResupplyPlannerProps {
   currentMile?: number;

@@ -1,4 +1,4 @@
-import { ResupplyPoint } from '../types';
+import type { ResupplyPoint } from '../types';
 
 // Comprehensive resupply points along the AT
 export const resupplyPoints: ResupplyPoint[] = [
