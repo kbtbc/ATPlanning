@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Mountain, Package, Navigation, TrendingUp } from 'lucide-react';
-import { getSheltersInRange, getResupplyInRange, TRAIL_LENGTH } from '../data';
+import { MapPin, Mountain, Package, Navigation, TrendingUp, Star } from 'lucide-react';
+import { getSheltersInRange, getResupplyInRange, getFeaturesInRange, TRAIL_LENGTH } from '../data';
 import { elevationProfile, getElevationAtMile } from '../data/elevation';
 import { cn, formatMile } from '../lib/utils';
 import type { Direction } from '../types';
@@ -22,6 +22,7 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO' }: Mi
   // Get waypoints in range
   const shelters = useMemo(() => getSheltersInRange(startMile, endMile), [startMile, endMile]);
   const resupplyPoints = useMemo(() => getResupplyInRange(startMile, endMile), [startMile, endMile]);
+  const featurePoints = useMemo(() => getFeaturesInRange(startMile, endMile), [startMile, endMile]);
 
   // Get detailed elevation profile for this range
   const rangeElevation = useMemo(() => {
@@ -194,10 +195,12 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO' }: Mi
           </div>
         ))}
 
-        {/* Shelters - positioned at their elevations */}
+        {/* Shelters - positioned on the elevation line using GPX data */}
         {shelters.map((shelter) => {
           const xPos = getXPosition(shelter.mile);
-          const yPos = getYPosition(shelter.elevation);
+          // Use GPX elevation data so icon sits exactly on the line
+          const elevation = getElevationAtMile(shelter.mile);
+          const yPos = getYPosition(elevation);
 
           return (
             <div
@@ -225,11 +228,11 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO' }: Mi
           );
         })}
 
-        {/* Resupply Points - positioned at their elevations */}
+        {/* Resupply Points - positioned on the elevation line using GPX data */}
         {resupplyPoints.map((resupply) => {
           const xPos = getXPosition(resupply.mile);
-          // Use elevation data if available, otherwise estimate from nearby points
-          const elevation = resupply.elevation || getElevationAtMile(resupply.mile);
+          // Use GPX elevation data so icon sits exactly on the line
+          const elevation = getElevationAtMile(resupply.mile);
           const yPos = getYPosition(elevation);
 
           return (
@@ -259,6 +262,36 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO' }: Mi
                     )}>
                       {resupply.resupplyQuality}
                     </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+
+        {/* Features/Landmarks - positioned on the elevation line using GPX data */}
+        {featurePoints.map((feature) => {
+          const xPos = getXPosition(feature.mile);
+          // Use GPX elevation data so icon sits exactly on the line
+          const elevation = getElevationAtMile(feature.mile);
+          const yPos = getYPosition(elevation);
+
+          return (
+            <div
+              key={feature.id}
+              className="absolute transform -translate-x-1/2 -translate-y-1/2 group z-10"
+              style={{ left: `${xPos}%`, top: `${yPos}%` }}
+            >
+              <div className="w-4 h-4 rounded-full flex items-center justify-center shadow-sm bg-purple-500 text-white border border-white/50">
+                <Star className="w-2.5 h-2.5" />
+              </div>
+              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity z-30 pointer-events-none">
+                <div className="bg-[var(--background)] border border-[var(--border)] rounded px-2 py-1.5 text-xs whitespace-nowrap shadow-lg max-w-[200px]">
+                  <div className="font-medium truncate">{feature.name}</div>
+                  <div className="text-[var(--foreground-muted)] flex items-center gap-2">
+                    <span>mi {formatMile(feature.mile)}</span>
+                    <span>·</span>
+                    <span>{feature.elevation.toLocaleString()} ft</span>
                   </div>
                 </div>
               </div>
@@ -307,6 +340,10 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO' }: Mi
         <span className="flex items-center gap-1">
           <div className="w-3 h-3 rounded-full bg-green-500" />
           Resupply
+        </span>
+        <span className="flex items-center gap-1">
+          <div className="w-3 h-3 rounded-full bg-purple-500" />
+          Feature
         </span>
         <span className="flex items-center gap-1">
           <div className="w-4 h-2 bg-[var(--accent)]/30 rounded-sm" />

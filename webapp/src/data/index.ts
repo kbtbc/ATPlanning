@@ -35,6 +35,10 @@ export function getResupplyInRange(startMile: number, endMile: number): Resupply
   return resupplyPoints.filter(r => r.mile >= startMile && r.mile <= endMile);
 }
 
+export function getFeaturesInRange(startMile: number, endMile: number): Waypoint[] {
+  return features.filter(f => f.mile >= startMile && f.mile <= endMile);
+}
+
 export function getNearestWaypoint(mile: number): Waypoint | null {
   if (allWaypoints.length === 0) return null;
 
