@@ -44,7 +44,7 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       {/* Mini Map with day markers */}
       <MiniMap
         currentMile={startMile}
@@ -53,57 +53,61 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
         dayMarkers={dayMarkers}
       />
 
-      {/* Controls Panel */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="panel"
-      >
-        <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+      {/* Controls Section */}
+      <div className="space-y-2">
+        <h3 className="text-lg font-semibold flex items-center gap-2 pl-1">
           <TrendingUp className="w-5 h-5 text-[var(--accent)]" />
           Plan Your Hike
         </h3>
 
-        <PlannerControls
-          startMile={startMile}
-          startDate={startDate}
-          direction={direction}
-          daysAhead={daysAhead}
-          targetMilesPerDay={targetMilesPerDay}
-          onStartMileChange={setStartMile}
-          onStartDateChange={setStartDate}
-          onDirectionChange={setDirection}
-          onDaysAheadChange={setDaysAhead}
-          onMilesPerDayChange={setTargetMiles}
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="panel"
+        >
+          <PlannerControls
+            startMile={startMile}
+            startDate={startDate}
+            direction={direction}
+            daysAhead={daysAhead}
+            targetMilesPerDay={targetMilesPerDay}
+            onStartMileChange={setStartMile}
+            onStartDateChange={setStartDate}
+            onDirectionChange={setDirection}
+            onDaysAheadChange={setDaysAhead}
+            onMilesPerDayChange={setTargetMiles}
+          />
 
-        <PlannerStats
-          totalMiles={totalMiles}
-          shelterCount={shelterCount}
-          resupplyCount={resupplyCount}
-          endMile={endMile}
-        />
-      </motion.div>
+          <PlannerStats
+            totalMiles={totalMiles}
+            shelterCount={shelterCount}
+            resupplyCount={resupplyCount}
+            endMile={endMile}
+          />
+        </motion.div>
+      </div>
 
       {/* Daily Plan */}
-      <div className="space-y-3">
-        <h3 className="text-lg font-semibold flex items-center gap-2">
+      <div className="space-y-2">
+        <h3 className="text-lg font-semibold flex items-center gap-2 pl-1">
           <Calendar className="w-5 h-5 text-[var(--accent)]" />
           Daily Itinerary
         </h3>
 
-        {plan.map((day, index) => (
-          <DayCard
-            key={day.day}
-            day={day}
-            startDate={startDate}
-            direction={direction}
-            isExpanded={expandedDay === day.day}
-            index={index}
-            onToggle={() => setExpandedDay(expandedDay === day.day ? null : day.day)}
-            onSetStart={handleSetStart}
-          />
-        ))}
+        <div className="space-y-2">
+          {plan.map((day, index) => (
+            <DayCard
+              key={day.day}
+              day={day}
+              startDate={startDate}
+              direction={direction}
+              isExpanded={expandedDay === day.day}
+              index={index}
+              onToggle={() => setExpandedDay(expandedDay === day.day ? null : day.day)}
+              onSetStart={handleSetStart}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
