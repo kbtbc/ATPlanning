@@ -59,11 +59,11 @@ export function DayCard({
     >
       {/* Day Header */}
       <div
-        className="flex items-center justify-between px-3 py-2 hover:bg-[var(--background)] transition-colors cursor-pointer"
+        className="flex items-center justify-between px-2.5 py-1.5 hover:bg-[var(--background)] transition-colors cursor-pointer"
         onClick={onToggle}
       >
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-md bg-[var(--primary)] text-white flex items-center justify-center font-bold font-sans text-sm">
+        <div className="flex items-center gap-2.5">
+          <div className="w-7 h-7 rounded-md bg-[var(--primary)] text-white flex items-center justify-center font-bold font-sans text-sm">
             {day.day}
           </div>
           <div className="text-left">

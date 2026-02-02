@@ -92,7 +92,7 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
           Daily Itinerary
         </h3>
 
-        <div className="space-y-1">
+        <div className="space-y-0.5">
           {plan.map((day, index) => (
             <DayCard
               key={day.day}
