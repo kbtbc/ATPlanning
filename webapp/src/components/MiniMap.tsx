@@ -183,7 +183,7 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
           />
         </svg>
 
-        {/* Day Markers - vertical lines showing day boundaries */}
+        {/* Day Markers - vertical dashed lines showing day boundaries */}
         {dayMarkers.map((marker) => {
           const xPos = getXPosition(marker.mile);
           if (xPos < 0 || xPos > 100) return null;
@@ -194,8 +194,19 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
               className="absolute top-0 bottom-0 flex flex-col items-center pointer-events-none"
               style={{ left: `${xPos}%` }}
             >
-              <div className="w-0.5 h-full bg-[var(--primary)]/40" style={{ borderStyle: 'dashed' }} />
-              <span className="absolute top-1 text-[9px] font-medium text-[var(--primary)] bg-[var(--background)]/90 px-1 rounded transform -translate-x-1/2 left-1/2">
+              <svg className="absolute inset-0 w-full h-full overflow-visible" style={{ width: '1px' }}>
+                <line
+                  x1="0"
+                  y1="0"
+                  x2="0"
+                  y2="100%"
+                  stroke="var(--primary)"
+                  strokeWidth="1"
+                  strokeOpacity="0.5"
+                  strokeDasharray="4 3"
+                />
+              </svg>
+              <span className="absolute top-1 text-[9px] font-medium text-[var(--primary)] bg-[var(--background)]/90 px-1 rounded whitespace-nowrap" style={{ transform: 'translateX(-50%)' }}>
                 Day {marker.day}
               </span>
             </div>
