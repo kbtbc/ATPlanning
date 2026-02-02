@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Calendar, TrendingUp, Mountain, Package, ChevronDown, ChevronUp, CalendarDays } from 'lucide-react';
+import { Calendar, TrendingUp, Mountain, Package, ChevronDown, ChevronUp, CalendarDays, MapPin } from 'lucide-react';
 import { useState } from 'react';
 import { useHikePlanner } from '../hooks/useHikePlanner';
 import { cn, formatMile, addDays, formatDate } from '../lib/utils';
@@ -228,10 +228,7 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
               className="bg-[var(--background-secondary)] rounded-xl border border-[var(--border)] overflow-hidden"
             >
               {/* Day Header */}
-              <button
-                onClick={() => setExpandedDay(isExpanded ? null : day.day)}
-                className="w-full p-4 flex items-center justify-between hover:bg-[var(--background)] transition-colors"
-              >
+              <div className="flex items-center justify-between p-4 hover:bg-[var(--background)] transition-colors">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-lg bg-[var(--primary)] text-white flex items-center justify-center font-bold">
                     {day.day}
@@ -244,7 +241,22 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                  {/* Set as Start Button */}
+                  {day.day > 1 && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setStartMile(day.startMile);
+                        setStartDate(dayDate);
+                      }}
+                      className="p-2 rounded-lg text-[var(--foreground-muted)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/10 transition-all"
+                      title="Set as new starting point"
+                    >
+                      <MapPin className="w-4 h-4" />
+                    </button>
+                  )}
+
                   <div className="flex items-center gap-3 text-sm">
                     <span className="flex items-center gap-1">
                       <TrendingUp className="w-4 h-4 text-[var(--accent)]" />
@@ -263,13 +275,18 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
                       </span>
                     )}
                   </div>
-                  {isExpanded ? (
-                    <ChevronUp className="w-5 h-5 text-[var(--foreground-muted)]" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-[var(--foreground-muted)]" />
-                  )}
+                  <button
+                    onClick={() => setExpandedDay(isExpanded ? null : day.day)}
+                    className="p-1"
+                  >
+                    {isExpanded ? (
+                      <ChevronUp className="w-5 h-5 text-[var(--foreground-muted)]" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-[var(--foreground-muted)]" />
+                    )}
+                  </button>
                 </div>
-              </button>
+              </div>
 
               {/* Expanded Content */}
               {isExpanded && (
