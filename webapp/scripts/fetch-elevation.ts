@@ -130,6 +130,11 @@ async function fetchElevations(points: TrackPoint[]): Promise<TrackPoint[]> {
 
 // Generate TypeScript file with elevation data
 function generateTypeScript(points: ElevationPoint[]): string {
+  // Format points as TypeScript object literals (no quoted keys)
+  const pointsStr = points.map(p =>
+    `  { mile: ${p.mile}, elevation: ${p.elevation}, lat: ${p.lat}, lng: ${p.lng} }`
+  ).join(',\n');
+
   return `/**
  * High-resolution elevation profile for the Appalachian Trail
  * Auto-generated from GPX data with elevation from Open-Elevation API
@@ -144,7 +149,9 @@ export interface ElevationPoint {
   lng: number;
 }
 
-export const elevationProfile: ElevationPoint[] = ${JSON.stringify(points, null, 2)};
+export const elevationProfile: ElevationPoint[] = [
+${pointsStr}
+];
 
 // Total trail length in miles
 export const TRAIL_LENGTH = ${points.length > 0 ? points[points.length - 1].mile.toFixed(1) : 2197.4};
