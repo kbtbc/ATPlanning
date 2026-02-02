@@ -48,12 +48,33 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 
 ## Running Locally
 
+### Prerequisites
+- Node.js 22.12+ (or Node.js 20.19+)
+- bun, npm, or yarn
+
+### Setup
+
 ```bash
-bun install
-bun dev
+cd webapp
+bun install    # or: npm install
+bun dev        # or: npm run dev
 ```
 
-App runs on port 8000.
+App runs at http://localhost:8000
+
+### Alternative: Use npm instead of bun
+```bash
+cd webapp
+npm install
+npm run dev
+```
+
+### Build for Production
+```bash
+cd webapp
+bun run build   # or: npm run build
+bun run preview # or: npm run preview
+```
 
 ## Data Sources
 
