@@ -29,10 +29,10 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--background)] px-2">
+    <div className="min-h-screen bg-[var(--background)] p-3">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-[var(--background)]/80 backdrop-blur-lg border-b border-[var(--border)] -mx-2 px-2">
-        <div className="max-w-4xl mx-auto px-2 py-4">
+      <header className="sticky top-0 z-40 bg-[var(--background)]/80 backdrop-blur-lg border-b border-[var(--border)] -mx-3 -mt-3 px-3 mb-3">
+        <div className="max-w-4xl mx-auto py-4">
           <div className="flex items-center justify-between">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -112,7 +112,7 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-2 py-6">
+      <main className="max-w-4xl mx-auto py-6">
         <AnimatePresence mode="wait">
           {activeTab === 'location' && (
             <motion.div
@@ -197,8 +197,8 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-[var(--border)] mt-12 py-8 -mx-2 px-2">
-        <div className="max-w-4xl mx-auto px-2 text-center text-sm text-[var(--foreground-muted)]">
+      <footer className="border-t border-[var(--border)] mt-12 py-8 -mx-3 -mb-3 px-3">
+        <div className="max-w-4xl mx-auto text-center text-sm text-[var(--foreground-muted)]">
           <p>
             AT Thru-Hike Planner · 2,197.4 miles from Springer Mountain, GA to Mt. Katahdin, ME
           </p>
