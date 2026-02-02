@@ -59,7 +59,7 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
         animate={{ opacity: 1, y: 0 }}
         className="panel"
       >
-        <h3 className="text-sm font-semibold flex items-center gap-2 mb-3">
+        <h3 className="text-base font-semibold flex items-center gap-2 mb-3">
           <TrendingUp className="w-4 h-4 text-[var(--accent)]" />
           Plan Your Hike
         </h3>
@@ -87,7 +87,7 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
 
       {/* Daily Plan */}
       <div className="space-y-1.5">
-        <h3 className="text-sm font-semibold flex items-center gap-2 pl-1">
+        <h3 className="text-base font-semibold flex items-center gap-2 pl-1">
           <Calendar className="w-4 h-4 text-[var(--accent)]" />
           Daily Itinerary
         </h3>

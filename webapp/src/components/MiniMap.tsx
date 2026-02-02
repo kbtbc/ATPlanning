@@ -122,7 +122,7 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
     >
       {/* Header - inside panel */}
       <div className="flex items-center justify-between mb-2">
-        <h3 className="text-sm font-semibold flex items-center gap-2">
+        <h3 className="text-base font-semibold flex items-center gap-2">
           <Navigation className="w-4 h-4 text-[var(--accent)]" />
           Trail Overview
         </h3>

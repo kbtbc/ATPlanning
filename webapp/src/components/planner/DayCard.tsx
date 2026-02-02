@@ -62,7 +62,7 @@ export function DayCard({
         className="flex items-center justify-between px-3 py-1.5 hover:bg-[var(--background)] transition-colors cursor-pointer"
         onClick={onToggle}
       >
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2.5 ml-0.5">
           <div className="w-7 h-7 rounded-md bg-[var(--primary)] text-white flex items-center justify-center font-bold font-sans text-sm">
             {day.day}
           </div>
@@ -132,7 +132,7 @@ export function DayCard({
           className="px-3 pb-3 border-t border-[var(--border)]"
         >
           {allItems.length > 0 ? (
-            <div className="mt-3 space-y-1.5">
+            <div className="mt-2 space-y-0.5">
               {allItems.map((item) => (
                 <ItineraryItem
                   key={item.data.id}
