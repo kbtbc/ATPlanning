@@ -35,6 +35,14 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - Distance from trail and shuttle availability
 - Strategic planning tips and mail drop advice
 
+### Contact Directory (NEW)
+- Searchable directory of hostels, outfitters, grocery stores, and services
+- Direct tap-to-call phone numbers
+- Tap-to-open Google Maps links for addresses
+- Business hours, pricing, and service lists
+- Covers key resupply points: Mountain Crossings, Outdoor 76, NOC, Damascus hostels, Shaw's, AT Lodge, and more
+- Filter by state and search by name
+
 ### Waypoint Browser
 - 250+ shelters with capacity, water, and privy info
 - All major towns and resupply points
@@ -69,6 +77,9 @@ webapp/src/
 │   │   ├── PlannerStats.tsx
 │   │   ├── DayCard.tsx
 │   │   └── ItineraryItem.tsx
+│   ├── resupply/         # Resupply directory components
+│   │   ├── ContactCard.tsx
+│   │   └── ResupplyDirectory.tsx
 │   ├── HikePlanner.tsx   # Main planner component
 │   ├── MiniMap.tsx       # Elevation profile visualization
 │   ├── LocationPanel.tsx # GPS/manual location
@@ -76,7 +87,7 @@ webapp/src/
 │   ├── WaypointList.tsx
 │   └── TrailProgress.tsx
 ├── hooks/                # Custom React hooks
-├── data/                 # Trail data (shelters, resupply, elevation)
+├── data/                 # Trail data (shelters, resupply, elevation, contacts)
 ├── types/                # TypeScript definitions
 ├── lib/                  # Utilities
 ├── index.css            # Design system (CSS variables + Tailwind)

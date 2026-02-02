@@ -96,3 +96,36 @@ export interface UserLocation {
   nearestMile: number | null;
   nearestWaypoint: Waypoint | null;
 }
+
+// Contact information for resupply points
+export interface ContactInfo {
+  resupplyId: string;
+  businesses: Business[];
+}
+
+export interface Business {
+  id: string;
+  name: string;
+  type: BusinessType;
+  phone?: string;
+  address?: string;
+  hours?: string;
+  website?: string;
+  email?: string;
+  googleMapsUrl?: string;
+  notes?: string;
+  pricing?: string;
+  services?: string[];
+}
+
+export type BusinessType =
+  | 'outfitter'
+  | 'hostel'
+  | 'grocery'
+  | 'restaurant'
+  | 'post_office'
+  | 'lodging'
+  | 'general_store'
+  | 'visitor_center'
+  | 'shuttle'
+  | 'laundry';
