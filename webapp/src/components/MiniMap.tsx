@@ -10,9 +10,10 @@ interface MiniMapProps {
   currentMile: number;
   rangeAhead?: number;
   direction?: Direction;
+  expanded?: boolean;
 }
 
-export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO' }: MiniMapProps) {
+export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', expanded = false }: MiniMapProps) {
   // Calculate the visible range (show some context before and after)
   const rangeBehind = 10;
   const startMile = Math.max(0, currentMile - rangeBehind);
@@ -135,8 +136,11 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO' }: Mi
         </div>
       </div>
 
-      {/* Mini Map Container - Taller */}
-      <div className="relative h-44 bg-[var(--background)] rounded-lg border border-[var(--border-light)] overflow-hidden">
+      {/* Mini Map Container - Taller when expanded */}
+      <div className={cn(
+        "relative bg-[var(--background)] rounded-lg border border-[var(--border-light)] overflow-hidden transition-all duration-300",
+        expanded ? "h-72" : "h-44"
+      )}>
         {/* Elevation Profile Background */}
         <svg
           className="absolute inset-0 w-full h-full"

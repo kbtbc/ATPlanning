@@ -8,6 +8,7 @@ import { MiniMap } from './MiniMap';
 
 interface HikePlannerProps {
   initialMile?: number;
+  expanded?: boolean;
 }
 
 // Helper to format date for input
@@ -18,7 +19,7 @@ function formatDateForInput(date: Date): string {
   return `${year}-${month}-${day}`;
 }
 
-export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
+export function HikePlanner({ initialMile = 0, expanded = false }: HikePlannerProps) {
   const {
     startMile,
     targetMilesPerDay,
@@ -51,7 +52,7 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
   return (
     <div className="space-y-6">
       {/* Mini Map */}
-      <MiniMap currentMile={startMile} rangeAhead={totalMiles} direction={direction} />
+      <MiniMap currentMile={startMile} rangeAhead={totalMiles} direction={direction} expanded={expanded} />
 
       {/* Controls */}
       <motion.div

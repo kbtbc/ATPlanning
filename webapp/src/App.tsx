@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mountain, Map, Package, Search, Navigation, Menu, X } from 'lucide-react';
+import { Mountain, Map, Package, Search, Navigation, Menu, X, ChevronLeft, ChevronRight, BarChart3 } from 'lucide-react';
 import { LocationPanel } from './components/LocationPanel';
 import { HikePlanner } from './components/HikePlanner';
 import { WaypointList } from './components/WaypointList';
@@ -22,6 +22,7 @@ function App() {
   const [activeTab, setActiveTab] = useState<Tab>('location');
   const [currentMile, setCurrentMile] = useState<number>(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   const handleLocationFound = (mile: number) => {
     setCurrentMile(mile);
@@ -112,10 +113,26 @@ function App() {
 
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Left Column - Trail Overview (always visible on desktop) */}
-          <aside className="hidden lg:block">
+        <div className={cn(
+          "grid grid-cols-1 gap-6 transition-all duration-300",
+          sidebarCollapsed ? "lg:grid-cols-1" : "lg:grid-cols-3"
+        )}>
+          {/* Left Column - Trail Overview (collapsible on desktop) */}
+          <aside className={cn(
+            "hidden lg:block transition-all duration-300",
+            sidebarCollapsed && "lg:hidden"
+          )}>
             <div className="sticky top-24 space-y-6">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-sm font-medium text-[var(--foreground-muted)]">Trail Stats</h3>
+                <button
+                  onClick={() => setSidebarCollapsed(true)}
+                  className="p-1.5 rounded-lg hover:bg-[var(--background-secondary)] text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors"
+                  title="Collapse sidebar"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+              </div>
               <TrailProgress />
 
               {/* Quick Stats */}
@@ -135,8 +152,25 @@ function App() {
             </div>
           </aside>
 
+          {/* Collapsed Sidebar Toggle */}
+          {sidebarCollapsed && (
+            <div className="hidden lg:block fixed left-4 top-24 z-30">
+              <button
+                onClick={() => setSidebarCollapsed(false)}
+                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--background-secondary)] border border-[var(--border)] hover:border-[var(--accent)] text-sm font-medium transition-all shadow-sm"
+                title="Show trail stats"
+              >
+                <BarChart3 className="w-4 h-4 text-[var(--accent)]" />
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          )}
+
           {/* Main Content Area */}
-          <div className="lg:col-span-2">
+          <div className={cn(
+            "transition-all duration-300",
+            sidebarCollapsed ? "lg:col-span-1" : "lg:col-span-2"
+          )}>
             <AnimatePresence mode="wait">
               {activeTab === 'location' && (
                 <motion.div
@@ -184,7 +218,7 @@ function App() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                 >
-                  <HikePlanner initialMile={currentMile} />
+                  <HikePlanner initialMile={currentMile} expanded={sidebarCollapsed} />
                 </motion.div>
               )}
 

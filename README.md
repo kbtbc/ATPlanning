@@ -17,7 +17,10 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - 1-14 day planning horizon
 - Preset mileage options: 10, 12, 15, 18, 20, 22 miles
 - Daily itinerary with shelters, resupply, and features
-- Mini-map showing nearby waypoints, shelters, and resupply points
+- "Set as start" button on each day to quickly re-plan from any point
+- Interactive elevation profile with high-resolution GPX data (4,395 points at 0.5mi intervals)
+- Mini-map showing shelters, resupply points, and notable features positioned on the elevation line
+- Collapsible sidebar for expanded map view
 
 ### Resupply Planner
 - 57 resupply points from Georgia to Maine
@@ -36,6 +39,7 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 ## Data
 
 - **Trail Length**: 2,197.4 miles
+- **Elevation Data**: 4,395 points from GPX (0.5mi resolution) with Open-Elevation API
 - **Shelters**: 252 shelters from GA to ME
 - **Resupply Points**: 57 towns and stores
 - **Features**: 50 notable landmarks
@@ -86,6 +90,8 @@ Trail data compiled from:
 - The Trek resupply guides
 - tnlandforms.us shelter data
 - FarOut/Guthook community data
+- WaymarkedTrails GPX data (192k+ track points)
+- Open-Elevation API for elevation data
 
 Always verify with current guidebooks and local conditions before hiking.
 
