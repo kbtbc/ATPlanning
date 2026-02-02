@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Mountain, Package, Navigation, TrendingUp, Star } from 'lucide-react';
 import { getSheltersInRange, getResupplyInRange, getFeaturesInRange, TRAIL_LENGTH } from '../data';
-import { elevationProfile, getElevationAtMile } from '../data/elevation';
+import { elevationProfile, getElevationAtMile, APPROACH_TRAIL_START } from '../data/elevation';
 import { cn, formatMile } from '../lib/utils';
 import type { Direction } from '../types';
 
@@ -15,8 +15,9 @@ interface MiniMapProps {
 
 export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', expanded = false }: MiniMapProps) {
   // Calculate the visible range (show some context before and after)
+  // Allow negative miles for approach trail
   const rangeBehind = 10;
-  const startMile = Math.max(0, currentMile - rangeBehind);
+  const startMile = Math.max(APPROACH_TRAIL_START, currentMile - rangeBehind);
   const endMile = Math.min(TRAIL_LENGTH, currentMile + rangeAhead + 10);
   const totalRange = endMile - startMile;
 

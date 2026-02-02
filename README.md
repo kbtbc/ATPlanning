@@ -18,8 +18,9 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - Preset mileage options: 10, 12, 15, 18, 20, 22 miles
 - Daily itinerary with shelters, resupply, and features
 - "Set as start" button on each day to quickly re-plan from any point
-- Interactive elevation profile with high-resolution GPX data (4,395 points at 0.5mi intervals)
+- Interactive elevation profile with high-resolution GPX data (~5,000 points at 0.5mi intervals)
 - Mini-map showing shelters, resupply points, and notable features positioned on the elevation line
+- Includes Amicalola Falls approach trail (mile -8.5 to 0)
 - Collapsible sidebar for expanded map view
 
 ### Resupply Planner
@@ -38,8 +39,8 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 
 ## Data
 
-- **Trail Length**: 2,197.4 miles
-- **Elevation Data**: 4,395 points from GPX (0.5mi resolution) with Open-Elevation API
+- **Trail Length**: 2,197.4 miles (plus 8.5 mile approach trail)
+- **Elevation Data**: ~5,000 points from FKT GPX (0.5mi resolution)
 - **Shelters**: 252 shelters from GA to ME
 - **Resupply Points**: 57 towns and stores
 - **Features**: 50 notable landmarks
@@ -90,8 +91,7 @@ Trail data compiled from:
 - The Trek resupply guides
 - tnlandforms.us shelter data
 - FarOut/Guthook community data
-- WaymarkedTrails GPX data (192k+ track points)
-- Open-Elevation API for elevation data
+- FKT (Fastest Known Time) GPX data with elevation
 
 Always verify with current guidebooks and local conditions before hiking.
 

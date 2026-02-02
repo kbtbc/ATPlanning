@@ -69,13 +69,13 @@ export function HikePlanner({ initialMile = 0, expanded = false }: HikePlannerPr
           {/* Starting Mile */}
           <div>
             <label className="block text-sm font-medium text-[var(--foreground-muted)] mb-2">
-              Starting Mile
+              Starting Mile <span className="text-xs opacity-70">(-8.5 = Amicalola Falls)</span>
             </label>
             <input
               type="number"
               value={startMile}
               onChange={(e) => setStartMile(Number(e.target.value))}
-              min={0}
+              min={-8.5}
               max={TRAIL_LENGTH}
               step={0.1}
               className="w-full px-3 py-2 rounded-lg border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] focus:border-[var(--accent)] focus:outline-none"

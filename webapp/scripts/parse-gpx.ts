@@ -70,32 +70,64 @@ console.log(`Total trail length (scaled): ${elevationData[elevationData.length -
 console.log(`First point: Mile ${elevationData[0].mile}, Elev ${elevationData[0].elevation} ft`);
 console.log(`Last point: Mile ${elevationData[elevationData.length - 1].mile}, Elev ${elevationData[elevationData.length - 1].elevation} ft`);
 
-// Sample down to ~2000 points for performance (every ~5th point)
-const sampledData = elevationData.filter((_, i) => i % 5 === 0 || i === elevationData.length - 1);
+// Sample every 2nd point for ~0.5 mile resolution
+const sampledData = elevationData.filter((_, i) => i % 2 === 0 || i === elevationData.length - 1);
 console.log(`Sampled to ${sampledData.length} points`);
+
+// Add Amicalola Falls approach trail data (8.5 miles before Springer)
+// Elevation data approximated from trail guides
+const approachTrail: { mile: number; elevation: number; lat: number; lon: number }[] = [
+  { mile: -8.5, elevation: 1700, lat: 34.5611, lon: -84.2481 }, // Amicalola Falls Visitor Center
+  { mile: -8.0, elevation: 1900, lat: 34.5650, lon: -84.2450 },
+  { mile: -7.5, elevation: 2100, lat: 34.5680, lon: -84.2420 },
+  { mile: -7.0, elevation: 2300, lat: 34.5720, lon: -84.2380 }, // Top of falls
+  { mile: -6.5, elevation: 2450, lat: 34.5760, lon: -84.2340 },
+  { mile: -6.0, elevation: 2600, lat: 34.5800, lon: -84.2300 },
+  { mile: -5.5, elevation: 2750, lat: 34.5840, lon: -84.2260 },
+  { mile: -5.0, elevation: 2900, lat: 34.5880, lon: -84.2220 },
+  { mile: -4.5, elevation: 3050, lat: 34.5920, lon: -84.2180 },
+  { mile: -4.0, elevation: 3150, lat: 34.5960, lon: -84.2140 },
+  { mile: -3.5, elevation: 3250, lat: 34.6000, lon: -84.2100 },
+  { mile: -3.0, elevation: 3350, lat: 34.6040, lon: -84.2060 },
+  { mile: -2.5, elevation: 3450, lat: 34.6080, lon: -84.2020 },
+  { mile: -2.0, elevation: 3520, lat: 34.6120, lon: -84.1980 },
+  { mile: -1.5, elevation: 3580, lat: 34.6160, lon: -84.1960 },
+  { mile: -1.0, elevation: 3650, lat: 34.6200, lon: -84.1950 },
+  { mile: -0.5, elevation: 3700, lat: 34.6240, lon: -84.1945 },
+];
+
+// Combine approach trail with main trail
+const fullData = [...approachTrail, ...sampledData];
+console.log(`Total with approach trail: ${fullData.length} points`);
 
 // Generate TypeScript file
 const tsContent = `/**
  * High-resolution elevation profile for the Appalachian Trail
  * Auto-generated from GPX data with elevation from FKT
  * Source: https://fastestknowntime.com/route/appalachian-trail
- * ${sampledData.length} data points sampled from ${points.length} original points
- * Resolution: ~1 mile between points
+ * ${fullData.length} data points (includes approach trail from Amicalola Falls)
+ * Resolution: ~0.5 miles between points
+ * Mile -8.5 = Amicalola Falls Visitor Center (approach trail start)
+ * Mile 0 = Springer Mountain (official AT southern terminus)
+ * Mile 2197.4 = Mt. Katahdin (northern terminus)
  */
 
 export interface ElevationPoint {
-  mile: number;      // Distance from Springer Mountain (NOBO)
+  mile: number;      // Distance from Springer Mountain (negative = approach trail)
   elevation: number; // Elevation in feet
   lat: number;
   lng: number;
 }
 
 export const elevationProfile: ElevationPoint[] = [
-${sampledData.map(p => `  { mile: ${p.mile}, elevation: ${p.elevation}, lat: ${Math.round(p.lat * 10000) / 10000}, lng: ${Math.round(p.lon * 10000) / 10000} }`).join(',\n')}
+${fullData.map(p => `  { mile: ${p.mile}, elevation: ${p.elevation}, lat: ${Math.round(p.lat * 10000) / 10000}, lng: ${Math.round(p.lon * 10000) / 10000} }`).join(',\n')}
 ];
 
-// Total trail length in miles
-export const TRAIL_LENGTH = ${sampledData[sampledData.length - 1].mile};
+// Trail boundaries
+export const APPROACH_TRAIL_START = -8.5; // Amicalola Falls
+export const TRAIL_START = 0; // Springer Mountain
+export const TRAIL_END = ${sampledData[sampledData.length - 1].mile}; // Mt. Katahdin
+export const TRAIL_LENGTH = ${sampledData[sampledData.length - 1].mile}; // Official AT length
 
 /**
  * Get elevation at a specific mile marker using linear interpolation
