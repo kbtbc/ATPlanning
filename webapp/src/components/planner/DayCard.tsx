@@ -59,22 +59,22 @@ export function DayCard({
     >
       {/* Day Header */}
       <div
-        className="flex items-center justify-between p-4 hover:bg-[var(--background)] transition-colors cursor-pointer"
+        className="flex items-center justify-between px-3 py-2 hover:bg-[var(--background)] transition-colors cursor-pointer"
         onClick={onToggle}
       >
-        <div className="flex items-center gap-4">
-          <div className="w-10 h-10 rounded-lg bg-[var(--primary)] text-white flex items-center justify-center font-bold font-sans">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-md bg-[var(--primary)] text-white flex items-center justify-center font-bold font-sans text-sm">
             {day.day}
           </div>
           <div className="text-left">
-            <p className="font-medium">{formatDate(dayDate)}</p>
-            <p className="text-sm text-[var(--foreground-muted)]">
+            <p className="font-medium text-sm">{formatDate(dayDate)}</p>
+            <p className="text-xs text-[var(--foreground-muted)]">
               Mile {formatMile(day.startMile)} → {formatMile(day.endMile)}
             </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
           {/* Set as Start Button */}
           {day.day > 1 && (
             <button
@@ -82,27 +82,27 @@ export function DayCard({
                 e.stopPropagation();
                 onSetStart(day.startMile, dayDate);
               }}
-              className="btn-ghost p-2 rounded-lg"
+              className="btn-ghost p-1.5 rounded"
               title="Set as new starting point"
             >
-              <MapPin className="w-4 h-4" />
+              <MapPin className="w-3.5 h-3.5" />
             </button>
           )}
 
-          <div className="flex items-center gap-3 text-sm">
+          <div className="flex items-center gap-2 text-xs">
             <span className="flex items-center gap-1">
-              <TrendingUp className="w-4 h-4 text-[var(--accent)]" />
+              <TrendingUp className="w-3.5 h-3.5 text-[var(--accent)]" />
               {dailyMiles.toFixed(1)} mi
             </span>
             {day.shelters.length > 0 && (
-              <span className="flex items-center gap-1 text-[var(--shelter-color)]">
-                <Home className="w-4 h-4" />
+              <span className="flex items-center gap-0.5 text-[var(--shelter-color)]">
+                <Home className="w-3.5 h-3.5" />
                 {day.shelters.length}
               </span>
             )}
             {day.resupply.length > 0 && (
-              <span className="flex items-center gap-1 text-[var(--resupply-color)]">
-                <Package className="w-4 h-4" />
+              <span className="flex items-center gap-0.5 text-[var(--resupply-color)]">
+                <Package className="w-3.5 h-3.5" />
                 {day.resupply.length}
               </span>
             )}
@@ -112,12 +112,12 @@ export function DayCard({
               e.stopPropagation();
               onToggle();
             }}
-            className="p-1"
+            className="p-0.5"
           >
             {isExpanded ? (
-              <ChevronUp className="w-5 h-5 text-[var(--foreground-muted)]" />
+              <ChevronUp className="w-4 h-4 text-[var(--foreground-muted)]" />
             ) : (
-              <ChevronDown className="w-5 h-5 text-[var(--foreground-muted)]" />
+              <ChevronDown className="w-4 h-4 text-[var(--foreground-muted)]" />
             )}
           </button>
         </div>
@@ -129,10 +129,10 @@ export function DayCard({
           initial={{ height: 0, opacity: 0 }}
           animate={{ height: 'auto', opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
-          className="px-4 pb-4 border-t border-[var(--border)]"
+          className="px-3 pb-3 border-t border-[var(--border)]"
         >
           {allItems.length > 0 ? (
-            <div className="mt-4 space-y-2">
+            <div className="mt-3 space-y-1.5">
               {allItems.map((item) => (
                 <ItineraryItem
                   key={item.data.id}
@@ -142,7 +142,7 @@ export function DayCard({
               ))}
             </div>
           ) : (
-            <p className="text-sm text-[var(--foreground-muted)] mt-4 italic">
+            <p className="text-xs text-[var(--foreground-muted)] mt-3 italic">
               No shelters, resupply, or notable features in this section.
             </p>
           )}
