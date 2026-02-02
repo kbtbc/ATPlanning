@@ -31,9 +31,9 @@ export function ItineraryItem({ item, onSetStart }: ItineraryItemProps) {
 function ShelterItem({ shelter, onSetStart }: { shelter: Shelter; onSetStart: (mile: number) => void }) {
   return (
     <div className="card flex items-center justify-between">
-      <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded bg-[var(--shelter-color)] flex items-center justify-center">
-          <Home className="w-4 h-4 text-white" />
+      <div className="flex items-center gap-2">
+        <div className="w-6 h-6 rounded bg-[var(--shelter-color)] flex items-center justify-center">
+          <Home className="w-3 h-3 text-white" />
         </div>
         <div>
           <p className="font-medium text-sm">{shelter.name}</p>
@@ -61,14 +61,14 @@ function ResupplyItem({ resupply, onSetStart }: { resupply: ResupplyPoint; onSet
   return (
     <div className="card">
       <div className="flex items-start justify-between">
-        <div className="flex items-start gap-3">
+        <div className="flex items-start gap-2">
           <div className={cn(
-            'w-8 h-8 rounded-full flex items-center justify-center shrink-0',
+            'w-6 h-6 rounded-full flex items-center justify-center shrink-0',
             resupply.resupplyQuality === 'full' && 'bg-green-500',
             resupply.resupplyQuality === 'limited' && 'bg-yellow-500',
             resupply.resupplyQuality === 'minimal' && 'bg-orange-500'
           )}>
-            <Package className="w-4 h-4 text-white" />
+            <Package className="w-3 h-3 text-white" />
           </div>
           <div>
             <p className="font-medium text-sm">{resupply.name}</p>
@@ -83,7 +83,7 @@ function ResupplyItem({ resupply, onSetStart }: { resupply: ResupplyPoint; onSet
           <SetStartButton onClick={() => onSetStart(resupply.mile)} />
         </div>
       </div>
-      <div className="flex flex-wrap gap-1 mt-2 ml-11">
+      <div className="flex flex-wrap gap-1 mt-1.5 ml-8">
         {resupply.hasGrocery && <ServiceBadge>Grocery</ServiceBadge>}
         {resupply.hasPostOffice && <ServiceBadge>Post Office</ServiceBadge>}
         {resupply.hasLodging && <ServiceBadge>Lodging</ServiceBadge>}
@@ -91,7 +91,7 @@ function ResupplyItem({ resupply, onSetStart }: { resupply: ResupplyPoint; onSet
         {resupply.hasShower && <ServiceBadge>Shower</ServiceBadge>}
       </div>
       {resupply.notes && (
-        <p className="text-xs text-[var(--foreground-muted)] mt-2 ml-11 italic">{resupply.notes}</p>
+        <p className="text-xs text-[var(--foreground-muted)] mt-1.5 ml-8 italic">{resupply.notes}</p>
       )}
     </div>
   );
@@ -100,9 +100,9 @@ function ResupplyItem({ resupply, onSetStart }: { resupply: ResupplyPoint; onSet
 function FeatureItem({ feature, onSetStart }: { feature: Waypoint; onSetStart: (mile: number) => void }) {
   return (
     <div className="card flex items-center justify-between">
-      <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-full bg-[var(--feature-color)] flex items-center justify-center">
-          <Info className="w-4 h-4 text-white" />
+      <div className="flex items-center gap-2">
+        <div className="w-6 h-6 rounded-full bg-[var(--feature-color)] flex items-center justify-center">
+          <Info className="w-3 h-3 text-white" />
         </div>
         <div>
           <p className="font-medium text-sm">{feature.name}</p>
