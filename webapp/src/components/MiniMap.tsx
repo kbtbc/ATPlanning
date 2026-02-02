@@ -118,7 +118,7 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-[var(--background-secondary)] rounded-xl p-4 border border-[var(--border)]"
+      className="panel"
     >
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
@@ -314,7 +314,7 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
               className="absolute transform -translate-x-1/2 -translate-y-1/2 group z-10"
               style={{ left: `${xPos}%`, top: `${yPos}%` }}
             >
-              <div className="w-3.5 h-3.5 rounded-full flex items-center justify-center shadow-sm bg-slate-400 text-white border border-white/50">
+              <div className="w-3.5 h-3.5 rounded-full flex items-center justify-center shadow-sm bg-[var(--feature-color)] text-white border border-white/50">
                 <Info className="w-2 h-2" />
               </div>
               <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity z-30 pointer-events-none">
@@ -376,7 +376,7 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
           Resupply
         </span>
         <span className="flex items-center gap-1">
-          <div className="w-3 h-3 rounded-full bg-slate-400 flex items-center justify-center">
+          <div className="w-3 h-3 rounded-full bg-[var(--feature-color)] flex items-center justify-center">
             <Info className="w-2 h-2 text-white" />
           </div>
           Info

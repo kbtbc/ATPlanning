@@ -12,12 +12,19 @@ import './index.css';
 type Tab = 'location' | 'planner' | 'resupply' | 'waypoints' | 'stats';
 
 const tabs: { id: Tab; label: string; icon: React.ReactNode }[] = [
-  { id: 'location', label: 'Location', icon: <Navigation className="w-5 h-5" /> },
-  { id: 'planner', label: 'Planner', icon: <Map className="w-5 h-5" /> },
-  { id: 'resupply', label: 'Resupply', icon: <Package className="w-5 h-5" /> },
-  { id: 'waypoints', label: 'Waypoints', icon: <Search className="w-5 h-5" /> },
-  { id: 'stats', label: 'Stats', icon: <BarChart3 className="w-5 h-5" /> },
+  { id: 'location', label: 'Location', icon: <Navigation className="w-4 h-4" /> },
+  { id: 'planner', label: 'Planner', icon: <Map className="w-4 h-4" /> },
+  { id: 'resupply', label: 'Resupply', icon: <Package className="w-4 h-4" /> },
+  { id: 'waypoints', label: 'Waypoints', icon: <Search className="w-4 h-4" /> },
+  { id: 'stats', label: 'Stats', icon: <BarChart3 className="w-4 h-4" /> },
 ];
+
+const pageTransition = {
+  initial: { opacity: 0, y: 12 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -12 },
+  transition: { duration: 0.2 }
+};
 
 function App() {
   const [activeTab, setActiveTab] = useState<Tab>('planner');
@@ -31,38 +38,35 @@ function App() {
   return (
     <div className="min-h-screen bg-[var(--background)]">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-[var(--background)]/80 backdrop-blur-lg border-b border-[var(--border)]">
-        <div className="max-w-4xl mx-auto px-4 py-4">
+      <header className="sticky top-0 z-40 bg-[var(--background)]/90 backdrop-blur-md border-b border-[var(--border)]">
+        <div className="max-w-3xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-3"
-            >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] flex items-center justify-center">
-                <Mountain className="w-6 h-6 text-white" />
+            {/* Logo */}
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] flex items-center justify-center shadow-sm">
+                <Mountain className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-semibold tracking-tight">AT Thru-Hike Planner</h1>
-                <p className="text-xs text-[var(--foreground-muted)]">Appalachian Trail Route & Resupply</p>
+                <h1 className="text-lg font-semibold tracking-tight leading-tight">AT Thru-Hike Planner</h1>
+                <p className="text-[11px] text-[var(--foreground-muted)] leading-tight">Appalachian Trail</p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-1 bg-[var(--background-secondary)] rounded-xl p-1">
+            <nav className="hidden md:flex items-center gap-0.5 bg-[var(--background-secondary)] rounded-lg p-0.5">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={cn(
-                    'flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all',
+                    'flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-all',
                     activeTab === tab.id
-                      ? 'bg-[var(--primary)] text-white'
+                      ? 'bg-[var(--primary)] text-white shadow-sm'
                       : 'text-[var(--foreground-muted)] hover:text-[var(--foreground)] hover:bg-[var(--background)]'
                   )}
                 >
                   {tab.icon}
-                  {tab.label}
+                  <span>{tab.label}</span>
                 </button>
               ))}
             </nav>
@@ -70,9 +74,9 @@ function App() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-[var(--background-secondary)]"
+              className="md:hidden btn-ghost p-2 rounded-lg"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
 
@@ -83,9 +87,10 @@ function App() {
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: 'auto', opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                className="md:hidden mt-4 overflow-hidden"
+                transition={{ duration: 0.2 }}
+                className="md:hidden mt-3 overflow-hidden"
               >
-                <div className="flex flex-col gap-1 bg-[var(--background-secondary)] rounded-xl p-2">
+                <div className="flex flex-col gap-0.5 bg-[var(--background-secondary)] rounded-lg p-1">
                   {tabs.map((tab) => (
                     <button
                       key={tab.id}
@@ -94,7 +99,7 @@ function App() {
                         setMobileMenuOpen(false);
                       }}
                       className={cn(
-                        'flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all',
+                        'flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium transition-all',
                         activeTab === tab.id
                           ? 'bg-[var(--primary)] text-white'
                           : 'text-[var(--foreground-muted)] hover:text-[var(--foreground)] hover:bg-[var(--background)]'
@@ -112,37 +117,31 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-4 py-6">
+      <main className="max-w-3xl mx-auto px-4 py-5">
         <AnimatePresence mode="wait">
           {activeTab === 'location' && (
-            <motion.div
-              key="location"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="space-y-6"
-            >
+            <motion.div key="location" {...pageTransition} className="space-y-5">
               <LocationPanel onLocationFound={handleLocationFound} />
 
               {/* Quick Actions */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3">
                 <button
                   onClick={() => setActiveTab('planner')}
-                  className="p-4 rounded-xl bg-[var(--background-secondary)] border border-[var(--border)] hover:border-[var(--accent)] transition-all text-left"
+                  className="panel p-4 text-left hover:border-[var(--accent)] transition-colors"
                 >
-                  <Map className="w-8 h-8 text-[var(--accent)] mb-2" />
-                  <h3 className="font-medium">Plan Your Hike</h3>
-                  <p className="text-sm text-[var(--foreground-muted)]">
+                  <Map className="w-7 h-7 text-[var(--accent)] mb-2" />
+                  <h3 className="font-medium text-sm">Plan Your Hike</h3>
+                  <p className="text-xs text-[var(--foreground-muted)] mt-0.5">
                     Create daily itineraries
                   </p>
                 </button>
                 <button
                   onClick={() => setActiveTab('resupply')}
-                  className="p-4 rounded-xl bg-[var(--background-secondary)] border border-[var(--border)] hover:border-[var(--accent)] transition-all text-left"
+                  className="panel p-4 text-left hover:border-[var(--accent)] transition-colors"
                 >
-                  <Package className="w-8 h-8 text-[var(--secondary)] mb-2" />
-                  <h3 className="font-medium">Find Resupply</h3>
-                  <p className="text-sm text-[var(--foreground-muted)]">
+                  <Package className="w-7 h-7 text-[var(--secondary)] mb-2" />
+                  <h3 className="font-medium text-sm">Find Resupply</h3>
+                  <p className="text-xs text-[var(--foreground-muted)] mt-0.5">
                     Towns & stores ahead
                   </p>
                 </button>
@@ -151,45 +150,25 @@ function App() {
           )}
 
           {activeTab === 'planner' && (
-            <motion.div
-              key="planner"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-            >
+            <motion.div key="planner" {...pageTransition}>
               <HikePlanner initialMile={currentMile} />
             </motion.div>
           )}
 
           {activeTab === 'resupply' && (
-            <motion.div
-              key="resupply"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-            >
+            <motion.div key="resupply" {...pageTransition}>
               <ResupplyPlanner currentMile={currentMile} />
             </motion.div>
           )}
 
           {activeTab === 'waypoints' && (
-            <motion.div
-              key="waypoints"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-            >
+            <motion.div key="waypoints" {...pageTransition}>
               <WaypointList />
             </motion.div>
           )}
 
           {activeTab === 'stats' && (
-            <motion.div
-              key="stats"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-            >
+            <motion.div key="stats" {...pageTransition}>
               <TrailProgress />
             </motion.div>
           )}
@@ -197,16 +176,13 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-[var(--border)] mt-12 py-8">
-        <div className="max-w-4xl mx-auto px-4 text-center text-sm text-[var(--foreground-muted)]">
-          <p>
+      <footer className="border-t border-[var(--border)] mt-8 py-6">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <p className="text-xs text-[var(--foreground-muted)]">
             AT Thru-Hike Planner · 2,197.4 miles from Springer Mountain, GA to Mt. Katahdin, ME
           </p>
-          <p className="mt-2">
-            Data compiled from multiple sources. Always verify with current guidebooks and local conditions.
-          </p>
-          <p className="mt-4 text-xs">
-            Not affiliated with the Appalachian Trail Conservancy. For informational purposes only.
+          <p className="text-[11px] text-[var(--foreground-muted)] mt-1.5 opacity-70">
+            Not affiliated with the Appalachian Trail Conservancy. Always verify with current guidebooks.
           </p>
         </div>
       </footer>

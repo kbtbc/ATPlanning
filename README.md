@@ -54,10 +54,34 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 ## Tech Stack
 
 - React 19 + TypeScript
-- Vite
-- TailwindCSS
+- Vite 7
+- Tailwind CSS v4 (with @tailwindcss/vite)
 - Framer Motion
 - Lucide Icons
+
+## Project Structure
+
+```
+webapp/src/
+├── components/
+│   ├── planner/          # HikePlanner sub-components
+│   │   ├── PlannerControls.tsx
+│   │   ├── PlannerStats.tsx
+│   │   ├── DayCard.tsx
+│   │   └── ItineraryItem.tsx
+│   ├── HikePlanner.tsx   # Main planner component
+│   ├── MiniMap.tsx       # Elevation profile visualization
+│   ├── LocationPanel.tsx # GPS/manual location
+│   ├── ResupplyPlanner.tsx
+│   ├── WaypointList.tsx
+│   └── TrailProgress.tsx
+├── hooks/                # Custom React hooks
+├── data/                 # Trail data (shelters, resupply, elevation)
+├── types/                # TypeScript definitions
+├── lib/                  # Utilities
+├── index.css            # Design system (CSS variables + Tailwind)
+└── App.tsx              # Root component
+```
 
 ## Running Locally
 
