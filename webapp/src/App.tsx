@@ -29,13 +29,10 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--background)]" style={{ padding: '12px' }}>
+    <div className="min-h-screen bg-[var(--background)]">
       {/* Header */}
-      <header
-        className="sticky top-0 z-40 bg-[var(--background)]/80 backdrop-blur-lg border-b border-[var(--border)]"
-        style={{ margin: '-12px -12px 12px -12px', padding: '0 12px' }}
-      >
-        <div className="max-w-4xl mx-auto py-4">
+      <header className="sticky top-0 z-40 bg-[var(--background)]/80 backdrop-blur-lg border-b border-[var(--border)]">
+        <div className="max-w-4xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -115,7 +112,7 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto py-6">
+      <main className="max-w-4xl mx-auto px-4 py-6">
         <AnimatePresence mode="wait">
           {activeTab === 'location' && (
             <motion.div
@@ -200,11 +197,8 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer
-        className="border-t border-[var(--border)] mt-12 py-8"
-        style={{ margin: '48px -12px -12px -12px', padding: '32px 12px' }}
-      >
-        <div className="max-w-4xl mx-auto text-center text-sm text-[var(--foreground-muted)]">
+      <footer className="border-t border-[var(--border)] mt-12 py-8">
+        <div className="max-w-4xl mx-auto px-4 text-center text-sm text-[var(--foreground-muted)]">
           <p>
             AT Thru-Hike Planner · 2,197.4 miles from Springer Mountain, GA to Mt. Katahdin, ME
           </p>
