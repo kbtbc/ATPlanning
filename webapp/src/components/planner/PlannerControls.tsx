@@ -43,10 +43,10 @@ export function PlannerControls({
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
       {/* Starting Mile */}
       <div>
-        <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-1">
+        <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-0.5">
           Starting Mile <span className="opacity-70">(-8.5 = Amicalola)</span>
         </label>
         <input
@@ -62,7 +62,7 @@ export function PlannerControls({
 
       {/* Start Date */}
       <div>
-        <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-1">
+        <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-0.5">
           <span className="flex items-center gap-1.5">
             <CalendarDays className="w-3.5 h-3.5" />
             Start Date
@@ -78,7 +78,7 @@ export function PlannerControls({
 
       {/* Direction */}
       <div>
-        <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-1">
+        <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-0.5">
           Direction
         </label>
         <div className="flex gap-1.5">
@@ -109,7 +109,7 @@ export function PlannerControls({
 
       {/* Days Ahead */}
       <div>
-        <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-1">
+        <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-0.5">
           Days to Plan: <span className="font-bold text-[var(--foreground)]">{daysAhead}</span>
         </label>
         <input
@@ -121,7 +121,7 @@ export function PlannerControls({
           step={1}
           className="w-full accent-[var(--accent)]"
         />
-        <div className="flex justify-between text-[10px] text-[var(--foreground-muted)]">
+        <div className="flex justify-between text-[10px] text-[var(--foreground-muted)] -mt-0.5">
           <span>1 day</span>
           <span>14 days</span>
         </div>
@@ -129,7 +129,7 @@ export function PlannerControls({
 
       {/* Miles Per Day */}
       <div className="md:col-span-2">
-        <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-1">
+        <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-0.5">
           Miles Per Day: <span className="font-bold text-[var(--foreground)]">{targetMilesPerDay}</span>
         </label>
         <input
@@ -141,7 +141,7 @@ export function PlannerControls({
           step={1}
           className="w-full accent-[var(--accent)]"
         />
-        <div className="flex justify-between text-[10px] text-[var(--foreground-muted)]">
+        <div className="flex justify-between text-[10px] text-[var(--foreground-muted)] -mt-0.5">
           <span>8 mi</span>
           <span>25 mi</span>
         </div>

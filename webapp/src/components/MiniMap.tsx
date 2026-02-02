@@ -115,11 +115,15 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
   }, [rangeElevation, startMile, totalRange]);
 
   return (
-    <div className="space-y-2">
-      {/* Header - outside panel */}
-      <div className="flex items-center justify-between pl-1">
-        <h3 className="text-lg font-semibold flex items-center gap-2">
-          <Navigation className="w-5 h-5 text-[var(--accent)]" />
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="panel"
+    >
+      {/* Header - inside panel */}
+      <div className="flex items-center justify-between mb-2">
+        <h3 className="text-sm font-semibold flex items-center gap-2">
+          <Navigation className="w-4 h-4 text-[var(--accent)]" />
           Trail Overview
         </h3>
         <div className="flex items-center gap-4 text-xs text-[var(--foreground-muted)]">
@@ -133,13 +137,8 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
         </div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="panel"
-      >
-        {/* Mini Map Container */}
-        <div className="relative bg-[var(--background)] rounded-lg border border-[var(--border-light)] overflow-hidden h-48">
+      {/* Mini Map Container */}
+      <div className="relative bg-[var(--background)] rounded-lg border border-[var(--border-light)] overflow-hidden h-48">
           {/* Elevation Profile Background */}
           <svg
             className="absolute inset-0 w-full h-full"
@@ -380,7 +379,6 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
             Info
           </span>
         </div>
-      </motion.div>
-    </div>
+    </motion.div>
   );
 }
