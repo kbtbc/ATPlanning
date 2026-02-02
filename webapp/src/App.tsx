@@ -112,7 +112,7 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-6 py-6">
+      <main className="max-w-4xl mx-auto py-6" style={{ paddingLeft: '16px', paddingRight: '16px' }}>
         <AnimatePresence mode="wait">
           {activeTab === 'location' && (
             <motion.div

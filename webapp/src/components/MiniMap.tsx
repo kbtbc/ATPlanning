@@ -191,10 +191,10 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
           return (
             <div
               key={`day-${marker.day}`}
-              className="absolute top-0 bottom-0 flex flex-col items-center pointer-events-none"
-              style={{ left: `${xPos}%` }}
+              className="absolute top-0 bottom-0 pointer-events-none"
+              style={{ left: `${xPos}%`, transform: 'translateX(-50%)' }}
             >
-              <svg className="absolute inset-0 w-full h-full overflow-visible" style={{ width: '1px' }}>
+              <svg className="absolute inset-0 h-full" style={{ width: '1px', left: '50%' }}>
                 <line
                   x1="0"
                   y1="0"
@@ -206,7 +206,7 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                   strokeDasharray="4 3"
                 />
               </svg>
-              <span className="absolute top-1 text-[9px] font-medium text-[var(--primary)] bg-[var(--background)]/90 px-1 rounded whitespace-nowrap" style={{ transform: 'translateX(-50%)' }}>
+              <span className="absolute top-1 left-1/2 -translate-x-1/2 text-[9px] font-medium text-[var(--primary)] bg-[var(--background)]/90 px-1 rounded whitespace-nowrap">
                 Day {marker.day}
               </span>
             </div>
