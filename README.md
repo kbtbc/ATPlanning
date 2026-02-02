@@ -6,15 +6,18 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 
 ### Location Tracking
 - GPS geolocation to find your position on the trail
+- Manual mile marker entry (when GPS unavailable)
 - Shows nearest mile marker and distance from trail
 - Progress visualization (% complete)
 
 ### Hike Planner
 - Flexible daily mileage (8-25 miles/day)
+- Adjustable start date for planning
 - Support for NOBO and SOBO hiking directions
 - 1-14 day planning horizon
 - Preset mileage options: 10, 12, 15, 18, 20, 22 miles
 - Daily itinerary with shelters, resupply, and features
+- Mini-map showing nearby waypoints, shelters, and resupply points
 
 ### Resupply Planner
 - 57 resupply points from Georgia to Maine

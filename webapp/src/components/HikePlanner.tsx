@@ -1,12 +1,21 @@
 import { motion } from 'framer-motion';
-import { Calendar, TrendingUp, Mountain, Package, ChevronDown, ChevronUp } from 'lucide-react';
+import { Calendar, TrendingUp, Mountain, Package, ChevronDown, ChevronUp, CalendarDays } from 'lucide-react';
 import { useState } from 'react';
 import { useHikePlanner } from '../hooks/useHikePlanner';
 import { cn, formatMile, addDays, formatDate } from '../lib/utils';
 import { TRAIL_LENGTH } from '../data';
+import { MiniMap } from './MiniMap';
 
 interface HikePlannerProps {
   initialMile?: number;
+}
+
+// Helper to format date for input
+function formatDateForInput(date: Date): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
 }
 
 export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
@@ -21,6 +30,7 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
     setTargetMiles,
     setDaysAhead,
     setDirection,
+    setStartDate,
     totalMiles,
     endMile,
     resupplyCount,
@@ -31,8 +41,18 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
 
   const mileagePresets = [10, 12, 15, 18, 20, 22];
 
+  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newDate = new Date(e.target.value + 'T00:00:00');
+    if (!isNaN(newDate.getTime())) {
+      setStartDate(newDate);
+    }
+  };
+
   return (
     <div className="space-y-6">
+      {/* Mini Map */}
+      <MiniMap currentMile={startMile} rangeAhead={totalMiles} direction={direction} />
+
       {/* Controls */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -57,7 +77,23 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
               min={0}
               max={TRAIL_LENGTH}
               step={0.1}
-              className="w-full px-3 py-2 rounded-lg border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] focus:border-[var(--accent)]"
+              className="w-full px-3 py-2 rounded-lg border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] focus:border-[var(--accent)] focus:outline-none"
+            />
+          </div>
+
+          {/* Start Date */}
+          <div>
+            <label className="block text-sm font-medium text-[var(--foreground-muted)] mb-2">
+              <span className="flex items-center gap-2">
+                <CalendarDays className="w-4 h-4" />
+                Start Date
+              </span>
+            </label>
+            <input
+              type="date"
+              value={formatDateForInput(startDate)}
+              onChange={handleDateChange}
+              className="w-full px-3 py-2 rounded-lg border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] focus:border-[var(--accent)] focus:outline-none"
             />
           </div>
 
@@ -92,8 +128,28 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
             </div>
           </div>
 
-          {/* Miles Per Day */}
+          {/* Days Ahead */}
           <div>
+            <label className="block text-sm font-medium text-[var(--foreground-muted)] mb-2">
+              Days to Plan: <span className="font-bold text-[var(--foreground)]">{daysAhead}</span>
+            </label>
+            <input
+              type="range"
+              value={daysAhead}
+              onChange={(e) => setDaysAhead(Number(e.target.value))}
+              min={1}
+              max={14}
+              step={1}
+              className="w-full accent-[var(--accent)]"
+            />
+            <div className="flex justify-between text-xs text-[var(--foreground-muted)] mt-1">
+              <span>1 day</span>
+              <span>14 days</span>
+            </div>
+          </div>
+
+          {/* Miles Per Day - Full width */}
+          <div className="md:col-span-2">
             <label className="block text-sm font-medium text-[var(--foreground-muted)] mb-2">
               Miles Per Day: <span className="font-bold text-[var(--foreground)]">{targetMilesPerDay}</span>
             </label>
@@ -126,26 +182,6 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
                   {miles} mi
                 </button>
               ))}
-            </div>
-          </div>
-
-          {/* Days Ahead */}
-          <div>
-            <label className="block text-sm font-medium text-[var(--foreground-muted)] mb-2">
-              Days to Plan: <span className="font-bold text-[var(--foreground)]">{daysAhead}</span>
-            </label>
-            <input
-              type="range"
-              value={daysAhead}
-              onChange={(e) => setDaysAhead(Number(e.target.value))}
-              min={1}
-              max={14}
-              step={1}
-              className="w-full accent-[var(--accent)]"
-            />
-            <div className="flex justify-between text-xs text-[var(--foreground-muted)] mt-1">
-              <span>1 day</span>
-              <span>14 days</span>
             </div>
           </div>
         </div>
