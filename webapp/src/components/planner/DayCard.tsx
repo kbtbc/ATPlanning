@@ -55,11 +55,11 @@ export function DayCard({
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: index * 0.05 }}
-      className="panel p-0 overflow-hidden"
+      className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-lg overflow-hidden"
     >
       {/* Day Header */}
       <div
-        className="flex items-center justify-between px-2.5 py-1.5 hover:bg-[var(--background)] transition-colors cursor-pointer"
+        className="flex items-center justify-between px-2 py-1 hover:bg-[var(--background)] transition-colors cursor-pointer"
         onClick={onToggle}
       >
         <div className="flex items-center gap-2.5">
