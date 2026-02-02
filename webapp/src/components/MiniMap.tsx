@@ -14,9 +14,6 @@ interface MiniMapProps {
 }
 
 export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', expanded = false }: MiniMapProps) {
-  // Debug: log elevation profile length on first render
-  console.log('[MiniMap] elevationProfile.length:', elevationProfile.length, 'last:', elevationProfile[elevationProfile.length - 1]?.mile);
-
   // Calculate the visible range (show some context before and after)
   const rangeBehind = 10;
   const startMile = Math.max(0, currentMile - rangeBehind);

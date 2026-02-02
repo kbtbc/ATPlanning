@@ -70,67 +70,87 @@ console.log(`Total trail length (scaled): ${elevationData[elevationData.length -
 console.log(`First point: Mile ${elevationData[0].mile}, Elev ${elevationData[0].elevation} ft`);
 console.log(`Last point: Mile ${elevationData[elevationData.length - 1].mile}, Elev ${elevationData[elevationData.length - 1].elevation} ft`);
 
-// Sample down to ~500 points for performance (every ~20th point)
-const sampledData = elevationData.filter((_, i) => i % 20 === 0 || i === elevationData.length - 1);
+// Sample down to ~2000 points for performance (every ~5th point)
+const sampledData = elevationData.filter((_, i) => i % 5 === 0 || i === elevationData.length - 1);
 console.log(`Sampled to ${sampledData.length} points`);
 
 // Generate TypeScript file
-const tsContent = `// Auto-generated elevation profile data from GPX
-// Source: https://fastestknowntime.com/route/appalachian-trail
-// ${sampledData.length} data points sampled from ${points.length} original points
+const tsContent = `/**
+ * High-resolution elevation profile for the Appalachian Trail
+ * Auto-generated from GPX data with elevation from FKT
+ * Source: https://fastestknowntime.com/route/appalachian-trail
+ * ${sampledData.length} data points sampled from ${points.length} original points
+ * Resolution: ~1 mile between points
+ */
 
 export interface ElevationPoint {
   mile: number;      // Distance from Springer Mountain (NOBO)
   elevation: number; // Elevation in feet
   lat: number;
-  lon: number;
+  lng: number;
 }
 
-export const elevationProfile: ElevationPoint[] = ${JSON.stringify(sampledData, null, 2)};
+export const elevationProfile: ElevationPoint[] = [
+${sampledData.map(p => `  { mile: ${p.mile}, elevation: ${p.elevation}, lat: ${Math.round(p.lat * 10000) / 10000}, lng: ${Math.round(p.lon * 10000) / 10000} }`).join(',\n')}
+];
 
-// Helper to get elevation at a specific mile
+// Total trail length in miles
+export const TRAIL_LENGTH = ${sampledData[sampledData.length - 1].mile};
+
+/**
+ * Get elevation at a specific mile marker using linear interpolation
+ */
 export function getElevationAtMile(mile: number): number {
-  if (elevationProfile.length === 0) return 0;
+  if (elevationProfile.length === 0) return 3000;
 
-  // Find the two closest points
-  let closest = elevationProfile[0];
-  let secondClosest = elevationProfile[1] || elevationProfile[0];
+  // Handle edge cases
+  if (mile <= elevationProfile[0].mile) return elevationProfile[0].elevation;
+  if (mile >= elevationProfile[elevationProfile.length - 1].mile) {
+    return elevationProfile[elevationProfile.length - 1].elevation;
+  }
 
-  for (const point of elevationProfile) {
-    if (Math.abs(point.mile - mile) < Math.abs(closest.mile - mile)) {
-      secondClosest = closest;
-      closest = point;
-    } else if (Math.abs(point.mile - mile) < Math.abs(secondClosest.mile - mile) && point !== closest) {
-      secondClosest = point;
+  // Binary search for the closest points
+  let low = 0;
+  let high = elevationProfile.length - 1;
+
+  while (low < high - 1) {
+    const mid = Math.floor((low + high) / 2);
+    if (elevationProfile[mid].mile <= mile) {
+      low = mid;
+    } else {
+      high = mid;
     }
   }
 
-  // Linear interpolation
-  if (closest.mile === secondClosest.mile) return closest.elevation;
+  // Linear interpolation between the two closest points
+  const p1 = elevationProfile[low];
+  const p2 = elevationProfile[high];
+  const ratio = (mile - p1.mile) / (p2.mile - p1.mile);
 
-  const ratio = (mile - closest.mile) / (secondClosest.mile - closest.mile);
-  return Math.round(closest.elevation + ratio * (secondClosest.elevation - closest.elevation));
+  return Math.round(p1.elevation + ratio * (p2.elevation - p1.elevation));
 }
 
-// Get elevation range for a mile range
-export function getElevationRange(startMile: number, endMile: number): { min: number; max: number; points: ElevationPoint[] } {
+/**
+ * Get elevation data for a range of miles
+ */
+export function getElevationRange(startMile: number, endMile: number): {
+  min: number;
+  max: number;
+  points: ElevationPoint[];
+} {
   const points = elevationProfile.filter(p => p.mile >= startMile && p.mile <= endMile);
-  if (points.length === 0) return { min: 0, max: 0, points: [] };
+
+  if (points.length === 0) {
+    return { min: 1000, max: 6000, points: [] };
+  }
 
   const elevations = points.map(p => p.elevation);
   return {
     min: Math.min(...elevations),
     max: Math.max(...elevations),
-    points,
+    points
   };
 }
-
-// Trail stats
-export const ELEVATION_STATS = {
-  minElevation: ${Math.min(...sampledData.map(p => p.elevation))},
-  maxElevation: ${Math.max(...sampledData.map(p => p.elevation))},
-  totalPoints: ${sampledData.length},
-};
 `;
 
 writeFileSync('./src/data/elevation.ts', tsContent);
