@@ -1,8 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Instrument+Serif:ital@0;1&display=swap');
 @import "tailwindcss";
 
+/* ============================================
+   DESIGN SYSTEM - AT Thru-Hike Planner
+   Theme: Organic/Natural with refined minimalism
+   ============================================ */
+
+@theme {
+  /* Typography */
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+
+  /* Spacing scale */
+  --spacing-page: 1rem;
+
+  /* Border radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
 :root {
-  /* Forest/Trail inspired color palette */
+  /* Core palette - Forest/Trail inspired */
   --color-forest: #1a3a2f;
   --color-forest-light: #2d5a4a;
   --color-trail: #8b7355;
@@ -19,8 +39,9 @@
   /* Semantic colors */
   --background: #f5f2ed;
   --background-secondary: #ebe6de;
+  --background-tertiary: #e2ddd4;
   --foreground: #1a2e28;
-  --foreground-muted: #4a5a55;
+  --foreground-muted: #5a6a65;
   --primary: var(--color-forest);
   --primary-light: var(--color-forest-light);
   --secondary: var(--color-trail);
@@ -32,25 +53,39 @@
   --border: #d4cfc5;
   --border-light: #e8e4dc;
 
-  /* Waypoint type colors */
+  /* Waypoint colors */
   --shelter-color: #4a7c59;
   --resupply-color: #c17f59;
   --town-color: #6b8cae;
   --water-color: #5a99b5;
   --campsite-color: #7d9a6f;
-  --feature-color: #9a7eb5;
+  --feature-color: #7a8a94;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(26, 46, 40, 0.04);
+  --shadow-md: 0 2px 8px rgba(26, 46, 40, 0.06);
+  --shadow-lg: 0 4px 16px rgba(26, 46, 40, 0.08);
 }
 
 .dark {
   --background: #151e1a;
   --background-secondary: #1e2b25;
+  --background-tertiary: #253530;
   --foreground: #e8ebe9;
   --foreground-muted: #a0aba6;
   --primary: var(--color-meadow);
   --primary-light: var(--color-meadow-light);
   --border: #2d3d36;
   --border-light: #3d4f46;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
 
 * {
   margin: 0;
@@ -60,10 +95,12 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans);
   background-color: var(--background);
   color: var(--foreground);
   line-height: 1.6;
@@ -71,39 +108,104 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: var(--font-serif);
   font-weight: 400;
   letter-spacing: -0.02em;
+  line-height: 1.3;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+/* ============================================
+   COMPONENT UTILITIES
+   ============================================ */
+
+/* Panel - standard container */
+.panel {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 0.875rem;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--background-secondary);
+/* Card - smaller container */
+.card {
+  background-color: var(--background);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 0.25rem 0.5rem;
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 4px;
+/* Input base */
+.input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: 0.875rem;
+  transition: border-color 0.15s ease;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--foreground-muted);
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
 }
 
-/* Utility classes */
-.bg-background { background-color: var(--background); }
-.bg-background-secondary { background-color: var(--background-secondary); }
-.text-foreground { color: var(--foreground); }
-.text-foreground-muted { color: var(--foreground-muted); }
-.border-default { border-color: var(--border); }
-.border-light { border-color: var(--border-light); }
+/* Button variants */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  border: none;
+}
 
-/* Waypoint type badges */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light);
+}
+
+.btn-secondary {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  color: var(--foreground-muted);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--foreground);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--foreground-muted);
+}
+
+.btn-ghost:hover {
+  background-color: var(--background-secondary);
+  color: var(--foreground);
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
 .badge-shelter { background-color: var(--shelter-color); color: white; }
 .badge-resupply { background-color: var(--resupply-color); color: white; }
 .badge-town { background-color: var(--town-color); color: white; }
@@ -111,7 +213,32 @@ h1, h2, h3, h4 {
 .badge-campsite { background-color: var(--campsite-color); color: white; }
 .badge-feature { background-color: var(--feature-color); color: white; }
 
-/* Animation classes */
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground-muted);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
@@ -139,14 +266,32 @@ h1, h2, h3, h4 {
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
-/* Focus states */
-input:focus, select:focus, button:focus-visible {
+/* ============================================
+   FOCUS & SELECTION
+   ============================================ */
+
+:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
-/* Selection */
 ::selection {
   background-color: var(--accent-light);
   color: var(--foreground);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-muted {
+  color: var(--foreground-muted);
+}
+
+.border-default {
+  border-color: var(--border);
+}
+
+.border-subtle {
+  border-color: var(--border-light);
 }
