@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Mountain, Package, Navigation, TrendingUp, Star } from 'lucide-react';
+import { MapPin, Package, Navigation, TrendingUp, Info, Home } from 'lucide-react';
 import { getSheltersInRange, getResupplyInRange, getFeaturesInRange, TRAIL_LENGTH } from '../data';
 import { elevationProfile, getElevationAtMile, APPROACH_TRAIL_START } from '../data/elevation';
 import { cn, formatMile } from '../lib/utils';
@@ -10,10 +10,10 @@ interface MiniMapProps {
   currentMile: number;
   rangeAhead?: number;
   direction?: Direction;
-  expanded?: boolean;
+  dayMarkers?: { mile: number; day: number }[];
 }
 
-export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', expanded = false }: MiniMapProps) {
+export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayMarkers = [] }: MiniMapProps) {
   // Calculate the visible range (show some context before and after)
   // Allow negative miles for approach trail
   const rangeBehind = 10;
@@ -137,11 +137,8 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', expa
         </div>
       </div>
 
-      {/* Mini Map Container - Taller when expanded */}
-      <div className={cn(
-        "relative bg-[var(--background)] rounded-lg border border-[var(--border-light)] overflow-hidden transition-all duration-300",
-        expanded ? "h-72" : "h-44"
-      )}>
+      {/* Mini Map Container */}
+      <div className="relative bg-[var(--background)] rounded-lg border border-[var(--border-light)] overflow-hidden h-48">
         {/* Elevation Profile Background */}
         <svg
           className="absolute inset-0 w-full h-full"
@@ -186,6 +183,25 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', expa
           />
         </svg>
 
+        {/* Day Markers - vertical lines showing day boundaries */}
+        {dayMarkers.map((marker) => {
+          const xPos = getXPosition(marker.mile);
+          if (xPos < 0 || xPos > 100) return null;
+
+          return (
+            <div
+              key={`day-${marker.day}`}
+              className="absolute top-0 bottom-0 flex flex-col items-center pointer-events-none"
+              style={{ left: `${xPos}%` }}
+            >
+              <div className="w-0.5 h-full bg-[var(--primary)]/40" style={{ borderStyle: 'dashed' }} />
+              <span className="absolute top-1 text-[9px] font-medium text-[var(--primary)] bg-[var(--background)]/90 px-1 rounded transform -translate-x-1/2 left-1/2">
+                Day {marker.day}
+              </span>
+            </div>
+          );
+        })}
+
         {/* Mile Markers */}
         {mileMarkers.map((mile) => (
           <div
@@ -217,7 +233,7 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', expa
                 'w-4 h-4 rounded flex items-center justify-center shadow-sm',
                 'bg-[var(--shelter-color)] text-white border border-white/50'
               )}>
-                <Mountain className="w-2.5 h-2.5" />
+                <Home className="w-2.5 h-2.5" />
               </div>
               <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity z-30 pointer-events-none">
                 <div className="bg-[var(--background)] border border-[var(--border)] rounded px-2 py-1.5 text-xs whitespace-nowrap shadow-lg">
@@ -287,8 +303,8 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', expa
               className="absolute transform -translate-x-1/2 -translate-y-1/2 group z-10"
               style={{ left: `${xPos}%`, top: `${yPos}%` }}
             >
-              <div className="w-4 h-4 rounded-full flex items-center justify-center shadow-sm bg-purple-500 text-white border border-white/50">
-                <Star className="w-2.5 h-2.5" />
+              <div className="w-3.5 h-3.5 rounded-full flex items-center justify-center shadow-sm bg-slate-400 text-white border border-white/50">
+                <Info className="w-2 h-2" />
               </div>
               <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity z-30 pointer-events-none">
                 <div className="bg-[var(--background)] border border-[var(--border)] rounded px-2 py-1.5 text-xs whitespace-nowrap shadow-lg max-w-[200px]">
@@ -339,7 +355,9 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', expa
           You
         </span>
         <span className="flex items-center gap-1">
-          <div className="w-3 h-3 rounded bg-[var(--shelter-color)]" />
+          <div className="w-3 h-3 rounded bg-[var(--shelter-color)] flex items-center justify-center">
+            <Home className="w-2 h-2 text-white" />
+          </div>
           Shelter
         </span>
         <span className="flex items-center gap-1">
@@ -347,12 +365,10 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', expa
           Resupply
         </span>
         <span className="flex items-center gap-1">
-          <div className="w-3 h-3 rounded-full bg-purple-500" />
-          Feature
-        </span>
-        <span className="flex items-center gap-1">
-          <div className="w-4 h-2 bg-[var(--accent)]/30 rounded-sm" />
-          Elevation
+          <div className="w-3 h-3 rounded-full bg-slate-400 flex items-center justify-center">
+            <Info className="w-2 h-2 text-white" />
+          </div>
+          Info
         </span>
       </div>
     </motion.div>

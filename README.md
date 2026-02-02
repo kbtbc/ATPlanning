@@ -1,6 +1,6 @@
 # AT Thru-Hike Planner
 
-A modern web app for planning Appalachian Trail thru-hikes and resupply stops. Features geolocation, flexible mileage planning (10-22 miles/day), and comprehensive waypoint data.
+A modern web app for planning Appalachian Trail thru-hikes and resupply stops. Features geolocation, flexible mileage planning (8-25 miles/day), and comprehensive waypoint data.
 
 ## Features
 
@@ -11,17 +11,22 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - Progress visualization (% complete)
 
 ### Hike Planner
-- Flexible daily mileage (8-25 miles/day)
+- Flexible daily mileage (8-25 miles/day) via slider
 - Adjustable start date for planning
 - Support for NOBO and SOBO hiking directions
 - 1-14 day planning horizon
-- Preset mileage options: 10, 12, 15, 18, 20, 22 miles
-- Daily itinerary with shelters, resupply, and features
-- "Set as start" button on each day to quickly re-plan from any point
+- Daily itinerary with shelters, resupply, and features sorted by mileage (in order of encounter)
+- "Set as start" button on each day and each location to quickly re-plan from any point
 - Interactive elevation profile with high-resolution GPX data (~5,000 points at 0.5mi intervals)
-- Mini-map showing shelters, resupply points, and notable features positioned on the elevation line
+- Mini-map showing shelters (home icon), resupply points (package), and info markers positioned on the elevation line
+- Day boundary markers on the map showing where each day ends
 - Includes Amicalola Falls approach trail (mile -8.5 to 0)
-- Collapsible sidebar for expanded map view
+
+### Trail Stats (accessible via Stats tab)
+- Total miles breakdown
+- Shelter and resupply counts
+- Miles by state visualization
+- NOBO/SOBO direction reference
 
 ### Resupply Planner
 - 57 resupply points from Georgia to Maine

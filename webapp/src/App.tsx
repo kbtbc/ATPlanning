@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mountain, Map, Package, Search, Navigation, Menu, X, ChevronLeft, ChevronRight, BarChart3 } from 'lucide-react';
+import { Mountain, Map, Package, Search, Navigation, Menu, X, BarChart3 } from 'lucide-react';
 import { LocationPanel } from './components/LocationPanel';
 import { HikePlanner } from './components/HikePlanner';
 import { WaypointList } from './components/WaypointList';
@@ -9,20 +9,20 @@ import { TrailProgress } from './components/TrailProgress';
 import { cn } from './lib/utils';
 import './index.css';
 
-type Tab = 'location' | 'planner' | 'resupply' | 'waypoints';
+type Tab = 'location' | 'planner' | 'resupply' | 'waypoints' | 'stats';
 
 const tabs: { id: Tab; label: string; icon: React.ReactNode }[] = [
   { id: 'location', label: 'Location', icon: <Navigation className="w-5 h-5" /> },
   { id: 'planner', label: 'Planner', icon: <Map className="w-5 h-5" /> },
   { id: 'resupply', label: 'Resupply', icon: <Package className="w-5 h-5" /> },
   { id: 'waypoints', label: 'Waypoints', icon: <Search className="w-5 h-5" /> },
+  { id: 'stats', label: 'Stats', icon: <BarChart3 className="w-5 h-5" /> },
 ];
 
 function App() {
-  const [activeTab, setActiveTab] = useState<Tab>('location');
+  const [activeTab, setActiveTab] = useState<Tab>('planner');
   const [currentMile, setCurrentMile] = useState<number>(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   const handleLocationFound = (mile: number) => {
     setCurrentMile(mile);
@@ -32,7 +32,7 @@ function App() {
     <div className="min-h-screen bg-[var(--background)]">
       {/* Header */}
       <header className="sticky top-0 z-40 bg-[var(--background)]/80 backdrop-blur-lg border-b border-[var(--border)]">
-        <div className="max-w-6xl mx-auto px-4 py-4">
+        <div className="max-w-4xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -55,7 +55,7 @@ function App() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={cn(
-                    'flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all',
+                    'flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all',
                     activeTab === tab.id
                       ? 'bg-[var(--primary)] text-white'
                       : 'text-[var(--foreground-muted)] hover:text-[var(--foreground)] hover:bg-[var(--background)]'
@@ -112,145 +112,93 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-4 py-6">
-        <div className={cn(
-          "grid grid-cols-1 gap-6 transition-all duration-300",
-          sidebarCollapsed ? "lg:grid-cols-1" : "lg:grid-cols-3"
-        )}>
-          {/* Left Column - Trail Overview (collapsible on desktop) */}
-          <aside className={cn(
-            "hidden lg:block transition-all duration-300",
-            sidebarCollapsed && "lg:hidden"
-          )}>
-            <div className="sticky top-24 space-y-6">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="text-sm font-medium text-[var(--foreground-muted)]">Trail Stats</h3>
+      <main className="max-w-4xl mx-auto px-4 py-6">
+        <AnimatePresence mode="wait">
+          {activeTab === 'location' && (
+            <motion.div
+              key="location"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="space-y-6"
+            >
+              <LocationPanel onLocationFound={handleLocationFound} />
+
+              {/* Quick Actions */}
+              <div className="grid grid-cols-2 gap-4">
                 <button
-                  onClick={() => setSidebarCollapsed(true)}
-                  className="p-1.5 rounded-lg hover:bg-[var(--background-secondary)] text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors"
-                  title="Collapse sidebar"
+                  onClick={() => setActiveTab('planner')}
+                  className="p-4 rounded-xl bg-[var(--background-secondary)] border border-[var(--border)] hover:border-[var(--accent)] transition-all text-left"
                 >
-                  <ChevronLeft className="w-4 h-4" />
+                  <Map className="w-8 h-8 text-[var(--accent)] mb-2" />
+                  <h3 className="font-medium">Plan Your Hike</h3>
+                  <p className="text-sm text-[var(--foreground-muted)]">
+                    Create daily itineraries
+                  </p>
+                </button>
+                <button
+                  onClick={() => setActiveTab('resupply')}
+                  className="p-4 rounded-xl bg-[var(--background-secondary)] border border-[var(--border)] hover:border-[var(--accent)] transition-all text-left"
+                >
+                  <Package className="w-8 h-8 text-[var(--secondary)] mb-2" />
+                  <h3 className="font-medium">Find Resupply</h3>
+                  <p className="text-sm text-[var(--foreground-muted)]">
+                    Towns & stores ahead
+                  </p>
                 </button>
               </div>
-              <TrailProgress />
-
-              {/* Quick Stats */}
-              {currentMile > 0 && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-xl p-5 text-white"
-                >
-                  <p className="text-sm opacity-80">Your Position</p>
-                  <p className="text-3xl font-bold mt-1">Mile {currentMile.toFixed(1)}</p>
-                  <p className="text-sm opacity-80 mt-2">
-                    {(2197.4 - currentMile).toFixed(1)} miles to Katahdin
-                  </p>
-                </motion.div>
-              )}
-            </div>
-          </aside>
-
-          {/* Collapsed Sidebar Toggle */}
-          {sidebarCollapsed && (
-            <div className="hidden lg:block fixed left-4 top-24 z-30">
-              <button
-                onClick={() => setSidebarCollapsed(false)}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--background-secondary)] border border-[var(--border)] hover:border-[var(--accent)] text-sm font-medium transition-all shadow-sm"
-                title="Show trail stats"
-              >
-                <BarChart3 className="w-4 h-4 text-[var(--accent)]" />
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
+            </motion.div>
           )}
 
-          {/* Main Content Area */}
-          <div className={cn(
-            "transition-all duration-300",
-            sidebarCollapsed ? "lg:col-span-1" : "lg:col-span-2"
-          )}>
-            <AnimatePresence mode="wait">
-              {activeTab === 'location' && (
-                <motion.div
-                  key="location"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  className="space-y-6"
-                >
-                  <div className="lg:hidden">
-                    <TrailProgress />
-                  </div>
-                  <LocationPanel onLocationFound={handleLocationFound} />
+          {activeTab === 'planner' && (
+            <motion.div
+              key="planner"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+            >
+              <HikePlanner initialMile={currentMile} />
+            </motion.div>
+          )}
 
-                  {/* Quick Actions */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <button
-                      onClick={() => setActiveTab('planner')}
-                      className="p-4 rounded-xl bg-[var(--background-secondary)] border border-[var(--border)] hover:border-[var(--accent)] transition-all text-left"
-                    >
-                      <Map className="w-8 h-8 text-[var(--accent)] mb-2" />
-                      <h3 className="font-medium">Plan Your Hike</h3>
-                      <p className="text-sm text-[var(--foreground-muted)]">
-                        Create daily itineraries
-                      </p>
-                    </button>
-                    <button
-                      onClick={() => setActiveTab('resupply')}
-                      className="p-4 rounded-xl bg-[var(--background-secondary)] border border-[var(--border)] hover:border-[var(--accent)] transition-all text-left"
-                    >
-                      <Package className="w-8 h-8 text-[var(--secondary)] mb-2" />
-                      <h3 className="font-medium">Find Resupply</h3>
-                      <p className="text-sm text-[var(--foreground-muted)]">
-                        Towns & stores ahead
-                      </p>
-                    </button>
-                  </div>
-                </motion.div>
-              )}
+          {activeTab === 'resupply' && (
+            <motion.div
+              key="resupply"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+            >
+              <ResupplyPlanner currentMile={currentMile} />
+            </motion.div>
+          )}
 
-              {activeTab === 'planner' && (
-                <motion.div
-                  key="planner"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                >
-                  <HikePlanner initialMile={currentMile} expanded={sidebarCollapsed} />
-                </motion.div>
-              )}
+          {activeTab === 'waypoints' && (
+            <motion.div
+              key="waypoints"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+            >
+              <WaypointList />
+            </motion.div>
+          )}
 
-              {activeTab === 'resupply' && (
-                <motion.div
-                  key="resupply"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                >
-                  <ResupplyPlanner currentMile={currentMile} />
-                </motion.div>
-              )}
-
-              {activeTab === 'waypoints' && (
-                <motion.div
-                  key="waypoints"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                >
-                  <WaypointList />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        </div>
+          {activeTab === 'stats' && (
+            <motion.div
+              key="stats"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+            >
+              <TrailProgress />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </main>
 
       {/* Footer */}
       <footer className="border-t border-[var(--border)] mt-12 py-8">
-        <div className="max-w-6xl mx-auto px-4 text-center text-sm text-[var(--foreground-muted)]">
+        <div className="max-w-4xl mx-auto px-4 text-center text-sm text-[var(--foreground-muted)]">
           <p>
             AT Thru-Hike Planner · 2,197.4 miles from Springer Mountain, GA to Mt. Katahdin, ME
           </p>

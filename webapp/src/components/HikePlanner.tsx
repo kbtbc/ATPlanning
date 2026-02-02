@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
-import { Calendar, TrendingUp, Mountain, Package, ChevronDown, ChevronUp, CalendarDays, MapPin } from 'lucide-react';
-import { useState } from 'react';
+import { Calendar, TrendingUp, Home, Package, ChevronDown, ChevronUp, CalendarDays, MapPin, Info } from 'lucide-react';
+import { useState, useMemo } from 'react';
 import { useHikePlanner } from '../hooks/useHikePlanner';
 import { cn, formatMile, addDays, formatDate } from '../lib/utils';
 import { TRAIL_LENGTH } from '../data';
 import { MiniMap } from './MiniMap';
+import type { Shelter, ResupplyPoint, Waypoint } from '../types';
 
 interface HikePlannerProps {
   initialMile?: number;
-  expanded?: boolean;
 }
 
 // Helper to format date for input
@@ -19,7 +19,13 @@ function formatDateForInput(date: Date): string {
   return `${year}-${month}-${day}`;
 }
 
-export function HikePlanner({ initialMile = 0, expanded = false }: HikePlannerProps) {
+// Type for combined itinerary items
+type ItineraryItem =
+  | { type: 'shelter'; data: Shelter }
+  | { type: 'resupply'; data: ResupplyPoint }
+  | { type: 'feature'; data: Waypoint };
+
+export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
   const {
     startMile,
     targetMilesPerDay,
@@ -40,8 +46,6 @@ export function HikePlanner({ initialMile = 0, expanded = false }: HikePlannerPr
 
   const [expandedDay, setExpandedDay] = useState<number | null>(null);
 
-  const mileagePresets = [10, 12, 15, 18, 20, 22];
-
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newDate = new Date(e.target.value + 'T00:00:00');
     if (!isNaN(newDate.getTime())) {
@@ -49,10 +53,23 @@ export function HikePlanner({ initialMile = 0, expanded = false }: HikePlannerPr
     }
   };
 
+  // Generate day markers for the map
+  const dayMarkers = useMemo(() => {
+    return plan.map(day => ({
+      mile: day.endMile,
+      day: day.day,
+    }));
+  }, [plan]);
+
   return (
     <div className="space-y-6">
-      {/* Mini Map */}
-      <MiniMap currentMile={startMile} rangeAhead={totalMiles} direction={direction} expanded={expanded} />
+      {/* Mini Map with day markers */}
+      <MiniMap
+        currentMile={startMile}
+        rangeAhead={totalMiles}
+        direction={direction}
+        dayMarkers={dayMarkers}
+      />
 
       {/* Controls */}
       <motion.div
@@ -149,7 +166,7 @@ export function HikePlanner({ initialMile = 0, expanded = false }: HikePlannerPr
             </div>
           </div>
 
-          {/* Miles Per Day - Full width */}
+          {/* Miles Per Day */}
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-[var(--foreground-muted)] mb-2">
               Miles Per Day: <span className="font-bold text-[var(--foreground)]">{targetMilesPerDay}</span>
@@ -164,25 +181,8 @@ export function HikePlanner({ initialMile = 0, expanded = false }: HikePlannerPr
               className="w-full accent-[var(--accent)]"
             />
             <div className="flex justify-between text-xs text-[var(--foreground-muted)] mt-1">
-              <span>8</span>
-              <span>25</span>
-            </div>
-            {/* Presets */}
-            <div className="flex flex-wrap gap-2 mt-2">
-              {mileagePresets.map((miles) => (
-                <button
-                  key={miles}
-                  onClick={() => setTargetMiles(miles)}
-                  className={cn(
-                    'px-2 py-1 text-xs rounded-md transition-all',
-                    targetMilesPerDay === miles
-                      ? 'bg-[var(--accent)] text-white'
-                      : 'bg-[var(--background)] border border-[var(--border)] hover:border-[var(--accent)]'
-                  )}
-                >
-                  {miles} mi
-                </button>
-              ))}
+              <span>8 mi</span>
+              <span>25 mi</span>
             </div>
           </div>
         </div>
@@ -220,6 +220,17 @@ export function HikePlanner({ initialMile = 0, expanded = false }: HikePlannerPr
           const isExpanded = expandedDay === day.day;
           const dailyMiles = Math.abs(day.endMile - day.startMile);
 
+          // Combine and sort all items by mileage
+          const allItems: ItineraryItem[] = [
+            ...day.shelters.map(s => ({ type: 'shelter' as const, data: s })),
+            ...day.resupply.map(r => ({ type: 'resupply' as const, data: r })),
+            ...day.features.map(f => ({ type: 'feature' as const, data: f })),
+          ].sort((a, b) => {
+            const mileA = a.data.mile;
+            const mileB = b.data.mile;
+            return direction === 'NOBO' ? mileA - mileB : mileB - mileA;
+          });
+
           return (
             <motion.div
               key={day.day}
@@ -229,7 +240,10 @@ export function HikePlanner({ initialMile = 0, expanded = false }: HikePlannerPr
               className="bg-[var(--background-secondary)] rounded-xl border border-[var(--border)] overflow-hidden"
             >
               {/* Day Header */}
-              <div className="flex items-center justify-between p-4 hover:bg-[var(--background)] transition-colors">
+              <div
+                className="flex items-center justify-between p-4 hover:bg-[var(--background)] transition-colors cursor-pointer"
+                onClick={() => setExpandedDay(isExpanded ? null : day.day)}
+              >
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-lg bg-[var(--primary)] text-white flex items-center justify-center font-bold">
                     {day.day}
@@ -265,7 +279,7 @@ export function HikePlanner({ initialMile = 0, expanded = false }: HikePlannerPr
                     </span>
                     {day.shelters.length > 0 && (
                       <span className="flex items-center gap-1 text-[var(--shelter-color)]">
-                        <Mountain className="w-4 h-4" />
+                        <Home className="w-4 h-4" />
                         {day.shelters.length}
                       </span>
                     )}
@@ -277,7 +291,10 @@ export function HikePlanner({ initialMile = 0, expanded = false }: HikePlannerPr
                     )}
                   </div>
                   <button
-                    onClick={() => setExpandedDay(isExpanded ? null : day.day)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setExpandedDay(isExpanded ? null : day.day);
+                    }}
                     className="p-1"
                   >
                     {isExpanded ? (
@@ -289,7 +306,7 @@ export function HikePlanner({ initialMile = 0, expanded = false }: HikePlannerPr
                 </div>
               </div>
 
-              {/* Expanded Content */}
+              {/* Expanded Content - Items sorted by mileage */}
               {isExpanded && (
                 <motion.div
                   initial={{ height: 0, opacity: 0 }}
@@ -297,118 +314,154 @@ export function HikePlanner({ initialMile = 0, expanded = false }: HikePlannerPr
                   exit={{ height: 0, opacity: 0 }}
                   className="px-4 pb-4 border-t border-[var(--border)]"
                 >
-                  {/* Shelters */}
-                  {day.shelters.length > 0 && (
-                    <div className="mt-4">
-                      <h4 className="text-sm font-medium text-[var(--foreground-muted)] mb-2 flex items-center gap-2">
-                        <Mountain className="w-4 h-4" />
-                        Shelters ({day.shelters.length})
-                      </h4>
-                      <div className="space-y-2">
-                        {day.shelters.map((shelter) => (
-                          <div
-                            key={shelter.id}
-                            className="flex items-center justify-between p-2 rounded-lg bg-[var(--background)] border border-[var(--border-light)]"
-                          >
-                            <div>
-                              <p className="font-medium text-sm">{shelter.name}</p>
-                              <p className="text-xs text-[var(--foreground-muted)]">
-                                Mile {formatMile(shelter.mile)} · {shelter.elevation.toLocaleString()} ft
-                              </p>
-                            </div>
-                            <div className="flex gap-1">
-                              {shelter.hasWater && (
-                                <span className="px-2 py-0.5 text-xs rounded bg-blue-100 text-blue-700">Water</span>
-                              )}
-                              {shelter.hasPrivy && (
-                                <span className="px-2 py-0.5 text-xs rounded bg-gray-100 text-gray-700">Privy</span>
-                              )}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Resupply */}
-                  {day.resupply.length > 0 && (
-                    <div className="mt-4">
-                      <h4 className="text-sm font-medium text-[var(--foreground-muted)] mb-2 flex items-center gap-2">
-                        <Package className="w-4 h-4" />
-                        Resupply Options ({day.resupply.length})
-                      </h4>
-                      <div className="space-y-2">
-                        {day.resupply.map((resupply) => (
-                          <div
-                            key={resupply.id}
-                            className="p-3 rounded-lg bg-[var(--background)] border border-[var(--border-light)]"
-                          >
-                            <div className="flex items-start justify-between">
-                              <div>
-                                <p className="font-medium text-sm">{resupply.name}</p>
-                                <p className="text-xs text-[var(--foreground-muted)]">
-                                  Mile {formatMile(resupply.mile)}
-                                  {resupply.distanceFromTrail > 0 && ` · ${resupply.distanceFromTrail} mi off trail`}
-                                </p>
+                  {allItems.length > 0 ? (
+                    <div className="mt-4 space-y-2">
+                      {allItems.map((item) => {
+                        if (item.type === 'shelter') {
+                          const shelter = item.data;
+                          return (
+                            <div
+                              key={shelter.id}
+                              className="flex items-center justify-between p-3 rounded-lg bg-[var(--background)] border border-[var(--border-light)]"
+                            >
+                              <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 rounded bg-[var(--shelter-color)] flex items-center justify-center">
+                                  <Home className="w-4 h-4 text-white" />
+                                </div>
+                                <div>
+                                  <p className="font-medium text-sm">{shelter.name}</p>
+                                  <p className="text-xs text-[var(--foreground-muted)]">
+                                    Mile {formatMile(shelter.mile)} · {shelter.elevation.toLocaleString()} ft
+                                  </p>
+                                </div>
                               </div>
-                              <span className={cn(
-                                'px-2 py-0.5 text-xs rounded font-medium',
-                                resupply.resupplyQuality === 'full' && 'bg-green-100 text-green-700',
-                                resupply.resupplyQuality === 'limited' && 'bg-yellow-100 text-yellow-700',
-                                resupply.resupplyQuality === 'minimal' && 'bg-red-100 text-red-700'
-                              )}>
-                                {resupply.resupplyQuality}
-                              </span>
+                              <div className="flex items-center gap-2">
+                                <div className="flex gap-1">
+                                  {shelter.hasWater && (
+                                    <span className="px-2 py-0.5 text-xs rounded bg-blue-100 text-blue-700">Water</span>
+                                  )}
+                                  {shelter.hasPrivy && (
+                                    <span className="px-2 py-0.5 text-xs rounded bg-gray-100 text-gray-700">Privy</span>
+                                  )}
+                                </div>
+                                <button
+                                  onClick={() => {
+                                    setStartMile(shelter.mile);
+                                  }}
+                                  className="p-1.5 rounded text-[var(--foreground-muted)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/10 transition-all"
+                                  title="Start from here"
+                                >
+                                  <MapPin className="w-3.5 h-3.5" />
+                                </button>
+                              </div>
                             </div>
-                            <div className="flex flex-wrap gap-1 mt-2">
-                              {resupply.hasGrocery && (
-                                <span className="px-2 py-0.5 text-xs rounded bg-[var(--border-light)]">Grocery</span>
-                              )}
-                              {resupply.hasPostOffice && (
-                                <span className="px-2 py-0.5 text-xs rounded bg-[var(--border-light)]">Post Office</span>
-                              )}
-                              {resupply.hasLodging && (
-                                <span className="px-2 py-0.5 text-xs rounded bg-[var(--border-light)]">Lodging</span>
-                              )}
-                              {resupply.hasRestaurant && (
-                                <span className="px-2 py-0.5 text-xs rounded bg-[var(--border-light)]">Food</span>
-                              )}
-                              {resupply.hasShower && (
-                                <span className="px-2 py-0.5 text-xs rounded bg-[var(--border-light)]">Shower</span>
+                          );
+                        }
+
+                        if (item.type === 'resupply') {
+                          const resupply = item.data;
+                          return (
+                            <div
+                              key={resupply.id}
+                              className="p-3 rounded-lg bg-[var(--background)] border border-[var(--border-light)]"
+                            >
+                              <div className="flex items-start justify-between">
+                                <div className="flex items-start gap-3">
+                                  <div className={cn(
+                                    'w-8 h-8 rounded-full flex items-center justify-center shrink-0',
+                                    resupply.resupplyQuality === 'full' && 'bg-green-500',
+                                    resupply.resupplyQuality === 'limited' && 'bg-yellow-500',
+                                    resupply.resupplyQuality === 'minimal' && 'bg-orange-500'
+                                  )}>
+                                    <Package className="w-4 h-4 text-white" />
+                                  </div>
+                                  <div>
+                                    <p className="font-medium text-sm">{resupply.name}</p>
+                                    <p className="text-xs text-[var(--foreground-muted)]">
+                                      Mile {formatMile(resupply.mile)}
+                                      {resupply.distanceFromTrail > 0 && ` · ${resupply.distanceFromTrail} mi off trail`}
+                                    </p>
+                                  </div>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                  <span className={cn(
+                                    'px-2 py-0.5 text-xs rounded font-medium',
+                                    resupply.resupplyQuality === 'full' && 'bg-green-100 text-green-700',
+                                    resupply.resupplyQuality === 'limited' && 'bg-yellow-100 text-yellow-700',
+                                    resupply.resupplyQuality === 'minimal' && 'bg-red-100 text-red-700'
+                                  )}>
+                                    {resupply.resupplyQuality}
+                                  </span>
+                                  <button
+                                    onClick={() => {
+                                      setStartMile(resupply.mile);
+                                    }}
+                                    className="p-1.5 rounded text-[var(--foreground-muted)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/10 transition-all"
+                                    title="Start from here"
+                                  >
+                                    <MapPin className="w-3.5 h-3.5" />
+                                  </button>
+                                </div>
+                              </div>
+                              <div className="flex flex-wrap gap-1 mt-2 ml-11">
+                                {resupply.hasGrocery && (
+                                  <span className="px-2 py-0.5 text-xs rounded bg-[var(--border-light)]">Grocery</span>
+                                )}
+                                {resupply.hasPostOffice && (
+                                  <span className="px-2 py-0.5 text-xs rounded bg-[var(--border-light)]">Post Office</span>
+                                )}
+                                {resupply.hasLodging && (
+                                  <span className="px-2 py-0.5 text-xs rounded bg-[var(--border-light)]">Lodging</span>
+                                )}
+                                {resupply.hasRestaurant && (
+                                  <span className="px-2 py-0.5 text-xs rounded bg-[var(--border-light)]">Food</span>
+                                )}
+                                {resupply.hasShower && (
+                                  <span className="px-2 py-0.5 text-xs rounded bg-[var(--border-light)]">Shower</span>
+                                )}
+                              </div>
+                              {resupply.notes && (
+                                <p className="text-xs text-[var(--foreground-muted)] mt-2 ml-11 italic">{resupply.notes}</p>
                               )}
                             </div>
-                            {resupply.notes && (
-                              <p className="text-xs text-[var(--foreground-muted)] mt-2 italic">{resupply.notes}</p>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                          );
+                        }
 
-                  {/* Features */}
-                  {day.features.length > 0 && (
-                    <div className="mt-4">
-                      <h4 className="text-sm font-medium text-[var(--foreground-muted)] mb-2">
-                        Notable Features ({day.features.length})
-                      </h4>
-                      <div className="space-y-1">
-                        {day.features.map((feature) => (
-                          <div
-                            key={feature.id}
-                            className="flex items-center justify-between p-2 rounded-lg bg-[var(--background)] border border-[var(--border-light)]"
-                          >
-                            <span className="text-sm">{feature.name}</span>
-                            <span className="text-xs text-[var(--foreground-muted)]">
-                              Mile {formatMile(feature.mile)}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                        if (item.type === 'feature') {
+                          const feature = item.data;
+                          return (
+                            <div
+                              key={feature.id}
+                              className="flex items-center justify-between p-3 rounded-lg bg-[var(--background)] border border-[var(--border-light)]"
+                            >
+                              <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-full bg-slate-400 flex items-center justify-center">
+                                  <Info className="w-4 h-4 text-white" />
+                                </div>
+                                <div>
+                                  <p className="font-medium text-sm">{feature.name}</p>
+                                  <p className="text-xs text-[var(--foreground-muted)]">
+                                    Mile {formatMile(feature.mile)} · {feature.elevation.toLocaleString()} ft
+                                  </p>
+                                </div>
+                              </div>
+                              <button
+                                onClick={() => {
+                                  setStartMile(feature.mile);
+                                }}
+                                className="p-1.5 rounded text-[var(--foreground-muted)] hover:text-[var(--primary)] hover:bg-[var(--primary)]/10 transition-all"
+                                title="Start from here"
+                              >
+                                <MapPin className="w-3.5 h-3.5" />
+                              </button>
+                            </div>
+                          );
+                        }
 
-                  {day.shelters.length === 0 && day.resupply.length === 0 && day.features.length === 0 && (
+                        return null;
+                      })}
+                    </div>
+                  ) : (
                     <p className="text-sm text-[var(--foreground-muted)] mt-4 italic">
                       No shelters, resupply, or notable features in this section.
                     </p>
