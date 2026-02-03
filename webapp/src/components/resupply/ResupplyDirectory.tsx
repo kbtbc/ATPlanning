@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Search, MapPin, Phone, ChevronDown, ChevronUp, Package } from 'lucide-react';
+import { Search, Phone, ChevronDown, ChevronUp, Package } from 'lucide-react';
 import { resupplyPoints } from '../../data/resupply';
 import { resupplyContacts, getContactsByResupplyId, hasContactInfo } from '../../data/contacts';
 import { ContactCard } from './ContactCard';
@@ -184,21 +184,8 @@ export function ResupplyDirectory({ onSelectResupply }: ResupplyDirectoryProps) 
                   )}
 
                   {/* Actions */}
-                  <div className="flex gap-2 mt-3 pt-2 border-t border-[var(--border-light)]">
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        window.open(
-                          `https://maps.google.com/?q=${encodeURIComponent(resupply.name + ', ' + resupply.state)}`,
-                          '_blank'
-                        );
-                      }}
-                      className="btn btn-secondary py-1 px-2 text-xs flex items-center gap-1"
-                    >
-                      <MapPin className="w-3 h-3" />
-                      View on Map
-                    </button>
-                    {onSelectResupply && (
+                  {onSelectResupply && (
+                    <div className="flex gap-2 mt-3 pt-2 border-t border-[var(--border-light)]">
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
@@ -208,8 +195,8 @@ export function ResupplyDirectory({ onSelectResupply }: ResupplyDirectoryProps) 
                       >
                         Start From Here
                       </button>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </motion.div>
               )}
             </motion.div>
