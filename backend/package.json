@@ -1,0 +1,20 @@
+{
+  "name": "at-hike-planner-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --hot src/index.ts",
+    "start": "bun src/index.ts"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.4.3",
+    "@vibecodeapp/backend-sdk": "^1.0.1",
+    "@vibecodeapp/cloud-studio": "^0.2.4",
+    "@vibecodeapp/proxy": "^2.0.3",
+    "hono": "^4.7.10",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.5"
+  }
+}

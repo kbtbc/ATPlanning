@@ -2,6 +2,8 @@
 
 A modern web app for planning Appalachian Trail thru-hikes and resupply stops. Features geolocation, flexible mileage planning (8-25 miles/day), and comprehensive waypoint data.
 
+> **Vibecode Project**: This app is built and deployed on [Vibecode](https://vibecode.dev). See the [Vibecode Configuration](#vibecode-configuration) section for important setup details.
+
 ## Features
 
 ### Location Tracking
@@ -138,3 +140,54 @@ Always verify with current guidebooks and local conditions before hiking.
 ## Disclaimer
 
 This app is for informational purposes only. Not affiliated with the Appalachian Trail Conservancy. Trail conditions change frequently - always check current conditions before your hike.
+
+---
+
+## Vibecode Configuration
+
+This project is configured for the Vibecode platform. When modifying locally, preserve these settings:
+
+### Critical Files (DO NOT REMOVE)
+
+| File | Purpose |
+|------|---------|
+| `backend/src/index.ts` line 1 | `import "@vibecodeapp/proxy"` - Required for Vibecode proxy |
+| `.claude/rules/api-patterns.md` | API contract patterns for backend/frontend communication |
+| `backend/CLAUDE.md` | Backend development instructions |
+| `backend/scripts/start` | Vibecode-compatible startup script |
+| `backend/scripts/env.sh` | Environment configuration |
+
+### Environment Variables
+
+The following environment variables are managed by Vibecode:
+
+- `VITE_BACKEND_URL` - Backend API URL (auto-configured)
+- `BACKEND_URL` - Backend URL for server-side use
+- `PORT` - Backend server port (default: 3000)
+- `ENVIRONMENT` - `development` or `production`
+- `VIBECODE_PROJECT_ID` - Project identifier (auto-set)
+
+### CORS Configuration
+
+The backend CORS is configured to allow:
+- `http://localhost:*` and `http://127.0.0.1:*` (local development)
+- `https://*.dev.vibecode.run` (Vibecode preview)
+- `https://*.vibecode.run` (Vibecode production)
+
+Do not modify the CORS configuration in `backend/src/index.ts` unless you understand the implications.
+
+### Deployment
+
+To deploy, click the **Deploy** button on vibecode.dev. The platform handles:
+- Building the frontend (`bun run build`)
+- Starting the backend (`scripts/start`)
+- Database migrations (if Prisma is configured)
+- SSL certificates and domain routing
+
+### Adding Database/Auth
+
+If you need persistent storage or user authentication, use the `database-auth` skill in Vibecode. This will:
+- Add Prisma ORM with SQLite
+- Add Better Auth for user authentication
+- Update the backend configuration automatically
+
