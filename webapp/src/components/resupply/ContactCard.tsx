@@ -72,18 +72,18 @@ export function ContactCard({ business, compact = false }: ContactCardProps) {
             <button
               onClick={handleCall}
               className="p-1 rounded hover:bg-[var(--background-secondary)] text-[var(--primary)]"
-              title={`Call ${business.phone}`}
+              aria-label={`Call ${business.name} at ${business.phone}`}
             >
-              <Phone className="w-3.5 h-3.5" />
+              <Phone className="w-3.5 h-3.5" aria-hidden="true" />
             </button>
           )}
           {(business.googleMapsUrl || business.address) && (
             <button
               onClick={handleMap}
               className="p-1 rounded hover:bg-[var(--background-secondary)] text-[var(--accent)]"
-              title="Open in Maps"
+              aria-label={`Open ${business.name} in Maps`}
             >
-              <MapPin className="w-3.5 h-3.5" />
+              <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
             </button>
           )}
         </div>

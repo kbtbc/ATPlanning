@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Mountain, Compass, Navigation, Edit3, Check, X } from 'lucide-react';
 import { useGeolocation } from '../hooks/useGeolocation';
+import { useIsMobile } from '../hooks/use-mobile';
 import { cn, formatMile, formatDistance } from '../lib/utils';
 import { TRAIL_LENGTH, getNearestWaypoint } from '../data';
 
@@ -10,6 +11,7 @@ interface LocationPanelProps {
 }
 
 export function LocationPanel({ onLocationFound }: LocationPanelProps) {
+  const isMobile = useIsMobile();
   const {
     latitude,
     longitude,
@@ -92,13 +94,15 @@ export function LocationPanel({ onLocationFound }: LocationPanelProps) {
               type="number"
               value={manualInput}
               onChange={(e) => setManualInput(e.target.value)}
-              placeholder="e.g. 450.5"
+              placeholder="e.g., 450.5"
               min={0}
               max={TRAIL_LENGTH}
               step={0.1}
+              inputMode="decimal"
+              autoComplete="off"
               className="flex-1 px-3 py-2 rounded-lg border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] focus:border-[var(--accent)] focus:outline-none"
               onKeyDown={(e) => e.key === 'Enter' && handleManualSubmit()}
-              autoFocus
+              autoFocus={!isMobile}
             />
             <button
               onClick={handleManualSubmit}

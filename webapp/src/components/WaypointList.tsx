@@ -64,8 +64,10 @@ export function WaypointList({ onWaypointSelect, initialMileRange }: WaypointLis
             'absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-lg transition-colors',
             showFilters ? 'bg-[var(--accent)] text-white' : 'hover:bg-[var(--border)]'
           )}
+          aria-label={showFilters ? 'Hide filters' : 'Show filters'}
+          aria-expanded={showFilters}
         >
-          <Filter className="w-5 h-5" />
+          <Filter className="w-5 h-5" aria-hidden="true" />
         </button>
       </div>
 
@@ -260,8 +262,9 @@ export function WaypointList({ onWaypointSelect, initialMileRange }: WaypointLis
                 <button
                   onClick={() => setSelectedWaypoint(null)}
                   className="p-2 rounded-lg hover:bg-[var(--border)] transition-colors"
+                  aria-label="Close details"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-5 h-5" aria-hidden="true" />
                 </button>
               </div>
 

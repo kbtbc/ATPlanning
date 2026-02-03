@@ -75,8 +75,10 @@ function App() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden btn-ghost p-2 rounded-lg"
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
             </button>
           </div>
 

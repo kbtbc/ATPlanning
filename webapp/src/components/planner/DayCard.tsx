@@ -84,8 +84,9 @@ export function DayCard({
               }}
               className="btn-ghost p-1.5 rounded"
               title="Set as new starting point"
+              aria-label={`Set day ${day.day} as new starting point`}
             >
-              <MapPin className="w-3.5 h-3.5" />
+              <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
             </button>
           )}
 
