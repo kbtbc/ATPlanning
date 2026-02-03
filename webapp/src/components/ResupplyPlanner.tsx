@@ -155,8 +155,8 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
 
         <div className="space-y-1">
           {upcomingResupply.map((resupply, index) => {
-            const contacts = getContactsByResupplyId(resupply.id);
-            const hasContacts = hasContactInfo(resupply.id);
+            const contacts = resupply.businesses ? { resupplyId: resupply.id, businesses: resupply.businesses } : getContactsByResupplyId(resupply.id);
+            const hasContacts = (resupply.businesses && resupply.businesses.length > 0) || hasContactInfo(resupply.id);
             const isExpanded = expandedResupply === resupply.id;
 
             return (
@@ -230,8 +230,8 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
                           Contact Directory
                         </h5>
                         <div className="grid gap-2">
-                          {contacts.businesses.slice(0, 3).map((business) => (
-                            <ContactCard key={business.id} business={business} compact />
+                          {contacts.businesses.slice(0, 3).map((business, idx) => (
+                            <ContactCard key={business.id || `${resupply.id}-biz-${idx}`} business={business} compact />
                           ))}
                           {contacts.businesses.length > 3 && (
                             <button

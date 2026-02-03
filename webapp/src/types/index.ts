@@ -39,6 +39,7 @@ export interface ResupplyPoint extends Waypoint {
   distanceFromTrail: number;
   shuttleAvailable?: boolean;
   notes?: string;
+  businesses?: Business[];
 }
 
 export interface Shelter extends Waypoint {
@@ -104,7 +105,7 @@ export interface ContactInfo {
 }
 
 export interface Business {
-  id: string;
+  id?: string;
   name: string;
   type: BusinessType;
   phone?: string;

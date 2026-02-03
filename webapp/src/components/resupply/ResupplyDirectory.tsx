@@ -72,16 +72,16 @@ export function ResupplyDirectory({ onSelectResupply }: ResupplyDirectoryProps) 
 
         <p className="text-xs text-[var(--foreground-muted)] mt-2">
           {filteredResupply.length} resupply point{filteredResupply.length !== 1 ? 's' : ''} ·
-          {resupplyContacts.length} with contact info
+          {filteredResupply.filter(r => (r.businesses && r.businesses.length > 0) || hasContactInfo(r.id)).length} with contact info
         </p>
       </div>
 
       {/* Directory List */}
       <div className="space-y-1">
         {filteredResupply.map((resupply, index) => {
-          const contacts = getContactsByResupplyId(resupply.id);
+          const contacts = resupply.businesses ? { resupplyId: resupply.id, businesses: resupply.businesses } : getContactsByResupplyId(resupply.id);
           const isExpanded = expandedId === resupply.id;
-          const hasContacts = hasContactInfo(resupply.id);
+          const hasContacts = (resupply.businesses && resupply.businesses.length > 0) || hasContactInfo(resupply.id);
 
           return (
             <motion.div
@@ -172,8 +172,8 @@ export function ResupplyDirectory({ onSelectResupply }: ResupplyDirectoryProps) 
                         Contact Directory
                       </h5>
                       <div className="grid gap-2">
-                        {contacts.businesses.map((business) => (
-                          <ContactCard key={business.id} business={business} />
+                        {contacts.businesses.map((business, idx) => (
+                          <ContactCard key={business.id || `${resupply.id}-biz-${idx}`} business={business} />
                         ))}
                       </div>
                     </div>
