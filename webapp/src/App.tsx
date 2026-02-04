@@ -6,6 +6,7 @@ import { HikePlanner } from './components/HikePlanner';
 import { WaypointList } from './components/WaypointList';
 import { ResupplyPlanner } from './components/ResupplyPlanner';
 import { TrailProgress } from './components/TrailProgress';
+import { ThemeToggle } from './components/ui';
 import { cn } from './lib/utils';
 import './index.css';
 
@@ -53,33 +54,39 @@ function App() {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-0.5 bg-[var(--background-secondary)] rounded-lg p-0.5">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={cn(
-                    'flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-all',
-                    activeTab === tab.id
-                      ? 'bg-[var(--primary)] text-white shadow-sm'
-                      : 'text-[var(--foreground-muted)] hover:text-[var(--foreground)] hover:bg-[var(--background)]'
-                  )}
-                >
-                  {tab.icon}
-                  <span>{tab.label}</span>
-                </button>
-              ))}
+            <nav className="hidden md:flex items-center gap-2">
+              <div className="flex items-center gap-0.5 bg-[var(--background-secondary)] rounded-lg p-0.5">
+                {tabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={cn(
+                      'flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium transition-all',
+                      activeTab === tab.id
+                        ? 'bg-[var(--primary)] text-white shadow-sm'
+                        : 'text-[var(--foreground-muted)] hover:text-[var(--foreground)] hover:bg-[var(--background)]'
+                    )}
+                  >
+                    {tab.icon}
+                    <span>{tab.label}</span>
+                  </button>
+                ))}
+              </div>
+              <ThemeToggle />
             </nav>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden btn-ghost p-2 rounded-lg"
-              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={mobileMenuOpen}
-            >
-              {mobileMenuOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
-            </button>
+            {/* Mobile: Theme Toggle + Menu Button */}
+            <div className="flex md:hidden items-center gap-2">
+              <ThemeToggle />
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="btn-ghost p-2 rounded-lg"
+                aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={mobileMenuOpen}
+              >
+                {mobileMenuOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Navigation */}

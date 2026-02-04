@@ -1,6 +1,6 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Package, Navigation, TrendingUp, Info, Home } from 'lucide-react';
+import { MapPin, Package, Navigation, TrendingUp, Info, Home, Eye, EyeOff } from 'lucide-react';
 import { getSheltersInRange, getResupplyInRange, getFeaturesInRange, TRAIL_LENGTH } from '../data';
 import { elevationProfile, getElevationAtMile, APPROACH_TRAIL_START } from '../data/elevation';
 import { cn, formatMile } from '../lib/utils';
@@ -13,7 +13,22 @@ interface MiniMapProps {
   dayMarkers?: { mile: number; day: number }[];
 }
 
+type WaypointVisibility = {
+  shelters: boolean;
+  resupply: boolean;
+  features: boolean;
+};
+
 export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayMarkers = [] }: MiniMapProps) {
+  const [visibility, setVisibility] = useState<WaypointVisibility>({
+    shelters: true,
+    resupply: true,
+    features: true,
+  });
+
+  const toggleVisibility = (type: keyof WaypointVisibility) => {
+    setVisibility(prev => ({ ...prev, [type]: !prev[type] }));
+  };
   // Calculate the visible range (show some context before and after)
   // Allow negative miles for approach trail
   const rangeBehind = 10;
@@ -228,7 +243,7 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
           ))}
 
           {/* Shelters - positioned on the elevation line using GPX data */}
-          {shelters.map((shelter) => {
+          {visibility.shelters && shelters.map((shelter) => {
             const xPos = getXPosition(shelter.mile);
             const elevation = getElevationAtMile(shelter.mile);
             const yPos = getYPosition(elevation);
@@ -260,7 +275,7 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
           })}
 
           {/* Resupply Points - positioned on the elevation line using GPX data */}
-          {resupplyPoints.map((resupply) => {
+          {visibility.resupply && resupplyPoints.map((resupply) => {
             const xPos = getXPosition(resupply.mile);
             const elevation = getElevationAtMile(resupply.mile);
             const yPos = getYPosition(elevation);
@@ -300,7 +315,7 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
           })}
 
           {/* Features/Landmarks - positioned on the elevation line using GPX data */}
-          {featurePoints.map((feature) => {
+          {visibility.features && featurePoints.map((feature) => {
             const xPos = getXPosition(feature.mile);
             const elevation = getElevationAtMile(feature.mile);
             const yPos = getYPosition(elevation);
@@ -356,28 +371,49 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
           </div>
         </div>
 
-        {/* Legend */}
-        <div className="flex items-center justify-center gap-4 mt-2 text-xs text-[var(--foreground-muted)]">
+        {/* Legend with toggles */}
+        <div className="flex items-center justify-center gap-3 mt-2 text-xs text-[var(--foreground-muted)]">
           <span className="flex items-center gap-1">
             <div className="w-3 h-3 rounded-full bg-[var(--primary)] border border-white" />
             You
           </span>
-          <span className="flex items-center gap-1">
+          <button
+            onClick={() => toggleVisibility('shelters')}
+            className={cn(
+              'flex items-center gap-1 px-1.5 py-0.5 rounded transition-all',
+              visibility.shelters ? 'opacity-100' : 'opacity-50'
+            )}
+          >
             <div className="w-3 h-3 rounded bg-[var(--shelter-color)] flex items-center justify-center">
               <Home className="w-2 h-2 text-white" />
             </div>
             Shelter
-          </span>
-          <span className="flex items-center gap-1">
+            {visibility.shelters ? <Eye className="w-3 h-3 ml-0.5" /> : <EyeOff className="w-3 h-3 ml-0.5" />}
+          </button>
+          <button
+            onClick={() => toggleVisibility('resupply')}
+            className={cn(
+              'flex items-center gap-1 px-1.5 py-0.5 rounded transition-all',
+              visibility.resupply ? 'opacity-100' : 'opacity-50'
+            )}
+          >
             <div className="w-3 h-3 rounded-full bg-green-500" />
             Resupply
-          </span>
-          <span className="flex items-center gap-1">
+            {visibility.resupply ? <Eye className="w-3 h-3 ml-0.5" /> : <EyeOff className="w-3 h-3 ml-0.5" />}
+          </button>
+          <button
+            onClick={() => toggleVisibility('features')}
+            className={cn(
+              'flex items-center gap-1 px-1.5 py-0.5 rounded transition-all',
+              visibility.features ? 'opacity-100' : 'opacity-50'
+            )}
+          >
             <div className="w-3 h-3 rounded-full bg-[var(--feature-color)] flex items-center justify-center">
               <Info className="w-2 h-2 text-white" />
             </div>
             Info
-          </span>
+            {visibility.features ? <Eye className="w-3 h-3 ml-0.5" /> : <EyeOff className="w-3 h-3 ml-0.5" />}
+          </button>
         </div>
     </motion.div>
   );

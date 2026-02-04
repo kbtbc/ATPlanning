@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Package, Store, Mail, Bed, Utensils, ShowerHead, Shirt, ArrowRight, Phone, BookOpen } from 'lucide-react';
+import { Package, Store, Mail, Bed, Utensils, ShowerHead, Shirt, ArrowRight, Phone, BookOpen, Flag } from 'lucide-react';
 import { resupplyPoints, getNearestResupply } from '../data';
 import { getContactsByResupplyId, hasContactInfo } from '../data/contacts';
 import { ResupplyDirectory } from './resupply/ResupplyDirectory';
@@ -255,10 +255,14 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
         </div>
 
         {upcomingResupply.length === 0 && (
-          <div className="text-center py-8 text-[var(--foreground-muted)]">
-            <Package className="w-10 h-10 mx-auto mb-2 opacity-50" />
-            <p className="text-sm">No more resupply points ahead</p>
-            <p className="text-xs">You're near the end of the trail!</p>
+          <div className="empty-state">
+            <div className="empty-state-icon">
+              <Flag className="w-8 h-8" />
+            </div>
+            <p className="empty-state-title">You've made it!</p>
+            <p className="empty-state-description">
+              No more resupply points ahead. You're near the end of your adventure!
+            </p>
           </div>
         )}
       </div>

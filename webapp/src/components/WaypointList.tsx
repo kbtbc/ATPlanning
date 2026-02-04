@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Filter, X, Mountain, Package, MapPin, Droplets, Tent, Star } from 'lucide-react';
+import { Search, Filter, X, Mountain, Package, MapPin, Droplets, Tent, Star, Compass } from 'lucide-react';
 import { useWaypointFilters } from '../hooks/useWaypointFilters';
 import { cn, formatMile, formatElevation, getWaypointTypeColor } from '../lib/utils';
 import type { WaypointType, Waypoint } from '../types';
@@ -13,6 +13,13 @@ const waypointTypes: { type: WaypointType; label: string; icon: React.ReactNode 
   { type: 'feature', label: 'Features', icon: <Star className="w-4 h-4" /> },
   { type: 'water', label: 'Water', icon: <Droplets className="w-4 h-4" /> },
   { type: 'campsite', label: 'Campsites', icon: <Tent className="w-4 h-4" /> },
+];
+
+// Quick filter presets
+const quickFilters = [
+  { label: 'First 100 mi', minMile: 0, maxMile: 100 },
+  { label: 'Mid-Atlantic', minMile: 800, maxMile: 1200 },
+  { label: 'Last 100 mi', minMile: TRAIL_LENGTH - 100, maxMile: TRAIL_LENGTH },
 ];
 
 interface WaypointListProps {
@@ -46,29 +53,62 @@ export function WaypointList({ onWaypointSelect, initialMileRange }: WaypointLis
     onWaypointSelect?.(waypoint);
   };
 
+  // Count active filters for badge
+  const activeFilterCount = filters.types.length + filters.states.length +
+    (filters.searchQuery ? 1 : 0) +
+    (filters.minMile > 0 || filters.maxMile < TRAIL_LENGTH ? 1 : 0);
+
   return (
     <div className="space-y-4">
       {/* Search Bar */}
-      <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--foreground-muted)]" />
-        <input
-          type="text"
-          placeholder="Search waypoints..."
-          value={filters.searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-10 pr-4 py-3 rounded-xl border border-[var(--border)] bg-[var(--background-secondary)] text-[var(--foreground)] placeholder:text-[var(--foreground-muted)] focus:border-[var(--accent)]"
-        />
-        <button
-          onClick={() => setShowFilters(!showFilters)}
-          className={cn(
-            'absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-lg transition-colors',
-            showFilters ? 'bg-[var(--accent)] text-white' : 'hover:bg-[var(--border)]'
-          )}
-          aria-label={showFilters ? 'Hide filters' : 'Show filters'}
-          aria-expanded={showFilters}
-        >
-          <Filter className="w-5 h-5" aria-hidden="true" />
-        </button>
+      <div className="sticky top-0 z-10 bg-[var(--background)] pb-2">
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--foreground-muted)]" />
+          <input
+            type="text"
+            placeholder="Search waypoints..."
+            value={filters.searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-10 pr-16 py-3 rounded-xl border border-[var(--border)] bg-[var(--background-secondary)] text-[var(--foreground)] placeholder:text-[var(--foreground-muted)] focus:border-[var(--accent)] focus:outline-none"
+          />
+          <button
+            onClick={() => setShowFilters(!showFilters)}
+            className={cn(
+              'absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-lg transition-colors flex items-center gap-1',
+              showFilters ? 'bg-[var(--accent)] text-white' : 'hover:bg-[var(--border)]'
+            )}
+            aria-label={showFilters ? 'Hide filters' : 'Show filters'}
+            aria-expanded={showFilters}
+          >
+            <Filter className="w-5 h-5" aria-hidden="true" />
+            {activeFilterCount > 0 && (
+              <span className={cn(
+                'min-w-[1.25rem] h-5 rounded-full text-xs font-medium flex items-center justify-center',
+                showFilters ? 'bg-white/20 text-white' : 'bg-[var(--accent)] text-white'
+              )}>
+                {activeFilterCount}
+              </span>
+            )}
+          </button>
+        </div>
+
+        {/* Quick Filters Row */}
+        <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
+          {quickFilters.map((qf) => (
+            <button
+              key={qf.label}
+              onClick={() => setMileRange(qf.minMile, qf.maxMile)}
+              className={cn(
+                'shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-all border',
+                filters.minMile === qf.minMile && filters.maxMile === qf.maxMile
+                  ? 'bg-[var(--primary)] text-white border-[var(--primary)]'
+                  : 'bg-[var(--background)] border-[var(--border)] text-[var(--foreground-muted)] hover:border-[var(--accent)]'
+              )}
+            >
+              {qf.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Filters Panel */}
@@ -224,10 +264,20 @@ export function WaypointList({ onWaypointSelect, initialMileRange }: WaypointLis
         ))}
 
         {filteredWaypoints.length === 0 && (
-          <div className="text-center py-8 text-[var(--foreground-muted)]">
-            <Search className="w-12 h-12 mx-auto mb-3 opacity-50" />
-            <p>No waypoints found</p>
-            <p className="text-sm">Try adjusting your filters</p>
+          <div className="empty-state">
+            <div className="empty-state-icon">
+              <Compass className="w-8 h-8" />
+            </div>
+            <p className="empty-state-title">No waypoints found</p>
+            <p className="empty-state-description">
+              Try adjusting your search or filters to find what you're looking for.
+            </p>
+            <button
+              onClick={resetFilters}
+              className="btn btn-primary mt-4 text-sm"
+            >
+              Clear all filters
+            </button>
           </div>
         )}
       </div>

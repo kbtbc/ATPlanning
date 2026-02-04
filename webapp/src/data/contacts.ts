@@ -5028,7 +5028,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(845) 595-1114',
         phone2: '(610) 322-9561',
         googleMapsUrl: 'https://maps.google.com/?q=The+Lost+and+Found+Hostel+Greenwood+Lake+NY',
-        notes: 'Text: Pete (610) 322-9561, Mary (202) 497-1821. Reservations required. Not dog friendly (old rescue dog onsite). Hosted by Lost and Found Nobo \"21. Pickup at Route 17A (2.3 mi E) with stay. No smoking, drugs, hard liquor. Single bunk $50. Private room $80. Maximum two-night stay. Laundry and shower with stay. WiFi. Slackpacking options. Mail drop with stay; call or text for details.',
+        notes: "Text: Pete (610) 322-9561, Mary (202) 497-1821. Reservations required. Not dog friendly (old rescue dog onsite). Hosted by Lost and Found Nobo '21. Pickup at Route 17A (2.3 mi E) with stay. No smoking, drugs, hard liquor. Single bunk $50. Private room $80. Maximum two-night stay. Laundry and shower with stay. WiFi. Slackpacking options. Mail drop with stay; call or text for details.",
         pricing: '$50 single bunk, $80 private room',
         services: ['hostel', 'shuttle', 'laundry', 'showers', 'wifi', 'slackpacking', 'maildrop'],
         lastVerified: '2026-02-04',
