@@ -12,66 +12,132 @@ interface BusinessListCardProps {
 function buildSummaryLine(business: Business, distanceInfo?: string): string {
   const parts: string[] = [];
 
-  // Distance info first
+  // Distance info first (if provided)
   if (distanceInfo) {
     parts.push(distanceInfo);
   }
 
-  // Hours - extract key info
-  if (business.hours) {
-    // Shorten common patterns
-    const hours = business.hours
-      .replace('Check-in:', '')
-      .replace('Check-out:', 'CO:')
-      .trim();
-    parts.push(hours);
-  }
-
-  // Pricing
+  // Pricing is always useful
   if (business.pricing) {
     parts.push(business.pricing);
   }
 
-  // Key features from services
-  if (business.services && business.services.length > 0) {
-    const keyServices = business.services.filter(s =>
-      ['shuttle', 'pet friendly', 'breakfast', 'laundry', 'parking'].some(k =>
-        s.toLowerCase().includes(k)
-      )
-    );
-    if (keyServices.length > 0) {
-      // Capitalize first letter of each
-      parts.push(...keyServices.slice(0, 2).map(s =>
-        s.charAt(0).toUpperCase() + s.slice(1)
-      ));
+  // For shuttles, restaurants, stores - notes are the most important
+  // Pull key info from notes first
+  if (business.notes) {
+    // Clean up notes - remove location info that's redundant with distanceInfo
+    let cleanNotes = business.notes
+      .replace(/Located\s+\d+\.?\d*\s*[EW]\s*(from trail)?\.?\s*/gi, '')
+      .replace(/In town\.?\s*/gi, '')
+      .replace(/On trail\.?\s*/gi, '')
+      .trim();
+
+    // For shuttles, show the full notes (owner info, availability, etc.)
+    if (business.type === 'shuttle') {
+      if (cleanNotes) {
+        parts.push(cleanNotes);
+      }
+    } else {
+      // For other types, extract key highlights
+      const highlights: string[] = [];
+
+      // Pet friendly
+      if (/pet\s*friendly/i.test(cleanNotes)) {
+        highlights.push('Pet friendly');
+        cleanNotes = cleanNotes.replace(/pet\s*friendly[,.]?\s*/gi, '');
+      }
+
+      // Breakfast included
+      if (/breakfast/i.test(cleanNotes) && !/no breakfast/i.test(cleanNotes)) {
+        highlights.push('Breakfast');
+      }
+
+      // Restaurant on-site
+      if (/restaurant\s*(on[- ]?site)?/i.test(cleanNotes)) {
+        highlights.push('Restaurant');
+      }
+
+      // WiFi
+      if (/wifi|wi-fi/i.test(cleanNotes)) {
+        highlights.push('WiFi');
+      }
+
+      // Laundry
+      if (/laundry/i.test(cleanNotes)) {
+        highlights.push('Laundry');
+      }
+
+      // Shuttle available (we're already in the non-shuttle branch)
+      if (/shuttle/i.test(cleanNotes)) {
+        highlights.push('Shuttle');
+      }
+
+      // Resupply
+      if (/resupply/i.test(cleanNotes)) {
+        highlights.push('Resupply');
+      }
+
+      // Slackpacking
+      if (/slackpack/i.test(cleanNotes)) {
+        highlights.push('Slackpacking');
+      }
+
+      // AT Passport
+      if (/AT Passport/i.test(cleanNotes)) {
+        highlights.push('AT Passport');
+      }
+
+      // Coleman fuel
+      if (/coleman\s*fuel/i.test(cleanNotes)) {
+        highlights.push('Coleman fuel');
+      }
+
+      // Full menu / food
+      if (/full menu/i.test(cleanNotes)) {
+        highlights.push('Full menu');
+      }
+
+      // General Delivery / holds packages
+      if (/general\s*delivery/i.test(cleanNotes) || /holds\s*packages/i.test(cleanNotes)) {
+        highlights.push('Holds packages');
+      }
+
+      // Year round
+      if (/year\s*round|open\s*year/i.test(cleanNotes)) {
+        highlights.push('Open year round');
+      }
+
+      // Thru-hiker owned
+      if (/thru[- ]?hiker\s*owned/i.test(cleanNotes)) {
+        highlights.push('Thru-hiker owned');
+      }
+
+      // Add highlights
+      parts.push(...highlights.slice(0, 4)); // Limit to 4 highlights
     }
   }
 
-  // Extract key info from notes if we don't have much yet
-  if (parts.length <= 2 && business.notes) {
-    // Look for specific patterns
-    const petMatch = business.notes.match(/pet\s*friendly/i);
-    const shuttleMatch = business.notes.match(/shuttle/i);
-    const breakfastMatch = business.notes.match(/breakfast/i);
-    const openMatch = business.notes.match(/open\s+(\d+\s*(am|pm)?\s*[-–]\s*\d+\s*(am|pm)?)/i);
+  // Hours - but shortened
+  if (business.hours && parts.length < 3) {
+    const hours = business.hours
+      .replace('Check-in:', 'CI:')
+      .replace('Check-out:', 'CO:')
+      .trim();
+    // Only add if not too long
+    if (hours.length < 30) {
+      parts.push(hours);
+    }
+  }
 
-    if (petMatch && !parts.some(p => p.toLowerCase().includes('pet'))) {
-      parts.push('Pet friendly');
-    }
-    if (shuttleMatch && !parts.some(p => p.toLowerCase().includes('shuttle'))) {
-      parts.push('Shuttle available');
-    }
-    if (breakfastMatch && !parts.some(p => p.toLowerCase().includes('breakfast'))) {
-      parts.push('Breakfast');
-    }
-    if (openMatch) {
-      parts.push(`Open ${openMatch[1]}`);
-    }
-
-    // Special notes about packages/mail
-    if (business.notes.toLowerCase().includes('holds packages') ||
-        business.notes.toLowerCase().includes('general delivery')) {
-      parts.push('Holds packages');
+  // If we still don't have much, pull from services
+  if (parts.length < 2 && business.services && business.services.length > 0) {
+    const usefulServices = business.services.filter(s =>
+      !['hostel', 'lodging', 'shuttle', 'services', 'post_office', 'general_store', 'restaurant', 'grocery'].includes(s.toLowerCase())
+    );
+    if (usefulServices.length > 0) {
+      parts.push(...usefulServices.slice(0, 2).map(s =>
+        s.charAt(0).toUpperCase() + s.slice(1)
+      ));
     }
   }
 
