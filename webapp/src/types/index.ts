@@ -138,6 +138,7 @@ export type BusinessType =
   | 'pharmacy'
   | 'veterinary'
   | 'hospital'
+  | 'library'
   | 'services'
   | 'activity'
   | 'museum'

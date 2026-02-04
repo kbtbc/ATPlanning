@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Search, Phone, ChevronDown, ChevronUp, Package } from 'lucide-react';
 import { resupplyPoints } from '../../data/resupply';
-import { resupplyContacts, getContactsByResupplyId, hasContactInfo } from '../../data/contacts';
+import { getContactsByResupplyId, hasContactInfo } from '../../data/contacts';
 import { ContactCard } from './ContactCard';
 import { cn, formatMile } from '../../lib/utils';
 import type { ResupplyPoint } from '../../types';

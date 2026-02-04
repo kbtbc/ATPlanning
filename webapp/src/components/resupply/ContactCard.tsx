@@ -18,6 +18,19 @@ const typeLabels: Record<BusinessType, string> = {
   visitor_center: 'Visitor Center',
   shuttle: 'Shuttle',
   laundry: 'Laundry',
+  camping: 'Camping',
+  campground: 'Campground',
+  shelter: 'Shelter',
+  medical: 'Medical',
+  pharmacy: 'Pharmacy',
+  veterinary: 'Veterinary',
+  hospital: 'Hospital',
+  library: 'Library',
+  services: 'Services',
+  activity: 'Activity',
+  museum: 'Museum',
+  kennel: 'Kennel',
+  shipping: 'Shipping',
 };
 
 const typeColors: Record<BusinessType, string> = {
@@ -31,6 +44,19 @@ const typeColors: Record<BusinessType, string> = {
   visitor_center: 'bg-indigo-500',
   shuttle: 'bg-cyan-500',
   laundry: 'bg-pink-500',
+  camping: 'bg-lime-500',
+  campground: 'bg-emerald-500',
+  shelter: 'bg-stone-500',
+  medical: 'bg-rose-500',
+  pharmacy: 'bg-fuchsia-500',
+  veterinary: 'bg-violet-500',
+  hospital: 'bg-red-600',
+  library: 'bg-sky-500',
+  services: 'bg-slate-500',
+  activity: 'bg-yellow-500',
+  museum: 'bg-indigo-600',
+  kennel: 'bg-amber-600',
+  shipping: 'bg-gray-500',
 };
 
 export function ContactCard({ business, compact = false }: ContactCardProps) {

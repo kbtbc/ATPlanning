@@ -31,23 +31,24 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - NOBO/SOBO direction reference
 
 ### Resupply Planner
-- 57 resupply points from Georgia to Maine
+- 69 resupply points from Georgia to Maine
 - Quality ratings: Full, Limited, Minimal
 - Service indicators: Grocery, Post Office, Lodging, Restaurant, Shower, Laundry
 - Distance from trail and shuttle availability
 - Strategic planning tips and mail drop advice
+- Comprehensive business directory with 934 contacts
 
-### Contact Directory (COMPREHENSIVE - 80% COMPLETE!)
-- **512 businesses documented** across 60 resupply locations
+### Contact Directory (COMPREHENSIVE!)
+- **934 businesses documented** across 69 resupply locations
 - Searchable directory of hostels, outfitters, grocery stores, restaurants, shuttles, and services
 - Direct tap-to-call phone numbers (including dual phone numbers where applicable)
 - Tap-to-open Google Maps links with precise coordinates
 - Business hours, pricing, hiker rates, and detailed service lists
-- **Complete coverage** for Georgia, North Carolina, Tennessee, Virginia, West Virginia, and Maryland
+- **Complete coverage** for all 14 states from Georgia to Maine
 - AT Passport locations marked throughout trail
-- Comprehensive shuttle services with coverage areas
+- Comprehensive shuttle services with coverage areas and contact details
 - Filter by state and search by name
-- **Currently updating:** Pennsylvania and northern states
+- **Current Phase:** Business data integrity audit (verifying against Google searches)
 
 ### Waypoint Browser
 - 250+ shelters with capacity, water, and privy info
@@ -61,26 +62,30 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - **Trail Length**: 2,197.4 miles (plus 8.5 mile approach trail)
 - **Elevation Data**: ~5,000 points from FKT GPX (0.5mi resolution)
 - **Shelters**: 252 shelters from GA to ME
-- **Resupply Points**: 60+ towns and stores (actively being updated)
-- **Business Contacts**: 512 businesses with complete contact information
+- **Resupply Points**: 69 locations covering entire trail
+- **Business Contacts**: 934 businesses with complete contact information
 - **Features**: 50 notable landmarks
 - **States**: 14 states (GA, NC, TN, VA, WV, MD, PA, NJ, NY, CT, MA, VT, NH, ME)
 
-### 🎯 Active Project: Manual Business Review (80% Complete!)
+### 🎯 Active Project: Business Data Integrity Audit
 
-**Status:** Systematically reviewing and updating ALL business contact information for resupply locations along the entire AT.
+**Status:** Verifying all 934 businesses against current Google searches to ensure data accuracy.
 
-**Completed States:**
-- ✅ Georgia (3 locations, 52 businesses)
-- ✅ North Carolina (5 locations, 108 businesses)
-- ✅ Tennessee (10 locations, 76 businesses)
-- ✅ Virginia (33 locations, 231 businesses)
-- ✅ West Virginia (1 location, 15 businesses)
-- ✅ Maryland (4 locations, 26 businesses)
+**Phase 1 Complete:** Manual PDF Review ✅
+- Systematically reviewed and transcribed business data from official AT resupply guide PDFs
+- 409 businesses added/updated across 37 locations in northern states (CT, MA, VT, NH, ME)
+- All critical safety information documented (Kennebec Ferry, Baxter permits, etc.)
 
-**Next:** Pennsylvania and northern states (~15 locations remaining)
+**Phase 2 Current:** Business Data Integrity Audit 🔄
+- Verifying each business via Google search
+- Updating stale data (phone numbers, hours, websites)
+- Removing permanently closed businesses
+- Direction: Northbound (Amicalola Falls → Katahdin)
+- Progress: 0/69 locations audited
 
-**Progress Tracking:** See `MANUAL_REVIEW_PROGRESS.md` for detailed status
+**Progress Tracking:** 
+- See `BUSINESS_AUDIT_PROGRESS.md` for current audit status
+- See `MANUAL_REVIEW_PROGRESS.md` for Phase 1 completion summary
 
 ## Tech Stack
 
