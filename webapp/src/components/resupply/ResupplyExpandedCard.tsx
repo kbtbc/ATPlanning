@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft } from 'lucide-react';
 import { cn, formatMile } from '../../lib/utils';
 import { BusinessListCard } from './BusinessListCard';
+import { BusinessDetailModal } from './BusinessDetailModal';
 import { CategoryFilterTabs } from './CategoryFilterTabs';
 import { ViewToggle } from './ViewToggle';
 import { getCategoryForType } from './businessCategories';
@@ -15,7 +16,6 @@ interface ResupplyExpandedCardProps {
   businesses: Business[];
   currentMile: number;
   onBack: () => void;
-  onBusinessSelect?: (business: Business) => void;
 }
 
 // Parse direction from notes (e.g., "Located 1.3W from trail" -> "W")
@@ -54,11 +54,11 @@ export function ResupplyExpandedCard({
   resupply,
   businesses,
   currentMile,
-  onBack,
-  onBusinessSelect
+  onBack
 }: ResupplyExpandedCardProps) {
   const [filter, setFilter] = useState<CategoryFilter>('all');
   const [viewMode, setViewMode] = useState<ViewMode>('list');
+  const [selectedBusiness, setSelectedBusiness] = useState<Business | null>(null);
 
   // Calculate category counts
   const categoryCounts = useMemo(() => {
@@ -95,84 +95,104 @@ export function ResupplyExpandedCard({
   const quality = qualityConfig[resupply.resupplyQuality];
   const distanceAhead = Math.abs(resupply.mile - currentMile);
 
+  const handleBusinessClick = (business: Business) => {
+    setSelectedBusiness(business);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedBusiness(null);
+  };
+
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -20 }}
-      className="space-y-4"
-    >
-      {/* Header with back button */}
-      <div className="flex items-center gap-3">
-        <button
-          onClick={onBack}
-          className="p-2 -ml-2 rounded-lg hover:bg-[var(--background)] text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2">
-            <span className={cn('text-xs font-medium', quality.color)}>
-              {quality.label.toLowerCase()}
-            </span>
-          </div>
-          <h2 className="font-semibold text-lg truncate">{resupply.name}</h2>
-          <p className="text-xs text-[var(--foreground-muted)]">
-            Mile {formatMile(resupply.mile)} · {distanceAhead.toFixed(1)} mi ahead
-          </p>
-        </div>
-      </div>
-
-      {/* Filter tabs and view toggle */}
-      <div className="flex items-center justify-between gap-3">
-        <CategoryFilterTabs
-          activeFilter={filter}
-          onFilterChange={setFilter}
-          counts={categoryCounts}
-        />
-        <ViewToggle mode={viewMode} onModeChange={setViewMode} />
-      </div>
-
-      {/* Business list */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={filter}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          className={cn(
-            viewMode === 'grid' ? 'grid grid-cols-2 gap-2' : 'space-y-2'
-          )}
-        >
-          {filteredBusinesses.map((business, idx) => (
-            <motion.div
-              key={business.id || `biz-${idx}`}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.03 }}
-            >
-              <BusinessListCard
-                business={business}
-                distanceInfo={buildDistanceInfo(business)}
-                onViewDetails={onBusinessSelect ? () => onBusinessSelect(business) : undefined}
-              />
-            </motion.div>
-          ))}
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Empty state */}
-      {filteredBusinesses.length === 0 && (
-        <div className="text-center py-8 text-[var(--foreground-muted)]">
-          <p className="text-sm">No {filter} options at this location</p>
+    <>
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -20 }}
+        className="space-y-4"
+      >
+        {/* Header with back button */}
+        <div className="flex items-center gap-3">
           <button
-            onClick={() => setFilter('all')}
-            className="text-xs text-[var(--primary)] mt-2 hover:underline"
+            onClick={onBack}
+            className="p-2 -ml-2 rounded-lg hover:bg-[var(--background)] text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors"
           >
-            View all businesses
+            <ChevronLeft className="w-5 h-5" />
           </button>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2">
+              <span className={cn('text-xs font-medium', quality.color)}>
+                {quality.label.toLowerCase()}
+              </span>
+            </div>
+            <h2 className="font-semibold text-lg truncate">{resupply.name}</h2>
+            <p className="text-xs text-[var(--foreground-muted)]">
+              {distanceAhead.toFixed(1)} mi ahead (mile {formatMile(resupply.mile)})
+            </p>
+          </div>
         </div>
+
+        {/* Filter tabs and view toggle */}
+        <div className="flex items-center justify-between gap-3">
+          <CategoryFilterTabs
+            activeFilter={filter}
+            onFilterChange={setFilter}
+            counts={categoryCounts}
+          />
+          <ViewToggle mode={viewMode} onModeChange={setViewMode} />
+        </div>
+
+        {/* Business list */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={filter}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className={cn(
+              viewMode === 'grid' ? 'grid grid-cols-2 gap-2' : 'space-y-2'
+            )}
+          >
+            {filteredBusinesses.map((business, idx) => (
+              <motion.div
+                key={business.id || `biz-${idx}`}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.03 }}
+              >
+                <BusinessListCard
+                  business={business}
+                  distanceInfo={buildDistanceInfo(business)}
+                  onViewDetails={() => handleBusinessClick(business)}
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Empty state */}
+        {filteredBusinesses.length === 0 && (
+          <div className="text-center py-8 text-[var(--foreground-muted)]">
+            <p className="text-sm">No {filter} options at this location</p>
+            <button
+              onClick={() => setFilter('all')}
+              className="text-xs text-[var(--primary)] mt-2 hover:underline"
+            >
+              View all businesses
+            </button>
+          </div>
+        )}
+      </motion.div>
+
+      {/* Business Detail Modal */}
+      {selectedBusiness && (
+        <BusinessDetailModal
+          business={selectedBusiness}
+          distanceInfo={buildDistanceInfo(selectedBusiness)}
+          onClose={handleCloseModal}
+          onBackToResupply={handleCloseModal}
+        />
       )}
-    </motion.div>
+    </>
   );
 }

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Phone, BookOpen, Flag, Mail } from 'lucide-react';
+import { ArrowRight, BookOpen, Flag, Mail } from 'lucide-react';
 import { resupplyPoints, getNearestResupply } from '../data';
-import { getContactsByResupplyId, hasContactInfo } from '../data/contacts';
+import { getContactsByResupplyId } from '../data/contacts';
 import { ResupplyDirectory, ResupplyExpandedCard } from './resupply';
 import { cn, formatMile, formatDistance } from '../lib/utils';
 import type { ResupplyPoint, Business } from '../types';
@@ -12,6 +12,21 @@ type ResupplyView = 'upcoming' | 'directory' | 'expanded';
 interface ResupplyPlannerProps {
   currentMile?: number;
   direction?: 'NOBO' | 'SOBO';
+}
+
+// Build a summary of available services for a resupply point
+function buildServicesSummary(resupply: ResupplyPoint): string {
+  const services: string[] = [];
+
+  if (resupply.hasGrocery) services.push('Grocery');
+  if (resupply.hasLodging) services.push('Lodging');
+  if (resupply.hasRestaurant) services.push('Food');
+  if (resupply.hasPostOffice) services.push('PO');
+  if (resupply.shuttleAvailable) services.push('Shuttle');
+  if (resupply.hasShower) services.push('Shower');
+  if (resupply.hasLaundry) services.push('Laundry');
+
+  return services.slice(0, 4).join(', ');
 }
 
 export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: ResupplyPlannerProps) {
@@ -28,9 +43,9 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
 
   const getQualityConfig = (quality: ResupplyPoint['resupplyQuality']) => {
     const config = {
-      full: { bg: 'bg-emerald-500', text: 'text-emerald-500', label: 'full' },
-      limited: { bg: 'bg-amber-500', text: 'text-amber-500', label: 'limited' },
-      minimal: { bg: 'bg-rose-500', text: 'text-rose-500', label: 'minimal' },
+      full: { bg: 'bg-emerald-500', text: 'text-emerald-500', badge: 'bg-emerald-500/15 text-emerald-500', label: 'full' },
+      limited: { bg: 'bg-amber-500', text: 'text-amber-500', badge: 'bg-amber-500/15 text-amber-500', label: 'limited' },
+      minimal: { bg: 'bg-rose-500', text: 'text-rose-500', badge: 'bg-rose-500/15 text-rose-500', label: 'minimal' },
     };
     return config[quality] || config.minimal;
   };
@@ -146,9 +161,9 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
 
         <div className="space-y-1.5">
           {upcomingResupply.map((resupply, index) => {
-            const hasContacts = (resupply.businesses && resupply.businesses.length > 0) || hasContactInfo(resupply.id);
             const quality = getQualityConfig(resupply.resupplyQuality);
             const distanceAhead = Math.abs(resupply.mile - currentMile);
+            const servicesSummary = buildServicesSummary(resupply);
 
             return (
               <motion.div
@@ -167,17 +182,17 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
 
                     {/* Content */}
                     <div className="flex-1 min-w-0">
+                      {/* Name and quality badge */}
                       <div className="flex items-center gap-2 mb-0.5">
-                        <span className={cn('text-[10px] font-medium', quality.text)}>
+                        <h4 className="font-medium text-sm">{resupply.name}</h4>
+                        <span className={cn('px-1.5 py-0.5 rounded text-[9px] font-semibold uppercase tracking-wider shrink-0', quality.badge)}>
                           {quality.label}
                         </span>
-                        <h4 className="font-medium text-sm truncate">{resupply.name}</h4>
-                        {hasContacts && (
-                          <Phone className="w-3 h-3 text-[var(--primary)] shrink-0" />
-                        )}
                       </div>
+                      {/* Mileage info and services summary */}
                       <p className="text-xs text-[var(--foreground-muted)]">
-                        Mile {formatMile(resupply.mile)} · {distanceAhead.toFixed(1)} mi ahead
+                        {distanceAhead.toFixed(1)} mi ahead (mile {formatMile(resupply.mile)})
+                        {servicesSummary && ` · ${servicesSummary}`}
                       </p>
                     </div>
                   </div>

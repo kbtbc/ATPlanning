@@ -1,4 +1,3 @@
-import { Phone, MapPin, Globe, ChevronRight } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import { getCategoryForType, getColorsForType, categoryLabels } from './businessCategories';
 import type { Business } from '../../types';
@@ -9,6 +8,7 @@ interface BusinessListCardProps {
   onViewDetails?: () => void;
 }
 
+// Build a robust summary line from business data
 function buildSummaryLine(business: Business, distanceInfo?: string): string {
   const parts: string[] = [];
 
@@ -17,9 +17,14 @@ function buildSummaryLine(business: Business, distanceInfo?: string): string {
     parts.push(distanceInfo);
   }
 
-  // Hours
+  // Hours - extract key info
   if (business.hours) {
-    parts.push(business.hours);
+    // Shorten common patterns
+    const hours = business.hours
+      .replace('Check-in:', '')
+      .replace('Check-out:', 'CO:')
+      .trim();
+    parts.push(hours);
   }
 
   // Pricing
@@ -27,16 +32,46 @@ function buildSummaryLine(business: Business, distanceInfo?: string): string {
     parts.push(business.pricing);
   }
 
-  // Key services or notes (abbreviated)
-  if (business.services?.includes('shuttle')) {
-    parts.push('Shuttle available');
+  // Key features from services
+  if (business.services && business.services.length > 0) {
+    const keyServices = business.services.filter(s =>
+      ['shuttle', 'pet friendly', 'breakfast', 'laundry', 'parking'].some(k =>
+        s.toLowerCase().includes(k)
+      )
+    );
+    if (keyServices.length > 0) {
+      // Capitalize first letter of each
+      parts.push(...keyServices.slice(0, 2).map(s =>
+        s.charAt(0).toUpperCase() + s.slice(1)
+      ));
+    }
   }
 
-  // If no specific info, use a truncated note
-  if (parts.length <= 1 && business.notes) {
-    const shortNote = business.notes.split('.')[0];
-    if (shortNote.length < 40) {
-      parts.push(shortNote);
+  // Extract key info from notes if we don't have much yet
+  if (parts.length <= 2 && business.notes) {
+    // Look for specific patterns
+    const petMatch = business.notes.match(/pet\s*friendly/i);
+    const shuttleMatch = business.notes.match(/shuttle/i);
+    const breakfastMatch = business.notes.match(/breakfast/i);
+    const openMatch = business.notes.match(/open\s+(\d+\s*(am|pm)?\s*[-–]\s*\d+\s*(am|pm)?)/i);
+
+    if (petMatch && !parts.some(p => p.toLowerCase().includes('pet'))) {
+      parts.push('Pet friendly');
+    }
+    if (shuttleMatch && !parts.some(p => p.toLowerCase().includes('shuttle'))) {
+      parts.push('Shuttle available');
+    }
+    if (breakfastMatch && !parts.some(p => p.toLowerCase().includes('breakfast'))) {
+      parts.push('Breakfast');
+    }
+    if (openMatch) {
+      parts.push(`Open ${openMatch[1]}`);
+    }
+
+    // Special notes about packages/mail
+    if (business.notes.toLowerCase().includes('holds packages') ||
+        business.notes.toLowerCase().includes('general delivery')) {
+      parts.push('Holds packages');
     }
   }
 
@@ -49,46 +84,23 @@ export function BusinessListCard({ business, distanceInfo, onViewDetails }: Busi
   const categoryLabel = categoryLabels[category] || 'SERVICES';
   const summaryLine = buildSummaryLine(business, distanceInfo);
 
-  const handleCall = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (business.phone) {
-      window.open(`tel:${business.phone.replace(/\D/g, '')}`);
-    }
-  };
-
-  const handleMap = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (business.googleMapsUrl) {
-      window.open(business.googleMapsUrl, '_blank');
-    } else if (business.address) {
-      window.open(`https://maps.google.com/?q=${encodeURIComponent(business.address)}`, '_blank');
-    }
-  };
-
-  const handleWebsite = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (business.website) {
-      window.open(business.website, '_blank');
-    }
-  };
-
   return (
-    <div
+    <button
       onClick={onViewDetails}
       className={cn(
-        'group relative bg-[var(--background-secondary)] rounded-lg border border-[var(--border)] overflow-hidden transition-all duration-200',
+        'w-full text-left group relative bg-[var(--background-secondary)] rounded-lg border border-[var(--border)] overflow-hidden transition-all duration-200',
         onViewDetails && 'cursor-pointer hover:border-[var(--primary)]/40 hover:bg-[var(--background)]'
       )}
     >
-      <div className="flex items-center gap-3 p-3">
+      <div className="flex items-start gap-3 p-3">
         {/* Color dot indicator */}
-        <div className={cn('w-2 h-2 rounded-full shrink-0', colors.dot)} />
+        <div className={cn('w-2 h-2 rounded-full mt-1.5 shrink-0', colors.dot)} />
 
         {/* Content */}
         <div className="flex-1 min-w-0">
           {/* Name and category badge */}
           <div className="flex items-center gap-2 mb-0.5">
-            <h4 className="font-medium text-sm text-[var(--foreground)] truncate">
+            <h4 className="font-medium text-sm text-[var(--foreground)]">
               {business.name}
             </h4>
             <span className={cn('px-1.5 py-0.5 rounded text-[9px] font-semibold uppercase tracking-wider shrink-0', colors.badge, colors.text)}>
@@ -98,47 +110,12 @@ export function BusinessListCard({ business, distanceInfo, onViewDetails }: Busi
 
           {/* Summary line */}
           {summaryLine && (
-            <p className="text-xs text-[var(--foreground-muted)] truncate">
+            <p className="text-xs text-[var(--foreground-muted)] leading-relaxed">
               {summaryLine}
             </p>
           )}
         </div>
-
-        {/* Action buttons */}
-        <div className="flex items-center gap-1 shrink-0">
-          {business.phone && (
-            <button
-              onClick={handleCall}
-              className="p-2 rounded-lg hover:bg-[var(--primary)]/10 text-[var(--primary)] transition-colors"
-              aria-label={`Call ${business.name}`}
-            >
-              <Phone className="w-4 h-4" />
-            </button>
-          )}
-          {(business.googleMapsUrl || business.address) && (
-            <button
-              onClick={handleMap}
-              className="p-2 rounded-lg hover:bg-[var(--accent)]/10 text-[var(--accent)] transition-colors"
-              aria-label={`Open ${business.name} in Maps`}
-            >
-              <MapPin className="w-4 h-4" />
-            </button>
-          )}
-          {business.website && (
-            <button
-              onClick={handleWebsite}
-              className="p-2 rounded-lg hover:bg-[var(--foreground)]/10 text-[var(--foreground-muted)] transition-colors"
-              aria-label={`Visit ${business.name} website`}
-            >
-              <Globe className="w-4 h-4" />
-            </button>
-          )}
-          {onViewDetails && (
-            <ChevronRight className="w-4 h-4 text-[var(--foreground-muted)] opacity-0 group-hover:opacity-100 transition-opacity ml-1" />
-          )}
-        </div>
       </div>
-    </div>
+    </button>
   );
 }
-
