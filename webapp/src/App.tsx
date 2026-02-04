@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mountain, Map, Package, Search, Navigation, Menu, X, BarChart3 } from 'lucide-react';
-import { LocationPanel } from './components/LocationPanel';
+import { Mountain, Map, Package, Search, Menu, X, BarChart3 } from 'lucide-react';
 import { HikePlanner } from './components/HikePlanner';
 import { WaypointList } from './components/WaypointList';
 import { ResupplyPlanner } from './components/ResupplyPlanner';
@@ -10,14 +9,12 @@ import { ThemeToggle } from './components/ui';
 import { cn } from './lib/utils';
 import './index.css';
 
-type Tab = 'location' | 'planner' | 'resupply' | 'waypoints' | 'stats';
+type Tab = 'planner' | 'resupply' | 'waypoints';
 
 const tabs: { id: Tab; label: string; icon: React.ReactNode }[] = [
-  { id: 'location', label: 'Location', icon: <Navigation className="w-4 h-4" /> },
   { id: 'planner', label: 'Planner', icon: <Map className="w-4 h-4" /> },
   { id: 'resupply', label: 'Resupply', icon: <Package className="w-4 h-4" /> },
   { id: 'waypoints', label: 'Waypoints', icon: <Search className="w-4 h-4" /> },
-  { id: 'stats', label: 'Stats', icon: <BarChart3 className="w-4 h-4" /> },
 ];
 
 const pageTransition = {
@@ -29,12 +26,9 @@ const pageTransition = {
 
 function App() {
   const [activeTab, setActiveTab] = useState<Tab>('planner');
-  const [currentMile, setCurrentMile] = useState<number>(0);
+  const [currentMile] = useState<number>(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const handleLocationFound = (mile: number) => {
-    setCurrentMile(mile);
-  };
+  const [showStats, setShowStats] = useState(false);
 
   return (
     <div className="min-h-screen bg-[var(--background)]">
@@ -128,36 +122,6 @@ function App() {
       {/* Main Content */}
       <main className="max-w-3xl mx-auto px-4 py-5">
         <AnimatePresence mode="wait">
-          {activeTab === 'location' && (
-            <motion.div key="location" {...pageTransition} className="space-y-5">
-              <LocationPanel onLocationFound={handleLocationFound} />
-
-              {/* Quick Actions */}
-              <div className="grid grid-cols-2 gap-3">
-                <button
-                  onClick={() => setActiveTab('planner')}
-                  className="panel p-4 text-left hover:border-[var(--accent)] transition-colors"
-                >
-                  <Map className="w-7 h-7 text-[var(--accent)] mb-2" />
-                  <h3 className="font-medium text-sm">Plan Your Hike</h3>
-                  <p className="text-xs text-[var(--foreground-muted)] mt-0.5">
-                    Create daily itineraries
-                  </p>
-                </button>
-                <button
-                  onClick={() => setActiveTab('resupply')}
-                  className="panel p-4 text-left hover:border-[var(--accent)] transition-colors"
-                >
-                  <Package className="w-7 h-7 text-[var(--secondary)] mb-2" />
-                  <h3 className="font-medium text-sm">Find Resupply</h3>
-                  <p className="text-xs text-[var(--foreground-muted)] mt-0.5">
-                    Towns & stores ahead
-                  </p>
-                </button>
-              </div>
-            </motion.div>
-          )}
-
           {activeTab === 'planner' && (
             <motion.div key="planner" {...pageTransition}>
               <HikePlanner initialMile={currentMile} />
@@ -175,23 +139,38 @@ function App() {
               <WaypointList />
             </motion.div>
           )}
-
-          {activeTab === 'stats' && (
-            <motion.div key="stats" {...pageTransition}>
-              <TrailProgress />
-            </motion.div>
-          )}
         </AnimatePresence>
       </main>
 
       {/* Footer */}
       <footer className="border-t border-[var(--border)] mt-8 py-6">
         <div className="max-w-3xl mx-auto px-4 text-center">
+          <button
+            onClick={() => setShowStats(!showStats)}
+            className="inline-flex items-center gap-1.5 text-xs text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors mb-3"
+          >
+            <BarChart3 className="w-3.5 h-3.5" />
+            Trail Stats
+          </button>
+
+          <AnimatePresence>
+            {showStats && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                className="overflow-hidden mb-4"
+              >
+                <TrailProgress />
+              </motion.div>
+            )}
+          </AnimatePresence>
+
           <p className="text-xs text-[var(--foreground-muted)]">
             AT Thru-Hike Planner · 2,197.4 miles from Springer Mountain, GA to Mt. Katahdin, ME
           </p>
           <p className="text-[11px] text-[var(--foreground-muted)] mt-1.5 opacity-70">
-            Not affiliated with the Appalachian Trail Conservancy. Always verify with current guidebooks.
+            © 2026 BigFunHikes.com · Always verify content beforehand!
           </p>
         </div>
       </footer>

@@ -17,6 +17,7 @@ interface UseGeolocationOptions {
   enableHighAccuracy?: boolean;
   timeout?: number;
   maximumAge?: number;
+  onSuccess?: (nearestMile: number) => void;
 }
 
 export function useGeolocation(options: UseGeolocationOptions = {}) {
@@ -35,6 +36,7 @@ export function useGeolocation(options: UseGeolocationOptions = {}) {
     enableHighAccuracy = true,
     timeout = 10000,
     maximumAge = 0,
+    onSuccess,
   } = options;
 
   const updatePosition = useCallback((position: GeolocationPosition) => {
@@ -53,7 +55,12 @@ export function useGeolocation(options: UseGeolocationOptions = {}) {
       error: null,
       loading: false,
     });
-  }, []);
+
+    // Call the success callback if provided
+    if (onSuccess && nearest?.mile !== undefined) {
+      onSuccess(nearest.mile);
+    }
+  }, [onSuccess]);
 
   const handleError = useCallback((error: GeolocationPositionError) => {
     let errorMessage: string;
