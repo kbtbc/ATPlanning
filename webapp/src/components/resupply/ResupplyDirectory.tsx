@@ -49,21 +49,21 @@ export function ResupplyDirectory({ onSelectResupply }: ResupplyDirectoryProps) 
         </h3>
 
         {/* Search and Filter */}
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
           <div className="relative flex-1 min-w-0">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--foreground-muted)]" />
             <input
               type="text"
-              placeholder="Search resupply points..."
+              placeholder="Search..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="input pl-9 py-1.5 text-sm w-full"
+              className="w-full pl-9 py-1.5 text-sm rounded-lg border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] focus:outline-none focus:border-[var(--accent)]"
             />
           </div>
           <select
             value={filterState}
             onChange={(e) => setFilterState(e.target.value)}
-            className="input py-1.5 text-sm shrink-0 w-24"
+            className="py-1.5 px-2 text-sm rounded-lg border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] focus:outline-none focus:border-[var(--accent)] shrink-0"
           >
             <option value="all">All</option>
             {states.map(state => (

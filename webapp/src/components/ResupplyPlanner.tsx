@@ -142,18 +142,18 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] rounded-xl p-4 text-white"
+        className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl p-4"
       >
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-xs opacity-80">Current Position</p>
-            <p className="text-2xl font-bold">Mile {formatMile(currentMile)}</p>
+            <p className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)]">Current Position</p>
+            <p className="text-2xl font-bold text-[var(--foreground)]">Mile {formatMile(currentMile)}</p>
           </div>
           {nearestResupply && (
             <div className="text-right">
-              <p className="text-xs opacity-80">Next Resupply</p>
-              <p className="text-sm font-semibold">{nearestResupply.name}</p>
-              <p className="text-xs opacity-80">
+              <p className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)]">Next Resupply</p>
+              <p className="text-sm font-semibold text-[var(--foreground)]">{nearestResupply.name}</p>
+              <p className="text-xs text-[var(--foreground-muted)]">
                 {formatDistance(Math.abs(nearestResupply.mile - currentMile))} ahead
               </p>
             </div>
@@ -174,7 +174,7 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
             const serviceCounts = getServiceCounts(businesses);
             const serviceSummary = formatServiceSummary(serviceCounts);
 
-            // Format mile info for display after name
+            // Format mile info for display
             const mileInfo = `Mile ${formatMile(resupply.mile)}${resupply.distanceFromTrail > 0 ? ` · ${resupply.distanceFromTrail} mi off trail` : ''}`;
 
             return (
@@ -187,7 +187,7 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
               >
                 <button
                   onClick={() => handleResupplyClick(resupply)}
-                  className="w-full text-left px-5 py-3 hover:bg-[var(--background)] transition-colors flex items-center gap-3"
+                  className="w-full text-left px-4 py-3 hover:bg-[var(--background)] transition-colors flex items-center gap-3"
                 >
                   {/* Dot indicator */}
                   <div className={cn('w-2 h-2 rounded-full shrink-0', quality.bg)} />
@@ -195,13 +195,13 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
                   {/* Content */}
                   <div className="flex-1 min-w-0">
                     {/* First line: name and mile info */}
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-baseline gap-2 flex-wrap">
                       <span className="text-sm font-medium text-[var(--foreground)]">{resupply.name}</span>
                       <span className="text-xs text-[var(--foreground-muted)]">{mileInfo}</span>
                     </div>
                     {/* Second line: service summary only */}
                     {serviceSummary && (
-                      <div className="text-xs text-[var(--foreground-muted)] mt-0.5">
+                      <div className="text-xs text-[var(--foreground-muted)] mt-0.5 truncate">
                         {serviceSummary}
                       </div>
                     )}
