@@ -109,6 +109,7 @@ export interface Business {
   name: string;
   type: BusinessType;
   phone?: string;
+  phone2?: string;
   address?: string;
   hours?: string;
   website?: string;

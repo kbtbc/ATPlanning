@@ -86,3 +86,79 @@
   * Updated Port Clinton, PA (rs-028): added post office, pavilion camping info, B&B, restaurant, peanut shop, barber/services, and Cabela\'s shuttle
   * Added Hamburg, PA (rs-028b): post office, Microtel, Cabela\'s, Walmart, Rite Aid
   * Aligned rs-028 and rs-028b resupply coordinates/miles to screenshot values
+
+- Changes made by agent 2026-02-04T12:22:25Z
+  * Updated Palmerton, PA (rs-029) to include Walnutport / Slatington exit cluster and added 21 businesses (post offices, restaurants, medical/vet, laundry, campground/shuttle)
+  * Updated rs-029 display name/notes/services to reflect combined exit cluster
+  * Marked Kmart and Kmart Pharmacy (Walnutport) as closed based on online listings
+
+- Changes made by agent 2026-02-04T12:47:43Z
+  * Removed closed Walnutport Kmart + Kmart Pharmacy entries from Palmerton exit cluster per user request
+  * Added new resupply location Danielsville, PA (danielsville-pa, 1.5E) with 4 businesses (post office, Filbert B&B, Blue Mountain Drive-In, Miller's Market)
+
+- Changes made by agent 2026-02-04T13:04:26Z
+  * Added new resupply location Smith Gap Road, PA (smith-gap-road-pa, on trail) with 3 businesses (Blue Mountain Dome Home, Penny's Place, Kunkletown General Store)
+
+- Changes made by agent 2026-02-04T13:10:05Z
+  * Added Wind Gap, PA (rs-029b) contacts (post office, 24-hour grocery, restaurants, CVS pharmacy, medical clinics, motel, veterinary)
+  * Updated Wind Gap (rs-029b) notes/services in resupply.ts
+  * Updated Delaware Water Gap, PA (rs-030): added post office, expanded Church of the Mountain details, lodging, dining, outfitter notes, activities, and shuttle provider
+  * Added Business.phone2 field to webapp/src/types/index.ts to match contacts data
+  * Updated MANUAL_REVIEW_PROGRESS.md Last/Next reviewed fields and marked DWG reviewed
+
+- Changes made by agent 2026-02-04T13:13:03Z
+  * Added Mohican Outdoor Center, NJ as new resupply point (mohican-outdoor-center-nj) with mile/sobo/elevation/coords from PDF screenshot
+  * Added Mohican Outdoor Center contacts including hiker rates, amenities, hours, and mail drop address
+  * Updated MANUAL_REVIEW_PROGRESS.md to mark Mohican reviewed and keep Vernon, NJ as next
+
+- Changes made by agent 2026-02-04T13:17:11Z
+  * Added combined Culvers Gap / Branchville, NJ resupply point (culvers-gap-branchville-nj) from PDF screenshot
+  * Added 10 businesses for Culvers Gap / Branchville: deli, state park camping/showers, taverns, diner, grocery, motels, post office, shuttle
+  * Updated MANUAL_REVIEW_PROGRESS.md to mark Culvers Gap / Branchville reviewed and keep Vernon, NJ as next
+
+- Changes made by agent 2026-02-04T13:20:40Z
+  * Added combined NJ 23 (High Point State Park HQ) / Port Jervis, NY resupply point (high-point-nj23-port-jervis-ny) from PDF screenshot
+  * Added 10 businesses for this cluster (High Point HQ visitor center + mail drops, Port Jervis lodging/hostel/food/grocery/pharmacy/hospital/vet)
+  * Updated MANUAL_REVIEW_PROGRESS.md to mark NJ 23 / Port Jervis reviewed and keep Vernon, NJ as next
+
+- Changes made by agent 2026-02-04T13:23:53Z
+  * Updated Unionville, NY (rs-031b) metadata to match PDF screenshot (mile/sobo/elevation/coords)
+  * Added 5 businesses for Unionville: post office, village office (tenting check-in), Horler's Store, Wit's End Tavern, Annabel's Pizza
+  * Updated MANUAL_REVIEW_PROGRESS.md Last Reviewed to Unionville and kept Vernon, NJ as next
+
+- Changes made by agent 2026-02-04T13:25:54Z
+  * Added new resupply location Glenwood, NJ (glenwood-nj, 1.1W) from PDF screenshot
+  * Added 3 businesses for Glenwood: post office, Apple Valley Inn, Pochuck Valley Farms Market & Deli
+  * Moved Apple Valley Inn out of Vernon block to avoid duplicate listings
+  * Updated MANUAL_REVIEW_PROGRESS.md Last Reviewed to Glenwood and kept Vernon, NJ as next
+
+- Changes made by agent 2026-02-04T13:31:51Z
+  * Updated Vernon, NJ (rs-031) metadata to match PDF screenshot (mile/sobo/elevation/coords)
+  * Expanded Vernon contacts to include post office, grocery/pharmacy, lodging, medical/vet, farm stand, and nearby New Milford, NY businesses reachable from two trail access points
+  * Updated MANUAL_REVIEW_PROGRESS.md to mark Vernon reviewed and set Greenwood Lake, NY as next
+
+- Changes made by agent 2026-02-04T13:36:44Z
+  * Added Warwick, NY as new resupply point (warwick-ny, 2.7W) using extracted PDF mile
+  * Added Warwick contacts: post office, drive-in theater (AT Passport/hiker camping), Meadowlark Farm B&B + shuttles, groceries, pharmacy, laundromat, hospital, restaurant
+  * Updated MANUAL_REVIEW_PROGRESS.md Last Reviewed to Warwick and kept Greenwood Lake, NY as next
+
+- Changes made by agent 2026-02-04T13:52:05Z
+  * Fixed NJ/NY resupplyPoints ordering in resupply.ts to preserve mile-sorted assumption for nearest/upcoming resupply
+  * Added Bellvale Farms Creamery and Bellvale Market as new resupply points with contacts from PDF screenshot
+  * Updated Greenwood Lake, NY (rs-032) metadata and expanded contacts to match PDF screenshot (PO, lodging, hostel, grocery, pharmacy, hardware, shuttle)
+  * Updated MANUAL_REVIEW_PROGRESS.md to mark Bellvale + Greenwood Lake reviewed and set Bear Mountain, NY as next
+
+- Changes made by agent 2026-02-04T13:55:18Z
+  * Updated Bear Mountain, NY (rs-033) as a combined cluster with Fort Montgomery and Highland Falls (miles/coords/notes/services)
+  * Expanded rs-033 contacts (post offices, Bear Mountain Museum & Zoo, lodging, restaurants, groceries, pharmacy, library, convenience stores, shuttles)
+  * Updated MANUAL_REVIEW_PROGRESS.md to mark Bear Mountain reviewed and set Peekskill, NY as next
+
+- Changes made by agent 2026-02-04T13:59:28Z
+  * Added Poughquag, NY as new resupply point (poughquag-ny, 3.1W) from PDF screenshot
+  * Added Poughquag contacts: post office, Stop & Shop, multiple restaurants/deli, pharmacies, and motel
+  * Updated MANUAL_REVIEW_PROGRESS.md Last Reviewed to Poughquag and kept Peekskill, NY as next
+
+- Changes made by agent 2026-02-04T14:03:10Z
+  * Updated Pawling, NY (rs-035) contacts from PDF screenshot (PO, park camping, lodging, restaurants, CVS pharmacy, library, shuttles)
+  * Tweaked rs-035 distance/notes/services in resupply.ts to reflect 3.1E access
+  * Updated MANUAL_REVIEW_PROGRESS.md Last Reviewed to Pawling and kept Peekskill, NY as next

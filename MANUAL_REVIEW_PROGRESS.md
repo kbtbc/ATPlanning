@@ -8,81 +8,10 @@ Process: Review each town's current business listings, compare with PDF, update 
 This file must be saved after each location to prevent losing progress if session crashes.
 
 ## Current Status
-**Last Reviewed:** Hamburg, PA (Mile 1220.9)
-**Next to Review:** Palmerton, PA (Mile 1261.0)
-**Total Reviewed:** 72 locations
-**Total Remaining:** ~15 locations
-**Session Date:** 2024-02-03 (Session 10 - MAJOR MILESTONE SESSION)
-**Frontend Status:** ✅ All builds passing, 0 errors, all TypeScript types updated
-**Overall Progress:** 🎉 **96% COMPLETE!** (72/75 locations, 618 businesses)
+**Last Reviewed:** Pawling, NY (Mile 1452.0)
+**Next to Review:** Peekskill, NY (Mile 1415.0)
 
-## 🏆 Major Milestones Achieved
-- ✅ **GEORGIA COMPLETE** - All 3 locations (52 businesses)
-- ✅ **NORTH CAROLINA COMPLETE** - All 5 locations (108 businesses)
-- ✅ **TENNESSEE COMPLETE** - All 10 locations (76 businesses)
-- ✅ **VIRGINIA COMPLETE** - All 33 locations (231 businesses)
-- ✅ **WEST VIRGINIA COMPLETE** - 1 location (15 businesses)
-- ✅ **MARYLAND COMPLETE** - All 4 locations (26 businesses)
-- 🎯 **NEXT:** Pennsylvania and northern states (~15 locations remaining)
-
-## Session Summary
-- Amicalola Falls: 2 businesses added (NEW location at mile -8.5)
-- Suches, GA: 10 businesses (4 updated, 6 added including shuttles)
-- Mountain Crossings at Neel Gap: 8 businesses (2 updated, 6 added)
-- Hiawassee, GA: 32 businesses (26 new, 6 updated; includes Helen, GA area)
-- Franklin, NC: 28 businesses (comprehensive update)
-- Nantahala Outdoor Center: 10 businesses (comprehensive update with shuttles)
-- Stecoah Gap / Robbinsville: 20 businesses (NEW location; includes Robbinsville 7.0W)
-- Fontana Dam: 11 businesses (comprehensive update - last resupply before Smokies)
-- Gatlinburg, TN / Cherokee, NC: 15 businesses (includes both Gatlinburg 15.0W and Cherokee 18.0E)
-- Standing Bear Farm: 4 businesses (first stop after Smokies NOBO)
-- Hot Springs, NC: 21 businesses (comprehensive update - trail goes through town)
-- Log Cabin Road: 1 business (NEW location - Hemlock Hollow Inn)
-- Sams Gap: 5 businesses (NEW location - Natures Inn Hostel)
-- Erwin / Nolichucky: 14 businesses (comprehensive update - Uncle Johnny's)
-- Mountain Harbour: 5 businesses (Appalachian Station, Refuge Hostel)
-- Roan Mountain, TN: 12 businesses (Elk Park NC, restaurants, Bear Branch)
-- Dennis Cove, TN: 3 businesses (Kincora Hiking Hostel, Black Bear Resort)
-- Hampton, TN: 11 businesses (Boots Off Hostel, Far Not Fast, shuttles)
-- Shady Valley, TN: 6 businesses (NEW location - The Rabbit Hole, Switchback Creek)
-- Damascus, VA: 24 businesses (comprehensive update - Trail Town USA!)
-- Troutdale, VA: 6 businesses (Troutdale Church Hostel, Sufi Lodge)
-- Marion, VA: 11 businesses (Merry Inn Hostel, Marion Outdoors, Partnership Shelter)
-- Atkins, VA: 9 businesses (Relax Inn, Long Neck Lair alpaca farm, shuttles)
-- Old Rich Valley Rd: 1 business (NEW location - Quarter Way Inn)
-- VA 42 / Blue Grass Trail: 2 businesses (NEW location - Bear Garden, Appalachian Dreamer)
-- Walker Gap / Burke's Garden: 1 business (NEW location - Burke's Garden Hostel)
-- VA 623 / Burkes Garden Road: 2 businesses (NEW location - Saint Luke's, Brushy Mtn Outpost)
-- Bland, VA: 11 businesses (comprehensive update - post office, restaurants, shuttles)
-- Bastian, VA: 7 businesses (NEW location - post office, Love's, restaurants, medical)
-- Lickskillet Hollow: 1 business (NEW location - Lickskillet Hostel CLOSED 2024)
-- VA 606: 3 businesses (NEW location - Trent's Grocery, Weary Feet Hostel)
-- Sugar Run Gap: 1 business (NEW location - Woods Hole Hostel 1880s cabin)
-- Pearisburg, VA: 28 businesses (comprehensive update - Angels Rest, hostels, restaurants, shuttles)
-- Narrows, VA: 7 businesses (MacArthur Inn, Camp Success, restaurants)
-- Newport, VA: 3 businesses (NEW location - post office, Super Val-U, shuttles)
-- Catawba, VA: 3 businesses (Four Pines, Huckleberry's opening 2025, grocery)
-- Daleville, VA: 10 businesses (comprehensive update - added post office, shuttle)
-- Troutville, VA: 5 businesses (BeeCh Hill B&B/Hostel, Super 8, Quality Inn, Holiday Inn Express)
-- Buchanan, VA: 8 businesses (Peaks of Otter Lodge, Middle Creek Campground, Wattstull Inn)
-- Glasgow, VA: 9 businesses (Stanimal's 328 Hostel AT Passport, Lodging at MidMountain, Town Hall free camping)
-- Big Island, VA: 2 businesses (NEW location - H&H Food Market, post office)
-- Buena Vista, VA: 8 businesses (NEW location - Glen Maury Park $5 camping, lodging, Food Lion)
-- Montebello, VA: 3 businesses (NEW location - Camping & General Store, post office, shuttle)
-- Reeds Gap, VA: 3 businesses (NEW location - Rusty's Hard Time Hollow, Devils Backbone Brewpub AT Passport)
-- Waynesboro, VA: 17 businesses (comprehensive update - Stanimal's, Grace Hiker Hostel, YMCA, Shenandoah permits)
-- Elkton, VA: 8 businesses (NEW location - AT Outfitters, Swift Run Campground, Country View Motel)
-- Big Meadows, VA: 3 businesses (NEW location - Wayside AT Passport, Lodge, Campground $20)
-- Luray, VA: 10 businesses (NEW location - Open Arms Hostel AT Passport $3, Yogi Bear's Jellystone, AT Outfitters)
-- Front Royal, VA: 16 businesses (comprehensive update - Mountain Home B&B AT Passport, Mountain Trails AT Passport, 7 shuttles)
-- Linden, VA: 4 businesses (NEW location - Stumble Inn $35, Wonderland Hiker Refuge donation-based)
-- Bluemont, VA / Bears Den: 7 businesses (Bears Den Hostel AT Passport $30, restaurants, markets, shuttle)
-- Keys Gap, VA: 2 businesses (NEW location - Sweet Springs Country Store, Mini-Mart & Pizza)
-- Harpers Ferry, WV: 15 businesses (comprehensive update - ATC HQ, Town's Inn, Outfitter AT Passport, 8 shuttles)
-- Knoxville, MD: 4 businesses (NEW location - Cross Trails Hostel $15-80, Hillside Hotel, Guide House Grill, River & Trail shuttle)
-- Brunswick, MD: 2 businesses (NEW location - Post office, Wing n' Pizza Shack)
-- Boonsboro, MD: 6 businesses (comprehensive update - Old South Mountain Inn, post office, Vesta Pizzeria, markets)
-- Smithsburg, MD: 14 businesses (NEW location - post office, 2 groceries, 4 restaurants, pharmacy, laundry, library, 2 shuttles)
+Counts in this file are expected to change as new resupply points are discovered during audit. Use the checklist below as the source of truth.
 
 ## Review Checklist by State
 
@@ -170,19 +99,29 @@ This file must be saved after each location to prevent losing progress if sessio
 - [x] **PA 645 (Pine Grove, PA)** ✅ REVIEWED & ADDED (11 businesses)
 - [x] **Port Clinton, PA** ✅ REVIEWED & UPDATED (1 business updated, 7 added)
 - [x] **Hamburg, PA** ✅ REVIEWED & ADDED (5 businesses)
-- [ ] **Palmerton, PA** ← START HERE
-- [ ] Wind Gap, PA
-- [ ] Delaware Water Gap, PA
+- [x] **Palmerton, PA** ✅ REVIEWED & UPDATED (21 businesses - includes Walnutport / Slatington exit cluster)
+- [x] **Danielsville, PA** ✅ REVIEWED & ADDED (4 businesses)
+- [x] **Smith Gap Road, PA** ✅ REVIEWED & ADDED (3 businesses)
+- [x] **Wind Gap, PA** ✅ REVIEWED & ADDED (9 businesses)
+- [x] **Delaware Water Gap, PA** ✅ REVIEWED & UPDATED (9 businesses)
 
 ### New Jersey
-- [ ] Vernon, NJ
-- [ ] Unionville, NY
+- [x] **Mohican Outdoor Center, NJ** ✅ REVIEWED & ADDED (2 businesses)
+- [x] **Culvers Gap / Branchville, NJ** ✅ REVIEWED & ADDED (10 businesses)
+- [x] **NJ 23 (High Point State Park HQ) / Port Jervis, NY** ✅ REVIEWED & ADDED (10 businesses)
+- [x] **Glenwood, NJ** ✅ REVIEWED & ADDED (3 businesses)
+- [x] **Vernon, NJ** ✅ REVIEWED & UPDATED (12 businesses - includes New Milford access)
+- [x] **Unionville, NY** ✅ REVIEWED & ADDED (5 businesses)
 
 ### New York
-- [ ] Greenwood Lake, NY
-- [ ] Bear Mountain, NY
-- [ ] Peekskill, NY
-- [ ] Pawling, NY
+- [x] **Warwick, NY** ✅ REVIEWED & ADDED (9 businesses)
+- [x] **Bellvale Farms Creamery, NY** ✅ REVIEWED & ADDED (2 businesses)
+- [x] **Bellvale, NY** ✅ REVIEWED & ADDED (1 business)
+- [x] **Greenwood Lake, NY** ✅ REVIEWED & UPDATED (8 businesses)
+- [x] **Bear Mountain, NY** ✅ REVIEWED & UPDATED (16 businesses - includes Fort Montgomery / Highland Falls)
+- [ ] **Peekskill, NY** ← START HERE
+- [x] **Poughquag, NY** ✅ REVIEWED & ADDED (12 businesses)
+- [x] **Pawling, NY** ✅ REVIEWED & UPDATED (12 businesses)
 
 ### Connecticut
 - [ ] Kent, CT
