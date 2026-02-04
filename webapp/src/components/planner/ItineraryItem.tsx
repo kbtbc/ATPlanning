@@ -1,4 +1,4 @@
-import { Home, Package, Info, MapPin } from 'lucide-react';
+import { Home, Package, Info, MapPin, ChevronRight } from 'lucide-react';
 import { cn, formatMile } from '../../lib/utils';
 import type { Shelter, ResupplyPoint, Waypoint } from '../../types';
 
@@ -10,15 +10,16 @@ type ItineraryItemType =
 interface ItineraryItemProps {
   item: ItineraryItemType;
   onSetStart: (mile: number) => void;
+  onResupplyClick?: (resupply: ResupplyPoint) => void;
 }
 
-export function ItineraryItem({ item, onSetStart }: ItineraryItemProps) {
+export function ItineraryItem({ item, onSetStart, onResupplyClick }: ItineraryItemProps) {
   if (item.type === 'shelter') {
     return <ShelterItem shelter={item.data} onSetStart={onSetStart} />;
   }
 
   if (item.type === 'resupply') {
-    return <ResupplyItem resupply={item.data} onSetStart={onSetStart} />;
+    return <ResupplyItem resupply={item.data} onSetStart={onSetStart} onResupplyClick={onResupplyClick} />;
   }
 
   if (item.type === 'feature') {
@@ -57,9 +58,29 @@ function ShelterItem({ shelter, onSetStart }: { shelter: Shelter; onSetStart: (m
   );
 }
 
-function ResupplyItem({ resupply, onSetStart }: { resupply: ResupplyPoint; onSetStart: (mile: number) => void }) {
+interface ResupplyItemProps {
+  resupply: ResupplyPoint;
+  onSetStart: (mile: number) => void;
+  onResupplyClick?: (resupply: ResupplyPoint) => void;
+}
+
+function ResupplyItem({ resupply, onSetStart, onResupplyClick }: ResupplyItemProps) {
+  const isClickable = !!onResupplyClick;
+
+  const handleClick = () => {
+    if (onResupplyClick) {
+      onResupplyClick(resupply);
+    }
+  };
+
   return (
-    <div className="card">
+    <div
+      className={cn(
+        "card",
+        isClickable && "cursor-pointer hover:bg-[var(--background)] transition-colors"
+      )}
+      onClick={isClickable ? handleClick : undefined}
+    >
       <div className="flex items-start justify-between">
         <div className="flex items-start gap-2">
           <div className={cn(
@@ -74,13 +95,17 @@ function ResupplyItem({ resupply, onSetStart }: { resupply: ResupplyPoint; onSet
             <p className="font-medium text-sm">{resupply.name}</p>
             <p className="text-xs text-[var(--foreground-muted)]">
               Mile {formatMile(resupply.mile)}
-              {resupply.distanceFromTrail > 0 && ` · ${resupply.distanceFromTrail} mi off trail`}
+              {resupply.distanceFromTrail > 0 && ` · ${resupply.distanceFromTrail} mi ${resupply.directionFromTrail || ''}`.trim()}
             </p>
           </div>
         </div>
         <div className="flex items-center gap-2">
           <QualityBadge quality={resupply.resupplyQuality} />
-          <SetStartButton onClick={() => onSetStart(resupply.mile)} />
+          {isClickable ? (
+            <ChevronRight className="w-4 h-4 text-[var(--foreground-muted)]" />
+          ) : (
+            <SetStartButton onClick={(e) => { e.stopPropagation(); onSetStart(resupply.mile); }} />
+          )}
         </div>
       </div>
       <div className="flex flex-wrap gap-1 mt-1.5 ml-8">
@@ -116,7 +141,7 @@ function FeatureItem({ feature, onSetStart }: { feature: Waypoint; onSetStart: (
   );
 }
 
-function SetStartButton({ onClick }: { onClick: () => void }) {
+function SetStartButton({ onClick }: { onClick: (e: React.MouseEvent) => void }) {
   return (
     <button
       onClick={onClick}

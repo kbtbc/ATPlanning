@@ -21,6 +21,7 @@ interface DayCardProps {
   index: number;
   onToggle: () => void;
   onSetStart: (mile: number, date: Date) => void;
+  onResupplyClick?: (resupply: ResupplyPoint) => void;
 }
 
 export function DayCard({
@@ -31,6 +32,7 @@ export function DayCard({
   index,
   onToggle,
   onSetStart,
+  onResupplyClick,
 }: DayCardProps) {
   const dayDate = addDays(startDate, day.day - 1);
   const dailyMiles = Math.abs(day.endMile - day.startMile);
@@ -139,6 +141,7 @@ export function DayCard({
                   key={item.data.id}
                   item={item}
                   onSetStart={handleSetStartFromItem}
+                  onResupplyClick={onResupplyClick}
                 />
               ))}
             </div>

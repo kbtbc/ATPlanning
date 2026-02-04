@@ -1,9 +1,12 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, TrendingUp } from 'lucide-react';
 import { useState, useMemo } from 'react';
 import { useHikePlanner } from '../hooks/useHikePlanner';
+import { getContactsByResupplyId } from '../data/contacts';
 import { MiniMap } from './MiniMap';
 import { PlannerControls, PlannerStats, DayCard } from './planner';
+import { ResupplyExpandedCard } from './resupply';
+import type { ResupplyPoint, Business } from '../types';
 
 interface HikePlannerProps {
   initialMile?: number;
@@ -29,6 +32,7 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
   } = useHikePlanner({ startMile: initialMile });
 
   const [expandedDay, setExpandedDay] = useState<number | null>(null);
+  const [selectedResupply, setSelectedResupply] = useState<ResupplyPoint | null>(null);
 
   // Generate day markers for the map
   const dayMarkers = useMemo(() => {
@@ -42,6 +46,39 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
     setStartMile(mile);
     setStartDate(date);
   };
+
+  const handleResupplyClick = (resupply: ResupplyPoint) => {
+    setSelectedResupply(resupply);
+  };
+
+  const handleBackFromResupply = () => {
+    setSelectedResupply(null);
+  };
+
+  // Get businesses for a resupply point
+  const getBusinesses = (resupply: ResupplyPoint): Business[] => {
+    if (resupply.businesses && resupply.businesses.length > 0) {
+      return resupply.businesses;
+    }
+    const contacts = getContactsByResupplyId(resupply.id);
+    return contacts?.businesses || [];
+  };
+
+  // Show resupply detail view
+  if (selectedResupply) {
+    const businesses = getBusinesses(selectedResupply);
+    return (
+      <AnimatePresence mode="wait">
+        <ResupplyExpandedCard
+          key={selectedResupply.id}
+          resupply={selectedResupply}
+          businesses={businesses}
+          currentMile={startMile}
+          onBack={handleBackFromResupply}
+        />
+      </AnimatePresence>
+    );
+  }
 
   return (
     <div className="space-y-4">
@@ -103,6 +140,7 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
               index={index}
               onToggle={() => setExpandedDay(expandedDay === day.day ? null : day.day)}
               onSetStart={handleSetStart}
+              onResupplyClick={handleResupplyClick}
             />
           ))}
         </div>
