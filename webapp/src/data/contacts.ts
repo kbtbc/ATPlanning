@@ -6534,7 +6534,7 @@ export const resupplyContacts: ContactInfo[] = [
       {
         id: 'dalt-003',
         name: 'Shamrock Village Inn',
-        type: 'hostel',
+        type: 'lodging',
         phone: '(413) 684-0860',
         website: 'www.shamrockvillage.webs.com',
         address: '604 Main St, Dalton, MA 01226',
