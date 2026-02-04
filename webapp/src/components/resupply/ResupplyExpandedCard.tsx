@@ -150,7 +150,8 @@ export function ResupplyExpandedCard({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             className={cn(
-              viewMode === 'grid' ? 'grid grid-cols-2 gap-2' : 'divide-y divide-[var(--border)]'
+              'bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl overflow-hidden',
+              viewMode === 'grid' ? 'grid grid-cols-2 gap-2 p-2' : 'divide-y divide-[var(--border)]'
             )}
           >
             {filteredBusinesses.map((business, idx) => (
@@ -159,6 +160,7 @@ export function ResupplyExpandedCard({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: idx * 0.02 }}
+                className={viewMode === 'list' ? 'px-3' : ''}
               >
                 <BusinessListCard
                   business={business}

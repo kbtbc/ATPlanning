@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, BookOpen, Flag, Mail } from 'lucide-react';
+import { ArrowRight, BookOpen, Flag, Mail, Phone } from 'lucide-react';
 import { resupplyPoints, getNearestResupply } from '../data';
-import { getContactsByResupplyId } from '../data/contacts';
+import { getContactsByResupplyId, hasContactInfo } from '../data/contacts';
 import { ResupplyDirectory, ResupplyExpandedCard } from './resupply';
 import { cn, formatMile, formatDistance } from '../lib/utils';
 import type { ResupplyPoint, Business } from '../types';
@@ -12,21 +12,6 @@ type ResupplyView = 'upcoming' | 'directory' | 'expanded';
 interface ResupplyPlannerProps {
   currentMile?: number;
   direction?: 'NOBO' | 'SOBO';
-}
-
-// Build a summary of available services for a resupply point
-function buildServicesSummary(resupply: ResupplyPoint): string {
-  const services: string[] = [];
-
-  if (resupply.hasGrocery) services.push('Grocery');
-  if (resupply.hasLodging) services.push('Lodging');
-  if (resupply.hasRestaurant) services.push('Food');
-  if (resupply.hasPostOffice) services.push('PO');
-  if (resupply.shuttleAvailable) services.push('Shuttle');
-  if (resupply.hasShower) services.push('Shower');
-  if (resupply.hasLaundry) services.push('Laundry');
-
-  return services.slice(0, 4).join(', ');
 }
 
 export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: ResupplyPlannerProps) {
@@ -43,9 +28,9 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
 
   const getQualityConfig = (quality: ResupplyPoint['resupplyQuality']) => {
     const config = {
-      full: { bg: 'bg-emerald-500', text: 'text-emerald-500', badge: 'bg-emerald-500/15 text-emerald-500', label: 'full' },
-      limited: { bg: 'bg-amber-500', text: 'text-amber-500', badge: 'bg-amber-500/15 text-amber-500', label: 'limited' },
-      minimal: { bg: 'bg-rose-500', text: 'text-rose-500', badge: 'bg-rose-500/15 text-rose-500', label: 'minimal' },
+      full: { bg: 'bg-emerald-500' },
+      limited: { bg: 'bg-amber-500' },
+      minimal: { bg: 'bg-rose-500' },
     };
     return config[quality] || config.minimal;
   };
@@ -159,42 +144,39 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
           Upcoming Resupply
         </h3>
 
-        <div className="space-y-1.5">
+        <div className="divide-y divide-[var(--border)]">
           {upcomingResupply.map((resupply, index) => {
             const quality = getQualityConfig(resupply.resupplyQuality);
-            const distanceAhead = Math.abs(resupply.mile - currentMile);
-            const servicesSummary = buildServicesSummary(resupply);
+            const hasContacts = (resupply.businesses && resupply.businesses.length > 0) || hasContactInfo(resupply.id);
+
+            // Build second line: Mile X · State · Distance off trail
+            const secondLineParts = [`Mile ${formatMile(resupply.mile)}`, resupply.state];
+            if (resupply.distanceFromTrail > 0) {
+              secondLineParts.push(`${resupply.distanceFromTrail} mi off trail`);
+            }
 
             return (
               <motion.div
                 key={resupply.id}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.03 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: index * 0.02 }}
               >
                 <button
                   onClick={() => handleResupplyClick(resupply)}
-                  className="w-full text-left bg-[var(--background-secondary)] border border-[var(--border)] rounded-lg p-3 hover:border-[var(--primary)]/40 hover:bg-[var(--background)] transition-all group"
+                  className="w-full text-left py-2 hover:bg-[var(--background-secondary)] transition-colors"
                 >
-                  <div className="flex items-start gap-3">
-                    {/* Quality indicator dot */}
-                    <div className={cn('w-2 h-2 rounded-full mt-1.5 shrink-0', quality.bg)} />
-
-                    {/* Content */}
-                    <div className="flex-1 min-w-0">
-                      {/* Name and quality badge */}
-                      <div className="flex items-center gap-2 mb-0.5">
-                        <h4 className="font-medium text-sm">{resupply.name}</h4>
-                        <span className={cn('px-1.5 py-0.5 rounded text-[9px] font-semibold uppercase tracking-wider shrink-0', quality.badge)}>
-                          {quality.label}
-                        </span>
-                      </div>
-                      {/* Mileage info and services summary */}
-                      <p className="text-xs text-[var(--foreground-muted)]">
-                        {distanceAhead.toFixed(1)} mi ahead (mile {formatMile(resupply.mile)})
-                        {servicesSummary && ` · ${servicesSummary}`}
-                      </p>
-                    </div>
+                  {/* First line: dot, name, phone icon */}
+                  <div className="flex items-center gap-2">
+                    <div className={cn('w-1.5 h-1.5 rounded-full shrink-0', quality.bg)} />
+                    <span className="text-sm text-[var(--foreground)]">{resupply.name}</span>
+                    {hasContacts && (
+                      <Phone className="w-3 h-3 text-[var(--foreground-muted)] shrink-0" />
+                    )}
+                  </div>
+                  {/* Second line: mile info */}
+                  <div className="ml-3.5 text-xs text-[var(--foreground-muted)]">
+                    {secondLineParts.join(' · ')}
                   </div>
                 </button>
               </motion.div>
