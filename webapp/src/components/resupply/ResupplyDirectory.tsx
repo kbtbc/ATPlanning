@@ -16,10 +16,12 @@ export function ResupplyDirectory({ onSelectResupply }: ResupplyDirectoryProps) 
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [filterState, setFilterState] = useState<string | 'all'>('all');
 
-  // Get unique states
+  // Get unique states in NOBO trail order
   const states = useMemo(() => {
+    // NOBO order: GA -> NC -> TN -> VA -> WV -> MD -> PA -> NJ -> NY -> CT -> MA -> VT -> NH -> ME
+    const noboOrder = ['GA', 'NC', 'TN', 'VA', 'WV', 'MD', 'PA', 'NJ', 'NY', 'CT', 'MA', 'VT', 'NH', 'ME'];
     const stateSet = new Set(resupplyPoints.map(r => r.state));
-    return Array.from(stateSet).sort();
+    return noboOrder.filter(state => stateSet.has(state));
   }, []);
 
   // Filter resupply points
@@ -47,8 +49,8 @@ export function ResupplyDirectory({ onSelectResupply }: ResupplyDirectoryProps) 
         </h3>
 
         {/* Search and Filter */}
-        <div className="flex flex-col sm:flex-row gap-2">
-          <div className="relative flex-1">
+        <div className="flex gap-2">
+          <div className="relative flex-1 min-w-0">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--foreground-muted)]" />
             <input
               type="text"
@@ -61,9 +63,9 @@ export function ResupplyDirectory({ onSelectResupply }: ResupplyDirectoryProps) 
           <select
             value={filterState}
             onChange={(e) => setFilterState(e.target.value)}
-            className="input py-1.5 text-sm w-full sm:w-auto"
+            className="input py-1.5 text-sm shrink-0 w-24"
           >
-            <option value="all">All States</option>
+            <option value="all">All</option>
             {states.map(state => (
               <option key={state} value={state}>{state}</option>
             ))}

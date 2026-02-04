@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Map, Package, Search, Menu, X, BarChart3, PersonStanding } from 'lucide-react';
+import { Map, Package, Search, Menu, X, BarChart3, Footprints } from 'lucide-react';
 import { HikePlanner } from './components/HikePlanner';
 import { WaypointList } from './components/WaypointList';
 import { ResupplyPlanner } from './components/ResupplyPlanner';
@@ -39,7 +39,7 @@ function App() {
             {/* Logo */}
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] flex items-center justify-center shadow-sm">
-                <PersonStanding className="w-5 h-5 text-white" />
+                <Footprints className="w-5 h-5 text-white" />
               </div>
               <div>
                 <h1 className="text-lg font-semibold tracking-tight leading-tight">AT Thru-Hike Planner</h1>
