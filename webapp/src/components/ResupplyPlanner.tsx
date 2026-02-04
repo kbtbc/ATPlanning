@@ -226,11 +226,10 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
             // Calculate distance ahead from current position
             const distanceAhead = Math.abs(resupply.mile - currentMile);
 
-            // Format mile info for display - include direction if off trail
+            // Format off-trail text (will be italic)
             const offTrailText = resupply.distanceFromTrail > 0
-              ? ` · ${resupply.distanceFromTrail} mi ${resupply.directionFromTrail || ''}`.replace(/\s+/g, ' ').trim()
-              : '';
-            const mileInfo = `${formatDistance(distanceAhead)} ahead @ Mile ${formatMile(resupply.mile)}${offTrailText}`;
+              ? `${resupply.distanceFromTrail}mi ${resupply.directionFromTrail || ''}`.trim()
+              : null;
 
             return (
               <motion.div
@@ -252,7 +251,10 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
                     {/* First line: name and mile info */}
                     <div className="flex items-baseline gap-2 flex-wrap">
                       <span className="text-sm font-medium text-[var(--foreground)]">{resupply.name}</span>
-                      <span className="text-xs text-[var(--foreground-muted)]">{mileInfo}</span>
+                      <span className="text-xs text-[var(--foreground-muted)]">
+                        {formatDistance(distanceAhead)} ahead @mm {formatMile(resupply.mile)}
+                        {offTrailText && <> • <em>{offTrailText}</em></>}
+                      </span>
                     </div>
                     {/* Second line: service summary only */}
                     {serviceSummary && (
