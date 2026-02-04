@@ -54,7 +54,7 @@ export const resupplyContacts: ContactInfo[] = [
       {
         id: 'suches-002',
         name: 'Kennedy Creek Resort',
-        type: 'hostel',
+        type: 'lodging',
         phone: '(478) 484-7759',
         email: 'kennedycreekresort@gmail.com',
         address: '3001 High Valley Road, Suches, GA 30572',
@@ -67,7 +67,7 @@ export const resupplyContacts: ContactInfo[] = [
       {
         id: 'suches-003',
         name: 'The Hiker Hostel @ Barefoot Hills Hotel',
-        type: 'hostel',
+        type: 'lodging',
         phone: '(770) 312-7342',
         email: 'reservations@barefoothills.com',
         website: 'https://barefoothills.com',

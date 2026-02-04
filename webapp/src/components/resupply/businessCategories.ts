@@ -46,7 +46,7 @@ export const categoryLabels: Record<string, string> = {
 // Specific sub-type labels for display in the list (more specific)
 export const typeLabels: Record<BusinessType, string> = {
   hostel: 'HOSTEL',
-  lodging: 'MOTEL',
+  lodging: 'HOTEL',
   camping: 'CAMPING',
   campground: 'CAMPGROUND',
   shelter: 'SHELTER',
