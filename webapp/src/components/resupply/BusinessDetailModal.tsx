@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Phone, MapPin, Clock, DollarSign, Mail, Globe, ChevronLeft } from 'lucide-react';
 import { cn } from '../../lib/utils';
-import { getColorsForType, categoryLabels, getCategoryForType } from './businessCategories';
+import { getColorsForType, getLabelForType } from './businessCategories';
 import type { Business } from '../../types';
 
 interface BusinessDetailModalProps {
@@ -15,8 +15,7 @@ export function BusinessDetailModal({ business, distanceInfo, onClose, onBackToR
   if (!business) return null;
 
   const colors = getColorsForType(business.type);
-  const category = getCategoryForType(business.type);
-  const categoryLabel = categoryLabels[category] || 'SERVICES';
+  const typeLabel = getLabelForType(business.type);
 
   const handleCall = () => {
     if (business.phone) {
@@ -73,7 +72,7 @@ export function BusinessDetailModal({ business, distanceInfo, onClose, onBackToR
             <div className="flex items-start justify-between gap-3">
               <div className="flex-1 min-w-0">
                 <span className={cn('text-[10px] font-medium uppercase tracking-wider', colors.text)}>
-                  {categoryLabel}
+                  {typeLabel}
                 </span>
                 <h2 className="text-[var(--foreground)] mt-0.5">
                   <span className="font-semibold">{business.name}</span>

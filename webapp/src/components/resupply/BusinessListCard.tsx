@@ -1,5 +1,5 @@
 import { cn } from '../../lib/utils';
-import { getCategoryForType, getColorsForType, categoryLabels } from './businessCategories';
+import { getColorsForType, getLabelForType } from './businessCategories';
 import type { Business } from '../../types';
 
 interface BusinessListCardProps {
@@ -80,8 +80,7 @@ function buildSummaryLine(business: Business, distanceInfo?: string): string {
 
 export function BusinessListCard({ business, distanceInfo, onViewDetails }: BusinessListCardProps) {
   const colors = getColorsForType(business.type);
-  const category = getCategoryForType(business.type);
-  const categoryLabel = categoryLabels[category] || 'SERVICES';
+  const typeLabel = getLabelForType(business.type);
   const summaryLine = buildSummaryLine(business, distanceInfo);
 
   return (
@@ -104,7 +103,7 @@ export function BusinessListCard({ business, distanceInfo, onViewDetails }: Busi
               {business.name}
             </span>
             <span className={cn('px-1.5 py-0.5 rounded text-[9px] font-medium uppercase tracking-wider shrink-0', colors.badge, colors.text)}>
-              {categoryLabel}
+              {typeLabel}
             </span>
           </div>
 

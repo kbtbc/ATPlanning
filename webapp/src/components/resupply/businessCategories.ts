@@ -35,11 +35,39 @@ export const typeToCategory: Record<BusinessType, string> = {
   shipping: 'services',
 };
 
+// Category labels for filter tabs (broad categories for counts)
 export const categoryLabels: Record<string, string> = {
   lodging: 'LODGING',
   food: 'FOOD',
   shuttles: 'SHUTTLES',
   services: 'SERVICES',
+};
+
+// Specific sub-type labels for display in the list (more specific)
+export const typeLabels: Record<BusinessType, string> = {
+  hostel: 'HOSTEL',
+  lodging: 'MOTEL',
+  camping: 'CAMPING',
+  campground: 'CAMPGROUND',
+  shelter: 'SHELTER',
+  restaurant: 'RESTAURANT',
+  grocery: 'GROCERY',
+  general_store: 'STORE',
+  shuttle: 'SHUTTLE',
+  post_office: 'POST OFFICE',
+  outfitter: 'OUTFITTER',
+  laundry: 'LAUNDRY',
+  medical: 'MEDICAL',
+  pharmacy: 'PHARMACY',
+  veterinary: 'VET',
+  hospital: 'HOSPITAL',
+  library: 'LIBRARY',
+  services: 'SERVICES',
+  visitor_center: 'VISITOR CTR',
+  activity: 'ACTIVITY',
+  museum: 'MUSEUM',
+  kennel: 'KENNEL',
+  shipping: 'SHIPPING',
 };
 
 export function getCategoryForType(type: BusinessType): string {
@@ -49,4 +77,9 @@ export function getCategoryForType(type: BusinessType): string {
 export function getColorsForType(type: BusinessType) {
   const category = getCategoryForType(type);
   return categoryColors[category] || categoryColors.services;
+}
+
+// Get specific label for a business type (for display in list)
+export function getLabelForType(type: BusinessType): string {
+  return typeLabels[type] || 'SERVICES';
 }
