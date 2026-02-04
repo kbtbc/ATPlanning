@@ -88,29 +88,29 @@ export function BusinessListCard({ business, distanceInfo, onViewDetails }: Busi
     <button
       onClick={onViewDetails}
       className={cn(
-        'w-full text-left group relative bg-[var(--background-secondary)] rounded-lg border border-[var(--border)] overflow-hidden transition-all duration-200',
-        onViewDetails && 'cursor-pointer hover:border-[var(--primary)]/40 hover:bg-[var(--background)]'
+        'w-full text-left group relative transition-all duration-200',
+        onViewDetails && 'cursor-pointer hover:bg-[var(--background-secondary)]'
       )}
     >
-      <div className="flex items-start gap-3 p-3">
-        {/* Color dot indicator */}
-        <div className={cn('w-2 h-2 rounded-full mt-1.5 shrink-0', colors.dot)} />
+      <div className="flex items-center gap-2.5 py-1.5">
+        {/* Color dot indicator - centered vertically */}
+        <div className={cn('w-1.5 h-1.5 rounded-full shrink-0', colors.dot)} />
 
         {/* Content */}
         <div className="flex-1 min-w-0">
           {/* Name and category badge */}
-          <div className="flex items-center gap-2 mb-0.5">
-            <h4 className="font-medium text-sm text-[var(--foreground)]">
+          <div className="flex items-center gap-2">
+            <span className="text-sm text-[var(--foreground)]">
               {business.name}
-            </h4>
-            <span className={cn('px-1.5 py-0.5 rounded text-[9px] font-semibold uppercase tracking-wider shrink-0', colors.badge, colors.text)}>
+            </span>
+            <span className={cn('px-1.5 py-0.5 rounded text-[9px] font-medium uppercase tracking-wider shrink-0', colors.badge, colors.text)}>
               {categoryLabel}
             </span>
           </div>
 
           {/* Summary line */}
           {summaryLine && (
-            <p className="text-xs text-[var(--foreground-muted)] leading-relaxed">
+            <p className="text-xs text-[var(--foreground-muted)]">
               {summaryLine}
             </p>
           )}

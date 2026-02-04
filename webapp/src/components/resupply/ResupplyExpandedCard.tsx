@@ -150,15 +150,15 @@ export function ResupplyExpandedCard({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             className={cn(
-              viewMode === 'grid' ? 'grid grid-cols-2 gap-2' : 'space-y-2'
+              viewMode === 'grid' ? 'grid grid-cols-2 gap-2' : 'divide-y divide-[var(--border)]'
             )}
           >
             {filteredBusinesses.map((business, idx) => (
               <motion.div
                 key={business.id || `biz-${idx}`}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.03 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: idx * 0.02 }}
               >
                 <BusinessListCard
                   business={business}

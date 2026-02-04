@@ -118,6 +118,18 @@ export const resupplyContacts: ContactInfo[] = [
         services: ['shuttle'],
         lastVerified: '2026-02-04',
       },
+      {
+        id: 'suches-008',
+        name: 'Suches Post Office',
+        type: 'post_office',
+        phone: '(706) 747-2611',
+        address: '2710 GA-60, Suches, GA 30572',
+        hours: 'M-F 9am-4pm, Sat 9am-12pm',
+        googleMapsUrl: 'https://maps.google.com/?q=Suches+Post+Office+GA',
+        notes: 'General Delivery available. Holds packages 30 days. In town.',
+        services: ['post_office', 'general delivery'],
+        lastVerified: '2026-02-04',
+      },
     ],
   },
   {
