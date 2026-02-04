@@ -1,0 +1,246 @@
+================================================================================
+AI AGENT RESUME INSTRUCTIONS - AT PLANNING MANUAL REVIEW PROJECT
+================================================================================
+
+CRITICAL: This project is in the middle of a MANUAL REVIEW process to update
+business contact information for ALL resupply locations along the Appalachian
+Trail. Previous sessions have crashed, so this document ensures continuity.
+
+================================================================================
+PROJECT OVERVIEW
+================================================================================
+
+TASK: Manually review and update business contact information for every resupply
+location along the AT (from Amicalola Falls at mile -8.5 to Katahdin at mile 2197.4)
+
+SOURCE: PDF file "WBP interactive PDF-V5E.pdf" located at:
+C:\Users\pmgo3\.windsurf\worktrees\ATPlanning\ATPlanning-9714027d\backend\data\WBP interactive PDF-V5E.pdf
+
+DATA FILES TO UPDATE:
+1. webapp/src/data/contacts.ts - Business contact information
+2. webapp/src/data/resupply.ts - Resupply location metadata
+
+PROGRESS TRACKER:
+- MANUAL_REVIEW_PROGRESS.md - Tracks which towns have been reviewed
+- This file is updated after EVERY town review
+
+================================================================================
+CURRENT STATUS (Check MANUAL_REVIEW_PROGRESS.md for latest)
+================================================================================
+
+COMPLETED STATES:
+✅ GEORGIA - All 3 locations complete (52 businesses)
+✅ NORTH CAROLINA - All 5 locations complete (108 businesses)
+✅ TENNESSEE - All 10 locations complete (76 businesses)
+✅ VIRGINIA - All 33 locations complete (231 businesses)
+✅ WEST VIRGINIA - 1 location complete (15 businesses)
+✅ MARYLAND - All 4 locations complete (26 businesses)
+
+LAST COMPLETED: Smithsburg, MD (Mile 1065.0) - 14 businesses
+NEXT TO REVIEW: Waynesboro, PA (Mile 1095.0) - Entering Pennsylvania
+
+TOTAL PROGRESS: 60 locations reviewed, 512 businesses added/updated (80% COMPLETE!)
+REMAINING: ~15 locations (Pennsylvania and northern states)
+
+================================================================================
+WORKFLOW - FOLLOW THIS EXACTLY
+================================================================================
+
+FOR EACH RESUPPLY LOCATION:
+
+1. USER PROVIDES PDF SCREENSHOTS
+   - User will share images from the PDF showing business details
+   - Images contain: business names, phone numbers, addresses, hours, websites,
+     pricing, services, and special notes for hikers
+
+2. COMPARE WITH CURRENT DATA
+   - Read current data from webapp/src/data/contacts.ts
+   - Identify what's missing, outdated, or incorrect
+   - Present comparison to user showing gaps
+
+3. UPDATE DATA FILES
+   - Edit contacts.ts to add/update businesses
+   - If new resupply location, also update resupply.ts
+   - Include ALL details: phone, email, address, hours, website, pricing, notes
+
+4. SAVE PROGRESS IMMEDIATELY (CRITICAL!)
+   - Update MANUAL_REVIEW_PROGRESS.md
+   - Mark location as reviewed with checkmark
+   - Add count of businesses updated/added
+   - Update "Last Reviewed" and "Next to Review" fields
+   - Save changelog.txt with timestamp
+
+5. CONFIRM WITH USER
+   - Summarize what was updated
+   - Ask which location to review next
+
+================================================================================
+DATA STRUCTURE EXAMPLES
+================================================================================
+
+CONTACTS.TS FORMAT:
+{
+  resupplyId: 'location-id',
+  businesses: [
+    {
+      id: 'unique-id',
+      name: 'Business Name',
+      type: 'lodging' | 'hostel' | 'restaurant' | 'grocery' | 'outfitter' | 'post_office' | 'shuttle' | 'camping' | 'campground' | 'shelter' | 'medical' | 'pharmacy' | 'library' | 'services' | 'activity' | 'kennel' | 'veterinary' | 'hospital' | 'shipping' | 'general_store' | 'visitor_center' | 'laundry',
+      phone: '(555) 555-5555',
+      phone2: '(555) 555-5556', // if applicable
+      email: 'email@example.com',
+      website: 'www.example.com',
+      address: 'Full Address',
+      hours: 'M-F 9am-5pm, Sa-Su Closed',
+      googleMapsUrl: 'https://maps.google.com/?q=lat,lng',
+      notes: 'Detailed notes for hikers',
+      pricing: 'Price information',
+      services: ['service1', 'service2'],
+    },
+  ],
+}
+
+RESUPPLY.TS FORMAT (if adding new location):
+{
+  id: 'location-id',
+  name: 'Town Name, ST',
+  mile: 123.4,
+  soboMile: 2074.0,
+  elevation: 1234,
+  lat: 12.3456,
+  lng: -78.9012,
+  state: 'ST',
+  type: 'town' | 'resupply',
+  hasGrocery: true,
+  hasOutfitter: false,
+  hasPostOffice: true,
+  hasLodging: true,
+  hasRestaurant: true,
+  hasLaundry: true,
+  hasShower: true,
+  resupplyQuality: 'full' | 'limited' | 'minimal',
+  distanceFromTrail: 1.5,
+  shuttleAvailable: true,
+  notes: 'Description',
+  services: ['service1', 'service2']
+}
+
+================================================================================
+IMPORTANT RULES
+================================================================================
+
+1. NEVER SKIP SAVING PROGRESS
+   - After EVERY location update, save MANUAL_REVIEW_PROGRESS.md
+   - Update changelog.txt with timestamp
+   - This prevents losing work if session crashes
+
+2. BE THOROUGH
+   - Include ALL businesses from PDF
+   - Copy exact phone numbers, addresses, hours
+   - Include pricing, special hiker rates, notes
+   - Add email, website, services arrays
+
+3. PRESERVE EXISTING DATA
+   - Don't delete existing businesses unless user confirms they're obsolete
+   - Update/correct existing entries rather than replacing
+
+4. COORDINATE SYSTEM
+   - Google Maps URLs use format: https://maps.google.com/?q=lat,lng
+   - Extract coordinates from PDF when available
+
+5. COMMUNICATION
+   - Be concise, don't over-explain
+   - Present clear comparisons (current vs PDF)
+   - Ask for next location after each update
+
+================================================================================
+HOW TO RESUME AFTER CRASH
+================================================================================
+
+1. Read MANUAL_REVIEW_PROGRESS.md to see last completed location
+2. Check "Next to Review" field
+3. Start development server: cd webapp && bun dev
+4. Ask user: "Ready to resume manual review. Last completed: [location].
+   Next to review: [location]. Please share PDF screenshots when ready."
+5. Continue workflow from step 1
+
+================================================================================
+FILE LOCATIONS
+================================================================================
+
+Data Files:
+- webapp/src/data/contacts.ts (business contacts)
+- webapp/src/data/resupply.ts (resupply locations)
+
+Progress Tracking:
+- MANUAL_REVIEW_PROGRESS.md (checklist of all locations)
+- changelog.txt (timestamped changes)
+- AI_RESUME_INSTRUCTIONS.txt (this file)
+
+Source Data:
+- backend/data/WBP interactive PDF-V5E.pdf (source PDF)
+- backend/data/extracted/pdf_resupply_list.txt (extracted town list)
+
+Development:
+- Run: cd webapp && bun dev
+- URL: http://localhost:8000
+
+================================================================================
+COMMON ISSUES & SOLUTIONS
+================================================================================
+
+ISSUE: Can't find location in contacts.ts
+SOLUTION: Search for resupplyId in both contacts.ts and resupply.ts
+
+ISSUE: New location not in resupply.ts
+SOLUTION: Add to resupply.ts first, then add businesses to contacts.ts
+
+ISSUE: Duplicate businesses
+SOLUTION: Check existing entries carefully, update rather than add duplicates
+
+ISSUE: Missing coordinates
+SOLUTION: Use address or town name in Google Maps URL format
+
+ISSUE: Session crashes during review
+SOLUTION: This file! Read MANUAL_REVIEW_PROGRESS.md and resume
+
+================================================================================
+QUALITY CHECKLIST
+================================================================================
+
+Before marking a location as complete:
+☐ All businesses from PDF added/updated
+☐ Phone numbers formatted: (555) 555-5555
+☐ Addresses complete and accurate
+☐ Hours included (if available in PDF)
+☐ Websites included (if available)
+☐ Pricing information added (especially hiker rates)
+☐ Special notes for hikers included
+☐ Services array populated
+☐ Google Maps URLs added
+☐ MANUAL_REVIEW_PROGRESS.md updated
+☐ Location marked with ✅ and business count
+
+================================================================================
+END OF INSTRUCTIONS
+================================================================================
+
+Last Updated: 2024-02-03 (Session 10 - MAJOR MILESTONE SESSION)
+Project: AT Planning - Manual Business Review
+Status: IN PROGRESS - 60/75 locations complete (80% DONE!)
+
+RECENT UPDATES:
+- Fixed all frontend TypeScript errors
+- Added 12 new business types to type system
+- Added phone2 field support for businesses with multiple numbers
+- Cleaned up syntax errors in contacts.ts
+- All builds passing successfully
+
+KEY ACCOMPLISHMENTS THIS SESSION (21 LOCATIONS ADDED!):
+- COMPLETED VIRGINIA: Added final 16 VA locations (Troutville through Keys Gap)
+- COMPLETED MARYLAND: Added all 4 MD locations (Knoxville, Brunswick, Boonsboro, Smithsburg)
+- COMPLETED WEST VIRGINIA: Harpers Ferry (PSYCHOLOGICAL HALFWAY POINT - 15 businesses)
+- Added Big Meadows, Luray, Front Royal, Linden, Bluemont/Bears Den, Keys Gap
+- Comprehensive updates to major towns with full shuttle services
+- Total: 21 locations added/updated in this session (151 businesses)
+- MAJOR MILESTONE: 5 complete states, 512 total businesses documented!

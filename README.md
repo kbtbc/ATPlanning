@@ -37,13 +37,17 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - Distance from trail and shuttle availability
 - Strategic planning tips and mail drop advice
 
-### Contact Directory (NEW)
-- Searchable directory of hostels, outfitters, grocery stores, and services
-- Direct tap-to-call phone numbers
-- Tap-to-open Google Maps links for addresses
-- Business hours, pricing, and service lists
-- Covers key resupply points: Mountain Crossings, Outdoor 76, NOC, Damascus hostels, Shaw's, AT Lodge, and more
+### Contact Directory (COMPREHENSIVE - 80% COMPLETE!)
+- **512 businesses documented** across 60 resupply locations
+- Searchable directory of hostels, outfitters, grocery stores, restaurants, shuttles, and services
+- Direct tap-to-call phone numbers (including dual phone numbers where applicable)
+- Tap-to-open Google Maps links with precise coordinates
+- Business hours, pricing, hiker rates, and detailed service lists
+- **Complete coverage** for Georgia, North Carolina, Tennessee, Virginia, West Virginia, and Maryland
+- AT Passport locations marked throughout trail
+- Comprehensive shuttle services with coverage areas
 - Filter by state and search by name
+- **Currently updating:** Pennsylvania and northern states
 
 ### Waypoint Browser
 - 250+ shelters with capacity, water, and privy info
@@ -57,9 +61,26 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - **Trail Length**: 2,197.4 miles (plus 8.5 mile approach trail)
 - **Elevation Data**: ~5,000 points from FKT GPX (0.5mi resolution)
 - **Shelters**: 252 shelters from GA to ME
-- **Resupply Points**: 57 towns and stores
+- **Resupply Points**: 60+ towns and stores (actively being updated)
+- **Business Contacts**: 512 businesses with complete contact information
 - **Features**: 50 notable landmarks
 - **States**: 14 states (GA, NC, TN, VA, WV, MD, PA, NJ, NY, CT, MA, VT, NH, ME)
+
+### 🎯 Active Project: Manual Business Review (80% Complete!)
+
+**Status:** Systematically reviewing and updating ALL business contact information for resupply locations along the entire AT.
+
+**Completed States:**
+- ✅ Georgia (3 locations, 52 businesses)
+- ✅ North Carolina (5 locations, 108 businesses)
+- ✅ Tennessee (10 locations, 76 businesses)
+- ✅ Virginia (33 locations, 231 businesses)
+- ✅ West Virginia (1 location, 15 businesses)
+- ✅ Maryland (4 locations, 26 businesses)
+
+**Next:** Pennsylvania and northern states (~15 locations remaining)
+
+**Progress Tracking:** See `MANUAL_REVIEW_PROGRESS.md` for detailed status
 
 ## Tech Stack
 
