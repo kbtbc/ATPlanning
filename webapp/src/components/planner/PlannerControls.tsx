@@ -76,7 +76,7 @@ export function PlannerControls({
       {/* Direction Toggle - Top Right */}
       <div className="flex flex-col items-end gap-1">
         <div className="flex items-center gap-1.5">
-          <span className="text-[10px] text-[var(--foreground-muted)]">NOBO/SOBO</span>
+          <span className="text-[11px] text-[var(--foreground-muted)]">NOBO/SOBO</span>
           <div className="inline-flex items-center bg-[var(--background)] rounded-full p-[2px] border border-[var(--border)]">
             <button
               onClick={() => handleDirectionToggle('NOBO')}
