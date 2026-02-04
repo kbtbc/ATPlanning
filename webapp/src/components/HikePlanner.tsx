@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, TrendingUp } from 'lucide-react';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useHikePlanner } from '../hooks/useHikePlanner';
 import { getContactsByResupplyId } from '../data/contacts';
 import { MiniMap } from './MiniMap';
@@ -10,9 +10,10 @@ import type { ResupplyPoint, Business } from '../types';
 
 interface HikePlannerProps {
   initialMile?: number;
+  onMileChange?: (mile: number) => void;
 }
 
-export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
+export function HikePlanner({ initialMile = 0, onMileChange }: HikePlannerProps) {
   const {
     startMile,
     targetMilesPerDay,
@@ -33,6 +34,13 @@ export function HikePlanner({ initialMile = 0 }: HikePlannerProps) {
 
   const [expandedDay, setExpandedDay] = useState<number | null>(null);
   const [selectedResupply, setSelectedResupply] = useState<ResupplyPoint | null>(null);
+
+  // Notify parent when startMile changes
+  useEffect(() => {
+    if (onMileChange) {
+      onMileChange(startMile);
+    }
+  }, [startMile, onMileChange]);
 
   // Generate day markers for the map
   const dayMarkers = useMemo(() => {

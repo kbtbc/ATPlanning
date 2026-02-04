@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, BookOpen, Flag, Mail, ChevronRight } from 'lucide-react';
+import { ArrowRight, BookOpen, Flag, Mail, ChevronRight, Info } from 'lucide-react';
 import { resupplyPoints, getNearestResupply } from '../data';
 import { getContactsByResupplyId } from '../data/contacts';
 import { ResupplyDirectory, ResupplyExpandedCard } from './resupply';
@@ -40,6 +40,7 @@ function formatServiceSummary(counts: ReturnType<typeof getServiceCounts>): stri
 export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: ResupplyPlannerProps) {
   const [view, setView] = useState<ResupplyView>('upcoming');
   const [selectedResupply, setSelectedResupply] = useState<ResupplyPoint | null>(null);
+  const [showLegend, setShowLegend] = useState(false);
 
   // Get next several resupply points from current position
   const upcomingResupply = resupplyPoints
@@ -164,9 +165,56 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
 
       {/* Upcoming Resupply List */}
       <div>
-        <h3 className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)] font-semibold mb-2 px-4 py-2">
-          Upcoming Resupply
-        </h3>
+        <div className="flex items-center gap-2 mb-2 px-1">
+          <h3 className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)] font-semibold">
+            Upcoming Resupply
+          </h3>
+          <div className="relative">
+            <button
+              onClick={() => setShowLegend(!showLegend)}
+              className="p-1 rounded hover:bg-[var(--background-secondary)] transition-colors"
+              aria-label="Show category legend"
+            >
+              <Info className="w-3.5 h-3.5 text-[var(--foreground-muted)]" />
+            </button>
+            <AnimatePresence>
+              {showLegend && (
+                <motion.div
+                  initial={{ opacity: 0, y: -4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -4 }}
+                  className="absolute left-0 top-full mt-1 z-50 bg-[var(--background-secondary)] border border-[var(--border)] rounded-lg p-3 shadow-lg min-w-[200px]"
+                >
+                  <p className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)] font-semibold mb-2">
+                    Category Legend
+                  </p>
+                  <div className="space-y-1.5">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                      <span className="text-xs text-[var(--foreground)]">Major Town</span>
+                      <span className="text-[10px] text-[var(--foreground-muted)]">– Full services</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-blue-500" />
+                      <span className="text-xs text-[var(--foreground)]">Trail Town</span>
+                      <span className="text-[10px] text-[var(--foreground-muted)]">– Basic services</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-purple-500" />
+                      <span className="text-xs text-[var(--foreground)]">On Trail</span>
+                      <span className="text-[10px] text-[var(--foreground-muted)]">– Hostel/outfitter</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-amber-500" />
+                      <span className="text-xs text-[var(--foreground)]">Limited</span>
+                      <span className="text-[10px] text-[var(--foreground-muted)]">– Mail drop recommended</span>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
 
         <div className="space-y-2">
           {upcomingResupply.map((resupply, index) => {
@@ -175,11 +223,14 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
             const serviceCounts = getServiceCounts(businesses);
             const serviceSummary = formatServiceSummary(serviceCounts);
 
+            // Calculate distance ahead from current position
+            const distanceAhead = Math.abs(resupply.mile - currentMile);
+
             // Format mile info for display - include direction if off trail
             const offTrailText = resupply.distanceFromTrail > 0
               ? ` · ${resupply.distanceFromTrail} mi ${resupply.directionFromTrail || ''}`.replace(/\s+/g, ' ').trim()
               : '';
-            const mileInfo = `Mile ${formatMile(resupply.mile)}${offTrailText}`;
+            const mileInfo = `${formatDistance(distanceAhead)} ahead @ Mile ${formatMile(resupply.mile)}${offTrailText}`;
 
             return (
               <motion.div
