@@ -75,30 +75,31 @@ export function PlannerControls({
     <div className="space-y-3">
       {/* Direction Toggle - Top Right */}
       <div className="flex flex-col items-end gap-1">
-        <span className="text-[10px] text-[var(--foreground-muted)] uppercase tracking-wide">Direction</span>
+        <div className="flex gap-6 text-xs text-[var(--foreground-muted)] mb-0.5">
+          <span>NOBO</span>
+          <span>SOBO</span>
+        </div>
         <div className="inline-flex items-center bg-[var(--background)] rounded-lg p-0.5 border border-[var(--border)]">
           <button
             onClick={() => handleDirectionToggle('NOBO')}
             className={cn(
-              'px-3 py-1 rounded-md text-xs font-medium transition-all',
+              'w-8 h-5 rounded-md transition-all',
               direction === 'NOBO'
-                ? 'bg-[var(--primary)] text-white'
-                : 'text-[var(--foreground-muted)] hover:text-[var(--foreground)]'
+                ? 'bg-[var(--primary)]'
+                : 'hover:bg-[var(--foreground)]/10'
             )}
-          >
-            NOBO
-          </button>
+            aria-label="NOBO"
+          />
           <button
             onClick={() => handleDirectionToggle('SOBO')}
             className={cn(
-              'px-3 py-1 rounded-md text-xs font-medium transition-all',
+              'w-8 h-5 rounded-md transition-all',
               direction === 'SOBO'
-                ? 'bg-[var(--primary)] text-white'
-                : 'text-[var(--foreground-muted)] hover:text-[var(--foreground)] opacity-60'
+                ? 'bg-[var(--primary)]'
+                : 'hover:bg-[var(--foreground)]/10 opacity-60'
             )}
-          >
-            SOBO
-          </button>
+            aria-label="SOBO"
+          />
         </div>
         {showSoboMessage && (
           <p className="text-[10px] text-[var(--warning)] animate-pulse">
@@ -168,7 +169,7 @@ export function PlannerControls({
       <div className="grid grid-cols-2 gap-2.5">
         {/* Miles Per Day */}
         <div>
-          <label className="block text-sm font-medium text-[var(--foreground-muted)] mb-0.5">
+          <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-0.5">
             Miles/Day: <span className="font-bold text-[var(--foreground)]">{targetMilesPerDay}</span>
           </label>
           <input
