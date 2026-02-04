@@ -172,7 +172,7 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
           Upcoming Resupply
         </h3>
 
-        <div className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl overflow-hidden divide-y divide-[var(--border)]">
+        <div className="space-y-2">
           {upcomingResupply.map((resupply, index) => {
             const quality = getQualityConfig(resupply.resupplyQuality);
             const businesses = getBusinesses(resupply);
@@ -192,15 +192,16 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: index * 0.02 }}
+                className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl overflow-hidden"
               >
                 <button
                   onClick={() => handleResupplyClick(resupply)}
-                  className="w-full text-left px-3 py-2.5 hover:bg-[var(--background)] transition-colors flex items-center gap-3"
+                  className="w-full text-left px-4 py-2.5 hover:bg-[var(--background)] transition-colors flex items-center gap-3"
                 >
                   {/* Left content */}
                   <div className="flex-1 min-w-0">
                     {/* First line: dot, name, phone icon */}
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2.5">
                       <div className={cn('w-1.5 h-1.5 rounded-full shrink-0', quality.bg)} />
                       <span className="text-sm text-[var(--foreground)]">{resupply.name}</span>
                       {hasContacts && (
@@ -208,7 +209,7 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
                       )}
                     </div>
                     {/* Second line: mile info */}
-                    <div className="ml-3.5 text-xs text-[var(--foreground-muted)]">
+                    <div className="ml-4 text-xs text-[var(--foreground-muted)]">
                       {secondLineParts.join(' · ')}
                       {serviceSummary && ` · ${serviceSummary}`}
                     </div>

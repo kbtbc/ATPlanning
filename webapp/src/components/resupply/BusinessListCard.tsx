@@ -89,10 +89,10 @@ export function BusinessListCard({ business, distanceInfo, onViewDetails }: Busi
       onClick={onViewDetails}
       className={cn(
         'w-full text-left group relative transition-all duration-200',
-        onViewDetails && 'cursor-pointer hover:bg-[var(--background-secondary)]'
+        onViewDetails && 'cursor-pointer hover:bg-[var(--background)]'
       )}
     >
-      <div className="flex items-center gap-2.5 py-1.5">
+      <div className="flex items-center gap-3 py-2">
         {/* Color dot indicator - centered vertically */}
         <div className={cn('w-1.5 h-1.5 rounded-full shrink-0', colors.dot)} />
 

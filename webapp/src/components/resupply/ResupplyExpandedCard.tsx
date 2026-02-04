@@ -168,7 +168,7 @@ export function ResupplyExpandedCard({
                 transition={{ delay: idx * 0.02 }}
                 className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl overflow-hidden"
               >
-                <div className="px-3">
+                <div className="px-4">
                   <BusinessListCard
                     business={business}
                     distanceInfo={buildDistanceInfo(business)}
