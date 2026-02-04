@@ -38,6 +38,7 @@ export function PlannerControls({
   onMilesPerDayChange,
 }: PlannerControlsProps) {
   const [showGpsError, setShowGpsError] = useState(false);
+  const [showSoboMessage, setShowSoboMessage] = useState(false);
 
   // Use the onSuccess callback to directly update the mile when GPS succeeds
   const handleGpsSuccess = useCallback((nearestMile: number) => {
@@ -60,13 +61,24 @@ export function PlannerControls({
     getCurrentPosition();
   };
 
+  const handleDirectionToggle = (newDirection: Direction) => {
+    if (newDirection === 'SOBO') {
+      setShowSoboMessage(true);
+      setTimeout(() => setShowSoboMessage(false), 3000);
+    } else {
+      onDirectionChange(newDirection);
+      setShowSoboMessage(false);
+    }
+  };
+
   return (
     <div className="space-y-3">
       {/* Direction Toggle - Top Right */}
-      <div className="flex justify-end">
+      <div className="flex flex-col items-end gap-1">
+        <span className="text-[10px] text-[var(--foreground-muted)] uppercase tracking-wide">Direction</span>
         <div className="inline-flex items-center bg-[var(--background)] rounded-lg p-0.5 border border-[var(--border)]">
           <button
-            onClick={() => onDirectionChange('NOBO')}
+            onClick={() => handleDirectionToggle('NOBO')}
             className={cn(
               'px-3 py-1 rounded-md text-xs font-medium transition-all',
               direction === 'NOBO'
@@ -77,17 +89,22 @@ export function PlannerControls({
             NOBO
           </button>
           <button
-            onClick={() => onDirectionChange('SOBO')}
+            onClick={() => handleDirectionToggle('SOBO')}
             className={cn(
               'px-3 py-1 rounded-md text-xs font-medium transition-all',
               direction === 'SOBO'
                 ? 'bg-[var(--primary)] text-white'
-                : 'text-[var(--foreground-muted)] hover:text-[var(--foreground)]'
+                : 'text-[var(--foreground-muted)] hover:text-[var(--foreground)] opacity-60'
             )}
           >
             SOBO
           </button>
         </div>
+        {showSoboMessage && (
+          <p className="text-[10px] text-[var(--warning)] animate-pulse">
+            NOBO support only for now, SOBO coming soon
+          </p>
+        )}
       </div>
 
       {/* Starting Mile and Start Date Row */}
@@ -163,7 +180,7 @@ export function PlannerControls({
             step={1}
             className="w-full accent-[var(--accent)]"
           />
-          <div className="flex justify-between text-[10px] text-[var(--foreground-muted)] -mt-0.5">
+          <div className="flex justify-between text-xs text-[var(--foreground-muted)] -mt-0.5">
             <span>8</span>
             <span>25</span>
           </div>
@@ -183,7 +200,7 @@ export function PlannerControls({
             step={1}
             className="w-full accent-[var(--accent)]"
           />
-          <div className="flex justify-between text-[10px] text-[var(--foreground-muted)] -mt-0.5">
+          <div className="flex justify-between text-xs text-[var(--foreground-muted)] -mt-0.5">
             <span>1</span>
             <span>14</span>
           </div>
