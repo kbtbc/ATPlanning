@@ -204,6 +204,9 @@ SOLUTION: Use address or town name in Google Maps URL format
 ISSUE: Session crashes during review
 SOLUTION: This file! Read MANUAL_REVIEW_PROGRESS.md and resume
 
+ISSUE: One-off Python scripts can appear to freeze in this PowerShell environment
+SOLUTION: Prefer PowerShell/streaming scripts for quick scans, and always watch for prompt/output to confirm commands are progressing
+
 ================================================================================
 QUALITY CHECKLIST
 ================================================================================

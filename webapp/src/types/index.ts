@@ -129,4 +129,16 @@ export type BusinessType =
   | 'general_store'
   | 'visitor_center'
   | 'shuttle'
-  | 'laundry';
+  | 'laundry'
+  | 'camping'
+  | 'campground'
+  | 'shelter'
+  | 'medical'
+  | 'pharmacy'
+  | 'veterinary'
+  | 'hospital'
+  | 'services'
+  | 'activity'
+  | 'museum'
+  | 'kennel'
+  | 'shipping';
