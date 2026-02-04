@@ -92,9 +92,9 @@ export function BusinessListCard({ business, distanceInfo, onViewDetails }: Busi
         onViewDetails && 'cursor-pointer hover:bg-[var(--background)]'
       )}
     >
-      <div className="flex items-center gap-3 py-2">
-        {/* Color dot indicator - centered vertically */}
-        <div className={cn('w-1.5 h-1.5 rounded-full shrink-0', colors.dot)} />
+      <div className="flex items-center gap-4 py-2.5">
+        {/* Color dot indicator */}
+        <div className={cn('w-2 h-2 rounded-full shrink-0', colors.dot)} />
 
         {/* Content */}
         <div className="flex-1 min-w-0">
@@ -108,9 +108,9 @@ export function BusinessListCard({ business, distanceInfo, onViewDetails }: Busi
             </span>
           </div>
 
-          {/* Summary line */}
+          {/* Summary line - indented to align with name */}
           {summaryLine && (
-            <p className="text-xs text-[var(--foreground-muted)]">
+            <p className="text-xs text-[var(--foreground-muted)] mt-0.5">
               {summaryLine}
             </p>
           )}
