@@ -121,7 +121,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'mountain-crossings-ga', // Mountain Crossings at Neels Gap
+    resupplyId: 'rs-001', // Mountain Crossings at Neels Gap
     businesses: [
       {
         id: 'mc-001',
@@ -153,7 +153,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'hiawassee-ga', // Hiawassee, GA
+    resupplyId: 'rs-002', // Hiawassee, GA
     businesses: [
       {
         id: 'hia-001',
@@ -234,7 +234,7 @@ export const resupplyContacts: ContactInfo[] = [
   },
   // North Carolina
   {
-    resupplyId: 'franklin-nc', // Franklin, NC
+    resupplyId: 'rs-003', // Franklin, NC
     businesses: [
       {
         id: 'fra-001',
@@ -446,7 +446,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'nantahala-outdoor-center-nc', // Nantahala Outdoor Center
+    resupplyId: 'rs-004', // Nantahala Outdoor Center
     businesses: [
       {
         id: 'noc-001',
@@ -558,7 +558,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'fontana-dam-nc', // Fontana Dam
+    resupplyId: 'rs-005', // Fontana Dam
     businesses: [
       {
         id: 'fon-001',
@@ -600,7 +600,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'gatlinburg-tn', // Gatlinburg, TN
+    resupplyId: 'rs-006', // Gatlinburg, TN
     businesses: [
       {
         id: 'gat-001',
@@ -639,7 +639,7 @@ export const resupplyContacts: ContactInfo[] = [
   },
   // Tennessee
   {
-    resupplyId: 'standing-bear-farm-tn', // Standing Bear Farm
+    resupplyId: 'rs-007', // Standing Bear Farm
     businesses: [
       {
         id: 'sbf-001',
@@ -658,7 +658,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'hot-springs-nc', // Hot Springs, NC
+    resupplyId: 'rs-008', // Hot Springs, NC
     businesses: [
       {
         id: 'hs-001',
@@ -737,7 +737,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'erwin-tn', // Erwin, TN
+    resupplyId: 'rs-009', // Erwin, TN
     businesses: [
       {
         id: 'erw-001',
@@ -776,7 +776,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'mountain-harbour-tn', // Mountain Harbour Hostel
+    resupplyId: 'rs-010', // Mountain Harbour Hostel
     businesses: [
       {
         id: 'mhh-001',
@@ -794,7 +794,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'hampton-tn', // Hampton, TN
+    resupplyId: 'rs-011', // Hampton, TN
     businesses: [
       {
         id: 'ham-001',
@@ -833,7 +833,7 @@ export const resupplyContacts: ContactInfo[] = [
   },
   // Virginia
   {
-    resupplyId: 'damascus-va', // Damascus, VA
+    resupplyId: 'rs-012', // Damascus, VA
     businesses: [
       {
         id: 'dam-001',
@@ -935,7 +935,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'marion-va', // Marion, VA
+    resupplyId: 'rs-013', // Marion, VA
     businesses: [
       {
         id: 'mar-001',
@@ -971,7 +971,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'atkins-va', // Atkins, VA (Quarter Way Inn)
+    resupplyId: 'rs-014', // Atkins, VA (Quarter Way Inn)
     businesses: [
       {
         id: 'atk-001',
@@ -988,7 +988,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'bland-va', // Bland, VA
+    resupplyId: 'rs-015', // Bland, VA
     businesses: [
       {
         id: 'bla-001',
@@ -1026,7 +1026,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'pearisburg-va', // Pearisburg, VA
+    resupplyId: 'rs-016', // Pearisburg, VA
     businesses: [
       {
         id: 'pea-001',
@@ -1091,7 +1091,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'catawba-va', // Catawba, VA
+    resupplyId: 'rs-017', // Catawba, VA
     businesses: [
       {
         id: 'cat-001',
@@ -1120,7 +1120,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'daleville-va', // Daleville, VA
+    resupplyId: 'rs-018', // Daleville, VA
     businesses: [
       {
         id: 'dal-001',
@@ -1157,7 +1157,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'glasgow-va', // Glasgow, VA
+    resupplyId: 'rs-019', // Glasgow, VA
     businesses: [
       {
         id: 'gla-001',
@@ -1464,7 +1464,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'waynesboro-va', // Waynesboro, VA
+    resupplyId: 'rs-020', // Waynesboro, VA
     businesses: [
       {
         id: 'way-001',
@@ -1788,7 +1788,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'luray-va', // Luray, VA
+    resupplyId: 'rs-020b', // Luray, VA
     businesses: [
       {
         id: 'lur-001',
@@ -1914,7 +1914,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'front-royal-va', // Front Royal, VA
+    resupplyId: 'rs-021', // Front Royal, VA
     businesses: [
       {
         id: 'fr-001',
@@ -2141,7 +2141,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'bears-den-va', // Bluemont, VA / Bears Den Hostel
+    resupplyId: 'rs-021b', // Bluemont, VA / Bears Den Hostel
     businesses: [
       {
         id: 'bd-001',
@@ -2250,7 +2250,7 @@ export const resupplyContacts: ContactInfo[] = [
   },
   // West Virginia
   {
-    resupplyId: 'harpers-ferry-wv', // Harpers Ferry, WV
+    resupplyId: 'rs-022', // Harpers Ferry, WV
     businesses: [
       {
         id: 'hf-001',
@@ -2502,7 +2502,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'boonsboro-md', // Boonsboro, MD
+    resupplyId: 'rs-023', // Boonsboro, MD
     businesses: [
       {
         id: 'boo-001',
@@ -2954,7 +2954,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'pine-grove-furnace-pa', // Pine Grove Furnace
+    resupplyId: 'rs-025', // Pine Grove Furnace State Park
     businesses: [
       {
         id: 'pgf-001',
@@ -3008,7 +3008,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'boiling-springs-pa', // Boiling Springs, PA
+    resupplyId: 'rs-026', // Boiling Springs, PA
     businesses: [
       {
         id: 'bs-000',
@@ -3290,7 +3290,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'duncannon-pa', // Duncannon, PA
+    resupplyId: 'rs-027', // Duncannon, PA
     businesses: [
       {
         id: 'dun-001',
@@ -3700,7 +3700,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'port-clinton-pa', // Port Clinton, PA
+    resupplyId: 'rs-028', // Port Clinton, PA
     businesses: [
       {
         id: 'pc-001',
@@ -3789,7 +3789,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'hamburg-pa', // Hamburg, PA
+    resupplyId: 'rs-028b', // Hamburg, PA
     businesses: [
       {
         id: 'ham-001',
@@ -3845,7 +3845,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'palmerton-pa', // Palmerton, PA
+    resupplyId: 'rs-029', // Palmerton, PA
     businesses: [
       {
         id: 'pal-001',
@@ -4148,7 +4148,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'wind-gap-pa', // Wind Gap, PA
+    resupplyId: 'rs-029b', // Wind Gap, PA
     businesses: [
       {
         id: 'wg-001',
@@ -4247,7 +4247,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'delaware-water-gap-pa', // Delaware Water Gap
+    resupplyId: 'rs-030', // Delaware Water Gap
     businesses: [
       {
         id: 'dwg-000',
@@ -4607,7 +4607,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'branchville-nj', // Vernon, NJ
+    resupplyId: 'rs-031b', // Vernon, NJ
     businesses: [
       {
         id: 'ver-001',
@@ -4884,7 +4884,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'unionville-ny', // Unionville, NY
+    resupplyId: 'rs-031b', // Unionville, NY
     businesses: [
       {
         id: 'un-001',
@@ -4985,7 +4985,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'greenwood-lake-ny', // Greenwood Lake, NY
+    resupplyId: 'rs-032', // Greenwood Lake, NY
     businesses: [
       {
         id: 'gwl-002',
@@ -5075,7 +5075,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'bear-mountain-ny', // Bear Mountain, NY
+    resupplyId: 'rs-033', // Bear Mountain, NY
     businesses: [
       {
         id: 'bm-000',
@@ -5248,7 +5248,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'peekskill-ny', // Peekskill, NY
+    resupplyId: 'rs-034', // Peekskill, NY
     businesses: [
       {
         id: 'peek-001',
@@ -5393,7 +5393,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'kent-ct', // Pawling, NY
+    resupplyId: 'rs-035', // Pawling, NY
     businesses: [
       {
         id: 'paw-001',
@@ -5658,7 +5658,7 @@ export const resupplyContacts: ContactInfo[] = [
   },
   // Connecticut & Massachusetts
   {
-    resupplyId: 'cornwall-bridge-ct', // Kent, CT
+    resupplyId: 'rs-036b', // Cornwall Bridge, CT
     businesses: [
       {
         id: 'kent-001',
@@ -5814,7 +5814,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'falls-village-ct', // Cornwall Bridge, CT
+    resupplyId: 'rs-036c', // Falls Village, CT
     businesses: [
       {
         id: 'corn-001',
@@ -5933,7 +5933,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'salisbury-ct', // Falls Village, CT (includes West Cornwall & Sharon)
+    resupplyId: 'rs-037', // Salisbury, CT
     businesses: [
       {
         id: 'falls-001',
@@ -6243,7 +6243,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'great-barrington-ma', // Great Barrington, MA
+    resupplyId: 'rs-038', // Great Barrington, MA
     businesses: [
       {
         id: 'gb-001',
@@ -6494,7 +6494,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'dalton-ma', // Dalton, MA
+    resupplyId: 'rs-039', // Dalton, MA
     businesses: [
       {
         id: 'dalt-001',
@@ -6661,7 +6661,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'tyringham-ma', // Cheshire, MA
+    resupplyId: 'rs-039b', // Cheshire, MA
     businesses: [
       {
         id: 'ches-001',
@@ -6828,7 +6828,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'cheshire-ma', // Williamstown, MA / North Adams, MA
+    resupplyId: 'rs-038b', // Cheshire, MA
     businesses: [
       {
         id: 'will-001',
@@ -7131,7 +7131,7 @@ export const resupplyContacts: ContactInfo[] = [
   },
   // Vermont
   {
-    resupplyId: 'north-adams-ma', // Bennington, VT
+    resupplyId: 'rs-039b', // North Adams, MA
     businesses: [
       {
         id: 'ben-001',
@@ -7270,7 +7270,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'williamstown-ma', // Manchester Center, VT / Peru, VT
+    resupplyId: 'rs-042', // Manchester Center, VT / Peru, VT
     businesses: [
       {
         id: 'mc-001',
@@ -7650,7 +7650,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'north-clarendon-vt', // North Clarendon, VT
+    resupplyId: 'rs-043', // North Clarendon, VT
     businesses: [
       {
         id: 'nclar-001',
@@ -7689,7 +7689,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'bennington-vt', // Rutland, VT / Killington, VT
+    resupplyId: 'rs-041', // Bennington, VT
     businesses: [
       {
         id: 'kill-001',
@@ -7874,7 +7874,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'woodstock-vt', // Woodstock, VT
+    resupplyId: 'rs-044', // Killington, VT
     businesses: [
       {
         id: 'wood-001',
@@ -8052,7 +8052,7 @@ export const resupplyContacts: ContactInfo[] = [
   },
   // New Hampshire
   {
-    resupplyId: 'danby-vt', // Norwich, VT / Hanover, NH
+    resupplyId: 'rs-045', // Norwich, VT / Hanover, NH
     businesses: [
       {
         id: 'nor-001',
@@ -8266,7 +8266,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'wallingford-vt', // Etna, NH
+    resupplyId: 'rs-045b', // Etna, NH
     businesses: [
       {
         id: 'etna-001',
@@ -8389,7 +8389,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'wentworth-nh', // Wentworth, NH
+    resupplyId: 'rs-046', // Wentworth, NH
     businesses: [
       {
         id: 'went-001',
@@ -8449,7 +8449,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'killington-vt', // Glencliff, NH / Warren, NH
+    resupplyId: 'rs-047', // Glencliff, NH / Warren, NH
     businesses: [
       {
         id: 'glen-001',
@@ -8893,7 +8893,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'hanover-nh', // Crawford Notch, NH
+    resupplyId: 'rs-048', // Crawford Notch, NH
     businesses: [
       {
         id: 'craw-001',
@@ -8944,7 +8944,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'glencliff-nh', // Pinkham Notch, NH
+    resupplyId: 'rs-049', // Pinkham Notch, NH
     businesses: [
       {
         id: 'pink-001',
@@ -8961,7 +8961,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'lincoln-nh', // Gorham, NH
+    resupplyId: 'rs-050', // Gorham, NH
     businesses: [
       {
         id: 'gor-001',
@@ -9246,7 +9246,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'franconia-nh', // Andover, ME
+    resupplyId: 'rs-052', // Andover, ME
     businesses: [
       {
         id: 'and-001',
@@ -9375,7 +9375,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'gorham-nh', // Rangeley, ME
+    resupplyId: 'rs-054', // Rangeley, ME
     businesses: [
       {
         id: 'ran-001',
@@ -9526,7 +9526,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'andover-me', // Stratton, ME
+    resupplyId: 'rs-055', // Stratton, ME
     businesses: [
       {
         id: 'str-001',
@@ -9635,7 +9635,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'rangeley-me', // Caratunk, ME
+    resupplyId: 'rs-056', // Caratunk, ME
     businesses: [
       {
         id: 'car-001',
@@ -9739,7 +9739,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'stratton-me', // Monson, ME / Greenville, ME
+    resupplyId: 'rs-055', // Monson, ME / Greenville, ME
     businesses: [
       {
         id: 'mon-001',
@@ -9976,7 +9976,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'monson-me', // Abol Bridge / Millinocket, ME
+    resupplyId: 'rs-056', // Abol Bridge / Millinocket, ME
     businesses: [
       {
         id: 'baxter-001',

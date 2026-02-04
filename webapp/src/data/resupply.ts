@@ -2,6 +2,30 @@ import type { ResupplyPoint } from '../types';
 
 // Comprehensive resupply points along the AT
 export const resupplyPoints: ResupplyPoint[] = [
+  // Approach Trail
+  {
+    id: 'amicalola-falls-ga',
+    name: 'Amicalola Falls, GA',
+    mile: -8.5,
+    soboMile: 2205.9,
+    elevation: 1900,
+    lat: 34.5654,
+    lng: -84.2503,
+    state: 'GA',
+    type: 'resupply',
+    hasGrocery: false,
+    hasOutfitter: false,
+    hasPostOffice: false,
+    hasLodging: true,
+    hasRestaurant: true,
+    hasLaundry: false,
+    hasShower: true,
+    resupplyQuality: 'limited',
+    distanceFromTrail: 0.5,
+    shuttleAvailable: true,
+    notes: 'Starting point for Approach Trail to Springer Mountain. Amicalola Falls State Park Lodge and Len Foote Hike Inn available. Parking fee required.',
+    services: ['lodging', 'restaurant', 'showers', 'parking']
+  },
   // Georgia
   {
     id: 'rs-001',
