@@ -32,23 +32,25 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 
 ### Resupply Planner
 - 69 resupply points from Georgia to Maine
-- Quality ratings: Full, Limited, Minimal
-- Service indicators: Grocery, Post Office, Lodging, Restaurant, Shower, Laundry
-- Distance from trail and shuttle availability
+- Quality ratings: Full, Limited, Minimal (color-coded dots)
+- Card-based layout with individual rounded entries
+- Service count summary per location (Lodging, Food, Shuttles, Services)
+- Category filtering with counts
 - Strategic planning tips and mail drop advice
-- Comprehensive business directory with 934 contacts
 
 ### Contact Directory (COMPREHENSIVE!)
 - **986 businesses documented** across 69 resupply locations
-- Searchable directory of hostels, outfitters, grocery stores, restaurants, shuttles, and services
-- Direct tap-to-call phone numbers (including dual phone numbers where applicable)
+- Searchable directory with category filters (Lodging, Food, Shuttles, Services)
+- Sub-type labels for precise classification:
+  - Lodging: HOSTEL, HOTEL, CAMPING, CAMPGROUND
+  - Food: RESTAURANT, GROCERY, STORE
+  - Services: POST OFFICE, OUTFITTER, LAUNDRY, PHARMACY, etc.
+- Direct tap-to-call phone numbers
 - Tap-to-open Google Maps links with precise coordinates
-- Business hours, pricing, hiker rates, and detailed service lists
+- Rich summary lines with key info (pricing, hours, amenities)
+- Full detail modal with services, notes, and action buttons
 - **Complete coverage** for all 14 states from Georgia to Maine
-- AT Passport locations marked throughout trail
-- Comprehensive shuttle services with coverage areas and contact details
-- Filter by state and search by name
-- **Last Verified:** February 2026 (all businesses verified against web listings)
+- **Last Verified:** February 2026
 
 ### Waypoint Browser
 - 250+ shelters with capacity, water, and privy info
@@ -66,23 +68,6 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - **Business Contacts**: 986 businesses with complete contact information
 - **Features**: 50 notable landmarks
 - **States**: 14 states (GA, NC, TN, VA, WV, MD, PA, NJ, NY, CT, MA, VT, NH, ME)
-
-### ✅ Business Data Audit Complete (February 2026)
-
-**Status:** All 986 businesses verified against current web listings.
-
-**Phase 1 Complete:** Manual PDF Review ✅
-- Systematically reviewed and transcribed business data from official AT resupply guide PDFs
-- 409 businesses added/updated across 37 locations in northern states
-
-**Phase 2 Complete:** Business Data Integrity Audit ✅
-- All 69 resupply locations verified via Google/web search
-- 8 new hostels added, 6 major corrections applied
-- Last verified: February 2026
-
-**Progress Tracking:** 
-- See `BUSINESS_AUDIT_PROGRESS.md` for audit history
-- See `changelog.txt` for detailed change log
 
 ## Tech Stack
 
@@ -103,8 +88,14 @@ webapp/src/
 │   │   ├── DayCard.tsx
 │   │   └── ItineraryItem.tsx
 │   ├── resupply/         # Resupply directory components
-│   │   ├── ContactCard.tsx
-│   │   └── ResupplyDirectory.tsx
+│   │   ├── BusinessListCard.tsx      # Individual business card
+│   │   ├── BusinessDetailModal.tsx   # Full detail popup
+│   │   ├── CategoryFilterTabs.tsx    # Filter by category
+│   │   ├── ViewToggle.tsx            # List/grid toggle
+│   │   ├── ResupplyExpandedCard.tsx  # Expanded resupply view
+│   │   ├── ResupplyDirectory.tsx     # Full directory browser
+│   │   ├── ContactCard.tsx           # Contact info card
+│   │   └── businessCategories.ts     # Category utilities
 │   ├── HikePlanner.tsx   # Main planner component
 │   ├── MiniMap.tsx       # Elevation profile visualization
 │   ├── LocationPanel.tsx # GPS/manual location
@@ -135,13 +126,6 @@ bun dev        # or: npm run dev
 
 App runs at http://localhost:8000
 
-### Alternative: Use npm instead of bun
-```bash
-cd webapp
-npm install
-npm run dev
-```
-
 ### Build for Production
 ```bash
 cd webapp
@@ -163,6 +147,15 @@ Always verify with current guidebooks and local conditions before hiking.
 ## Disclaimer
 
 This app is for informational purposes only. Not affiliated with the Appalachian Trail Conservancy. Trail conditions change frequently - always check current conditions before your hike.
+
+---
+
+## Archived Documentation
+
+Historical audit and progress files have been moved to `docs/archive/`:
+- Business audit progress and changelog
+- Data enrichment records
+- Deployment summaries
 
 ---
 
@@ -206,11 +199,3 @@ To deploy, click the **Deploy** button on vibecode.dev. The platform handles:
 - Starting the backend (`scripts/start`)
 - Database migrations (if Prisma is configured)
 - SSL certificates and domain routing
-
-### Adding Database/Auth
-
-If you need persistent storage or user authentication, use the `database-auth` skill in Vibecode. This will:
-- Add Prisma ORM with SQLite
-- Add Better Auth for user authentication
-- Update the backend configuration automatically
-

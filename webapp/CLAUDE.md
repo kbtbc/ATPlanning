@@ -1,26 +1,28 @@
 <stack>
-  React 18 with Vite
+  React 19 with Vite 7
   Use bun (not npm).
-  React Router v6 for routing.
-  React Query for server/async state.
-  Tailwind v3 + shadcn/ui for styling and components.
+  Tailwind CSS v4 + shadcn/ui for styling and components.
   Framer Motion for animations.
   lucide-react for icons.
   Pre-installed shadcn/ui components.
 </stack>
 
 <structure>
-  src/pages/        — Page components (manually routed in App.tsx). Add new pages to this folder.
+  src/pages/        — Page components (if using routing).
   src/components/
     ui/             — shadcn/ui components (pre-built). Use these first.
-  src/hooks/        — Custom React hooks. Add new hooks to this folder.
+    planner/        — HikePlanner sub-components
+    resupply/       — Resupply directory components (BusinessListCard, BusinessDetailModal, etc.)
+  src/hooks/        — Custom React hooks.
+  src/data/         — Trail data (shelters, resupply, elevation, contacts)
+  src/types/        — TypeScript type definitions
   src/lib/          — Utilities: utils.ts (cn helper for className merge)
 
   Create small, focused components instead of monolithic files.
   Do not write long Index.tsx or page files.
   Extract components into separate files.
   Organize components in a logical folder structure.
-  </structure>
+</structure>
 
 <typescript>
   Explicit type annotations for useState: `useState<Type[]>([])` not `useState([])`
