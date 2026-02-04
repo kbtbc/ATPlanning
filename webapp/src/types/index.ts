@@ -118,6 +118,9 @@ export interface Business {
   notes?: string;
   pricing?: string;
   services?: string[];
+  lastVerified?: string; // ISO date string (e.g., '2026-02-04')
+  status?: 'open' | 'closed' | 'seasonal' | 'unverified';
+  seasonalHours?: string; // e.g., 'Mar-Oct only'
 }
 
 export type BusinessType =

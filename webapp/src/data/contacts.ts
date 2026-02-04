@@ -4,6 +4,37 @@ import type { ContactInfo } from '../types';
 // Phone numbers, addresses, hours, and Google Maps links
 // Data sourced from WhiteBlaze Pages 2023 and verified online
 export const resupplyContacts: ContactInfo[] = [
+  // Georgia - Approach Trail
+  {
+    resupplyId: 'amicalola-falls-ga', // Amicalola Falls, GA (Mile -8.5)
+    businesses: [
+      {
+        id: 'amicalola-001',
+        name: 'Amicalola Falls State Park Lodge',
+        type: 'lodging',
+        phone: '(706) 344-1500',
+        address: '418 Amicalola Falls Lodge Drive, Dawsonville, GA 30534',
+        website: 'https://amicalolafallslodge.com',
+        googleMapsUrl: 'https://maps.google.com/?q=34.5611,-84.2481',
+        notes: 'Full-service lodge at Amicalola Falls State Park. Restaurant on-site. Starting point for approach trail to Springer Mountain. Managed by Coral Hospitality.',
+        services: ['lodging', 'restaurant', 'showers'],
+        lastVerified: '2026-02-04',
+      },
+      {
+        id: 'amicalola-002',
+        name: 'Len Foote Hike Inn',
+        type: 'lodging',
+        phone: '(706) 344-1547',
+        email: 'reservations@hike-inn.com',
+        address: '280 Amicalola Falls State Park Rd, Dawsonville, GA 30534',
+        website: 'https://hike-inn.com',
+        googleMapsUrl: 'https://maps.google.com/?q=34.6267,-84.1938',
+        notes: 'Unique backcountry inn accessible only by 5-mile hike from top of Amicalola Falls. Meals included. Reservations required. Gateway to Appalachian Trail.',
+        services: ['lodging', 'restaurant'],
+        lastVerified: '2026-02-04',
+      },
+    ],
+  },
   // Georgia
   {
     resupplyId: 'suches-ga', // Suches, GA
@@ -13,21 +44,25 @@ export const resupplyContacts: ContactInfo[] = [
         name: 'Above The Clouds Hostel',
         type: 'hostel',
         phone: '(706) 747-1022',
-        website: 'https://abovetheclooudshostel.com',
+        address: '1487 State Highway 60, Suches, GA 30572',
+        website: 'https://abovethecloudshostel.com',
         notes: 'Pet friendly, bunks $50 including breakfast. Located 1.3W from trail.',
         pricing: '$50/night',
         services: ['hostel', 'lodging', 'resupply'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'suches-002',
         name: 'Kennedy Creek Resort',
         type: 'hostel',
-        phone: '(404) 720-0087',
+        phone: '(478) 484-7759',
         email: 'kennedycreekresort@gmail.com',
+        address: '3001 High Valley Road, Suches, GA 30572',
         website: 'https://kennedycreekresort.com',
-        notes: 'Pet friendly, bunk houses & dormitory. Located 2.9E from trail.',
+        notes: 'Pet friendly, bunk houses & dormitory, yurts, cabins, RV spots. Located 2.9E from trail. Restaurant on-site.',
         pricing: '$40/night',
         services: ['hostel', 'lodging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'suches-003',
@@ -38,14 +73,17 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'https://barefoothills.com',
         notes: 'AT Passport location, open year round. Located 6.5E from trail.',
         services: ['hostel', 'lodging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'suches-004',
-        name: 'Woody Gap Country Store',
+        name: 'Wolf Pen Gap Store',
         type: 'general_store',
         phone: '(706) 747-2271',
-        notes: 'AT Passport location, Coleman fuel available, full menu. Located 2.0W from trail.',
+        address: '41 Wolf Pen Gap Rd, Suches, GA 30572',
+        notes: 'AT Passport location, Coleman fuel available, full menu, gas station. Located 2.0W from trail.',
         services: ['general_store', 'restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'suches-005',
@@ -55,6 +93,20 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'murrismiller@gmail.com',
         notes: 'Ask for Murris. Pet friendly, insured. 365 days, 24/7 service.',
         services: ['shuttle'],
+        lastVerified: '2026-02-04',
+      },
+      {
+        id: 'suches-007',
+        name: 'Hidden Pond Hostel',
+        type: 'hostel',
+        phone: '(706) 747-3736',
+        address: '191 Holly Hill Rd, Suches, GA 30572',
+        website: 'https://hiddenpondhostel.com',
+        googleMapsUrl: 'https://maps.google.com/?q=Hidden+Pond+Hostel+Suches+GA',
+        notes: 'Thru-hiker owned. Pet friendly. Bunkhouse, bath house, free WiFi, charging areas, resupply, slackpacking, loaner clothes, free coffee. Opened 2025 season.',
+        services: ['hostel', 'resupply', 'WiFi', 'slackpacking', 'laundry'],
+        pricing: 'Call for rates',
+        lastVerified: '2026-02-04',
       },
       {
         id: 'suches-006',
@@ -64,11 +116,12 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'beady2727@gmail.com',
         notes: 'Owner: Bret Eady. Based out of Suches, GA.',
         services: ['shuttle'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-001', // Mountain Crossings at Neels Gap
+    resupplyId: 'mountain-crossings-ga', // Mountain Crossings at Neels Gap
     businesses: [
       {
         id: 'mc-001',
@@ -82,23 +135,25 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Trail passes through building. Full outfitter with pack shakedowns, hostel bunks, resupply. First major stop on AT.',
         services: ['outfitter', 'hostel', 'resupply', 'showers', 'pack shakedown'],
         pricing: 'Bunk $25, Resupply varies',
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-002',
-        name: 'Blood Mountain Cabins',
+        name: 'Blood Mountain Cabins & Country Store',
         type: 'lodging',
         phone: '(706) 745-9454',
-        address: '12480 Gainesville Hwy, Blairsville, GA 30512',
+        address: '12829 Gainesville Hwy, Blairsville, GA 30512',
         hours: 'Check-in 3pm',
         website: 'https://bloodmountaincabins.com',
         googleMapsUrl: 'https://maps.google.com/?q=Blood+Mountain+Cabins+Blairsville+GA',
         notes: 'Cozy cabins near Neels Gap, hiker-friendly',
         pricing: '$95-150/night',
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-002', // Hiawassee, GA
+    resupplyId: 'hiawassee-ga', // Hiawassee, GA
     businesses: [
       {
         id: 'hia-001',
@@ -111,6 +166,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=34.95261,-83.75735',
         notes: 'Continental breakfast included, indoor pool & hot tub, WiFi, accepts credit cards',
         pricing: '$79 and up',
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hia-002',
@@ -124,6 +180,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'AT Passport location. Cable TV, refrigerators, microwaves, free WiFi. Shuttle available.',
         pricing: '$89/night for 2',
         services: ['lodging', 'shuttle', 'WiFi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hia-003',
@@ -148,6 +205,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '0.6mi from Dicks Creek Gap. Includes laundry, shuttle to town, kitchen access. Pet-friendly private rooms available.',
         services: ['hostel', 'laundry', 'kitchen', 'shuttle', 'camping'],
         pricing: 'Call for current rates',
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hia-005',
@@ -170,12 +228,13 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=34.90099,-83.72167',
         notes: 'Includes 10 min shuttle, laundry, breakfast, WiFi, TV streaming. AT Passport location.',
         services: ['hostel', 'shuttle', 'laundry', 'breakfast', 'WiFi'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   // North Carolina
   {
-    resupplyId: 'rs-003', // Franklin, NC
+    resupplyId: 'franklin-nc', // Franklin, NC
     businesses: [
       {
         id: 'fra-001',
@@ -188,6 +247,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=35.18226,-83.37883',
         notes: 'Full service outfitter, gear rentals, footwear fitting, expert staff',
         services: ['outfitter', 'gear rental', 'footwear fitting'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fra-002',
@@ -200,19 +260,21 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=Three+Eagles+Outfitters+Franklin+NC',
         notes: 'Full outfitter with gear and resupply',
         services: ['outfitter', 'resupply'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fra-003',
         name: 'Gooder Grove Hostel',
         type: 'hostel',
         phone: '(828) 332-0228',
-        email: 'goodergrove@gmail.com',
-        address: '273 Sloan Rd, Franklin, NC 28734',
+        email: 'cgooder@gmail.com',
+        address: '130 Hayes Circle, Franklin, NC 28734',
         website: 'https://goodergrove.com',
         googleMapsUrl: 'https://maps.google.com/?q=Gooder+Grove+Hostel+Franklin+NC',
         notes: 'Hostel with bunks, camping, kitchen. Shuttles available. AT Passport location.',
         services: ['hostel', 'camping', 'kitchen', 'shuttle', 'laundry'],
         pricing: 'Bunk $35, Camping $20',
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fra-004',
@@ -239,7 +301,7 @@ export const resupplyContacts: ContactInfo[] = [
         name: 'Currahee Brewing Co.',
         type: 'restaurant',
         phone: '(828) 634-0078',
-        address: '77 E Main St, Franklin, NC 28734',
+        address: '100 Lakeside Dr, Franklin, NC 28734',
         hours: 'Mon-Thu 12pm-9pm, Fri-Sat 12pm-10pm, Sun 2pm-7pm',
         website: 'https://curraheebrew.com',
         googleMapsUrl: 'https://maps.google.com/?q=35.18746,-83.37296',
@@ -250,22 +312,25 @@ export const resupplyContacts: ContactInfo[] = [
         name: 'Hill Top Inn',
         type: 'lodging',
         phone: '(828) 524-4403',
+        address: '433 E Palmer St, Franklin, NC 28734',
         website: 'https://budgetinnoffranklin.com',
         notes: 'AT Passport location. Open year round. $39.99 per person, limited to four per room, $5 for each additional person. $50 pet charge. Rooms include cable TV, refrigerators and microwaves, computer for use, free WiFi. Coin laundry. Ask about shuttles.',
         pricing: '$39.99 per person',
         services: ['lodging', 'WiFi', 'laundry', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fra-008',
         name: 'The Grove Hostel',
         type: 'hostel',
-        phone: '(828) 346-5746',
+        phone: '(828) 346-7657',
         email: 'contact@grovehostel.com',
         website: 'https://thegrovehostel.com',
-        address: '433 East Palmer Street, Franklin, NC 28734',
+        address: '130 Hayes Circle, Franklin, NC 28734',
         notes: 'All stays by reservation only. Owners: Ben "Unfiltered" and Mary "Newfound". Check-in is 12-7pm; checkout is 10am. Bunks: $45 plus tax, private Room: $80 plus tax. Accepts credit cards, in addition to Venmo, PayPal, and cash. Amenities: Free laundry, showers, W-Fi, hiker kitchen, free guest shuttle back to trail, free guest shuttle to resupply. Walking distance to Outdoor 76, Lazy Hiker Brewing Co., restaurants, and other downtown Franklin stops.',
         pricing: 'Bunk $45, Private Room $80',
         services: ['hostel', 'laundry', 'shower', 'WiFi', 'kitchen', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fra-009',
@@ -274,9 +339,11 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(715) 315-0876',
         email: 'chica@chicaandsunsets.com',
         website: 'https://chicaandsunsets.com',
+        address: '103 Spring Rd, Franklin, NC 28734',
         notes: 'Not pet friendly. AT Passport location. $55 per person + tax (cash/Venmo only) includes continental breakfast. Pickup and drop off at Winding Stair Gap/Rock Gap. Laundry, shuttle to town. Hostel is co-ed and holds 4 hikers max; hikers have use of full apartment (2 twin beds/room). Text ahead to secure a spot (no walk-ins). Chica & Sunsets are former thru-hikers of the AT, Camino, CT, Bartram Trail and Ice Age Trail.',
         pricing: '$55 per person',
         services: ['hostel', 'breakfast', 'laundry', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fra-010',
@@ -286,6 +353,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Call/Text Spidy. Open 1 Aug to 1 May. No pets. Full-service hostel with space to chill, ability to ensure availability. Tenting available. Provides Pickup and drop off to all local trailheads, resupply in town, shower, laundry, loaner clothes, movie lounge, and breakfast with one of the best views in Franklin. Slackpacking available. Donations accepted but not expected.',
         pricing: 'Donations accepted',
         services: ['hostel', 'camping', 'shuttle', 'shower', 'laundry', 'breakfast', 'slackpacking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fra-011',
@@ -296,6 +364,18 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Owners: Slim Jim, One More and Freddie the Dog. Reservations required, no walk-ins or drive-ups. Well behaved dogs. We do not put strangers together, so we rent the entire suite to just you and your group. Rates are $135 for up to three hikers, and $160 for four. All taxes are included. All stays include the following: Pick up and drop off to Winding Stair (110) or Rock (106) Gaps, restock and town shuttles (a short 5-minute drive), premium mattresses, private bath and shower, in-suite laundry with loaner clothes, continental breakfast, Wi-Fi, boot dryer, covered clothesline for drying gear, and a deck with a view of the Appalachian Trail. Slackpacking options available. Parking for guests. We take cash or Venmo. Please note that we are for hikers only.',
         pricing: '$135 for up to 3, $160 for 4',
         services: ['hostel', 'shuttle', 'laundry', 'breakfast', 'WiFi', 'slackpacking'],
+        lastVerified: '2026-02-04',
+      },
+      {
+        id: 'fra-020',
+        name: 'Onward Hostel',
+        type: 'hostel',
+        phone: '(828) 487-5019',
+        googleMapsUrl: 'https://maps.google.com/?q=Onward+Hostel+Franklin+NC',
+        notes: 'Opened March 2023. 10 bunks, kitchenette, porches. Free pickup from Rocky Gap and Winding Stair Gap. Indoor seating, outdoor swings. In Far Out app.',
+        services: ['hostel', 'shuttle', 'kitchen'],
+        pricing: 'Call for rates',
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fra-012',
@@ -307,6 +387,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'AT Passport location. Our Hiker\'s Special starts at only $59.99 & up. Pet fee charges are based on pet size, free WiFi.',
         pricing: 'From $59.99',
         services: ['lodging', 'WiFi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fra-013',
@@ -315,6 +396,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(828) 349-9000',
         notes: 'Call for prices, pet fee $25, microwave, fridge, stay includes continental breakfast. Computer available for use. Free WiFi.',
         services: ['lodging', 'breakfast', 'WiFi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fra-014',
@@ -323,6 +405,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(828) 369-9200',
         notes: 'Dog Friendly rooms available. Hiker Discount. Hot Breakfast, Indoor Pool. Guest Laundry. Free WiFi. Hotel has access to best hiker shuttle services in area.',
         services: ['lodging', 'breakfast', 'laundry', 'WiFi', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fra-015',
@@ -340,6 +423,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'AT Passport location. Spring and Summer hours, M-Thu 12pm-9pm, F-Sa 12pm-11pm, Su 12pm-6pm. Food Truck on-site M-Th 12pm-8pm, F-Sa 12pm-9pm, Su 12pm-6pm. Computer and printer available for use, free WiFi. Pet friendly.',
         hours: 'M-Thu 12pm-9pm, F-Sa 12pm-11pm, Su 12pm-6pm',
         services: ['restaurant', 'WiFi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fra-017',
@@ -348,6 +432,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Inside Outdoor 76. M-Sa 10 am-9 pm. 18 beers on tap, wine and food. Darts, indoor shuffleboard, community instruments for hikers, along with big screen T.V and occasional live music. Weekly food specials. Free WiFi.',
         hours: 'M-Sa 10am-9pm',
         services: ['restaurant', 'WiFi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fra-018',
@@ -361,7 +446,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'rs-004', // Nantahala Outdoor Center
+    resupplyId: 'nantahala-outdoor-center-nc', // Nantahala Outdoor Center
     businesses: [
       {
         id: 'noc-001',
@@ -374,6 +459,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=35.3341,-83.5897',
         notes: 'Trail passes through. Full outfitter, restaurant, lodging, rafting. Major trail hub.',
         services: ['outfitter', 'restaurant', 'lodging', 'rafting', 'resupply'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'noc-002',
@@ -395,6 +481,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Reservations recommended. $39.99 for 2 people, $79.99 for 4 people, $109 for 6 people, $139.99 for 8 people. All include shower, common area and community kitchen, free WiFi.',
         pricing: '$39.99 for 2, $79.99 for 4, $109 for 6, $139.99 for 8',
         services: ['hostel', 'lodging', 'shower', 'kitchen', 'WiFi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'noc-004',
@@ -406,6 +493,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Pet friendly $25 pet fee. 2 tiny homes with 3 beds, 5 tiny homes. Private accommodations. $80 per hiker per night. Includes free shuttle from/to NOC or Stecoah Gap. Includes breakfast. Free Wi-Fi. Slackpacking from Tellico to Fontana. Shuttles to/from Atlanta airports.',
         pricing: '$80/night per hiker',
         services: ['hostel', 'lodging', 'shuttle', 'breakfast', 'WiFi', 'slackpacking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'noc-005',
@@ -415,6 +503,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'https://crabtreeretrievers.com',
         notes: 'Dog Transportation and Kenneling for thru hiker in the GSMNP. Pickup and Drop off in Hot Springs and NOC. Vet Services available upon request. Mild grooming available. A/C and heated kennels. Please visit website for more information.',
         services: ['kennel', 'dog transport', 'grooming'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'noc-006',
@@ -423,6 +512,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(828) 736-0086',
         notes: 'Based in Bryson City, NC. S to Hiawassee, GA. N to Newfound Gap, NC.',
         services: ['shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'noc-007',
@@ -433,6 +523,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'https://CarolinaBoundAdventures.com',
         notes: 'Owned by: Mark Van Osdal. Based out of Bryson City, NC. Pet friendly. Insured. Mar - Oct, 7am - 7-pm & holidays. S to Winding Stair Gap/Franklin, NC N to Fontana Dam & Clingmans Dome & train terminals. Slackpacking. "We operate on a Commercial Use Authorization Permit within the GSMNP."',
         services: ['shuttle', 'slackpacking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'noc-008',
@@ -441,6 +532,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(828) 538-1236',
         notes: 'Owner: Patrice Price. Based out of Wesser, NC. Pet friendly. Insured. 365 days - 24/7. & some holidays. S to Unicoi Gap, GA N to Davenport/Standing Bear, TN & airports, bus & train terminals. Slackpacking. "I\'m located at the Nantahala Outdoor Center, most shuttles are in & out from there." Covid precautions. Masks required',
         services: ['shuttle', 'slackpacking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'noc-009',
@@ -450,6 +542,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'dededwards1e@gmail.com',
         notes: 'Owner: Dave Edwards. Based out of Bryson City, NC. Pet friendly. Insured. 365 days, 24/7 & holidays. S to Franklin, NC N to Knoxville/Gatlinburg, TN. & airport. "Masks & hand sanitizer available & recommended. Vehicle sanitized between trips. "Services provided: Hiker shuttle, resupply, equipment repair/procurement, maildrops sent/rcvd. Boat shuttles from Fontana Marina to Northshore hiking/fishing areas (Eagle, Hazel, Forney, Chambers). Range to GSMNP, Newfound Gap, Clingman\'s Dome, Bryson City, NOC, Stecoah, Robbinsville, Stecoah Gap, Fontana Lake/Dam." Emergency transportation available.',
         services: ['shuttle', 'resupply', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'noc-010',
@@ -460,11 +553,12 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'https://brysoncityoutdoors.com',
         notes: 'Owner: Peter Millsaps Based out of Bryson City, NC. Pet friendly. Insured. 365 days, 7am-7pm & some holidays. S to Clayton, GA N to Knoxville, TN & airport, bus & train terminals. "Please call us to inquire about shuttle pricing."',
         services: ['shuttle'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-005', // Fontana Dam
+    resupplyId: 'fontana-dam-nc', // Fontana Dam
     businesses: [
       {
         id: 'fon-001',
@@ -478,6 +572,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'General store, restaurant, lodging. CRITICAL: Last resupply before Smokies NOBO. Stock up!',
         services: ['lodging', 'general store', 'restaurant', 'laundry'],
         pricing: 'Rooms from $89',
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fon-002',
@@ -494,17 +589,18 @@ export const resupplyContacts: ContactInfo[] = [
         name: 'The Hike Inn',
         type: 'hostel',
         phone: '(828) 479-3677',
-        address: '3095 Fontana Rd, Fontana Dam, NC 28733',
+        address: '3204 Fontana Rd, Fontana Dam, NC 28733',
         website: 'https://thehikeinn.com',
         googleMapsUrl: 'https://maps.google.com/?q=The+Hike+Inn+Fontana+Dam',
         notes: 'Hostel with shuttles, laundry, resupply. Great stop before Smokies.',
         services: ['hostel', 'shuttle', 'laundry', 'resupply'],
         pricing: 'Bunk $30, Private $75+',
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-006', // Gatlinburg, TN
+    resupplyId: 'gatlinburg-tn', // Gatlinburg, TN
     businesses: [
       {
         id: 'gat-001',
@@ -517,6 +613,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=NOC+Gatlinburg',
         notes: 'Full outfitter in downtown Gatlinburg',
         services: ['outfitter', 'resupply'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gat-002',
@@ -542,7 +639,7 @@ export const resupplyContacts: ContactInfo[] = [
   },
   // Tennessee
   {
-    resupplyId: 'rs-007', // Standing Bear Farm
+    resupplyId: 'standing-bear-farm-tn', // Standing Bear Farm
     businesses: [
       {
         id: 'sbf-001',
@@ -556,11 +653,12 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Rustic hostel with resupply. First stop after Smokies NOBO. Shuttles available.',
         pricing: 'Bunk $25, Camping $15, Cabin $45+',
         services: ['hostel', 'camping', 'resupply', 'showers', 'laundry', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-008', // Hot Springs, NC
+    resupplyId: 'hot-springs-nc', // Hot Springs, NC
     businesses: [
       {
         id: 'hs-001',
@@ -573,6 +671,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=35.8972,-82.8283',
         notes: 'Full outfitter, shuttles, ATM available. Trail goes through town.',
         services: ['outfitter', 'shuttle', 'ATM'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hs-002',
@@ -586,6 +685,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Natural hot springs, massage, lodging. Perfect for sore muscles!',
         services: ['hot springs', 'massage', 'lodging', 'camping'],
         pricing: '$60-150/night, spa $40/hour',
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hs-003',
@@ -598,6 +698,21 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Hostel with bunks, private rooms, camping. Kitchen available.',
         services: ['hostel', 'camping', 'kitchen', 'laundry'],
         pricing: 'Bunk $30, Private $65+',
+        lastVerified: '2026-02-04',
+      },
+      {
+        id: 'hs-006',
+        name: 'Appalachian Trail-er Bunkhouse',
+        type: 'hostel',
+        phone: '(828) 622-3319',
+        email: 'trailer@blueridgehikingco.com',
+        address: '200 Lance Ave, Hot Springs, NC 28743',
+        website: 'https://blueridgehikingco.com/bunkhouse_reservation',
+        googleMapsUrl: 'https://maps.google.com/?q=Appalachian+Trail-er+Bunkhouse+Hot+Springs',
+        notes: 'Run by Blue Ridge Hiking Co. 10 bunks, clean linens, hot shower, WiFi, TV, kitchen access. Gear rentals and shuttles available. Reservations recommended. Walk-ups based on availability.',
+        services: ['hostel', 'showers', 'WiFi', 'kitchen', 'shuttle', 'gear rental'],
+        pricing: 'Call for rates',
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hs-004',
@@ -622,7 +737,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'rs-009', // Erwin, TN
+    resupplyId: 'erwin-tn', // Erwin, TN
     businesses: [
       {
         id: 'erw-001',
@@ -633,9 +748,10 @@ export const resupplyContacts: ContactInfo[] = [
         hours: '8am-8pm daily',
         website: 'https://unclejohnnys.net',
         googleMapsUrl: 'https://maps.google.com/?q=36.1450,-82.4167',
-        notes: 'Outfitter on site, shuttles to town, riverside location. Major hiker hub.',
+        notes: 'Outfitter on site, shuttles to town, riverside location. Major hiker hub. Reopened after 2024 flood repairs.',
         pricing: 'Bunk $30, Cabin $60+',
         services: ['hostel', 'outfitter', 'shuttle', 'laundry', 'resupply'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'erw-002',
@@ -660,7 +776,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'rs-010', // Mountain Harbour Hostel
+    resupplyId: 'mountain-harbour-tn', // Mountain Harbour Hostel
     businesses: [
       {
         id: 'mhh-001',
@@ -673,11 +789,12 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Famous breakfast! Bunkhouse and B&B rooms. Shuttles, laundry, limited resupply.',
         pricing: 'Bunk $40 (includes breakfast), B&B $85-125',
         services: ['hostel', 'B&B', 'restaurant', 'shuttle', 'laundry', 'resupply'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-011', // Hampton, TN
+    resupplyId: 'hampton-tn', // Hampton, TN
     businesses: [
       {
         id: 'ham-001',
@@ -690,6 +807,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Hostel with camping, shuttles, laundry. Near Watauga Lake.',
         services: ['hostel', 'camping', 'shuttle', 'laundry'],
         pricing: 'Bunk $35, Camping $15',
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ham-002',
@@ -715,19 +833,20 @@ export const resupplyContacts: ContactInfo[] = [
   },
   // Virginia
   {
-    resupplyId: 'rs-012', // Damascus, VA
+    resupplyId: 'damascus-va', // Damascus, VA
     businesses: [
       {
         id: 'dam-001',
         name: 'Damascus Outfitters',
         type: 'outfitter',
         phone: '(276) 546-8411',
-        address: '331 Douglas Dr, Damascus, VA 24236',
+        address: '128 W Laurel Ave, Damascus, VA 24236',
         hours: 'Daily 9am-6pm (seasonal)',
         website: 'https://damascusoutfitters.com',
         googleMapsUrl: 'https://maps.google.com/?q=36.6347,-81.7847',
         notes: 'Full outfitter, hiker resupply, gear. Trail Town USA!',
         services: ['outfitter', 'resupply', 'footwear'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dam-002',
@@ -740,6 +859,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Bunks with mattress pads, private rooms for couples. Outfitter downstairs.',
         pricing: 'Bunk $25, Private $50',
         services: ['hostel', 'outfitter', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dam-003',
@@ -752,6 +872,32 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Oldest hostel on AT (est. 1975). Church-run, donation based. Very basic.',
         pricing: 'Donation based ($7 suggested)',
         services: ['hostel', 'showers'],
+        lastVerified: '2026-02-04',
+      },
+      {
+        id: 'dam-007',
+        name: 'The Broken Fiddle Hostel',
+        type: 'hostel',
+        phone: '(276) 608-6220',
+        address: '104 Damascus Dr, Damascus, VA 24236',
+        website: 'https://facebook.com/thebrokenfiddlehostel',
+        googleMapsUrl: 'https://maps.google.com/?q=Broken+Fiddle+Hostel+Damascus+VA',
+        notes: '12 bunks, 2 private rooms, tenting/hammock space. Laundry, fully equipped kitchen, outdoor shower, indoor bathroom. Slackpack options available.',
+        services: ['hostel', 'laundry', 'kitchen', 'slackpacking'],
+        pricing: 'Call for rates',
+        lastVerified: '2026-02-04',
+      },
+      {
+        id: 'dam-008',
+        name: 'Woodchuck Hostel & SongPeddlar Rest',
+        type: 'hostel',
+        phone: '(276) 475-5888',
+        address: '533 Docie St, Damascus, VA 24236',
+        googleMapsUrl: 'https://maps.google.com/?q=Woodchuck+Hostel+Damascus+VA',
+        notes: 'Dog-friendly hostel. Bunks, private rooms, tipi, tents. No drugs, no alcohol. Free breakfast included.',
+        pricing: '$50 bed, $15 tipi, $15 tenting',
+        services: ['hostel', 'breakfast', 'camping'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dam-004',
@@ -764,6 +910,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=Sundog+Outfitter+Damascus+VA',
         notes: 'Full outfitter, shuttles available, parking available',
         services: ['outfitter', 'shuttle', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dam-005',
@@ -788,7 +935,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'rs-013', // Marion, VA
+    resupplyId: 'marion-va', // Marion, VA
     businesses: [
       {
         id: 'mar-001',
@@ -819,11 +966,12 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=Marion+Outdoors+VA',
         notes: 'Full outfitter with gear and resupply',
         services: ['outfitter', 'resupply'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-014', // Atkins, VA (Quarter Way Inn)
+    resupplyId: 'atkins-va', // Atkins, VA (Quarter Way Inn)
     businesses: [
       {
         id: 'atk-001',
@@ -835,11 +983,12 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=Relax+Inn+Rural+Retreat+VA',
         notes: 'Budget motel near trail, hiker-friendly',
         pricing: '$50-70/night',
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-015', // Bland, VA
+    resupplyId: 'bland-va', // Bland, VA
     businesses: [
       {
         id: 'bla-001',
@@ -852,6 +1001,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Hiker-friendly motel, shuttle available',
         pricing: '$60-80/night',
         services: ['lodging', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bla-002',
@@ -876,7 +1026,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'rs-016', // Pearisburg, VA
+    resupplyId: 'pearisburg-va', // Pearisburg, VA
     businesses: [
       {
         id: 'pea-001',
@@ -889,6 +1039,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Church basement hostel, donation based. Kitchen available.',
         pricing: 'Donation suggested ($10-15)',
         services: ['hostel', 'showers', 'kitchen'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pea-002',
@@ -901,16 +1052,31 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Full grocery store',
       },
       {
+        id: 'pea-005',
+        name: 'Woods Hole Hostel',
+        type: 'hostel',
+        phone: '(540) 921-3444',
+        email: 'woodsholehostel@gmail.com',
+        address: '3696 Sugar Run Rd, Pearisburg, VA 24134',
+        website: 'https://woodsholehostel.com',
+        googleMapsUrl: 'https://maps.google.com/?q=Woods+Hole+Hostel+Pearisburg+VA',
+        notes: 'LEGENDARY hostel est. 1986. 1880s chestnut log cabin. Organic farm, fresh bread, farm animals. 0.5 miles east of trail at Sugar Run Gap. Open May-October.',
+        pricing: 'Bunk $24, Private $65-85, Camping $15',
+        services: ['hostel', 'camping', 'breakfast', 'massage'],
+        lastVerified: '2026-02-04',
+      },
+      {
         id: 'pea-003',
         name: "Angel's Rest Hiker's Haven",
         type: 'hostel',
-        phone: '(540) 250-2861',
-        address: '1212 N Main St, Pearisburg, VA 24134',
+        phone: '(540) 599-5717',
+        address: '204 Douglas Ln, Pearisburg, VA 24134',
         website: 'https://angelsresthikershaven.com',
         googleMapsUrl: 'https://maps.google.com/?q=Angels+Rest+Hikers+Haven+Pearisburg',
         notes: 'Hostel with bunks, camping, shuttles. Pet-friendly.',
         pricing: 'Bunk $35, Camping $15',
         services: ['hostel', 'camping', 'shuttle', 'laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pea-004',
@@ -925,19 +1091,21 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'rs-017', // Catawba, VA
+    resupplyId: 'catawba-va', // Catawba, VA
     businesses: [
       {
         id: 'cat-001',
         name: 'Four Pines Hostel',
         type: 'hostel',
-        phone: '(540) 309-8313',
-        address: '4247 Newport Rd, Catawba, VA 24070',
+        phone: '(540) 765-0060',
+        email: 'Dgardner4361@gmail.com',
+        address: '6164 Newport Rd, Catawba, VA 24070',
         website: 'https://fourpineshostel.com',
         googleMapsUrl: 'https://maps.google.com/?q=Four+Pines+Hostel+Catawba+VA',
         notes: 'Hostel with bunks, camping, kitchen. Near McAfee Knob.',
         pricing: 'Bunk $30, Camping $15',
         services: ['hostel', 'camping', 'kitchen', 'laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'cat-002',
@@ -952,7 +1120,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'rs-018', // Daleville, VA
+    resupplyId: 'daleville-va', // Daleville, VA
     businesses: [
       {
         id: 'dal-001',
@@ -984,11 +1152,12 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=Howard+Johnson+Daleville+VA',
         notes: 'Budget motel, hiker-friendly',
         pricing: '$60-80/night',
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-019', // Glasgow, VA
+    resupplyId: 'glasgow-va', // Glasgow, VA
     businesses: [
       {
         id: 'gla-001',
@@ -1009,6 +1178,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=37.63437,-79.45056',
         notes: 'Maintains Hikers Shelter and Knick Field restrooms. Free tenting and hot showers.',
         services: ['camping', 'shower'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gla-003',
@@ -1022,6 +1192,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '6.6W from trail. Not pet friendly. AT Passport location. Guests enjoy complimentary pickup and drop off from 501 James River trailhead, computer available for use, WiFi, complimentary laundry services, shower, clean linens and bunks with mattresses. Property is ultra clean and features 55" flat screen with Netflix. Pizza, drinks & ice cream plus snacks available for purchase at reasonable prices. Full house available to hikers plus kitchen privileges. $35 per night plus private room options available for additional fee. Paid shuttles available. for guests and non-guests at lowest rates. No cell service at 501 trailhead. Guests can call ahead from ridge to arrange for pickup at 501. Owned and operated by Adam Stanley "STANIMAL" AT \'04 PCT \'10. Mail drops free for guest, $5 for non guests: 1131 Rockbridge Road, Glasgow, VA 24555.',
         pricing: '$35/night',
         services: ['hostel', 'shuttle', 'laundry', 'wifi', 'restaurant', 'resupply', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gla-004',
@@ -1035,6 +1206,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Reservations required. Arts and agriculture nonprofit, located on historic property run by a section hiker. Towel and towel from $50PP. Shared rooms with TV and shared bath from $100, or suite with double bed, twin futon, and private bath clawfoot tub from $125, thru-hiker rate. Full kitchen, shower, laundry, Wi-Fi, and access to the James River on site. Resupply store with deli counter for meals (TPee\'s) a short walk down the road. Ask about shuttle availability from Petite\'s Gap or VA-501 at the James River crossing. Parking available with stay. Can accommodate mail drops for guests with advance notice. 338 Arnolds Valley Rd, Natural Bridge Station, VA 24567.',
         pricing: '$50-125',
         services: ['lodging', 'breakfast', 'laundry', 'wifi', 'resupply', 'shuttle', 'parking', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gla-005',
@@ -1045,6 +1217,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=37.63088,-79.44939',
         notes: 'Large selection of groceries and hiker foods. Hardware section, beer, dairy, frozen, ice cream. Coleman and alcohol fuel by the ounce, heat in bottles, isobutane fuel in two size cans. Hiker Friendly Store.',
         services: ['grocery', 'fuel', 'resupply'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gla-006',
@@ -1055,6 +1228,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'M-F 8am-6pm, Sa 8am-12pm Sunday and all Major holidays Closed',
         googleMapsUrl: 'https://maps.google.com/?q=37.63422,-79.52730',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gla-007',
@@ -1063,6 +1237,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'M-Su 24 hours',
         googleMapsUrl: 'https://maps.google.com/?q=37.63013,-79.45159',
         services: ['laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gla-008',
@@ -1072,6 +1247,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'M 10am-6pm, Tu-W 10am-5:30pm, Th 10am-7pm, F-Sa 10am-2pm',
         googleMapsUrl: 'https://maps.google.com/?q=37.63471,-79.45085',
         services: ['library', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gla-009',
@@ -1083,6 +1259,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Owner: Adam Stanley. Based out of Glasgow, VA. Pet friendly. Insured. 365 days, 6:30AM - 7PM & holidays. S to Damascus, VA ◄ ► N to Washington DC & airports, bus & train terminals. Slackpacking. Parking, $3/day.',
         pricing: '$3/day parking',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -1109,6 +1286,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=37.54230,-79.36546',
         notes: 'Serves breakfast, lunch, and dinner 6:30am-8pm. Mail drops: 11619 Lee Jackson Hwy, Big Island, VA 24526.',
         services: ['grocery', 'restaurant', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -1136,6 +1314,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '11.8W from trail. Located at south end of town across river. AT hiker special $5 tent site. Free shower, even without stay. Pool. South end of town across river. Yearly Maury River Fiddlers Convention and Beach Music Festival takes place in mid-June.',
         pricing: '$5 tent site',
         services: ['campground', 'camping', 'shower', 'pool'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bv-003',
@@ -1148,6 +1327,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$45 and up, microwave, fridge, free local calls. Free WiFi. Ask Shuttle to and from trail for a fee.',
         pricing: '$45 and up',
         services: ['lodging', 'wifi', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bv-004',
@@ -1160,6 +1340,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$59.95 and up, microwave, fridge, laundry, pets $10 and must use smoking room.',
         pricing: '$59.95 and up',
         services: ['lodging', 'laundry', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bv-005',
@@ -1169,6 +1350,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'M-Su 7am-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=37.74268,-79.37892',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bv-006',
@@ -1179,6 +1361,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'M-F 8am-6pm, Sa 8am-1 pm',
         googleMapsUrl: 'https://maps.google.com/?q=37.73315,-79.35642',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bv-007',
@@ -1188,6 +1371,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=37.74408,-79.33886',
         notes: 'Allows multi-day parking.',
         services: ['parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bv-008',
@@ -1198,6 +1382,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'M-F 8am-6pm, Sa 10am-4pm, Su closed',
         notes: 'Area bus maker. Daily loops through Buena Vista and connects with a Lexington loop bus. Fee (small).',
         services: ['shuttle'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -1225,6 +1410,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '4.4W from trail. Campground open Apr 1 - Oct 31. Thru-hiker camping site $15 EAP, more for additional people. Laundry.',
         pricing: '$15 EAP camping',
         services: ['campground', 'camping', 'general_store', 'laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mon-003',
@@ -1233,6 +1419,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(540) 377-6646',
         notes: 'Owner: Earl Arnold. Based out of Montebello, VA. Pet friendly. When available, shuttles S to James River ◄ ► N to Rockfish Gap.',
         services: ['shuttle', 'pets'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -1247,6 +1434,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=37.89104,-79.01817',
         notes: '3.1W turn left on fire road (just north of Maupin Field Shelter), walk (1.2W) to the Blue Ridge Parkway, then turn left (south), walk the parkway (1.3) to Rusty\'s driveway on the left, at BRP mile 16.7. Open Apr-Sep. Gravel driveway with gray pipe gate and Rusty\'s name and AT stickers on one end. Thru-hikers are welcome. The no-trespassing signs are for the non-hikers. Rustic hostel includes a cabin, bunkhouse, spring-house, outhouse, rainwater shower, tent sites. No electricity, no plumbing. Donations encouraged and necessary to keep this hostel running. No illegal drugs permitted on the premises.',
         services: ['hostel', 'camping'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'rg-002',
@@ -1258,6 +1446,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=37.88383,-79.01655',
         notes: '2.8W. Cabin Cabins and camping 20% off (walk-in hiker rate, no vehicles). Local frozen dinners available for pre-order. Mail drops: 45 Royal Oaks Ln, Lyndhurst VA 22952.',
         services: ['lodging', 'camping', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'rg-003',
@@ -1270,11 +1459,12 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '5.4E on 664. AT Passport location. Hikers can camp on site for free. Brewpub, Open Daily 11:30am until last call. Full service restaurant and bar serving lunch & dinner. The Summit, Open M-Sa 7am–12pm, Su 7am–2pm serving specialty coffees & breakfast. $5 breakfast offered to AT thru-hikers. The Oak Grill, Open weekends 11:30am until last call, serving a fast casual menu, with the outdoor bar serving Devils Backbone beers, local cider, and wine.',
         pricing: '$5 breakfast for thru-hikers',
         services: ['restaurant', 'camping', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-020', // Waynesboro, VA
+    resupplyId: 'waynesboro-va', // Waynesboro, VA
     businesses: [
       {
         id: 'way-001',
@@ -1284,6 +1474,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=38.03055,-78.86183',
         notes: 'AT Passport location. Open most days 9 am-5 pm. Info on town services. Maintains a listing of local trail angels. If the center is closed, the listing is displayed in the window. Some lodging facilities offer free pickup and return from here. Long-term parking is permitted here but not encouraged; it\'s a "park at your own risk" situation. It is recommended to park for free in Waynesboro at the police-monitored lot near Kroger\'s (fill out a waiver at the police department). Hikers who leave their car in town can then catch a ride to the AT with one of the trail angels.',
         services: ['visitor_center', 'parking', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'way-002',
@@ -1295,6 +1486,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '0.5W on 250. $42-70, microwave and fridge. Ask about tenting. Pets $5. Laundry. Free WiFi. Mail drops for guest: 494 Three Notched Mountain Hwy, Waynesboro, VA 22980.',
         pricing: '$42-70',
         services: ['lodging', 'camping', 'laundry', 'wifi', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'way-003',
@@ -1303,6 +1495,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(540) 942-6512',
         notes: 'Waynesboro Tourism. Based out of Waynesboro. Maintains a list of local trail angels with shuttle hikers from S to Rockfish Gap ◄ ► N to Waynesboro, VA, for no charge. Some on the list may be available to provide longer-distance shuttles for a fee.',
         services: ['shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'way-004',
@@ -1323,6 +1516,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '4.7W. Free camping, hammocking polls, and showers. Use of YMCA facilities for $10. Charging station. Free WiFi. Check-in at front desk, need photo ID.',
         pricing: '$10 for facilities',
         services: ['camping', 'shower', 'wifi', 'gym'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'way-006',
@@ -1336,6 +1530,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '4.8W. Pet friendly. AT Passport location. $35 hiker only hostel includes pickup and return to trail, mattress with clean sheets, shower, soap, loaner clothes, laundry. Private rooms available plus full kitchen privileges. Microsoft surface tablets, WiFi and DVDs. Fridge, freezer and microwave. Snacks, drinks, and ice cream for sale. Discounted slackpacking for multi-night guests. Large property located downtown near grocery, restaurants, and fastfood. S to Damascus, VA ◄ ► N to Washington DC. Hikers are required to call ahead and speak with owner prior to staying. Owned by Adam Stanley AT \'04, PCT \'10. Mail drops free for guest, $5 for non guests: 1333 West Main Street, Waynesboro, VA 22980.',
         pricing: '$35',
         services: ['hostel', 'shuttle', 'slackpacking', 'laundry', 'wifi', 'pets', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'way-007',
@@ -1346,6 +1541,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=38.06303,-78.89248',
         notes: '4.6W. Supervised Lutheran Church Hostel. AT Passport location. FREE and FRIENDLY! Opens Monday, May 22, Closes Saturday, June 17, CLOSED SATURDAY AND SUNDAY NIGHTS. 20 hiker maximum. Please do not call the church office. No pets, smoking, drugs, alcohol, firearms or foul language. Donations gratefully accepted. Check-in 5 pm-8pm, check-out 9 am; hikers staying over may leave packs. Cots in air-conditioned Fellowship Hall, showers, internet, big-screen TV and DVD, hiker lounge with kitchenette, snacks and breakfast foods. Free WiFi. Congregation cooks free dinner Thursday nights followed by optional vespers service.',
         services: ['hostel', 'wifi', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'way-008',
@@ -1358,6 +1554,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'No pets, no smoking, no alcohol. $85S +tax, $99D +tax, higher on weekends, includes breakfast, pool, pickup and return. 10 day cancellation policy. WiFi. Mail drops only: 320 S. Wayne Ave, Waynesboro, VA 22980.',
         pricing: '$85-99+',
         services: ['lodging', 'breakfast', 'pool', 'wifi', 'shuttle', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'way-009',
@@ -1369,6 +1566,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=38.06840,-78.88759',
         notes: 'Hiker friendly sports bar, beer, burgers, salads.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'way-010',
@@ -1378,6 +1576,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'M-F 5:30 am-3 pm, Sa-Su 7 am-3 pm',
         googleMapsUrl: 'https://maps.google.com/?q=38.06874,-78.88361',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'way-011',
@@ -1389,6 +1588,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=38.06740,-78.88829',
         notes: 'AT Passport location. All you can eat buffet.',
         services: ['restaurant', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'way-012',
@@ -1399,6 +1599,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=38.06740,-78.88829',
         notes: 'Coleman by the ounce.',
         services: ['fuel'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'way-013',
@@ -1407,6 +1608,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(540) 487-6388',
         notes: 'Owner: DuBose Egleston Jr. Based out of Waynesboro, VA. Pet friendly. Insured. 365 days, 24/7 & holidays. S to Roanoke, VA ◄ ► N to Harpers Ferry, WV & airports, bus & train terminals. Slackpacking.',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'way-014',
@@ -1416,6 +1618,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'scott.mc77@gmail.com',
         notes: 'Owner: Scott - "Rickshaw". Based out of Elkton, VA. Pet friendly. 365 days, 24/7 & some holidays. S to Buena Vista ◄ ► Harpers Ferry/DC & airports, bus & train terminals. Slackpacking. "We shuttle in peace for all trail kind all of Shenandoah NP from, to, through & near Swift Run Gap, or whatever."',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'way-015',
@@ -1425,6 +1628,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'pingg62@yahoo.com',
         notes: 'Owner: Pam Bennett. Based out of Rockfish Gap/Waynesboro, VA. Pet friendly. 365 days, mostly weekends & holidays. S to (120 miles south of Rockfish Gap, in any direction) ◄ ► N to Front Royal/Daleville & airports. Bus & train terminals. Slackpacking. Parking, free. "Please call, text, or email, in advance, to schedule. Shuttle runs on donations."',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'way-016',
@@ -1436,6 +1640,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Owner: Adam Stanley. Based out of Waynesboro, VA. Pet friendly. Insured. 365 days - 24/7. & holidays. S to Damascus, VA ◄ ► N to Washington DC & airports, bus & train terminals. Slackpacking. Parking, $3/day.',
         pricing: '$3/day parking',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'way-017',
@@ -1444,6 +1649,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(540) 999-3500',
         notes: 'Emergency line: 1-800-732-0911. Starting January 11, 2024, at 10:00 a.m., visitors who wish to overnight in the backcountry of Shenandoah National Park must purchase a permit through Recreation.gov. This includes Appalachian Trail (A.T.) hikers in the park. The new permit system will also implement a $9 per person fee and a $6 fee per reservation. For example, a one-person permit would cost $15. A two-person permit on the same reservation would cost $24. Permits can be obtained up to 90 days in advance of entering the park. A.T. thru-hikers will not need to indicate specific camping zones for each night. Thru-hikers will be able to choose a 14-day window during which to hike through the park. Hikers will need to carry a printed or digital copy of their permit with them while in the park. For more information, visit the backcountry regulations page of the park\'s website (www.nps.gov/shen/planyourvisit/backcountry-regulations.htm)',
         services: ['permits'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -1460,6 +1666,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=38.39402,-78.58194',
         notes: '5.2W from trail.',
         services: ['hostel'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'elk-002',
@@ -1472,6 +1679,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '2.9W. Room with 1 queen bed $79.42 including tax for single bed, two queen beds $95.96 including tax for double beds. All rooms have microwave and fridge. No charge for laundry with stay, but you must have detergent which they sell. Free WiFi. Mail drops for guests only: 19974 Spotswood Trail, Elkton, VA 22827.',
         pricing: '$79.42-95.96',
         services: ['lodging', 'laundry', 'wifi', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'elk-003',
@@ -1484,6 +1692,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '3.3W. Open year-round. $20 campsite, shower, and snack bar, game room, seasonal pool. Small camp store with some hiker items.',
         pricing: '$20 campsite',
         services: ['campground', 'camping', 'shower', 'pool', 'general_store'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'elk-004',
@@ -1494,6 +1703,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=38.37416,-78.58858',
         notes: '3.2W from trail.',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'elk-005',
@@ -1516,6 +1726,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=38.40747,-78.62352',
         notes: 'Full-service outfitter. Showers on site. Laundry, other lodging close by. Coleman and alcohol fuel by the ounce, and fuel canisters. Hydration supplies and freeze dried foods. Footwear, clothing, hiking & camping gear. Brochure with local information, places to stay, eat, trail angels, and shuttle assistance. Free WiFi & pack sitting. Mail drops: 311 W Spotswood Trail, Elkton, VA 22827',
         services: ['outfitter', 'shower', 'laundry', 'fuel', 'wifi', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'elk-007',
@@ -1524,6 +1735,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'M-Su 7am-11pm',
         googleMapsUrl: 'https://maps.google.com/?q=38.40682,-78.65264',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'elk-008',
@@ -1533,6 +1745,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'M-F 11am-10pm, F-Sa 11am-11pm, Su 11am-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=38.40667,-78.61849',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -1547,6 +1760,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=38.51741,-78.43839',
         notes: 'AT Passport location. Resupply foods, breakfast, lunch, dinner from a short-order menu, fuel by the ounce at gas station. Open Mar 24-Nov 13.',
         services: ['general_store', 'restaurant', 'fuel', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bm-002',
@@ -1558,6 +1772,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '0.1E from trail. Lewis Falls trail leads (1.3W) to Lewis Falls. Open 11 May- 06 Nov. Lodge rooms, cabins and suites, reservations required. Some pet-friendly rooms. Breakfast 7:30am-10am, lunch 12pm-2pm, dinner 5:30pm-9p.m. ATM.',
         pricing: '$100-270',
         services: ['lodging', 'restaurant', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bm-003',
@@ -1568,11 +1783,12 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Opens late March to Mid Nov. Tents $20, 6 people per site. Self service. Coleman fuel. Coin showers. Side trail to Big Meadows Campground.',
         pricing: '$20 tents',
         services: ['campground', 'camping', 'shower', 'fuel'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-020b', // Luray, VA
+    resupplyId: 'luray-va', // Luray, VA
     businesses: [
       {
         id: 'lur-001',
@@ -1584,6 +1800,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '4.5W on US 211. $85-$200 cabins open year-round, range in size (2-6 persons). Restaurant AYCE M- Th closed, F 10 am-8 pm, Sa 9 am- 8pm, Su 9 am-5 pm. Closed Dec-Mar. Free WiFi.',
         pricing: '$85-200',
         services: ['lodging', 'restaurant', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lur-002',
@@ -1595,6 +1812,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '5.3W. Open late Mar to late Nov. Has some pet friendly sites. Cabins $66-$552. Tent sites $37-75, 2-night min. All stays include free water slide, paddle boat, mini golf. Snack Shop: Open Memorial to Labor Day, serves hamburgers, hot dogs, pizza. Camp store, coin laundry, pool. Showers for guests only.',
         pricing: '$37-75 tents, $66-552 cabins',
         services: ['campground', 'camping', 'lodging', 'restaurant', 'laundry', 'pool', 'shower'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lur-003',
@@ -1607,6 +1825,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '6.9W. Rates: $79.00 - $140.00, $10 extra person, $10.00 for extra bed, pets under 50lbs $15.00. Includes continental breakfast. Microwave, fridge, laundry, seasonal outdoor pool, computer available for use.',
         pricing: '$79-140',
         services: ['lodging', 'breakfast', 'laundry', 'pool', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lur-004',
@@ -1630,6 +1849,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '8.9W. $3 operational/seasonal. Open year-round. Pet-friendly for well-behaved dogs that won\'t try to eat my cats. Thru-hikers call or text for availability and pick-up schedule. Section hikers please email dates of stays and shuttle requests. AT Passport location. Complimentary pick-up & drop-off for guests at trailhead (Rt. 211/Thornton Gap). Pets $35 cash or CC $36. Stay includes bed, fresh linens, shower, AC/heat, Wi-Fi, loaner clothes, hiker box, boot dryers, shuttle to town, fire pit and grill use, and complimentary coffee/tea. Camping $20PP cash or CC $20.50, includes shower and kitchen privileges, Wi-Fi, and device charging. Breakfast, soda, and snacks for sale on-site. Laundry $5 per load, shared loads permitted. Computer available for guests. On-site parking $3/ night not stayed. Shuttles for a fee within SNP, from/to DC airports, Harper\'s Ferry, SNP, and south to Waynesboro. Cats on property and a VERY friendly puppy! She loves to play with people and dogs. Free mail drop for guests ($2/ package for non-guests): 1260 E. Main St., Luray, VA 22835.',
         pricing: '$3 operational, $20-20.50 camping',
         services: ['hostel', 'camping', 'shuttle', 'laundry', 'wifi', 'pets', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lur-006',
@@ -1641,6 +1861,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$69.95-$129.95, $10EAP, pets $10. 10% off if you mention that you saw the 10% discount on their web site. Microwave, fridge. Free WiFi. Mail drops (non-guests $10): 320 W. Main St, Luray, VA 22835.',
         pricing: '$69.95-129.95',
         services: ['lodging', 'wifi', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lur-007',
@@ -1652,6 +1873,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Hiker rate: winter $55, summer $75. Microwave, fridge. Free local calls. Free WiFi.',
         pricing: '$55-75',
         services: ['lodging', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lur-008',
@@ -1662,6 +1884,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$80 and up, pet fee $20. Microwave, fridge. Outdoor pool. Computer available for use, free WiFi. Restaurant onsite.',
         pricing: '$80+',
         services: ['lodging', 'pool', 'wifi', 'pets', 'restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lur-009',
@@ -1674,6 +1897,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=38.66563,-78.46038',
         notes: 'Full-service outfitter. Large selection of footwear, socks, packs, and general supplies. Coleman and alcohol fuel by the ounce, and fuel canisters. Hydration supplies and freeze dried foods. Showers in town, laundry, hostel and other lodging close by. Brochure with local information, places to stay, eat, trail angels, and shuttle assistance. Free WiFi & pack sitting. Mail drops: 2 West Main St, Luray, VA 22835.',
         services: ['outfitter', 'shower', 'fuel', 'wifi', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lur-010',
@@ -1685,11 +1909,12 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Owner: Alison Coltrane. Based out of Luray, VA. Pet friendly. Insured. 365 days, 6AM - 8PM & holidays. Email ahead for shuttle and/or hostel stay. We have a puppy that likes to meet hikers and ride along. Let me know if that\'s okay with you. Blaze gets along with other dogs! S to Daleville, VA ◄ ► N to Carlisle, PA & airport, bus & train terminals. Slackpacking. Parking, free w/stay, $3/day for day-hikers. "Email is required with dates and end points for shuttle."',
         pricing: '$3/day parking',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-021', // Front Royal, VA
+    resupplyId: 'front-royal-va', // Front Royal, VA
     businesses: [
       {
         id: 'fr-001',
@@ -1703,6 +1928,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '0.3E. AT Passport location. Open year-round, call or email ahead recommended, drop-ins OK. 1847 Historic Home and cozy "Cabbin" were purchased and rehabilitated after Scott\'s SoBo thru-hike in 2012. Check in at Main House – patio side entrance. Located 120 steps east of AT, from Gate 7 sign, where it bends north from Route 522. Look for sign, long stone wall on left and red brick "Cabbin" up the hill. Cabbin: has 4 twin beds upstairs, 2 double beds downstairs. Main house has two informal rooms that sleep 24 each. Full room for 2 w/2 twins 1/2-bath $85. Full room for 3 w/queen and 2 twins $123. Can add a roll-away for $41 card/$40 cash. Bed rate in shared space: $41 PP card, $40 PP cash. Hiker mid-week special on formal private rooms 2-4 people in Main House: $125/room All stays include breakfast, bed, fresh linens, shower, AC/heat, breakfast, Wi-Fi, some cell, loaner clothes, hiker box, boot dryers, shuttle to town. Laundry $5 per load. $ Max 1 dog per night in Cabbin only for $5; outdoor kennel available for short day use. Pizza, ice cream, sport drinks, snacks & fuel for sale on site. Free juice, water, recharging, bathroom at Main House for day visitors, too. Parking $4 per day for non-guests. Call for availability. Mail drops: c/o Mountain Home B&B, 3471 Remount Rd., Front Royal, VA. 22630.',
         pricing: '$40-125',
         services: ['lodging', 'breakfast', 'shuttle', 'laundry', 'wifi', 'pets', 'fuel', 'parking', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fr-002',
@@ -1723,6 +1949,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=38.91759,-78.18929',
         notes: 'AT Passport location. Open 7 days a week 9am-5pm, except Thanksgiving, Christmas, and New Years. Hiker goody bags, hiker box, pack storage. Cold drinks for sale. Sells stamps. Restrooms, free WiFi. Mail drops: 414 East Main Street, Front Royal, VA. 22630',
         services: ['visitor_center', 'wifi', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fr-004',
@@ -1734,6 +1961,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=38.91798,-78.19211',
         notes: 'Full service outfitter. Hiker food. Equipment repairs. AT Passport location. Fuel (canister, and alcohol by the oz). Free shower, coin laundry, restrooms, lockers, boot dryer, message board, WiFi, AT mural. Shuttle operated by the city of Front Royal (.50c). Mail drops: 120 E Main St, Front Royal, VA 22630',
         services: ['outfitter', 'shower', 'laundry', 'fuel', 'wifi', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fr-005',
@@ -1744,6 +1972,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Recently renovated. Call for rate, $10EAP (up to 4) includes hot continental breakfast. Pets $15. Guests laundry, microwave, fridge, flat screen TV and HBO, free WiFi. Outdoor pool. When you check-in let them know if you need a ride back to the AT in the morning (free). Restaurant onsite. Mail drops for guests only: 10 Commerce Avenue, Front Royal, VA 22630.',
         pricing: '$10EAP',
         services: ['lodging', 'breakfast', 'laundry', 'pool', 'wifi', 'pets', 'restaurant', 'shuttle', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fr-006',
@@ -1755,6 +1984,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Clean, hiker friendly: $50-75, microwave, fridge, laundry, free WiFi. Trail pickup and drop off when able.',
         pricing: '$50-75',
         services: ['lodging', 'laundry', 'wifi', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fr-007',
@@ -1765,6 +1995,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$62.60 and up, 10% hiker discount. Pets $10. Microwave, fridge, computer available for use, free WiFi.',
         pricing: '$62.60+',
         services: ['lodging', 'wifi', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fr-008',
@@ -1776,6 +2007,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$49.95 and up, Pet fee. Microwave, fridge, free WiFi.',
         pricing: '$49.95+',
         services: ['lodging', 'wifi', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fr-009',
@@ -1785,6 +2017,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Located at 413 South St, Front Royal. M open 5pm, T-W closed, Th 9am-5pm, F 9am-3pm, Sa 9am-3pm, Su 10am-2pm, closed holidays',
         googleMapsUrl: 'https://maps.google.com/?q=38.91103,-78.18755',
         services: ['services'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fr-010',
@@ -1794,6 +2027,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'yellowcaboftheshenandoah.com',
         notes: 'Owner: Tony Elar. Based out of Front Royal, VA. Pet friendly. Insured. 365 days, 24/7 & holidays. S to NC state line ◄ ► N to state line & airports, bus & train stations. Parking, free. "All cars late model Crown Vic\'s w/ A/C, and big trunks."',
         services: ['shuttle', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fr-011',
@@ -1803,6 +2037,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'kvillato5@yahoo.com',
         notes: 'Owner: Kristine Villatoro. Based out of Front Royal, VA. No pets. 365 days, 10am-4pm, depending on availability, (call ahead) & some holidays. S to SNP/Luray, VA ◄ ► N to Harpers Ferry, WV "Please send me an email or text. I normally will not answer calls that I dont know number. I work Monday-Thursday so shuttle is limited. Mask required while in my vehicle."',
         services: ['shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fr-012',
@@ -1813,6 +2048,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.nextbendadventures.com',
         notes: 'Owner Susan "Goldilocks" Tschirhart. Pet friendly. Insured. Year-round. Based out of Front Royal, VA. Car capacity is 4 hikers. Operating hours, Week: 6 am to 9 am; 4 pm to 8 pm; Weekend: all day and holidays. S Waynesboro, VA. to ◄ ► N to Harpers Ferry, WV. & airports, bus, and Train terminals. Dulles Airport, Culpepper and Manassas. Slackpacking. Also certified in Wilderness First Aid, First Aid and CPR. Service area includes Shenandoah National Park.',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fr-013',
@@ -1822,6 +2058,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'billmarkunas@yahoo.com',
         notes: 'Bill Markunas.',
         services: ['shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fr-014',
@@ -1830,6 +2067,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(615) 806-9009',
         notes: '(2 people only) S to Waynesboro, VA. ◄ ► N to Harpers Ferry.',
         services: ['shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fr-015',
@@ -1838,6 +2076,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(360) 513-4234',
         email: 'bikeandski80@gmail.com',
         services: ['shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fr-016',
@@ -1846,6 +2085,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(703) 206-8490',
         notes: 'Tony "Smooth" Smith S to Waynesboro, VA. ◄ ► N to Harpers Ferry.',
         services: ['shuttle'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -1872,6 +2112,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=38.91378,-78.10160',
         notes: '2.3W. Hiker specials, supplies and rides sometimes available.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-003',
@@ -1882,6 +2123,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=38.93853,-78.05611',
         notes: '4.2W. No pets. Donation based. Bunk room, includes shower and laundry. Computer available. Free WiFi. Slackpacking offered with stay. See notes at NOBO mile 978.7',
         services: ['hostel', 'shower', 'laundry', 'wifi', 'slackpacking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-004',
@@ -1894,11 +2136,12 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '6.2W. Owned by Kat and thru hikers Stumbles and Texas. Pet friendly. Open April 1st- July 4th weekend. Free pickup from U.S. 522, mm 972.1 (route 522) Call ahead for one of below pickup times (8:45, 12:30, 4:15, 6:00). $35 bunk, $70 private Queen. Fresh linens provided. Town run included with 2 hour drop off from 4-6 pm. Stay includes shower, laundry, hiker kitchen, individual charging station with each bunk, loaner clothes, boot dryers, hiker box, fire pit and grill use, complementary coffee/tea, Wi-Fi excellent 4G. $8 hot breakfast. Snacks, pizza, and cold drinks available for purchase. Mail drops: Free for guests, C/O Stumble Inn 990 Hillandale Road Front Royal, VA. 22630.',
         pricing: '$35 bunk, $70 private',
         services: ['hostel', 'shuttle', 'shower', 'laundry', 'wifi', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-021b', // Bluemont, VA / Bears Den Hostel
+    resupplyId: 'bears-den-va', // Bluemont, VA / Bears Den Hostel
     businesses: [
       {
         id: 'bd-001',
@@ -1911,6 +2154,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '0.2E from trail. AT Passport location. Stone lodge, ATC owned and PATC operated. Bunk $30PP, tenting $15PP includes full house privileges. Hiker Special $34: Bunk, laundry, pizza, soda and pint of Ben & Jerry\'s ice cream $40PP. All stays include shower and self serve pancake breakfast. Laundry, computer available for use, free WiFi. Hiker room with TV, shower, Internet and sodas, accessible all day by entering a mileage code at the hostel door. Upper lodge, kitchen, camp store and office open 5pm-9pm daily. Check-out 9am. Slackpacking and shuttles may be available during summer months. Parking $3 per day. Credit Cards accepted. Mail drops, picked up during office hours: Bears Den Hostel, 18393 Blue Ridge Mountain Rd, Bluemont, VA 20135.',
         pricing: '$30 bunk, $15 tent, $34 hiker special',
         services: ['hostel', 'camping', 'breakfast', 'shower', 'laundry', 'wifi', 'slackpacking', 'shuttle', 'parking', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'blu-001',
@@ -1931,6 +2175,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=39.12024,-77.85522',
         notes: '0.4W from trail.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'blu-003',
@@ -1941,6 +2186,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=39.11833,-77.86319',
         notes: '0.9W from trail. Welcomes hikers, serves breakfast, lunch and dinner, breakfast served all day. Free WiFi, ATM.',
         services: ['restaurant', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'blu-004',
@@ -1951,6 +2197,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=39.11925,-77.86538',
         notes: '1.8W from trail.',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'blu-005',
@@ -1960,6 +2207,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=39.11063,-77.83285',
         notes: '1.7E from trail. CHECK ON HOURS Store features a wide variety of items for sale - from farm fresh produce including locally raised grass fed beef and free roaming chickens, to creative and whimsical items for house and farm.',
         services: ['general_store'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'blu-006',
@@ -1969,6 +2217,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'scottandmariewheaton@gmail.com',
         notes: 'Owners: Scott & Marie Wheaton - "Hopeful & Red Wing". Based out of Bluemont, VA. Pet friendly. 365 days, (call for availability) & some holidays. S to SNP, (N end) ◄ ► N to Southern PA & airport, bus & train terminals. Slackpacking.',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -1984,6 +2233,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '0.3E from trail. Good selection of hiker foods. Fuel available. Full deli, sandwiches, hamburgers, subs and fried chicken. M-Sa 4am-11pm, Su 7am-11pm. Mail drops: 34357 Charles Town Pike, Purcellville, VA 20132.',
         hours: 'M-Sa 4am-11pm, Su 7am-11pm',
         services: ['general_store', 'restaurant', 'fuel', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kg-002',
@@ -1994,12 +2244,13 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '0.3W at intersection. M-Th 11am-9pm, F-Sa 11am-10pm, Su 12pm-8pm. Restaurant and conveyance store.',
         hours: 'M-Th 11am-9pm, F-Sa 11am-10pm, Su 12pm-8pm',
         services: ['general_store', 'restaurant'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   // West Virginia
   {
-    resupplyId: 'rs-022', // Harpers Ferry, WV
+    resupplyId: 'harpers-ferry-wv', // Harpers Ferry, WV
     businesses: [
       {
         id: 'hf-001',
@@ -2013,13 +2264,15 @@ export const resupplyContacts: ContactInfo[] = [
       },
       {
         id: 'hf-002',
-        name: 'ATC Headquarters',
+        name: 'ATC Headquarters & Visitor Center',
         type: 'visitor_center',
         phone: '(304) 535-6331',
-        website: 'www.appalachiantrail.org',
+        website: 'https://appalachiantrail.org',
+        address: '799 Washington St, Harpers Ferry, WV 25425',
         googleMapsUrl: 'https://maps.google.com/?q=39.32372,-77.73160',
-        notes: 'PSYCHOLOGICAL HALFWAY POINT! Closed until February 2021. With normal protocols being impacted by COVID, visit (appalachiantrail.org/harpers-ferry-visitor-center) for more information. Information board on the front porch. Some items may become available again if COVID status changes.',
-        services: ['visitor_center', 'AT passport'],
+        notes: 'PSYCHOLOGICAL HALFWAY POINT! Get your photo taken for the thru-hiker album. Accepts hiker packages ($5 donation suggested). Maps, merchandise, exhibits. No denatured alcohol sold.',
+        services: ['visitor_center', 'AT passport', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hf-003',
@@ -2032,6 +2285,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '360FT W. Located about 100 steps from the AT. Private rooms $80-$200, sleeps from 1 to 6 persons, $3 per room. Hostel walk-in only $40PP. Open year-round. M-Th 6am-10pm daily year-round. Shop stocked for hiker resupply. Laundry $5. Shuttles $1.50/mile. All Credit Cards accepted.',
         pricing: '$40 hostel, $80-200 private',
         services: ['hostel', 'lodging', 'laundry', 'shuttle', 'general_store'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hf-004',
@@ -2042,6 +2296,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=39.32190,-77.73093',
         notes: 'AT Passport location. Full service outfitter with good selection of shoes & trail food. Shuttle referrals. M-Su 10am–6pm, later on F-Sa. Located just steps off the AT across the street from the train station on Potomac St.',
         services: ['outfitter', 'general_store', 'shuttle', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hf-005',
@@ -2052,6 +2307,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '0.1W on 340. Rates $93–$119. 10% hiker discount, hot breakfast bar. Laundry. Computer available for use, free WiFi.',
         pricing: '$93-119',
         services: ['lodging', 'breakfast', 'laundry', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hf-006',
@@ -2063,6 +2319,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '1.2W on 340. Camping $40 and up, cabins $85 and up, $8EAP. Coin laundry on-site, shower only $5, WiFi. Camp store.',
         pricing: '$40 camping, $85+ cabins',
         services: ['campground', 'camping', 'lodging', 'laundry', 'shower', 'wifi', 'general_store'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hf-007',
@@ -2073,6 +2330,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '1.2W on 340. Rates $123 and up, continental breakfast, laundry, indoor pool, Spa, computer available for use, free WiFi. Restaurant onsite.',
         pricing: '$123+',
         services: ['lodging', 'breakfast', 'laundry', 'pool', 'wifi', 'restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hf-008',
@@ -2083,6 +2341,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'https://www.riverriders.com/',
         notes: 'Owner: River Riders. Based out of Harpers Ferry, WV. Pet friendly. Insured. Memorial Day-Labor Day, 9am-5pm & holidays. Covid precautions. Masks required. S to 50-mile range ◄ ► N to 50-mile range & airport, bus & train terminals.',
         services: ['shuttle', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hf-009',
@@ -2093,6 +2352,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.hostelhiker.com',
         notes: 'Owner: Paul. Based out of Harpers Ferry, WV. Pet Friendly. Insured. May-early Oct, 24/7 & holidays. S to Swift Run Gap/Hwy 33 in VA ◄ ► N to Boiling Springs in PA & airport, bus & train terminals. Slackpacking. "Online Reservations & text/email preferred"',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hf-010',
@@ -2102,6 +2362,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'stringscusic@hotmail.com',
         notes: 'Owner: Mark "Strings" Cusic - "Strings". Based out of Harpers Ferry, WV. Pet Friendly. 365 days, 24/7 & holidays. S to Rockfish Gap/Waynesboro, VA ◄ ► N to Duncannon, PA, (farther by request) & airport, bus & train terminals. Slackpacking. "I am vaccinated. Masks optional. I would be happy to wear one if you like."',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hf-011',
@@ -2112,6 +2373,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.hvkeroo.com',
         notes: 'Owner: Dan Perkins. Based out of Harpers Ferry, WV. Pet friendly. 365 days, early AM. S to Front Royal, VA ◄ ► N to Pen Mar SP & airports. "Email communication preferred. I\'m vaccinated. Masks are optional, but I\'m happy to wear one if you prefer."',
         services: ['shuttle', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hf-012',
@@ -2121,6 +2383,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'outfitter1996@yahoo.com',
         notes: 'Owner: Laura Lee Clark. Based out of Harpers Ferry WV. Pet friendly. Insured. 365 days, 24/7 & holidays. S to Waynesboro, VA ◄ ► N to Boiling Springs, PA & airport, bus & terminals. "Email or text/voicemail. Limit 3 passengers. Pickup available at Harpers Ferry Nat\'l Historic Park. State Covid precaution guidelines followed."',
         services: ['shuttle', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hf-013',
@@ -2131,6 +2394,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Owner: Chris Brunton - "Trailboss". Based out of Harpers Ferry, WV. Pet friendly. 365 days, 24/7 & some holidays. S to Blue Ridge Pkwy ◄ ► N to PA/NJ & airport, bus & train terminals. Slackpacking. "Parking in Harpers Ferry, cost/$20.00." I can give excellent hiking info. Must be vaccinated & wear masks.',
         pricing: '$20 parking',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hf-014',
@@ -2141,6 +2405,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.thetownsinn.com',
         notes: 'Owner: Karan Townsend. Based out of Harpers Ferry, WV. Pet friendly. 365 days, 24/7 & holidays. S to (no limit) ◄ ► N to (no limit) & bus & train terminals. Slackpacking. Parking, only at the NPS parking lots.',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hf-015',
@@ -2151,6 +2416,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'debi19592020@yahoo.com',
         notes: 'Owner: Debi. Based out of Harpers Ferry, WV. Pet friendly. Insured. 365 days (Su-Th 6am-9pm, Fri-Sat 6am-10pm) & holidays, unless otherwise specified or you have an appointment. S to Front Royal, VA and more ◄ ► N to PA and more & airport, bus & train terminals. Slackpacking. Will do round-trip resupply runs. Rates negotiable - call. No COVID limitations in effect.',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -2170,6 +2436,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '0.25W. Tent or hammock $15, Bunk $30, Private room $80, indoor hot shower included. Laundry +$5. Free wifi. Large fully equipped kitchen. Comfortable indoor & outdoor lounging. Relaxed atmosphere, friendly staff. Mail drops: 19123 Sandy Hook Rd, Knoxville, MD 21758.',
         pricing: '$15 tent, $30 bunk, $80 private',
         services: ['hostel', 'camping', 'laundry', 'wifi', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'knox-002',
@@ -2180,6 +2447,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '1.0W. $69.99 and up, fridge, microwave, continental breakfast, WiFi. Hiker friendly.',
         pricing: '$69.99+',
         services: ['lodging', 'breakfast', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'knox-003',
@@ -2191,6 +2459,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=39.33026,-77.70153',
         notes: '1.0W.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'knox-004',
@@ -2201,6 +2470,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.rivertrail.com',
         notes: 'Owner: John Gonano. Based out of Knoxville, MD/Harper\'s Ferry, WV. S to Pen Mar/Harpers Ferry, WV/Shenandoah NP ◄ ► N to Duncannon, PA & Dulles/Reagan/BWI airports & bus terminals. "DOT authorized for state and interstate transport. Shuttles by SUV, van or bus available. We operate a campground near AT for staging and R&R."',
         services: ['shuttle', 'campground'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -2227,11 +2497,12 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=39.31324,-77.62085',
         notes: '2.5E. Not just pizzas, they have other foods. Delivers to Harper Ferry Hostel.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-023', // Boonsboro, MD
+    resupplyId: 'boonsboro-md', // Boonsboro, MD
     businesses: [
       {
         id: 'boo-001',
@@ -2242,6 +2513,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=39.48454,-77.62048',
         notes: '0.1W. Please shower first. Men, no sleeveless shirts. Dining reservations preferred. Tu–F 5pm until close, Sa 4pm until close, Su 2pm until close. Brunch on Sundays 10:30am-1:30pm, except Easter and Mothers Day. Winter hours may differ. Outdoor shower for hikers. Hiker friendly groceries.',
         services: ['lodging', 'restaurant', 'shower', 'general_store'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'boo-002',
@@ -2263,6 +2535,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=39.50628,-77.65227',
         notes: '2.5W.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'boo-004',
@@ -2273,6 +2546,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=39.50021,-77.64768',
         notes: '2.5W. Accepts Credit Cards.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'boo-005',
@@ -2284,6 +2558,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=39.50004,-77.64802',
         notes: '2.5W. Fruits and vegetables, limited.',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'boo-006',
@@ -2293,6 +2568,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=39.50600,-77.65161',
         notes: '2.5W. Owner Michelle. Deli, diner. Resupply, summer sausages. Make your own ice cream. Maildrops for a fee: 23 South Main, Boonsboro, MD. 21713.',
         services: ['general_store', 'restaurant', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -2319,6 +2595,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'https://sandersmarketllc.com',
         googleMapsUrl: 'https://maps.google.com/?q=39.70701,-77.48916',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'cas-003',
@@ -2329,6 +2606,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Showers, computer available for use, free WiFi.',
         hours: 'Mon-Thu 6am-9pm, Fri 6am-6pm, Sat 9am-5pm, Sun 10am-4pm',
         services: ['showers', 'computer', 'WiFi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'cas-004',
@@ -2342,6 +2620,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Owner: Hoody (Jeff Hood). Pet friendly. Full-service hostel. Operating season April-May, June, & July (check website for Aug-Apr). All stays include laundry, showers, AC, WiFi. Walmart dropoff-then-pickup $15/carload. Local and long distance shuttles available. Resupply available for walkups (10-4, text ahead). No tenting nor work-for-stay. No laundry or showers for walkups. No walkup resupply.',
         pricing: '$80 private room; $120 apt',
         services: ['hostel', 'laundry', 'showers', 'WiFi', 'shuttle', 'pets', 'resupply'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'cas-005',
@@ -2353,6 +2632,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Open March 31 to October 31. No smoking. $25 hiker hut with bunk beds and WiFi extender. Soolah Hiker Cottage $35/person, Blue Moon Room $40/person, Peach Room $40/person (includes hearty home-cooked breakfast). Tent and hammock camping $15. Other lodging available. Laundry $5 per load. Can pick up and drop off at Pen Mar Park. Accepts mail drops; contact for more info.',
         pricing: '$25 hiker hut; $35-$40 rooms; $15 tent/hammock camping',
         services: ['hostel', 'lodging', 'camping', 'laundry', 'WiFi', 'shuttle', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'rouz-001',
@@ -2373,6 +2653,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=39.74377,-77.52716',
         notes: 'Ask for hiker discount.',
         services: ['lodging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'waypa-001',
@@ -2394,6 +2675,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Pet friendly. Ask about hiker discount. Includes hot breakfast, coin laundry, microwave, fridge, computer available for use, outdoor grill, indoor pool, WiFi. Pet fee applies.',
         pricing: '$90 and up',
         services: ['lodging', 'laundry', 'WiFi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'waypa-003',
@@ -2403,6 +2685,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$59.99 and up, $5 EAP, $10 pet fee. Continental breakfast, microwave, fridge, free WiFi. Laundry close by.',
         pricing: '$59.99 and up',
         services: ['lodging', 'breakfast', 'WiFi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'waypa-004',
@@ -2412,6 +2695,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'https://bobbydsonline.com',
         hours: 'Mon-Thu 11am-9pm, Fri-Sat 11am-10pm, Sun 11am-9pm',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'waypa-005',
@@ -2420,6 +2704,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(717) 762-7203',
         googleMapsUrl: 'https://maps.google.com/?q=39.76050,-77.58418',
         services: ['laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'waypa-006',
@@ -2428,6 +2713,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(717) 765-4000',
         address: '501 E Main St, Waynesboro, PA',
         services: ['hospital'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'waypa-007',
@@ -2437,6 +2723,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'https://www.waynesborowalkin.com',
         hours: 'Mon-Thu 8am-5:30pm, Fri 8am-1pm, Sat 9am-5pm, Sun closed',
         services: ['medical'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'waypa-008',
@@ -2447,6 +2734,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'https://www.wahvet.com',
         hours: 'Mon-Fri 8am-12pm & 2pm-6pm',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'waypa-009',
@@ -2456,6 +2744,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'soggytreks@gmail.com',
         notes: 'Owner: Chris Vores ("Soggy"). Based out of Waynesboro, PA. Pet friendly. Insured. 365 days & holidays. Slackpacking. Call or text: weekday shuttles best after 3:30pm. Weekend shuttles anytime (unless busy). Long distance shuttles $1.25/mile round trip. Local trail heads call for price.',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'waypa-010',
@@ -2466,6 +2755,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=39.74267,-77.52828',
         notes: '2.1W. M-Su 24 hours; pharmacy M-F 9am-7pm, Sa 9am-7pm, Su 10am-6pm.',
         services: ['grocery', 'pharmacy'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -2483,6 +2773,7 @@ export const resupplyContacts: ContactInfo[] = [
         address: '3910 Bullfrog Rd, Fairfield, PA 17320',
         googleMapsUrl: 'https://maps.google.com/?q=39.79561,-77.35790',
         services: ['lodging', 'laundry', 'shower', 'shuttle', 'camping', 'pets', 'pool', 'transportation'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'brs-002',
@@ -2492,6 +2783,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'https://synergymassage.com',
         notes: 'Massage, hiker discount. Free outdoor shower, hot tub and pool.',
         services: ['massage', 'shower', 'pool'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'brs-003',
@@ -2500,6 +2792,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(717) 794-2565',
         website: 'https://www.uniquebarandgrill.com',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -2516,6 +2809,7 @@ export const resupplyContacts: ContactInfo[] = [
         pricing: '$22 bunk, $12 camping',
         googleMapsUrl: 'https://maps.google.com/?q=39.90504,-77.50532',
         services: ['hostel', 'camping', 'laundry', 'kitchen', 'resupply', 'fuel', 'shuttle', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fay-002',
@@ -2537,6 +2831,7 @@ export const resupplyContacts: ContactInfo[] = [
         pricing: '$62.99 and up',
         googleMapsUrl: 'https://maps.google.com/?q=39.90752,-77.53819',
         services: ['lodging', 'laundry', 'WiFi', 'restaurant', 'shuttle', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fay-004',
@@ -2547,6 +2842,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Deli, free WiFi.',
         googleMapsUrl: 'https://maps.google.com/?q=39.90691,-77.52054',
         services: ['grocery', 'deli', 'WiFi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fay-005',
@@ -2558,6 +2854,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=39.90672,-77.53948',
         notes: 'Breakfast, lunch and dinner.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fay-006',
@@ -2568,6 +2865,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Full resupply. Pharmacy M-F 9am-9pm, Sat 9am-7pm, Sun 10am-6pm.',
         googleMapsUrl: 'https://maps.google.com/?q=39.92061,-77.60709',
         services: ['grocery', 'pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'fay-007',
@@ -2576,6 +2874,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(717) 491-2460',
         notes: 'Owner: Robert Freeman - "Junker". Based out of Fayetteville, PA. Pet friendly. Apr-Nov, 6am-7pm & holidays. S to Front Royal ◄ ► N to Delaware Water Gap & airports, bus & train terminals. Slackpacking. Parking. "Church hostel". Covid precautions. Masks required.',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -2591,6 +2890,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '0.2E. Hiker foods, prepared foods, ice cream, canister fuel, Heet. Restroom.',
         googleMapsUrl: 'https://maps.google.com/?q=40.07579,-77.19560',
         services: ['general_store', 'restaurant', 'ice cream', 'fuel', 'restroom'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pa94-002',
@@ -2610,6 +2910,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 8am-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.12042,-77.18975',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pa94-004',
@@ -2619,6 +2920,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 8am-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.11496,-77.18882',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pa94-005',
@@ -2627,6 +2929,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Sun-Sat 24 hours',
         googleMapsUrl: 'https://maps.google.com/?q=40.12122,-77.18980',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pa94-006',
@@ -2636,6 +2939,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Thu 11am-9pm, Fri-Sat 11am-10pm, Sun 11am-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.12272,-77.19086',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pa94-007',
@@ -2645,11 +2949,12 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 8:30am-7pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=40.11537,-77.18958',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-025', // Pine Grove Furnace
+    resupplyId: 'pine-grove-furnace-pa', // Pine Grove Furnace
     businesses: [
       {
         id: 'pgf-001',
@@ -2661,6 +2966,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.03236,-77.30709',
         notes: 'AT Passport location. Selection of hiking food and cold drinks, canister fuel, fuel by the ounce. Short order grill. Soda machine outside. Free WiFi and phone charging. ATM. "Home of the Half-Gallon Challenge!"',
         services: ['general_store', 'restaurant', 'WiFi', 'charging', 'fuel', 'ATM', 'ice cream', 'AT midpoint', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pgf-002',
@@ -2675,6 +2981,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'AT Passport location. Private room $60/night Mon-Thu, $80/night Fri-Sun. Dinner and breakfast for $10 more. Computer available for use, free WiFi, laundry $3. Updates posted on website. Mail drops: Ironmasters Hostel, 1212 Pine Grove Rd, Gardners, PA 17324.',
         pricing: '$25PP; private rooms $60-$80',
         services: ['hostel', 'lodging', 'kitchen', 'laundry', 'WiFi', 'computer', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pgf-003',
@@ -2686,6 +2993,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.03259,-77.30569',
         notes: 'AT Passport location. Hikers welcome. Artifacts and photos of past hikers, signs from Springer to Katahdin. Sells halfway patch and bandana.',
         services: ['museum', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pgf-004',
@@ -2695,11 +3003,12 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Weekdays only from end of Dec to end of Mar. Open 7 days rest of year. Campsites start at $17 weekdays (weekends a little more). $2 off for PA residents. Dogs allowed in some sites. Restrooms available. Check with park office before parking overnight.',
         googleMapsUrl: 'https://maps.google.com/?q=40.02891,-77.30745',
         services: ['visitor center', 'camping', 'info'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-026', // Boiling Springs, PA
+    resupplyId: 'boiling-springs-pa', // Boiling Springs, PA
     businesses: [
       {
         id: 'bs-000',
@@ -2721,6 +3030,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.14997,-77.12700',
         notes: 'ATC Mid-Atlantic Regional Office. Spigot on south side of building (may be off in winter). Ask staff about trail conditions and check bulletin board. Small shop with maps. WiFi (some items may become available again if COVID status changes).',
         services: ['visitor center', 'info', 'WiFi', 'water'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bs-002',
@@ -2741,6 +3051,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'No pets, no smoking. $125 and up. Queen bed room includes full breakfast and pickup/return from Boiling Springs. Free WiFi.',
         pricing: '$125 and up',
         services: ['lodging', 'breakfast', 'WiFi', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bs-004',
@@ -2750,6 +3061,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.15007,-77.12933',
         notes: 'ATM inside.',
         services: ['grocery', 'ATM'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bs-005',
@@ -2760,6 +3072,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 9am-7:30pm, Sat 9am-1pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.14000,-77.14352',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bs-006',
@@ -2770,6 +3083,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.14000,-77.14352',
         notes: 'Serves coffee, breakfast, lunch, and dinner. Located one block from the ATC Office on PA 174.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bs-007',
@@ -2779,6 +3093,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Thu 11am-10pm, Fri-Sat 11am-11pm, Sun 11am-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.15081,-77.12978',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bs-008',
@@ -2790,6 +3105,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.15012,-77.12865',
         notes: 'Serves lunch and dinner.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bs-009',
@@ -2801,6 +3117,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.14624,-77.12483',
         notes: '$2 hot shower. If you want to swim, visit the ATC Regional Office for $3 off the $12 admission.',
         services: ['shower', 'pool'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bs-010',
@@ -2811,6 +3128,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'No walk-ins. No credit cards. Pet friendly. Bunks $20 (includes linens, pillow). Tenting $20. Includes shower with towel, shampoo/body wash. Laundry $3 PP. Shuttles for guests. Pickup at ATC in Boiling Springs.',
         pricing: '$20 bunks, $20 tenting',
         services: ['hostel', 'camping', 'shower', 'laundry', 'shuttle', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bs-011',
@@ -2820,6 +3138,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'mike@atshuttler.com',
         notes: 'Owner: Michael Celinas. Based out of Central PA. Pet friendly. Insured. 365 days, 24/7 & holidays. S to "anyplace" ◄ ► N to "anyplace" & airport, bus & train terminals. Slackpacking. "You pay the fare and I\'ll take you anywhere." If not vaccinated, mask required, and 3rd row seating.',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bs-012',
@@ -2828,6 +3147,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(717) 385-1697',
         notes: 'Owner: Bruce Dunlay. AT \'96. Based out of Boiling Springs, PA. Pet friendly. Call/text for availability. S to Caledonia SP, PA ◄ ► N to Duncannon, PA & airport, bus & train terminals. Parking, donations accepted. Basic lodging or camping available when we are home. Vaccinated.',
         services: ['shuttle', 'pets', 'parking', 'lodging', 'camping'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -2861,6 +3181,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: '24 hours',
         googleMapsUrl: 'https://maps.google.com/?q=40.23396,-77.11664',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-004',
@@ -2871,6 +3192,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.23384,-77.13160',
         pricing: '$55.95 hiker rate',
         services: ['lodging', 'breakfast', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-005',
@@ -2881,6 +3203,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.23316,-77.11698',
         pricing: '$65 and up',
         services: ['lodging', 'breakfast', 'laundry', 'WiFi', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-006',
@@ -2890,6 +3213,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Call for pricing.',
         googleMapsUrl: 'https://maps.google.com/?q=40.23227,-77.12526',
         services: ['lodging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-007',
@@ -2900,6 +3224,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.23311,-77.12415',
         pricing: '$43.95 and up',
         services: ['lodging', 'breakfast', 'WiFi', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-008',
@@ -2910,6 +3235,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Convenience store, diner, showers $12 (includes towel), laundry.',
         googleMapsUrl: 'https://maps.google.com/?q=40.23520,-77.12290',
         services: ['grocery', 'restaurant', 'showers', 'laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-009',
@@ -2919,6 +3245,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'ande5560@gmail.com',
         notes: 'Owner: Bob Anderson - "JEB". Based out of Mechanicsburg, PA. Pet friendly. 365 days (depends on availability) & some holidays. S to Pen Mar ◄ ► N to Port Clinton & airports, bus & train terminals. Parking free.',
         services: ['shuttle', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-010',
@@ -2928,6 +3255,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'livewiretennis@aol.com',
         notes: 'Owner: Wiley Stonebraker. Based out of Carlisle, PA. Pet friendly. Insured. 365 days, 24/7 & holidays. S to Harpers Ferry, WV ◄ ► N to Port Clinton & airports, bus & train terminals. Slackpacking. Parking free.',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-011',
@@ -2937,6 +3265,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Store: Mon-Sat 8am-9pm, Sun 9am-7pm. Pharmacy: Mon-Fri 9am-9pm, Sat 9am-6pm, Sun 9am-5pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.24031,-77.05377',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-012',
@@ -2946,6 +3275,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 24 hours',
         googleMapsUrl: 'https://maps.google.com/?q=40.24747,-77.03110',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-013',
@@ -2955,23 +3285,25 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 24 hours',
         googleMapsUrl: 'https://maps.google.com/?q=40.24795,-77.02727',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-027', // Duncannon, PA
+    resupplyId: 'duncannon-pa', // Duncannon, PA
     businesses: [
       {
         id: 'dun-001',
         name: 'The Doyle Hotel',
         type: 'lodging',
-        phone: '(717) 834-6789',
+        phone: '(717) 596-0455',
         address: '7 N Market St, Duncannon, PA 17020',
         hours: 'Bar opens at noon',
         googleMapsUrl: 'https://maps.google.com/?q=40.3972,-77.0244',
         notes: 'ICONIC AT LANDMARK! Rough but cheap and historic. Under new ownership. Trail goes through town.',
         pricing: '$25/night',
         services: ['lodging', 'bar', 'restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dun-002',
@@ -3002,6 +3334,7 @@ export const resupplyContacts: ContactInfo[] = [
         pricing: '$45S, $55D',
         googleMapsUrl: 'https://maps.google.com/?q=40.43441,-76.99910',
         services: ['lodging', 'laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dun-005',
@@ -3012,6 +3345,7 @@ export const resupplyContacts: ContactInfo[] = [
         pricing: '$55S, $60D + tax',
         googleMapsUrl: 'https://maps.google.com/?q=40.45074,-76.97632',
         services: ['lodging', 'laundry', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dun-006',
@@ -3024,6 +3358,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Darn Tough Sock exchange location. Hostel open year round, pet friendly. AT Passport. (14) bunks available $25/night, 6 more in annex. NOBO hikers should call at least one day in advance or make online reservations. Private room available. Showers. Free WiFi. Fuel. Full long term resupply, brand tough warranty. Laundromat located three buildings away. Loaner clothes. Hiker lounge available during store hours. Parking for hikers. Max is 4 cars per night at location. Maildrops: include name and expected arrival date. 9 South Market St, Duncannon, PA 17020.',
         pricing: '$25 bunk',
         services: ['outfitter', 'hostel', 'resupply', 'showers', 'WiFi', 'fuel', 'laundry', 'parking', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dun-007',
@@ -3035,6 +3370,7 @@ export const resupplyContacts: ContactInfo[] = [
         pricing: '$5PP',
         googleMapsUrl: 'https://maps.google.com/?q=40.40203,-77.01665',
         services: ['campground', 'showers', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dun-008',
@@ -3045,6 +3381,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.39127,-77.02983',
         notes: 'Bar serves lunch and dinner.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dun-009',
@@ -3056,6 +3393,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Bar and lounge daily 4pm-last call. Dinner service ends 10pm.',
         googleMapsUrl: 'https://maps.google.com/?q=40.39136,-77.02956',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dun-010',
@@ -3065,6 +3403,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon closed, Tue-Sun 6am-11am',
         googleMapsUrl: 'https://maps.google.com/?q=40.39003,-77.03014',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dun-011',
@@ -3076,6 +3415,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Serves breakfast, lunch and dinner. Soup & salad bar available every day for lunch & dinner (11am-7pm). Breakfast bar on Sat-Sun.',
         googleMapsUrl: 'https://maps.google.com/?q=40.43124,-77.00238',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dun-012',
@@ -3086,6 +3426,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Seasonal hours, open in summer and spring Mon-Thu 9am-9pm, Fri-Sat 8am-9pm, Sun 8am-8pm. In fall and winter open Mon-Thu 10am-8pm, Fri-Sat 8am-9pm, Sun 8am-7pm. Located near Red Carpet Inn.',
         googleMapsUrl: 'https://maps.google.com/?q=40.45586,-76.96456',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dun-013',
@@ -3097,6 +3438,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Coin laundry. 25 South Market Street.',
         googleMapsUrl: 'https://maps.google.com/?q=40.38913,-77.03090',
         services: ['laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dun-014',
@@ -3106,6 +3448,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8am-9pm, Sat 8am-7pm, Sun 8am-8pm. Pharmacy: Mon-Fri 9am-9pm, Sat 9am-6pm, Sun 10am-6pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.39004,-77.04392',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dun-015',
@@ -3116,6 +3459,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$12 showers.',
         googleMapsUrl: 'https://maps.google.com/?q=40.40590,-77.00937',
         services: ['grocery', 'restaurant', 'showers'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dun-016',
@@ -3126,6 +3470,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Wed 9am-8pm, Thu 9am-5pm, Fri 9am-6pm, Sat 9am-12pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=40.35964,-77.01897',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dun-017',
@@ -3136,6 +3481,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Free hiker dinner Wednesdays in June and July 5pm-7pm at 115 Church St (corner of Plum St and Church St). Sunday service 10am.',
         googleMapsUrl: 'https://maps.google.com/?q=40.39235,-77.03148',
         services: ['services'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dun-018',
@@ -3144,6 +3490,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(717) 834-4706',
         notes: 'Owner: Mary B Parry. Based out of Duncannon, PA. Pet friendly. 365 days, 7am/7pm & holidays. S to Harpers Ferry, WV ◄ ► N to Delaware Water Gap, NJ & airports, bus & train terminals. Slackpacking.',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dun-019',
@@ -3153,6 +3500,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'jglenn6874@aol.com',
         notes: 'Owners: Jim & Denise Glenn. Based out of Marysville, PA. Pet friendly. 365 days, dawn to dusk & some holidays. S to Pine Grove Furnace SP ◄ ► N to Swatara SP & airports. Covid precautions. Masks required.',
         services: ['shuttle', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dun-020',
@@ -3162,6 +3510,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'sholleytrailner@gmail.com',
         notes: 'Based out of Harrisburg, PA. Pet friendly. 365 days, 24/7 & some holidays. Airports, bus & train terminals. Slackpacking. Parking free.',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -3177,6 +3526,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Text for availability. FB: StayATSwatara. We are pushing hard to be open by April 2024. This year we will be offering primitive camping, shower/bath house, laundry, WiFi. Re-supply, food and drinks to purchase. Shuttle services. Slackpacking if time permits. Fresh spring water. "Rest for your soles". Price list will be posted shortly. Maildrops available with stay: 3533 State Route 72, Jonestown, PA 17038.',
         googleMapsUrl: 'https://maps.google.com/?q=40.47906,-76.53197',
         services: ['hostel', 'camping', 'showers', 'laundry', 'WiFi', 'resupply', 'shuttle', 'slackpacking', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'swat-002',
@@ -3187,6 +3537,7 @@ export const resupplyContacts: ContactInfo[] = [
         pricing: '$85.15 and up',
         googleMapsUrl: 'https://maps.google.com/?q=40.45184,-76.51344',
         services: ['lodging', 'breakfast', 'laundry', 'WiFi', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'swat-003',
@@ -3196,6 +3547,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Call for pricing.',
         googleMapsUrl: 'https://maps.google.com/?q=40.45060,-76.51279',
         services: ['lodging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'swat-004',
@@ -3206,6 +3558,7 @@ export const resupplyContacts: ContactInfo[] = [
         pricing: '$75 and up',
         googleMapsUrl: 'https://maps.google.com/?q=40.44921,-76.52040',
         services: ['lodging', 'breakfast', 'laundry', 'WiFi', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'swat-005',
@@ -3218,6 +3571,7 @@ export const resupplyContacts: ContactInfo[] = [
         pricing: '$38 and up',
         googleMapsUrl: 'https://maps.google.com/?q=40.44923,-76.52046',
         services: ['campground', 'lodging', 'laundry', 'WiFi', 'pets', 'general_store', 'restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'swat-006',
@@ -3228,6 +3582,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$10 showers. ATM. WiFi.',
         googleMapsUrl: 'https://maps.google.com/?q=40.44952,-76.51529',
         services: ['grocery', 'restaurant', 'showers', 'ATM', 'WiFi'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -3252,6 +3607,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon closed, Tue-Thu 11am-10pm, Fri 11am-11pm, Sat 11am-10pm, Sun 11am-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.54776,-76.38499',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pgpa-003',
@@ -3262,6 +3618,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Laundry, $12 shower, ATM. Subway, Dairy Queen.',
         googleMapsUrl: 'https://maps.google.com/?q=40.56129,-76.39753',
         services: ['grocery', 'restaurant', 'laundry', 'showers', 'ATM'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pgpa-004',
@@ -3269,6 +3626,7 @@ export const resupplyContacts: ContactInfo[] = [
         type: 'restaurant',
         googleMapsUrl: 'https://maps.google.com/?q=40.56129,-76.39753',
         services: ['restaurant', 'ice cream'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pgpa-005',
@@ -3278,6 +3636,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Thu 11am-10pm, Fri-Sat 11am-11pm, Sun 11am-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.56042,-76.39235',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pgpa-006',
@@ -3287,6 +3646,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8am-9pm, Sat-Sun 8am-6pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.54925,-76.38521',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pgpa-007',
@@ -3296,6 +3656,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon 11am-9pm, Tue closed, Wed-Thu 11am-9pm, Fri-Sat 11am-10pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=40.54977,-76.38512',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pgpa-008',
@@ -3305,6 +3666,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 5am-12pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.54925,-76.38521',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pgpa-009',
@@ -3315,6 +3677,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 9am-7pm, Sat 9am-1pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=40.55037,-76.38485',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pgpa-010',
@@ -3322,6 +3685,7 @@ export const resupplyContacts: ContactInfo[] = [
         type: 'laundry',
         googleMapsUrl: 'https://maps.google.com/?q=40.55553,-76.39163',
         services: ['laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pgpa-011',
@@ -3331,11 +3695,12 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'leonestransportationllc@outlook.com',
         notes: 'Owner: David Leone. Based out of Tremont, PA. Pet friendly. Insured. 365 days and holidays 6am-10pm, all year round. S to (Anywhere - call) ◄ ► N to (Anywhere - call) & airports, bus & train terminals.',
         services: ['shuttle', 'pets'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-028', // Port Clinton, PA
+    resupplyId: 'port-clinton-pa', // Port Clinton, PA
     businesses: [
       {
         id: 'pc-001',
@@ -3348,6 +3713,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.58241,-76.02455',
         notes: 'AT Passport location. Limited rooms, call for prices. $10 deposit for room key and towel. Laundry. Please shower before dinner. Credit cards accepted.',
         services: ['lodging', 'restaurant', 'bar', 'laundry', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pc-002',
@@ -3366,6 +3732,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.58703,-76.02625',
         notes: '0.5W on Penn Street. No alcohol or drugs. Tenting max 2 nights, no car camping. Water from spigot outside the Port Clinton Hotel. Permission required for more than two nights; call Valerie Sterner.',
         services: ['camping', 'water'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pc-004',
@@ -3376,6 +3743,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.58019,-76.02428',
         pricing: '$65 and up',
         services: ['lodging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pc-005',
@@ -3386,6 +3754,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.58226,-76.02450',
         notes: 'Free WiFi.',
         services: ['restaurant', 'WiFi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pc-006',
@@ -3396,6 +3765,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.58226,-76.02450',
         notes: 'AT Passport location. Sodas, candy, dried fruit, trail mixes. ATM.',
         services: ['general_store', 'ATM', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pc-007',
@@ -3405,6 +3775,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.58513,-76.02521',
         notes: 'Dog friendly. AT Passport location. Hikers are welcome to hang out. Coffee, cookies, phone charging available. Shuttles available. Lots of music. Hours: Mon-Fri 8-5, Sat 8am-2pm, Sun closed.',
         services: ['services', 'charging', 'shuttle', 'pets', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pc-008',
@@ -3413,11 +3784,12 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(602) 929-7000',
         notes: 'Runs between Port Clinton Pavilion and Cabela\'s. Starts running in April. Pavilion pickups: 10:15am and 1:15pm. Initiate pickup by calling 15 minutes ahead. Return trips leave Cabela\'s at 1pm and 5pm.',
         services: ['shuttle'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-028b', // Hamburg, PA
+    resupplyId: 'hamburg-pa', // Hamburg, PA
     businesses: [
       {
         id: 'ham-001',
@@ -3436,6 +3808,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(610) 562-4234',
         notes: 'Includes continental breakfast. Mail drops accepted for guests only: 100 Industrial Drive, Hamburg, PA 19526.',
         services: ['lodging', 'breakfast', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ham-003',
@@ -3446,6 +3819,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.55767,-76.00292',
         notes: 'Lots of hiking items, canister fuel. They will pickup from trail head if staff is available.',
         services: ['general_store', 'fuel', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ham-004',
@@ -3456,6 +3830,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.56382,-76.01201',
         notes: 'Grocery and Subway (Mon-Sun 7am-9pm).',
         services: ['grocery', 'restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ham-005',
@@ -3465,11 +3840,12 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 10pm-10pm. Pharmacy: Mon-Fri 8am-9pm, Sat 8am-6pm, Sun 9am-5pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.54249,-75.97747',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-029', // Palmerton, PA
+    resupplyId: 'palmerton-pa', // Palmerton, PA
     businesses: [
       {
         id: 'pal-001',
@@ -3482,6 +3858,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Sleep in a real jail! Unique experience. Basic but clean.',
         pricing: 'Donation based ($15 suggested)',
         services: ['hostel', 'showers'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pal-002',
@@ -3502,6 +3879,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8:30am-5pm, Sat 8:30am-12pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.79931,-75.61485',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pal-004',
@@ -3512,6 +3890,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.80273,-75.60698',
         notes: 'AT Passport location. WiFi in restaurant. Ask about overnight stay, showers.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pal-005',
@@ -3522,6 +3901,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 11am-10pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=40.80145,-75.61015',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pal-006',
@@ -3533,6 +3913,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.80424,-75.60246',
         notes: 'Has ATM.',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pal-007',
@@ -3543,6 +3924,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.80174,-75.61059',
         notes: 'Serves lunch and dinner.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pal-008',
@@ -3553,6 +3935,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.80528,-75.60023',
         notes: 'Serves lunch and dinner; deli sandwiches.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pal-009',
@@ -3562,6 +3945,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'https://www.littlegapanimalhospital.com',
         googleMapsUrl: 'https://maps.google.com/?q=40.81920,-75.54244',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pal-010',
@@ -3571,6 +3955,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Coin, 24 hours',
         googleMapsUrl: 'https://maps.google.com/?q=40.80595,-75.60034',
         services: ['laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pal-011',
@@ -3584,6 +3969,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=425+Sunny+Rest+Rd+Palmerton+PA+18071',
         notes: 'Pet friendly. Local Palmerton, PA shuttle only. Parking. Fees (day visit / tenting).',
         services: ['campground', 'shuttle', 'showers', 'laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wal-001',
@@ -3594,6 +3980,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8:30am-5pm, Sat 8:30am-12pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.75400,-75.59196',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wal-004',
@@ -3601,6 +3988,7 @@ export const resupplyContacts: ContactInfo[] = [
         type: 'restaurant',
         notes: "Pizza Hut, Subway, Rita's, Burger King, Great Wall, Mamma's Pizza",
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wal-005',
@@ -3609,6 +3997,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(610) 628-8922',
         googleMapsUrl: 'https://maps.google.com/?q=40.76130,-75.59418',
         services: ['medical'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wal-006',
@@ -3618,6 +4007,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 8am-10pm. Pharmacy: Mon-Fri 9am-9pm, Sat 9am-6pm, Sun 9am-5pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.75593,-75.59439',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wal-007',
@@ -3629,6 +4019,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.77600,-75.57265',
         notes: 'Call first.',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'sla-001',
@@ -3639,6 +4030,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8:30am-11am, 1:30pm-4pm; Sat 8:30am-11:30am; Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=40.75146,-75.61258',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'sla-002',
@@ -3649,6 +4041,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 9am-8pm, Sat 9am-2pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=40.75281,-75.60811',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'sla-003',
@@ -3659,6 +4052,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon 9am-7pm, Tue 9am-3pm, Wed 9am-7pm, Thu closed, Fri 9am-5pm, Sat 8am-2pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=40.75073,-75.61293',
         services: ['library'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -3674,6 +4068,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 9:30am-1pm & 2pm-4:30pm, Sat 8am-12pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=40.79466,-75.52916',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dan-002',
@@ -3686,6 +4081,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Victorian farmhouse with A/C including full country breakfast. Will pickup at Little Gap. Laundry for a fee. Parking for section hikers. Call ahead (no credit cards). Mail drops for guests only.',
         pricing: '$100, $150',
         services: ['lodging', 'shuttle', 'laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dan-003',
@@ -3698,6 +4094,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.79835,-75.53564',
         notes: 'Breakfast, lunch, and dinner. Has ATM. Ask about overnighting.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dan-004',
@@ -3708,6 +4105,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8am-8pm, Sat 8am-6pm, Sun 10am-6pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.79454,-75.53242',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -3724,6 +4122,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.82658,-75.43264',
         notes: 'Follow blue blazes on telephone poles. Hikers welcome to water from spigot at rear of house. Free outside shower during daylight hours. Pet friendly; ask about dog sitting. Parking fee with permission only. Shuttles available (Duncannon, Delaware Water Gap, etc). Ask about fuel and mail drops.',
         services: ['lodging', 'camping', 'showers', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'sgr-002',
@@ -3734,6 +4133,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.84787,-75.44930',
         notes: 'Listed in PDF. One online directory reports it may be closed; verify before relying on it.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'sgr-003',
@@ -3743,11 +4143,12 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 7am-7:30pm, Sun 7am-5pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.84758,-75.44891',
         services: ['general_store', 'grocery'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-029b', // Wind Gap, PA
+    resupplyId: 'wind-gap-pa', // Wind Gap, PA
     businesses: [
       {
         id: 'wg-001',
@@ -3758,6 +4159,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8:30am-5pm, Sat 8:30am-12pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.85088,-75.29186',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wg-002',
@@ -3767,6 +4169,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.83864,-75.29984',
         notes: 'Offers deli and salad bar.',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wg-003',
@@ -3777,6 +4180,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.83151,-75.30647',
         notes: 'Delivers.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wg-004',
@@ -3786,6 +4190,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Lunch and dinner buffet. Mon-Sun 11am-10:30pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.83919,-75.29977',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wg-005',
@@ -3795,6 +4200,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 8am-9pm. Pharmacy: Mon-Fri 8am-8pm, Sat 9am-6pm, Sun 10am-5pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.83864,-75.29557',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wg-006',
@@ -3804,6 +4210,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Walk-in clinic. Mon-Fri 8am-8pm, Sat 10am-5pm, Sun 10am-4pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.83878,-75.29773',
         services: ['medical'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wg-007',
@@ -3814,6 +4221,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Tue 8am-8pm, Wed 8am-1pm & 4pm-7pm, Thu 8am-8pm, Fri 8am-1pm & 4pm-7pm, Sat 9am-12pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=40.83937,-75.29632',
         services: ['medical'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wg-008',
@@ -3823,6 +4231,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=Gateway+Motel+Wind+Gap+PA',
         notes: 'Hikers welcome to stop in for water and use of vending machine.',
         services: ['lodging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wg-009',
@@ -3833,11 +4242,12 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 24 hours',
         googleMapsUrl: 'https://maps.google.com/?q=Creature+Comforts+vet+Wind+Gap+PA',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-030', // Delaware Water Gap
+    resupplyId: 'delaware-water-gap-pa', // Delaware Water Gap
     businesses: [
       {
         id: 'dwg-000',
@@ -3848,6 +4258,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8:30am-12pm & 1pm-4:45pm, Sat 8:30am-11:30am',
         googleMapsUrl: 'https://maps.google.com/?q=40.98356,-75.14275',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dwg-001',
@@ -3860,6 +4271,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.9667,-75.1333',
         notes: 'Full line of gear; carries hiker food, backpacking meals, ultralight backpack gear, and footwear. Alcohol and Coleman by the ounce. Shuttles from Little Gap to Bear Mtn by advance reservation only. Open 7 days Memorial Day-Labor Day. New location just across street from 129 Main St.',
         services: ['outfitter', 'resupply'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dwg-002',
@@ -3873,6 +4285,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Open year-round. If you arrive and it is locked, call one of the phone numbers. AT Passport location. Bunkooms, showers, overflow tenting. Donations encouraged. 2 night maximum. No laundry. Cars may not be parked on the property at any time. Mail drops are not accepted but the post office is next door.',
         pricing: 'Donation based ($15 suggested)',
         services: ['hostel', 'showers'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dwg-004',
@@ -3884,6 +4297,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'No pets.',
         pricing: '$75 and up; higher on weekends',
         services: ['lodging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dwg-005',
@@ -3895,6 +4309,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'No pets. Restaurant and lounge.',
         pricing: '$120 and up',
         services: ['lodging', 'restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dwg-003',
@@ -3906,6 +4321,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=40.98607,-75.14375',
         notes: 'Breakfast sandwiches, salads, sandwiches. Serves a hot dog and slice of pie $2.95. Credit card minimum $10.',
         services: ['restaurant', 'grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dwg-006',
@@ -3916,6 +4332,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Thu 11am-11pm, Fri-Sat 11am-11pm, Sun 11am-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=40.98560,-75.14521',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dwg-007',
@@ -3925,6 +4342,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'https://www.adventuresport.com',
         googleMapsUrl: 'https://maps.google.com/?q=Water+Gap+Adventures+Delaware+Water+Gap+PA',
         services: ['activity'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dwg-008',
@@ -3935,6 +4353,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=Gary+Alaska+Concierge+Services+Delaware+Water+Gap+PA',
         notes: 'Pet friendly. Insured. 365 days, 5am-10pm and holidays. Serves Pen Mar Park, MD to Middletown, NY (airport, bus & train terminals). Slackpacking. Parking free. Complimentary drinks & snacks.',
         services: ['shuttle'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -3952,6 +4371,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'AT Passport location. Thru-hiker rates $30 PP in a cabin (typically includes electricity, showers, full kitchen access and WiFi). Bunkoom sometimes available (first come first serve). Tenting with access to showers and bear boxes. WiFi $10 PP (price subject to change). Towels free for guests, $3 for non-guests. Shower for non-guests $5 PP. Sheets and blankets available for rent at varying rates. Thru-hiker dogs are not allowed overnight (service dogs OK). Campfires only in designated areas. Water available at lodge. Isopro fuel canisters and alcohol by the ounce, plus camp supplies and Good-To-Go dried meals, trekking poles, rain gear, etc. Deli open with sandwiches, ice cream, breakfast and a Hiker Hunger friendly menu. Hours: Apr-Sep Su-Th 8am-6pm, Fri 8am-8pm, Sat 8am-8pm; Oct-Mar Su-Th 9am-5pm, Fri-Sat 9am-7pm (subject to change).',
         pricing: '$30 PP cabin (thru-hiker rate)',
         services: ['lodging', 'campground', 'showers', 'resupply', 'restaurant', 'wifi', 'maildrop'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'moc-002',
@@ -3960,6 +4380,7 @@ export const resupplyContacts: ContactInfo[] = [
         address: 'C/O AMC Mohican Outdoor Center, 50 Camp Mohican Rd, Blairstown, NJ 07825',
         notes: 'Please include approximate date of arrival.',
         services: ['shipping', 'maildrop'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -3975,6 +4396,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.17714,-74.79166',
         notes: 'Owner: John Lantieri. Deli. Water outside, restroom, and charging station.',
         services: ['restaurant', 'deli', 'water', 'restroom', 'charging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'cgb-002',
@@ -3984,6 +4406,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.18564,-74.79567',
         notes: 'Tent sites located 1.5 away from State Park office near Rt 206. Tent site 1-6 persons $25 and up. Snack bar and free showers at Stony Lake. Memorial Day thru Columbus Day. Accessible from (1.0) Stony Lake Trail.',
         services: ['campground', 'showers', 'snack_bar'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'cgb-003',
@@ -3995,6 +4418,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.17762,-74.79247',
         notes: 'Free WiFi. Open seven days a week in Spring and Summer.',
         services: ['restaurant', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'cgb-004',
@@ -4005,6 +4429,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.17830,-74.79121',
         notes: 'Serves lunch and dinner. Inside and lakeside seating for hikers with charging outlets. Outdoor seating on the lake with a pergola and fire pits. Sells beer & wine to go.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'cgb-005',
@@ -4016,6 +4441,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$60 and up. Pets $20. Laundry for a fee. Free WiFi. Mail drops for guests only.',
         pricing: '$60 and up',
         services: ['lodging', 'laundry', 'wifi', 'maildrop'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'cgb-006',
@@ -4026,6 +4452,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.16268,-74.78762',
         notes: 'Serves breakfast, lunch and dinner. Thursday dinner buffet.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'cgb-007',
@@ -4036,6 +4463,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 6am-9pm, Sat-Sun 7am-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.15681,-74.78154',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'cgb-008',
@@ -4046,6 +4474,7 @@ export const resupplyContacts: ContactInfo[] = [
         pricing: '$50 and up',
         googleMapsUrl: 'https://maps.google.com/?q=41.15224,-74.76623',
         services: ['lodging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'cgb-009',
@@ -4056,6 +4485,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8:30am-5pm, Sat 8:30am-1pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.14670,-74.75170',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'cgb-010',
@@ -4065,6 +4495,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'beatnikhiker@gmail.com',
         notes: 'Owner: George Lightcap ("Beatnik"). Based out of Newton, NJ. Pet friendly. Insured. 365 days, 24/7 (flexible). S to Port Clinton, PA. N to Kent, CT and airports, bus & train terminals. Slackpacking.',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -4080,6 +4511,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.30532,-74.67136',
         notes: 'AT Passport location. Bathrooms inside, water spigot outside. Overnight parking (0.25E).',
         services: ['visitor_center', 'water', 'restroom', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'hp-002',
@@ -4088,6 +4520,7 @@ export const resupplyContacts: ContactInfo[] = [
         address: '1480 State Rte 23, Sussex, NJ 07461',
         notes: 'Mail drops accepted; address per PDF.',
         services: ['shipping', 'maildrop'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pj-001',
@@ -4098,6 +4531,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$80 and up, $10 EAP, pets $25. Free continental breakfast. Computer available for use, free WiFi. Mail drops for guests: 2247 Greenville Turnpike, Port Jervis, NY 12771.',
         pricing: '$80 and up',
         services: ['lodging', 'wifi', 'maildrop'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pj-002',
@@ -4108,6 +4542,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Call or text. AT Passport location. Open first week of April; closes last week of Oct. Closed Labor Day weekend. Bunks $40. Free WiFi. Stay includes laundry and free pickup/return to trailhead at High Point State Park HQ. Reservations required. Ask ahead about mail drops.',
         pricing: '$40 bunk',
         services: ['hostel', 'wifi', 'laundry', 'shuttle', 'maildrop'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pj-003',
@@ -4118,6 +4553,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 11am-11pm, Sun 12pm-11pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.35026,-74.68498',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pj-004',
@@ -4126,6 +4562,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 6am-12am',
         googleMapsUrl: 'https://maps.google.com/?q=41.35078,-74.68396',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pj-005',
@@ -4135,6 +4572,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 7am-10pm, Sun 9am-8pm. Pharmacy: Mon-Fri 8am-9pm, Sat 9am-6pm, Sun 9am-5pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.37580,-74.69420',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pj-006',
@@ -4144,6 +4582,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 9am-6pm, Sat 9am-1pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=41.37225,-74.69169',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pj-007',
@@ -4153,6 +4592,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'https://www.bonsecourscommunityhospitalnyhsop.org',
         googleMapsUrl: 'https://maps.google.com/?q=41.36760,-74.68172',
         services: ['hospital'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pj-008',
@@ -4162,11 +4602,12 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Tue 8am-5pm, Wed-Thu 8am-7pm, Fri 8am-5pm, Sat 8am-2pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=41.37173,-74.69090',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-031', // Vernon, NJ
+    resupplyId: 'branchville-nj', // Vernon, NJ
     businesses: [
       {
         id: 'ver-001',
@@ -4178,6 +4619,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.19452,-74.48351',
         notes: 'Pharmacy and ATM.',
         services: ['grocery', 'pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ver-002',
@@ -4188,6 +4630,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8:30am-5pm, Sat 9:30am-12:30pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.19508,-74.48318',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ver-003',
@@ -4198,6 +4641,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.22115,-74.45365',
         notes: 'Has bakery items, vegetables, ice cream, picnic tables, and ATM. Mon-Fri 9am-7pm, Sun 9am-6pm.',
         services: ['general_store', 'grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ver-004',
@@ -4208,6 +4652,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.22011,-74.45423',
         notes: 'Burgers, hot dogs, sodas, Italian ice, potato knish. Picnic tables.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ver-005',
@@ -4218,6 +4663,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Located at 380 NJ-94, Vernon Township, NJ 07462. Allows hikers to stay in the barn for $10.',
         pricing: '$10 (barn stay)',
         services: ['lodging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ver-006',
@@ -4229,6 +4675,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$75 and up, $10 EAP, pets $20. Microwave, fridge, laundry $10, WiFi. For rides, make reservations through motel (not 3rd party). Mail drops for guests only: 367 Route 94, Vernon, NJ 07462.',
         pricing: '$75 and up',
         services: ['lodging', 'laundry', 'wifi', 'maildrop', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ver-007',
@@ -4239,6 +4686,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.19604,-74.48498',
         notes: '(1.0) mile below hostel.',
         services: ['medical'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ver-008',
@@ -4249,6 +4697,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.20337,-74.47863',
         hours: 'Mon-Sun by appointment',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ver-009',
@@ -4256,6 +4705,7 @@ export const resupplyContacts: ContactInfo[] = [
         type: 'restaurant',
         notes: "China Star, Dairy Queen, Burger King, Paesano Pizza, Wing's Asian Bistro",
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ver-010',
@@ -4267,6 +4717,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.23445,-74.41645',
         notes: 'New Milford, NY is reachable from two trail access points; use Vernon as the combined entry. Route: (1.4W) on Barret Rd, then right (0.6) on NJ 94 to shoe store and post office.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ver-011',
@@ -4276,6 +4727,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=The+Grange+New+Milford+NY',
         hours: 'Mon 4pm-8pm, Tue-Wed closed, Fri-Sat 4pm-8pm, Sun 12pm-4pm',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ver-012',
@@ -4287,6 +4739,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Carries brand name footwear from Merrell, Keen, Oboz, Salomon, and Hi-Tec.',
         hours: 'Mon-Fri 10am-6pm, Sat 10am-5pm, Sun 11am-2pm',
         services: ['outfitter'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -4302,6 +4755,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 7:30am-5pm, Sat 10am-2pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.24928,-74.47815',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'glw-002',
@@ -4313,6 +4767,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'No pets. Includes country breakfast and WiFi. With stay also return to the trail to County Roads 517 & 565. Mail drop for guest: PO Box 302, Glenwood, NJ 07418.',
         pricing: '$145 and up',
         services: ['lodging', 'wifi', 'shuttle', 'maildrop'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'glw-003',
@@ -4324,6 +4779,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.25008,-74.47841',
         notes: 'Serves breakfast and lunch. Water spigot outside. Ask about tenting.',
         services: ['restaurant', 'deli', 'water'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -4339,6 +4795,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8:30am-5pm, Sat 9am-4pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=41.25913,-74.35725',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'war-002',
@@ -4349,6 +4806,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.23462,-74.38065',
         notes: 'AT Passport location. Allows trail walkers to stop for the night, pitch tent, and watch that night\'s movies at no charge. Access to cold running water and a station where they can charge their cell phones. ShopRite is 0.1 from theater.',
         services: ['activity', 'camping', 'water', 'charging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'war-003',
@@ -4360,6 +4818,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Owner: Dorothy Haupt. Pet friendly. Tent camping on lawn $15 PP includes shower and laundry. Rooms $95D includes breakfast, laundry. Shuttles available $1.00 per mile round trip. Parking available. Mail drops: 180 Union Corners Rd, Warwick, New York 10990.',
         pricing: '$95 (room), $15 PP (tent camping)',
         services: ['lodging', 'camping', 'showers', 'laundry', 'shuttle', 'maildrop', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'war-004',
@@ -4370,6 +4829,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 6am-12am, Sun 6am-12am',
         googleMapsUrl: 'https://maps.google.com/?q=41.23568,-74.38106',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'war-005',
@@ -4379,6 +4839,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 24 hours. Pharmacy: Mon-Fri 8am-8pm, Sat 9am-5pm, Sun 9am-3pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.24024,-74.38013',
         services: ['grocery', 'pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'war-006',
@@ -4388,6 +4849,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 7am-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.25508,-74.36207',
         services: ['laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'war-007',
@@ -4397,6 +4859,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Open 24 hours',
         googleMapsUrl: 'https://maps.google.com/?q=41.26112,-74.35768',
         services: ['hospital'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'war-008',
@@ -4406,6 +4869,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'https://www.lucapizzawarwick.com',
         googleMapsUrl: 'https://maps.google.com/?q=41.23694,-74.38098',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'war-009',
@@ -4415,11 +4879,12 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'meadowlarkfarm@meadowlarkfarm.com',
         notes: 'Owner: Dorothy Haupt. Based out Warwick, NY. Pet friendly. 365 days, 24/7 & some holidays. S to Delaware Water Gap, PA ◄ ► N to Kent, CT and airport, bus & train terminals. Slackpacking. Parking free. "Face masks. I have strict Covid policy rules."',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-031b', // Unionville, NY
+    resupplyId: 'unionville-ny', // Unionville, NY
     businesses: [
       {
         id: 'un-001',
@@ -4430,6 +4895,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8am-11:30am & 1pm-5pm, Sat 9am-12pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.30151,-74.56210',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'un-002',
@@ -4439,6 +4905,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.30177,-74.56253',
         notes: "(0.4W) Check-in at office or at Horler's Store for overnight tenting.",
         services: ['tenting', 'services'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'un-003',
@@ -4450,6 +4917,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.29979,-74.55965',
         notes: 'Serves ribs, burgers, wings and more. ATM.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'un-004',
@@ -4460,6 +4928,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.30167,-74.56138',
         notes: 'ATM.',
         services: ['general_store', 'grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'un-005',
@@ -4470,6 +4939,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 11am-10pm, Sun 11am-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.30206,-74.56225',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -4483,6 +4953,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Korean War Army Veteran Bernard "Bud" Whitt. Open seasonally Tue-Sat 12:30pm-3:30pm.',
         googleMapsUrl: 'https://maps.google.com/?q=41.24416,-74.28738',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bfc-002',
@@ -4493,6 +4964,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.24468,-74.28918',
         notes: 'Ice cream and water. Electric charging station available outside. Picnic tables.',
         services: ['restaurant', 'water', 'charging'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -4508,11 +4980,12 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8am-7pm, Sat 8am-6pm, Sun 8am-4pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.25039,-74.31124',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-032', // Greenwood Lake, NY
+    resupplyId: 'greenwood-lake-ny', // Greenwood Lake, NY
     businesses: [
       {
         id: 'gwl-002',
@@ -4523,6 +4996,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8am-5pm, Sat 9am-12pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.22641,-74.29175',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gwl-003',
@@ -4533,6 +5007,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.22503,-74.28487',
         notes: 'No pets. Hiker rates. Free WiFi. No credit cards.',
         services: ['lodging', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gwl-004',
@@ -4544,6 +5019,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'No pets, no smoking. $185 and up. Free WiFi, ATM. Serves lunch and dinner daily. Closed month of January. Mail drops for guests: UPS/FedEx 620 Jersey Ave, Greenwood Lake, NY 10925.',
         pricing: '$185 and up',
         services: ['lodging', 'restaurant', 'wifi', 'atm', 'maildrop'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gwl-005',
@@ -4555,6 +5031,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Text: Pete (610) 322-9561, Mary (202) 497-1821. Reservations required. Not dog friendly (old rescue dog onsite). Hosted by Lost and Found Nobo \"21. Pickup at Route 17A (2.3 mi E) with stay. No smoking, drugs, hard liquor. Single bunk $50. Private room $80. Maximum two-night stay. Laundry and shower with stay. WiFi. Slackpacking options. Mail drop with stay; call or text for details.',
         pricing: '$50 single bunk, $80 private room',
         services: ['hostel', 'shuttle', 'laundry', 'showers', 'wifi', 'slackpacking', 'maildrop'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gwl-006',
@@ -4565,6 +5042,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.22321,-74.29631',
         notes: 'Nearby: Country Kitchen, Ashley\'s Pizza, Sing Loong Kitchen, Subway.',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gwl-007',
@@ -4573,6 +5051,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 8am-9pm. Pharmacy: Mon-Fri 8am-8pm, Sat 9am-6pm, Sun 9am-5pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.22630,-74.29208',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gwl-008',
@@ -4582,6 +5061,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 8am-6pm, Sun 9am-2pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.22332,-74.29371',
         services: ['general_store'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gwl-009',
@@ -4590,11 +5070,12 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(845) 820-1331',
         notes: 'Owner: Carl Fiskaa. Based out of Greenwood Lake, NY. Pet friendly. 365 days, 8am-6pm & some holidays. S to Delaware Water Gap, PA ◄ ► N to Kent, CT & airport (no NYC airports), bus & train terminals. Slackpacking.',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-033', // Bear Mountain, NY
+    resupplyId: 'bear-mountain-ny', // Bear Mountain, NY
     businesses: [
       {
         id: 'bm-000',
@@ -4605,6 +5086,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 9am-11am, Sat-Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=41.31106,-73.98745',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bm-001',
@@ -4615,6 +5097,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.31650,-73.98956',
         notes: 'AT Passport location. Dogs are not permitted in the zoo. No pets allowed. If closed, or if you have a dog, use bypass. No charge for hiking through.',
         services: ['museum'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bm-002',
@@ -4625,6 +5108,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8am-1pm & 2:30pm-5pm, Sat 9am-12pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.33130,-73.98760',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bm-003',
@@ -4635,6 +5119,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$149 and up; includes continental breakfast, restaurant, computer available for use, free WiFi, ATM.',
         pricing: '$149 and up',
         services: ['lodging', 'restaurant', 'wifi', 'atm'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bm-004',
@@ -4645,6 +5130,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'No pets. $85D. Pickup and return to trail at park, zoo or bridge with stay. Free WiFi. Accepts Visa/MC. Mail drops for guests: PO Box 554, Fort Montgomery, NY 10922.',
         pricing: '$85 (double)',
         services: ['lodging', 'wifi', 'shuttle', 'maildrop'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bm-005',
@@ -4654,6 +5140,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.33792,-73.97718',
         notes: 'To make reservations, call for rates and availability. Free Express Start Breakfast with stay. Coin laundry, indoor pool and sauna. Complimentary WiFi and business center includes computer and printer for use. Mail drops for guests: 1106 Route 9 W, Fort Montgomery, NY 10922-0620.',
         services: ['lodging', 'laundry', 'wifi', 'maildrop'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bm-006',
@@ -4664,6 +5151,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.33227,-73.98624',
         notes: 'Mon closed. Tue-Thu 11am-9pm, Fri-Sat 11am-10pm, Sun 11am-9pm. Serves breakfast, lunch and dinner.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bm-007',
@@ -4674,6 +5162,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 11am-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.33140,-73.98820',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bm-008',
@@ -4683,6 +5172,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon closed, Tue 4:30pm-7:30pm, Wed 4:30pm-8pm, Thu-Sat 4:30pm-7:30pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=41.33186,-73.98710',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bm-009',
@@ -4693,6 +5183,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$75 and up; includes continental breakfast. Pets $10.',
         pricing: '$75 and up',
         services: ['lodging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bm-010',
@@ -4702,6 +5193,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 8am-9pm, Sun 8am-6pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.36577,-73.96510',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bm-011',
@@ -4711,6 +5203,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 8am-10pm. Pharmacy: Mon-Sun 9am-1:30pm; 2pm-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.36533,-73.96553',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bm-012',
@@ -4721,6 +5214,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon 10am-5pm, Tue 10am-7pm, Wed 10am-5pm, Thu-Fri 10am-5pm, Sat 10am-2pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=41.37024,-73.96515',
         services: ['library'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bm-013',
@@ -4730,6 +5224,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Open 24 hours',
         googleMapsUrl: 'https://maps.google.com/?q=41.33798,-73.97877',
         services: ['general_store'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bm-014',
@@ -4739,6 +5234,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Open 24 hours',
         googleMapsUrl: 'https://maps.google.com/?q=41.33128,-73.98732',
         services: ['general_store'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'bm-015',
@@ -4747,11 +5243,12 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(845) 625-7025',
         notes: 'Owner: Michael. Based out of Putnam Valley/Cold Spring, NY. Pet friendly. Year-round 6:30am-4pm, limited weekends and some holidays. Harriman State Park to Kent, CT and airports, bus & train terminals. Slackpacking.',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-034', // Peekskill, NY
+    resupplyId: 'peekskill-ny', // Peekskill, NY
     businesses: [
       {
         id: 'peek-001',
@@ -4777,6 +5274,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8:30am-1pm & 2pm-5pm, Sat 8:30am-12:30pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.62478,-73.68801',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pou-002',
@@ -4786,6 +5284,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 7:30am-12am, Sun 7:30am-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.62721,-73.69625',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pou-003',
@@ -4797,6 +5296,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.60753,-73.67302',
         notes: 'Serves lunch and dinner. Accepts major credit cards.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pou-004',
@@ -4807,6 +5307,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 6am-7pm, Sat 7am-6pm, Sun 8am-3:30pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.60729,-73.67268',
         services: ['restaurant', 'deli'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pou-005',
@@ -4816,6 +5317,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 9am-8pm, Sat 9am-3pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.60716,-73.67249',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pou-006',
@@ -4825,6 +5327,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.62022,-73.67887',
         notes: 'No pets. $70S $75D. Free WiFi. Accepts Visa/MC/Disc.',
         services: ['lodging', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pou-007',
@@ -4834,6 +5337,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Tue closed, Wed-Sat 11am-10pm, Sun 12pm-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.62069,-73.67985',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pou-008',
@@ -4844,6 +5348,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon closed, Tue-Thu 4pm-12am, Fri-Sat 12pm-12am',
         googleMapsUrl: 'https://maps.google.com/?q=41.62332,-73.68584',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pou-009',
@@ -4853,6 +5358,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 9am-8pm, Sat 9am-4pm, Sun 11am-2pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.62479,-73.68849',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pou-010',
@@ -4862,6 +5368,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 12pm-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.62451,-73.68876',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pou-011',
@@ -4870,6 +5377,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(845) 724-5387',
         googleMapsUrl: 'https://maps.google.com/?q=41.62467,-73.68869',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'pou-012',
@@ -4880,11 +5388,12 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Thu 9am-9pm, Fri 9am-9:30pm, Sat 8:30am-9:30pm, Sun 8:30am-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.62670,-73.68964',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-035', // Pawling, NY
+    resupplyId: 'kent-ct', // Pawling, NY
     businesses: [
       {
         id: 'paw-001',
@@ -4905,6 +5414,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8:30am-5pm, Sat 9am-12pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.56381,-73.60208',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'paw-003',
@@ -4913,6 +5423,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=Edward+R+Murrow+Memorial+Park+Pawling+NY',
         notes: 'No pets. Town allows hikers to camp in the park for one night only. Located one mile from the center of town. Restrooms and swimming.',
         services: ['camping', 'restroom'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'paw-004',
@@ -4924,6 +5435,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$180 and up. WiFi, free coffee with stay.',
         pricing: '$180 and up',
         services: ['lodging', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'paw-005',
@@ -4934,6 +5446,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 8am-6pm, Sun 9am-2pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.56202,-73.60041',
         services: ['restaurant', 'deli'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'paw-006',
@@ -4943,6 +5456,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 11am-10pm, Sun 12pm-8pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.56182,-73.60057',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'paw-007',
@@ -4952,6 +5466,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 11am-10:30pm, Sat-Sun 11am-11:30pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.56371,-73.60149',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'paw-008',
@@ -4962,6 +5477,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon closed, Tue-Wed 11am-9pm, Thu 11am-8pm, Fri-Sat 11am-9pm, Sun 11am-8pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.56185,-73.60086',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'paw-009',
@@ -4971,6 +5487,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 9am-8pm, Sat 9am-6pm, Sun 10am-5pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.56214,-73.59972',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'paw-010',
@@ -4979,6 +5496,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon 12pm-5pm, Tue-Thu 10am-8pm, Fri 12pm-5pm, Sat 10am-4pm, Sun 12pm-4pm. Closed Sundays in July and August.',
         googleMapsUrl: 'https://maps.google.com/?q=41.56345,-73.60231',
         services: ['library'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'paw-011',
@@ -4988,6 +5506,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'mchunley@yahoo.com',
         notes: 'Based out of Fish Kill/Pawling, NY. Pet friendly. 365 days, hours vary (call for availability) & some holidays. Slackpacking. Needs advance notice; work hours vary and may add cost factor. Will go as far as you are willing to pay.',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'paw-012',
@@ -4996,6 +5515,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(845) 546-1832',
         notes: 'Based out of Poughkeepsie, NY. Night and weekends only. S to RPH Shelter ◄ ► N to Kent, CT.',
         services: ['shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wing-001',
@@ -5007,6 +5527,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.64823,-73.56381',
         notes: 'Wingdale is 4.0W from trail at mile 1451.3.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wing-002',
@@ -5018,6 +5539,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Accepts Visa, Master Card, Discover. Mon-Sat 11am-10pm, Sun 1pm-9pm.',
         hours: 'Mon-Sat 11am-10pm, Sun 1pm-9pm',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wing-003',
@@ -5028,6 +5550,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.64875,-73.56401',
         notes: 'Accepts Visa, Master Card.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wing-004',
@@ -5037,6 +5560,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Thu 10:30am-10pm, Fri-Sat 10:30am-10:30pm, Sun 10:30am-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.64701,-73.56204',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wing-005',
@@ -5046,6 +5570,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 24 hours',
         googleMapsUrl: 'https://maps.google.com/?q=41.64701,-73.56204',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wing-006',
@@ -5055,6 +5580,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 3am-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.62627,-73.57443',
         services: ['restaurant', 'deli'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wing-007',
@@ -5065,6 +5591,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Thu 8am-6pm, Wed 7am-6pm, Thu-Fri 8am-6pm, Sat 8am-5pm, Sun 9am-4pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.64894,-73.56409',
         services: ['hardware'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wing-008',
@@ -5074,6 +5601,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 10am-8pm, Sat closed, Sun 10am-8pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.64776,-73.56326',
         services: ['library'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wing-009',
@@ -5085,6 +5613,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.62684,-73.57443',
         notes: 'Re-opens 19 April 2022. 0.9E down the Green Trail and 0.1 further to NY 22 and two restaurants.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -5101,6 +5630,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.64688,-73.48208',
         notes: 'Long-term resupply available.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gay-002',
@@ -5111,6 +5641,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.63907,-73.48184',
         notes: 'Serves breakfast, lunch and dinner.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gay-003',
@@ -5121,12 +5652,13 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon 4pm-9pm closed, Wed-Thu 11am-9pm, Fri-Sat 11am-10pm, Sun 12pm-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.64040,-73.48287',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   // Connecticut & Massachusetts
   {
-    resupplyId: 'rs-036', // Kent, CT
+    resupplyId: 'cornwall-bridge-ct', // Kent, CT
     businesses: [
       {
         id: 'kent-001',
@@ -5138,6 +5670,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.72723,-73.47183',
         notes: 'General delivery available. Mail drops for guests: (USPS) PO Box 188 or (FedEx/UPS) 53 N Main Street, Kent, CT 06757.',
         services: ['post office', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kent-002',
@@ -5147,6 +5680,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.72701,-73.47464',
         notes: 'Bathrooms, outdoor showers (coin operated), water bottle filler, electrical outlets for charging devices and recycling bins.',
         services: ['visitor_center', 'restroom', 'showers', 'water', 'charging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kent-003',
@@ -5158,6 +5692,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'No pets. Hiker room rates $140D, tax weekdays, $170D, tax weekends, $25/AP. Front desk closed Tue, so make prior arrangements for Tue night stays. Restaurant hours: Lunch Mon 11:30am-3pm, Tue closed, Wed-Sat 11:30am-3pm, Sun Brunch 11:30am-3pm. Dinner Mon 5:30pm-9:30pm, Tue closed, Wed-Thu 5:30pm-9:30pm, Fri-Sat 5:30pm-10pm, Sun 3:30pm-9pm.',
         pricing: '$140D-$170D +tax',
         services: ['lodging', 'restaurant', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kent-004',
@@ -5168,6 +5703,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '2.5 north of town on US 7. Hiker rate Sunday thru Thursday $110 plus 11% CT Lodging tax. Weekend rates $145-200 +tax. Free WiFi.',
         pricing: '$110-200 +tax',
         services: ['lodging', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kent-005',
@@ -5179,6 +5715,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'No pets. $220D/up + tax, includes full breakfast and afternoon tea. Includes healthy breakfast made with local ingredients, it\'s different every day. Free WiFi. Sometimes discounted mid-week, accepts credit cards.',
         pricing: '$220D/up +tax',
         services: ['lodging', 'breakfast', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kent-006',
@@ -5189,6 +5726,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 8am-7pm, Sun 8am-6pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.72769,-73.47177',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kent-007',
@@ -5199,6 +5737,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 6am-11pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.72736,-73.47287',
         services: ['laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kent-008',
@@ -5210,6 +5749,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.72769,-73.47638',
         notes: 'Breakfast sandwiches, salads, bakery, coffee and supplies.',
         services: ['restaurant', 'bakery', 'deli'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kent-009',
@@ -5220,6 +5760,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Thu 11am-1am, Fri-Sat 11am-2am, Sun 11am-1am',
         googleMapsUrl: 'https://maps.google.com/?q=41.72619,-73.47443',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kent-010',
@@ -5229,6 +5770,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 11:30am-10pm, Sun 12pm-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.72676,-73.47292',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kent-011',
@@ -5237,6 +5779,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.72391,-73.47743',
         notes: 'Every summer since 1979. Chris has been running this since he was 12 years old.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kent-012',
@@ -5245,6 +5788,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(860) 927-1200',
         googleMapsUrl: 'https://maps.google.com/?q=41.72491,-73.47787',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kent-013',
@@ -5255,6 +5799,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 10am-5:30pm, Sat 10am-4pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.72491,-73.47528',
         services: ['library'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kent-014',
@@ -5264,11 +5809,12 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'jfilmny@gmail.com',
         notes: 'Owner: Frank Gallagher. Based out of Kent, CT. Pet friendly. Insured. 365 days, 24/7 & holidays. S to Bear Mtn NY ◄ ► N to MA/VT (southern) & airport, bus & train terminals. Slackpacking. Parking. "I have been shuttling hikers for 5 years always great experiences also live right next to Appalachian Trail, Kent, CT, Bulls Bridge." Covid precautions. Masks required.',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-036b', // Cornwall Bridge, CT
+    resupplyId: 'falls-village-ct', // Cornwall Bridge, CT
     businesses: [
       {
         id: 'corn-001',
@@ -5279,6 +5825,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8:30am-1pm & 2pm-5pm, Sat 9am-12pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.81820,-73.37105',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'corn-002',
@@ -5290,6 +5837,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$65/up weekdays, $85/up weekends. Pets $25, laundry $5, WiFi, shuttles $2 per mile. Mail drops for guests: 45 Kent Rd South, Cornwall, Bridge, CT 06754.',
         pricing: '$65-85/up',
         services: ['lodging', 'laundry', 'wifi', 'shuttle', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'corn-003',
@@ -5301,6 +5849,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'AT Passport location. Located behind carpet store, check-in at grey house next door to apartments. $95S, $120 for couple, $50 EAP. 2-3 bedroom apartments, includes laundry, satellite TV, local and long-distance phone, WiFi. Rates available. Mail drops for guests: C/O Tyler, 6 Rug Road South, Cornwall Bridge, CT 06754.',
         pricing: '$95S, $120 couple, $50 EAP',
         services: ['lodging', 'laundry', 'wifi', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'corn-004',
@@ -5311,6 +5860,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Camping and Cabins 1.3 miles north of town on US 7. No hammocks. No alcohol. Open mid-May to Labor Day, registration at main cabin by gate. Campsite $17 for CT residents, $27 nonresidents, $3 walk-in fee for first night. Cabins $60 with 2 nights minimum, CT resident fees for cabins is $50 plus tax. Reservations can be made Memorial Day Through Labor Day by contacting (ReserveAmerica.com) or by calling 1-877-668-2267.',
         pricing: '$17-27 camping, $50-60 cabins',
         services: ['campground', 'camping'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'corn-005',
@@ -5322,6 +5872,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '2.2 miles south on US 7. Pet friendly. Su-Th $120D +tax, includes continental breakfast. Weekends 10% hiker discount. Seasonal pool and hot tub. Free WiFi. $20 Pet fee. Pickup and return to trail head and other shuttles for a fee. Mail drops with reservation.',
         pricing: '$120D +tax',
         services: ['lodging', 'breakfast', 'wifi', 'pets', 'shuttle', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'corn-006',
@@ -5333,6 +5884,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'AT Passport location. Hiker friendly. Not hot meals, breakfast, groceries, charging station. Restrooms. Mon-Fri 6am-5pm, Sat-Sun 7am-5pm.',
         hours: 'Mon-Fri 6am-5pm, Sat-Sun 7am-5pm',
         services: ['grocery', 'restaurant', 'charging', 'restroom', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'corn-007',
@@ -5342,6 +5894,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon 6am-11pm, Tue-Sat 6am-10pm, Sun 6am-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.82031,-73.37472',
         services: ['convenience'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'corn-008',
@@ -5353,6 +5906,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.81849,-73.37122',
         notes: 'AT Passport location. Water available from spigot outside. Stop in to sign their register.',
         services: ['liquor', 'water', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'corn-009',
@@ -5363,6 +5917,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Tue 9am-5:30pm, Wed closed, Thu-Fri 9am-5:30pm, Sat 9am-1pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=41.81710,-73.36961',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'corn-010',
@@ -5373,11 +5928,12 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.Cornwallinn.Com',
         notes: 'Owner: Mark Hampson. Based out of Cornwall Bridge, CT. Pet friendly. Insured. 365 days, flexible hrs & holidays. S to Pawling, NY ◄ ► N to Sheffield, MA & train terminals. "Shuttle based on availability. Advanced notice required. Rates start at $2.50/mile, $25/minimum." Covid precautions. Masks required.',
         services: ['shuttle', 'pets'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-036c', // Falls Village, CT (includes West Cornwall & Sharon)
+    resupplyId: 'salisbury-ct', // Falls Village, CT (includes West Cornwall & Sharon)
     businesses: [
       {
         id: 'falls-001',
@@ -5389,6 +5945,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.87173,-73.36105',
         notes: 'West Cornwall, CT is 2.2E from trail at mile 1489.3.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'falls-002',
@@ -5400,6 +5957,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.88428,-73.47623',
         notes: 'Sharon, CT is 4.7W from trail.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'falls-003',
@@ -5410,6 +5968,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.88500,-73.46960',
         notes: 'Located in Sharon, CT.',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'falls-004',
@@ -5421,6 +5980,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.87927,-73.47838',
         notes: 'Located in Sharon, CT.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'falls-005',
@@ -5432,6 +5992,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.87874,-73.47607',
         notes: 'Located in Sharon, CT.',
         services: ['library'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'falls-006',
@@ -5442,6 +6003,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.88052,-73.48145',
         notes: 'Located in Sharon, CT.',
         services: ['hospital', 'medical'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'falls-007',
@@ -5452,6 +6014,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.88483,-73.46922',
         notes: 'Located in Sharon, CT.',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'falls-008',
@@ -5461,6 +6024,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.87917,-73.47748',
         notes: 'Located in Sharon, CT.',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'falls-009',
@@ -5472,6 +6036,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.95465,-73.36148',
         notes: '0.5E from trail at mile 1498.7.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'falls-010',
@@ -5482,6 +6047,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.95680,-73.36316',
         notes: '0.3E from trail. Serves breakfast and lunch. Ask for free tent sites, hiker friendly, knock on upstairs door if closed. Cash only.',
         services: ['restaurant', 'camping'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'falls-011',
@@ -5493,6 +6059,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'AT Passport location. $239 and up, restaurant and bar.',
         pricing: '$239 and up',
         services: ['lodging', 'restaurant', 'bar', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'falls-012',
@@ -5501,11 +6068,12 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(860) 480-2966',
         notes: 'TEXT only (cell). Owner Hudson. Based out of Falls Village, CT. Pet friendly. 365 days, 7am to 7pm & some holidays. S to GA ◄ ► N to ME. & airport, bus & train terminals. Slackpacking. Parking, free.',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-037', // Salisbury, CT
+    resupplyId: 'sheffield-ma', // Salisbury, CT
     businesses: [
       {
         id: 'sal-001',
@@ -5517,6 +6085,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.9847,-73.4256',
         notes: 'Good grocery with deli',
         services: ['grocery', 'deli'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'sal-002',
@@ -5527,6 +6096,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8:30am-1pm & 2pm-5pm, Sat 9am-12pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.98021,-73.42231',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'sal-003',
@@ -5538,6 +6108,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '0.9W from trail. Beds in home $40PP, pets $5, laundry $5. Shuttle range 100 miles. Mail drops for guests (fee for non-guests $5). Street address is 7 The Lock Up Rd, but send mail drops to PO Box: PO Box 131, Salisbury, CT 06068.',
         pricing: '$40PP, pets $5, laundry $5',
         services: ['hostel', 'lodging', 'laundry', 'shuttle', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'sal-004',
@@ -5547,6 +6118,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.98228,-73.42165',
         notes: 'Maria has left us, but her grandson is picking up where she left off. Beds in home (call for pricing) includes shower, use of living room, shuttle to coin laundry, cash only. Mail drops for guests: 4 Grove, Street Salisbury, CT 06068.',
         services: ['hostel', 'lodging', 'shower', 'shuttle', 'laundry', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'sal-005',
@@ -5557,6 +6129,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 9am-7pm, Sat closed',
         googleMapsUrl: 'https://maps.google.com/?q=41.98171,-73.42231',
         services: ['pharmacy', 'general_store'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'sal-006',
@@ -5567,6 +6140,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.98171,-73.42308',
         notes: 'Hikers welcome to use bathrooms and phone (local calls only), WiFi.',
         services: ['restroom', 'phone', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'sal-007',
@@ -5577,6 +6151,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon closed, Tue-Wed 10am-7pm, Thu 10am-5pm, Fri 10am-5pm, Sat 10am-4pm, Sun 1pm-4pm',
         googleMapsUrl: 'https://maps.google.com/?q=41.98086,-73.42261',
         services: ['library'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'sal-008',
@@ -5588,6 +6163,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '2.3W from trail. Private home with rooms available for hikers. $45PP. 5 beds with room and dinning room. Laundry, WiFi. Will shuttle to and from trail heads. Cats on property. Tenting spots at farm $35, water, WiFi. Ask about mail drops.',
         pricing: '$45PP, tenting $35',
         services: ['hostel', 'lodging', 'laundry', 'wifi', 'shuttle', 'camping', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'sal-009',
@@ -5599,6 +6175,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.96487,-73.44080',
         notes: 'Lakeville, CT is 2.0W from trail. Sports bar and restaurant.',
         services: ['restaurant', 'bar'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'sal-010',
@@ -5610,6 +6187,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.96300,-73.44035',
         notes: 'Located in Lakeville, CT.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'sal-011',
@@ -5618,6 +6196,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=41.96284,-73.44024',
         notes: 'Located behind Mizza\'s Pizza in Lakeville, CT.',
         services: ['laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'sal-012',
@@ -5627,6 +6206,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'executivelivery@me.com',
         notes: 'Owner: Toni. Based in Goshen/Lakeville, CT. 365 days, 24/7 & some holidays. Pet friendly. Insured. S to range unlimited ◄ ► N to range unlimited & airport, bus & train terminals. "Advanced notice preferred. Please call office Mon-Fri, 9am-5pm, Sat-Sun, 9 am-2pm to book transportation."',
         services: ['shuttle', 'pets'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -5643,6 +6223,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.10980,-73.35421',
         notes: 'Sheffield, MA is 3.0E from trail at mile 1528.0.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'shef-002',
@@ -5657,11 +6238,12 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '6.2E from trail. Dominic Palumbo offers free stay in exchange for farm work (minimum full day\'s work): organic farm meals, tent sites, shower, $2 laundry, insight into farming, farm work and food justice issues. Call ahead to reserve. Plan to arrive late afternoon for following work day. Pick up and drop off from: Salisbury, CT, Jug End Rd, MA 41, Shay\'s Rebellion, US Rte. 7, Home Rd. or Great Barrington.',
         pricing: 'Free for farm work, laundry $2',
         services: ['hostel', 'camping', 'shower', 'laundry', 'meals'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-038', // Great Barrington, MA
+    resupplyId: 'great-barrington-ma', // Great Barrington, MA
     businesses: [
       {
         id: 'gb-001',
@@ -5672,6 +6254,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8:30am-4:30pm, Sat 8:30am-12:30pm',
         googleMapsUrl: 'https://maps.google.com/?q=42.19635,-73.36141',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gb-002',
@@ -5682,6 +6265,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'No pets. Rates $89 and UP, includes continental breakfast, free WiFi, non-smoking rooms.',
         pricing: '$89 and up',
         services: ['lodging', 'breakfast', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gb-003',
@@ -5693,6 +6277,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'No pets. Check-in 3pm. Clean days $69S $89D, $20EAP +tax. Microwave, fridge, free WiFi. Rides sometimes available.',
         pricing: '$69S $89D $20EAP +tax',
         services: ['lodging', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gb-004',
@@ -5704,6 +6289,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'No pets. Weekdays $65S $75D. Free WiFi, outdoor pool. Mail drops for guests with reservations: 247 Stockbridge Rd, Rt 7, Great Barrington, MA 01230.',
         pricing: '$65S $75D',
         services: ['lodging', 'wifi', 'pool', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gb-005',
@@ -5713,6 +6299,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.20764,-73.34802',
         notes: 'No pets. Prices seasonal, call for rates. Breakfast, heated pool and hot tub. Mail drops for guests with advance reservations: 249 Stockbridge Rd, Rt 7, Great Barrington, MA 01230.',
         services: ['lodging', 'breakfast', 'pool', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gb-006',
@@ -5723,6 +6310,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Su-Th $59-89D + tax, $10EAP, continental breakfast, coin laundry, free WiFi.',
         pricing: '$59-89D + tax, $10EAP',
         services: ['lodging', 'breakfast', 'laundry', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gb-007',
@@ -5734,6 +6322,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '5.0W from trail. 15 Crissey Rd at north end of town. No Pets. No smoking, drugs, alcohol. Free tenting, check-in at front desk. $8PP for use of facilities, showers, saunas, pool. Free dinner Mon 5pm-6pm, donations accepted.',
         pricing: 'Free tenting, $8PP facilities',
         services: ['camping', 'showers', 'pool', 'sauna'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gb-008',
@@ -5744,6 +6333,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 8am-8pm',
         googleMapsUrl: 'https://maps.google.com/?q=42.19317,-73.36164',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gb-009',
@@ -5755,6 +6345,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.21006,-73.34413',
         notes: 'Pharmacy Mon-Fri 8am-8pm, Sat 9am-7pm, Sun 9am-3pm.',
         services: ['grocery', 'pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gb-010',
@@ -5765,6 +6356,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.18052,-73.36559',
         notes: 'Pharmacy Mon-Fri 8am-8pm, Sat 9am-5pm.',
         services: ['grocery', 'pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gb-011',
@@ -5776,6 +6368,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Lunch Mon closed, Tue-Sun 11:30am-3pm. Dinner Mon-Thu 4:30pm-10pm, Fri-Sat 4:30pm-10:30pm',
         googleMapsUrl: 'https://maps.google.com/?q=42.18876,-73.36416',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gb-012',
@@ -5785,6 +6378,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Thu 11am-10pm, Fri-Sat 11am-11pm, Sun 12pm-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=42.18857,-73.36464',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gb-013',
@@ -5794,6 +6388,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 10am-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=42.20394,-73.34625',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gb-014',
@@ -5803,6 +6398,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 5am-11pm',
         googleMapsUrl: 'https://maps.google.com/?q=42.20990,-73.34536',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gb-015',
@@ -5813,6 +6409,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 24 hours',
         googleMapsUrl: 'https://maps.google.com/?q=42.19086,-73.37162',
         services: ['hospital', 'medical'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gb-016',
@@ -5822,6 +6419,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'jesstrea@gmail.com',
         notes: 'Owner: Jessica Treat. Based out of Sheffield, MA. Pet friendly. 7 days, Feb - Oct, especially Fri-Sun, 7am to 7pm & some holidays. S to Bear Mtn, NY ◄ ► N to Manchester Center, VT & airport, bus & train terminals. Slackpacking. "Maximum of 3 riders. Advanced notice preferred."',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -5838,6 +6436,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '0.1E from trail. No pets. Visit website for seasonal rates and information via their special AT page on in 2020. Weekdays $60-90, Weekends $94-160, which includes $5 hiker discount. Weekly rates available at 230 to 400 depending on time of year and style of room. Includes continental breakfast. Free and availability of restaurant delivery via two venues from Lee, MA. Soda available for purchase by guests and passers through. Hikers may get water. Service pets only overnight. Mail drops (call ahead to arrange pickup): 3949 Jacob\'s Ladder Rd, Rt 20, Becket, MA 01223.',
         pricing: 'Weekdays $60-90, Weekends $94-160',
         services: ['lodging', 'breakfast', 'water', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lee-002',
@@ -5849,6 +6448,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.30521,-73.25071',
         notes: 'Lee, MA is 5.0W from trail. All major services available.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lee-003',
@@ -5859,6 +6459,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.29570,-73.24058',
         notes: 'Pharmacy Mon-Fri 9am-7pm, Sat-Sun 9am-3pm.',
         services: ['grocery', 'pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lee-004',
@@ -5868,6 +6469,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.30330,-73.24713',
         notes: 'Pharmacy Mon-Fri 8am-8pm, Sat 9am-6pm, Sun 9am-5pm.',
         services: ['pharmacy', 'convenience'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lee-005',
@@ -5878,6 +6480,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8am-5pm, Sat 8am-12pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=42.27943,-73.25444',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lee-006',
@@ -5886,11 +6489,12 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(413) 243-0480',
         googleMapsUrl: 'https://maps.google.com/?q=42.30332,-73.24759',
         services: ['laundry'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-039', // Dalton, MA
+    resupplyId: 'dalton-ma', // Dalton, MA
     businesses: [
       {
         id: 'dalt-001',
@@ -5901,6 +6505,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8:30am-4:30pm, Sat 9am-1pm',
         googleMapsUrl: 'https://maps.google.com/?q=42.56181,-73.15786',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dalt-002',
@@ -5912,6 +6517,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.47188,-73.156796',
         notes: 'Not pet friendly. AT Passport location. Allows hikers to use a water spigot outside his home and provides the hospitality of his front porch and back yard for tenting (limited space, get permission first).',
         services: ['hostel', 'camping', 'water', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dalt-003',
@@ -5924,6 +6530,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'AT Passport location. Hiker rates Sun-Thu are $70.60S, $75D, $85 king bed. Fri-Sat prices $85.50/$93.60/$99 respectively. Add tax to all prices. Well behaved pets allowed with $75 deposit. Coin laundry, free use of computer and WiFi.',
         pricing: 'Sun-Thu $70.60S-$85, Fri-Sat $85.50-$99',
         services: ['hostel', 'lodging', 'laundry', 'wifi', 'pets', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dalt-004',
@@ -5934,6 +6541,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.46617,-73.19802',
         notes: '2.3W from trail. Pharmacy Mon-Fri 8am-8pm, Sat 9am-7pm, Sun 10am-6pm.',
         services: ['grocery', 'pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dalt-005',
@@ -5943,6 +6551,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 7am-12am',
         googleMapsUrl: 'https://maps.google.com/?q=42.46677,-73.19561',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dalt-006',
@@ -5953,6 +6562,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 8:30am-11pm',
         googleMapsUrl: 'https://maps.google.com/?q=42.47337,-73.16257',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dalt-007',
@@ -5963,6 +6573,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.47347,-73.17205',
         notes: 'Serves breakfast, lunch and dinner.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dalt-008',
@@ -5973,6 +6584,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.47389,-73.15605',
         notes: 'Serving 32 flavors of Hershey\'s ice cream, Hot Dogs, Pulled Pork and Chicken Sandwich, and a daily Lunch Special.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dalt-009',
@@ -5983,6 +6595,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 5pm-9pm, Sat 12pm-9pm, Sun 4pm-11pm',
         googleMapsUrl: 'https://maps.google.com/?q=42.47361,-73.15603',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dalt-010',
@@ -5992,6 +6605,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 9am-5:30pm, Sat 8am-4:15pm, Sun 10am-2pm',
         googleMapsUrl: 'https://maps.google.com/?q=42.48115,-73.15524',
         services: ['laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dalt-011',
@@ -6002,6 +6616,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.47303,-73.17204',
         notes: '0.7 from AT. Free Showers Mon-Fri 5am-8pm, Sat 7am-3:30pm, Sun 9am-1pm.',
         services: ['showers'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dalt-012',
@@ -6010,6 +6625,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(413) 684-0023',
         googleMapsUrl: 'https://maps.google.com/?q=42.47340,-73.16249',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dalt-013',
@@ -6021,6 +6637,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.46946,-73.15968',
         notes: 'Coleman fuel and denatured alcohol available.',
         services: ['fuel', 'hardware'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dalt-014',
@@ -6029,6 +6646,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(413) 841-4362',
         notes: 'Owner: Deborah Andrus. Based out of Berkshire City, MA. Insured. 365 days, 24/7 & holidays. S to CT & NY ◄ ► N to VT & airport, bus & train terminals. Slackpacking. "I will try to accommodate everyone that contacts me." Covid precautions. Masks required.',
         services: ['shuttle', 'slackpacking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'dalt-015',
@@ -6038,11 +6656,12 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'pesachtheactor@gmail.com',
         notes: 'Owner: Pesach Walter. Based out of Dalton MA. Pet friendly. Insured. 7 Days, 24/7 & holidays. S to NYC ◄ ► N to Maine & airport, bus & train terminals. Slackpacking. Parking, fee.',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-038b', // Cheshire, MA
+    resupplyId: 'tyringham-ma', // Cheshire, MA
     businesses: [
       {
         id: 'ches-001',
@@ -6053,6 +6672,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 7:30am-1pm & 2pm-4:30pm, Sat 8:30am-11:30am',
         googleMapsUrl: 'https://maps.google.com/?q=42.56181,-73.15786',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ches-002',
@@ -6062,6 +6682,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.56209,-73.15640',
         notes: 'AT Passport location. Limited hours, deli sandwiches, soda, ice cream.',
         services: ['restaurant', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ches-003',
@@ -6070,6 +6691,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.56138,-73.15663',
         notes: 'Across the street from Diane\'s Twist, heading NOBO on AT, take the left before the Cheshire snow plow. The entrance is on the left. For use by individual hikers only, no organized groups. 10 tents and 2 night stay, maximum. Hammock poles. Port-a-potty, water, bear box, picnic table, and electricity available. Bicycles for local use. No smoking/alcohol/drugs of any kind. No fires. Open May 1 - Oct. 30. Sponsored by Cheshire A.T. Committee. The following places will deliver here: Bass Water Grill (413) 743-1911, Lee\'s Dynasty (413) 743-3333, Chees Chinese (413) 743-7270, Vivaldi\'s Pizzeria (413) 236-5633.',
         services: ['campground', 'camping', 'water'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ches-004',
@@ -6080,6 +6702,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.56187,-73.16376',
         notes: 'Dehydrated foods, stove fuel.',
         services: ['outfitter', 'fuel'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ches-005',
@@ -6089,6 +6712,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon 9am-3pm, Tue 11am-2pm & 5pm-8pm, Wed closed, Thu 3:30pm-6:30pm, Fri-Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=42.56188,-73.16276',
         services: ['library'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ches-006',
@@ -6097,6 +6721,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.56681,-73.16115',
         notes: '0.1W from trail.',
         services: ['grocery', 'convenience'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ches-007',
@@ -6107,6 +6732,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.56631,-73.16324',
         notes: '0.2W from trail.',
         services: ['convenience'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ches-008',
@@ -6117,6 +6743,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.56644,-73.16348',
         notes: '0.2W from trail.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ches-009',
@@ -6128,6 +6755,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'AT Passport location. Prices starting at $195, ask about hiker rate. Pickup and drop off when available. Hiker parking. Free WiFi. Mail drops of guest only: 725 North State Rd, Cheshire, MA 01225.',
         pricing: '$195+',
         services: ['lodging', 'wifi', 'shuttle', 'parking', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ches-010',
@@ -6139,6 +6767,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.59927,-73.13958',
         notes: '2.2E from trail. Full-service outfitter. Coleman fuel and alcohol by the ounce, canister fuel, freeze-dried foods. Often provides return ride to Cheshire.',
         services: ['outfitter', 'fuel'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ches-011',
@@ -6150,6 +6779,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.62016,-73.12056',
         notes: 'Adams, MA is 4.2E from Cheshire.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ches-012',
@@ -6160,6 +6790,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.70112,-73.11053',
         notes: 'Located in Adams, MA. Pharmacy (413) 743-1502 Mon-Fri 8am-7pm, Sat 8am-5pm, Sun closed.',
         services: ['grocery', 'pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ches-013',
@@ -6170,6 +6801,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.62012,-73.11092',
         notes: 'Located in Adams, MA. Pharmacy Mon-Fri 8am-8pm, Sat 9am-6pm, Sun 8am-5pm.',
         services: ['pharmacy', 'convenience'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ches-014',
@@ -6181,6 +6813,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.67805,-73.10641',
         notes: 'Located in Adams, MA.',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ches-015',
@@ -6190,11 +6823,12 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.69830,-73.14326',
         notes: 'Located in Adams, MA. Coin laundry.',
         services: ['laundry'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-039b', // Williamstown, MA / North Adams, MA
+    resupplyId: 'cheshire-ma', // Williamstown, MA / North Adams, MA
     businesses: [
       {
         id: 'will-001',
@@ -6204,6 +6838,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.69932,-73.15358',
         notes: 'There is parking across the street (route 2) from the club. The parking is not owned or maintained by the club but they have a sign-in book and can answer any questions you have. There is a bathroom for use in the club. It\'s a private club ring and they will open the door for you.',
         services: ['parking', 'restroom'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-002',
@@ -6214,6 +6849,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.68923,-73.16586',
         notes: '0.5W from trail. Pharmacy (413) 664-8550 Mon-Fri 9am-9pm, Sat 9am-8pm, Sun 9am-6pm.',
         services: ['grocery', 'pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-003',
@@ -6225,6 +6861,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.71050,-73.20411',
         notes: 'Williamstown, MA is 2.6W from trail.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-004',
@@ -6236,6 +6873,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'No pets, no smoking. $79-149, includes continental breakfast, free pick-up and return to trail with stay. Microwave, fridge. Laundry $6, outdoor pool, computer available for use, free WiFi. Mail drops for guests: 480 Main Street, Williamstown, MA 01267.',
         pricing: '$79-149',
         services: ['lodging', 'breakfast', 'wifi', 'laundry', 'pool', 'shuttle', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-005',
@@ -6247,6 +6885,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$68 to 109 weekdays, $89 $169 weekends, includes continental breakfast, microwave, fridge. Laundry $8, (they do it for you). Computer available for use, free WiFi. Will pickup at Route MA 2. All major credit cards accepted. Mail drops for guests: 295 Main Street, Williamstown, MA 01267.',
         pricing: '$68-169',
         services: ['lodging', 'breakfast', 'wifi', 'laundry', 'shuttle', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-006',
@@ -6256,6 +6895,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.70116,-73.18406',
         notes: 'Rates seasonal, continental breakfast, outdoor pool, BBQ grills. Computer available for use. Mail drops free for guests (fee for non-guests): 213 Main Street, Williamstown, MA 01267.',
         services: ['lodging', 'breakfast', 'pool', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-007',
@@ -6265,6 +6905,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.mapleterrace.com',
         notes: 'Prices seasonal, call for rates. Heated pool, WiFi, all rooms non-smoking.',
         services: ['lodging', 'pool', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-008',
@@ -6276,6 +6917,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$120 includes breakfast. Free pick-up and return to trail when available. Short term parking for guests.',
         pricing: '$120',
         services: ['lodging', 'breakfast', 'shuttle', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-009',
@@ -6287,6 +6929,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$155 and up, includes continental breakfast, pool, hot tub, sauna. Non-guests can pay $8 for use of shower, pool and sauna. ATM. Restaurant Mon-Sun 5am-10pm. Short term parking $2 per day.',
         pricing: '$155 and up',
         services: ['lodging', 'breakfast', 'pool', 'sauna', 'showers', 'restaurant', 'atm', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-010',
@@ -6296,6 +6939,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 7am-8pm, Sun 9am-8pm',
         googleMapsUrl: 'https://maps.google.com/?q=42.70376,-73.18675',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-011',
@@ -6305,6 +6949,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 8am-9pm, Sun 9am-6pm',
         googleMapsUrl: 'https://maps.google.com/?q=42.70248,-73.18363',
         services: ['pharmacy', 'convenience'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-012',
@@ -6314,6 +6959,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 8am-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=42.70494,-73.18865',
         services: ['grocery', 'convenience'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-013',
@@ -6324,6 +6970,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Thu 4pm-9pm, Fri-Sat 4pm-10pm, Sun 3pm-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=42.70261,-73.18455',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-014',
@@ -6334,6 +6981,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.70261,-73.18455',
         notes: 'Weekday Lunch Buffet Served Tue-Fri 11:30pm 2:30pm $10.95; Weekend Maharaja Brunch Buffet Served Sat 11:30pm 2:30pm; Sunday: 12pm 3pm; $12.95. 10% hiker discount.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-015',
@@ -6344,6 +6992,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 11:30am-11pm',
         googleMapsUrl: 'https://maps.google.com/?q=42.70788,-73.20097',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-016',
@@ -6355,6 +7004,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.71044,-73.20471',
         notes: 'Clothing, footwear. Mail drops: 61 Spring St, Williamstown, MA 01267.',
         services: ['outfitter', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-017',
@@ -6365,6 +7015,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Thu 10am-5:30pm, Wed 10-8, Thu-Fri 10am-5:30pm, Sat 10am-4pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=42.71310,-73.21170',
         services: ['library'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-018',
@@ -6376,6 +7027,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.69847,-73.11070',
         notes: 'North Adams, MA is 2.5E from Williamstown.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-019',
@@ -6386,6 +7038,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Located in North Adams. Summer rates $170 and up, pool, hot tub, computer available for use. Richmond Grill on location.',
         pricing: '$170 and up',
         services: ['lodging', 'pool', 'restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-020',
@@ -6397,6 +7050,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.70112,-73.11053',
         notes: 'Located in North Adams.',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-021',
@@ -6407,6 +7061,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.69830,-73.14326',
         notes: 'Located in North Adams. Coin laundry.',
         services: ['laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-022',
@@ -6416,6 +7071,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.70067,-73.14159',
         notes: 'Located in North Adams. Breakfast & Lunch. Hiker friendly. Mon-Tue 7am-1pm, Wed-Sun closed, Thu-Sun 7am-1pm.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-023',
@@ -6426,6 +7082,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.70121,73.11092',
         notes: 'Located in North Adams. Pharmacy Mon-Fri 8am-8pm, Sat 9am-6pm, Sun 9am-5pm.',
         services: ['pharmacy', 'convenience'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-024',
@@ -6437,6 +7094,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.70027,-73.17144',
         notes: 'Located in North Adams.',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-025',
@@ -6447,6 +7105,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'daveackerson@yahoo.com',
         notes: 'Owner: Dave Ackerson. Based out of North Adams, MA. Pet friendly. 365 days, 24/7 & holidays. S to Bear Mtn, NY ◄ ► N to Gorham, NH & airport, bus & train terminals. Slackpacking. "Advance notice recommended. I have been open all 2021. A new Covid variant, or huge spike, may cause closures in 2022."',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-026',
@@ -6456,6 +7115,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'flaplaport@outlook.com',
         notes: 'Owner: Vic LaPort. Based out of Clarksburg, MA. Pet friendly. Apr-Nov, 24/7 & holidays. S to Bear Mountain, NY ◄ ► N to NH & airport, bus & train terminals. Slackpacking. Parking, free-park at my home, 3 mi from AT, in North Adams, MA. "I prefer contact by email."',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'will-027',
@@ -6465,12 +7125,13 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'william.t.beattie@gmail.com',
         notes: 'Owner: Bill Beattie. Based out of Clarksburg, MA. Pet friendly. Insured. Apr-Nov, 24/7 & holidays. S to MA/CT state line ◄ ► N to White Mtns. & airport, bus & train terminals. Slackpacking. Parking, free. "Please text, or email first. Unrecognized calls may not be answered. Masks mandatory. No shuttle of sick individuals. In case of extreme viral spike, service will be suspended."',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   // Vermont
   {
-    resupplyId: 'rs-041', // Bennington, VT
+    resupplyId: 'north-adams-ma', // Bennington, VT
     businesses: [
       {
         id: 'ben-001',
@@ -6482,6 +7143,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.87640,-73.19842',
         notes: 'Bennington, VT is 5.1W from trail.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ben-002',
@@ -6493,6 +7155,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Pet Friendly. 1 Hikers $69 plus tax, $74 plus tax for 2 hikers. Extra hikers cost $5 per person. Laundry $5, $10 dog fee. Free WiFi, free shuttle service. Credit cards accepted. Mail drops for guests: 500 South St. Route 7 Bennington VT 05201',
         pricing: '$69-74 plus tax',
         services: ['lodging', 'laundry', 'wifi', 'shuttle', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ben-003',
@@ -6504,6 +7167,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Pet friendly, $10 dog fee. $60-99, microwave, fridge, laundry, computer available for use, free WiFi. Pickup or return to trail for $10 each way. Pets $15. Mail drops for guests: 924 Main Street, Bennington, VT 05201.',
         pricing: '$60-99',
         services: ['lodging', 'laundry', 'wifi', 'shuttle', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ben-004',
@@ -6515,6 +7179,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '8.2-548-7. 6.5 miles from the AT on VT 9. Pet friendly. $97D and up, $8EAP up to 4. Includes continental breakfast, pets free, microwave, fridge, pool, computer available to use, free WiFi. Mail drops for guests: 130 Northside Drive, Bennington, VT 05201.',
         pricing: '$97D and up',
         services: ['lodging', 'breakfast', 'pool', 'wifi', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ben-005',
@@ -6525,6 +7190,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$99 and up.',
         pricing: '$99 and up',
         services: ['lodging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ben-006',
@@ -6534,6 +7200,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.90836,-73.22234',
         notes: 'Call for prices, seasonal rates, includes hot breakfast.',
         services: ['lodging', 'breakfast'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ben-007',
@@ -6544,6 +7211,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 9am-5:30pm, Sun 1am-4pm',
         googleMapsUrl: 'https://maps.google.com/?q=42.88267,-73.19665',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ben-008',
@@ -6555,6 +7223,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.88985,-73.21261',
         notes: 'Pharmacy Mon-Fri 8am-8pm, Sat 9am-6pm, Sun 9am-3pm.',
         services: ['grocery', 'pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ben-009',
@@ -6566,6 +7235,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=42.89880,-73.20969',
         notes: 'Pharmacy Mon-Fri 8am-8pm, Sat 9am-8pm, Sun 10am-6pm.',
         services: ['grocery', 'pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ben-010',
@@ -6576,6 +7246,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 8am to 8pm',
         googleMapsUrl: 'https://maps.google.com/?q=42.87294,-73.20752',
         services: ['medical'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ben-011',
@@ -6584,6 +7255,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(802) 442-8170',
         googleMapsUrl: 'https://maps.google.com/?q=42.90354,-73.21595',
         services: ['entertainment'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ben-012',
@@ -6593,11 +7265,12 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'dotmike2@comcast.net',
         notes: 'Owner: Dot MacDonald. Based out of Brattleboro, VT. Pet Friendly. Insured. 365 days, (limited hrs, call) & holidays. S to Central Massachusettes ◄ ► N to Hanover, NH & airport, bus & train terminals. Parking. No parking, unless they are leaving it for a long time. "I refer people to other shuttlers looking for transport from point A to point B within the northernmost and southernmost areas as it can be more cost effective for them to use someone situated in that area." Covid precautions. Masks required.',
         services: ['shuttle', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-042', // Manchester Center, VT / Peru, VT
+    resupplyId: 'williamstown-ma', // Manchester Center, VT / Peru, VT
     businesses: [
       {
         id: 'mc-001',
@@ -6609,6 +7282,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.15788,-73.04712',
         notes: 'Manchester Center, VT is 5.4W from trail.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-002',
@@ -6618,6 +7292,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Thu 10am-6pm, Fri-Sat 10am to 4pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.17778,-73.04989',
         services: ['library'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-003',
@@ -6629,6 +7304,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.17740,-73.05389',
         notes: 'Burritos, sodas.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-004',
@@ -6637,6 +7313,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(802) 681-5008',
         googleMapsUrl: 'https://maps.google.com/?q=43.17429,-73.05035',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-005',
@@ -6648,6 +7325,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '6.7W from trail. AT Passport location. Jeff & Regina Taussig host hikers at their home. Open Jun 7 - Sep 15. Not a party place, no alcohol. Space is limited so reservations are essential. $40+tax per person. Clean bed with linens, shower, free laundry, computer available for use, free WiFi, well-equipped hiker kitchen. Private room for couples. Free breakfast supplies: make your own pancakes, eggs, cereal, coffee. Hikers with reservations get a ride to town, resupply, then call for pick-up. Check-in from Noon to 6pm. Free morning shuttle back to the trail for guests. Credit cards accepted.',
         pricing: '$40+tax per person',
         services: ['hostel', 'AT passport', 'laundry', 'wifi', 'shuttle', 'breakfast'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-006',
@@ -6659,6 +7337,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Rates $75 and up, pets okay on porch, WiFi. Accepts MC/Visa. USPS Mail drops for guests: (USPS) PO Box 142 or (UPS) 50 School St, Manchester Center, VT 05255.',
         pricing: '$75 and up',
         services: ['lodging', 'wifi', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-007',
@@ -6669,6 +7348,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.17952,-73.04813',
         notes: 'No pets. Call for pricing, ask for hiker discount, stay includes continental breakfast, indoor and outdoor pool (not heated), WiFi, golf course, tennis courts and trout pond (all equipment provided).',
         services: ['lodging', 'breakfast', 'pool', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-008',
@@ -6679,6 +7359,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.18361,-73.04611',
         notes: 'Has hiker rooms.',
         services: ['lodging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-009',
@@ -6690,6 +7371,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'No pets. $58 and up for summer. WiFi.',
         pricing: '$58 and up',
         services: ['lodging', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-010',
@@ -6699,6 +7381,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.17717-73.03008',
         notes: 'Pet Friendly. Outdoor seasonal pool, WiFi, smoke free. Free coffee, vending machines, outdoor area.',
         services: ['lodging', 'pool', 'wifi', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-011',
@@ -6708,6 +7391,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 7am-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.17572,-73.05213',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-012',
@@ -6717,6 +7401,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.17440,-73.05251',
         notes: 'Will allow tents and hammocks out back. Hammock stands available, water from the faucet. Restroom available when open.',
         services: ['camping', 'water'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-013',
@@ -6726,6 +7411,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 7:30am-7pm, Sat 7:30am-6pm, Sun 8am-5pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.17423,-73.03693',
         services: ['hardware'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-014',
@@ -6736,6 +7422,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 6am-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.17382,-73.05103',
         services: ['laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-015',
@@ -6746,6 +7433,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.17736,-73.05578',
         notes: 'AT Passport location. Casual breakfast and brunch.',
         services: ['restaurant', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-016',
@@ -6756,6 +7444,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.17710,-73.05571',
         notes: 'Made fresh daily. Allows hikers to charge accessories.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-017',
@@ -6765,6 +7454,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Tue 11:30am-9pm, Wed Closed, Thu-Sat 11:30am-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.17710,-73.05571',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-018',
@@ -6775,6 +7465,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Tue 4pm-9pm, Wed Closed, Thu-Sun 4pm-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.17797,-73.05277',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-019',
@@ -6784,6 +7475,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.manchesterhouseofpizza.com',
         googleMapsUrl: 'https://maps.google.com/?q=43.17432,-73.05103',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-020',
@@ -6793,6 +7485,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 9am-8pm, Sat-Sun 9am- 7pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.17511,-73.05069',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-021',
@@ -6802,6 +7495,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Thu 6am-10pm, Fri-Sat 6am-11pm, Sun 6am-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.17501,-73.05404',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-022',
@@ -6813,6 +7507,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.17677,-73.05663',
         notes: 'AT Passport location. Full service outfitter, white gas, alcohol, by the ounce. canister fuel, footwear. Mail drops: 4886 Main St, Manchester, VT 05255.',
         services: ['outfitter', 'fuel', 'AT passport', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-023',
@@ -6823,6 +7518,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.17796,-73.05502',
         notes: 'Pharmacy: Mon-Sat 8am-9pm, Sun 9am-6pm.',
         services: ['pharmacy', 'convenience'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-024',
@@ -6832,6 +7528,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'christineleonard05402@gmail.com',
         notes: 'Based out of Manchester, VT. Pet friendly. Insured. Open year-round, 24/7 and holidays. Capacity is for 4, with advance notice shuttlers will take 6. S to Dalton, MA. ◄ ► N to Gorham, NH & major airport, bus & train terminals including Montreal, Albany, Manchester NH and Boston. Slackpacking. Woman-owned and operated, US military Veteran.',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-025',
@@ -6843,6 +7540,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Peru, VT (2.1E from trail). No pets. Call for pricing. $100 hiker rate with WiFi, tavern with light menu, game room, ride to and from trail with stay. Mail drops for guests: (non-guests $5) 4216 VT 11, Peru, VT 05152.',
         pricing: '$100 hiker rate',
         services: ['lodging', 'wifi', 'shuttle', 'restaurant', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-026',
@@ -6854,6 +7552,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.21410,-72.92839',
         notes: 'Located in Peru, VT (2.5E from trail).',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-027',
@@ -6865,6 +7564,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Peru, VT (3.6E from trail). On VA 30. $99 and up, WiFi, includes hot breakfast, shuttle to and from trail head at VT 11/30 with stay. Mail drops for guests: 522 VT 30, Bondville, VT 05340.',
         pricing: '$99 and up',
         services: ['lodging', 'breakfast', 'wifi', 'shuttle', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mc-028',
@@ -6875,6 +7575,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.23007,-72.89924',
         notes: 'Peru, VT (4.2E from trail). Located in Peru, next to PO. Restaurant serves breakfast, lunch and dinner, ATM, WiFi. Mon-Sun 7am-7pm, hours may differ on weekends.',
         services: ['grocery', 'restaurant', 'atm', 'wifi'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -6891,6 +7592,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.47347,-72.97731',
         notes: 'Wallingford, VT is 2.8W from trail.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wall-002',
@@ -6899,6 +7601,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(802) 446-3428',
         googleMapsUrl: 'https://maps.google.com/?q=43.47617,-72.97683',
         services: ['grocery', 'convenience'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wall-003',
@@ -6908,6 +7611,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 8am-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.47683,-72.97731',
         services: ['grocery', 'convenience'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wall-004',
@@ -6918,6 +7622,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Tue 7am-3p, Wed Closed, Closed, Thu-Sun 7am-3pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.47147,-72.97696',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wall-005',
@@ -6928,6 +7633,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon Closed, Tue-Thu 12pm-9pm, Fri-Sat 12pm-9:30pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.47149,-72.97696',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wall-006',
@@ -6939,6 +7645,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.47156,-72.97601',
         notes: 'Computer available to use, free WiFi.',
         services: ['library', 'wifi'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -6955,6 +7662,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.53152,-72.93743',
         notes: '1.0W from trail. Owners: Daniele & Matthew. Grocery and Deli.',
         services: ['grocery', 'deli'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'nclar-002',
@@ -6966,6 +7674,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.54323,-72.96657',
         notes: 'North Clarendon, VT is 4.2W from trail.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'nclar-003',
@@ -6975,11 +7684,12 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Wed 8am-6pm, Thu 8am-5pm, Fri 8am-5pm, Sat 8am-12pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=43.56799,-72.96516',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-043', // Rutland, VT / Killington, VT
+    resupplyId: 'bennington-vt', // Rutland, VT / Killington, VT
     businesses: [
       {
         id: 'kill-001',
@@ -6992,6 +7702,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Killington (0.89E from US 4). AT Passport location. Ask about hiker rates, rooms include full breakfast. Limited pet rooms, reservations recommended on weekends. Overflow camping across street but there are no facilities. Coin laundry, outside water spigot. WiFi. Closed mid-April through Memorial Day. McGrath\'s Irish Pub serves lunch and dinner from 11:30am-9pm. Mail drops for guests: (Packages must be sent to) 709 US 4, Killington, VT 05751.',
         pricing: 'Ask about hiker rates',
         services: ['lodging', 'restaurant', 'laundry', 'wifi', 'camping', 'water', 'mail drops', 'AT passport', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kill-002',
@@ -7003,6 +7714,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.66628,-72.80918',
         notes: 'Killington (0.6E from VT 100, 1.8E from US 4). Window pickup only.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kill-003',
@@ -7012,6 +7724,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.killingtondeli.com',
         googleMapsUrl: 'https://maps.google.com/?q=43.66671,-72.80888',
         services: ['grocery', 'deli'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kill-004',
@@ -7022,6 +7735,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.66716,-72.80937',
         notes: 'No pets. AT Passport location. Ask about the 15% hiker discount. Fridge, free WiFi.',
         services: ['lodging', 'wifi', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'kill-005',
@@ -7032,6 +7746,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.66558,-72.81009',
         notes: 'No smoking rooms. Call for pricing and ask for hiker rate, includes continental breakfast, pool, fridge, free WiFi.',
         services: ['lodging', 'breakfast', 'pool', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'rut-001',
@@ -7043,6 +7758,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.60806,-72.98156',
         notes: 'Rutland is 8.5W from US 4 trail head.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'rut-002',
@@ -7050,13 +7766,12 @@ export const resupplyContacts: ContactInfo[] = [
         type: 'hostel',
         phone: '(802) 683-9378',
         phone2: '(802) 775-9800',
-        phone3: '(802) 773-0160',
-        phone4: '(802) 747-0407',
         website: 'www.hikershostel.org',
         googleMapsUrl: 'https://maps.google.com/?q=43.60664,-72.97900',
         notes: '12.0W from trail. Run by a Twelve Tribes spiritual community. AT Passport location. No alcohol, no smoking. Donation or Work For Stay. Kitchenette, laundry. Free showers even without stay. Shuttles sometimes available by donation. Hostel open 24 hours 7 days a week (Deli open Sunday at noon, through Friday, 3pm) Stay includes breakfast and 15% off at deli. Friday night special, Sabbath meal, 2-2.5 hours. Mail drops: Hiker Hostel, 23 Center Street, Rutland, VT 05701.',
         pricing: 'Free (donation or work for stay)',
         services: ['hostel', 'restaurant', 'laundry', 'showers', 'shuttle', 'breakfast', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'rut-003',
@@ -7067,6 +7782,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Hosted by Flipakey. Not pet friendly. Reservations required. Four private rooms with double or queen beds. Shared living room, kitchen, and bathrooms. $35 per hiker, per night. Tenting available. Wi-Fi and laundry included. Located in Rutland Vermont at 5 Upland Drive. Reservations required. Please don\'t just show up as this is a private home. Flipakey can pick you up for a long distance for a round trip fee in Vermont.',
         pricing: '$35 per night',
         services: ['lodging', 'wifi', 'laundry', 'camping', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'rut-004',
@@ -7077,6 +7793,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.60542,-72.98032',
         notes: 'Pharmacy Mon-Fri 8am-8pm, Sat 9am-7pm, Sun 10am-6pm.',
         services: ['grocery', 'pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'rut-005',
@@ -7086,6 +7803,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 6am-12am',
         googleMapsUrl: 'https://maps.google.com/?q=43.60386,-72.97795',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'rut-006',
@@ -7096,6 +7814,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 9am-7pm, Sun 10am-6pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.60593,-72.97763',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'rut-007',
@@ -7103,6 +7822,7 @@ export const resupplyContacts: ContactInfo[] = [
         type: 'restaurant',
         googleMapsUrl: 'https://maps.google.com/?q=43.60396,-72.97918',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'rut-008',
@@ -7110,6 +7830,7 @@ export const resupplyContacts: ContactInfo[] = [
         type: 'restaurant',
         googleMapsUrl: 'https://maps.google.com/?q=43.61987,-72.95508',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'rut-009',
@@ -7117,6 +7838,7 @@ export const resupplyContacts: ContactInfo[] = [
         type: 'restaurant',
         googleMapsUrl: 'https://maps.google.com/?q=43.62178,-72.95407',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'rut-010',
@@ -7127,6 +7849,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8am-6pm, Sat 9am-12pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=43.61226,-72.96662',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'rut-011',
@@ -7137,6 +7860,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 7am-8pm, Sat-Sun 7am-5pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.63848,-72.97510',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'rut-012',
@@ -7145,6 +7869,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(802) 681-3997',
         notes: 'Based out of Rutland, VT. S to MA/VT border ◄ ► N to VT/NH border & airport, bus & train terminals.',
         services: ['shuttle'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -7161,6 +7886,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.65739,-72.56877',
         notes: '0.2W from trail. Local farm stand with goods, pies, fruit, milk, ice cream, smoked meats and cheese, cold drinks. Cheese and Gatorade package ($25) for 2 days rations.',
         services: ['grocery', 'deli'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wood-002',
@@ -7172,6 +7898,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.62566,-72.51756',
         notes: 'Woodstock, VT is 3.9E from trail.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wood-003',
@@ -7182,6 +7909,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 8am-8pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.62619,-72.51183',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wood-004',
@@ -7192,6 +7920,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.62711,-72.51145',
         notes: 'Call for pricing, free WiFi. This is a tourist town.',
         services: ['lodging', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wood-005',
@@ -7203,6 +7932,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$98-$168, fridge, free WiFi.',
         pricing: '$98-168',
         services: ['lodging', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wood-006',
@@ -7213,6 +7943,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Wed 11am-10pm, Thu-Sat 11am-11pm, Sun 12pm-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.63093,-72.50511',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wood-007',
@@ -7223,6 +7954,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 8:30am-6:30pm Sun 10am-5pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.62754,-72.50688',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wood-008',
@@ -7232,6 +7964,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 9am-7pm, Tue-Wed 9am-6pm, Thu-Sun 9am-6pm, Fri 9am-6pm, Sat-Sun 9am-2pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.63250,-72.50399',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wood-009',
@@ -7242,6 +7975,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 10am-6pm, Sat 10am-4pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=43.62445,-72.51856',
         services: ['library'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wood-010',
@@ -7251,6 +7985,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8am-6pm, Sat 9am-1pm, Sun Closed',
         googleMapsUrl: 'https://maps.google.com/?q=43.62711,-72.51372',
         services: ['pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'wood-011',
@@ -7260,6 +7995,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Tue Closed, Wed-Fri 10am-5pm, Sat 10am-3:30pm, Sun Closed',
         googleMapsUrl: 'https://maps.google.com/?q=43.62658,-72.50989',
         services: ['laundry'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -7276,6 +8012,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.67188,-72.55378',
         notes: 'South Pomfret, VT is 1.0E from trail. Located inside of Teago\'s General Store.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'spom-002',
@@ -7286,6 +8023,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.66484,-72.53884',
         notes: 'Homemade soups, salads, sandwiches, ice cream.',
         services: ['grocery', 'deli', 'restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'spom-003',
@@ -7296,6 +8034,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon Closed, Tue 10am-6pm, Wed Closed, Thu Closed, Fri 3-7, Sat 9-3:30',
         googleMapsUrl: 'https://maps.google.com/?q=43.66484,-72.53884',
         services: ['library'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'spom-004',
@@ -7307,12 +8046,13 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.69021,-72.50041',
         notes: '0.2W from trail. Family-run farm. Hikers are always welcome to fill up on tap water via an outdoor spigot. Soda, ice cream, cheeses and crackers, their own beef jerky, pickles, t-shirts, hats, soaps and balms. Occasionally have prepared foods and sandwiches. Family run farm.',
         services: ['grocery', 'water'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   // New Hampshire
   {
-    resupplyId: 'rs-045', // Norwich, VT / Hanover, NH
+    resupplyId: 'danby-vt', // Norwich, VT / Hanover, NH
     businesses: [
       {
         id: 'nor-001',
@@ -7323,6 +8063,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.71371,-72.30875',
         notes: 'Norwich, VT is 0.5mi N from trail.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'nor-002',
@@ -7334,6 +8075,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$189 and up, 2 pet rooms available, no smoking, reservations recommended. Camping available to use, free WiFi. Mail drops for guests: PO Box 908, Norwich, VT 04055, or FedEx to 325 Main St.',
         pricing: '$189 and up',
         services: ['lodging', 'wifi', 'camping', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'nor-003',
@@ -7342,6 +8084,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.71470,-72.30895',
         notes: 'Located in the Norwich Inn. Serves dinner Mon-Sun, serves breakfast and lunch Wed-Sun.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'nor-004',
@@ -7353,6 +8096,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.71474,-72.30879',
         notes: '0.1W on Main St. Hikers get free day-old sandwiches, when available. Small general store with fuel, batteries, ponchos, hardware and grocery.',
         services: ['grocery', 'hardware', 'fuel'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'nor-005',
@@ -7363,6 +8107,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon 1am-8pm, Tue-Wed-Fri 10am-5:30pm, Thu 10am-8pm, Fri 10am-5:30pm, Sat 10am-4pm, Sun 12pm-4pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.71688,-72.30854',
         services: ['library'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'han-001',
@@ -7374,6 +8119,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.70066,-72.28923',
         notes: 'Hanover, NH - trail passes through town.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'han-002',
@@ -7384,6 +8130,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.70313,-72.28976',
         notes: 'Offers room for pack storage in Robinson Hall and Howe Library, but packs cannot be left overnight as both areas are unsecured. Not available during Dartmouth orientation (mid Aug - mid Sept). Both places have computers for free internet access.',
         services: ['pack storage', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'han-003',
@@ -7394,6 +8141,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.67295,-72.29701',
         notes: 'Mon-Sun 8-11. Call ahead for availability. Ask for hiker discount. Will shuttle when bus is not running, free laundry before 6pm, free WiFi, quiet after 10pm, $15 pet fee. Mail drops for guests only. 305 N Main Street, West Lebanon, NH 03874.',
         services: ['lodging', 'wifi', 'laundry', 'shuttle', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'han-004',
@@ -7405,6 +8153,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$249 and up, discount sometimes available. Very pricey.',
         pricing: '$249 and up',
         services: ['lodging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'han-005',
@@ -7415,6 +8164,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat Lunch 11:30am-2:30pm, Dinner 4:30pm-10pm. Sunday brunch 11:30am-2:30pm, dinner 2:20pm-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.70086,-72.28595',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'han-006',
@@ -7425,6 +8175,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Thu 11am-11pm, Fri-Sat 11am-12pm, Sun 11am-11pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.70077,-72.28730',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'han-007',
@@ -7435,6 +8186,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.70135,-72.29007',
         notes: 'Deli sandwich, soda & small bag of chips. $5 hiker lunch special.',
         services: ['grocery', 'deli'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'han-008',
@@ -7445,6 +8197,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.69814,-72.28065',
         notes: 'Deli and food bar. Please use member #7000 at check out to help fund AT related initiatives. WiFi.',
         services: ['grocery', 'deli', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'han-009',
@@ -7455,6 +8208,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.69876,-72.28129',
         notes: 'Shower with towel and soap $3, laundry with soap $2, must finish before 6pm. WiFi.',
         services: ['showers', 'laundry', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'han-010',
@@ -7465,6 +8219,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Thu 10am-8pm, Fri 10am-6pm, Sat 10am-5pm, Sun 1pm-5pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.69956,-72.28688',
         services: ['library'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'han-011',
@@ -7475,6 +8230,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.69987,-72.28809',
         notes: 'Coleman fuel and alcohol fuel by the ounce.',
         services: ['hardware', 'fuel'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'han-012',
@@ -7485,6 +8241,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8am-5:30pm, Sat 9am-12pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=43.68374,-72.29503',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'han-013',
@@ -7494,6 +8251,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'athikershuttle@gmail.com',
         notes: 'Owner: Steve Lake. Stray Boots 603-667-1896. Based out of Hanover, NH. Pet Friendly. Insured. May 15-Oct 15, 8am-5pm, 7days/wk. & holidays. S to North Adams, MA ◄ ► N to Baxter SP, ME & airport, bus terminals. Slackpacking. Parking $5/day. "I can assist hikers with trail/trailhead info, emergency extractions, bail outs and logistical support."',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'han-014',
@@ -7503,11 +8261,12 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'brevells@yahoo.com',
         notes: 'Owner: Robert Revells. Based out of Hanover, NH. Pet Friendly. Insured. 365 days, 6am-12pm & holidays. S to Woodstock, VT ◄ ► N to Orford, NH. & airport, bus & train terminals.',
         services: ['shuttle', 'pets'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-045b', // Etna, NH
+    resupplyId: 'wallingford-vt', // Etna, NH
     businesses: [
       {
         id: 'etna-001',
@@ -7517,6 +8276,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.70393,-72.21199',
         notes: '1.9W from trail. AT Passport location. Pets allowed. Private home; not a party place. No drive-ins. Advance notice ensures a place to stay. Call from trail head, Etna General Store (will let you use phone) or Dartmouth Outing Club for pickup. Donations accepted or buy laundry soap or water. Walmart, EMS.',
         services: ['hostel', 'AT passport', 'pets', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'etna-002',
@@ -7527,6 +8287,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.69473,-72.21765',
         notes: '0.7E from trail.',
         services: ['library'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'etna-003',
@@ -7537,6 +8298,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.69340,-72.22024',
         notes: '0.8E from trail. Deli, hot meals.',
         services: ['grocery', 'deli', 'restaurant'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -7553,6 +8315,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.79955,-72.12544',
         notes: 'Lyme Center, NH is 1.3W from trail.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lyme-002',
@@ -7564,6 +8327,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.80814,-72.15816',
         notes: 'Lyme, NH is 3.2W from trail.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lyme-003',
@@ -7574,6 +8338,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Market is open Mon closed, Tue-Thu 1am-9pm, Fri-Sat 10am-10pm, Sun 10am-9pm. Dining Room is open for lunch Mon closed, Tue-Sun 11am-5pm, dinner Tue-Thu 5pm-9pm, Fri-Sat 5pm-10pm, Sun 10am-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.81112,-72.15824',
         services: ['grocery', 'deli', 'restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lyme-004',
@@ -7585,6 +8350,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Call in advance and let them know you are a hiker. Pickup and return to trail head is available. Rates change depending on the season and week starting at $100 and up. Includes full breakfast and afternoon tea. Pets $15, allowed in some rooms. Computer available to use, free WiFi. Mail drops for guests: 9 Main Street, Lyme, NH 03768.',
         pricing: '$100 and up',
         services: ['lodging', 'breakfast', 'wifi', 'shuttle', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lyme-005',
@@ -7596,6 +8362,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.81080,-72.15655',
         notes: '3.3W from trail. Local products, fresh cut meats, deli sandwiches, homemade baked goods, ice cream, produce, deli. Pay phone outside. They do not take mail drop but they do offer shipping Shipping UPS and FEDEX. Mail drops: 13 Main St, Lyme, NH 03768.',
         services: ['grocery', 'deli', 'ice cream'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lyme-006',
@@ -7607,6 +8374,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.80933,-72.15090',
         notes: '2.8W from trail. Loated on High St, hospital is 50 yards on the left.',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lyme-007',
@@ -7616,6 +8384,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'goof@vtripsllc.com',
         notes: 'Owner: Mark Bishop. Based out of Fairlee, VT. Insured. Apr – Oct, 7days, 6 AM – 6 PM & some holidays. S to Woodstock, VT ◄ ► N to Franconia, NH & airport, bus & train terminals. Max of 2 riders per trip. Covid precautions. Masks required.',
         services: ['shuttle'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -7630,6 +8399,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.90419,-72.01864',
         notes: '1.9W from trail. Open year-round. Pets welcome. Maple syrup products. Store is not manned, but caretaker makes frequent stops. Hikers may tent outside or may be allowed to stay in the sugar house. Sometimes more is offered.',
         services: ['grocery', 'camping', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'went-002',
@@ -7638,6 +8408,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(603) 801-9261',
         notes: 'Camping on private land by permission only. Only allowed when owners are at location, call ahead. Typically onsite Thursday thru Sunday every other week April thru late Oct, sometimes more often. Located 1/2 mile west of the AT trailhead on route 25A in Orford, South of Mt. Cube. Property can be seen from the peak of the mountain. Arrangements can be made with owners to pick up at the trailhead and return you to the trailhead the next day. Owners have running water as well as an outhouse with a flush toilet. Hot shower may be available as well, when owners are onsite. Brook flows through the center of the property. Owners have invested a lot into a substantial WiFi grid which allows access from any location on the property. This offers connectivity with loved ones as well as making cellular phone calls. Additional GPS updates can be made and any other internet browsing. There is no charge for using the property, but minor donations are accepted to cover water and electric usage.',
         services: ['camping', 'showers', 'wifi', 'water'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'went-003',
@@ -7649,6 +8420,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.86953,-71.91095',
         notes: 'Wentworth, NH is 4.5E on NH 25A, then right 0.2 on NH 25.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'went-004',
@@ -7659,6 +8431,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.86953,-71.91095',
         notes: '4.9E from trail.',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'went-005',
@@ -7671,11 +8444,12 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '14.7E from trail. Owner: David Cook. Not Pet Friendly. Open year-round. Hiker rate: $75/person/night. Stay includes shower, towel, laundry, Walmart Re-supply, shuttle pickup/drop off to 25A, 25, and 25C. Please call at summit prior to road gap for pick up. Free Wi-Fi and EV coffee and pancakes. Slackpacking. Mail drops: 17 Wentworth Rd, Wentworth, NH 03282.',
         pricing: '$75/person/night',
         services: ['hostel', 'showers', 'laundry', 'shuttle', 'wifi', 'breakfast', 'slackpacking', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-046', // Glencliff, NH / Warren, NH
+    resupplyId: 'killington-vt', // Glencliff, NH / Warren, NH
     businesses: [
       {
         id: 'glen-001',
@@ -7687,6 +8461,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.98551,-71.89640',
         notes: 'Glencliff, NH is 0.4E from trail.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'glen-002',
@@ -7700,6 +8475,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '0.4E from trail. Owned by Alyson, and John "Packrat" Robblee (AT\'94, PCT\'99, CDT\'06). Pet friendly. AT Passport location. Opens mid May to Oct 1. Bunk ($35) and camping ($20) includes shower. Shower only with towel $4, laundry: $3 wash, $3 dry. Snacks, sodas, pizza, breakfast sandwiches, ramen, tuna, oatmeal, dehydrated meals, ice cream. Huge DVD and music library. Computer available for use, free WiFi. Coleman and alcohol fuel by the ounce. Tools to help with gear repair, and selection of used gear available, particularly winter wear. Town shuttle free with stay (6 miles to resupply in Warren). Shuttles from Connecticut to parts of Maine. See Hikers Welcome Hostel Shuttles. Offers several slackpacking options, including over Mount Moosilauke. Long term parking is available. Both guests and non-guests are welcome to send mail drops (USPS/FedEx/UPS): C/O Hikers Welcome Hostel, 1396 NH Rt 25, PO Box 25, Glencliff, NH 03238.',
         pricing: 'Bunk $35, camping $20',
         services: ['hostel', 'showers', 'laundry', 'camping', 'shuttle', 'wifi', 'ice cream', 'gear repair', 'slackpacking', 'mail drops', 'AT passport', 'pets', 'fuel'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'glen-003',
@@ -7711,6 +8487,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.hikerswelcome.com',
         notes: 'Owner: John Robblee - "Packrat". Based out of Glencliff, NH. Pet friendly. Insured. May-Oct, 24/7 & holidays. S to CT ◄ ► N to ME & airports, bus & train terminals. Slackpacking. Parking, $3/day. "We offer rides all over the NE, specializing in slackpacking from Hanover to Lincoln, NH, especially over Mount Moosilauke. We have been the main source of AT hiker shuttles through out NH for over 20 years."',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'warr-001',
@@ -7721,6 +8498,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.92427,-71.89183',
         notes: '0.7W from trail. Bands on Saturdays 7pm-10pm, karaoke on Sundays 4pm-7pm. Hiker friendly, hikers can stay in our field out back.',
         services: ['restaurant', 'camping'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'warr-002',
@@ -7732,6 +8510,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.90806,-71.89066',
         notes: 'Warren, NH is 5.0E from trail.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'warr-003',
@@ -7742,6 +8521,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.92427,-71.89183',
         notes: 'Serves breakfast, lunch and dinner. Serves breakfast and lunch Mon, Thursday, Friday, Saturday. Serves dinner Thursday, Friday, Saturday.',
         services: ['restaurant', 'breakfast'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'warr-004',
@@ -7752,6 +8532,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=43.92706,-71.89327',
         notes: 'AT Passport location. Open seasonally, see website for hours. Hard & soft ice cream, soda, coffee, t-shirts and souvenirs. WiFi.',
         services: ['ice cream', 'wifi', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'warr-005',
@@ -7760,6 +8541,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 8:30am-8:30pm',
         googleMapsUrl: 'https://maps.google.com/?q=43.90671,-71.88972',
         services: ['laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'warr-006',
@@ -7769,11 +8551,12 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon 9am-1pm, Tue 1pm-5pm, Wed 3pm-7pm, Sat 10am-1pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=43.92706,-71.89024',
         services: ['library'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-047', // Lincoln/North Woodstock, NH
+    resupplyId: 'woodstock-vt', // Lincoln/North Woodstock, NH
     businesses: [
       {
         id: 'lin-001',
@@ -7784,6 +8567,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.09716,-71.78376',
         notes: '0.5E from trail. Open early May-late Oct. Tourist attraction. Gift store with microwave and microwavable food, snacks, coffee, soda.',
         services: ['activity', 'grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-002',
@@ -7796,6 +8580,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '3.0E from trail. Primitive camp sites $22, pets allowed but not in cabins, cabin $65 and up. Showers, coin laundry, WiFi. ATM, open mid-May to Columbus Day, quiet hours 10pm-8am. Mail drops for guests: 951 Lost River Rd, North Woodstock, NH 03262.',
         pricing: 'Primitive $22, cabin $65+',
         services: ['camping', 'showers', 'laundry', 'wifi', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-003',
@@ -7807,6 +8592,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '5.0E from trail. Check-in 4-9pm. Bunks and private rooms in large white farmhouse at 112 Lost River Rd, 1.0 W of N Woodstock or 1.0 E of Lincoln. Stay includes linens, towel, shower, free group laundry service (No individual laundry), bikes, coffee/tea, make-your-own pancakes, and shuttles. Free Wi-Fi, guest kitchen, fridge, and large yard. Hiker box and wine (BYOB) for slackpack between Kinsman & Franconia Notch. Visit "AT Hikers" tab on website for shuttle info. Maildrops (no charge): 324 Lost River Rd, North Woodstock, NH 03262.',
         pricing: 'Bunks and private rooms',
         services: ['hostel', 'showers', 'laundry', 'wifi', 'shuttle', 'slackpacking', 'breakfast', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-004',
@@ -7818,6 +8604,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '16E from trail. No smoking or pets. $95 for 1-2 persons, includes a.m. coffee and muffins. Cabin is 10 miles south of Lincoln in Thornton NH. Rustic cabin with no TV or phone but does have wifi, pool, mini-fridge and camp stove. Bathroom and shower inside adjacent building. Licensed Massage Therapist on-site. Additional services: Epsom salt bath, pick up / drop off service. Cash, checks or PayPal.',
         pricing: '$95 for 1-2 persons',
         services: ['lodging', 'wifi', 'pool', 'shuttle', 'breakfast'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-005',
@@ -7827,6 +8614,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Open first week of Jun to first week of Oct. Thru-hiker "Terodactyle" offered lodging in his home. $25PP night including laundry, swimming pool, & hot tub. Pickup and drop off at trailhead. Located downtown in a quiet, clean area. Slackpacking available for free.',
         pricing: '$25 per person',
         services: ['lodging', 'laundry', 'pool', 'shuttle', 'slackpacking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-006',
@@ -7837,6 +8625,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.notchhostel.com/slackpacking-trail-info-page',
         notes: 'Owner: Serena. Based out of N Woodstock, NH. Pet Friendly. Insured. June-Sept, (See website for hrs) & some holidays. S to Kinsman Notch/Beaver Brook, NH. ◄ ► N to Liberty Springs/Flume Visitor Center, NH. Slackpacking. Parking free for guest, fee for non-guests. "Almost all shuttling for our hostel is handled by local shuttle services, listed on the AT Info page of our website.',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-007',
@@ -7846,6 +8635,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.outdoors.org/lodging-camping/lodging-shuttle',
         notes: 'Contact: Parker Peltzer. Based out of Pinkham Notch, NH. Pet Friendly. Insured. Daily: Sep 10 - Oct 18, weekends & holidays, (only). S to Lincoln, NH ◄ ► N to Gorham, NH & bus terminals. Flat Fare: $20.00 AMC Members / $24.00 Non-members for a reserved or walk-on ride of any length ONE WAY. Parking, free. "The AMC Shuttle runs a set route that serves many White Mtn trailheads daily. We are unable to offer custom shuttle services outside of that route."',
         services: ['shuttle', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-008',
@@ -7856,6 +8646,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.09708,-71.67991',
         notes: '0.7E from trail. Has a cafeteria, serves pastries, hamburgers, hot dogs, pizza and sandwiches of the day. Payphone. Mail drops: Flume Gorge, 850 Daniel Webster Hwy, Lincoln, NH 03251.',
         services: ['restaurant', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-009',
@@ -7866,6 +8657,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '2.3W from trail. Open mid May-Columbus Day. Tent sites $25, limited store, quiet time 10pm. Pets. Mail drops: 2 Franconia Notch State Park, Franconia, NH 03580.',
         pricing: '$25',
         services: ['camping', 'grocery', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-010',
@@ -7876,6 +8668,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.06548,-71.68661',
         notes: '1.2E from trail. Call for prices. Microwave, fridge, free WiFi, A/C. Mail drops to 391 US-3, Lincoln, NH 03251.',
         services: ['lodging', 'wifi', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-011',
@@ -7887,6 +8680,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '3.0E from trail. Open May-Oct or no pets or smoking. Prices increase during tourist season. $69 and up for off season, microwave, fridge, free WiFi, includes pickup and return from Kinsman, and Franconia Notch. Fee for town shuttle. Laundry $5. CC accepted. Mail drops for guests: 10 Liberty Road, Lincoln, NH 03251.',
         pricing: '$69 and up',
         services: ['lodging', 'wifi', 'laundry', 'shuttle', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-012',
@@ -7897,6 +8691,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 9:30am-12:30pm & 1:30pm-4:30pm, Sat 9am-12pm',
         googleMapsUrl: 'https://maps.google.com/?q=44.03350,-71.68691',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-013',
@@ -7908,6 +8703,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.03238,-71.68683',
         notes: 'Ask about 10% thru-hikers discount, prices are seasonal, includes full breakfast, free WiFi. Pet rooms available. Woodstock Station restaurant, outdoor bar, and a micro-brewery. Mail drops: PO Box 198, 180 Main St, North Woodstock, NH 03262.',
         services: ['lodging', 'wifi', 'breakfast', 'restaurant', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-014',
@@ -7919,6 +8715,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'No pets. $69 and up, no smoking, room, pool, grills, free WiFi.',
         pricing: '$69 and up',
         services: ['lodging', 'wifi', 'pool'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-015',
@@ -7929,6 +8726,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Open year round. Deli, meats, cheap sandwiches. ATM. Mon-Sun 5am-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=44.03412,-71.68685',
         services: ['grocery', 'deli'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-016',
@@ -7939,6 +8737,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Open year-round. Maple sugar products, ice cream, fudge and more. Mon-Sun 9am-5pm',
         googleMapsUrl: 'https://maps.google.com/?q=44.03113,-71.68710',
         services: ['grocery', 'ice cream'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-017',
@@ -7949,6 +8748,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8am-5pm, Sat 8am-12pm',
         googleMapsUrl: 'https://maps.google.com/?q=44.04146,-71.67120',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-018',
@@ -7958,6 +8758,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.04535,-71.67527',
         notes: 'AT Passport location. Bunk, includes shower, call for pricing. $5 for shower and laundry without stay. Free WiFi. Call ahead.',
         services: ['hostel', 'showers', 'laundry', 'wifi', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-019',
@@ -7969,6 +8770,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Text ONLY for reservations and shuttle. 40 Maple St, Lincoln, NH. Open year round. Must text for reservations and bunk, shuttle availability. Offers bunks for hikers cost $30/person/night, maximum 3-night stay. Amenities include kitchen, showers, laundry and a full-time house manager. Walking distance to shops and outfitters. Offers shuttles if available for a fee to and from Beaver Brook Trailhead and Flume Gorge parking area. No mail drops.',
         pricing: '$30/person/night',
         services: ['hostel', 'showers', 'laundry', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-020',
@@ -7977,6 +8779,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 24 hours',
         googleMapsUrl: 'https://maps.google.com/?q=44.04116,-71.66994',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-021',
@@ -7988,6 +8791,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.04351,-71.66974',
         notes: 'Full service outfitter, packs, Coleman and alcohol fuel by the ounce, canisters, freeze dried meals. Located at 165 Main St in the plaza next to Subway.',
         services: ['outfitter', 'fuel'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-022',
@@ -7998,6 +8802,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sat 10-6, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=44.04274,-71.67051',
         services: ['restaurant', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-023',
@@ -8007,6 +8812,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Coin operated. Mon-Sun 24 hours',
         googleMapsUrl: 'https://maps.google.com/?q=44.03499,-71.68665',
         services: ['laundry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-024',
@@ -8017,6 +8823,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8am-1pm & 2pm-5pm, Sat 9am-12pm',
         googleMapsUrl: 'https://maps.google.com/?q=44.22796,-71.74986',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-025',
@@ -8029,6 +8836,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$50-$200, pets with approval, laundry wash $1, dry $1, Coleman by the ounce. Free pickup and return to Franconia Notch trail heads with stay, longer shuttles for a fee. Credit cards accepted. Mail drops (free for non-guest): 1 Main Street, Franconia, NH 03580.',
         pricing: '$50-200',
         services: ['lodging', 'laundry', 'shuttle', 'pets', 'fuel', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-026',
@@ -8038,6 +8846,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 7am-8pm',
         googleMapsUrl: 'https://maps.google.com/?q=44.22795,-71.74799',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-027',
@@ -8047,6 +8856,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Convenience store and deli. Mon-Sat 6am-9pm, Sun 6:30am-7pm',
         googleMapsUrl: 'https://maps.google.com/?q=44.22673,-71.74928',
         services: ['grocery', 'deli'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-028',
@@ -8057,6 +8867,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Free WiFi. Mon-Tue 2pm-6pm, Wed 10am-12pm & 2pm-6pm, Thu-Fri 2pm-6pm, Sat 10am-1pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=44.22673,-71.74507',
         services: ['library', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-029',
@@ -8067,6 +8878,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.galerivermotel.com',
         notes: 'Owner: Kevin. Based out of Franconia, NH. Pet friendly. 365 days, 8am-5pm (24/7 when motel is open) & holidays. S to Franconia Notch SP ◄ ► N to Twin Mtn, NH. Parking, free for guests with stay. "Hiker shuttle requires minimum one night stay at Gale River Motel."',
         services: ['shuttle', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'lin-030',
@@ -8076,11 +8888,12 @@ export const resupplyContacts: ContactInfo[] = [
         phone2: '(603) 348-7422',
         notes: 'Owner: Lea. Based out of Lincoln, NH. Pet friendly. Insured. 365 days, 6:30am-1 am & holidays, (except Christmas). S to I call info ◄ ► N to I call for info & airport. Slackpacking. "Call for reservations to guarantee ride. Might ask customers to wear mask."',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-048', // Crawford Notch, NH
+    resupplyId: 'hanover-nh', // Crawford Notch, NH
     businesses: [
       {
         id: 'craw-001',
@@ -8091,6 +8904,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.18225,-71.39932',
         notes: '1.0W from trail.',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'craw-002',
@@ -8102,6 +8916,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '1.8E from trail. Open mid May-late Oct. Tent sites $25. Pets allowed, coin laundry and showers. Quiet time 10pm-8am.',
         pricing: '$25',
         services: ['camping', 'showers', 'laundry', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'craw-003',
@@ -8112,6 +8927,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.22004,-71.41206',
         notes: '3.8W from trail. No pets, no smoking. Rates in summer during tourist season and during holidays. Call ahead for prices. AMC members get a discount. AMC Shuttle stops daily mid-Jun thru Columbus Day, after this time it only stops on weekends and holidays. Serves breakfast, lunch and dinner. Store carries snacks, sodas, canister fuel and some clothing, WiFi. Mail drops (include ETA): Route 302, Bretton Woods, NH 03574.',
         services: ['lodging', 'restaurant', 'grocery', 'wifi', 'fuel', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'craw-004',
@@ -8123,11 +8939,12 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '3.4E from trail. Open mid May-mid Oct. Cabins $75-95, tent sites, space for two tents $30. 9% lodging tax. Store carries hiker foods, ice cream and beer.',
         pricing: 'Cabins $75-95, tenting $30',
         services: ['camping', 'lodging', 'grocery', 'ice cream'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-049', // Pinkham Notch, NH
+    resupplyId: 'glencliff-nh', // Pinkham Notch, NH
     businesses: [
       {
         id: 'pink-001',
@@ -8139,11 +8956,12 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.25617,-71.25355',
         notes: 'Open year-round. No pets. Rates in summer during tourist season and during holidays. Check ahead for pricing and availability. Rates vary according to season. AMC members get a discount. Restrooms. Meals available to non-guests; AYCE breakfast 6:30am-9am daily, food to order for lunch, family style dinner Sat-Thurs 5pm, Friday dinner buffet. Coin-op shower available 24 hours, coin laundry, $2 towel rental. Vending machines. Coleman fuel and alcohol fuel by the ounce, canister fuel, free WiFi. Shuttle 7:30am daily. Accepts credit cards. Mail drops: AMC Visitor Center, C/O Front Desk, 361 Rte. 16, Gorham, NH 03581.',
         services: ['lodging', 'restaurant', 'grocery', 'outfitter', 'showers', 'laundry', 'wifi', 'fuel', 'shuttle', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-050', // Gorham, NH
+    resupplyId: 'lincoln-nh', // Gorham, NH
     businesses: [
       {
         id: 'gor-001',
@@ -8155,6 +8973,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '1.7W from trail. Open May-Oct. Pet friendly. AT Passport location. Bunks $20PP, tent sites $20PP, laundry, pool, air hockey, pool tables. Coleman and alcohol fuel by the ounce and canister fuel, free WiFi. Free shuttle to and from trail head and town with stay. Credit cards accepted. Mail drops for guests only: 218 US 2, Shelburne, NH 03581.',
         pricing: 'Bunks $20PP, tenting $20PP',
         services: ['camping', 'hostel', 'laundry', 'pool', 'wifi', 'fuel', 'shuttle', 'pets', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gor-002',
@@ -8166,6 +8985,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '2.6W from trail. Open year round. $68.00 to $155.00 plus tax, seasonal, pets $25.00 daily fee, complimentary WiFi, microwave oven and fridge. Computer available to use. Breakfast and dinner served daily, lounge with entertainment. Indoor heated pool, Jacuzzi, Sauna, steam room and fully equipped health club.',
         pricing: '$68-155',
         services: ['lodging', 'restaurant', 'pool', 'wifi', 'pets', 'breakfast'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gor-003',
@@ -8177,6 +8997,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.39018,-71.18245',
         notes: 'ID required; all packages should include your legal name. 3.5W from trail.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gor-004',
@@ -8188,6 +9009,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '3.4W from trail. AT Passport location. Open year-round. Serving AT hikers for 41 years. No pets. Full and twin beds $28, tenting $18PP, B&B rooms available. Full bathroom. Hot country breakfast available. Fast, free pickup and return to Route 2 trail head for guests. Fast pickup and return to Rte 2 with for guests. Shuttle from Pinkham Notch free with 1 night stay to facilitate slackpacking and Shuttle to Walmart can be arranged. Clean beds with linens, full kitchen with cookware and refrigerator, lounge with big screen TV, free WiFi. Laundry $5. Visa MC accepted. Mail drops free for guests, $15 fee for non-guests: 55 Main Street, Gorham, NH 03581.',
         pricing: 'Beds $28, tenting $18PP',
         services: ['hostel', 'camping', 'breakfast', 'shuttle', 'wifi', 'laundry', 'slackpacking', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gor-005',
@@ -8199,6 +9021,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Hiker rate $89 weekday, $99 weekend depending on the season. Pet fee $20. Indoor and outdoor pool, jacuzzi, sauna, laundry, free WiFi. Vending machines.',
         pricing: '$89 weekday, $99 weekend',
         services: ['lodging', 'pool', 'laundry', 'wifi', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gor-006',
@@ -8209,6 +9032,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.39332,-71.18990',
         notes: 'Open May-mid Oct. Call for pricing. Guest laundry, limited shuttles, hot tub, laundry, free WiFi, well-behaved dogs under 50 lbs okay, no smoking. Credit cards accepted. 10% local restaurant discount. Mail drops for guests and non guests: 265 Main St, Gorham, NH 03581.',
         services: ['lodging', 'laundry', 'shuttle', 'wifi', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gor-007',
@@ -8220,6 +9044,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$70/up + tax, pets $5, A/C, free WiFi, no smoking. Hikers welcome. Accepts Master, Visa, Discover and American express card.',
         pricing: '$70/up',
         services: ['lodging', 'wifi', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gor-008',
@@ -8230,6 +9055,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.39536,-71.19322',
         pricing: '$58-158',
         services: ['lodging'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gor-009',
@@ -8241,6 +9067,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.38913,-71.17634',
         notes: 'Clothing, hiking poles, water filters, hiking boots, white gas, alcohol fuel by the ounce and canisters. Accepts Visa MC Disc.',
         services: ['outfitter', 'fuel'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gor-010',
@@ -8251,6 +9078,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.42658,-71.19399',
         notes: '6.7W from trail. Pharmacy Mon-Fri 8am-8pm, Sat 9am-7pm, Sun 10am-6pm.',
         services: ['grocery', 'pharmacy'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gor-011',
@@ -8261,6 +9089,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.trailangelshikerservices.com',
         notes: 'Owner: Dan Millet. Based out of Berlin, NH. Pet Friendly. Insured. Memorial Day - Columbus Day, 7 days/wk, 7am-6pm & holidays. S to Hanover, NH ◄ ► N to Monson, ME & airports, bus & train terminals. Runs a flat rate (same price for 1 or 6 people max). Due to poor cell service online booking is advised. Next best thing is text, and we check emails only after hour. More info available on our website.',
         services: ['shuttle', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'gor-012',
@@ -8270,6 +9099,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.48754,-71.15694',
         notes: 'Berlin, NH (10.1W from U.S. 2 trail head).',
         services: ['hospital'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -8287,6 +9117,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '12.8E from trail. Tent site $30, lean-to $35. Will shuttle from Grafton Notch for a fee. Pool, miniature golf, zip line, rec room, campstore, showers, laundry. Take out prepared foods; beer and wine. Location: (12.2E) on Hwy 26, then left (0.6) miles on Route 2. Mail drops for guests: 42 Powell Place, Hanover, ME 04237.',
         pricing: 'Tent $30, lean-to $35',
         services: ['camping', 'showers', 'laundry', 'pool', 'shuttle', 'grocery', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'beth-002',
@@ -8298,6 +9129,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.40423,-70.79093',
         notes: 'Bethel (17.9E) Directions (32.2E) to Rt 2, right 14.3 miles on Rt 2.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'beth-003',
@@ -8309,6 +9141,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '18.6E from trail. Prices may change. Bunk space $35 includes shower and full breakfast, $25 without breakfast. Rooms $69 and up, include breakfast. Kitchen privileges, $6 laundry, free WiFi. Mail drops for guests: PO Box 1067, Bethel, ME 04217.',
         pricing: 'Bunks $35 w/breakfast, $25 w/o, rooms $69+',
         services: ['lodging', 'breakfast', 'laundry', 'wifi', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'beth-004',
@@ -8320,6 +9153,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Campsites $24/night, walking distance of Bethel. Laundry, free WiFi. Will shuttle to and from Grafton Notch trail head for a fee.',
         pricing: '$24/night',
         services: ['camping', 'laundry', 'wifi', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'beth-005',
@@ -8329,6 +9163,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 11am-9pm',
         googleMapsUrl: 'https://maps.google.com/?q=44.41298,-70.79549',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'beth-006',
@@ -8340,6 +9175,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$89 and up, higher depending on the season, includes a full country breakfast. Lunch is Thurs-Sat 11:30am-2:30pm and Pub is Daily 11:30am-9:30pm.',
         pricing: '$89 and up',
         services: ['restaurant', 'lodging', 'breakfast'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'beth-007',
@@ -8350,6 +9186,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Thu 8am-8pm, Fri-Sat 8am-9pm, Sun 8am-7pm',
         googleMapsUrl: 'https://maps.google.com/?q=44.40627,-70.78961',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'beth-008',
@@ -8361,6 +9198,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.41732,-70.77324',
         notes: 'AT Passport location. Full service outdoor store, clothing, gear and footwear. Trekking pole repair, warranty repair. Coleman and alcohol fuel by the ounce and canisters, freeze dried foods, WiFi.',
         services: ['outfitter', 'fuel', 'wifi', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'beth-009',
@@ -8371,6 +9209,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Thu 8am-6pm, Fri 8am-5pm, Sat 8am-12pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=44.41694,-70.77421',
         services: ['veterinary'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'beth-010',
@@ -8381,6 +9220,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.srstage.com',
         notes: 'Owner: Gary Coyne. Based out of Bethel/Portland, ME. Insured. May-Oct, 24/7 & holidays. S to (Most places - call) ◄ ► N to (Most places - call) & airport, bus & train terminals. Slackpacking. "Since 2007!"',
         services: ['shuttle', 'slackpacking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'beth-011',
@@ -8390,6 +9230,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'mtnmediav@gmail.com',
         notes: 'Owner: Bill. Based out of Chocorua/Conway Valley NH. Pet friendly. Insured. 365 days, 24/7 & holidays. S to (call to discuss) ◄ ► N to (call to discuss) & airports, bus & train terminals. Slackpacking. Parking, free. "Hike back to your car, planning & hiker consultation on all trailheads & logistics in White Mtns & ME." Covid precautions - masks required.',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'beth-012',
@@ -8400,11 +9241,12 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.BethelOutdoorAdventure.com',
         notes: 'Owner: Jeff & Pattie Parsons. Based out of Bethel, ME. Pet friendly. Insured. May 15-Oct 15, 7 days, 8am-7pm & holidays. S to Shelburne, NH ◄ ► N to Grafton Notch/Newry, ME. Parking, free. "We also run a campground located 1 mile from town."',
         services: ['shuttle', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-051', // Andover, ME
+    resupplyId: 'franconia-nh', // Andover, ME
     businesses: [
       {
         id: 'and-001',
@@ -8415,6 +9257,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 9:15am-12pm & 1pm-4:15pm, Sat 9am-12pm',
         googleMapsUrl: 'https://maps.google.com/?q=44.63243,-70.74970',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'and-002',
@@ -8426,6 +9269,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '7.9E from trail. Host: Ilene Trainor. No pets. AT Passport location. Private rooms $45S, $65D, $75 triple, $20EAP. Bunks $30PP. Stays include laundry and morning coffee, free WiFi. Will head pickup for a fee, call in advance, slackpack Grafton Notch to Rangeley, and shuttles to nearby towns, airport and bus station. Multi-day slackpacking packages for groups. Resupply of trail snacks, and meals, Coleman and denatured fuel by the ounce and canister fuel. Mail drops for guests: (USPS) PO Box 12 or (UPS) 20 Pine Street, Andover, ME 04216.',
         pricing: 'Private $45S/$65D/$75 triple/$20EAP, bunks $30PP',
         services: ['hostel', 'laundry', 'wifi', 'shuttle', 'slackpacking', 'grocery', 'fuel', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'and-003',
@@ -8434,6 +9278,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'In a rustic cabin for $60 for 4. Located 3 miles from Andover. Stay includes, water, electricity in the cabin and shower house. One round trip shuttle from the hostel. "Great for families and friends meeting up with hikers". Contact Pine Ellis for more information.',
         pricing: '$60 for 4',
         services: ['camping', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'and-004',
@@ -8444,6 +9289,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.63477,-70.75034',
         notes: 'Groceries, deli meats and cheese. Friday Pizza Special 16" one topping pizza and any 2 liter soda for $9.99.',
         services: ['grocery', 'deli'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'and-005',
@@ -8454,6 +9300,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon closed, Tue-Wed 1pm-4:30pm, Thu 1pm-8:30pm, Sat 1pm-4:30pm, Sun closed',
         googleMapsUrl: 'https://maps.google.com/?q=44.63142,-70.75137',
         services: ['library'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'and-006',
@@ -8462,6 +9309,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(207) 357-5686',
         notes: 'Massage therapist. Call for rates. Free pickup at Hostel and return to Hostels in Andover.',
         services: ['massage'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'and-007',
@@ -8473,6 +9321,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '10.9E from trail. AT Passport location. $20 per person, shuttles available, call for reservations. Hiker kitchen, laundry, computer available for use, free WiFi.',
         pricing: '$20 per person',
         services: ['hostel', 'shuttle', 'laundry', 'wifi', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'and-008',
@@ -8484,6 +9333,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.pineellislodging.com',
         notes: 'Owner: Ilene Trainor. Based out of Andover, ME. Not Pet Friendly. Memorial Day - Columbus Day, 6 am - 8 pm & holidays. S to Pinkham Notch ◄ ► N to Monson, ME & airport & bus terminals. Slackpacking. Parking, with fee. "Resupply, laundry. Private rooms only. No common areas. No kitchen. Masks required."',
         services: ['shuttle', 'slackpacking', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'and-009',
@@ -8492,6 +9342,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone: '(207) 357-3083',
         notes: 'Owner: Rodney Kneeland. Based out of Andover, ME. Pet friendly. Hiker season, 24/7 & holidays. S to Mt Washington, NH ◄ ► N to Katahdin & airport, bus & train terminals. Slackpacking. Parking, free. "I live in Andover, ME. I cover from Gorham, NH to Rangeley, ME. I will also do long shuttles."',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'and-010',
@@ -8501,6 +9352,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'Millsmichael175@gmail.com',
         notes: 'Owner: Mike Mills. Based out of Andover, ME. Pet Friendly. Insured. May to October, 7 days/wk, when ever need, and Holidays. S to Pinkham notch NH. ◄ ► N to Katahdin & airport & bus terminals & train terminals. Slackpacking. Parking available for free. Service all hostels, Emergency rooms and hospitals.',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
@@ -8518,11 +9370,12 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '17.4E from trail. Owner: Ryan Holt, AKA Yukon. Does not take reservations, walk-ins only. $60 PP, all inclusive. Twin XL bunk bed or Loft Full bed (couples) with fresh linens, pillow & blanket. Kitchen, Bathrooms, Outdoor Sunset Showers, Loaner Clothes, Full Laundry Service, Toiletries, Ear Plugs, Lounge, Smart TV & Excellent WiFi. Tenting available with all the same privileges. On top of all that, you\'ll have access to our Outside Patio, Grills, picnic table, and communal fire pit & gardens!. Soda, Candy Bars, Ice Cream, Pizza, Hot Pockets & Fuel Canisters. Slackpacking free between East B Hill & South Arm Rd. with second night stay. Free pick-up & drop-off at trail head for guests. Also, multiple daily trips to Andover center for pick-ups, resupply and post office needs. South Arm Rd - 8:30am & 4:00pm. East B Hill – 8:30am & 4:30pm. Andover Center - 9:00am, 1:00pm & 5:00pm. Meals: Breakfast-$5.00/pp, AYCE Maine Blueberry Pancake breakfast with Coffee & Tea. Dinner-$10.00/pp, Hiker Hunger Dinner of the evening with two sides. Shuttles, Call to Reserve. Parking available. Mail drops: P.O. Box 131 Roxbury, ME 04275. Two shuttles a day each day to South Arm trailhead. Stops after pickup at Andover center for resupply and post office needs before returning to the hostel. South Arm Road 8:30am and 4pm, Andover center 9am and 4:30pm.',
         pricing: '$60 PP all inclusive',
         services: ['hostel', 'camping', 'laundry', 'showers', 'wifi', 'shuttle', 'slackpacking', 'restaurant', 'breakfast', 'grocery', 'fuel', 'mail drops', 'parking'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-052', // Rangeley, ME
+    resupplyId: 'gorham-nh', // Rangeley, ME
     businesses: [
       {
         id: 'ran-001',
@@ -8533,6 +9386,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 9:30am-12:30pm & 1:30pm-4:15pm, Sat 9:30am-12pm',
         googleMapsUrl: 'https://maps.google.com/?q=44.96569,-70.64324',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ran-002',
@@ -8543,6 +9397,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.96646,-70.65031',
         notes: 'Ask about hiker rate. Plus, $10.00 a person over two people. Pets $10. Canoes for guest use. Mail drops for guests: PO Box 47, Rangeley, ME 04970.',
         services: ['lodging', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ran-003',
@@ -8554,6 +9409,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'AT Passport location. Rates vary in the summer, $125 in fall (after Oct 20). Complimentary breakfast. Direct booking discount, kayaks/canoe, free wifi, free calls to US and Canada.',
         pricing: '$125 summer, $75 fall',
         services: ['lodging', 'breakfast', 'wifi', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ran-004',
@@ -8565,6 +9421,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$120 and up, prices vary depending on the season, includes continental breakfast, pets $10 includes. WiFi. Ride to and from trail head are sometimes available.',
         pricing: '$120 and up',
         services: ['lodging', 'breakfast', 'pets', 'wifi', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ran-005',
@@ -8574,6 +9431,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Ice Cream. Mon-Thu 12am-8pm, Fri-Sat 12am-8:30pm, Sun 12am-8pm',
         googleMapsUrl: 'https://maps.google.com/?q=44.96421,-70.64123',
         services: ['ice cream'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ran-006',
@@ -8584,6 +9442,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.96378,-70.64138',
         notes: 'Serves lunch and dinner also has a bar. Entertainment on weekends, outdoor deck. 2454 Main St.',
         services: ['restaurant', 'bar'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ran-007',
@@ -8594,6 +9453,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.96729,-70.65709',
         notes: 'Bowling, billiards, darts, dance floor, food.',
         services: ['entertainment', 'restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ran-008',
@@ -8604,6 +9464,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'ATM. Summer hours Mon-Sun 7am-9pm. Winter hours Mon-Sun 7am-8pm',
         googleMapsUrl: 'https://maps.google.com/?q=44.95444,-70.63796',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ran-009',
@@ -8615,6 +9476,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.96504,-70.64169',
         notes: 'AT Passport location. Good selection of hiking gear & accessories. Fuel (canister, alcohol & white gas by the oz.) freeze dried foods, snacks, water purification, Leki poles & warranty work, Darn Tough, Injinji, Superfeet, Osprey & Big Agnes gear, first aid, rain gear and lots more. Free charging station, WiFi, water fill-up. Ask about shuttles. Trail Town Festival Sat. of Labor Day weekend. Mail drops: USPS- PO Box 899, UPS/FedEx- 7 Pond Street, Rangeley, ME 04970.',
         services: ['outfitter', 'fuel', 'wifi', 'shuttle', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ran-010',
@@ -8626,6 +9488,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.96505,-70.64309',
         notes: 'Camping/outdoor gear. Clothing and hiking gear, fuel by the ounce.',
         services: ['outfitter', 'fuel'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ran-011',
@@ -8635,6 +9498,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Clothing, some gear. Mon-Sat 9am-5pm, Sun 10am-4pm',
         googleMapsUrl: 'https://maps.google.com/?q=44.96536,-70.64335',
         services: ['outfitter'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ran-012',
@@ -8646,6 +9510,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=44.95438,-70.63503',
         notes: '$5 shower, towel provided.',
         services: ['medical', 'showers'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'ran-013',
@@ -8656,11 +9521,12 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.ecopelagicon.com',
         notes: 'Owner: Dexter. Based out of Rangeley, ME. Pet Friendly. Insured. 365 days, 7am-6pm (flexible) & some holidays. S to Farmington, ME ◄ ► N to Jackman, ME & airports, bus & train terminals. Slackpacking. Parking, with donation to local church parking. "Long distance shuttles by referral."',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-053', // Stratton, ME
+    resupplyId: 'andover-me', // Stratton, ME
     businesses: [
       {
         id: 'str-001',
@@ -8671,6 +9537,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=45.10228,-70.35585',
         notes: '2.7E from trail.',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'str-002',
@@ -8683,6 +9550,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '3.4E from trail. AT Passport location. Bunks, lodging rooms $109 for thru-hikers. Includes, shower, towels, linens, loaner clothes, breakfast. Laundry service available. Free WiFi. Has ice cream, frozen pizza and more. Scheduled pickups and drop offs at the trail head on route ME 27 are 1PM and 4:30pm. Slackpacking. Local craft beer, cider, and more for purchase. To reserve online hikers use promo code "AT2022" to get the hiker rate, visit (www.hostelofmaine.com/thruhiker).',
         pricing: '$109 for thru-hikers',
         services: ['hostel', 'showers', 'laundry', 'wifi', 'shuttle', 'slackpacking', 'breakfast', 'grocery', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'str-003',
@@ -8693,6 +9561,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Fri 8:30am-1pm & 1:30pm-4pm, Sat 8:30am-11am',
         googleMapsUrl: 'https://maps.google.com/?q=45.14015,-70.44021',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'str-004',
@@ -8704,6 +9573,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '5.1W from trail. AT Passport location. Hiker rate: Private rooms $79 mid-week, $89 weekends and holidays, $15EAP. Pets $15, free WiFi, ATM. Restaurant Mon-Sat 5-8pm, Tue closed, Wed closed, Thu-Sun 11am-8:30pm. Serves lunch and dinner. Home of the 8oz Wolf Burger; Fish Fry Friday. Visa, M/C accepted $20 min. Mail drops for guests (non-guest fee): 146 Main St, PO Box 590, Stratton, ME 04982.',
         pricing: '$79 mid-week, $89 weekends, $15EAP',
         services: ['lodging', 'restaurant', 'pets', 'wifi', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'str-005',
@@ -8716,6 +9586,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$89 and up, pets $15, includes continental breakfast. Showers $5. Full kitchen for use by guests, gas grill, free WiFi. Mail drops for guests: PO Box 427, Stratton, ME 04982.',
         pricing: '$89 and up',
         services: ['lodging', 'breakfast', 'showers', 'wifi', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'str-006',
@@ -8727,6 +9598,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=45.14111,-70.44360',
         notes: 'Coleman and alcohol fuel by the ounce, ATM.',
         services: ['grocery', 'fuel'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'str-007',
@@ -8737,6 +9609,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=45.14021,-70.43906',
         notes: 'Deli, coffee, snacks, subs, pizza, salads, fried foods, canister fuel, free WiFi, ATM.',
         services: ['grocery', 'deli', 'fuel', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'str-008',
@@ -8747,6 +9620,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon 10am-5pm Sun 1pm-5pm, Wed 10am-5pm Thu 1pm-5pm, Fri 10am-5pm, Sat 9am-1pm, Sun closed. WiFi',
         googleMapsUrl: 'https://maps.google.com/?q=45.13988,-70.43721',
         services: ['library', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'str-009',
@@ -8756,11 +9630,12 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'allpointstrans1@gmail.com',
         notes: 'Owner: Greg Roy. Based out of Carrabassett, ME. Insured. Pet Friendly. Insured. 365 days, 24/7 (by reservation) & holidays. S to NH/MA ◄ ► N to Baxter SP & airport, bus & train terminals. Slackpacking. Parking available.',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-054', // Caratunk, ME
+    resupplyId: 'rangeley-me', // Caratunk, ME
     businesses: [
       {
         id: 'car-001',
@@ -8770,6 +9645,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'gcaruso@myfairpoint.net',
         notes: 'The ferry is free for hikers during open hours. Management of the ferry is by ATC and MATC with additional support by ALDHA and the dam operator. Operated by Greg Caruso of Maine Guide Service, LLC. 2024 hours of canoe ferry operation will be as follows: May 24-June 30: 9am-11am, July 1-Sept 30: 9am-2pm. No service will be provided 1 October - 30 April. A signed release form is required (provided on site). Off hours, hikers can schedule a crossing for $50. Off hours crossings are possible only at the operator\'s discretion and availability. Hikers have drowned while attempting to ford the Kennebec River. Do not attempt to ford the river!!!',
         services: ['ferry'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-002',
@@ -8781,6 +9657,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Privately run for fee. Insured ferry service for the Kennebec River crossing. $40 per trip. Can take up to four. Cross U.S. 201.',
         pricing: '$40 per trip',
         services: ['ferry', 'shuttle'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-003',
@@ -8791,6 +9668,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=45.23305,-69.99183',
         notes: '0.3E from trail. Post office accepts debit cards with limited cash. Plan on Caratunk for 2 days.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-004',
@@ -8803,6 +9681,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '1.4E from trail. Open year-round. Pet Friendly. AT Passport location. Bunk $40. Private rooms starting at $50S; $80D (shared bed); $100D; $110/3; $120/4, includes breakfast buffet. Free laundry, Shower, WiFi, recharge, long distance telephone & mail drops for guests and non-guests. Complete resupply. Shuttle to and from the trail and PO. Free shuttle to/from Kennebec River BrewPub for guests staying overnight. Shuttle to locations throughout Maine can be arranged, primarily as a service to overnight guests. Shuttle to non-guests arranged as time permits. Multi-night discount.',
         pricing: 'Bunks $40, private $50S-$120/4',
         services: ['hostel', 'lodging', 'breakfast', 'laundry', 'showers', 'wifi', 'shuttle', 'pets', 'mail drops', 'grocery', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-005',
@@ -8810,6 +9689,7 @@ export const resupplyContacts: ContactInfo[] = [
         type: 'grocery',
         notes: 'Located inside the Sterling Inn. Resupply has everything a hiker needs, including fuel by the ounce, canister fuel, batteries, meals, candy bars, ice cream, cold drinks, hygiene, first-aid, cook yourself options and more. Free shuttle to and from trail head, Post Office and nearby restaurant with overnight stay. Tobacco is not available in Caratunk. Credit and debit cards accepted. Physical address: 1041 Route 201.',
         services: ['grocery', 'fuel', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-006',
@@ -8820,6 +9700,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.mainesterlinginn.com',
         notes: 'Owner: Eric & Zachary Angevine. Based out of Caratunk, ME. Pet Friendly. 365 days, 7am & some holidays. Reservations required. Shuttles for non-guests arranged as time permits. S to Portland, ME ◄ ► N to Baxter SP & airport & bus terminals. Parking, $10/weekends. Covid precautions. Guests and riders should all be vaccinated.',
         services: ['shuttle', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-007',
@@ -8830,6 +9711,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=45.26682,-69.98574',
         notes: '2.1W from trail in The Forks. No pets permitted on Fri-Sat. Hiker rate. Hikers welcome, AT stay; hikers receive 20% lodging discount; prices vary, call for rates. Coin laundry, giant hot tub, swimming pool, free WiFi, ATM. Cook & craft beer in Kennebec River Brewpub. Mail drops with hikers name: C/O Northern Outdoors, 1771 Route 201, The Forks, ME 04985. Please provide date of anticipated arrival.',
         services: ['lodging', 'laundry', 'pool', 'wifi', 'restaurant', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-008',
@@ -8841,6 +9723,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '4.4W from trail in The Forks. $25 per pet per night. Hikers welcome, Campsites, Bunkhouse, cabins and lodge rooms, prices vary, call for rates. Trading Post carries available, beer & wine, free WiFi, ATM. Food from the onsite, Boatman\'s Bar & Grill (in season). Shuttles are possible if staff is available. Mail drops: C/O Three Rivers PO Box 10, West Forks, ME 04985. Please provide a date of anticipated arrival.',
         pricing: '$25 per pet',
         services: ['lodging', 'camping', 'grocery', 'restaurant', 'wifi', 'shuttle', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'car-009',
@@ -8851,11 +9734,12 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=45.33953,-69.97075',
         notes: '7.6W from trail in The Forks.',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-055', // Monson, ME / Greenville, ME
+    resupplyId: 'stratton-me', // Monson, ME / Greenville, ME
     businesses: [
       {
         id: 'mon-001',
@@ -8867,6 +9751,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=45.28611,-69.50043',
         notes: '3.6E from trail. Last mail drop before 100 Mile Wilderness.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mon-002',
@@ -8879,6 +9764,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '3.7E from trail. AT Passport location. Open Mid-May through Oct. Bunks $30, private room $50S, $100D, $15 tenting. Free pickup and return at ME 15 trail head with stay, $11 breakfast, $5 laundry, $5 shower without stay and towel, computer available for use, free WiFi. Food drops. Licensed and insured slackpacking and shuttles for all over Maine. Gear supplies include Coleman and alcohol fuel by the ounce, canister fuel, Aquamira, freeze dried and packaged food. Gear repair and shakedowns available. Credit cards accepted. Poet\'s Gear Emporium, full gear shop including ULA, hyperlite mountain gear, Big Agnes, Altra, Salomon, Sawyer and more, including full resupply. Mail drops for guests (nonguests $5): PO Box 72 or 17 Pleasant St, Monson, ME 04464.',
         pricing: 'Bunks $30, private $50S/$100D, tenting $15',
         services: ['hostel', 'camping', 'breakfast', 'laundry', 'showers', 'wifi', 'shuttle', 'slackpacking', 'outfitter', 'grocery', 'fuel', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mon-003',
@@ -8890,6 +9776,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '3.8E from trail. Well-behaved dogs okay. AT Passport location. Bunkroom Twin $30, Full/Queen $50. Private $100. Microwave, fridge, coffee maker available for hikers. Reservations appreciated, packs out by 10am. Packs can be on porch after checkout if wish to explore town. Free pickup and return from route 6 trail head for guests only; only till 10am for return. Loaner clothing, free WiFi, canoe for guests, swimming. Laundry $5; non-guests shower $5 available. Pub hours: M closed, Tu-Su 11:30pm-9pm. House quiet by 10pm, social drinking okay. Non-smoking. Accepts credit cards. Mail drops for guests (non-guests $5): C/O The Lakeshore House Lodge, 9 Tenney Hill Rd or UPS/FedEx (no Sat delivery): 9 Tenney Hill Rd.',
         pricing: 'Bunkroom $30, Full/Queen $50, Private $100',
         services: ['hostel', 'lodging', 'laundry', 'showers', 'wifi', 'shuttle', 'pets', 'restaurant', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mon-004',
@@ -8901,6 +9788,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=45.28560,-69.49962',
         notes: 'Private home. Proprietor: Bett Stevens. Open year-round. Pet friendly. Private home with relaxing atmosphere. Private rooms. Bunkhouse. Tenting and hammocking. Showers, laundry. Home cooked meals, use of kitchen and grill. Group shuttles to trail and resupply available. Donation or it work for stay encouraged. Free WiFi, computer available for use. (0.5N) of post office. Mail drops: PO Box 135, Monson, ME. 04464',
         services: ['hostel', 'camping', 'showers', 'laundry', 'restaurant', 'shuttle', 'wifi', 'pets', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mon-005',
@@ -8910,6 +9798,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=45.28673,-69.50116',
         notes: 'Features foods grown locally and local artisan products. Deli offers delicious freshly made items to eat in or take out. In addition to sandwiches, choose from a daily selection of salads, baked goods and other treats.',
         services: ['grocery', 'deli'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mon-006',
@@ -8919,6 +9808,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Country Cafe burgers, pizza, breakfast. ATM. Mon-Sun 4am-10pm',
         googleMapsUrl: 'https://maps.google.com/?q=45.28416,-69.49897',
         services: ['grocery', 'restaurant', 'breakfast'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mon-007',
@@ -8929,6 +9819,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Wed closed, Thu-Sat 11am-9pm, Sunday 1am-6pm',
         googleMapsUrl: 'https://maps.google.com/?q=45.28740,-69.50204',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mon-008',
@@ -8939,6 +9830,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Tue 10am-2pm, Wed closed, Thu-Sat 6pm-10pm, Sun 10am-2pm',
         googleMapsUrl: 'https://maps.google.com/?q=45.28543,-69.49940',
         services: ['restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mon-009',
@@ -8948,6 +9840,7 @@ export const resupplyContacts: ContactInfo[] = [
         phone2: '(207) 997-7069',
         notes: 'Statewide shuttles, slackpack, food drops, call for prices.',
         services: ['shuttle', 'slackpacking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mon-010',
@@ -8957,6 +9850,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'Buppyx4@midmaine.com',
         notes: 'Owner: Buddy. Based out of Monson, ME. Pet friendly. 365 days, 24/7 & holidays. S to all NH trails ◄ ► N to all of ME & airport, bus & train terminals. Slackpacking.',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mon-011',
@@ -8967,6 +9861,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.shawshikerhostel.com',
         notes: 'Owner: Jarrod Hester. Based out of Monson, ME. Pet friendly. Insured. May-Oct, 7 days, 7am-5pm & holidays. S to Gorham, NH. ◄ ► N to Baxter SP & airport & bus terminals. Slackpacking. Parking, $1/day.',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mon-012',
@@ -8977,6 +9872,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.100milewilderness.info',
         notes: 'Owner: Phil Pepin. Based out of Monson, ME. Not Pet Friendly. Insured. May 15-Oct 15, (hours - as needed) & holidays. S to Oquossoc, ME ◄ ► N to Baxter SP, ME & airports & bus terminals. Slackpacking. Parking, free, for guests, $20/non-guests. "Private accommodations and resupply opportunities in the 100 Mile Wilderness."',
         services: ['shuttle', 'slackpacking', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mon-013',
@@ -8987,6 +9883,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=45.28515,-69.49968',
         notes: 'AT Passport location. Open 7 days a week, early June 2 through 11 October, from 8am-11am and 1pm-5pm. The Visitor Center is a critical source of information for long-distance hikers, short-term backpackers and day-hikers on the trail in Maine. Northbound long distance hikers should stop in to make plans for entering and staying in Baxter State Park, climbing Katahdin and leaving the Trail. There will also be a small retail operation with souvenirs, maps and t-shirts available.',
         services: ['visitor center', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'grn-001',
@@ -8998,6 +9895,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Greenville (10.4W from ME 15). $79 and up-$99D, $10EAP includes continental breakfast, microwave, fridge, WiFi. From trail head (7.6) north on route 5 and right turn on Overlook Drive (0.4) up drive to Lodge.',
         pricing: '$79-99',
         services: ['lodging', 'breakfast', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'grn-002',
@@ -9008,6 +9906,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 7am-9pm, Sun offers AYCE breakfast',
         googleMapsUrl: 'https://maps.google.com/?q=45.46381,-69.62237',
         services: ['restaurant', 'breakfast'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'grn-003',
@@ -9016,6 +9915,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Ice cream.',
         googleMapsUrl: 'https://maps.google.com/?q=45.45883,-69.59212',
         services: ['ice cream'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'grn-004',
@@ -9026,6 +9926,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=45.45884,-69.59199',
         notes: 'Family owned and operated pharmacy serving the Moosehead Lake region since 1896. Also featuring an old-fashioned soda fountain, dining counter inside.',
         services: ['pharmacy', 'restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'grn-005',
@@ -9036,6 +9937,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Mon-Sun 8am-8pm',
         googleMapsUrl: 'https://maps.google.com/?q=45.44949,-69.59033',
         services: ['grocery'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'grn-006',
@@ -9046,6 +9948,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=45.45873,-69.59324',
         notes: 'Pizza, sandwiches, take out, breakfast sandwiches, ice, groceries, Ben & Jerry\'s Ice Cream, beer and wine, local information.',
         services: ['restaurant', 'breakfast', 'grocery', 'ice cream'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'grn-007',
@@ -9057,6 +9960,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=45.45884,-69.59199',
         notes: 'Full service Gear supplier with packs, boots, Clothing and footwear. Osprey, Leki, Patagonia, The Northface and many more. Cafe\' inside- Espresso bar, pastries & free WiFi.',
         services: ['outfitter', 'wifi', 'restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'grn-008',
@@ -9067,11 +9971,12 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=45.45889,-69.61093',
         notes: 'Greenville.',
         services: ['hospital'],
+        lastVerified: '2026-02-04',
       },
     ],
   },
   {
-    resupplyId: 'rs-056', // Abol Bridge / Millinocket, ME
+    resupplyId: 'monson-me', // Abol Bridge / Millinocket, ME
     businesses: [
       {
         id: 'baxter-001',
@@ -9080,6 +9985,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.baxterstatepark.org/general-info/#reserve',
         notes: 'BAXTER STATE PARK PERMITS REQUIRED! 2021 Appalachian Trail Long Distance Hiker Permit: A free A.T. long distance hiker permit will be required of all long distance A.T. hikers: Northbound Thru-Hikers (Nobos), Southbound Thru-Hikers (Sobos), Flip-Flop Thru-Hikers and Section-hikers. Long distance A.T. hikers must obtain a permit card in person at Katahdin Stream Campground when the A.T. (Hunt Trail) opens for hiking. Once hikers obtain a permit card they will need to have it stamped at the Katahdin Stream Ranger Station. The number of AT-Hiker Permit Cards for 2021 are limited by a Baxter State Park quota: 3150 A.T. hikers. If all available permit cards have been issued for 2021, "The Birches" long distance hiker campsite will close for the year. Hikers may complete their hike by obtaining a Day Use Hiking Reservation (DUHR) (www.baxterstatepark.org/general-info/#reserve) or campground reservation (www.baxterstatepark.org/camp-summer/#reserve) and enter the Park through the Togue Pond Gate. For more information, please visit the Baxter State Park webpage and ATC\'s Baxter FAQs, which can be found at (www.appalachiantrail.org/updates). Thru-Hiker Campsite Fees: Those hiking the A.T. and walking more than 100 miles continuously on foot before entering the park are eligible to stay at The Birches site, but must still pay a camping fee. If the site is full, hikers must wait for space to become available. Non-Long Distance Hiker Campsite Fees: To camp overnight, a reservation is required and a fee is charged. Car Parking Reservation: To access Baxter State Park by vehicle for a day-hike, a day use parking reservation is strongly recommended, as there are a finite number of parking spots. Once all parking spots are full, you cannot enter the park. To make parking or camping reservations, (www.baxterstatepark.org/).',
         services: ['permits'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'abol-001',
@@ -9091,6 +9997,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Open summer (May-Sept). Campsites with breakfast included. Bunk cabin $75 for 2, $25 each additional sleeps up to 6. Store hours Mon-Sun 7am-7pm. Full store with subs, sodas, ice cream, long-term resupply. Coin laundry. Free showers, non-guests $5. Satellite Pay phone available. Visa/MC accepted.',
         pricing: 'Bunk cabin $75 for 2, $25 each additional',
         services: ['camping', 'grocery', 'restaurant', 'laundry', 'showers'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'abol-002',
@@ -9100,6 +10007,7 @@ export const resupplyContacts: ContactInfo[] = [
         pricing: '$10PP ME residents, $15 non-residents',
         googleMapsUrl: 'https://maps.google.com/?q=45.83460,-68.96439',
         services: ['camping'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'abol-003',
@@ -9110,6 +10018,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: '10E from trail. Open May to mid-Oct Sept 11am-7pm. Groceries. Restaurant with sandwiches. Free Wi-Fi. ATM',
         googleMapsUrl: 'https://maps.google.com/?q=45.72951,-68.83791',
         services: ['grocery', 'restaurant', 'wifi'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'abol-004',
@@ -9119,6 +10028,7 @@ export const resupplyContacts: ContactInfo[] = [
         pricing: '$8 ME residents $4',
         googleMapsUrl: 'https://maps.google.com/?q=45.83460,-68.96439',
         services: ['camping'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'abol-005',
@@ -9128,6 +10038,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'katahdinkritters.com',
         notes: 'Kennel (cage-free) with 24 hour supervision. Rabies and distemper vaccine required. Register online. Pick-up possible.',
         services: ['pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-001',
@@ -9139,6 +10050,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=45.65434,-68.70873',
         notes: '19.6E from Abol Bridge.',
         services: ['post office'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-002',
@@ -9151,6 +10063,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '18.9E from trail. Koty "Trash Panda" and Danya "Loins of Arabia". Open Memorial Day - October 22. No check-ins after 9pm. No Pets. AT Passport location. Bunkroom $30, Private Room with shared bath & kitchen $60-70. Family Suite $95-$115, sleeps 4. Coin laundry $5. Town clothes available. Free WiFi. Showers for non-guests $5. Licensed shuttle service to Bangor, Medway, Monson, Baxter State Park, 100 Mile Wilderness. Daily 3:30-4:30pm Katahdin shuttle to Millinocket (1 hour ride) $60 for 1, $30 each for 2, $20pp after 3. Call/text from Rainbow Ledges, Nesuntabunt, or Antler\'s campsite to reserve pick up and stay. Offers food drops at halfway point of 100 Mile Wilderness. Free parking. Slackpack in 100-Mile Wilderness. See our website for updated SOBO Specials & SOBO Workshop. Mail drops accepted for guests, Non guests $5 and arrange to pick up during Outfitters hours only all drops: 33 Penobscot Avenue, Millinocket, ME 04462. Outfitters 8am-10pm - Fully stocked with packing gear and camping supplies. Full resupply. Fuel.',
         pricing: 'Bunkroom $30, private $60-70, family suite $95-115',
         services: ['hostel', 'outfitter', 'laundry', 'showers', 'wifi', 'shuttle', 'slackpacking', 'parking', 'grocery', 'fuel', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-003',
@@ -9162,6 +10075,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'AT Passport location. Bunk house sleeps 6 with A/C, $30 PP with a shower house and flush toilets. Private rooms starting at $70 a night. Rooms offer A/C. The Inn offers free cold breakfast, hot coffee, tea or cocoa and snacks. We have Netflix on the TV. Free WiFi. Laundry. BBQ grill and fire pit available for use. Slackpacking. Shuttle service to SOBO, parts of 100 mile Wilderness, Baxter State Park, Midway bus station and beyond. A 2 minute walk from downtown restaurants and pubs. Mail drops: 96 Oxford St Millinocket, ME 04462.',
         pricing: 'Bunks $30, private $70+',
         services: ['hostel', 'breakfast', 'wifi', 'laundry', 'shuttle', 'slackpacking', 'parking', 'mail drops', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-004',
@@ -9173,6 +10087,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'No Pets. Skip & Nicole Mohoff run eco-friendly cabins with continental breakfast, TV, DVD, microwave, fridge. $65 up to 3 persons, $85 up to 5. Cafe\' on site with coffee and baked goods. No smoking. Gas grill, bikes free for use, community room. Accepts credit cards and checks. Mail drops for guests: 181 Medway Rd, Millinocket, ME 04462.',
         pricing: '$65 up to 3, $85 up to 5',
         services: ['lodging', 'breakfast', 'wifi', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-005',
@@ -9185,6 +10100,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Mail drops for guests with reservations: 19 Central St, Millinocket, ME 04462.',
         pricing: '$65-150',
         services: ['lodging', 'wifi', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-006',
@@ -9196,6 +10112,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$69 and up to $99 and up to 4, prices vary depending on season, includes continental breakfast, A/C, free WiFi. Pets $10. Restaurant on site.',
         pricing: '$69-99',
         services: ['lodging', 'breakfast', 'wifi', 'pets', 'restaurant'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-007',
@@ -9207,6 +10124,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$99 and up, prices vary depending on the season, $10EAP, pets $25, sauna, pool, free WiFi.',
         pricing: '$99 and up',
         services: ['lodging', 'pool', 'wifi', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-008',
@@ -9217,6 +10135,7 @@ export const resupplyContacts: ContactInfo[] = [
         googleMapsUrl: 'https://maps.google.com/?q=45.65638,-68.70135',
         pricing: '$64.95S, $74.95D',
         services: ['lodging', 'restaurant', 'wifi', 'breakfast'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-009',
@@ -9228,6 +10147,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: '$115 and up, prices vary depending on the season, includes full hot breakfast ($15 off with out breakfast). WiFi. Mail drops for guests: PO Box 136, Millinocket, ME 04462.',
         pricing: '$115 and up',
         services: ['lodging', 'breakfast', 'wifi', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-010',
@@ -9239,6 +10159,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Room rates starting from $99-99/night for two people, includes continental breakfast, indoor heated pool, hot tub, computer available to use, free WiFi, coin laundry, pool tables.',
         pricing: '$99-99/night for 2',
         services: ['lodging', 'breakfast', 'pool', 'wifi', 'laundry', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-011',
@@ -9250,6 +10171,7 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Open May 15-Oct 15 (weather permitting). Tent sites $10pp, with free hot showers for thru hikers. Pool (Memorial Day thru Labor Day). Fuel canisters. Coin operated laundry, soap available at store for $1.00. Free Wifi. Store with repellent, sunscreen, toothbrushes, drinks, candy, ice cream, map, souvenirs, etc. RV sites $39.95 for 2 adults. RV sites have water & electric hookups, Dump station on site. Dump station privilege for non-campers $10. Baxter State Park shuttle service available for a fee. Reservations can also be made ahead of time to meet to pick up for the 100 Mile Wilderness, or summit Katahdin or to get them to the bus depot in East Millinocket.',
         pricing: 'Tent sites $10PP',
         services: ['camping', 'showers', 'pool', 'laundry', 'wifi', 'grocery', 'fuel', 'shuttle', 'mail drops'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-012',
@@ -9259,6 +10181,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'AT Passport location. Serves breakfast and lunch. Mon-Sun 5am-2pm. The AT Passport for Katahdin - Baxter State Park is stamped here',
         googleMapsUrl: 'https://maps.google.com/?q=45.65664,-68.70929',
         services: ['restaurant', 'breakfast', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-013',
@@ -9269,6 +10192,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'AT Passport location. Closed, Open Tu-Sun 11am-11pm in summer. Pizza, spaghetti sandwiches, burgers',
         googleMapsUrl: 'https://maps.google.com/?q=45.67195,-68.71994',
         services: ['restaurant', 'AT passport'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-014',
@@ -9279,6 +10203,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.mainequestadventure.com',
         notes: 'Owner: Bryant Davis. Based out of Millinocket, ME. Pet friendly. Insured. S to Portland, ME ◄ ► N to Allagash, ME & airport, bus. Slackpacking. Parking, free. "I using my own vehicle. Will shuttle and pick up anywhere, Medway bus station, Katahdin Stream, Abol Bridge, 100 Mile Wilderness. Also does Food Drops for by arrangement."',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-015',
@@ -9288,6 +10213,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.appalachiantrailhostel.com',
         notes: 'Based out of Millinocket, ME. Pet friendly shuttles. Insured. Memorial Day-Oct 15, 7am-7pm (shuttles only available during daylight hours). S to Monson, (115 trail miles S of Katahdin) ◄ ► N to Katahdin & airports & bus terminals. Slackpacking. Parking, (free public parking). "Daily, (morning & afternoon) shuttles to/from Katahdin Stream Campground, Abol Bridge, & Medway bus stop, by reservation."',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-016',
@@ -9297,6 +10223,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'katshuttle@gmail.com',
         notes: 'Owner: Lloyd Kelly. Based out of Millinocket, ME. Pet friendly. Insured. May15-Oct 15, 5am-8pm, 7 days/wk, (during months of operation), & holidays. S to Monson, ME ◄ ► N to Mt Katahdin/Millinocket, ME & airport & bus terminals. Slackpacking. Parking, free for clients, $4/day-others. "Insured with the State Of Maine for Hire. Working with all hotels and inns within the 100-Mile Wilderness. Offer SOBO special, and fall specials for NOBO thru-hikers finishing their hike. $27-447-0337. Starts taking reservations Jan 2021."',
         services: ['shuttle', 'slackpacking', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-017',
@@ -9307,6 +10234,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.wildernessedgecampground.com',
         notes: 'Owner: Marcel Langlois. Based out of Millinocket, ME. Pet friendly. Insured. May 1-May 20 mid-Oct, 7 days & holidays. S to Bangor, ME ◄ ► N to Patten, ME & airport, bus terminals. Parking, fee negotiable.',
         services: ['shuttle', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-018',
@@ -9316,6 +10244,7 @@ export const resupplyContacts: ContactInfo[] = [
         email: 'kimspats2004@gmail.com',
         notes: 'Owner: Kim. Based out of Rangeley, ME. Pet friendly. Insured. Operates May-October, 24/7 and holidays. S to Portland Airport ◄ ► N to Millinocket, ME. Airport, bus terminals Offers Slackpacking',
         services: ['shuttle', 'slackpacking', 'pets'],
+        lastVerified: '2026-02-04',
       },
       {
         id: 'mil-019',
@@ -9326,6 +10255,7 @@ export const resupplyContacts: ContactInfo[] = [
         website: 'www.Katahdinair.com',
         notes: 'Owner: Jim Strang. Based out of Millinocket, ME. Pet Friendly. Insured. May-Oct, daylight hrs, 7/days/wk & holidays. S to 100 Mile Wilderness/ME/VT ◄ ► N to Katahdin/Abol & airport & bus terminals. Parking, free. "Located on the Golden Rd, 8 mi N of Millinocket. Common drop/pick-up locations on the 100 Mile Wilderness: Spectacle Pond (Gorman), Crawford Pond (Gorman), Nahmakanta Lake, Rainbow Lake. Free vehicle shuttle from Abol Bridge to our seaplane base."',
         services: ['shuttle', 'pets', 'parking'],
+        lastVerified: '2026-02-04',
       },
     ],
   },

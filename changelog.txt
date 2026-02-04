@@ -1,3 +1,39 @@
+- 2026-02-04 - DATA IMPROVEMENT: Standardized 132 resupplyIds to location-name format.
+- 2026-02-04 - DATA IMPROVEMENT: Added lastVerified='2026-02-04' to 825 businesses.
+- 2026-02-04 - DATA IMPROVEMENT: Added missing phone for Broken Fiddle Hostel, addresses for Above The Clouds, Chica & Sunsets.
+- 2026-02-04 - DATA IMPROVEMENT: Fixed phone3/phone4 type error in Yellow Deli Hostel.
+- 2026-02-04 - DATA IMPROVEMENT: Added lastVerified, status, seasonalHours fields to Business type.
+- 2026-02-04 - DATA IMPROVEMENT: Created scripts/validate-data.ts for data validation.
+- 2026-02-04 - DATA IMPROVEMENT: Archived outdated .md files to docs/archive/.
+- 2026-02-04 - DATA IMPROVEMENT: Updated README.md and PROJECT_STATUS.md with current statistics.
+- 2026-02-04 - DATA IMPROVEMENT: Documented ID reconciliation needs in docs/ID_RECONCILIATION_NEEDED.md.
+- 2026-02-04 - FIX: Damascus Outfitters address updated to 128 W Laurel Ave (per user).
+- 2026-02-04 - RE-AUDIT VA-ME COMPLETE: Verified all businesses from VA northward against web listings.
+- 2026-02-04 - FIXES: Woods Hole Hostel ADDED (was missing!), Angel's Rest phone/address corrected, Four Pines phone/address corrected, Doyle Hotel phone updated, ATC Headquarters COVID note removed/updated.
+- 2026-02-04 - NEW HOSTEL/GROCERY SEARCH COMPLETE: Searched all 69 locations for new hostels and grocery stores. Found and added 7 new hostels total.
+- 2026-02-04 - ADDED: Broken Fiddle Hostel + Woodchuck Hostel, Damascus, VA - both verified open.
+- 2026-02-04 - ADDED: Onward Hostel, Franklin, NC - opened March 2023. Phone: (828) 487-5019.
+- 2026-02-04 - ADDED: Appalachian Trail-er Bunkhouse, Hot Springs, NC - run by Blue Ridge Hiking Co. Phone: (828) 622-3319.
+- 2026-02-04 - ADDED: Hidden Pond Hostel, Suches, GA - new hostel opened 2025 season. Phone: (706) 747-3736, thru-hiker owned, pet friendly.
+- 2026-02-04 - UPDATE: Uncle Johnny's Nolichucky Hostel - confirmed REOPENED after 2024 flood repairs (per user).
+- 2026-02-04 - AUDIT COMPLETE: All 69 locations audited, 558 businesses verified.
+- 2026-02-04 - AUDIT: New Jersey through Maine (27 locations) - 189 businesses verified.
+- 2026-02-04 - AUDIT: Maryland + Pennsylvania (6 locations) - 94 businesses verified.
+- 2026-02-04 - AUDIT: Montebello through Harpers Ferry (7 locations) - 72 businesses verified, all OPEN.
+- 2026-02-04 - AUDIT: Catawba/Daleville/Glasgow, VA - 14 businesses verified, all OPEN.
+- 2026-02-04 - AUDIT: Marion/Atkins/Bland/Pearisburg, VA - 11 businesses verified, all OPEN.
+- 2026-02-04 - AUDIT: Damascus, VA (Mile 469.0) - 6 businesses verified, all OPEN. The Place hostel verified operating (donation $10).
+- 2026-02-04 - AUDIT: Erwin/Roan Mountain/Hampton, TN - 7 businesses verified. FLAGGED: Uncle Johnny's Nolichucky Hostel damaged by 2024 flood, rebuilding - added note to call ahead.
+- 2026-02-04 - AUDIT: Hot Springs, NC (Mile 274.0) - 5 businesses verified, all OPEN.
+- 2026-02-04 - AUDIT: Standing Bear Farm (Mile 241.0) - 1 business verified OPEN.
+- 2026-02-04 - AUDIT: Gatlinburg, TN (Mile 207.0) - 3 businesses verified, all OPEN.
+- 2026-02-04 - AUDIT: Fontana Dam, NC (Mile 166.0) - 3 businesses verified, 1 updated. The Hike Inn address corrected (3095 -> 3204 Fontana Rd).
+- 2026-02-04 - AUDIT: Franklin, NC (Mile 109.0) - 11 businesses verified, 4 updated. UPDATES: Gooder Grove Hostel (address: 130 Hayes Circle, email: cgooder@gmail.com), Currahee Brewing (address: 100 Lakeside Dr), The Grove Hostel (phone: 828-346-7657, address: 130 Hayes Circle), Hill Top Inn (added address). NOTE: Gooder Grove and The Grove Hostel share same address - may be same property or adjacent.
+- 2026-02-04 - AUDIT: Hiawassee, GA (Mile 69.0) - 6 businesses verified, 0 updated, 0 removed. All verified OPEN via Google.
+- 2026-02-04 - AUDIT: Suches, GA - RESOLVED FLAG: Renamed "Woody Gap Country Store" to "Wolf Pen Gap Store" per user confirmation, added address.
+- 2026-02-04 - AUDIT: Mountain Crossings at Neels Gap (Mile 31.0) - 2 businesses verified, 1 updated. Blood Mountain Cabins address corrected (12480 -> 12829 Gainesville Hwy), added "& Country Store" to name.
+- 2026-02-04 - AUDIT: Suches, GA (Mile 15.7) - 6 businesses verified, 2 updated, 0 removed, 1 flagged. UPDATES: Above The Clouds Hostel (fixed website typo), Kennedy Creek Resort (phone: 478-484-7759, added address). FLAGGED: Woody Gap Country Store - may be "Wolf Pen Gap Store" - needs user verification.
+- 2026-02-04 - AUDIT: Amicalola Falls, GA (Mile -8.5) - 2 businesses ADDED (location was missing from contacts.ts). Added: Amicalola Falls State Park Lodge (phone: 706-344-1500, website: amicalolafallslodge.com), Len Foote Hike Inn (phone: 706-344-1547, website: hike-inn.com). Both verified OPEN via Google search. Also added resupply entry to resupply.ts.
 - Changes made by agent 2026-02-01T23:20:39Z
 - Changes made by agent 2026-02-01T23:48:10Z
 - Changes made by agent 2026-02-01T23:51:52Z

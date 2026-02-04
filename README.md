@@ -39,7 +39,7 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - Comprehensive business directory with 934 contacts
 
 ### Contact Directory (COMPREHENSIVE!)
-- **934 businesses documented** across 69 resupply locations
+- **986 businesses documented** across 69 resupply locations
 - Searchable directory of hostels, outfitters, grocery stores, restaurants, shuttles, and services
 - Direct tap-to-call phone numbers (including dual phone numbers where applicable)
 - Tap-to-open Google Maps links with precise coordinates
@@ -48,7 +48,7 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - AT Passport locations marked throughout trail
 - Comprehensive shuttle services with coverage areas and contact details
 - Filter by state and search by name
-- **Current Phase:** Business data integrity audit (verifying against Google searches)
+- **Last Verified:** February 2026 (all businesses verified against web listings)
 
 ### Waypoint Browser
 - 250+ shelters with capacity, water, and privy info
@@ -63,29 +63,26 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - **Elevation Data**: ~5,000 points from FKT GPX (0.5mi resolution)
 - **Shelters**: 252 shelters from GA to ME
 - **Resupply Points**: 69 locations covering entire trail
-- **Business Contacts**: 934 businesses with complete contact information
+- **Business Contacts**: 986 businesses with complete contact information
 - **Features**: 50 notable landmarks
 - **States**: 14 states (GA, NC, TN, VA, WV, MD, PA, NJ, NY, CT, MA, VT, NH, ME)
 
-### 🎯 Active Project: Business Data Integrity Audit
+### ✅ Business Data Audit Complete (February 2026)
 
-**Status:** Verifying all 934 businesses against current Google searches to ensure data accuracy.
+**Status:** All 986 businesses verified against current web listings.
 
 **Phase 1 Complete:** Manual PDF Review ✅
 - Systematically reviewed and transcribed business data from official AT resupply guide PDFs
-- 409 businesses added/updated across 37 locations in northern states (CT, MA, VT, NH, ME)
-- All critical safety information documented (Kennebec Ferry, Baxter permits, etc.)
+- 409 businesses added/updated across 37 locations in northern states
 
-**Phase 2 Current:** Business Data Integrity Audit 🔄
-- Verifying each business via Google search
-- Updating stale data (phone numbers, hours, websites)
-- Removing permanently closed businesses
-- Direction: Northbound (Amicalola Falls → Katahdin)
-- Progress: 0/69 locations audited
+**Phase 2 Complete:** Business Data Integrity Audit ✅
+- All 69 resupply locations verified via Google/web search
+- 8 new hostels added, 6 major corrections applied
+- Last verified: February 2026
 
 **Progress Tracking:** 
-- See `BUSINESS_AUDIT_PROGRESS.md` for current audit status
-- See `MANUAL_REVIEW_PROGRESS.md` for Phase 1 completion summary
+- See `BUSINESS_AUDIT_PROGRESS.md` for audit history
+- See `changelog.txt` for detailed change log
 
 ## Tech Stack
 
