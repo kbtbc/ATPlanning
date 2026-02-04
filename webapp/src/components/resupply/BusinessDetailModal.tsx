@@ -68,13 +68,13 @@ export function BusinessDetailModal({ business, distanceInfo, onClose, onBackToR
           className="relative w-full max-w-md mx-4 mb-4 sm:mb-0 bg-[var(--background-secondary)] rounded-xl border border-[var(--border)] overflow-hidden shadow-2xl"
         >
           {/* Header */}
-          <div className="p-6 border-b border-[var(--border)]">
+          <div className="px-5 py-4 border-b border-[var(--border)]">
             <div className="flex items-start justify-between gap-3">
               <div className="flex-1 min-w-0">
                 <span className={cn('text-[10px] font-medium uppercase tracking-wider', colors.text)}>
                   {typeLabel}
                 </span>
-                <h2 className="text-[var(--foreground)] mt-0.5">
+                <h2 className="text-[var(--foreground)] mt-1">
                   <span className="font-semibold">{business.name}</span>
                   {distanceInfo && (
                     <span className="text-sm text-[var(--foreground-muted)] font-normal ml-1.5">
@@ -93,7 +93,7 @@ export function BusinessDetailModal({ business, distanceInfo, onClose, onBackToR
           </div>
 
           {/* Content */}
-          <div className="p-6 space-y-5 max-h-[60vh] overflow-y-auto">
+          <div className="px-5 py-4 space-y-5 max-h-[60vh] overflow-y-auto">
             {/* Services Available - moved to top */}
             {business.services && business.services.length > 0 && (
               <div>
@@ -221,7 +221,7 @@ export function BusinessDetailModal({ business, distanceInfo, onClose, onBackToR
 
           {/* Footer */}
           {onBackToResupply && (
-            <div className="p-5 border-t border-[var(--border)]">
+            <div className="px-5 py-4 border-t border-[var(--border)]">
               <button
                 onClick={onBackToResupply}
                 className="w-full flex items-center justify-center gap-1.5 py-1.5 text-xs text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors"

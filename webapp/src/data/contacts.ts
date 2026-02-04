@@ -133,7 +133,7 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'rs-001', // Mountain Crossings at Neels Gap
+    resupplyId: 'rs-001', // Mountain Crossings at Neel Gap
     businesses: [
       {
         id: 'mc-001',
@@ -158,7 +158,7 @@ export const resupplyContacts: ContactInfo[] = [
         hours: 'Check-in 3pm',
         website: 'https://bloodmountaincabins.com',
         googleMapsUrl: 'https://maps.google.com/?q=Blood+Mountain+Cabins+Blairsville+GA',
-        notes: 'Cozy cabins near Neels Gap, hiker-friendly',
+        notes: 'Cozy cabins near Neel Gap, hiker-friendly',
         pricing: '$95-150/night',
         lastVerified: '2026-02-04',
       },

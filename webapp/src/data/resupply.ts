@@ -29,7 +29,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   // Georgia
   {
     id: 'rs-001',
-    name: 'Mountain Crossings at Neels Gap',
+    name: 'Mountain Crossings at Neel Gap',
     mile: 31.0,
     soboMile: 2166.4,
     elevation: 3125,

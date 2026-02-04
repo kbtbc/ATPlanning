@@ -135,7 +135,7 @@ export function ResupplyExpandedCard({
               <h2 className="font-semibold text-lg">{resupply.name}</h2>
               <span className="text-xs text-[var(--foreground-muted)]">
                 Mile {formatMile(resupply.mile)}
-                {resupply.distanceFromTrail > 0 && ` · ${resupply.distanceFromTrail} mi ${resupply.directionFromTrail || ''} off trail`.trim()}
+                {resupply.distanceFromTrail > 0 && ` · ${resupply.distanceFromTrail} mi ${resupply.directionFromTrail || ''}`.trim()}
               </span>
             </div>
             {/* Summary description from notes */}

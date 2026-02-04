@@ -163,7 +163,7 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
 
       {/* Upcoming Resupply List */}
       <div>
-        <h3 className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)] font-semibold mb-2 px-2 py-1">
+        <h3 className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)] font-semibold mb-2 px-3 py-1.5">
           Upcoming Resupply
         </h3>
 
@@ -176,7 +176,7 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
 
             // Format mile info for display - include direction if off trail
             const offTrailText = resupply.distanceFromTrail > 0
-              ? ` · ${resupply.distanceFromTrail} mi ${resupply.directionFromTrail || ''} off trail`.replace(/\s+/g, ' ').trim()
+              ? ` · ${resupply.distanceFromTrail} mi ${resupply.directionFromTrail || ''}`.replace(/\s+/g, ' ').trim()
               : '';
             const mileInfo = `Mile ${formatMile(resupply.mile)}${offTrailText}`;
 
