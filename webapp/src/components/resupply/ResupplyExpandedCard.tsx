@@ -93,9 +93,10 @@ export function ResupplyExpandedCard({
   }, [businesses, filter]);
 
   const qualityConfig = {
-    full: { color: 'text-emerald-500', label: 'Full Resupply' },
+    major_town: { color: 'text-emerald-500', label: 'Major Town' },
+    trail_town: { color: 'text-blue-500', label: 'Trail Town' },
+    on_trail: { color: 'text-purple-500', label: 'On Trail' },
     limited: { color: 'text-amber-500', label: 'Limited' },
-    minimal: { color: 'text-rose-500', label: 'Minimal' },
   };
 
   const quality = qualityConfig[resupply.resupplyQuality];

@@ -51,11 +51,12 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
 
   const getQualityConfig = (quality: ResupplyPoint['resupplyQuality']) => {
     const config = {
-      full: { bg: 'bg-emerald-500' },
+      major_town: { bg: 'bg-emerald-500' },
+      trail_town: { bg: 'bg-blue-500' },
+      on_trail: { bg: 'bg-purple-500' },
       limited: { bg: 'bg-amber-500' },
-      minimal: { bg: 'bg-rose-500' },
     };
-    return config[quality] || config.minimal;
+    return config[quality] || config.limited;
   };
 
   // Get businesses for a resupply point

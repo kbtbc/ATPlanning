@@ -35,7 +35,7 @@ export interface ResupplyPoint extends Waypoint {
   hasRestaurant: boolean;
   hasLaundry: boolean;
   hasShower: boolean;
-  resupplyQuality: 'full' | 'limited' | 'minimal';
+  resupplyQuality: 'major_town' | 'trail_town' | 'on_trail' | 'limited';
   distanceFromTrail: number;
   directionFromTrail?: 'E' | 'W'; // E = East (right when NOBO), W = West (left when NOBO)
   shuttleAvailable?: boolean;

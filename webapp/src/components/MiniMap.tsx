@@ -288,9 +288,10 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
               >
                 <div className={cn(
                   'w-5 h-5 rounded-full flex items-center justify-center shadow-sm border-2 border-white',
-                  resupply.resupplyQuality === 'full' && 'bg-green-500 text-white',
-                  resupply.resupplyQuality === 'limited' && 'bg-yellow-500 text-white',
-                  resupply.resupplyQuality === 'minimal' && 'bg-orange-500 text-white'
+                  resupply.resupplyQuality === 'major_town' && 'bg-green-500 text-white',
+                  resupply.resupplyQuality === 'trail_town' && 'bg-blue-500 text-white',
+                  resupply.resupplyQuality === 'on_trail' && 'bg-purple-500 text-white',
+                  resupply.resupplyQuality === 'limited' && 'bg-yellow-500 text-white'
                 )}>
                   <Package className="w-2.5 h-2.5" />
                 </div>
@@ -301,9 +302,10 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                       <span>mi {formatMile(resupply.mile)}</span>
                       <span className={cn(
                         'px-1 rounded text-[10px]',
-                        resupply.resupplyQuality === 'full' && 'bg-green-100 text-green-700',
-                        resupply.resupplyQuality === 'limited' && 'bg-yellow-100 text-yellow-700',
-                        resupply.resupplyQuality === 'minimal' && 'bg-orange-100 text-orange-700'
+                        resupply.resupplyQuality === 'major_town' && 'bg-green-100 text-green-700',
+                        resupply.resupplyQuality === 'trail_town' && 'bg-blue-100 text-blue-700',
+                        resupply.resupplyQuality === 'on_trail' && 'bg-purple-100 text-purple-700',
+                        resupply.resupplyQuality === 'limited' && 'bg-yellow-100 text-yellow-700'
                       )}>
                         {resupply.resupplyQuality}
                       </span>

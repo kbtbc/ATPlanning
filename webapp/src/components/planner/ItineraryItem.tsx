@@ -85,9 +85,10 @@ function ResupplyItem({ resupply, onSetStart, onResupplyClick }: ResupplyItemPro
         <div className="flex items-start gap-2">
           <div className={cn(
             'w-6 h-6 rounded-full flex items-center justify-center shrink-0',
-            resupply.resupplyQuality === 'full' && 'bg-green-500',
-            resupply.resupplyQuality === 'limited' && 'bg-yellow-500',
-            resupply.resupplyQuality === 'minimal' && 'bg-orange-500'
+            resupply.resupplyQuality === 'major_town' && 'bg-green-500',
+            resupply.resupplyQuality === 'trail_town' && 'bg-blue-500',
+            resupply.resupplyQuality === 'on_trail' && 'bg-purple-500',
+            resupply.resupplyQuality === 'limited' && 'bg-yellow-500'
           )}>
             <Package className="w-3 h-3 text-white" />
           </div>
@@ -153,15 +154,22 @@ function SetStartButton({ onClick }: { onClick: (e: React.MouseEvent) => void })
   );
 }
 
-function QualityBadge({ quality }: { quality: 'full' | 'limited' | 'minimal' }) {
+function QualityBadge({ quality }: { quality: 'major_town' | 'trail_town' | 'on_trail' | 'limited' }) {
+  const labels = {
+    major_town: 'Major Town',
+    trail_town: 'Trail Town',
+    on_trail: 'On Trail',
+    limited: 'Limited',
+  };
   return (
     <span className={cn(
       'badge font-medium',
-      quality === 'full' && 'bg-green-100 text-green-700',
-      quality === 'limited' && 'bg-yellow-100 text-yellow-700',
-      quality === 'minimal' && 'bg-red-100 text-red-700'
+      quality === 'major_town' && 'bg-green-100 text-green-700',
+      quality === 'trail_town' && 'bg-blue-100 text-blue-700',
+      quality === 'on_trail' && 'bg-purple-100 text-purple-700',
+      quality === 'limited' && 'bg-yellow-100 text-yellow-700'
     )}>
-      {quality}
+      {labels[quality]}
     </span>
   );
 }

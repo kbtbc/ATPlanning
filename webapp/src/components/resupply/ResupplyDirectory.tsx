@@ -105,9 +105,10 @@ export function ResupplyDirectory({ onSelectResupply }: ResupplyDirectoryProps) 
                 <div className="flex items-center gap-2 min-w-0">
                   <span className={cn(
                     'w-2 h-2 rounded-full shrink-0',
-                    resupply.resupplyQuality === 'full' && 'bg-green-500',
-                    resupply.resupplyQuality === 'limited' && 'bg-yellow-500',
-                    resupply.resupplyQuality === 'minimal' && 'bg-orange-500'
+                    resupply.resupplyQuality === 'major_town' && 'bg-green-500',
+                    resupply.resupplyQuality === 'trail_town' && 'bg-blue-500',
+                    resupply.resupplyQuality === 'on_trail' && 'bg-purple-500',
+                    resupply.resupplyQuality === 'limited' && 'bg-yellow-500'
                   )} />
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
@@ -126,9 +127,10 @@ export function ResupplyDirectory({ onSelectResupply }: ResupplyDirectoryProps) 
                 <div className="flex items-center gap-2 shrink-0">
                   <span className={cn(
                     'px-1.5 py-0.5 text-[10px] font-medium rounded',
-                    resupply.resupplyQuality === 'full' && 'bg-green-100 text-green-700',
-                    resupply.resupplyQuality === 'limited' && 'bg-yellow-100 text-yellow-700',
-                    resupply.resupplyQuality === 'minimal' && 'bg-orange-100 text-orange-700'
+                    resupply.resupplyQuality === 'major_town' && 'bg-green-100 text-green-700',
+                    resupply.resupplyQuality === 'trail_town' && 'bg-blue-100 text-blue-700',
+                    resupply.resupplyQuality === 'on_trail' && 'bg-purple-100 text-purple-700',
+                    resupply.resupplyQuality === 'limited' && 'bg-yellow-100 text-yellow-700'
                   )}>
                     {resupply.resupplyQuality}
                   </span>
