@@ -1,13 +1,41 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, BookOpen, Flag, Mail, Phone } from 'lucide-react';
+import { ArrowRight, BookOpen, Flag, Mail, Phone, ChevronRight } from 'lucide-react';
 import { resupplyPoints, getNearestResupply } from '../data';
 import { getContactsByResupplyId, hasContactInfo } from '../data/contacts';
 import { ResupplyDirectory, ResupplyExpandedCard } from './resupply';
+import { getCategoryForType } from './resupply/businessCategories';
 import { cn, formatMile, formatDistance } from '../lib/utils';
 import type { ResupplyPoint, Business } from '../types';
 
 type ResupplyView = 'upcoming' | 'directory' | 'expanded';
+
+interface ResupplyPlannerProps {
+  currentMile?: number;
+  direction?: 'NOBO' | 'SOBO';
+}
+
+// Count businesses by category
+function getServiceCounts(businesses: Business[]) {
+  const counts = { lodging: 0, food: 0, shuttles: 0, services: 0 };
+  businesses.forEach((b) => {
+    const category = getCategoryForType(b.type);
+    if (category in counts) {
+      counts[category as keyof typeof counts]++;
+    }
+  });
+  return counts;
+}
+
+// Format service count summary
+function formatServiceSummary(counts: ReturnType<typeof getServiceCounts>): string {
+  const parts: string[] = [];
+  if (counts.lodging > 0) parts.push(`Lodging (${counts.lodging})`);
+  if (counts.food > 0) parts.push(`Food (${counts.food})`);
+  if (counts.shuttles > 0) parts.push(`Shuttles (${counts.shuttles})`);
+  if (counts.services > 0) parts.push(`Services (${counts.services})`);
+  return parts.join(', ');
+}
 
 interface ResupplyPlannerProps {
   currentMile?: number;
@@ -144,10 +172,13 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
           Upcoming Resupply
         </h3>
 
-        <div className="divide-y divide-[var(--border)]">
+        <div className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl overflow-hidden divide-y divide-[var(--border)]">
           {upcomingResupply.map((resupply, index) => {
             const quality = getQualityConfig(resupply.resupplyQuality);
-            const hasContacts = (resupply.businesses && resupply.businesses.length > 0) || hasContactInfo(resupply.id);
+            const businesses = getBusinesses(resupply);
+            const serviceCounts = getServiceCounts(businesses);
+            const serviceSummary = formatServiceSummary(serviceCounts);
+            const hasContacts = businesses.length > 0 || hasContactInfo(resupply.id);
 
             // Build second line: Mile X · State · Distance off trail
             const secondLineParts = [`Mile ${formatMile(resupply.mile)}`, resupply.state];
@@ -164,20 +195,26 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
               >
                 <button
                   onClick={() => handleResupplyClick(resupply)}
-                  className="w-full text-left py-2 hover:bg-[var(--background-secondary)] transition-colors"
+                  className="w-full text-left px-3 py-2.5 hover:bg-[var(--background)] transition-colors flex items-center gap-3"
                 >
-                  {/* First line: dot, name, phone icon */}
-                  <div className="flex items-center gap-2">
-                    <div className={cn('w-1.5 h-1.5 rounded-full shrink-0', quality.bg)} />
-                    <span className="text-sm text-[var(--foreground)]">{resupply.name}</span>
-                    {hasContacts && (
-                      <Phone className="w-3 h-3 text-[var(--foreground-muted)] shrink-0" />
-                    )}
+                  {/* Left content */}
+                  <div className="flex-1 min-w-0">
+                    {/* First line: dot, name, phone icon */}
+                    <div className="flex items-center gap-2">
+                      <div className={cn('w-1.5 h-1.5 rounded-full shrink-0', quality.bg)} />
+                      <span className="text-sm text-[var(--foreground)]">{resupply.name}</span>
+                      {hasContacts && (
+                        <Phone className="w-3 h-3 text-[var(--foreground-muted)] shrink-0" />
+                      )}
+                    </div>
+                    {/* Second line: mile info */}
+                    <div className="ml-3.5 text-xs text-[var(--foreground-muted)]">
+                      {secondLineParts.join(' · ')}
+                      {serviceSummary && ` · ${serviceSummary}`}
+                    </div>
                   </div>
-                  {/* Second line: mile info */}
-                  <div className="ml-3.5 text-xs text-[var(--foreground-muted)]">
-                    {secondLineParts.join(' · ')}
-                  </div>
+                  {/* Chevron */}
+                  <ChevronRight className="w-4 h-4 text-[var(--foreground-muted)] shrink-0" />
                 </button>
               </motion.div>
             );

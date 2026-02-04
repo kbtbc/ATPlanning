@@ -80,10 +80,17 @@ export function ResupplyExpandedCard({
     return counts;
   }, [businesses]);
 
-  // Filter businesses
+  // Filter and sort businesses by category order: lodging, food, shuttles, services
   const filteredBusinesses = useMemo(() => {
-    if (filter === 'all') return businesses;
-    return businesses.filter((b) => getCategoryForType(b.type) === filter);
+    const categoryOrder = ['lodging', 'food', 'shuttles', 'services'];
+    const filtered = filter === 'all' ? businesses : businesses.filter((b) => getCategoryForType(b.type) === filter);
+
+    // Sort by category order
+    return filtered.sort((a, b) => {
+      const catA = getCategoryForType(a.type);
+      const catB = getCategoryForType(b.type);
+      return categoryOrder.indexOf(catA) - categoryOrder.indexOf(catB);
+    });
   }, [businesses, filter]);
 
   const qualityConfig = {
@@ -150,8 +157,7 @@ export function ResupplyExpandedCard({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             className={cn(
-              'bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl overflow-hidden',
-              viewMode === 'grid' ? 'grid grid-cols-2 gap-2 p-2' : 'divide-y divide-[var(--border)]'
+              viewMode === 'grid' ? 'grid grid-cols-2 gap-2' : 'space-y-2'
             )}
           >
             {filteredBusinesses.map((business, idx) => (
@@ -160,13 +166,15 @@ export function ResupplyExpandedCard({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: idx * 0.02 }}
-                className={viewMode === 'list' ? 'px-3' : ''}
+                className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl overflow-hidden"
               >
-                <BusinessListCard
-                  business={business}
-                  distanceInfo={buildDistanceInfo(business)}
-                  onViewDetails={() => handleBusinessClick(business)}
-                />
+                <div className="px-3">
+                  <BusinessListCard
+                    business={business}
+                    distanceInfo={buildDistanceInfo(business)}
+                    onViewDetails={() => handleBusinessClick(business)}
+                  />
+                </div>
               </motion.div>
             ))}
           </motion.div>
