@@ -91,6 +91,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 9.0,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'Ingles grocery, Dollar General, Trailful outfitter, multiple hostels including Holiday Inn Express.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'restaurants', 'laundry']
@@ -116,6 +117,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 10.0,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Outdoor 76 outfitter, Ingles grocery, Dollar General, multiple hostels. Popular first major resupply.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'restaurants', 'laundry']
@@ -183,6 +185,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 15.0,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Tourist town. Food City grocery via free trolley. Multiple outfitters. Hitch or shuttle from Newfound Gap.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'restaurants', 'laundry']
@@ -252,6 +255,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 2.0,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'Uncle Johnny\'s Hostel at trailhead with outfitter. Food City, Dollar General, multiple restaurants.',
     services: ['grocery', 'outfitter', 'post office', 'hostel', 'restaurants', 'laundry']
@@ -275,6 +279,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 3.5,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Roan Mountain State Park area. Grocery, outfitter. Nearby town: Elk Park, NC (2.3E from trail).',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'restaurants', 'laundry']
@@ -342,6 +347,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 1.0,
+    directionFromTrail: 'W',
     notes: 'Dollar General, small grocers. Brown\'s Grocery. Creekside trail walk into town.',
     services: ['dollar general', 'post office', 'lodging', 'restaurants']
   },
@@ -388,6 +394,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: false,
     resupplyQuality: 'limited',
     distanceFromTrail: 2.6,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Small town. Grocery and post office. Nearby town: Sugar Grove, VA (3.2E from trail).',
     services: ['grocery', 'post office']
@@ -411,6 +418,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 6.0,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Walmart, Food Lion. Marion Outdoors outfitter. Free Marion Transit bus.',
     services: ['walmart', 'grocery', 'outfitter', 'post office', 'lodging', 'restaurants']
@@ -456,6 +464,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 3.0,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'Dollar General, small supermarket. Big Walker Motel.',
     services: ['dollar general', 'grocery', 'post office', 'lodging', 'restaurants']
@@ -479,6 +488,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 3.6,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Small town. Dollar General, grocery. Lodging available.',
     services: ['grocery', 'dollar general', 'post office', 'lodging', 'restaurants']
@@ -568,6 +578,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 5.0,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Small town. Food Lion, Dollar General. Lodging available.',
     services: ['grocery', 'dollar general', 'post office', 'lodging', 'restaurants']
@@ -591,6 +602,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 2.5,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Small town. Stanimal\'s Hostel with pizza/snacks. Town pavilion with hot showers.',
     services: ['grocery', 'post office', 'hostel', 'restaurants']
@@ -614,6 +626,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: false,
     resupplyQuality: 'limited',
     distanceFromTrail: 5.6,
+    directionFromTrail: 'E',
     shuttleAvailable: false,
     notes: 'Small town. H&H Food Market with groceries and restaurant. Post office.',
     services: ['grocery', 'post office', 'restaurant']
@@ -637,6 +650,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 9.3,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Small town 9.3W. Glen Maury Park Campground with $5 hiker special. Food Lion, lodging. Maury Express bus.',
     services: ['grocery', 'post office', 'lodging', 'campground', 'shuttle']
@@ -660,6 +674,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: false,
     resupplyQuality: 'minimal',
     distanceFromTrail: 4.4,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Small resupply 4.4W. Montebello Camping & General Store. Thru-hiker camping $15.',
     services: ['campground', 'general_store', 'post office', 'shuttle']
@@ -683,6 +698,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: false,
     resupplyQuality: 'minimal',
     distanceFromTrail: 3.1,
+    directionFromTrail: 'W',
     shuttleAvailable: false,
     notes: 'Reeds Gap at VA 664. Rusty\'s Hard Time Hollow hostel 3.1W. Devils Backbone Brewpub 5.4E with free camping and AT Passport.',
     services: ['hostel', 'restaurant', 'camping']
@@ -706,6 +722,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 4.5,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'YMCA with camping/showers. Walmart, Kroger. Ming Garden all-you-can-eat buffet. Start of Shenandoah.',
     services: ['walmart', 'grocery', 'outfitter', 'post office', 'lodging', 'restaurants', 'laundry']
@@ -729,6 +746,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 6.5,
+    directionFromTrail: 'W',
     shuttleAvailable: false,
     notes: 'Town 6.5W. Appalachian Trail Outfitters full service. Swift Run Campground $20. Food Lion, Bear Grocery.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'campground', 'restaurant']
@@ -775,6 +793,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 9.0,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Luray Caverns nearby. Walmart, Food Lion. Full services. In Shenandoah area.',
     services: ['walmart', 'grocery', 'post office', 'lodging', 'restaurants', 'laundry']
@@ -798,6 +817,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 4.0,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'End of Shenandoah NP. Mountain Trails outfitter. Free trolley. Many options.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'restaurants', 'laundry']
@@ -821,6 +841,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 1.0,
+    directionFromTrail: 'W',
     shuttleAvailable: false,
     notes: 'Small town 1.0W. Stumble Inn hostel $35, Wonderland Hiker Refuge donation-based. Apple House Restaurant.',
     services: ['hostel', 'post office', 'restaurant']
@@ -935,6 +956,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: false,
     resupplyQuality: 'limited',
     distanceFromTrail: 2.5,
+    directionFromTrail: 'E',
     shuttleAvailable: false,
     notes: 'Town 2.5E from Keep Tryst Rd. Post office, Wing n\' Pizza Shack delivers to Harper Ferry Hostel.',
     services: ['post_office', 'restaurant']
@@ -960,6 +982,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 2.5,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Turn the Page Bookstore Cafe is hiker favorite. Grocery stores available.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry']
@@ -1006,6 +1029,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 1.2,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'Small stop 1.2E with lodging and services. See Blue Ridge Summit, PA map.',
     services: ['lodging', 'restaurant', 'laundry', 'showers', 'shuttle']
@@ -1052,6 +1076,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 3.5,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Cross US 30. Full services in town, including hostel, lodging, restaurants, and Walmart (6.5W).',
     services: ['hostel', 'lodging', 'post_office', 'restaurants', 'grocery', 'laundry', 'showers', 'shuttle']
@@ -1164,6 +1189,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 2.1,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'Cross PA 72 at Swatara Gap. Lickdale/Jonestown services are ~2.1E; hikers may want to walk the Swatara Rail Trail (2.3E miles).',
     services: ['lodging', 'restaurants', 'grocery', 'laundry', 'showers', 'shuttle', 'camping']
@@ -1187,6 +1213,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 3.4,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Cross PA 645 (Camp Swatara Rd / Geary Wolfe Rd). Pine Grove is 3.4W with full services. See Pine Grove, PA map.',
     services: ['grocery', 'post_office', 'restaurants', 'laundry', 'showers', 'shuttle', 'pharmacy']
@@ -1232,6 +1259,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 1.6,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'Walmart, Cabela\'s outdoor store. Full resupply. 4 miles from Port Clinton.',
     services: ['walmart', 'grocery', 'outfitter', 'post office', 'lodging', 'restaurants', 'laundry']
@@ -1255,6 +1283,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 1.5,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Exit cluster: Palmerton (1.5W) plus Walnutport and Slatington (both ~2.0E). Jail hostel (really!). Full resupply options. Before rocky PA section.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'showers', 'shuttle']
@@ -1278,6 +1307,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: false,
     resupplyQuality: 'limited',
     distanceFromTrail: 1.5,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'Small resupply 1.5E with post office, B&B pickup at Little Gap, restaurant, and market.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'shuttle']
@@ -1324,6 +1354,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 1.0,
+    directionFromTrail: 'E',
     notes: 'Small town. Post office, 24-hour grocery, restaurants, CVS pharmacy, medical clinic. Gateway Motel allows hikers to stop for water/vending.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'pharmacy', 'medical']
   },
@@ -1461,6 +1492,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: false,
     resupplyQuality: 'limited',
     distanceFromTrail: 1.1,
+    directionFromTrail: 'W',
     shuttleAvailable: false,
     notes: 'Small stop 1.1W with post office, B&B, and market/deli. Trail crossing near County Road 565.',
     services: ['grocery', 'post office', 'lodging', 'restaurants']
@@ -1484,6 +1516,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 2.4,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Post office, grocery, lodging, restaurants, urgent care and vet in town. New Milford, NY is also reachable from two trail access points; keep combined under Vernon and note options in contacts.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'medical', 'pharmacy', 'outfitter', 'laundry']
@@ -1507,6 +1540,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 2.7,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Warwick is 2.7W with post office, grocery, restaurants, lodging/B&B, laundry, hospital, and a drive-in theater that allows hikers to camp overnight.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'showers', 'pharmacy', 'medical', 'shuttle']
@@ -1553,6 +1587,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: false,
     resupplyQuality: 'minimal',
     distanceFromTrail: 1.6,
+    directionFromTrail: 'W',
     shuttleAvailable: false,
     notes: 'Bellvale Market 1.6W for limited grocery resupply.',
     services: ['grocery']
@@ -1576,6 +1611,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 2.0,
+    directionFromTrail: 'E',
     notes: 'Village reachable via Vista Trail (0.8E) or via NY 17A area (2.0E). Post office, lodging, hostel, grocery, pharmacy, restaurants, hardware, and shuttles.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'pharmacy', 'laundry', 'showers', 'shuttle', 'hostel']
   },
@@ -1621,6 +1657,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 1.5,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Appalachian Market 24/7 near trail. Full town with all services. Train to NYC.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'train']
@@ -1644,6 +1681,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: false,
     resupplyQuality: 'full',
     distanceFromTrail: 3.1,
+    directionFromTrail: 'W',
     notes: 'NY 55 crossing. 3.1W to town with post office, Stop & Shop, multiple restaurants, pharmacy, and motel.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'pharmacy']
   },
@@ -1666,6 +1704,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 3.1,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'Two nearby trail exits: Pawling (2.5E at mile 1452.0) and Wingdale (4.0W at mile 1451.3). Both have post offices, groceries, restaurants. Pawling has lodging, train to NYC, CVS pharmacy. Wingdale has hardware store and library.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'train', 'pharmacy', 'library', 'camping', 'shuttle', 'hardware']
@@ -1689,6 +1728,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: false,
     resupplyQuality: 'minimal',
     distanceFromTrail: 2.9,
+    directionFromTrail: 'E',
     shuttleAvailable: false,
     notes: 'CT 55 crossing. 2.9E to small town with post office and restaurants. Long-term resupply option.',
     services: ['post office', 'restaurants']
@@ -1714,6 +1754,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 0.8,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'Quaint New England town 0.8E from trail. Welcome Center with outdoor showers, water, charging. Multiple lodging options, restaurants, grocery, laundry. Shuttle and slackpacking available.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'showers', 'library', 'veterinary', 'shuttle', 'visitor_center']
@@ -1737,6 +1778,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 0.9,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'Small village 0.9E from trail. Cornwall Country Market (AT Passport), post office, multiple lodging options including Hitching Post Motel, The Amselshaus, and Cornwall Inn. Housatonic Meadows State Park 1.3 miles north for camping. Shuttle service available.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'campground', 'shuttle', 'veterinary']
@@ -1783,6 +1825,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 0.9,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Salisbury (0.9W) and Lakeville (2.0W). LaBonne\'s Market for grocery. Post office. Multiple hostels: Vanessa Breton ($40PP), Maria McCabe\'s Place, David Mcarthur ($45PP with tenting $35). Town Hall has hiker amenities (bathrooms, phone, WiFi). Library, pharmacy, restaurants. Executive Livery shuttle service (24/7).',
     services: ['grocery', 'post office', 'lodging', 'hostel', 'restaurants', 'laundry', 'camping', 'shuttle', 'library', 'pharmacy']
@@ -1806,6 +1849,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'minimal',
     distanceFromTrail: 3.0,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'Sheffield (3.0E) has post office. Moon in the Pond Farm (6.2E) offers free stay for farm work - organic farm meals, tent sites, shower, $2 laundry. Shuttle service available.',
     services: ['post office', 'hostel', 'camping', 'shuttle']
@@ -1829,6 +1873,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 3.0,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Great Barrington (3.0W) - all major services. Multiple groceries (Price Chopper, Big Y, Berkshire Co-op), 5 lodging options, restaurants, Fairview Hospital (24hr). Berkshire South Community Center offers free tenting ($8PP for facilities). Shuttle service available.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'hospital', 'camping', 'shuttle', 'pharmacy']
@@ -1946,6 +1991,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 5.1,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Bennington, VT is 5.1W from trail. Post office, 6 lodging options (Catamount Motel, Autumn Inn, Knotty Pine Motel, Best Western, Hampton Inn). Walmart and Price Chopper (24hr) with pharmacies. Spice & Nice Natural Foods. Express Care Walk-in Clinic. Shuttle service available.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'pharmacy', 'medical', 'shuttle']
@@ -1969,6 +2015,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 2.1,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'Manchester Center (5.4W) - Post office, Green Mountain House hostel (AT Passport, $40+tax), 6 lodging options, Price Chopper, VFW Post (camping), library, Manchester Laundromat, 8 restaurants, Mountain Goat Outfitter (AT Passport), Walgreens pharmacy, Droznah Transport shuttle. Peru (2.1-4.2E) - The Lodge at Bromley ($100), Bromley Market, Bromley View Inn ($99+), JJ Hapgood General Store & Eatery.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'hostel', 'restaurants', 'laundry', 'library', 'pharmacy', 'camping', 'shuttle']
@@ -1992,6 +2039,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: false,
     resupplyQuality: 'limited',
     distanceFromTrail: 2.8,
+    directionFromTrail: 'W',
     shuttleAvailable: false,
     notes: 'Wallingford, VT is 2.8W from trail. Post office, Cumberland Farms, Family Dollar, Sweet Birch Coffee Roasters, Sal\'s Italian Restaurant, Gilbert Hart Library.',
     services: ['post office', 'grocery', 'restaurants', 'library']
@@ -2015,6 +2063,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: false,
     resupplyQuality: 'minimal',
     distanceFromTrail: 1.0,
+    directionFromTrail: 'W',
     shuttleAvailable: false,
     notes: 'North Clarendon, VT is 4.2W from trail. Post office, Goughberg Farms (grocery/deli), Clarendon Animal Clinic.',
     services: ['post office', 'grocery', 'veterinary']
@@ -2083,6 +2132,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: false,
     resupplyQuality: 'full',
     distanceFromTrail: 3.9,
+    directionFromTrail: 'E',
     shuttleAvailable: false,
     notes: 'Woodstock, VT is 3.9E from trail. On The Edge Farmstand (0.2W from trail). Post office, Mac\'s Woodstock Market, The Shire Woodstock (lodging, WiFi), Braeside Motel ($98-168), Pizza Chef, Cumberland Farms, Woodstock Veterinary Hospital, Norman Williams Public Library, Ottauquechee Pharmacy, The Laundry Room.',
     services: ['post office', 'grocery', 'lodging', 'restaurants', 'laundry', 'pharmacy', 'library', 'veterinary']
@@ -2106,6 +2156,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: false,
     resupplyQuality: 'minimal',
     distanceFromTrail: 1.0,
+    directionFromTrail: 'E',
     shuttleAvailable: false,
     notes: 'South Pomfret, VT is 1.0E from trail. Cloudland Farm Market (0.2W, family farm with water spigot, ice cream, beef jerky, prepared foods). Post office (inside Teago\'s General Store), Teago\'s General Store (homemade soups, salads, sandwiches, ice cream), Abbott Memorial Library.',
     services: ['post office', 'grocery', 'restaurants', 'library']
@@ -2177,6 +2228,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: false,
     resupplyQuality: 'limited',
     distanceFromTrail: 1.3,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Lyme Center (1.3W) - Post office. Lyme (3.2W) - Post office, Stella\'s Italian Kitchen & Market (deli, dining room), Dowd\'s Country Inn B&B (lodging, breakfast, WiFi, shuttle), Lyme Country Store (local products, fresh cut meats, deli, ice cream), Lyme Veterinary Hospital. Vtrips shuttle service (S to Woodstock, VT ◄ ► N to Franconia, NH).',
     services: ['post office', 'grocery', 'lodging', 'restaurants', 'veterinary', 'shuttle']
@@ -2200,6 +2252,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 1.9,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Mount Cube Farm (1.9W, pets welcome, maple syrup products, camping). Camp Ebb-n-Flow (camping on private land by permission only, WiFi). Wentworth (4.5E): post office, Shawnee\'s General Store. Barn Door Hostel & Campground (14.7E, $75/person/night, showers, laundry, shuttle, WiFi).',
     services: ['post office', 'grocery', 'lodging', 'camping', 'laundry', 'showers', 'shuttle', 'wifi']
@@ -2269,6 +2322,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 1.0,
+    directionFromTrail: 'W',
     shuttleAvailable: false,
     notes: 'Willey House (1.0W, snack bar). Dry River Campground (1.8E, $25, pets, laundry, showers). AMC Highland Center (3.8W, no pets/smoking, rates vary, breakfast/lunch/dinner, store, WiFi, mail drops). Crawford Notch General Store & Campground (3.4E, cabins $75-95, tenting $30, 9% lodging tax, store, ice cream, mail drops).',
     services: ['grocery', 'lodging', 'camping', 'restaurants', 'laundry', 'showers', 'ice cream', 'mail drops']
@@ -2315,6 +2369,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 1.7,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'White Birches Camping Park (1.7W, AT Passport, bunks $20PP, tenting $20PP, laundry, pool, WiFi, fuel, free shuttle). Town & Country Inn (2.6W, $68-155, pets $25, WiFi, breakfast/dinner, pool). Gorham (3.5W): post office, Libby House Inn & The Barn Hikers Hostel (AT Passport, $28 bunks/$18PP tenting, breakfast, laundry, shuttle), Royalty Inn ($89 weekday/$99 weekend, pool, laundry, WiFi), Top Notch Inn (May-mid Oct, laundry, shuttles, WiFi, 10% discount), Northern Peaks Motor Inn ($70/up, pets $5, WiFi), Gorham Motor Inn ($58-158), Gorham Hardware & Sports Center (outfitter, fuel by ounce). Walmart (6.7W). AMC Hiker Shuttle. Trail Angels Hiker Services shuttle. Berlin, NH (10.1W): Androscoggin Valley Hospital.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'camping', 'restaurants', 'laundry', 'showers', 'shuttle', 'wifi', 'fuel', 'hospital']
@@ -2340,6 +2395,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 12.8,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'Stony Brook Camping (12.8E, $30 tent/$35 lean-to, pool, laundry, showers, shuttle, mail drops). Bethel (17.9E): post office, Chapman Inn (18.6E, $35 bunks w/breakfast, $25 w/o, rooms $69+, laundry, WiFi, mail drops), Bethel Outdoor Adventure (campsites $24/night, laundry, WiFi, shuttle), Pat\'s Pizza, Sudbury Inn Restaurant & Pub ($89+, breakfast/lunch/dinner), Bethel Shop N Save (grocery), True North Adventureware (AT Passport, outfitter, fuel by ounce, freeze dried foods, WiFi), Bethel Animal Hospital. Two shuttle services: Stagecoach Shuttle Services & Mountain Courier Shuttle.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'camping', 'restaurants', 'laundry', 'showers', 'shuttle', 'wifi', 'fuel', 'hospital', 'slackpacking']
@@ -2363,6 +2419,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 7.9,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'Andover (8.0E): post office, Pine Ellis Lodging (7.9E, AT Passport, no pets, private rooms $45S/$65D/$75 triple/$20EAP, bunks $30PP, laundry, WiFi, shuttle, slackpacking, resupply, mail drops), Paul\'s AT Camp for Hikers Stay ($60 for 4, 3 miles from Andover, water/electricity in cabin and shower, round trip shuttle from hostel), Mills Market (groceries, deli, Friday Pizza Special), Andover Public Library, Donna Gifford (massage therapist), The Cabin (10.9E, AT Passport, $20PP, shuttles, hiker kitchen, laundry, WiFi). Four shuttle services: SD Shuttle, Rodney Kneeland, IRONMIKE.',
     services: ['grocery', 'post office', 'lodging', 'camping', 'laundry', 'showers', 'shuttle', 'wifi', 'slackpacking', 'library', 'mail drops']
@@ -2386,6 +2443,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'minimal',
     distanceFromTrail: 17.4,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'The Human-Nature Hostel (17.4E, $60PP all inclusive, bunks/loft beds, kitchen, bathrooms, outdoor showers, loaner clothes, full laundry service, toiletries, ear plugs, lounge, tenting, patio/grills/picnic table/fire pit, soda/candy/ice cream/pizza/pockets, slackpacking East B Hill & South Arm Rd, free pickup/drop-off at trail head, multiple daily trips to Andover for resupply/post office, meals: breakfast $5/AYCE Maine Blueberry Pancake w/coffee & tea, dinner $10/Hiker Hunger Dinner, shuttles, parking, mail drops). Two shuttles a day to South Arm trailhead. Stops at Andover center for resupply/post office before returning to hostel.',
     services: ['lodging', 'camping', 'laundry', 'showers', 'shuttle', 'slackpacking', 'restaurant', 'breakfast', 'wifi', 'mail drops', 'parking']
@@ -2409,6 +2467,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 9.0,
+    directionFromTrail: 'W',
     shuttleAvailable: true,
     notes: 'Rangeley (9.0W): post office, Town & Lake Motel (hiker rate, pets $10, canoes), Rangeley Inn & Tavern (AT Passport, $125 summer/$75 fall, breakfast, kayaks/canoe, WiFi), Rangeley Saddleback Inn ($120+, continental breakfast, pets $10, WiFi, shuttle), Pine Tree Frosty (ice cream), Sarge\'s Sports Pub & Grub (lunch/dinner/bar), Moose Alley (bowling, billiards, darts, dance floor), IGA Supermarket (ATM), Ecopelagicon (AT Passport, outfitter, fuel by ounce, freeze dried foods, gear, charging station, WiFi, shuttles), Alpine Shop (outfitter, fuel by ounce), Back Woods (clothing/gear), Rangeley Family Medicine ($5 shower). Ecopelagicon shuttle (Farmington to Jackman, slackpacking, long distance shuttles).',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'restaurants', 'laundry', 'showers', 'shuttle', 'wifi', 'fuel', 'slackpacking', 'medical']
@@ -2432,6 +2491,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 2.7,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'Mountainside Grocers (2.7E). Hostel of Maine (3.4E, AT Passport, bunks/lodging rooms $109 for thru-hikers, shower, towels, linens, loaner clothes, breakfast, laundry, WiFi, ice cream, frozen pizza, scheduled pickups/drop-offs, local craft beer/cider, promo code "AT2022"). Stratton (5.0W): post office, White Wolf Inn & Restaurant (5.1W, AT Passport, private rooms $79 mid-week/$89 weekends/$15EAP, pets $15, WiFi, ATM, restaurant, 8oz Wolf Burger, Fish Fry Friday, mail drops), Spillover Motel ($89+, pets $15, continental breakfast, showers $5, full kitchen, gas grill, WiFi, mail drops), Fotter\'s Market (Coleman/alcohol fuel by ounce, ATM), Flagstaff General Store (deli, subs, pizza, salads, fried foods, canister fuel, WiFi, ATM), Stratton Public Library (WiFi). All Points Transportation shuttle (NH/MA to Baxter SP, slackpacking, parking).',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'showers', 'shuttle', 'wifi', 'fuel', 'slackpacking', 'library', 'mail drops']
@@ -2478,6 +2538,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'full',
     distanceFromTrail: 3.6,
+    directionFromTrail: 'E',
     shuttleAvailable: true,
     notes: 'CRITICAL: Last resupply before 100 Mile Wilderness. Stock up well! Monson (3.6E): post office, Shaw\'s Hiker Hostel (AT Passport, bunks $30, private $50S-$100, $15 tenting, breakfast, laundry, $5 shower, WiFi, slackpacking, shuttles, gear supplies, fuel by ounce, freeze dried food, gear repair, full resupply, mail drops), Poet\'s Gear Emporium (ULA, hyperlite gear, Big Agnes, Altra, Salomon, Sawyer, full resupply), The Lakeshore House Lodge (AT Passport, bunkroom $30/full-queen $50, private $100, laundry, shower, WiFi, canoe, swimming, pub, mail drops), John Baptist Mission (private home, bunks, tenting, hammocking, showers, laundry, meals, group shuttles, WiFi, mail drops), Monson General Store (local foods, deli, sandwiches, baked goods), A.E. Robinson\'s Convenience Store (pizza, breakfast, ATM), Spring Creek Bar-B-Q, At The Quarry (restaurant). Five shuttle services: Charlie Anderson, Seven Pines Shuttle, Shaw\'s Hiker Hostel Shuttles, 100 Mile Wilderness. Monson Appalachian Trail Visitor Center (AT Passport, info for long-distance hikers). Greenville (10.4W from ME 15): Kineo View Motor Lodge ($79+, breakfast, WiFi), Kelly\'s Landing (breakfast), Dairy Bar (ice cream), Harris Drug Store (pharmacy, soda fountain), Indian Hill Trading Post & Supermarket, Jamos Pizza, Northwoods Outfitters (full outfitter, WiFi), Charles Dean Memorial Hospital.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'camping', 'restaurants', 'laundry', 'showers', 'shuttle', 'wifi', 'fuel', 'slackpacking', 'mail drops', 'hospital', 'pharmacy']

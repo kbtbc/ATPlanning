@@ -118,7 +118,7 @@ export function ResupplyDirectory({ onSelectResupply }: ResupplyDirectoryProps) 
                     </div>
                     <p className="text-xs text-[var(--foreground-muted)]">
                       Mile {formatMile(resupply.mile)} · {resupply.state}
-                      {resupply.distanceFromTrail > 0 && ` · ${resupply.distanceFromTrail} mi off trail`}
+                      {resupply.distanceFromTrail > 0 && ` · ${resupply.distanceFromTrail} mi ${resupply.directionFromTrail || ''} off trail`.replace(/\s+/g, ' ').trim()}
                     </p>
                   </div>
                 </div>

@@ -69,6 +69,14 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - **Features**: 50 notable landmarks
 - **States**: 14 states (GA, NC, TN, VA, WV, MD, PA, NJ, NY, CT, MA, VT, NH, ME)
 
+### Direction Conventions
+
+**IMPORTANT:** When viewing off-trail distances with directions (E/W):
+- **NOBO (Northbound)**: East (E) = RIGHT, West (W) = LEFT when exiting the trail
+- **SOBO (Southbound)**: East (E) = LEFT, West (W) = RIGHT when exiting the trail
+
+This follows the hiker's perspective looking ahead in their direction of travel, regardless of the actual compass heading at that point on the trail.
+
 ## Tech Stack
 
 - React 19 + TypeScript

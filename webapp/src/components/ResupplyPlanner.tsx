@@ -163,7 +163,7 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
 
       {/* Upcoming Resupply List */}
       <div>
-        <h3 className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)] font-semibold mb-2 pl-1">
+        <h3 className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)] font-semibold mb-2 px-2 py-1">
           Upcoming Resupply
         </h3>
 
@@ -174,8 +174,11 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
             const serviceCounts = getServiceCounts(businesses);
             const serviceSummary = formatServiceSummary(serviceCounts);
 
-            // Format mile info for display
-            const mileInfo = `Mile ${formatMile(resupply.mile)}${resupply.distanceFromTrail > 0 ? ` · ${resupply.distanceFromTrail} mi off trail` : ''}`;
+            // Format mile info for display - include direction if off trail
+            const offTrailText = resupply.distanceFromTrail > 0
+              ? ` · ${resupply.distanceFromTrail} mi ${resupply.directionFromTrail || ''} off trail`.replace(/\s+/g, ' ').trim()
+              : '';
+            const mileInfo = `Mile ${formatMile(resupply.mile)}${offTrailText}`;
 
             return (
               <motion.div

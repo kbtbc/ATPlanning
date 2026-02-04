@@ -53,7 +53,6 @@ function buildDistanceInfo(business: Business): string | undefined {
 export function ResupplyExpandedCard({
   resupply,
   businesses,
-  currentMile,
   onBack
 }: ResupplyExpandedCardProps) {
   const [filter, setFilter] = useState<CategoryFilter>('all');
@@ -100,7 +99,6 @@ export function ResupplyExpandedCard({
   };
 
   const quality = qualityConfig[resupply.resupplyQuality];
-  const distanceAhead = Math.abs(resupply.mile - currentMile);
 
   const handleBusinessClick = (business: Business) => {
     setSelectedBusiness(business);
@@ -132,10 +130,20 @@ export function ResupplyExpandedCard({
                 {quality.label.toLowerCase()}
               </span>
             </div>
-            <h2 className="font-semibold text-lg truncate">{resupply.name}</h2>
-            <p className="text-xs text-[var(--foreground-muted)]">
-              {distanceAhead.toFixed(1)} mi ahead (mile {formatMile(resupply.mile)})
-            </p>
+            {/* Town name with mile info on same line */}
+            <div className="flex items-baseline gap-2 flex-wrap">
+              <h2 className="font-semibold text-lg">{resupply.name}</h2>
+              <span className="text-xs text-[var(--foreground-muted)]">
+                Mile {formatMile(resupply.mile)}
+                {resupply.distanceFromTrail > 0 && ` · ${resupply.distanceFromTrail} mi ${resupply.directionFromTrail || ''} off trail`.trim()}
+              </span>
+            </div>
+            {/* Summary description from notes */}
+            {resupply.notes && (
+              <p className="text-xs text-[var(--foreground-muted)] mt-1 line-clamp-2">
+                {resupply.notes}
+              </p>
+            )}
           </div>
         </div>
 
