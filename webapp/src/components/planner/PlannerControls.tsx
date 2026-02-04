@@ -75,13 +75,13 @@ export function PlannerControls({
     <div className="space-y-3">
       {/* Direction Toggle - Top Right */}
       <div className="flex flex-col items-end gap-1">
-        <div className="flex items-center gap-2">
-          <span className="text-xs text-[var(--foreground-muted)]">NOBO/SOBO</span>
-          <div className="inline-flex items-center bg-[var(--background)] rounded p-0.5 border border-[var(--border)]">
+        <div className="flex items-center gap-1.5">
+          <span className="text-[10px] text-[var(--foreground-muted)]">NOBO/SOBO</span>
+          <div className="inline-flex items-center bg-[var(--background)] rounded-full p-[2px] border border-[var(--border)]">
             <button
               onClick={() => handleDirectionToggle('NOBO')}
               className={cn(
-                'w-6 h-4 rounded transition-all',
+                'w-4 h-4 rounded-full transition-all',
                 direction === 'NOBO'
                   ? 'bg-[var(--primary)]'
                   : 'hover:bg-[var(--foreground)]/10'
@@ -91,7 +91,7 @@ export function PlannerControls({
             <button
               onClick={() => handleDirectionToggle('SOBO')}
               className={cn(
-                'w-6 h-4 rounded transition-all',
+                'w-4 h-4 rounded-full transition-all',
                 direction === 'SOBO'
                   ? 'bg-[var(--primary)]'
                   : 'hover:bg-[var(--foreground)]/10 opacity-60'
