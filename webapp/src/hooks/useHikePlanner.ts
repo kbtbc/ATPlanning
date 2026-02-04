@@ -32,7 +32,7 @@ export function useHikePlanner(initialState?: Partial<HikePlannerState>) {
   const setStartMile = useCallback((mile: number) => {
     setState(prev => ({
       ...prev,
-      startMile: Math.max(0, Math.min(TRAIL_LENGTH, mile)),
+      startMile: Math.max(-8.5, Math.min(TRAIL_LENGTH, mile)),
     }));
   }, []);
 
