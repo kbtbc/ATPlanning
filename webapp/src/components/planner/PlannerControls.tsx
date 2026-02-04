@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { CalendarDays, MapPin, Loader2 } from 'lucide-react';
+import { CalendarDays, MapPin, Loader2, CheckCircle } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import { TRAIL_LENGTH } from '../../data';
 import { useGeolocation } from '../../hooks/useGeolocation';
@@ -39,13 +39,16 @@ export function PlannerControls({
 }: PlannerControlsProps) {
   const [showGpsError, setShowGpsError] = useState(false);
   const [showSoboMessage, setShowSoboMessage] = useState(false);
+  const [gpsSuccess, setGpsSuccess] = useState<{ mile: number; waypointName?: string } | null>(null);
 
   // Use the onSuccess callback to directly update the mile when GPS succeeds
   const handleGpsSuccess = useCallback((nearestMile: number) => {
     onStartMileChange(nearestMile);
+    setGpsSuccess({ mile: nearestMile });
+    setTimeout(() => setGpsSuccess(null), 4000);
   }, [onStartMileChange]);
 
-  const { getCurrentPosition, loading: gpsLoading, error: gpsError } = useGeolocation({
+  const { getCurrentPosition, loading: gpsLoading, error: gpsError, nearestWaypoint } = useGeolocation({
     onSuccess: handleGpsSuccess
   });
 
@@ -109,12 +112,12 @@ export function PlannerControls({
 
       {/* Starting Mile and Start Date Row */}
       <div className="grid grid-cols-2 gap-2.5">
-        {/* Starting Mile with GPS button */}
+        {/* Starting Mile with GPS button outside */}
         <div>
           <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-0.5">
             Starting Mile
           </label>
-          <div className="relative">
+          <div className="flex items-center gap-1.5">
             <input
               type="number"
               value={startMile}
@@ -122,16 +125,16 @@ export function PlannerControls({
               min={-8.5}
               max={TRAIL_LENGTH}
               step={0.1}
-              className="input py-1.5 text-sm pr-9"
+              className="input py-1.5 text-sm flex-1"
             />
             <button
               onClick={handleUseLocation}
               disabled={gpsLoading}
               className={cn(
-                'absolute right-1.5 top-1/2 -translate-y-1/2 p-1.5 rounded-md transition-colors',
+                'p-2 rounded-lg border border-[var(--border)] transition-colors shrink-0',
                 gpsLoading
-                  ? 'text-[var(--foreground-muted)]'
-                  : 'text-[var(--accent)] hover:bg-[var(--accent)]/10'
+                  ? 'text-[var(--foreground-muted)] bg-[var(--background)]'
+                  : 'text-[var(--accent)] hover:bg-[var(--accent)]/10 bg-[var(--background-secondary)]'
               )}
               title="Use my location"
             >
@@ -144,6 +147,12 @@ export function PlannerControls({
           </div>
           {gpsError && showGpsError && (
             <p className="text-[10px] text-[var(--warning)] mt-0.5">{gpsError}</p>
+          )}
+          {gpsSuccess && (
+            <p className="text-[10px] text-emerald-500 mt-0.5 flex items-center gap-1">
+              <CheckCircle className="w-3 h-3" />
+              Located near mile {gpsSuccess.mile.toFixed(1)}{nearestWaypoint ? ` (${nearestWaypoint.name})` : ''}
+            </p>
           )}
         </div>
 

@@ -163,7 +163,7 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
 
       {/* Upcoming Resupply List */}
       <div>
-        <h3 className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)] font-semibold mb-2 px-3 py-1.5">
+        <h3 className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)] font-semibold mb-2 px-4 py-2">
           Upcoming Resupply
         </h3>
 
