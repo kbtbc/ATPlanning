@@ -340,12 +340,12 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
               animate={{ scale: 1 }}
               className="relative"
             >
-              <div className="w-6 h-6 rounded-full bg-[var(--primary)] border-2 border-white shadow-lg flex items-center justify-center">
-                <MapPin className="w-3.5 h-3.5 text-white" />
+              <div className="w-4 h-4 rounded-full bg-[var(--primary)] border border-white shadow-sm flex items-center justify-center">
+                <MapPin className="w-2.5 h-2.5 text-white" />
               </div>
               <motion.div
                 className="absolute inset-0 rounded-full bg-[var(--primary)]"
-                animate={{ scale: [1, 1.5, 1], opacity: [0.4, 0, 0.4] }}
+                animate={{ scale: [1, 1.4, 1], opacity: [0.3, 0, 0.3] }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
             </motion.div>
