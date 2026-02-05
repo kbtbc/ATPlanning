@@ -110,8 +110,24 @@ export function PlannerControls({
         )}
       </div>
 
-      {/* Starting Mile and Start Date Row */}
+      {/* Start Date and Starting Mile Row */}
       <div className="grid grid-cols-2 gap-2.5">
+        {/* Start Date */}
+        <div>
+          <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-0.5">
+            <span className="flex items-center gap-1.5">
+              <CalendarDays className="w-3.5 h-3.5" />
+              Start Date
+            </span>
+          </label>
+          <input
+            type="date"
+            value={formatDateForInput(startDate)}
+            onChange={handleDateChange}
+            className="input py-1.5 text-sm"
+          />
+        </div>
+
         {/* Starting Mile with GPS button outside */}
         <div>
           <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-0.5">
@@ -155,22 +171,6 @@ export function PlannerControls({
             </p>
           )}
         </div>
-
-        {/* Start Date */}
-        <div>
-          <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-0.5">
-            <span className="flex items-center gap-1.5">
-              <CalendarDays className="w-3.5 h-3.5" />
-              Start Date
-            </span>
-          </label>
-          <input
-            type="date"
-            value={formatDateForInput(startDate)}
-            onChange={handleDateChange}
-            className="input py-1.5 text-sm"
-          />
-        </div>
       </div>
 
       {/* Miles Per Day and Days to Plan on same row */}
@@ -178,7 +178,7 @@ export function PlannerControls({
         {/* Miles Per Day */}
         <div>
           <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-0.5">
-            Miles/Day: <span className="font-bold text-[var(--foreground)]">{targetMilesPerDay}</span>
+            Miles Per Day: <span className="font-bold text-[var(--foreground)]">{targetMilesPerDay}</span>
           </label>
           <input
             type="range"
