@@ -57,7 +57,7 @@ function ShelterItem({ shelter, onSetStart }: { shelter: Shelter; onSetStart: (m
           {shelter.isHammockFriendly && (
             <span className="badge bg-[var(--stone-light)]/30 text-[var(--stone)]">Hammock</span>
           )}
-          {(shelter.hasBearCables || shelter.hasBearBoxes) && (
+          {shelter.hasBearProtection && (
             <span className="badge bg-[var(--stone-light)]/30 text-[var(--stone)]">Bear</span>
           )}
           {shelter.hasShowers && (

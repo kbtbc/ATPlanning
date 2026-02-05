@@ -277,7 +277,7 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                       <span>·</span>
                       <span>{shelter.elevation.toLocaleString()} ft</span>
                     </div>
-                    {(shelter.hasWater || shelter.hasSeasonalWater || shelter.hasPrivy || shelter.capacity || shelter.hasBearCables || shelter.hasBearBoxes || shelter.hasShowers || shelter.hasViews || shelter.isHammockFriendly || shelter.hasSummit || shelter.hasFee || shelter.hasWarning) ? (
+                    {(shelter.hasWater || shelter.hasSeasonalWater || shelter.hasPrivy || shelter.capacity || shelter.hasBearProtection || shelter.hasShowers || shelter.hasViews || shelter.isHammockFriendly || shelter.hasSummit || shelter.hasFee || shelter.hasWarning) ? (
                       <div className="flex flex-wrap items-center gap-1 mt-1 pt-1 border-t border-[var(--border-light)] max-w-[220px]">
                         {shelter.hasWater ? (
                           <span className="px-1.5 py-0.5 rounded bg-[var(--water-color)]/15 text-[var(--water-color)] text-[10px]">Water</span>
@@ -291,11 +291,8 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                         {shelter.capacity ? (
                           <span className="px-1.5 py-0.5 rounded bg-[var(--background-tertiary)] text-[var(--foreground-muted)] text-[10px]">{shelter.capacity} spots</span>
                         ) : null}
-                        {shelter.hasBearCables ? (
-                          <span className="px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-600 text-[10px]">Bear Cables</span>
-                        ) : null}
-                        {shelter.hasBearBoxes ? (
-                          <span className="px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-600 text-[10px]">Bear Box</span>
+                        {shelter.hasBearProtection ? (
+                          <span className="px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-600 text-[10px]">Bear Protection</span>
                         ) : null}
                         {shelter.hasShowers ? (
                           <span className="px-1.5 py-0.5 rounded bg-blue-500/15 text-blue-600 text-[10px]">Showers</span>

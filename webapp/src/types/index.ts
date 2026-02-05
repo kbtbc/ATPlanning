@@ -61,8 +61,7 @@ export interface Shelter extends Waypoint {
   // Amenity keys from WBP PDF icon codes (verified against Icon Legend + description text)
   hasSeasonalWater?: boolean;  // W (capital) - seasonal/unreliable water source
   isHammockFriendly?: boolean; // E - possibilities for hammocks available (~70% of shelters)
-  hasBearCables?: boolean;     // J - bear cables or bear box for food bags
-  hasBearBoxes?: boolean;      // B - dedicated bear box
+  hasBearProtection?: boolean; // J - bear cables or bear box available for food bags
   hasViews?: boolean;          // v - views, overlooks, photo opportunities
   hasJunction?: boolean;       // + - intersection, junction, side trail
   hasSummit?: boolean;         // Z - summit or crest
