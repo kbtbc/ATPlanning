@@ -61,15 +61,15 @@
   --campsite-color: #7d9a6f;
   --feature-color: #7a8a94;
 
-  /* Resupply category colors - muted palette */
-  --category-major-town: #2d5a4a;
-  --category-major-town-bg: rgba(45, 90, 74, 0.12);
-  --category-trail-town: #5a8fa8;
-  --category-trail-town-bg: rgba(90, 143, 168, 0.12);
-  --category-on-trail: #7a9e7e;
-  --category-on-trail-bg: rgba(122, 158, 126, 0.12);
-  --category-limited: #c4a77d;
-  --category-limited-bg: rgba(196, 167, 125, 0.15);
+  /* Resupply category colors - muted palette (slightly brighter) */
+  --category-major-town: #358563;
+  --category-major-town-bg: rgba(53, 133, 99, 0.12);
+  --category-trail-town: #4a9fc4;
+  --category-trail-town-bg: rgba(74, 159, 196, 0.12);
+  --category-on-trail: #6aad72;
+  --category-on-trail-bg: rgba(106, 173, 114, 0.12);
+  --category-limited: #d4a85a;
+  --category-limited-bg: rgba(212, 168, 90, 0.15);
 
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(26, 46, 40, 0.04);
@@ -88,15 +88,15 @@
   --border: #2d3d36;
   --border-light: #3d4f46;
 
-  /* Resupply category colors - dark mode */
-  --category-major-town: #7a9e7e;
-  --category-major-town-bg: rgba(122, 158, 126, 0.15);
-  --category-trail-town: #8cbcd4;
-  --category-trail-town-bg: rgba(140, 188, 212, 0.15);
-  --category-on-trail: #a8c5ab;
-  --category-on-trail-bg: rgba(168, 197, 171, 0.12);
-  --category-limited: #c4a77d;
-  --category-limited-bg: rgba(196, 167, 125, 0.18);
+  /* Resupply category colors - dark mode (slightly brighter) */
+  --category-major-town: #8fc4a8;
+  --category-major-town-bg: rgba(143, 196, 168, 0.15);
+  --category-trail-town: #9ad0e8;
+  --category-trail-town-bg: rgba(154, 208, 232, 0.15);
+  --category-on-trail: #a8d4ac;
+  --category-on-trail-bg: rgba(168, 212, 172, 0.12);
+  --category-limited: #e8c888;
+  --category-limited-bg: rgba(232, 200, 136, 0.18);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
   --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.3);
