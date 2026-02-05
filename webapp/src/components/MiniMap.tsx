@@ -26,6 +26,9 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
     features: true,
   });
 
+  // Track active tooltip for mobile tap support
+  const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
+
   const toggleVisibility = (type: keyof WaypointVisibility) => {
     setVisibility(prev => ({ ...prev, [type]: !prev[type] }));
   };
@@ -153,7 +156,10 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
       </div>
 
       {/* Mini Map Container */}
-      <div className="relative bg-[var(--background)] rounded-lg border border-[var(--border-light)] overflow-hidden h-48">
+      <div
+        className="relative bg-[var(--background)] rounded-lg border border-[var(--border-light)] overflow-hidden h-48"
+        onClick={() => setActiveTooltip(null)}
+      >
           {/* Elevation Profile Background */}
           <svg
             className="absolute inset-0 w-full h-full"
@@ -247,15 +253,23 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
             const xPos = getXPosition(shelter.mile);
             const elevation = getElevationAtMile(shelter.mile);
             const yPos = getYPosition(elevation);
+            const isActive = activeTooltip === `shelter-${shelter.id}`;
 
             return (
               <div
                 key={shelter.id}
-                className="absolute transform -translate-x-1/2 -translate-y-1/2 group z-10"
+                className="absolute transform -translate-x-1/2 -translate-y-1/2 group z-10 cursor-pointer"
                 style={{ left: `${xPos}%`, top: `${yPos}%` }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveTooltip(isActive ? null : `shelter-${shelter.id}`);
+                }}
               >
                 <Home className="w-4 h-4 text-[var(--shelter-color)] drop-shadow-sm" />
-                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity z-30 pointer-events-none">
+                <div className={cn(
+                  "absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 transition-opacity z-30 pointer-events-none",
+                  isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                )}>
                   <div className="bg-[var(--background)] border border-[var(--border)] rounded px-2 py-1.5 text-xs whitespace-nowrap shadow-lg">
                     <div className="font-medium">{shelter.name}</div>
                     <div className="text-[var(--foreground-muted)] flex items-center gap-2">
@@ -263,6 +277,19 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                       <span>·</span>
                       <span>{shelter.elevation.toLocaleString()} ft</span>
                     </div>
+                    {(shelter.hasWater || shelter.hasPrivy || shelter.capacity) && (
+                      <div className="flex items-center gap-1.5 mt-1 pt-1 border-t border-[var(--border-light)]">
+                        {shelter.hasWater && (
+                          <span className="px-1.5 py-0.5 rounded bg-[var(--water-color)]/15 text-[var(--water-color)] text-[10px]">Water</span>
+                        )}
+                        {shelter.hasPrivy && (
+                          <span className="px-1.5 py-0.5 rounded bg-[var(--stone-light)]/30 text-[var(--stone)] text-[10px]">Privy</span>
+                        )}
+                        {shelter.capacity && (
+                          <span className="px-1.5 py-0.5 rounded bg-[var(--background-tertiary)] text-[var(--foreground-muted)] text-[10px]">{shelter.capacity} spots</span>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -274,15 +301,23 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
             const xPos = getXPosition(resupply.mile);
             const elevation = getElevationAtMile(resupply.mile);
             const yPos = getYPosition(elevation);
+            const isActive = activeTooltip === `resupply-${resupply.id}`;
 
             return (
               <div
                 key={resupply.id}
-                className="absolute transform -translate-x-1/2 -translate-y-1/2 group z-10"
+                className="absolute transform -translate-x-1/2 -translate-y-1/2 group z-10 cursor-pointer"
                 style={{ left: `${xPos}%`, top: `${yPos}%` }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveTooltip(isActive ? null : `resupply-${resupply.id}`);
+                }}
               >
                 <Package className="w-4 h-4 text-[var(--resupply-color)] drop-shadow-sm" />
-                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity z-30 pointer-events-none">
+                <div className={cn(
+                  "absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 transition-opacity z-30 pointer-events-none",
+                  isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                )}>
                   <div className="bg-[var(--background)] border border-[var(--border)] rounded px-2 py-1.5 text-xs whitespace-nowrap shadow-lg">
                     <div className="font-medium">{resupply.name}</div>
                     <div className="text-[var(--foreground-muted)] flex items-center gap-2">
@@ -308,15 +343,23 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
             const xPos = getXPosition(feature.mile);
             const elevation = getElevationAtMile(feature.mile);
             const yPos = getYPosition(elevation);
+            const isActive = activeTooltip === `feature-${feature.id}`;
 
             return (
               <div
                 key={feature.id}
-                className="absolute transform -translate-x-1/2 -translate-y-1/2 group z-10"
+                className="absolute transform -translate-x-1/2 -translate-y-1/2 group z-10 cursor-pointer"
                 style={{ left: `${xPos}%`, top: `${yPos}%` }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveTooltip(isActive ? null : `feature-${feature.id}`);
+                }}
               >
                 <Info className="w-3.5 h-3.5 text-[var(--category-limited)] drop-shadow-sm" />
-                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity z-30 pointer-events-none">
+                <div className={cn(
+                  "absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 transition-opacity z-30 pointer-events-none",
+                  isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                )}>
                   <div className="bg-[var(--background)] border border-[var(--border)] rounded px-2 py-1.5 text-xs whitespace-nowrap shadow-lg max-w-[200px]">
                     <div className="font-medium truncate">{feature.name}</div>
                     <div className="text-[var(--foreground-muted)] flex items-center gap-2">
