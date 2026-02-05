@@ -1,6 +1,38 @@
-import { Home, Package, Info, MapPin, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
+import { Home, Package, Info, MapPin, ChevronRight, AlertTriangle } from 'lucide-react';
 import { cn, formatMile } from '../../lib/utils';
 import type { Shelter, ResupplyPoint, Waypoint } from '../../types';
+
+// Extract warning-relevant text from shelter notes
+function extractWarningText(notes: string | undefined): string {
+  if (!notes) return 'Warning - check notes for details';
+
+  // Keywords that indicate warning-relevant content
+  const warningKeywords = [
+    'crowded', 'mice', 'mouse', 'rodent', 'bear', 'unreliable', 'dry', 'seasonal',
+    'steep', 'dangerous', 'caution', 'warning', 'closed', 'removed', 'fire ban',
+    'no camping', 'permit', 'fee', 'restricted', 'overflow', 'limited', 'flood',
+    'contaminated', 'boil', 'treat', 'sketchy', 'notorious', 'problem'
+  ];
+
+  // Split notes into sentences
+  const sentences = notes.split(/(?<=[.!?])\s+/);
+
+  // Find sentences containing warning keywords
+  const warningSentences = sentences.filter(sentence =>
+    warningKeywords.some(keyword =>
+      sentence.toLowerCase().includes(keyword)
+    )
+  );
+
+  if (warningSentences.length > 0) {
+    // Return up to 2 warning-relevant sentences
+    return warningSentences.slice(0, 2).join(' ');
+  }
+
+  // Fallback to first sentence if no specific warning found
+  return sentences[0] || 'Warning - check notes for details';
+}
 
 type ItineraryItemType =
   | { type: 'shelter'; data: Shelter }
@@ -50,7 +82,7 @@ function ShelterItem({ shelter, onSetStart }: { shelter: Shelter; onSetStart: (m
         </div>
         <div className="flex items-center gap-2 shrink-0">
           {shelter.hasWarning && (
-            <span className="badge bg-red-500/15 text-red-500">⚠️</span>
+            <WarningBadge notes={shelter.notes} />
           )}
           <SetStartButton onClick={() => onSetStart(shelter.mile)} />
         </div>
@@ -189,6 +221,33 @@ function SetStartButton({ onClick }: { onClick: (e: React.MouseEvent) => void })
     >
       <MapPin className="w-3.5 h-3.5" />
     </button>
+  );
+}
+
+function WarningBadge({ notes }: { notes?: string }) {
+  const [showTooltip, setShowTooltip] = useState(false);
+  const warningText = extractWarningText(notes);
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+      onTouchStart={() => setShowTooltip(!showTooltip)}
+    >
+      <span className="badge bg-red-500/15 text-red-500 cursor-help flex items-center gap-1">
+        <AlertTriangle className="w-3 h-3" />
+      </span>
+      {showTooltip && (
+        <div className="absolute z-50 bottom-full right-0 mb-2 w-64 p-2 bg-[var(--background-secondary)] border border-[var(--border)] rounded-lg shadow-lg text-xs text-[var(--foreground)] leading-relaxed">
+          <div className="flex items-start gap-1.5">
+            <AlertTriangle className="w-3.5 h-3.5 text-red-500 shrink-0 mt-0.5" />
+            <span>{warningText}</span>
+          </div>
+          <div className="absolute bottom-0 right-4 translate-y-1/2 rotate-45 w-2 h-2 bg-[var(--background-secondary)] border-r border-b border-[var(--border)]" />
+        </div>
+      )}
+    </div>
   );
 }
 
