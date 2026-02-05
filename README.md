@@ -15,13 +15,19 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 ### Hike Planner
 - Flexible daily mileage (8-25 miles/day) via slider
 - Adjustable start date for planning
+- Adjustable starting mile (syncs with Resupply tab)
 - Support for NOBO and SOBO hiking directions
 - 1-14 day planning horizon
 - Daily itinerary with shelters, resupply, and features sorted by mileage (in order of encounter)
+- Tap resupply items in daily itinerary to view full details in Resupply tab
 - "Set as start" button on each day and each location to quickly re-plan from any point
 - Interactive elevation profile with high-resolution GPX data (~5,000 points at 0.5mi intervals)
-- Mini-map showing shelters (home icon), resupply points (package), and info markers positioned on the elevation line
-- Day boundary markers on the map showing where each day ends
+- Mini-map showing:
+  - Shelters (home icon)
+  - Resupply points (orange package icon)
+  - Info markers (yellow info icon)
+  - Your position with pulsing indicator
+  - Day boundary markers showing where each day ends
 - Includes Amicalola Falls approach trail (mile -8.5 to 0)
 
 ### Trail Stats (accessible via Stats tab)
@@ -32,11 +38,19 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 
 ### Resupply Planner
 - 69 resupply points from Georgia to Maine
-- Quality ratings: Full, Limited, Minimal (color-coded dots)
+- Location categories with color-coded badges:
+  - **Major Town**: Full services, grocery stores, outfitters (e.g., Franklin, Hot Springs)
+  - **Trail Town**: Good resupply, limited selection (e.g., Damascus, Waynesboro)
+  - **On Trail**: Convenience stores, camp stores near trail (e.g., Mountain Crossings, NOC)
+  - **Limited**: Minimal options, plan ahead (e.g., small general stores)
+- Info icon with hover legend explaining categories
+- Dynamic distance display showing miles ahead and off-trail direction
+- Syncs with Planner starting mile for accurate distance calculations
 - Card-based layout with individual rounded entries
 - Service count summary per location (Lodging, Food, Shuttles, Services)
 - Category filtering with counts
 - Strategic planning tips and mail drop advice
+- Tap resupply items in daily itinerary to view full details
 
 ### Contact Directory (COMPREHENSIVE!)
 - **986 businesses documented** across 69 resupply locations

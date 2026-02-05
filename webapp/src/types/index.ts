@@ -35,6 +35,13 @@ export interface ResupplyPoint extends Waypoint {
   hasRestaurant: boolean;
   hasLaundry: boolean;
   hasShower: boolean;
+  /**
+   * Resupply location category:
+   * - major_town: Full services, grocery stores, outfitters (e.g., Franklin, Hot Springs)
+   * - trail_town: Good resupply, limited selection (e.g., Damascus, Waynesboro)
+   * - on_trail: Convenience/camp stores near trail (e.g., Mountain Crossings, NOC)
+   * - limited: Minimal options, plan ahead (e.g., small general stores)
+   */
   resupplyQuality: 'major_town' | 'trail_town' | 'on_trail' | 'limited';
   distanceFromTrail: number;
   directionFromTrail?: 'E' | 'W'; // E = East (right when NOBO), W = West (left when NOBO)
