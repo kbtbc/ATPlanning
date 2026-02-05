@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, BookOpen, Flag, Mail, ChevronRight, Info } from 'lucide-react';
+import { ArrowRight, BookOpen, Flag, Mail, ChevronRight, Info, MapPin, Loader2, CheckCircle } from 'lucide-react';
 import { resupplyPoints, getNearestResupply } from '../data';
 import { getContactsByResupplyId } from '../data/contacts';
 import { ResupplyDirectory, ResupplyExpandedCard } from './resupply';
 import { getCategoryForType } from './resupply/businessCategories';
 import { cn, formatMile, formatDistance } from '../lib/utils';
+import { useGeolocation } from '../hooks/useGeolocation';
 import type { ResupplyPoint, Business } from '../types';
 
 type ResupplyView = 'upcoming' | 'directory' | 'expanded';
@@ -13,6 +14,7 @@ type ResupplyView = 'upcoming' | 'directory' | 'expanded';
 interface ResupplyPlannerProps {
   currentMile?: number;
   direction?: 'NOBO' | 'SOBO';
+  onMileChange?: (mile: number) => void;
 }
 
 // Count businesses by category
@@ -37,10 +39,42 @@ function formatServiceSummary(counts: ReturnType<typeof getServiceCounts>): stri
   return parts.join(', ');
 }
 
-export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: ResupplyPlannerProps) {
+export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO', onMileChange }: ResupplyPlannerProps) {
   const [view, setView] = useState<ResupplyView>('upcoming');
   const [selectedResupply, setSelectedResupply] = useState<ResupplyPoint | null>(null);
   const [showLegend, setShowLegend] = useState(false);
+  const [showGpsConfirm, setShowGpsConfirm] = useState(false);
+  const [gpsSuccess, setGpsSuccess] = useState<{ mile: number; waypointName?: string } | null>(null);
+
+  // GPS location handling - declare hook first
+  const { getCurrentPosition, loading: gpsLoading, error: gpsError, nearestWaypoint } = useGeolocation({
+    onSuccess: (nearestMile: number) => {
+      if (onMileChange) {
+        onMileChange(nearestMile);
+      }
+      setShowGpsConfirm(false);
+    }
+  });
+
+  // Update success message when nearestWaypoint changes after GPS success
+  const handleGpsConfirm = useCallback(() => {
+    getCurrentPosition();
+    // Set success after a brief delay to allow nearestWaypoint to update
+    setTimeout(() => {
+      if (nearestWaypoint) {
+        setGpsSuccess({ mile: nearestWaypoint.mile, waypointName: nearestWaypoint.name });
+        setTimeout(() => setGpsSuccess(null), 5000);
+      }
+    }, 500);
+  }, [getCurrentPosition, nearestWaypoint]);
+
+  const handleGpsClick = () => {
+    setShowGpsConfirm(true);
+  };
+
+  const handleGpsCancel = () => {
+    setShowGpsConfirm(false);
+  };
 
   // Get next several resupply points from current position
   const upcomingResupply = resupplyPoints
@@ -148,8 +182,38 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
       >
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
-            <p className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)]">Current Position</p>
+            <div className="flex items-center gap-2">
+              <p className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)]">Current Position</p>
+              {onMileChange && (
+                <button
+                  onClick={handleGpsClick}
+                  disabled={gpsLoading}
+                  className={cn(
+                    'p-1 rounded transition-colors',
+                    gpsLoading
+                      ? 'text-[var(--foreground-muted)]'
+                      : 'text-[var(--accent)] hover:bg-[var(--accent)]/10'
+                  )}
+                  title="Tap to reset location"
+                >
+                  {gpsLoading ? (
+                    <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                  ) : (
+                    <MapPin className="w-3.5 h-3.5" />
+                  )}
+                </button>
+              )}
+            </div>
             <p className="text-2xl font-bold text-[var(--foreground)]">Mile {formatMile(currentMile)}</p>
+            {gpsError && (
+              <p className="text-[10px] text-[var(--warning)] mt-0.5">{gpsError}</p>
+            )}
+            {gpsSuccess && (
+              <p className="text-[10px] text-emerald-500 mt-0.5 flex items-center gap-1">
+                <CheckCircle className="w-3 h-3" />
+                Updated to mile {formatMile(gpsSuccess.mile)}{gpsSuccess.waypointName ? ` near ${gpsSuccess.waypointName}` : ''}
+              </p>
+            )}
           </div>
           {nearestResupply && (
             <div className="sm:text-right">
@@ -161,6 +225,37 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
             </div>
           )}
         </div>
+
+        {/* GPS Confirmation Dialog */}
+        <AnimatePresence>
+          {showGpsConfirm && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="mt-3 pt-3 border-t border-[var(--border)]"
+            >
+              <p className="text-sm text-[var(--foreground)] mb-2">
+                Update your current position using GPS?
+              </p>
+              <div className="flex gap-2">
+                <button
+                  onClick={handleGpsConfirm}
+                  disabled={gpsLoading}
+                  className="btn btn-primary py-1 px-3 text-xs"
+                >
+                  {gpsLoading ? 'Locating...' : 'Yes, update'}
+                </button>
+                <button
+                  onClick={handleGpsCancel}
+                  className="btn btn-secondary py-1 px-3 text-xs"
+                >
+                  Cancel
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
 
       {/* Upcoming Resupply List */}

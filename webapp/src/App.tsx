@@ -130,7 +130,7 @@ function App() {
 
           {activeTab === 'resupply' && (
             <motion.div key="resupply" {...pageTransition}>
-              <ResupplyPlanner currentMile={currentMile} />
+              <ResupplyPlanner currentMile={currentMile} onMileChange={setCurrentMile} />
             </motion.div>
           )}
 
