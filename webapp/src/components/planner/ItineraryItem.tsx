@@ -44,12 +44,27 @@ function ShelterItem({ shelter, onSetStart }: { shelter: Shelter; onSetStart: (m
         </div>
       </div>
       <div className="flex items-center gap-2">
-        <div className="flex gap-1">
+        <div className="flex flex-wrap gap-1">
           {shelter.hasWater && (
             <span className="badge bg-[var(--water-color)]/15 text-[var(--water-color)]">Water</span>
           )}
           {shelter.hasPrivy && (
             <span className="badge bg-[var(--stone-light)]/30 text-[var(--stone)]">Privy</span>
+          )}
+          {shelter.isTenting && (
+            <span className="badge bg-[var(--stone-light)]/30 text-[var(--stone)]">Tent</span>
+          )}
+          {shelter.isHammockFriendly && (
+            <span className="badge bg-[var(--stone-light)]/30 text-[var(--stone)]">Hammock</span>
+          )}
+          {(shelter.hasBearCables || shelter.hasBearBoxes) && (
+            <span className="badge bg-[var(--stone-light)]/30 text-[var(--stone)]">Bear</span>
+          )}
+          {shelter.hasShowers && (
+            <span className="badge bg-[var(--water-color)]/15 text-[var(--water-color)]">Shower</span>
+          )}
+          {shelter.hasWarning && (
+            <span className="badge bg-red-500/15 text-red-500">Warning</span>
           )}
         </div>
         <SetStartButton onClick={() => onSetStart(shelter.mile)} />

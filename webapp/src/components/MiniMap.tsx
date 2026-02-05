@@ -277,19 +277,48 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                       <span>·</span>
                       <span>{shelter.elevation.toLocaleString()} ft</span>
                     </div>
-                    {(shelter.hasWater || shelter.hasPrivy || shelter.capacity) && (
-                      <div className="flex items-center gap-1.5 mt-1 pt-1 border-t border-[var(--border-light)]">
-                        {shelter.hasWater && (
+                    {(shelter.hasWater || shelter.hasPrivy || shelter.capacity || shelter.isTenting || shelter.isHammockFriendly || shelter.hasBearCables || shelter.hasBearBoxes || shelter.hasShowers || shelter.hasRestroom || shelter.hasViews || shelter.hasViewsEast || shelter.hasViewsWest || shelter.hasSummit || shelter.hasWarning) ? (
+                      <div className="flex flex-wrap items-center gap-1 mt-1 pt-1 border-t border-[var(--border-light)] max-w-[220px]">
+                        {shelter.hasWater ? (
                           <span className="px-1.5 py-0.5 rounded bg-[var(--water-color)]/15 text-[var(--water-color)] text-[10px]">Water</span>
-                        )}
-                        {shelter.hasPrivy && (
+                        ) : null}
+                        {shelter.hasPrivy ? (
                           <span className="px-1.5 py-0.5 rounded bg-[var(--stone-light)]/30 text-[var(--stone)] text-[10px]">Privy</span>
-                        )}
-                        {shelter.capacity && (
+                        ) : null}
+                        {shelter.capacity ? (
                           <span className="px-1.5 py-0.5 rounded bg-[var(--background-tertiary)] text-[var(--foreground-muted)] text-[10px]">{shelter.capacity} spots</span>
-                        )}
+                        ) : null}
+                        {shelter.isTenting ? (
+                          <span className="px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-600 text-[10px]">Tenting</span>
+                        ) : null}
+                        {shelter.isHammockFriendly ? (
+                          <span className="px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-600 text-[10px]">Hammock</span>
+                        ) : null}
+                        {shelter.hasBearCables ? (
+                          <span className="px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-600 text-[10px]">Bear Cables</span>
+                        ) : null}
+                        {shelter.hasBearBoxes ? (
+                          <span className="px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-600 text-[10px]">Bear Box</span>
+                        ) : null}
+                        {shelter.hasShowers ? (
+                          <span className="px-1.5 py-0.5 rounded bg-blue-500/15 text-blue-600 text-[10px]">Showers</span>
+                        ) : null}
+                        {shelter.hasRestroom ? (
+                          <span className="px-1.5 py-0.5 rounded bg-blue-500/15 text-blue-600 text-[10px]">Restroom</span>
+                        ) : null}
+                        {(shelter.hasViews || shelter.hasViewsEast || shelter.hasViewsWest) ? (
+                          <span className="px-1.5 py-0.5 rounded bg-purple-500/15 text-purple-600 text-[10px]">
+                            {shelter.hasViewsEast && shelter.hasViewsWest ? 'Views E/W' : shelter.hasViewsEast ? 'Views East' : shelter.hasViewsWest ? 'Views West' : 'Views'}
+                          </span>
+                        ) : null}
+                        {shelter.hasSummit ? (
+                          <span className="px-1.5 py-0.5 rounded bg-orange-500/15 text-orange-600 text-[10px]">Summit</span>
+                        ) : null}
+                        {shelter.hasWarning ? (
+                          <span className="px-1.5 py-0.5 rounded bg-red-500/15 text-red-600 text-[10px]">Warning</span>
+                        ) : null}
                       </div>
-                    )}
+                    ) : null}
                   </div>
                 </div>
               </div>

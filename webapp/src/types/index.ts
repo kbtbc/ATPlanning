@@ -58,6 +58,19 @@ export interface Shelter extends Waypoint {
   hasPrivy: boolean;
   isTenting: boolean;
   fee?: number;
+  // Amenity keys (from PDF icon codes)
+  hasSeasonalWater?: boolean;  // s - seasonal/unreliable water source
+  hasShowers?: boolean;        // S - shower available
+  isHammockFriendly?: boolean; // h - hammock possibilities
+  hasBearCables?: boolean;     // + - bear cables or bear box for food bags
+  hasBearBoxes?: boolean;      // B - dedicated bear box
+  hasViewsEast?: boolean;      // E - views east
+  hasViewsWest?: boolean;      // W - views west
+  hasViews?: boolean;          // v - views, overlooks, photo opportunities
+  hasJunction?: boolean;       // J - intersection, junction, side trail
+  hasSummit?: boolean;         // M - summit or crest
+  hasRestroom?: boolean;       // R - public restroom
+  hasWarning?: boolean;        // Q/Z - warning or caution
 }
 
 export interface DayPlan {

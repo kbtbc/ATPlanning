@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, X, Mountain, Package, MapPin, Droplets, Tent, Star, Compass } from 'lucide-react';
 import { useWaypointFilters } from '../hooks/useWaypointFilters';
 import { cn, formatMile, formatElevation, getWaypointTypeColor } from '../lib/utils';
-import type { WaypointType, Waypoint } from '../types';
+import type { WaypointType, Waypoint, Shelter } from '../types';
 import { TRAIL_LENGTH } from '../data';
 
 const waypointTypes: { type: WaypointType; label: string; icon: React.ReactNode }[] = [
@@ -336,6 +336,49 @@ export function WaypointList({ onWaypointSelect, initialMileRange }: WaypointLis
                   <p className="text-sm font-mono">{selectedWaypoint.lat.toFixed(4)}, {selectedWaypoint.lng.toFixed(4)}</p>
                 </div>
               </div>
+
+              {selectedWaypoint.type === 'shelter' && (() => {
+                const shelter = selectedWaypoint as Shelter;
+                const amenities: { label: string; show: boolean; colorClass: string }[] = [
+                  { label: shelter.waterDistance ? `Water (${shelter.waterDistance} ft)` : 'Water', show: shelter.hasWater, colorClass: 'bg-blue-100 text-blue-800 border-blue-200' },
+                  { label: 'Seasonal Water', show: !!shelter.hasSeasonalWater, colorClass: 'bg-sky-100 text-sky-800 border-sky-200' },
+                  { label: 'Privy', show: shelter.hasPrivy, colorClass: 'bg-slate-100 text-slate-800 border-slate-200' },
+                  { label: 'Tenting', show: shelter.isTenting, colorClass: 'bg-green-100 text-green-800 border-green-200' },
+                  { label: 'Hammock Friendly', show: !!shelter.isHammockFriendly, colorClass: 'bg-emerald-100 text-emerald-800 border-emerald-200' },
+                  { label: 'Bear Cables', show: !!shelter.hasBearCables, colorClass: 'bg-amber-100 text-amber-800 border-amber-200' },
+                  { label: 'Bear Box', show: !!shelter.hasBearBoxes, colorClass: 'bg-yellow-100 text-yellow-800 border-yellow-200' },
+                  { label: 'Showers', show: !!shelter.hasShowers, colorClass: 'bg-cyan-100 text-cyan-800 border-cyan-200' },
+                  { label: 'Restroom', show: !!shelter.hasRestroom, colorClass: 'bg-slate-100 text-slate-800 border-slate-200' },
+                  { label: 'Views East', show: !!shelter.hasViewsEast, colorClass: 'bg-purple-100 text-purple-800 border-purple-200' },
+                  { label: 'Views West', show: !!shelter.hasViewsWest, colorClass: 'bg-violet-100 text-violet-800 border-violet-200' },
+                  { label: 'Views', show: !!shelter.hasViews, colorClass: 'bg-fuchsia-100 text-fuchsia-800 border-fuchsia-200' },
+                  { label: 'Trail Junction', show: !!shelter.hasJunction, colorClass: 'bg-slate-100 text-slate-800 border-slate-200' },
+                  { label: 'Summit', show: !!shelter.hasSummit, colorClass: 'bg-indigo-100 text-indigo-800 border-indigo-200' },
+                  { label: 'Warning', show: !!shelter.hasWarning, colorClass: 'bg-red-100 text-red-800 border-red-200' },
+                ];
+                if (shelter.capacity) {
+                  amenities.push({ label: `Capacity: ${shelter.capacity}`, show: true, colorClass: 'bg-slate-100 text-slate-800 border-slate-200' });
+                }
+                const visibleAmenities = amenities.filter((a) => a.show);
+                return visibleAmenities.length > 0 ? (
+                  <div className="mb-4">
+                    <p className="text-sm text-[var(--foreground-muted)] mb-2">Amenities</p>
+                    <div className="flex flex-wrap gap-2">
+                      {visibleAmenities.map((amenity) => (
+                        <span
+                          key={amenity.label}
+                          className={cn(
+                            'px-2.5 py-1 rounded-full text-xs font-medium border',
+                            amenity.colorClass
+                          )}
+                        >
+                          {amenity.label}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ) : null;
+              })()}
 
               {selectedWaypoint.notes && (
                 <div className="mb-4">
