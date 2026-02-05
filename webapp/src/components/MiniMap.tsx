@@ -277,7 +277,7 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                       <span>·</span>
                       <span>{shelter.elevation.toLocaleString()} ft</span>
                     </div>
-                    {(shelter.hasWater || shelter.hasSeasonalWater || shelter.hasPrivy || shelter.capacity || shelter.hasBearCables || shelter.hasBearBoxes || shelter.hasShowers || shelter.hasViews || shelter.hasViewsEast || shelter.hasSummit || shelter.hasFee || shelter.hasWarning) ? (
+                    {(shelter.hasWater || shelter.hasSeasonalWater || shelter.hasPrivy || shelter.capacity || shelter.hasBearCables || shelter.hasBearBoxes || shelter.hasShowers || shelter.hasViews || shelter.isHammockFriendly || shelter.hasSummit || shelter.hasFee || shelter.hasWarning) ? (
                       <div className="flex flex-wrap items-center gap-1 mt-1 pt-1 border-t border-[var(--border-light)] max-w-[220px]">
                         {shelter.hasWater ? (
                           <span className="px-1.5 py-0.5 rounded bg-[var(--water-color)]/15 text-[var(--water-color)] text-[10px]">Water</span>
@@ -300,10 +300,11 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                         {shelter.hasShowers ? (
                           <span className="px-1.5 py-0.5 rounded bg-blue-500/15 text-blue-600 text-[10px]">Showers</span>
                         ) : null}
-                        {(shelter.hasViews || shelter.hasViewsEast) ? (
-                          <span className="px-1.5 py-0.5 rounded bg-purple-500/15 text-purple-600 text-[10px]">
-                            {shelter.hasViewsEast ? 'Views East' : 'Views'}
-                          </span>
+                        {shelter.hasViews ? (
+                          <span className="px-1.5 py-0.5 rounded bg-purple-500/15 text-purple-600 text-[10px]">Views</span>
+                        ) : null}
+                        {shelter.isHammockFriendly ? (
+                          <span className="px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-600 text-[10px]">Hammock</span>
                         ) : null}
                         {shelter.hasSummit ? (
                           <span className="px-1.5 py-0.5 rounded bg-orange-500/15 text-orange-600 text-[10px]">Summit</span>

@@ -58,20 +58,22 @@ export interface Shelter extends Waypoint {
   hasPrivy: boolean;
   isTenting: boolean;
   fee?: number;
-  // Amenity keys (from PDF icon codes - verified against WBP PDF pages 240-251)
+  // Amenity keys from WBP PDF icon codes (verified against Icon Legend + description text)
   hasSeasonalWater?: boolean;  // W (capital) - seasonal/unreliable water source
-  hasShowers?: boolean;        // S - shower available (~11 shelters)
-  isHammockFriendly?: boolean; // from description text - hammock possibilities
+  isHammockFriendly?: boolean; // E - possibilities for hammocks available (~70% of shelters)
   hasBearCables?: boolean;     // J - bear cables or bear box for food bags
   hasBearBoxes?: boolean;      // B - dedicated bear box
-  hasViewsEast?: boolean;      // E - views east
   hasViews?: boolean;          // v - views, overlooks, photo opportunities
   hasJunction?: boolean;       // + - intersection, junction, side trail
-  hasSummit?: boolean;         // M - summit or crest
+  hasSummit?: boolean;         // Z - summit or crest
+  hasWarning?: boolean;        // | - warning or caution (fire bans, restrictions)
+  hasShowers?: boolean;        // S - shower available (~10 shelters)
   hasRestroom?: boolean;       // R - public restroom
-  hasWarning?: boolean;        // Z/| - warning or caution
   hasFee?: boolean;            // $ - overnight/caretaker fee
   hasTrashCan?: boolean;       // D - trash can usually available
+  hasSwimming?: boolean;       // z - swimming hole nearby
+  hasPicnicTable?: boolean;    // N - picnic table or pavilion
+  hasWaterfall?: boolean;      // u - waterfall nearby
 }
 
 export interface DayPlan {

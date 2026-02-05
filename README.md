@@ -73,14 +73,14 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - Filter by type, state, and mile range
 - Full-text search
 
-**Shelter Enhancements (Completed 2025-01-15):**
-- All 252 shelters systematically enhanced with verified amenities
-- Icon keys updated for accuracy (water, privy, bear infrastructure, views)
+**Shelter Enhancements (Updated 2026-02-05):**
+- All 252 shelters with verified amenity keys from WBP PDF icon codes
+- 18 amenity keys verified against Icon Legend and PDF description text:
+  - Core: hasWater, hasPrivy, isTenting
+  - Extended: isHammockFriendly, hasBearCables, hasBearBoxes, hasJunction, hasSeasonalWater, hasViews, hasSummit, hasWarning, hasShowers, hasRestroom, hasFee, hasTrashCan, hasSwimming, hasPicnicTable, hasWaterfall
+- Existing keys take precedence rule when PDF data conflicts
 - State boundary markers at first/last shelter in each state
 - Permit requirements (Great Smoky Mountains, Shenandoah NP)
-- Unique shelter callouts (highest, largest, most iconic spots)
-- 13 major landmarks with deep research (McAfee Knob, Bear Mountain Bridge, Presidential Range, etc.)
-- Helpful thru-hiker context and trail town proximity notes
 
 ## Data
 
