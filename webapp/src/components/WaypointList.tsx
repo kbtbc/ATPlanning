@@ -350,10 +350,11 @@ export function WaypointList({ onWaypointSelect, initialMileRange }: WaypointLis
                   { label: 'Showers', show: !!shelter.hasShowers, colorClass: 'bg-cyan-100 text-cyan-800 border-cyan-200' },
                   { label: 'Restroom', show: !!shelter.hasRestroom, colorClass: 'bg-slate-100 text-slate-800 border-slate-200' },
                   { label: 'Views East', show: !!shelter.hasViewsEast, colorClass: 'bg-purple-100 text-purple-800 border-purple-200' },
-                  { label: 'Views West', show: !!shelter.hasViewsWest, colorClass: 'bg-violet-100 text-violet-800 border-violet-200' },
                   { label: 'Views', show: !!shelter.hasViews, colorClass: 'bg-fuchsia-100 text-fuchsia-800 border-fuchsia-200' },
                   { label: 'Trail Junction', show: !!shelter.hasJunction, colorClass: 'bg-slate-100 text-slate-800 border-slate-200' },
                   { label: 'Summit', show: !!shelter.hasSummit, colorClass: 'bg-indigo-100 text-indigo-800 border-indigo-200' },
+                  { label: 'Fee Required', show: !!shelter.hasFee, colorClass: 'bg-orange-100 text-orange-800 border-orange-200' },
+                  { label: 'Trash Can', show: !!shelter.hasTrashCan, colorClass: 'bg-slate-100 text-slate-800 border-slate-200' },
                   { label: 'Warning', show: !!shelter.hasWarning, colorClass: 'bg-red-100 text-red-800 border-red-200' },
                 ];
                 if (shelter.capacity) {

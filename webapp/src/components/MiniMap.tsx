@@ -277,22 +277,19 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                       <span>·</span>
                       <span>{shelter.elevation.toLocaleString()} ft</span>
                     </div>
-                    {(shelter.hasWater || shelter.hasPrivy || shelter.capacity || shelter.isTenting || shelter.isHammockFriendly || shelter.hasBearCables || shelter.hasBearBoxes || shelter.hasShowers || shelter.hasRestroom || shelter.hasViews || shelter.hasViewsEast || shelter.hasViewsWest || shelter.hasSummit || shelter.hasWarning) ? (
+                    {(shelter.hasWater || shelter.hasSeasonalWater || shelter.hasPrivy || shelter.capacity || shelter.hasBearCables || shelter.hasBearBoxes || shelter.hasShowers || shelter.hasViews || shelter.hasViewsEast || shelter.hasSummit || shelter.hasFee || shelter.hasWarning) ? (
                       <div className="flex flex-wrap items-center gap-1 mt-1 pt-1 border-t border-[var(--border-light)] max-w-[220px]">
                         {shelter.hasWater ? (
                           <span className="px-1.5 py-0.5 rounded bg-[var(--water-color)]/15 text-[var(--water-color)] text-[10px]">Water</span>
+                        ) : null}
+                        {shelter.hasSeasonalWater ? (
+                          <span className="px-1.5 py-0.5 rounded bg-sky-500/15 text-sky-600 text-[10px]">Seasonal Water</span>
                         ) : null}
                         {shelter.hasPrivy ? (
                           <span className="px-1.5 py-0.5 rounded bg-[var(--stone-light)]/30 text-[var(--stone)] text-[10px]">Privy</span>
                         ) : null}
                         {shelter.capacity ? (
                           <span className="px-1.5 py-0.5 rounded bg-[var(--background-tertiary)] text-[var(--foreground-muted)] text-[10px]">{shelter.capacity} spots</span>
-                        ) : null}
-                        {shelter.isTenting ? (
-                          <span className="px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-600 text-[10px]">Tenting</span>
-                        ) : null}
-                        {shelter.isHammockFriendly ? (
-                          <span className="px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-600 text-[10px]">Hammock</span>
                         ) : null}
                         {shelter.hasBearCables ? (
                           <span className="px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-600 text-[10px]">Bear Cables</span>
@@ -303,16 +300,16 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                         {shelter.hasShowers ? (
                           <span className="px-1.5 py-0.5 rounded bg-blue-500/15 text-blue-600 text-[10px]">Showers</span>
                         ) : null}
-                        {shelter.hasRestroom ? (
-                          <span className="px-1.5 py-0.5 rounded bg-blue-500/15 text-blue-600 text-[10px]">Restroom</span>
-                        ) : null}
-                        {(shelter.hasViews || shelter.hasViewsEast || shelter.hasViewsWest) ? (
+                        {(shelter.hasViews || shelter.hasViewsEast) ? (
                           <span className="px-1.5 py-0.5 rounded bg-purple-500/15 text-purple-600 text-[10px]">
-                            {shelter.hasViewsEast && shelter.hasViewsWest ? 'Views E/W' : shelter.hasViewsEast ? 'Views East' : shelter.hasViewsWest ? 'Views West' : 'Views'}
+                            {shelter.hasViewsEast ? 'Views East' : 'Views'}
                           </span>
                         ) : null}
                         {shelter.hasSummit ? (
                           <span className="px-1.5 py-0.5 rounded bg-orange-500/15 text-orange-600 text-[10px]">Summit</span>
+                        ) : null}
+                        {shelter.hasFee ? (
+                          <span className="px-1.5 py-0.5 rounded bg-orange-500/15 text-orange-600 text-[10px]">Fee</span>
                         ) : null}
                         {shelter.hasWarning ? (
                           <span className="px-1.5 py-0.5 rounded bg-red-500/15 text-red-600 text-[10px]">Warning</span>
