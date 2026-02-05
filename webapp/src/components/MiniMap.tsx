@@ -343,8 +343,8 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
               {/* Pulsing ring - behind the icon */}
               <motion.div
                 className="absolute w-4 h-4 rounded-full bg-[var(--primary)]"
-                animate={{ scale: [1, 2], opacity: [0.5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut" }}
+                animate={{ scale: [1, 2], opacity: [0.4, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut", repeatDelay: 0.3 }}
               />
               {/* Icon container */}
               <div className="relative w-4 h-4 rounded-full bg-[var(--primary)] border border-white shadow-sm flex items-center justify-center">
