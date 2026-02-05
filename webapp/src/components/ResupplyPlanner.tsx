@@ -144,17 +144,17 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl p-6 overflow-hidden"
+        className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl p-4"
       >
-        <div className="flex items-center justify-between gap-4">
-          <div className="shrink-0">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
             <p className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)]">Current Position</p>
             <p className="text-2xl font-bold text-[var(--foreground)]">Mile {formatMile(currentMile)}</p>
           </div>
           {nearestResupply && (
-            <div className="text-right min-w-0">
+            <div className="sm:text-right">
               <p className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)]">Next Resupply</p>
-              <p className="text-sm font-semibold text-[var(--foreground)] truncate">{nearestResupply.name}</p>
+              <p className="text-sm font-semibold text-[var(--foreground)]">{nearestResupply.name}</p>
               <p className="text-xs text-[var(--foreground-muted)]">
                 {formatDistance(Math.abs(nearestResupply.mile - currentMile))} ahead
               </p>
