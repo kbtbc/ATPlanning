@@ -252,7 +252,7 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
                     <div className="flex items-baseline gap-2 flex-wrap">
                       <span className="text-sm font-medium text-[var(--foreground)]">{resupply.name}</span>
                       <span className="text-xs text-[var(--foreground-muted)]">
-                        {formatDistance(distanceAhead)} ahead @mm {formatMile(resupply.mile)}
+                        in {formatDistance(distanceAhead)} (mile {formatMile(resupply.mile)})
                         {offTrailText && <> • <em>{offTrailText}</em></>}
                       </span>
                     </div>
