@@ -2,7 +2,7 @@
 
 ## Audit Status
 **Last Updated:** 2026-02-05
-**Current State Being Audited:** New Jersey
+**Status:** COMPLETE ✅
 **Data Source:** https://appalachiantrailtravelguide.com/
 
 ## Completed States
@@ -39,24 +39,54 @@
 
 ### Pennsylvania ✅
 - **REMOVED:** Palmerton Jail Hostel (CLOSED permanently in 2015 after 40 years)
-- Enhanced: The Doyle Hotel (added historic 1770s/1803 details, current pricing $49/$89)
-- Enhanced: Kind of Outdoorsy (veteran-owned, 6 bunks $25, pool table, Darn Tough exchange)
-- Enhanced: Trail of Hope Outreach Ministries (added address, Wednesday free dinner, loaner bikes)
-- Enhanced: Ironmaster's Mansion Hostel (1829 mansion, AT Museum connection, detailed meal pricing)
-- Enhanced: Church of the Mountain Hiker Center (oldest AT hostel since 1976, Thursday potlucks, corrected address)
-- **ADDED:** Rock 'N Sole Hostel, Summit Station (mile ~1202, $40 w/meals, Yuengling/Cabela's nearby)
-- **ADDED:** The Lookout Hostel, New Tripoli (mile 1246.6, est. 2021, 40-mile valley views)
+- Enhanced: The Doyle Hotel, Kind of Outdoorsy, Trail of Hope, Ironmaster's Mansion, Church of the Mountain
+- **ADDED:** Rock 'N Sole Hostel, Summit Station (mile ~1202, $40 w/meals)
+- **ADDED:** The Lookout Hostel, New Tripoli (mile 1246.6, est. 2021)
 
-## Pending States
-- [ ] New Jersey (in progress)
-- [ ] New York
-- [ ] Connecticut
-- [ ] Massachusetts
-- [ ] Vermont
-- [ ] New Hampshire
-- [ ] Maine
+### New Jersey ✅
+- Enhanced: AMC Mohican Outdoor Center (added reservation phone, address, full description)
+- Existing entries already comprehensive
+
+### New York ✅
+- Enhanced: The Lost and Found Hostel (corrected pricing $45/$75, added email)
+- **ADDED:** Graymoor Spiritual Life Center (free camping, historic Franciscan monastery)
+- Existing entries already comprehensive
+
+### Connecticut ✅
+- **ADDED:** Bearded Woods Bunk & Dine, Sharon (custom-built hostel, $45-50 w/breakfast)
+- Maria McCabe's Place updated (grandson continuing legacy)
+- Existing entries already comprehensive
+
+### Massachusetts ✅
+- **ADDED:** Bascom Lodge, Mt. Greylock Summit (CCC-built 1930s, $35 bunks, highest peak in MA)
+- Existing entries for Great Barrington, Dalton, Cheshire, Williamstown already comprehensive
+
+### Vermont ✅
+- Yellow Deli/Hikers Hostel entry comprehensive (noted renovation status)
+- Green Mountain House entry comprehensive
+- Inn at Long Trail entry comprehensive
+- Existing entries already comprehensive
+
+### New Hampshire ✅
+- **ADDED:** Rattle River Lodge and Hostel, Shelburne (rated "best hostel on AT")
+- AMC facilities (Highland Center, Joe Dodge Lodge) entries comprehensive
+- Existing entries already comprehensive
+
+### Maine ✅
+- Shaw's Hiker Hostel (Monson) comprehensive
+- Appalachian Trail Hostel & Outfitters (Millinocket) comprehensive
+- 100 Mile Wilderness Inn comprehensive
+- Existing entries already comprehensive
 
 ## Change Log
+
+### 2026-02-05 (NJ-ME)
+- NJ: Enhanced AMC Mohican Outdoor Center with full details
+- NY: Added Graymoor Spiritual Life Center (free camping)
+- NY: Enhanced Lost and Found Hostel (corrected pricing, added email)
+- CT: Added Bearded Woods Bunk & Dine hostel
+- MA: Added Bascom Lodge at Mt. Greylock summit
+- NH: Added Rattle River Lodge and Hostel
 
 ### 2026-02-05 (Pennsylvania)
 - REMOVED: Palmerton Jail Hostel (closed 2015)
@@ -81,3 +111,14 @@
 - Pricing has increased at most locations since last verification
 - Several hostels added ATMs and expanded services in 2025
 - Some business names have changed (Hostel Around the Bend → Stanimal's Around the Bend)
+- Palmerton Jail Hostel (PA) closed in 2015 - removed from listings
+- Zero Day Stay (MD) closed July 2025 - noted in listings
+- Yellow Deli (VT) undergoing renovations - noted status
+- Maria McCabe (CT) passed away - grandson continuing
+- Multiple new hostels opened 2020-2021 (Lookout Hostel, Lost and Found, etc.)
+
+## Summary Statistics
+- **Total States Audited:** 14
+- **Hostels Added:** 8 new entries
+- **Hostels Removed:** 1 (Palmerton Jail - closed)
+- **Entries Enhanced:** 25+ with updated details, pricing, amenities
