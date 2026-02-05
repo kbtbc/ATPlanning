@@ -52,10 +52,10 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
 
   const getQualityConfig = (quality: ResupplyPoint['resupplyQuality']) => {
     const config = {
-      major_town: { bg: 'bg-emerald-500' },
-      trail_town: { bg: 'bg-blue-500' },
-      on_trail: { bg: 'bg-purple-500' },
-      limited: { bg: 'bg-amber-500' },
+      major_town: { bg: 'bg-[var(--category-major-town)]' },
+      trail_town: { bg: 'bg-[var(--category-trail-town)]' },
+      on_trail: { bg: 'bg-[var(--category-on-trail)]' },
+      limited: { bg: 'bg-[var(--category-limited)]' },
     };
     return config[quality] || config.limited;
   };
@@ -144,7 +144,7 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl p-4"
+        className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl p-5"
       >
         <div className="flex items-center justify-between">
           <div>
@@ -190,22 +190,22 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO' }: Resuppl
                   </p>
                   <div className="space-y-1.5">
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                      <div className="w-2 h-2 rounded-full bg-[var(--category-major-town)]" />
                       <span className="text-xs text-[var(--foreground)]">Major Town</span>
                       <span className="text-[10px] text-[var(--foreground-muted)]">– Full services</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-blue-500" />
+                      <div className="w-2 h-2 rounded-full bg-[var(--category-trail-town)]" />
                       <span className="text-xs text-[var(--foreground)]">Trail Town</span>
                       <span className="text-[10px] text-[var(--foreground-muted)]">– Basic services</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-purple-500" />
+                      <div className="w-2 h-2 rounded-full bg-[var(--category-on-trail)]" />
                       <span className="text-xs text-[var(--foreground)]">On Trail</span>
                       <span className="text-[10px] text-[var(--foreground-muted)]">– Hostel/outfitter</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-amber-500" />
+                      <div className="w-2 h-2 rounded-full bg-[var(--category-limited)]" />
                       <span className="text-xs text-[var(--foreground)]">Limited</span>
                       <span className="text-[10px] text-[var(--foreground-muted)]">– Mail drop recommended</span>
                     </div>

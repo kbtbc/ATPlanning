@@ -85,10 +85,10 @@ function ResupplyItem({ resupply, onSetStart, onResupplyClick }: ResupplyItemPro
         <div className="flex items-start gap-2">
           <div className={cn(
             'w-6 h-6 rounded-full flex items-center justify-center shrink-0',
-            resupply.resupplyQuality === 'major_town' && 'bg-green-500',
-            resupply.resupplyQuality === 'trail_town' && 'bg-blue-500',
-            resupply.resupplyQuality === 'on_trail' && 'bg-purple-500',
-            resupply.resupplyQuality === 'limited' && 'bg-yellow-500'
+            resupply.resupplyQuality === 'major_town' && 'bg-[var(--category-major-town)]',
+            resupply.resupplyQuality === 'trail_town' && 'bg-[var(--category-trail-town)]',
+            resupply.resupplyQuality === 'on_trail' && 'bg-[var(--category-on-trail)]',
+            resupply.resupplyQuality === 'limited' && 'bg-[var(--category-limited)]'
           )}>
             <Package className="w-3 h-3 text-white" />
           </div>
@@ -161,14 +161,14 @@ function QualityBadge({ quality }: { quality: 'major_town' | 'trail_town' | 'on_
     on_trail: 'On Trail',
     limited: 'Limited',
   };
+  const styles = {
+    major_town: 'bg-[var(--category-major-town-bg)] text-[var(--category-major-town)]',
+    trail_town: 'bg-[var(--category-trail-town-bg)] text-[var(--category-trail-town)]',
+    on_trail: 'bg-[var(--category-on-trail-bg)] text-[var(--category-on-trail)]',
+    limited: 'bg-[var(--category-limited-bg)] text-[var(--category-limited)]',
+  };
   return (
-    <span className={cn(
-      'badge font-medium',
-      quality === 'major_town' && 'bg-green-100 text-green-700',
-      quality === 'trail_town' && 'bg-blue-100 text-blue-700',
-      quality === 'on_trail' && 'bg-purple-100 text-purple-700',
-      quality === 'limited' && 'bg-yellow-100 text-yellow-700'
-    )}>
+    <span className={cn('badge font-medium', styles[quality])}>
       {labels[quality]}
     </span>
   );

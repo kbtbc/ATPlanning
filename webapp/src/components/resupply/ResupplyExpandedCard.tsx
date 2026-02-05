@@ -93,10 +93,10 @@ export function ResupplyExpandedCard({
   }, [businesses, filter]);
 
   const qualityConfig = {
-    major_town: { color: 'text-emerald-500', label: 'Major Town' },
-    trail_town: { color: 'text-blue-500', label: 'Trail Town' },
-    on_trail: { color: 'text-purple-500', label: 'On Trail' },
-    limited: { color: 'text-amber-500', label: 'Limited' },
+    major_town: { color: 'text-[var(--category-major-town)]', label: 'Major Town' },
+    trail_town: { color: 'text-[var(--category-trail-town)]', label: 'Trail Town' },
+    on_trail: { color: 'text-[var(--category-on-trail)]', label: 'On Trail' },
+    limited: { color: 'text-[var(--category-limited)]', label: 'Limited' },
   };
 
   const quality = qualityConfig[resupply.resupplyQuality];

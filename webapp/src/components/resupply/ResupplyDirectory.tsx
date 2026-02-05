@@ -57,7 +57,7 @@ export function ResupplyDirectory({ onSelectResupply }: ResupplyDirectoryProps) 
               placeholder="Search..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 py-1.5 text-sm rounded-lg border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] focus:outline-none focus:border-[var(--accent)]"
+              className="w-full pl-10 pr-3 py-1.5 text-sm rounded-lg border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] focus:outline-none focus:border-[var(--accent)]"
             />
           </div>
           <select
@@ -105,10 +105,10 @@ export function ResupplyDirectory({ onSelectResupply }: ResupplyDirectoryProps) 
                 <div className="flex items-center gap-2 min-w-0">
                   <span className={cn(
                     'w-2 h-2 rounded-full shrink-0',
-                    resupply.resupplyQuality === 'major_town' && 'bg-green-500',
-                    resupply.resupplyQuality === 'trail_town' && 'bg-blue-500',
-                    resupply.resupplyQuality === 'on_trail' && 'bg-purple-500',
-                    resupply.resupplyQuality === 'limited' && 'bg-yellow-500'
+                    resupply.resupplyQuality === 'major_town' && 'bg-[var(--category-major-town)]',
+                    resupply.resupplyQuality === 'trail_town' && 'bg-[var(--category-trail-town)]',
+                    resupply.resupplyQuality === 'on_trail' && 'bg-[var(--category-on-trail)]',
+                    resupply.resupplyQuality === 'limited' && 'bg-[var(--category-limited)]'
                   )} />
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
@@ -125,15 +125,7 @@ export function ResupplyDirectory({ onSelectResupply }: ResupplyDirectoryProps) 
                 </div>
 
                 <div className="flex items-center gap-2 shrink-0">
-                  <span className={cn(
-                    'px-1.5 py-0.5 text-[10px] font-medium rounded',
-                    resupply.resupplyQuality === 'major_town' && 'bg-green-100 text-green-700',
-                    resupply.resupplyQuality === 'trail_town' && 'bg-blue-100 text-blue-700',
-                    resupply.resupplyQuality === 'on_trail' && 'bg-purple-100 text-purple-700',
-                    resupply.resupplyQuality === 'limited' && 'bg-yellow-100 text-yellow-700'
-                  )}>
-                    {resupply.resupplyQuality}
-                  </span>
+                  <QualityBadge quality={resupply.resupplyQuality} />
                   {isExpanded ? (
                     <ChevronUp className="w-4 h-4 text-[var(--foreground-muted)]" />
                   ) : (
@@ -223,6 +215,26 @@ function ServiceTag({ children }: { children: React.ReactNode }) {
   return (
     <span className="px-1.5 py-0.5 text-[10px] bg-[var(--background)] text-[var(--foreground-muted)] rounded border border-[var(--border-light)]">
       {children}
+    </span>
+  );
+}
+
+function QualityBadge({ quality }: { quality: 'major_town' | 'trail_town' | 'on_trail' | 'limited' }) {
+  const labels = {
+    major_town: 'Major Town',
+    trail_town: 'Trail Town',
+    on_trail: 'On Trail',
+    limited: 'Limited',
+  };
+  const styles = {
+    major_town: 'bg-[var(--category-major-town-bg)] text-[var(--category-major-town)]',
+    trail_town: 'bg-[var(--category-trail-town-bg)] text-[var(--category-trail-town)]',
+    on_trail: 'bg-[var(--category-on-trail-bg)] text-[var(--category-on-trail)]',
+    limited: 'bg-[var(--category-limited-bg)] text-[var(--category-limited)]',
+  };
+  return (
+    <span className={cn('px-1.5 py-0.5 text-[10px] font-medium rounded', styles[quality])}>
+      {labels[quality]}
     </span>
   );
 }
