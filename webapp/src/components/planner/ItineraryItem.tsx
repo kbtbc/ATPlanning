@@ -30,45 +30,68 @@ export function ItineraryItem({ item, onSetStart, onResupplyClick }: ItineraryIt
 }
 
 function ShelterItem({ shelter, onSetStart }: { shelter: Shelter; onSetStart: (mile: number) => void }) {
+  // Check if shelter is closed (capacity 0 or specific closed indicators in notes)
+  const isClosed = shelter.capacity === 0 || shelter.notes?.includes('REMOVED') || shelter.notes?.includes('Closed');
+
   return (
-    <div className="card flex items-center justify-between">
-      <div className="flex items-center gap-2">
-        <div className="w-6 h-6 flex items-center justify-center">
-          <Home className="w-5 h-5 text-[var(--shelter-color)]" />
+    <div className={cn("card", isClosed && "opacity-60")}>
+      <div className="flex items-start justify-between">
+        <div className="flex items-start gap-2">
+          <div className="w-6 h-6 flex items-center justify-center shrink-0 mt-0.5">
+            <Home className={cn("w-5 h-5", isClosed ? "text-[var(--foreground-muted)]" : "text-[var(--shelter-color)]")} />
+          </div>
+          <div>
+            <p className={cn("font-medium text-sm", isClosed && "line-through")}>{shelter.name}</p>
+            <p className="text-xs text-[var(--foreground-muted)]">
+              Mile {formatMile(shelter.mile)} · {shelter.elevation.toLocaleString()} ft
+              {shelter.capacity ? ` · ${shelter.capacity} spots` : ''}
+            </p>
+          </div>
         </div>
-        <div>
-          <p className="font-medium text-sm">{shelter.name}</p>
-          <p className="text-xs text-[var(--foreground-muted)]">
-            Mile {formatMile(shelter.mile)} · {shelter.elevation.toLocaleString()} ft
-          </p>
-        </div>
-      </div>
-      <div className="flex items-center gap-2">
-        <div className="flex flex-wrap gap-1">
-          {shelter.hasWater && (
-            <span className="badge bg-[var(--water-color)]/15 text-[var(--water-color)]">Water</span>
-          )}
-          {shelter.hasPrivy && (
-            <span className="badge bg-[var(--stone-light)]/30 text-[var(--stone)]">Privy</span>
-          )}
-          {shelter.isTenting && (
-            <span className="badge bg-[var(--stone-light)]/30 text-[var(--stone)]">Tent</span>
-          )}
-          {shelter.isHammockFriendly && (
-            <span className="badge bg-[var(--stone-light)]/30 text-[var(--stone)]">Hammock</span>
-          )}
-          {shelter.hasBearProtection && (
-            <span className="badge bg-[var(--stone-light)]/30 text-[var(--stone)]">Bear</span>
-          )}
-          {shelter.hasShowers && (
-            <span className="badge bg-[var(--water-color)]/15 text-[var(--water-color)]">Shower</span>
-          )}
+        <div className="flex items-center gap-2 shrink-0">
           {shelter.hasWarning && (
-            <span className="badge bg-red-500/15 text-red-500">Warning</span>
+            <span className="badge bg-red-500/15 text-red-500">⚠️</span>
           )}
+          <SetStartButton onClick={() => onSetStart(shelter.mile)} />
         </div>
-        <SetStartButton onClick={() => onSetStart(shelter.mile)} />
       </div>
+      {/* Amenity badges */}
+      <div className="flex flex-wrap gap-1 mt-1.5 ml-8">
+        {shelter.hasWater && (
+          <span className="badge bg-[var(--water-color)]/15 text-[var(--water-color)]">Water</span>
+        )}
+        {shelter.hasSeasonalWater && (
+          <span className="badge bg-sky-500/15 text-sky-600">Seasonal</span>
+        )}
+        {shelter.hasPrivy && (
+          <span className="badge bg-[var(--stone-light)]/30 text-[var(--stone)]">Privy</span>
+        )}
+        {shelter.isTenting && (
+          <span className="badge bg-[var(--stone-light)]/30 text-[var(--stone)]">Tent</span>
+        )}
+        {shelter.isHammockFriendly && (
+          <span className="badge bg-emerald-500/15 text-emerald-600">Hammock</span>
+        )}
+        {shelter.hasBearProtection && (
+          <span className="badge bg-amber-500/15 text-amber-600">Bear</span>
+        )}
+        {shelter.hasShowers && (
+          <span className="badge bg-blue-500/15 text-blue-600">Shower</span>
+        )}
+        {shelter.hasViews && (
+          <span className="badge bg-purple-500/15 text-purple-600">Views</span>
+        )}
+        {shelter.hasSwimming && (
+          <span className="badge bg-cyan-500/15 text-cyan-600">Swim</span>
+        )}
+        {shelter.hasFee && (
+          <span className="badge bg-orange-500/15 text-orange-600">Fee</span>
+        )}
+      </div>
+      {/* Notes - similar to resupply notes */}
+      {shelter.notes && (
+        <p className="text-xs text-[var(--foreground-muted)] mt-1.5 ml-8 italic leading-relaxed">{shelter.notes}</p>
+      )}
     </div>
   );
 }

@@ -255,47 +255,53 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
             const yPos = getYPosition(elevation);
             const isActive = activeTooltip === `shelter-${shelter.id}`;
 
+            // Smart tooltip positioning: left-align near left edge, right-align near right edge
+            const tooltipAlign = xPos < 20 ? 'left' : xPos > 80 ? 'right' : 'center';
+            const tooltipTransform = tooltipAlign === 'left' ? 'translateX(0)' : tooltipAlign === 'right' ? 'translateX(-100%)' : 'translateX(-50%)';
+            const tooltipLeft = tooltipAlign === 'left' ? '0' : tooltipAlign === 'right' ? '100%' : '50%';
+
+            // Check if shelter is closed
+            const isClosed = shelter.capacity === 0 || shelter.notes?.includes('REMOVED') || shelter.notes?.includes('Closed');
+
             return (
               <div
                 key={shelter.id}
-                className="absolute transform -translate-x-1/2 -translate-y-1/2 group z-10 cursor-pointer"
+                className={cn("absolute transform -translate-x-1/2 -translate-y-1/2 group z-10 cursor-pointer", isClosed && "opacity-50")}
                 style={{ left: `${xPos}%`, top: `${yPos}%` }}
                 onClick={(e) => {
                   e.stopPropagation();
                   setActiveTooltip(isActive ? null : `shelter-${shelter.id}`);
                 }}
               >
-                <Home className="w-4 h-4 text-[var(--shelter-color)] drop-shadow-sm" />
+                <Home className={cn("w-4 h-4 drop-shadow-sm", isClosed ? "text-[var(--foreground-muted)]" : "text-[var(--shelter-color)]")} />
                 <div className={cn(
-                  "absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 transition-opacity z-30 pointer-events-none",
+                  "absolute bottom-full mb-2 transition-opacity z-30 pointer-events-none",
                   isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                )}>
-                  <div className="bg-[var(--background)] border border-[var(--border)] rounded px-2 py-1.5 text-xs whitespace-nowrap shadow-lg">
-                    <div className="font-medium">{shelter.name}</div>
+                )} style={{ left: tooltipLeft, transform: tooltipTransform }}>
+                  <div className="bg-[var(--background)] border border-[var(--border)] rounded px-2 py-1.5 text-xs shadow-lg min-w-[180px] max-w-[280px]">
+                    <div className={cn("font-medium", isClosed && "line-through")}>{shelter.name}</div>
                     <div className="text-[var(--foreground-muted)] flex items-center gap-2">
                       <span>mi {formatMile(shelter.mile)}</span>
                       <span>·</span>
                       <span>{shelter.elevation.toLocaleString()} ft</span>
+                      {shelter.capacity ? <><span>·</span><span>{shelter.capacity} spots</span></> : null}
                     </div>
-                    {(shelter.hasWater || shelter.hasSeasonalWater || shelter.hasPrivy || shelter.capacity || shelter.hasBearProtection || shelter.hasShowers || shelter.hasViews || shelter.isHammockFriendly || shelter.hasSummit || shelter.hasFee || shelter.hasWarning) ? (
-                      <div className="flex flex-wrap items-center gap-1 mt-1 pt-1 border-t border-[var(--border-light)] max-w-[220px]">
+                    {(shelter.hasWater || shelter.hasSeasonalWater || shelter.hasPrivy || shelter.hasBearProtection || shelter.hasShowers || shelter.hasViews || shelter.isHammockFriendly || shelter.hasSummit || shelter.hasFee || shelter.hasWarning) ? (
+                      <div className="flex flex-wrap items-center gap-1 mt-1 pt-1 border-t border-[var(--border-light)]">
                         {shelter.hasWater ? (
                           <span className="px-1.5 py-0.5 rounded bg-[var(--water-color)]/15 text-[var(--water-color)] text-[10px]">Water</span>
                         ) : null}
                         {shelter.hasSeasonalWater ? (
-                          <span className="px-1.5 py-0.5 rounded bg-sky-500/15 text-sky-600 text-[10px]">Seasonal Water</span>
+                          <span className="px-1.5 py-0.5 rounded bg-sky-500/15 text-sky-600 text-[10px]">Seasonal</span>
                         ) : null}
                         {shelter.hasPrivy ? (
                           <span className="px-1.5 py-0.5 rounded bg-[var(--stone-light)]/30 text-[var(--stone)] text-[10px]">Privy</span>
                         ) : null}
-                        {shelter.capacity ? (
-                          <span className="px-1.5 py-0.5 rounded bg-[var(--background-tertiary)] text-[var(--foreground-muted)] text-[10px]">{shelter.capacity} spots</span>
-                        ) : null}
                         {shelter.hasBearProtection ? (
-                          <span className="px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-600 text-[10px]">Bear Protection</span>
+                          <span className="px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-600 text-[10px]">Bear</span>
                         ) : null}
                         {shelter.hasShowers ? (
-                          <span className="px-1.5 py-0.5 rounded bg-blue-500/15 text-blue-600 text-[10px]">Showers</span>
+                          <span className="px-1.5 py-0.5 rounded bg-blue-500/15 text-blue-600 text-[10px]">Shower</span>
                         ) : null}
                         {shelter.hasViews ? (
                           <span className="px-1.5 py-0.5 rounded bg-purple-500/15 text-purple-600 text-[10px]">Views</span>
@@ -303,17 +309,20 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                         {shelter.isHammockFriendly ? (
                           <span className="px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-600 text-[10px]">Hammock</span>
                         ) : null}
-                        {shelter.hasSummit ? (
-                          <span className="px-1.5 py-0.5 rounded bg-orange-500/15 text-orange-600 text-[10px]">Summit</span>
-                        ) : null}
                         {shelter.hasFee ? (
                           <span className="px-1.5 py-0.5 rounded bg-orange-500/15 text-orange-600 text-[10px]">Fee</span>
                         ) : null}
                         {shelter.hasWarning ? (
-                          <span className="px-1.5 py-0.5 rounded bg-red-500/15 text-red-600 text-[10px]">Warning</span>
+                          <span className="px-1.5 py-0.5 rounded bg-red-500/15 text-red-600 text-[10px]">⚠️</span>
                         ) : null}
                       </div>
                     ) : null}
+                    {/* Show truncated notes in tooltip */}
+                    {shelter.notes && (
+                      <p className="text-[10px] text-[var(--foreground-muted)] mt-1 pt-1 border-t border-[var(--border-light)] line-clamp-2 italic">
+                        {shelter.notes}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -327,6 +336,11 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
             const yPos = getYPosition(elevation);
             const isActive = activeTooltip === `resupply-${resupply.id}`;
 
+            // Smart tooltip positioning: left-align near left edge, right-align near right edge
+            const tooltipAlign = xPos < 20 ? 'left' : xPos > 80 ? 'right' : 'center';
+            const tooltipTransform = tooltipAlign === 'left' ? 'translateX(0)' : tooltipAlign === 'right' ? 'translateX(-100%)' : 'translateX(-50%)';
+            const tooltipLeft = tooltipAlign === 'left' ? '0' : tooltipAlign === 'right' ? '100%' : '50%';
+
             return (
               <div
                 key={resupply.id}
@@ -339,10 +353,10 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
               >
                 <Package className="w-4 h-4 text-[var(--resupply-color)] drop-shadow-sm" />
                 <div className={cn(
-                  "absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 transition-opacity z-30 pointer-events-none",
+                  "absolute bottom-full mb-2 transition-opacity z-30 pointer-events-none",
                   isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                )}>
-                  <div className="bg-[var(--background)] border border-[var(--border)] rounded px-2 py-1.5 text-xs whitespace-nowrap shadow-lg">
+                )} style={{ left: tooltipLeft, transform: tooltipTransform }}>
+                  <div className="bg-[var(--background)] border border-[var(--border)] rounded px-2 py-1.5 text-xs shadow-lg min-w-[150px]">
                     <div className="font-medium">{resupply.name}</div>
                     <div className="text-[var(--foreground-muted)] flex items-center gap-2">
                       <span>mi {formatMile(resupply.mile)}</span>
@@ -369,6 +383,11 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
             const yPos = getYPosition(elevation);
             const isActive = activeTooltip === `feature-${feature.id}`;
 
+            // Smart tooltip positioning: left-align near left edge, right-align near right edge
+            const tooltipAlign = xPos < 20 ? 'left' : xPos > 80 ? 'right' : 'center';
+            const tooltipTransform = tooltipAlign === 'left' ? 'translateX(0)' : tooltipAlign === 'right' ? 'translateX(-100%)' : 'translateX(-50%)';
+            const tooltipLeft = tooltipAlign === 'left' ? '0' : tooltipAlign === 'right' ? '100%' : '50%';
+
             return (
               <div
                 key={feature.id}
@@ -381,10 +400,10 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
               >
                 <Info className="w-3.5 h-3.5 text-[var(--category-limited)] drop-shadow-sm" />
                 <div className={cn(
-                  "absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 transition-opacity z-30 pointer-events-none",
+                  "absolute bottom-full mb-2 transition-opacity z-30 pointer-events-none",
                   isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                )}>
-                  <div className="bg-[var(--background)] border border-[var(--border)] rounded px-2 py-1.5 text-xs whitespace-nowrap shadow-lg max-w-[200px]">
+                )} style={{ left: tooltipLeft, transform: tooltipTransform }}>
+                  <div className="bg-[var(--background)] border border-[var(--border)] rounded px-2 py-1.5 text-xs shadow-lg max-w-[200px]">
                     <div className="font-medium truncate">{feature.name}</div>
                     <div className="text-[var(--foreground-muted)] flex items-center gap-2">
                       <span>mi {formatMile(feature.mile)}</span>
