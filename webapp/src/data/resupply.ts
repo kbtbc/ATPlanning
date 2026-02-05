@@ -2395,7 +2395,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 1.0,
     directionFromTrail: 'W',
     shuttleAvailable: false,
-    notes: 'LIMITED - WHITE MOUNTAINS: Crawford Notch at mile 1852. AMC Highland Center (3.8 mi W) - premier White Mountain lodge at southern base of Presidential Range. Lodging, home-cooked meals (dinner/breakfast included), L.L. Bean Gear Room, store, mail drops, charging, WiFi. **PRESIDENTIAL RANGE AHEAD** - Mt. Washington (6,288 ft, highest peak in Northeast, extreme weather danger). AMC High Mountain Huts system: 8 huts spaced day-hike apart along AT through Whites, meals included, \$75+. Between Lincoln (44 miles back) and Pinkham Notch (26 miles ahead). AMC Hiker Shuttle connects lodges and towns. Critical prep point for Presidential traverse. Weather can turn deadly - prepare carefully.',
+    notes: 'LIMITED - WHITE MOUNTAINS: Crawford Notch at mile 1852. AMC Highland Center (3.8 mi W) - premier White Mountain lodge at southern base of Presidential Range. Lodging, home-cooked meals (dinner/breakfast included), L.L. Bean Gear Room, store, mail drops, charging, WiFi. **PRESIDENTIAL RANGE AHEAD** - Mt. Washington (6,288 ft, highest peak in Northeast, extreme weather danger). AMC High Mountain Huts system: 8 huts spaced day-hike apart along AT through Whites, meals included, $75+. Between Lincoln (44 miles back) and Pinkham Notch (26 miles ahead). AMC Hiker Shuttle connects lodges and towns. Critical prep point for Presidential traverse. Weather can turn deadly - prepare carefully.',
     services: ['grocery', 'lodging', 'camping', 'restaurants', 'laundry', 'showers', 'ice cream', 'mail drops']
   },
   {
@@ -2418,7 +2418,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'limited',
     distanceFromTrail: 0,
     shuttleAvailable: true,
-    notes: 'ON TRAIL - PINKHAM NOTCH VISITOR CENTER: Mile 1878. Joe Dodge Lodge open year-round. Meals available to non-guests (AYCE breakfast 6:30-9am, lunch to order, dinner Sat-Thu 5pm family style, Fri buffet). Coin-op showers 24hrs, coin laundry, \$2 towel rental. Fuel by ounce (Coleman, alcohol), canister fuel, free WiFi. AMC Hiker Shuttle 7:30am daily. Mail drops accepted. **WILDCAT MOUNTAIN & PRESIDENTIAL RANGE** - brutal terrain. Between Crawford Notch (26 miles back) and Gorham (21 miles ahead). After Mt. Washington summit (extreme weather - hikers have died from hypothermia in summer). Popular recovery stop. Gorham 10.7 mi W for full services.',
+    notes: 'ON TRAIL - PINKHAM NOTCH VISITOR CENTER: Mile 1878. Joe Dodge Lodge open year-round. Meals available to non-guests (AYCE breakfast 6:30-9am, lunch to order, dinner Sat-Thu 5pm family style, Fri buffet). Coin-op showers 24hrs, coin laundry, $2 towel rental. Fuel by ounce (Coleman, alcohol), canister fuel, free WiFi. AMC Hiker Shuttle 7:30am daily. Mail drops accepted. **WILDCAT MOUNTAIN & PRESIDENTIAL RANGE** - brutal terrain. Between Crawford Notch (26 miles back) and Gorham (21 miles ahead). After Mt. Washington summit (extreme weather - hikers have died from hypothermia in summer). Popular recovery stop. Gorham 10.7 mi W for full services.',
     services: ['grocery', 'outfitter', 'lodging', 'restaurant', 'laundry', 'showers', 'shuttle', 'wifi', 'fuel', 'mail drops']
   },
   {
