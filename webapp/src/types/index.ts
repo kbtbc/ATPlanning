@@ -66,6 +66,7 @@ export interface Shelter extends Waypoint {
   hasJunction?: boolean;       // + - intersection, junction, side trail
   hasSummit?: boolean;         // Z - summit or crest
   hasWarning?: boolean;        // | - warning or caution (fire bans, restrictions)
+  warningText?: string;        // Pre-extracted warning description for tooltip display
   hasShowers?: boolean;        // S - shower available (~10 shelters)
   hasRestroom?: boolean;       // R - public restroom
   hasFee?: boolean;            // $ - overnight/caretaker fee

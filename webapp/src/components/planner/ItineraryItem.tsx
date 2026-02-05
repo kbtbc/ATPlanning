@@ -82,7 +82,7 @@ function ShelterItem({ shelter, onSetStart }: { shelter: Shelter; onSetStart: (m
         </div>
         <div className="flex items-center gap-2 shrink-0">
           {shelter.hasWarning && (
-            <WarningBadge notes={shelter.notes} />
+            <WarningBadge warningText={shelter.warningText} notes={shelter.notes} />
           )}
           <SetStartButton onClick={() => onSetStart(shelter.mile)} />
         </div>
@@ -224,9 +224,11 @@ function SetStartButton({ onClick }: { onClick: (e: React.MouseEvent) => void })
   );
 }
 
-function WarningBadge({ notes }: { notes?: string }) {
+function WarningBadge({ warningText, notes }: { warningText?: string; notes?: string }) {
   const [showTooltip, setShowTooltip] = useState(false);
-  const warningText = extractWarningText(notes);
+
+  // Prefer pre-extracted warningText, fall back to extraction from notes
+  const displayText = warningText || extractWarningText(notes);
 
   return (
     <div
@@ -235,16 +237,13 @@ function WarningBadge({ notes }: { notes?: string }) {
       onMouseLeave={() => setShowTooltip(false)}
       onTouchStart={() => setShowTooltip(!showTooltip)}
     >
-      <span className="badge bg-red-500/15 text-red-500 cursor-help flex items-center gap-1">
-        <AlertTriangle className="w-3 h-3" />
+      <span className="badge bg-red-500/15 text-red-500 cursor-help flex items-center justify-center w-6 h-6 p-0">
+        <AlertTriangle className="w-3.5 h-3.5" />
       </span>
       {showTooltip && (
-        <div className="absolute z-50 bottom-full right-0 mb-2 w-64 p-2 bg-[var(--background-secondary)] border border-[var(--border)] rounded-lg shadow-lg text-xs text-[var(--foreground)] leading-relaxed">
-          <div className="flex items-start gap-1.5">
-            <AlertTriangle className="w-3.5 h-3.5 text-red-500 shrink-0 mt-0.5" />
-            <span>{warningText}</span>
-          </div>
-          <div className="absolute bottom-0 right-4 translate-y-1/2 rotate-45 w-2 h-2 bg-[var(--background-secondary)] border-r border-b border-[var(--border)]" />
+        <div className="absolute z-50 bottom-full right-0 mb-2 w-64 p-2.5 bg-[var(--background-secondary)] border border-[var(--border)] rounded-lg shadow-lg text-xs leading-relaxed">
+          <p className="text-[var(--foreground)]">{displayText}</p>
+          <div className="absolute bottom-0 right-3 translate-y-1/2 rotate-45 w-2 h-2 bg-[var(--background-secondary)] border-r border-b border-[var(--border)]" />
         </div>
       )}
     </div>
