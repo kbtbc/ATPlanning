@@ -1266,7 +1266,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   },
   {
     id: 'rs-029c',
-    name: 'New Tripoli, PA (Route 309)',
+    name: 'The Lookout Hostel',
     mile: 1246.6,
     soboMile: 950.8,
     elevation: 1400,
@@ -1285,7 +1285,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 0.1,
     directionFromTrail: 'E',
     shuttleAvailable: false,
-    notes: 'The Lookout Hostel (est. 2021) on 20 acres with 40-mile views. Bunkroom sleeps 6, private room available. Full kitchen, showers, laundry, tenting. Pet friendly. TEXT to book (do not call).',
+    notes: 'Located in New Tripoli, PA (Route 309). The Lookout Hostel (est. 2021) on 20 acres with 40-mile views. Bunkroom sleeps 6, private room available. Full kitchen, showers, laundry, tenting. Pet friendly. TEXT to book (do not call).',
     services: ['hostel', 'showers', 'laundry', 'tenting']
   },
   {
@@ -1974,7 +1974,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   },
   {
     id: 'mt-greylock-ma',
-    name: 'Mt. Greylock Summit, MA',
+    name: 'Bascom Lodge',
     mile: 1593.0,
     soboMile: 604.4,
     elevation: 3491,
@@ -1992,7 +1992,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'on_trail',
     distanceFromTrail: 0,
     shuttleAvailable: false,
-    notes: 'Bascom Lodge - historic CCC-built (1930s) lodge at summit of Mt. Greylock, highest peak in MA! Open May-Oct. Dorm bunks $35/night, private rooms $100-125. Breakfast included. Casual café for hikers. Reservations recommended.',
+    notes: 'Located at Mt. Greylock Summit, MA. Bascom Lodge - historic CCC-built (1930s) lodge at summit of Mt. Greylock, highest peak in MA! Open May-Oct. Dorm bunks $35/night, private rooms $100-125. Breakfast included. Casual café for hikers. Reservations recommended.',
     services: ['hostel', 'lodging', 'restaurant', 'breakfast']
   },
   {
