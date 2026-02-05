@@ -338,16 +338,18 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
-              className="relative"
+              className="relative flex items-center justify-center"
             >
-              <div className="w-4 h-4 rounded-full bg-[var(--primary)] border border-white shadow-sm flex items-center justify-center">
+              {/* Pulsing ring - behind the icon */}
+              <motion.div
+                className="absolute w-4 h-4 rounded-full bg-[var(--primary)]"
+                animate={{ scale: [1, 2, 1], opacity: [0.5, 0, 0.5] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              />
+              {/* Icon container */}
+              <div className="relative w-4 h-4 rounded-full bg-[var(--primary)] border border-white shadow-sm flex items-center justify-center">
                 <MapPin className="w-2.5 h-2.5 text-white" />
               </div>
-              <motion.div
-                className="absolute inset-0 rounded-full bg-[var(--primary)]"
-                animate={{ scale: [1, 1.4, 1], opacity: [0.3, 0, 0.3] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
             </motion.div>
           </div>
 
