@@ -158,9 +158,12 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
 
       {/* Mini Map Container */}
       <div
-        className="relative bg-[var(--background)] rounded-lg border border-[var(--border-light)] overflow-hidden h-48"
+        className="relative bg-[var(--background)] rounded-lg border border-[var(--border-light)] h-48"
+        style={{ overflow: 'visible' }}
         onClick={() => setActiveTooltip(null)}
       >
+        {/* SVG container with clipping */}
+        <div className="absolute inset-0 overflow-hidden rounded-lg">
           {/* Elevation Profile Background */}
           <svg
             className="absolute inset-0 w-full h-full"
@@ -204,8 +207,9 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
               vectorEffect="non-scaling-stroke"
             />
           </svg>
+        </div>
 
-          {/* Day Markers - vertical dashed lines showing day boundaries */}
+        {/* Day Markers - vertical dashed lines showing day boundaries */}
           {dayMarkers.map((marker) => {
             const xPos = getXPosition(marker.mile);
             if (xPos < 0 || xPos > 100) return null;
