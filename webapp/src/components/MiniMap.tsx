@@ -315,7 +315,7 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                 className="absolute transform -translate-x-1/2 -translate-y-1/2 group z-10"
                 style={{ left: `${xPos}%`, top: `${yPos}%` }}
               >
-                <Info className="w-3.5 h-3.5 text-[var(--feature-color)] drop-shadow-sm" />
+                <Info className="w-3.5 h-3.5 text-[var(--category-limited)] drop-shadow-sm" />
                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity z-30 pointer-events-none">
                   <div className="bg-[var(--background)] border border-[var(--border)] rounded px-2 py-1.5 text-xs whitespace-nowrap shadow-lg max-w-[200px]">
                     <div className="font-medium truncate">{feature.name}</div>
@@ -391,7 +391,7 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
               visibility.features ? 'opacity-100' : 'opacity-50'
             )}
           >
-            <Info className="w-3 h-3 text-[var(--feature-color)]" />
+            <Info className="w-3 h-3 text-[var(--category-limited)]" />
             Info
           </button>
         </div>
