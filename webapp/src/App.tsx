@@ -34,7 +34,7 @@ function App() {
     <div className="min-h-screen bg-[var(--background)]">
       {/* Header */}
       <header className="sticky top-0 z-40 bg-[var(--background)]/90 backdrop-blur-md border-b border-[var(--border)]">
-        <div className="max-w-3xl mx-auto px-5 sm:px-8 py-3">
+        <div className="max-w-3xl mx-auto px-6 sm:px-8 lg:px-10 py-3">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center gap-3">
@@ -120,7 +120,7 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-3xl mx-auto px-5 sm:px-8 py-5">
+      <main className="max-w-3xl mx-auto px-6 sm:px-8 lg:px-10 py-5">
         <AnimatePresence mode="wait">
           {activeTab === 'planner' && (
             <motion.div key="planner" {...pageTransition}>
