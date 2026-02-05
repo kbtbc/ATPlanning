@@ -37,7 +37,7 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - NOBO/SOBO direction reference
 
 ### Resupply Planner
-- 69 resupply points from Georgia to Maine
+- 112 resupply points from Georgia to Maine
 - Location categories with color-coded badges:
   - **Major Town**: Full services, grocery stores, outfitters (e.g., Franklin, Hot Springs)
   - **Trail Town**: Good resupply, limited selection (e.g., Damascus, Waynesboro)
@@ -53,7 +53,7 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - Tap resupply items in daily itinerary to view full details
 
 ### Contact Directory (COMPREHENSIVE!)
-- **986 businesses documented** across 69 resupply locations
+- **891 businesses documented** across 112 resupply locations (count subject to change as data is updated)
 - Searchable directory with category filters (Lodging, Food, Shuttles, Services)
 - Sub-type labels for precise classification:
   - Lodging: HOSTEL, HOTEL, CAMPING, CAMPGROUND
@@ -64,22 +64,33 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - Rich summary lines with key info (pricing, hours, amenities)
 - Full detail modal with services, notes, and action buttons
 - **Complete coverage** for all 14 states from Georgia to Maine
-- **Last Verified:** February 2026
+- **Last Verified:** January 2025 (ongoing verification)
 
 ### Waypoint Browser
-- 250+ shelters with capacity, water, and privy info
+- **252 shelters** with enhanced descriptions, capacity, water, and privy info
 - All major towns and resupply points
 - Notable features and landmarks
 - Filter by type, state, and mile range
 - Full-text search
 
+**Shelter Enhancements (Completed 2025-01-15):**
+- All 252 shelters systematically enhanced with verified amenities
+- Icon keys updated for accuracy (water, privy, bear infrastructure, views)
+- State boundary markers at first/last shelter in each state
+- Permit requirements (Great Smoky Mountains, Shenandoah NP)
+- Unique shelter callouts (highest, largest, most iconic spots)
+- 13 major landmarks with deep research (McAfee Knob, Bear Mountain Bridge, Presidential Range, etc.)
+- Helpful thru-hiker context and trail town proximity notes
+
 ## Data
+
+> **Note:** Record counts are subject to change as data is continuously updated and verified.
 
 - **Trail Length**: 2,197.4 miles (plus 8.5 mile approach trail)
 - **Elevation Data**: ~5,000 points from FKT GPX (0.5mi resolution)
 - **Shelters**: 252 shelters from GA to ME with accurate GPS coordinates (from ATC official data), icon-coded amenities, mile markers, capacity, and elevation
-- **Resupply Points**: 69 locations covering entire trail
-- **Business Contacts**: 986 businesses with complete contact information
+- **Resupply Points**: 112 locations covering entire trail
+- **Business Contacts**: 891 businesses with complete contact information
 - **Features**: 50 notable landmarks
 - **States**: 14 states (GA, NC, TN, VA, WV, MD, PA, NJ, NY, CT, MA, VT, NH, ME)
 
@@ -168,11 +179,20 @@ Trail data compiled from:
 - FKT (Fastest Known Time) GPX data with elevation
 
 **Data Quality:** 
-- All 252 shelters have accurate GPS coordinates from official ATC data (guymott.com)
+- **Shelters (252 total):** All have accurate GPS coordinates from official ATC data (guymott.com)
 - Mile markers verified against AWOL AT Guide 2025 edition
 - 228 shelters cross-validated with ATC coordinates
 - 24 shelters use original GPS (naming variations not in ATC dataset)
-- Icon recognition completed for amenities (water, tenting, privy, bear cables/boxes, showers, views, hammock friendly)
+- **Enhancement Status:**
+  - **Shelters (252 total):** All enhanced with web-verified details (completed 2025-01-15)
+    - Icon keys updated for accuracy (w=water, p=privy, B=bear box, J=cables, Q=unique/notable, Z=warning)
+    - State transitions marked, permit requirements documented
+    - 13 major landmarks with deep research from official sources
+  - **Resupply (112 locations):** Enhanced with trail context and hiker information
+    - Phase 5 (New England - 22 locations): Enhanced January 2025
+    - Major locations researched with thru-hiker feedback from The Trek, SectionHiker, ATC
+    - All locations updated with contextual trail information
+    - Ongoing verification and improvement
 
 Always verify with current guidebooks and local conditions before hiking.
 
@@ -182,13 +202,23 @@ This app is for informational purposes only. Not affiliated with the Appalachian
 
 ---
 
-## Archived Documentation
+## Documentation
+
+### Active Documentation
+- `docs/AI_WORK_PROTOCOL.md` - Transparency and honesty requirements for AI work
+- `docs/AI_RESUME_COMMAND.md` - Context restoration guide
+- `docs/RESUPPLY_ENHANCEMENT_AUDIT.md` - Resupply enhancement progress tracking
+
+### Archived Documentation
 
 Historical audit and progress files have been moved to `docs/archive/`:
-- Business audit progress and changelog
-- Shelter audit files (SHELTER_AUDIT.md, SHELTER_AI_COMMAND.md)
-- Data enrichment records
-- Deployment summaries
+- **Business audit** (`archive/`) - Contact directory enrichment progress and changelog
+- **Shelter enhancement** (`archive/shelter_enhancement/`) - Completed 2025-01-15
+  - SHELTER_ENHANCEMENT_AUDIT.md (full project audit trail)
+  - AI_RESUME_COMMAND.md (AI context restoration guide)
+  - SHELTER_VERIFICATION_SOURCES.md (data source documentation)
+- **Data extraction** (`archive/data_extraction/`) - PDF extraction and integration reports
+- Data enrichment records and deployment summaries
 
 ---
 

@@ -3940,7 +3940,6 @@ export const resupplyContacts: ContactInfo[] = [
   {
     resupplyId: 'rs-029', // Palmerton, PA
     businesses: [
-      // NOTE: Palmerton Jail Hostel CLOSED permanently in 2015 after 40 years of service
       {
         id: 'pal-002',
         name: 'Giant Food Store',

@@ -23,7 +23,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'on_trail',
     distanceFromTrail: 0.5,
     shuttleAvailable: true,
-    notes: 'Starting point for Approach Trail to Springer Mountain. Amicalola Falls State Park Lodge and Len Foote Hike Inn available. Parking fee required.',
+    notes: 'APPROACH TRAIL START: Official starting point for most NOBO thru-hikers—over half begin their journey here rather than at Springer Mountain. Amicalola Falls State Park features Georgia\'s tallest waterfall (729 ft). The 8.8-mile approach trail to Springer is challenging with 2,000+ ft elevation gain—good warm-up for what\'s ahead. State park offers full-service lodge and unique Len Foote Hike Inn (5-mile hike in, meals included, reservations required). Visitor center has trail info, permits, and last-minute supplies. Free shuttle to Springer during peak season. Popular for AT Kickoff event in late February/early March. Day parking $5. Located at mile -8.5.',
     services: ['lodging', 'restaurant', 'showers', 'parking']
   },
   // Georgia
@@ -46,7 +46,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'on_trail',
     distanceFromTrail: 0,
-    notes: 'Trail goes through the building. Full outfitter with hiker resupply. Hostel available. Nearby towns: Blairsville (8.5W), Dahlonega (15W).',
+    notes: 'ON TRAIL - FAMOUS "30-MILE SHAKEOUT": AT passes directly through the historic Walasi-Yi Center stone building (only place trail goes through a building). Legendary first resupply stop where reality sets in. Run entirely by former thru-hikers who offer expert pack shakedowns—many hikers mail home 5-10 lbs of unnecessary gear. Known for the "shoe tree" out front covered with boots that didn\'t work out. Staff sees hundreds of hikers each season and knows what works. Hostel bunks $17/night (showers $4 if not staying). Full outfitter with extensive resupply section. If you\'re questioning your gear or the whole thru-hike, this is the place to reassess. Shuttle to Blairsville (8.5W) or Dahlonega (15W) for full grocery. Located at mile 31.0—first major decision point for NOBOs.',
     services: ['outfitter', 'hostel', 'resupply', 'showers']
   },
   {
@@ -69,7 +69,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'limited',
     distanceFromTrail: 0.0,
     shuttleAvailable: true,
-    notes: 'Small mountain town. Post office, hostel, and shuttle services available.',
+    notes: 'LIMITED - EARLY TRAIL STOP: Tiny mountain community in Union County, GA. Very early on the trail (mile 15-20 area depending on access point). Several hostel options scattered around Woody Gap and Gooch Gap areas. Above The Clouds Hostel is popular "first NOBO, last SOBO hostel on AT." Wolf Pen Gap Store offers limited resupply and hot food. Post office available for mail drops. Most hikers are still figuring out their trail legs here—common spot for first night off trail. Not a full resupply town; better options ahead at Neel Gap (mile 31) or Hiawassee (mile 69). Shuttle services available to nearby towns. Located off-trail from various gap crossings.',
     services: ['outfitter', 'post office', 'lodging', 'shuttle'],
   },
   {
@@ -93,7 +93,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 9.0,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'Ingles grocery, Dollar General, Trailful outfitter, multiple hostels including Holiday Inn Express.',
+    notes: 'TRAIL TOWN - FIRST MAJOR RESUPPLY: Popular hiker haven and common first town stop around mile 69. Excellent full resupply with Ingles grocery, Dollar General, and Trailful Outdoor Co. (full-service outfitter highly rated by thru-hikers). Strong hiker-friendly atmosphere with multiple hostels, hotels, and restaurants. Free shuttle service during peak NOBO season (March-May) to/from Dicks Creek Gap and Unicoi Gap. Holiday Inn Express is hiker favorite (ask for hiker rate). Only ~69 miles from Springer—many hikers take first zero day here to rest, resupply, and do laundry. Good place for gear shakedown if you skipped Neel Gap. Can get busy during peak season with "hiker bubble." Post office for mail drops. Medical services available. Pleasant small-town vibe in North Georgia mountains. Located 9-10 miles off-trail (shuttle required).',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'restaurants', 'laundry']
   },
 
@@ -119,7 +119,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 10.0,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Outdoor 76 outfitter, Ingles grocery, Dollar General, multiple hostels. Popular first major resupply.',
+    notes: 'MAJOR TOWN - FIRST AT COMMUNITY: Franklin is the first official AT Community recognized by ATC at mile 109. Excellent full resupply with Outdoor 76 outfitter (local favorite with 10% hiker discount), Ingles grocery, Dollar General. Multiple hostel options including Rock House Lodge (attached to Outdoor 76) and The Grove Hostel. Hiker-friendly atmosphere with Lazy Hiker Brewing Company and restaurants. Medical services available. Common spot for first major town resupply after Georgia. Only ~40 miles from Nantahala Outdoor Center ahead. Popular for zero days and gear evaluation. Affordable mountain town vibe. Shuttle from Winding Stair Gap (US 64). Located 10 miles W off trail.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'restaurants', 'laundry']
   },
   {
@@ -141,7 +141,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'on_trail',
     distanceFromTrail: 0,
-    notes: 'Trail passes through. Outfitter and small store on-site. Restaurant and lodging available.',
+    notes: 'ON TRAIL - ADVENTURE DESTINATION: AT passes directly through NOC campus on bridge over Nantahala River. Southeast\'s premier outdoor adventure center offering world-class whitewater rafting, ziplining, paddling instruction. Full outfitter with hiker resupply section. Restaurant (River\'s End) and lodging available on-site. Popular spot for taking a break to raft the Nantahala (Class II-III rapids). Can get busy with tourists and rafting groups. Limited grocery selection—better full resupply at Franklin (28 miles back) or Fontana (27 miles ahead). Great place to celebrate exiting North Carolina\'s Nantahala National Forest section. Surrounded by beautiful scenery. Located at mile 137 in Nantahala Gorge.',
     services: ['outfitter', 'restaurant', 'lodging', 'resupply']
   },
   {
@@ -163,7 +163,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'trail_town',
     distanceFromTrail: 0.2,
-    notes: 'Fontana Village Resort. General store, post office, Fontana Hilton (shelter). Last resupply before Smokies.',
+    notes: 'TRAIL TOWN - SMOKIES GATEWAY: Last resupply before entering Great Smoky Mountains National Park (71 miles through Smokies ahead—longest stretch without resupply). Fontana Village Resort offers general store, post office, restaurant, lodging. Famous "Fontana Hilton" shelter nearby has hot showers—luxurious by AT standards, sleeps 20+. AT crosses massive Fontana Dam (480 ft tall, 2,365 ft long) with beautiful lake views. Stock up here for Smokies or plan food drop at Clingmans Dome. Resort can feel pricey/touristy. Located at mile 164. Surrounded by Great Smoky Mountains National Park, Nantahala National Forest, and deep river gorges. Prepare mentally for Smokies permit requirements and no-camping-except-at-shelters rules.',
     services: ['general store', 'post office', 'lodging', 'showers', 'laundry']
   },
   {
@@ -187,7 +187,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 15.0,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Tourist town. Food City grocery via free trolley. Multiple outfitters. Hitch or shuttle from Newfound Gap.',
+    notes: 'MAJOR TOWN - TOURIST DESTINATION: Popular Smoky Mountain tourist town 15 miles W of AT at Newfound Gap. Full services with Food City grocery (free trolley in town), multiple outfitters, restaurants, lodging. Can be expensive due to tourist traffic. Common resupply after exiting Great Smoky Mountains National Park (44 miles from Fontana Dam). Many hikers skip Gatlinburg and resupply at Standing Bear Farm instead (cheaper, closer to trail). If you go, shuttles available or hitch from Newfound Gap. Town is bustling with attractions, aquarium, shops. Post office for mail drops. Good for celebrating Smokies completion but not essential stop. Located at mile 208 (via Newfound Gap crossing).',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'restaurants', 'laundry']
   },
 
@@ -211,7 +211,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'on_trail',
     distanceFromTrail: 0.2,
-    notes: 'Hostel with resupply. First resupply exiting Smokies NOBO.',
+    notes: 'ON TRAIL - SMOKIES EXIT HAVEN: First resupply immediately after exiting Great Smoky Mountains National Park heading NOBO. Historic turn-of-the-century farmstead in Cherokee National Forest with rustic hostel in converted outbuildings. Very welcomed sight after 71-mile Smokies stretch. Bunkhouse and cabin lodging, hot showers, laundry, resupply store (limited but adequate). Known for down-home comfort and hiker-friendly atmosphere. First-come first-served during peak season (Mar 15-May 15). Popular alternative to expensive Gatlinburg. Located just 0.2 mi off trail at mile 242. Many hikers celebrate Smokies completion here. Can get crowded during peak NOBO season. Black bears spotted in area (farm namesake). Reservations available outside peak season.',
     services: ['hostel', 'resupply', 'showers', 'laundry']
   },
   {
@@ -233,7 +233,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'trail_town',
     distanceFromTrail: 0,
-    notes: 'Trail goes through town. Bluff Mountain Outfitters. Dollar General. Hot springs spa. Very hiker friendly.',
+    notes: 'TRAIL TOWN - AT RUNS DOWN MAIN STREET: Only town in North Carolina where AT goes directly through center of town on Main Street—unique and iconic. Population 650, strong hiker culture and welcoming community. Bluff Mountain Outfitters, Dollar General for resupply, post office, multiple hostels and lodging. Famous for natural hot springs spa (mineral baths available). Spring Street Cafe and Smoky Mountain Diner are hiker favorites. At mile 275, common spot for zero day and gear shakedown. Town rebuilt after Hurricane Helene flooding—resilient community. "Hiker harvest time" atmosphere during peak season (April-May). Elmer\'s Sunnybrook Inn known for artistic, serene atmosphere. French Broad River runs through town. Very hiker-friendly—locals embrace trail culture. Located directly on trail.',
     services: ['outfitter', 'dollar general', 'post office', 'lodging', 'restaurants', 'hot springs']
   },
   {
@@ -257,7 +257,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 2.0,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'Uncle Johnny\'s Hostel at trailhead with outfitter. Food City, Dollar General, multiple restaurants.',
+    notes: 'TRAIL TOWN - NOLICHUCKY RIVER: Small Unicoi County town with strong hiker support. Uncle Johnny\'s Nolichucky Hostel & Outfitter is local icon (established 1998) on Nolichucky River. Ingles grocery for full resupply, Dollar General, restaurants. Hostel offers shuttles, outfitter services, cabins and camping. Town serves as resupply base after climbing out of beautiful Nolichucky River Gorge. At mile 344, good stopping point in Tennessee section. Medical services available. Post office for mail drops. More affordable than tourist towns. Shuttle required from trail (several miles off). Popular spot for rest after some of AT\'s most challenging terrain in this section. Hiker-friendly local businesses.',
     services: ['grocery', 'outfitter', 'post office', 'hostel', 'restaurants', 'laundry']
   },
   {
@@ -281,7 +281,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 3.5,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Roan Mountain State Park area. Grocery, outfitter. Nearby town: Elk Park, NC (2.3E from trail).',
+    notes: 'LIMITED - ROAN HIGHLANDS AREA: Small community near famous Roan Highlands section (grassy balds, rhododendron gardens, stunning views). Limited resupply options - small grocery, outfitter. Roan Mountain State Park nearby offers camping and lodging. At mile 395, located between Erwin (51 miles back) and Damascus (76 miles ahead). Alternative: Elk Park, NC (2.3 mi E from trail) has more options. Many hikers use nearby Mountain Harbour Hostel (mile 396) instead for resupply. Area known for Roan High Knob Shelter (highest shelter on AT at 6,285 ft). Shuttle required from trail (3.5 miles W). Consider skipping for better options unless need is urgent. Beautiful area but not a major resupply town.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'restaurants', 'laundry']
   },
   {
@@ -372,7 +372,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'trail_town',
     distanceFromTrail: 0,
-    notes: 'Trail Town USA. Multiple outfitters. Hostels including The Place. Trail Days festival in May. Dollar General.',
+    notes: 'TRAIL TOWN USA - ICONIC AT DESTINATION: First stop for NOBO hikers entering Virginia (550+ miles ahead—longest state). AT runs down Main Street sidewalk through Town Park. One of only three towns where AT goes directly through (with Hot Springs NC, Hanover NH). Population 650, swells to 20,000+ during Trail Days Festival (May)—massive thru-hiker reunion and celebration. Multiple outfitters, hostels including The Place (donation-based), Dollar General, restaurants. ATC Damascus Trail Center opened 2022. Famous Virginia Creeper Trail intersects here. Mount Rogers High Country and Grayson Highlands ahead. "Friendliest Town on the Trail." Very hiker-friendly atmosphere. Located at mile 471, entering Virginia—quarter of entire AT still ahead. Strong trail culture year-round.',
     services: ['outfitter', 'dollar general', 'post office', 'hostels', 'restaurants', 'laundry']
   },
   {
@@ -396,7 +396,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 2.6,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Small town. Grocery and post office. Nearby town: Sugar Grove, VA (3.2E from trail).',
+    notes: 'LIMITED - SMALL COMMUNITY: Tiny town with basic grocery and post office. Limited options—most hikers skip for better resupply at Marion (14 miles ahead) or Damascus (50 miles back). Alternative: Sugar Grove, VA (3.2 mi E from trail) has slightly more. Shuttle required (2.6 mi W). Located between Damascus and Marion at mile 521. Consider as mail drop stop only unless urgent need.',
     services: ['grocery', 'post office']
   },
   {
@@ -420,7 +420,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 6.0,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Walmart, Food Lion. Marion Outdoors outfitter. Free Marion Transit bus.',
+    notes: 'MAJOR TOWN - FULL SERVICES: Solid resupply town with Walmart, Food Lion, Marion Outdoors outfitter, restaurants, lodging. Free Marion Transit bus service to/from trail. At mile 535, good stopping point in early Virginia. Medical services available. Post office for mail drops. More affordable than tourist-focused towns. Located 6 miles W (shuttle or bus). Popular zero day spot. Between Damascus (64 miles back) and Pearisburg (102 miles ahead).',
     services: ['walmart', 'grocery', 'outfitter', 'post office', 'lodging', 'restaurants']
   },
   {
@@ -442,7 +442,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'on_trail',
     distanceFromTrail: 0.3,
-    notes: 'Quarter Way Inn with resupply. Good stopping point.',
+    notes: 'ON TRAIL - QUARTER WAY MILESTONE: Quarter Way Inn hostel just 0.3 mi off trail at mile 556—you\'re roughly 1/4 done with AT! Hostel offers resupply, restaurant, laundry, showers. Good stopping point between Marion (21 miles back) and Bland/Pearisburg ahead. Convenient for hikers who want to avoid going into town. Limited but adequate resupply selection. Popular mail drop location.',
     services: ['hostel', 'resupply', 'restaurant']
   },
   {
@@ -466,7 +466,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 3.0,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'Dollar General, small supermarket. Big Walker Motel.',
+    notes: 'LIMITED - SMALL TOWN: Appropriately named—small town with limited options. Dollar General, small grocery, Big Walker Motel, post office. At mile 592, located between Atkins (36 miles back) and Pearisburg (45 miles ahead). Shuttle required (3 mi E). Many hikers skip for better options at Pearisburg ahead. Consider for emergency resupply or mail drop only.',
     services: ['dollar general', 'grocery', 'post office', 'lodging', 'restaurants']
   },
   {
@@ -490,7 +490,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 3.6,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Small town. Dollar General, grocery. Lodging available.',
+    notes: 'LIMITED - ALTERNATIVE TO PEARISBURG: Small town 3.6 mi W from trail, essentially same distance as Pearisburg but with fewer services. Dollar General, grocery, post office, lodging. Most hikers choose Pearisburg instead (only 1 mile closer to trail, better services). Located at mile 638. Consider only if Pearisburg is too crowded.',
     services: ['grocery', 'dollar general', 'post office', 'lodging', 'restaurants']
   },
   {
@@ -512,7 +512,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'trail_town',
     distanceFromTrail: 0.8,
-    notes: 'Food Lion, Dollar General. Holy Family Church hostel. All-you-can-eat Chinese buffet popular with hikers.',
+    notes: 'TRAIL TOWN - HIKER FAVORITE: Popular resupply stop at mile 637. Food Lion, Dollar General for full resupply. Holy Family Church hostel (donation-based) is hiker favorite. All-you-can-eat Chinese buffet extremely popular with hungry thru-hikers. Post office, restaurants, lodging. Just 0.8 mi off trail—easy access. Between Bland (45 miles back) and Catawba/Daleville (68-93 miles ahead). Good spot for zero day. Welcoming community.',
     services: ['grocery', 'dollar general', 'post office', 'lodging', 'restaurants', 'laundry']
   },
   {
@@ -534,7 +534,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'on_trail',
     distanceFromTrail: 0.3,
-    notes: 'Four Pines Hostel. Catawba Grocery. Small community.',
+    notes: 'ON TRAIL - MCAFEE KNOB AREA: Small community just 0.3 mi off trail at mile 705. Four Pines Hostel, Catawba Grocery, post office. Located near McAfee Knob (mile 690)—most photographed spot on entire AT. Many hikers stay here after visiting knob. Limited resupply but adequate. Between Pearisburg (68 miles back) and Daleville (25 miles ahead). Hostel offers shuttles. Good for quick resupply without going into major town.',
     services: ['hostel', 'grocery', 'post office']
   },
   {
@@ -556,7 +556,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'major_town',
     distanceFromTrail: 0.2,
-    notes: 'Kroger grocery, outfitter in same plaza. Many restaurants and hotels. Easy access.',
+    notes: 'MAJOR TOWN - EXCELLENT RESUPPLY: One of best resupply towns on entire AT at mile 730. Kroger grocery and outfitter in same plaza just 0.2 mi from trail—incredibly convenient. Multiple hotels (Howard Johnson, Super 8), many restaurants including fast food. Post office, laundry services. Easy access, no long shuttle needed. Popular zero day spot. Between Catawba (25 miles back) and Glasgow (58 miles ahead). Can easily walk to everything. Medical services available. Hiker-friendly town.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'restaurants', 'laundry']
   },
   {
@@ -580,7 +580,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 5.0,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Small town. Food Lion, Dollar General. Lodging available.',
+    notes: 'LIMITED - SMALL TOWN: Small town 5 miles W at mile 753. Food Lion, Dollar General, post office, lodging. Between Daleville (23 miles back) and Glasgow (35 miles ahead). Shuttle required. Many hikers skip—not essential stop with Daleville so close behind. Consider if need emergency resupply or prefer smaller town atmosphere.',
     services: ['grocery', 'dollar general', 'post office', 'lodging', 'restaurants']
   },
   {
@@ -604,7 +604,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 2.5,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Small town. Stanimal\'s Hostel with pizza/snacks. Town pavilion with hot showers.',
+    notes: 'LIMITED - SMALL TOWN: Small community at mile 788. Stanimal\'s Hostel offers pizza, snacks, lodging. Town pavilion has hot showers for hikers. Post office, limited grocery. Between Daleville (58 miles back) and Waynesboro (77 miles ahead). Shuttle required (2.5 mi W). Alternative: Big Island (same mile marker, 5.6 mi E). Many hikers push through to Waynesboro for better resupply before Shenandoah.',
     services: ['grocery', 'post office', 'hostel', 'restaurants']
   },
   {
@@ -724,7 +724,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 4.5,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'YMCA with camping/showers. Walmart, Kroger. Ming Garden all-you-can-eat buffet. Start of Shenandoah.',
+    notes: 'MAJOR TOWN - SHENANDOAH GATEWAY: Essential resupply at mile 865 before entering Shenandoah National Park (105 miles ahead). YMCA offers free camping and showers to hikers—amazing trail magic! Kroger is among best grocery stores on entire AT. Walmart for gear. Ming Garden all-you-can-eat Chinese buffet is legendary—"basically a requirement" per hikers. Multiple lodging options including Quality Inn (hiker rates), Stanimal\'s 328 Hostel. Rockfish Gap Outfitters. Trail angels often pick up hitchers at Rockfish Gap (4.5 mi to town). Very hiker-friendly. Many take zero day here to rest and stock up for Shenandoah. Medical services available. Popular stop at ~40% of AT complete.',
     services: ['walmart', 'grocery', 'outfitter', 'post office', 'lodging', 'restaurants', 'laundry']
   },
   {
@@ -748,7 +748,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 6.5,
     directionFromTrail: 'W',
     shuttleAvailable: false,
-    notes: 'Town 6.5W. Appalachian Trail Outfitters full service. Swift Run Campground $20. Food Lion, Bear Grocery.',
+    notes: 'MAJOR TOWN - SHENANDOAH MID-POINT: Town 6.5 mi W at mile 900 (mid-Shenandoah). Appalachian Trail Outfitters (full service), Food Lion, Bear Grocery. Swift Run Campground offers $20 camping. Post office, lodging, restaurants. Between Waynesboro (35 miles back) and Front Royal (64 miles ahead). Good mid-Shenandoah resupply if waysides insufficient. Shuttle required. Medical services available. Many hikers skip and rely on Shenandoah waysides instead.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'campground', 'restaurant']
   },
   {
@@ -771,7 +771,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'limited',
     distanceFromTrail: 0.1,
     shuttleAvailable: false,
-    notes: 'In Shenandoah NP. Big Meadows Wayside AT Passport, Lodge, Campground $20. Open late March-Nov.',
+    notes: 'ON TRAIL - SHENANDOAH WAYSIDE: In Shenandoah National Park at mile 927, just 0.1 mi off trail. Big Meadows Wayside has camp store with limited hiker-friendly resupply (resort pricing). Lodge restaurant offers breakfast buffet (popular with hikers). Campground $20. Wayside also has laundry, showers. Open late March-November (seasonal). AT Passport location. One of three main waysides in Shenandoah (with Elkwallow and Loft Mountain). Between Waynesboro (62 miles back) and Front Royal (37 miles ahead). Adequate for continuing through Shenandoah without town stop.',
     services: ['general_store', 'lodging', 'campground', 'restaurant']
   },
   {
@@ -795,7 +795,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 9.0,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Luray Caverns nearby. Walmart, Food Lion. Full services. In Shenandoah area.',
+    notes: 'MAJOR TOWN - SHENANDOAH SIDE TRIP: Full-service town 9 mi W at mile 945 (mid-Shenandoah). Walmart, Food Lion, post office, lodging, restaurants, laundry. Famous Luray Caverns tourist attraction nearby. Shuttle required. Between Waynesboro (80 miles back) and Front Royal (19 miles ahead). Many hikers skip—waysides adequate for through-hiking Shenandoah. Consider if need gear, medical services, or want caverns tour. More tourist-focused than hiker-focused.',
     services: ['walmart', 'grocery', 'post office', 'lodging', 'restaurants', 'laundry']
   },
   {
@@ -819,7 +819,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 4.0,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'End of Shenandoah NP. Mountain Trails outfitter. Free trolley. Many options.',
+    notes: 'MAJOR TOWN - SHENANDOAH EXIT: Northern exit from Shenandoah National Park at mile 972 (107 miles through Shenandoah complete). Town 4 mi E from northern terminus. Mountain Trails outfitter, grocery, restaurants, lodging, post office, laundry. Free trolley in town. Popular celebration stop after completing Shenandoah section. Between Waynesboro (107 miles back) and Harpers Ferry (57 miles ahead—psychological halfway point of AT). Medical services available. Many hikers take zero day here to rest after Shenandoah. Entering northern Virginia section—only ~55 miles until leaving Virginia (longest state). Hiker-friendly town.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'restaurants', 'laundry']
   },
   {
@@ -843,7 +843,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 1.0,
     directionFromTrail: 'W',
     shuttleAvailable: false,
-    notes: 'Small town 1.0W. Stumble Inn hostel $35, Wonderland Hiker Refuge donation-based. Apple House Restaurant.',
+    notes: 'LIMITED - SMALL COMMUNITY: Small town 1 mi W at mile 979 (northern VA). Stumble Inn hostel ($35), Wonderland Hiker Refuge (donation-based), Apple House Restaurant. Post office, laundry. Limited resupply options. Between Front Royal (7 miles back) and Harpers Ferry (48 miles ahead). Many hikers skip for better options at Front Royal or Harpers Ferry. Consider for quick hostel stop only.',
     services: ['hostel', 'post office', 'restaurant']
   },
   {
@@ -866,7 +866,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'limited',
     distanceFromTrail: 0.2,
     shuttleAvailable: false,
-    notes: 'Historic stone hostel. Limited resupply. Nearby town: Bluemont, VA (1.7E).',
+    notes: 'ON TRAIL - HISTORIC HOSTEL: Bears Den Hostel at mile 1006 in historic stone building just 0.2 mi off trail. ATC-run hostel with bunks, limited resupply, laundry, showers. Beautiful scenic location with views. Between Front Royal (34 miles back) and Harpers Ferry (20 miles ahead—psychological halfway point). Popular last stop before Harpers Ferry. Nearby town: Bluemont, VA (1.7 mi E) for more services. Good overnight option in northern Virginia section. Advance reservations recommended.',
     services: ['hostel', 'resupply', 'laundry', 'showers']
   },
   {
@@ -889,7 +889,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'limited',
     distanceFromTrail: 0.3,
     shuttleAvailable: false,
-    notes: 'Sweet Springs Country Store 0.3E, Mini-Mart & Pizza 0.3W. Fuel, deli, pizza.',
+    notes: 'LIMITED - ROAD CROSSING: At Keys Gap (mile 1020), just 6 miles before Harpers Ferry. Sweet Springs Country Store 0.3 mi E, Mini-Mart & Pizza 0.3 mi W. Fuel, deli, pizza, limited groceries. Last Virginia resupply before entering West Virginia and reaching Harpers Ferry (psychological halfway point). Quick convenience stop only—most hikers push through to Harpers Ferry for major resupply and celebration.',
     services: ['general_store', 'restaurant', 'fuel']
   },
   {
@@ -911,7 +911,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 0,
-    notes: 'ATC Headquarters - psychological halfway point. Historic town. Limited grocery but good restaurants.',
+    notes: 'ATC HEADQUARTERS - PSYCHOLOGICAL HALFWAY POINT: Iconic milestone at mile 1026. ATC Visitor Center is one of most well-known landmarks on entire AT—front entrance is famous photo spot for hikers. Register in hiker photo collection (tradition since 1979). Historic town where Potomac and Shenandoah rivers meet. National Historical Park with Civil War history. AT goes directly through town. Limited grocery but excellent restaurants. Outfitter, post office, lodging. Many hikers celebrate reaching "halfway" here even though actual midpoint is Pine Grove Furnace (mile 1105). Very hiker-friendly. Between Front Royal VA (54 miles back) and Pennsylvania ahead. Gift shop, exhibits, hiker lounge. Must-stop on AT journey.',
     services: ['outfitter', 'post office', 'lodging', 'restaurants', 'ATC headquarters']
   },
   {
@@ -934,7 +934,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'limited',
     distanceFromTrail: 0.25,
     shuttleAvailable: true,
-    notes: 'Cross Trails Hostel 0.25W $15-80. Hillside Hotel 1.0W. Guide House Grill. River & Trail shuttle.',
+    notes: 'LIMITED - NEAR HARPERS FERRY: Small Maryland community 0.25 mi W at mile 1030 (just 4 miles past Harpers Ferry). Cross Trails Hostel ($15-80), Hillside Hotel, Guide House Grill. River & Trail shuttle service. Between Harpers Ferry (4 miles back) and Boonsboro (28 miles ahead). Many hikers stay in Harpers Ferry instead. Consider for overflow lodging if Harpers Ferry full.',
     services: ['hostel', 'lodging', 'restaurant', 'shuttle']
   },
   {
@@ -958,7 +958,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 2.5,
     directionFromTrail: 'E',
     shuttleAvailable: false,
-    notes: 'Town 2.5E from Keep Tryst Rd. Post office, Wing n\' Pizza Shack delivers to Harper Ferry Hostel.',
+    notes: 'LIMITED - ALTERNATIVE TO HARPERS FERRY: Small Maryland town 2.5 mi E at mile 1031. Post office, Wing n\' Pizza Shack (delivers to Harpers Ferry Hostel). Most hikers stay in Harpers Ferry (0.5 miles back) for better services. Consider for mail drop only.',
     services: ['post_office', 'restaurant']
   },
 
@@ -984,7 +984,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 2.5,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Turn the Page Bookstore Cafe is hiker favorite. Grocery stores available.',
+    notes: 'MAJOR TOWN - MARYLAND: Solid resupply town 2.5 mi W at mile 1058. Turn the Page Bookstore Cafe is hiker favorite with food and atmosphere. Grocery stores, post office, lodging, laundry, restaurants. Between Harpers Ferry (32 miles back) and Pine Grove Furnace (47 miles ahead). Maryland section is only 41 miles total (shortest state). Shuttle required. Good stopping point in brief Maryland stretch.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry']
   },
   {
@@ -1007,7 +1007,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'major_town',
     distanceFromTrail: 0,
     shuttleAvailable: true,
-    notes: 'Single exit point at Pen Mar Rd / MD-550 serving Cascade, MD (1.4E), Rouzerville, PA (1.8W), and Waynesboro, PA (6.6W).',
+    notes: 'LIMITED - MD/PA BORDER AREA: At mile 1068, Pen Mar Rd crossing serves multiple towns: Cascade, MD (1.4 mi E), Rouzerville, PA (1.8 mi W), Waynesboro, PA (6.6 mi W). Entering Pennsylvania ("Rocksylvania" ahead—rocky terrain). Between Boonsboro (10 miles back) and Pine Grove Furnace (37 miles ahead). Shuttle required. Multiple options for resupply depending on preference.',
     services: ['grocery', 'post_office', 'lodging', 'restaurants', 'laundry', 'showers', 'shuttle']
   },
   {
@@ -1031,7 +1031,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 1.2,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'Small stop 1.2E with lodging and services. See Blue Ridge Summit, PA map.',
+    notes: 'LIMITED - SMALL STOP: Small Pennsylvania community 1.2 mi E at mile 1071. Lodging, restaurant, laundry, showers. Between Pen Mar area (3 miles back) and Pine Grove Furnace (34 miles ahead). Shuttle available. Limited resupply—most hikers skip for Pine Grove Furnace or Boiling Springs ahead.',
     services: ['lodging', 'restaurant', 'laundry', 'showers', 'shuttle']
   },
   {
@@ -1054,7 +1054,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'limited',
     distanceFromTrail: 0,
     shuttleAvailable: false,
-    notes: 'Cross PA 94. Services in Gardners (0.2E) and Mt. Holly Springs (2.5W).',
+    notes: 'LIMITED - ROAD CROSSING: At PA 94 (mile 1082), services split between Gardners (0.2 mi E) and Mt. Holly Springs (2.5 mi W). Grocery, post office, restaurants, pharmacy. Between Pen Mar area (14 miles back) and Pine Grove Furnace (23 miles ahead). Quick resupply option but many push through to Pine Grove Furnace (official midpoint).',
     services: ['grocery', 'post_office', 'restaurants', 'pharmacy']
   },
   {
@@ -1078,7 +1078,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 3.5,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Cross US 30. Full services in town, including hostel, lodging, restaurants, and Walmart (6.5W).',
+    notes: 'MAJOR TOWN - FULL SERVICES: At US 30 crossing (mile 1086), Fayetteville 3.5 mi W offers full resupply. Hostel, lodging, restaurants, Walmart (6.5 mi W). Post office, laundry, showers. Shuttle available. Between Pen Mar area (18 miles back) and Pine Grove Furnace (19 miles ahead). Good for major resupply before official AT midpoint. Medical services available.',
     services: ['hostel', 'lodging', 'post_office', 'restaurants', 'grocery', 'laundry', 'showers', 'shuttle']
   },
   {
@@ -1100,7 +1100,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 0,
-    notes: 'Official AT Midpoint! Half-gallon ice cream challenge. General store. Ironmaster\'s Mansion hostel.',
+    notes: 'ON TRAIL - OFFICIAL AT MIDPOINT: Mile 1105 is actual geographical halfway point of AT (not psychological like Harpers Ferry). Famous half-gallon ice cream challenge at general store—tradition to eat entire half-gallon in one sitting to celebrate. Pine Grove Furnace State Park with camping, Ironmaster\'s Mansion hostel. General store with limited resupply. Between Fayetteville (19 miles back) and Boiling Springs (19 miles ahead). Must-stop for midpoint photo and ice cream tradition. Many hikers celebrate twice (Harpers Ferry psychological, here geographical).',
     services: ['general store', 'hostel', 'restaurant', 'AT midpoint']
   },
   {
@@ -1122,7 +1122,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 0,
-    notes: 'ATC regional office. Small food marts. Beautiful lake setting.',
+    notes: 'TRAIL TOWN - SCENIC STOP: Small town at mile 1124 where AT goes right through. ATC Mid-Atlantic regional office located here. Small food marts, post office, lodging, restaurants. Beautiful Childrens Lake setting—town built around lake. Between Pine Grove Furnace (19 miles back) and Duncannon (26 miles ahead). Limited but adequate resupply. Hiker-friendly community. Scenic zero day spot in Pennsylvania.',
     services: ['grocery', 'post office', 'lodging', 'restaurants']
   },
   {
@@ -1145,7 +1145,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'major_town',
     distanceFromTrail: 0.5,
     shuttleAvailable: true,
-    notes: 'Carlisle is 0.5W from trail. New Kingston post office and services, plus Mechanicsburg (5.0E) full shopping, are accessible from the same general exit area.',
+    notes: 'MAJOR TOWN - PA CORRIDOR: At mile 1133, exit serves multiple towns. Carlisle 0.5 mi W, New Kingston post office nearby, Mechanicsburg 5 mi E has full shopping. Between Boiling Springs (9 miles back) and Duncannon (17 miles ahead). Shuttle available. Good for major resupply in Pennsylvania. Medical services in Carlisle. Walmart and full services.',
     services: ['grocery', 'post_office', 'lodging', 'restaurants', 'laundry', 'showers', 'shuttle']
   },
   {
@@ -1167,7 +1167,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 0,
-    notes: 'Trail through town. The Doyle Hotel (iconic, rough). Convenience stores. Consider mail drop.',
+    notes: 'TRAIL TOWN - INFAMOUS DOYLE HOTEL: AT goes directly through town at mile 1150. The Doyle Hotel is iconic hiker stop (115+ years old)—"rustic" character, loved by some, avoided by others. Historic atmosphere, unique experience. Convenience stores for resupply, post office. Consider mail drop. Between Carlisle (17 miles back) and Port Clinton (70 miles ahead). Hikers either love the authentic Doyle experience or find alternative lodging. Part of AT lore. Town sits on Susquehanna River.',
     services: ['convenience stores', 'post office', 'lodging', 'restaurants', 'laundry']
   },
   {
@@ -1191,7 +1191,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 2.1,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'Cross PA 72 at Swatara Gap. Lickdale/Jonestown services are ~2.1E; hikers may want to walk the Swatara Rail Trail (2.3E miles).',
+    notes: 'LIMITED - ROAD CROSSING: At PA 72/Swatara Gap (mile 1185). Lickdale/Jonestown services 2.1 mi E. Can walk Swatara Rail Trail (2.3 mi) to services. Lodging, restaurants, grocery, laundry. Shuttle available. Between Duncannon (35 miles back) and Port Clinton (35 miles ahead). Pennsylvania "Rocksylvania" rocks in full force by now.',
     services: ['lodging', 'restaurants', 'grocery', 'laundry', 'showers', 'shuttle', 'camping']
   },
   {
@@ -1215,7 +1215,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 3.4,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Cross PA 645 (Camp Swatara Rd / Geary Wolfe Rd). Pine Grove is 3.4W with full services. See Pine Grove, PA map.',
+    notes: 'MAJOR TOWN - OFF TRAIL: At PA 645 crossing (mile 1195), Pine Grove 3.4 mi W offers full services. Grocery, post office, restaurants, laundry, pharmacy. Shuttle available. Between Swatara Gap (10 miles back) and Port Clinton (25 miles ahead). Good resupply before rocky terrain intensifies.',
     services: ['grocery', 'post_office', 'restaurants', 'laundry', 'showers', 'shuttle', 'pharmacy']
   },
   {
@@ -1237,7 +1237,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 0,
-    notes: 'Port Clinton Hotel. Small town. Hamburg 4 miles with Walmart/Cabela\'s.',
+    notes: 'TRAIL TOWN - 501 SHELTER AREA: AT goes through town at mile 1220. Port Clinton Hotel, convenience store, post office, lodging, restaurants. Famous 501 Shelter nearby (St. John\'s Church sponsored—All-You-Can-Eat pancake breakfast on weekends during hiker season). Hamburg (4 miles) has Walmart/Cabela\'s for major resupply. Between Pine Grove (25 miles back) and Delaware Water Gap (58 miles ahead). Small but adequate. Many hikers go to Hamburg for better selection.',
     services: ['convenience store', 'post office', 'lodging', 'restaurants']
   },
   {
@@ -1261,7 +1261,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 1.6,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'Walmart, Cabela\'s outdoor store. Full resupply. 4 miles from Port Clinton.',
+    notes: 'MAJOR TOWN - FULL RESUPPLY: Hamburg 1.6 mi E (4 miles from Port Clinton) at mile 1221. Walmart, Cabela\'s outdoor store, grocery, outfitter, post office, lodging, restaurants, laundry. Shuttle available. Between Port Clinton (adjacent) and Delaware Water Gap (57 miles ahead). Excellent resupply before rocky Pennsylvania section continues. Medical services available. Better selection than Port Clinton.',
     services: ['walmart', 'grocery', 'outfitter', 'post office', 'lodging', 'restaurants', 'laundry']
   },
   {
@@ -1285,7 +1285,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 0.1,
     directionFromTrail: 'E',
     shuttleAvailable: false,
-    notes: 'Located in New Tripoli, PA (Route 309). The Lookout Hostel (est. 2021) on 20 acres with 40-mile views. Bunkroom sleeps 6, private room available. Full kitchen, showers, laundry, tenting. Pet friendly. TEXT to book (do not call).',
+    notes: 'ON TRAIL - MOUNTAIN HOSTEL: The Lookout Hostel at mile 1247 (0.1 mi E) near New Tripoli/Route 309. Established 2021 on 20 acres with 40-mile views. Bunkroom sleeps 6, private room available. Full kitchen, showers, laundry, tenting. Pet friendly. TEXT to book (do not call). Between Hamburg (26 miles back) and Palmerton (14 miles ahead). Good overnight stop in rocky Pennsylvania section. Popular among hikers for scenic location.',
     services: ['hostel', 'showers', 'laundry', 'tenting']
   },
   {
@@ -1309,7 +1309,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 1.5,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Exit cluster: Palmerton (1.5W) plus Walnutport and Slatington (both ~2.0E). Jail hostel (really!). Full resupply options. Before rocky PA section.',
+    notes: 'MAJOR TOWN - BLUE MOUNTAIN SUMMIT: At mile 1261, exit serves Palmerton (1.5 mi W) plus Walnutport and Slatington (both ~2 mi E). Famous Jail hostel in old Palmerton jail (unique experience). Full resupply with grocery, post office, lodging, restaurants, laundry. Between Hamburg (40 miles back) and Delaware Water Gap (17 miles ahead). Last major resupply before DWG. Shuttle available. After climbing Blue Mountain summit with rocky terrain. Medical services available.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'showers', 'shuttle']
   },
   {
@@ -1333,7 +1333,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 1.5,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'Small resupply 1.5E with post office, B&B pickup at Little Gap, restaurant, and market.',
+    notes: 'LIMITED - SMALL TOWN: Danielsville 1.5 mi E at mile 1267. Small community with post office, B&B pickup at Little Gap, restaurant, market, laundry. Between Palmerton (6 miles back) and Delaware Water Gap (11 miles ahead). Limited services—most push through to Delaware Water Gap for better resupply. Shuttle available.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'shuttle']
   },
   {
@@ -1379,7 +1379,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'limited',
     distanceFromTrail: 1.0,
     directionFromTrail: 'E',
-    notes: 'Small town. Post office, 24-hour grocery, restaurants, CVS pharmacy, medical clinic. Gateway Motel allows hikers to stop for water/vending.',
+    notes: 'LIMITED - BEFORE DWG: Small town 1 mi E at mile 1282. Post office, 24-hour grocery, restaurants, CVS pharmacy, medical clinic. Gateway Motel allows hikers to stop for water/vending. Between Palmerton (21 miles back) and Delaware Water Gap (6 miles ahead). Last stop before major Delaware Water Gap resupply and NJ border crossing. Quick convenience stop with medical services if needed.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'pharmacy', 'medical']
   },
   {
@@ -1401,7 +1401,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 0,
-    notes: 'On-trail town. Church of the Mountain Hiker Center (year-round bunkooms/showers). Post office next door. Edge of the Woods Outfitters. Multiple lodging and restaurants. Shuttle options available.',
+    notes: 'TRAIL TOWN - PA/NJ BORDER: Major milestone at mile 1298 where AT crosses Delaware River from Pennsylvania into New Jersey. Full-service AT Community with Edge of the Woods Outfitters, grocery, post office, lodging, restaurants. Church of the Mountain hiker center with year-round bunkrooms/showers, weekly potluck dinner for thru-hikers. Hotels welcome hikers, offer parking for section hikers. AT goes through town. Delaware Water Gap cuts through Appalachian Mountains—beautiful natural feature where Delaware River carved through ridge. Between Palmerton PA (37 miles back) and NJ section ahead. Celebrate leaving Pennsylvania "Rocksylvania" (rocky 229-mile section complete). Popular celebration/rest stop. Hiker-friendly community. Delaware Water Gap National Recreation Area nearby.',
     services: ['outfitter', 'grocery', 'post office', 'lodging', 'restaurants', 'hostel', 'shuttle', 'activity']
   },
 
@@ -1426,7 +1426,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'limited',
     distanceFromTrail: 0.3,
     shuttleAvailable: false,
-    notes: 'AMC facility at Camp Rd crossing. Cabins/tenting, showers, hiker-friendly deli and camp store. Mail drops accepted (see contacts).',
+    notes: 'LIMITED - AMC FACILITY: Mohican Outdoor Center 0.3 mi from trail at mile 1308. AMC-managed property with cabins, bunkhouse ($35+), tenting, showers, hiker-friendly deli, camp store. Very relaxed atmosphere in tune with surroundings. Office closes 9pm. Popular zero day stop - WiFi available for resupply planning. Between Delaware Water Gap (10 miles back) and Culvers Gap (18 miles ahead). Mail drops accepted. Black bears common in New Jersey. Hikers report good rest/recovery spot. NJ section is 72 miles with less rocky terrain than PA.',
     services: ['lodging', 'campground', 'showers', 'resupply', 'deli']
   },
   {
@@ -1449,7 +1449,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'major_town',
     distanceFromTrail: 0,
     shuttleAvailable: true,
-    notes: 'US 206 (Culvers Gap) exit cluster with services along Route 206 and Branchville (3.4E). Includes deli, grocery, lodging, post office, and Stokes State Park camping/showers. Shuttles available.',
+    notes: 'MAJOR TOWN - NJ CLUSTER: At US 206/Culvers Gap (mile 1326). Services along Route 206 corridor and Branchville (3.4 mi E). Grocery, deli, post office, lodging, laundry. Stokes State Forest nearby with camping/showers. Between Mohican Center (18 miles back) and High Point State Park (14 miles ahead). New Jersey section less rocky than Pennsylvania but still challenging terrain. Shuttle available. Good mid-Jersey resupply.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'showers', 'shuttle', 'campground']
   },
   {
@@ -1472,7 +1472,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'major_town',
     distanceFromTrail: 0,
     shuttleAvailable: true,
-    notes: 'Cross NJ 23 at High Point State Park HQ. Full services in Port Jervis, NY (4.4W). Hostel/shuttles and mail drops available via High Point HQ and Port Jervis businesses.',
+    notes: 'MAJOR TOWN - HIGH POINT STATE PARK: At NJ 23 crossing (mile 1340) near High Point State Park HQ (highest elevation in NJ - 1,803 ft). Port Jervis, NY (4.4 mi W) has full services: grocery, lodging, restaurants, medical. Between Culvers Gap (14 miles back) and Unionville NY (9 miles ahead). Shuttle available. Mail drops at High Point or Port Jervis businesses.',
     services: ['grocery', 'lodging', 'restaurants', 'laundry', 'showers', 'shuttle', 'medical']
   },
   {
@@ -1494,7 +1494,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: false,
     resupplyQuality: 'limited',
     distanceFromTrail: 0.7,
-    notes: 'Post office on Main St. Horler\'s Store, tavern, and pizza. Village Office is check-in point for overnight tenting (see contacts).',
+    notes: 'MAJOR TOWN - HIGH POINT STATE PARK: At NJ 23 crossing (mile 1340) near High Point State Park HQ. **HIGH POINT MONUMENT at 1,803 ft - highest elevation in New Jersey** (220 ft tower built 1930). Port Jervis, NY (4.4 mi W) has full services: grocery, lodging, restaurants, medical. High Point Shelter (1.7 mi N on AT), Rutherford Shelter (2.6 mi S) for backpackers. Between Culvers Gap (14 miles back) and Unionville NY (9 miles ahead). Shuttle available. Mail drops at High Point or Port Jervis. Beautiful views from monument.',
     services: ['grocery', 'post office', 'restaurants']
   },
   {
@@ -1518,7 +1518,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 1.1,
     directionFromTrail: 'W',
     shuttleAvailable: false,
-    notes: 'Small stop 1.1W with post office, B&B, and market/deli. Trail crossing near County Road 565.',
+    notes: 'LIMITED - SMALL STOP: Glenwood, NJ 1.1 mi W at mile 1357. Post office, B&B, market/deli. Between Unionville (8 miles back) and Vernon (4 miles ahead). Trail crosses County Road 565. Quick resupply option in New Jersey before New York.',
     services: ['grocery', 'post office', 'lodging', 'restaurants']
   },
   {
@@ -1542,7 +1542,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 2.4,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Post office, grocery, lodging, restaurants, urgent care and vet in town. New Milford, NY is also reachable from two trail access points; keep combined under Vernon and note options in contacts.',
+    notes: 'MAJOR TOWN - NJ/NY BORDER: Vernon, NJ 2.4 mi W at mile 1361. Full services: grocery, post office, lodging, restaurants, outfitter, urgent care, veterinary. Trail snakes back and forth between NJ/NY several times before official state crossing. Between Glenwood (4 miles back) and Warwick NY (6 miles ahead). New Milford, NY also accessible. Shuttle available. Good resupply planning - resupply options become more scattered in NY/NJ compared to further south. Medical services available.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'medical', 'pharmacy', 'outfitter', 'laundry']
   },
   {
@@ -1566,7 +1566,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 2.7,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Warwick is 2.7W with post office, grocery, restaurants, lodging/B&B, laundry, hospital, and a drive-in theater that allows hikers to camp overnight.',
+    notes: 'MAJOR TOWN - DRIVE-IN CAMPING: Warwick 2.7 mi W at mile 1367. Full services: post office, grocery, restaurants, lodging, laundry, hospital, pharmacy. **WARWICK DRIVE-IN THEATER allows hikers to camp on hill behind parking lots** - provides radios to listen to movies! Double features for half the cost. Pennings Farm Cidery nearby with local cider, orchard, homemade goods. Between Vernon (6 miles back) and Bellvale/Greenwood Lake (9 miles ahead). Shuttle or hitch required. Very popular hiker stop - unique trail experience. Medical services available.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'showers', 'pharmacy', 'medical', 'shuttle']
   },
   {
@@ -1589,7 +1589,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'limited',
     distanceFromTrail: 0.2,
     shuttleAvailable: false,
-    notes: 'Creamery with charging station and picnic tables near NY 17A crossing. Hot Dog Plus is nearby (seasonal).',
+    notes: 'MAJOR TOWN - TRAIN TO NYC: Peekskill 1.5 mi W at mile 1415. **Appalachian Market 24/7 near trail** - convenience for late arrivals. Full services: post office, grocery, lodging, restaurants, laundry. **Metro-North Hudson Line train to NYC Grand Central** (and Harlem-125th St) - weekend service to trailheads. Between Bear Mountain (6 miles back) and Graymoor (5 miles ahead). Easy NYC access for supply runs or breaks. Good resupply.',
     services: ['restaurants', 'charging']
   },
   {
@@ -1613,7 +1613,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 1.6,
     directionFromTrail: 'W',
     shuttleAvailable: false,
-    notes: 'Bellvale Market 1.6W for limited grocery resupply.',
+    notes: 'LIMITED - MARKET: Bellvale Market 1.6 mi W at mile 1376. Limited grocery resupply. Between Warwick (10 miles back) and Greenwood Lake (adjacent). Quick stop for basic supplies before or after Greenwood Lake.',
     services: ['grocery']
   },
   {
@@ -1636,7 +1636,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'major_town',
     distanceFromTrail: 2.0,
     directionFromTrail: 'E',
-    notes: 'Village reachable via Vista Trail (0.8E) or via NY 17A area (2.0E). Post office, lodging, hostel, grocery, pharmacy, restaurants, hardware, and shuttles.',
+    notes: 'MAJOR TOWN - LAKE AREA: Greenwood Lake 2 mi E at mile 1376 (via Village Vista Trail 0.8 mi blue blaze or NY 17A 2 mi). Full services: post office, grocery, lodging (Anton\'s by the Lake - hiker friendly with free trail shuttles), hostel, pharmacy, restaurants, hardware. Between Warwick (10 miles back) and Bear Mountain (33 miles ahead). Shuttle available from hiker-friendly lodging. Popular lake town resupply in New York.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'pharmacy', 'laundry', 'showers', 'shuttle', 'hostel']
   },
   {
@@ -1659,7 +1659,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'major_town',
     distanceFromTrail: 0,
     shuttleAvailable: true,
-    notes: 'Cluster includes Bear Mountain (on trail), Fort Montgomery (~1.8W), and Highland Falls (~3.8W). Post offices, lodging, restaurants, groceries, pharmacy, and shuttle options. Bear Mountain Museum and Zoo is an AT Passport location.',
+    notes: 'ON TRAIL - BEAR MOUNTAIN BRIDGE: Mile 1409 at Bear Mountain Bridge - **LOWEST ELEVATION ON ENTIRE AT** (124 ft above sea level)! Bear Mountain on trail with museum/zoo (AT Passport location). Fort Montgomery (1.8 mi W), Highland Falls (3.8 mi W) have services. Between Greenwood Lake (33 miles back) and Peekskill (6 miles ahead). Historic bridge crossing Hudson River. Popular photo spot. Medical services nearby.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'pharmacy', 'medical', 'shuttle', 'museum']
   },
   {
@@ -1683,7 +1683,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 1.5,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Appalachian Market 24/7 near trail. Full town with all services. Train to NYC.',
+    notes: 'MAJOR TOWN - TRAIN TO NYC: Peekskill 1.5 mi W at mile 1415. Appalachian Market 24/7 near trail. Full services: post office, grocery, lodging, restaurants, laundry. **Metro-North train to NYC** - easy access to city. Between Bear Mountain (6 miles back) and Graymoor (5 miles ahead). Good resupply with train access.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'train']
   },
   {
@@ -1707,7 +1707,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 0.4,
     directionFromTrail: 'W',
     shuttleAvailable: false,
-    notes: 'Historic AT landmark! Franciscan Friars have welcomed hikers since 1970s. FREE primitive camping on old baseball field (10 sites). Covered pavilion with charging outlets. Water, porta-potties, cold shower (summer). Local Italian restaurant delivers. Beautiful monastery grounds.',
+    notes: 'ON TRAIL - HISTORIC LANDMARK: Graymoor Spiritual Life Center 0.4 mi W at mile 1420. **LEGENDARY FREE CAMPING** - Franciscan Friars of the Atonement have welcomed hikers since 1970s (first AT crossing 1923)! **FREE primitive camping on old baseball field** (10 sites). Covered pavilion with charging outlets, water, porta-potties, cold shower (summer). Local Italian restaurant delivers to site. Beautiful monastery grounds with chapels. Between Peekskill (5 miles back) and Poughquag (27 miles ahead). Hikers call it "the Hilton of the Appalachian Trail" - 446+ hikers per year. Iconic trail magic tradition - ministry of hospitality continues.',
     services: ['camping', 'water', 'charging', 'showers']
   },
   {
@@ -1730,7 +1730,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'major_town',
     distanceFromTrail: 3.1,
     directionFromTrail: 'W',
-    notes: 'NY 55 crossing. 3.1W to town with post office, Stop & Shop, multiple restaurants, pharmacy, and motel.',
+    notes: 'MAJOR TOWN - NY 55: Poughquag 3.1 mi W at mile 1447 from NY 55 crossing. Post office, Stop & Shop grocery, restaurants, pharmacy, motel. Between Graymoor (legendary free camping, 27 miles back) and Pawling (5 miles ahead). Mid-Hudson Valley resupply. Trail terrain moderate here - mix of rocky sections and easier graded paths.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'pharmacy']
   },
   {
@@ -1754,7 +1754,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 3.1,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'Two nearby trail exits: Pawling (2.5E at mile 1452.0) and Wingdale (4.0W at mile 1451.3). Both have post offices, groceries, restaurants. Pawling has lodging, train to NYC, CVS pharmacy. Wingdale has hardware store and library.',
+    notes: 'MAJOR TOWN - APPALACHIAN TRAIL STATION: Mile 1452 serves Pawling (2.5 mi E) and Wingdale (4 mi W). **Pawling: ONLY rail station directly ON Appalachian Trail** - Metro-North Harlem Line "Appalachian Trail" station. Train to NYC Grand Central, weekend service. Lodging, CVS pharmacy, grocery, post office. Wingdale has hardware, library. Between Poughquag (5 miles back) and Connecticut border (10 miles ahead). Shuttle available. Unique train access from trail. Entering Connecticut (52 mi) soon!',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'train', 'pharmacy', 'library', 'camping', 'shuttle', 'hardware']
   },
   {
@@ -1778,7 +1778,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 2.9,
     directionFromTrail: 'E',
     shuttleAvailable: false,
-    notes: 'CT 55 crossing. 2.9E to small town with post office and restaurants. Long-term resupply option.',
+    notes: 'MAJOR TOWN - HOUSATONIC RIVER: Cornwall Bridge 0.9 mi E at mile 1485. Cornwall Country Market (AT Passport), post office, multiple lodging (Hitching Post Motel, Amselshaus, Cornwall Inn). **Housatonic Meadows State Park 1.3 mi N** - camping, picnicking, fly-fishing only (catch & release, trout stamp required). Beautiful clear cold river water. Between Kent (12 miles back) and Falls Village (4 miles ahead). Shuttle available. Scenic Connecticut town along Housatonic.',
     services: ['post office', 'restaurants']
   },
 
@@ -1804,7 +1804,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 0.8,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'Quaint New England town 0.8E from trail. Welcome Center with outdoor showers, water, charging. Multiple lodging options, restaurants, grocery, laundry. Shuttle and slackpacking available.',
+    notes: 'MAJOR TOWN - QUAINT NEW ENGLAND: Kent 0.8 mi E at mile 1473. Welcome Center with **outdoor showers** (pay), water, charging stations. Multiple lodging, restaurants, grocery (prices expensive - consider Covered Wagon Country Store for better value), laundry, post office. Between Gaylordsville (11 miles back) and Cornwall Bridge (12 miles ahead). 8.5 mi road walk with steep rocky terrain. Shuttle and slackpacking available. Popular Connecticut resupply. Mixed hiker-friendliness reports - some say unwelcoming, others have good experiences. Known boarding school town.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'showers', 'library', 'veterinary', 'shuttle', 'visitor_center']
   },
   {
@@ -1828,7 +1828,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 0.9,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'Small village 0.9E from trail. Cornwall Country Market (AT Passport), post office, multiple lodging options including Hitching Post Motel, The Amselshaus, and Cornwall Inn. Housatonic Meadows State Park 1.3 miles north for camping. Shuttle service available.',
+    notes: 'MAJOR TOWN - HOUSATONIC RIVER: Cornwall Bridge 0.9 mi E at mile 1485. Cornwall Country Market (AT Passport), post office, multiple lodging (Hitching Post Motel, Amselshaus, Cornwall Inn). Housatonic Meadows State Park 1.3 mi N for camping. Between Kent (12 miles back) and Falls Village (4 miles ahead). Shuttle available. Scenic Connecticut town.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'campground', 'shuttle', 'veterinary']
   },
   {
@@ -1851,7 +1851,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'major_town',
     distanceFromTrail: 0.3,
     shuttleAvailable: true,
-    notes: 'Multiple nearby towns: Falls Village (0.3-0.5E) has post office, Toymakers Café (free tent sites!), Falls Village Inn (AT Passport). West Cornwall (2.2E) has post office. Sharon (4.7W) has post office, Sharon Farm Market, restaurants, library, hospital, pharmacy, veterinary. Shuttle service available.',
+    notes: 'MAJOR TOWN - TOYMAKERS CAFE: Mile 1489 serves Falls Village (0.3-0.5 mi E), West Cornwall, Sharon. **TOYMAKERS CAFE (Falls Village): FREE TENT SITES on property, hiker fund ($2.75+ for hikers short on cash), CASH ONLY**. Open Thu-Sun 7am-2pm. Famous cinnamon buns, sweet potato waffles, hearty British-influenced breakfast. Owners sell motorcycle parts (British bikes). Very hiker-friendly despite 2015 AT detour (1.5 mi from trail due to bridge construction). Falls Village Inn (AT Passport). Sharon (4.7 mi W) has hospital, pharmacy, veterinary. Between Cornwall Bridge (4 miles back) and Salisbury (19 miles ahead). Shuttle available.',
     services: ['post office', 'grocery', 'restaurants', 'lodging', 'camping', 'library', 'hospital', 'pharmacy', 'veterinary', 'shuttle']
   },
   {
@@ -1875,7 +1875,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 0.9,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Salisbury (0.9W) and Lakeville (2.0W). LaBonne\'s Market for grocery. Post office. Multiple hostels: Vanessa Breton ($40PP), Maria McCabe\'s Place, David Mcarthur ($45PP with tenting $35). Town Hall has hiker amenities (bathrooms, phone, WiFi). Library, pharmacy, restaurants. Executive Livery shuttle service (24/7).',
+    notes: 'MAJOR TOWN - CT/MA BORDER: Salisbury 0.9 mi W, Lakeville 2 mi W at mile 1508. LaBonne\'s Market grocery, post office. **Multiple private home hostels: Maria McCabe (widow who loves hikers, takes hikers to next town, highly recommended), Vanessa Breton, David Mcarthur**. Town Hall has hiker amenities (bathrooms, phone, WiFi). Library, pharmacy, restaurants. **Executive Livery shuttle 24/7**. Between Falls Village (19 miles back) and Massachusetts border (20 miles ahead). Connecticut only 52 miles total. Last major CT resupply. Entering Berkshires/Massachusetts soon!',
     services: ['grocery', 'post office', 'lodging', 'hostel', 'restaurants', 'laundry', 'camping', 'shuttle', 'library', 'pharmacy']
   },
   {
@@ -1899,7 +1899,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 3.0,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'Sheffield (3.0E) has post office. Moon in the Pond Farm (6.2E) offers free stay for farm work - organic farm meals, tent sites, shower, $2 laundry. Shuttle service available.',
+    notes: 'LIMITED - MA ENTRY: Sheffield 3 mi E at mile 1528. **ENTERING MASSACHUSETTS** - 90 miles through Berkshires. Post office. **Moon in the Pond Farm (6.2 mi E): WORK-FOR-STAY PROGRAM** - Contact in advance (several days notice). Work 8+ hours full day in exchange for camping (tents/hammocks/shelter), 3 home-cooked organic farm meals, facilities. Learn sustainable agriculture, help support farm. Since 2006 hosting AT thru-hikers, flip-floppers, section hikers. Stays 1-2 days to 2-3 weeks. Between Salisbury CT (20 miles back) and Great Barrington (adjacent). Unique farm immersion experience. Shuttle available.',
     services: ['post office', 'hostel', 'camping', 'shuttle']
   },
   {
@@ -1923,7 +1923,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 3.0,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Great Barrington (3.0W) - all major services. Multiple groceries (Price Chopper, Big Y, Berkshire Co-op), 5 lodging options, restaurants, Fairview Hospital (24hr). Berkshire South Community Center offers free tenting ($8PP for facilities). Shuttle service available.',
+    notes: 'MAJOR TOWN - AT COMMUNITY: Great Barrington 3 mi W at mile 1528. Designated AT Community with excellent hiker services. Multiple groceries (Price Chopper, Big Y, Berkshire Co-op), lodging, restaurants. Berkshire South Community Center offers free tenting ($8 for facilities) - generous trail magic! Fairview Hospital (24hr) for medical. Between Salisbury CT (20 miles back) and Dalton (48 miles ahead). Massachusetts section is short (90 miles) but memorable. Popular resupply in Berkshires. Shuttle available. Hiker-friendly town.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'hospital', 'camping', 'shuttle', 'pharmacy']
   },
   {
@@ -1946,7 +1946,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'major_town',
     distanceFromTrail: 0.1,
     shuttleAvailable: false,
-    notes: 'Berkshire Lakeside Lodge (0.1E) offers lodging with continental breakfast. Lee (5.0W) has all major services: post office, Big Y grocery with pharmacy, Rite Aid pharmacy, laundry, veterinary clinic. Several hotels and motels available.',
+    notes: 'MAJOR TOWN - WILLIAMS COLLEGE: Williamstown 2.6 mi W at mile 1599. **Williams College liberal arts campus** - college town atmosphere. Multiple groceries (Stop & Shop, Wild Oats), lodging, Nature\'s Closet outfitter, library, pharmacy. North Adams (2.5 mi E) has Big Y, Holiday Inn, CVS, veterinary. Between Mt. Greylock (6 miles back) and Vermont border (19 miles ahead). Three shuttle services. College-educated friendly vibe. **LEAVING MASSACHUSETTS (90 mi complete)** - Vermont Green Mountains next!',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'pharmacy', 'veterinary']
   },
   {
@@ -1969,7 +1969,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'major_town',
     distanceFromTrail: 0,
     shuttleAvailable: false,
-    notes: 'Trail passes through Cheshire. Post office, Diane\'s Twist (AT Passport), Father Tom Campsite (free camping May 1-Oct 30). Cheshire Sporting Goods for fuel. Harbour House Inn B&B (AT Passport). Berkshire Outfitters (2.2E) full-service outfitter. Dollar General, Shell, Dunkin\' Donuts. Adams, MA (4.2E) has post office, Big Y Foods, Rite Aid pharmacy, laundry, veterinary clinic.',
+    notes: 'TRAIL TOWN - #1 CAMPSITE ON AT: AT passes through Cheshire at mile 1585 (Designated AT Community since 2018). Post office, Diane\'s Twist (AT Passport). **FATHER TOM CAMPSITE: Hikers call it "#1 town hiker campsite on entire AT"** - FREE camping May 1-Oct 30, running water, charging outlets, **BIKES for town access**, bike shed. AMC Western MA adopted section. "Five star campsite!" Berkshire Outfitters (2.2 mi E) full-service outfitter, Cheshire Sporting Goods for fuel. Adams (4.2 mi E) has Big Y, pharmacy. Between Lee (28 miles back) and Mt. Greylock (8 miles ahead). Dollar General, Dunkin\' Donuts. Incredibly hiker-friendly community!',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'campground', 'outfitter', 'fuel', 'library', 'pharmacy', 'laundry', 'veterinary']
   },
   {
@@ -1992,7 +1992,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'on_trail',
     distanceFromTrail: 0,
     shuttleAvailable: false,
-    notes: 'Located at Mt. Greylock Summit, MA. Bascom Lodge - historic CCC-built (1930s) lodge at summit of Mt. Greylock, highest peak in MA! Open May-Oct. Dorm bunks $35/night, private rooms $100-125. Breakfast included. Casual café for hikers. Reservations recommended.',
+    notes: 'ON TRAIL - MT. GREYLOCK SUMMIT: Bascom Lodge at mile 1593 on summit of Mt. Greylock (3,491 ft) - highest peak in Massachusetts! Historic CCC-built lodge (1930s). Open May-Oct. Dorm bunks $35, private rooms $100-125, breakfast included. Casual cafe for hikers. Beautiful summit with war memorial tower. Between Dalton (17 miles back) and Williamstown (6 miles ahead). Major Massachusetts milestone. Reservations recommended during peak season. Spectacular views on clear days.',
     services: ['hostel', 'lodging', 'restaurant', 'breakfast']
   },
   {
@@ -2015,7 +2015,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'major_town',
     distanceFromTrail: 0,
     shuttleAvailable: true,
-    notes: 'Trail passes through town. Post office, Shamrock Village Inn (AT Passport), Thomas Levardi (AT Passport, tenting). Walmart (2.3W) and Price Chopper for groceries. Multiple restaurants, Dalton CRA offers free showers. LP Adams has Coleman fuel. Two shuttle services available. Pittsfield, MA (2.0W) has many stores and restaurants.',
+    notes: 'TRAIL TOWN - AT COMMUNITY: AT goes directly through Dalton at mile 1576. Officially designated AT Community - hikers welcomed warmly! Post office, Shamrock Village Inn (AT Passport), hostels. Walmart (2.3 mi W), Price Chopper for groceries. Dalton CRA offers free showers to hikers (amazing trail magic). Between Great Barrington (48 miles back) and Williamstown (23 miles ahead). Before Mt. Greylock (highest peak in MA). Hiker-friendly atmosphere. Medical services in nearby Pittsfield. Popular zero day spot in Massachusetts.',
     services: ['grocery', 'post office', 'lodging', 'hostel', 'restaurants', 'laundry', 'showers', 'pharmacy', 'fuel', 'shuttle']
   },
   {
@@ -2038,7 +2038,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'major_town',
     distanceFromTrail: 0.5,
     shuttleAvailable: true,
-    notes: 'Williamstown (2.6W) - Williams College town with multiple groceries (Stop & Shop, Wild Oats, Dollar General), post office, 6 lodging options, restaurants, Nature\'s Closet outfitter, library, Walgreens pharmacy. North Adams (2.5E from Williamstown) - post office, Big Y grocery, Holiday Inn, CVS pharmacy, laundry, Greylock Animal Hospital. Three shuttle services available.',
+    notes: 'MAJOR TOWN - WILLIAMS COLLEGE: Williamstown 2.6 mi W at mile 1599. Williams College town with multiple groceries (Stop & Shop, Wild Oats), lodging, Nature\'s Closet outfitter, library, pharmacy. North Adams (2.5 mi E) has Big Y, Holiday Inn, CVS, veterinary. Between Mt. Greylock (6 miles back) and Vermont border (19 miles ahead). Three shuttle services. College town atmosphere. **LEAVING MASSACHUSETTS** - Vermont next!',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'showers', 'pharmacy', 'outfitter', 'library', 'veterinary', 'shuttle']
   },
 
@@ -2064,7 +2064,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 5.1,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Bennington, VT is 5.1W from trail. Post office, 6 lodging options (Catamount Motel, Autumn Inn, Knotty Pine Motel, Best Western, Hampton Inn). Walmart and Price Chopper (24hr) with pharmacies. Spice & Nice Natural Foods. Express Care Walk-in Clinic. Shuttle service available.',
+    notes: 'MAJOR TOWN - VERMONT ENTRY: Bennington 5.1 mi W at mile 1618. **ENTERING VERMONT - AT/LONG TRAIL COINCIDE for next 105 miles** (split at mile 1708 Killington). Green Mountains ahead - 150 miles through Vermont. Full services: Walmart, Price Chopper (24hr), lodging, post office, Express Care clinic. Between Williamstown MA (19 miles back) and Manchester VT (40 miles ahead). Green Mountain Club (GMC) maintains trail. Shuttle required. Major resupply for Vermont section.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'pharmacy', 'medical', 'shuttle']
   },
   {
@@ -2088,7 +2088,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 2.1,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'Manchester Center (5.4W) - Post office, Green Mountain House hostel (AT Passport, $40+tax), 6 lodging options, Price Chopper, VFW Post (camping), library, Manchester Laundromat, 8 restaurants, Mountain Goat Outfitter (AT Passport), Walgreens pharmacy, Droznah Transport shuttle. Peru (2.1-4.2E) - The Lodge at Bromley ($100), Bromley Market, Bromley View Inn ($99+), JJ Hapgood General Store & Eatery.',
+    notes: 'MAJOR TOWN - AT COMMUNITY: Manchester Center 5.4 mi W at mile 1658. Designated AT Community with excellent services. Green Mountain House hostel (AT Passport), Price Chopper, Mountain Goat Outfitter (AT Passport), lodging, restaurants, VFW Post camping. Between Bennington (40 miles back) and Rutland/Killington (50 miles ahead). Peru nearby (2.1 mi E) for closer services. Popular resupply in southern Vermont. Long Trail/AT still coinciding. Shuttle available. Must-stop resupply town.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'hostel', 'restaurants', 'laundry', 'library', 'pharmacy', 'camping', 'shuttle']
   },
   {
@@ -2112,7 +2112,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 2.8,
     directionFromTrail: 'W',
     shuttleAvailable: false,
-    notes: 'Wallingford, VT is 2.8W from trail. Post office, Cumberland Farms, Family Dollar, Sweet Birch Coffee Roasters, Sal\'s Italian Restaurant, Gilbert Hart Library.',
+    notes: 'LIMITED - VT TOWN: Wallingford 2.8 mi W at mile 1684. Post office, Cumberland Farms (convenience), Family Dollar, Sweet Birch Coffee Roasters, Sal\'s Italian Restaurant, Gilbert Hart Library. Between Manchester Center (26 miles back) and Rutland/Killington/AT-LT split (24 miles ahead). Small Vermont town for basic resupply. Greyhound/Vermont Translines bus stop at Cumberland Farms.',
     services: ['post office', 'grocery', 'restaurants', 'library']
   },
   {
@@ -2136,7 +2136,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 1.0,
     directionFromTrail: 'W',
     shuttleAvailable: false,
-    notes: 'North Clarendon, VT is 4.2W from trail. Post office, Goughberg Farms (grocery/deli), Clarendon Animal Clinic.',
+    notes: 'LIMITED - SMALL TOWN: North Clarendon 4.2 mi W at mile 1691. Post office, Gouchberg Farms Market & Deli (fresh produce, local goods, deli items, convenience), Clarendon Animal Clinic. Between Wallingford (7 miles back) and Rutland/Killington/AT-LT split (17 miles ahead). Limited services - most continue to Rutland/Killington for major resupply.',
     services: ['post office', 'grocery', 'veterinary']
   },
   {
@@ -2159,7 +2159,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'major_town',
     distanceFromTrail: 0.89,
     shuttleAvailable: true,
-    notes: 'Killington (0.6-1.8E from US 4) - Post office, The Inn at Long Trail (AT Passport), Killington Deli & Marketplace, Greenbrier Inn (AT Passport, 15% hiker discount), Killington Motel. Rutland (8.5W from US 4) - Post office, Hikers Hostel at Yellow Deli (AT Passport, free, 24/7), Flipakey\'s Homestay ($35/night), Walmart, Price Chopper, Rutland Food Co-op, restaurants, Beauchampp\'s & O\'Rourke Pharmacy, Rutland Veterinary. Flipakey\'s Homestay shuttle service available.',
+    notes: 'MAJOR TOWN - RUTLAND/KILLINGTON: At US 4 crossing (mile 1708). **AT/LONG TRAIL SPLIT HERE** - Long Trail continues 168 mi N to Canada. Killington (0.6-1.8 mi E): Inn at Long Trail (AT Passport), deli, Greenbrier Inn (15% discount). Rutland (8.5 mi W): **Vermont Hikers Hostel at Yellow Deli - FREE donation-based, 24/7** (run by Twelve Tribes community). 6 male/6 female bedrooms, communal breakfast, laundry, loaner clothes, hiker box. Walmart, Price Chopper, pharmacy, veterinary nearby. Between Wallingford (24 miles back) and Hanover NH (43 miles ahead). Major Vermont resupply. Shuttle available. NOTE: Some hikers invited to community farm for day visit.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'hostel', 'restaurants', 'laundry', 'pharmacy', 'veterinary', 'shuttle']
   },
   {
@@ -2181,7 +2181,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     hasShower: true,
     resupplyQuality: 'limited',
     distanceFromTrail: 0.6,
-    notes: 'Inn at Long Trail with meals. Base Camp Outfitters. Small deli/market.',
+    notes: 'ON TRAIL - KILLINGTON: Inn at Long Trail 0.6 mi from trail at mile 1712. Base Camp Outfitters for gear. AT/Long Trail split just ahead (mile 1708) - AT continues east, Long Trail continues north 168 miles to Canadian border. Famous ski resort area. Between Manchester (54 miles back) and Hanover NH (43 miles ahead). Rutland nearby (8.5 mi W) for major resupply. Popular stop in central Vermont.',
     services: ['outfitter', 'grocery', 'lodging', 'restaurant', 'laundry']
   },
   {
@@ -2205,7 +2205,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 3.9,
     directionFromTrail: 'E',
     shuttleAvailable: false,
-    notes: 'Woodstock, VT is 3.9E from trail. On The Edge Farmstand (0.2W from trail). Post office, Mac\'s Woodstock Market, The Shire Woodstock (lodging, WiFi), Braeside Motel ($98-168), Pizza Chef, Cumberland Farms, Woodstock Veterinary Hospital, Norman Williams Public Library, Ottauquechee Pharmacy, The Laundry Room.',
+    notes: 'MAJOR TOWN - QUAINT VERMONT: Woodstock 3.9 mi E at mile 1732. **On The Edge Farmstand 0.2 mi W from trail** - fresh produce right off trail. Post office, Mac\'s Woodstock Market, The Shire Woodstock (lodging, WiFi), Braeside Motel, Pizza Chef, Cumberland Farms, veterinary, library, Ottauquechee Pharmacy, laundry. Between Killington (20 miles back) and Hanover NH (23 miles ahead). Classic Vermont charm - Woodstock is picture-perfect New England town.',
     services: ['post office', 'grocery', 'lodging', 'restaurants', 'laundry', 'pharmacy', 'library', 'veterinary']
   },
   {
@@ -2229,7 +2229,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 1.0,
     directionFromTrail: 'E',
     shuttleAvailable: false,
-    notes: 'South Pomfret, VT is 1.0E from trail. Cloudland Farm Market (0.2W, family farm with water spigot, ice cream, beef jerky, prepared foods). Post office (inside Teago\'s General Store), Teago\'s General Store (homemade soups, salads, sandwiches, ice cream), Abbott Memorial Library.',
+    notes: 'LIMITED - FARM MARKET: South Pomfret 1 mi E at mile 1734. **Cloudland Farm Market 0.2 mi W** - family natural Angus beef farm since 1908, water spigot for hikers, ice cream, beef jerky, prepared foods. **Appalachian Trail crosses farm property**. Post office inside Teago\'s General Store (homemade soups, salads, sandwiches, ice cream) - classic country store. Abbott Memorial Library. Between Woodstock (2 miles back) and Hanover NH (21 miles ahead). Quintessential Vermont farm experience.',
     services: ['post office', 'grocery', 'restaurants', 'library']
   },
   {
@@ -2252,7 +2252,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'major_town',
     distanceFromTrail: 0,
     shuttleAvailable: true,
-    notes: 'Norwich, VT (0.5mi N) - Post office, Norwich Inn ($189+), Murdocks Ale House, Dan & Whits General Store (0.1W), Norwich Library. Hanover, NH (trail passes through) - Dartmouth College town. Post office, Dartmouth Outing Club, Sunset Motor Inn, Hanover Inn ($249+), multiple restaurants (Jewel of India Buffet, C&C Pizza, Stinson\'s Village Store), Hanover Food Co-op, Richard W. Black Recreation Center (showers, laundry), Howe Library, Hanover Hardware, Hanover Veterinary. Two shuttle services: Hanover Hiker Shuttle & Big Yellow Taxi.',
+    notes: 'TRAIL TOWN - DARTMOUTH COLLEGE: AT goes directly through Hanover at mile 1755 - one of only 3 towns where trail runs through downtown (with Hot Springs NC, Damascus VA). Ivy League college town with strong hiker culture. Dartmouth Outing Club maintains 75 miles of AT. Post office, multiple lodging, Hanover Food Co-op, restaurants. Recreation Center offers showers/laundry. Between Manchester VT (97 miles back) and White Mountains ahead. Popular celebration stop at ~80% of AT complete. Norwich, VT just across bridge has Dan & Whits General Store. Very hiker-friendly college community. Medical services available.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'hostel', 'restaurants', 'laundry', 'library', 'veterinary', 'shuttle', 'showers']
   },
 
@@ -2277,7 +2277,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'limited',
     distanceFromTrail: 0.7,
     shuttleAvailable: false,
-    notes: 'Etna, NH (0.7-1.9W from trail). Tiggers Tree House (AT Passport, hostel, donations accepted), Etna Library, Etna General Store (deli, hot meals).',
+    notes: 'LIMITED - SMALL NH TOWN: Etna 0.7-1.9 mi W at mile 1761. **Tigger\'s Tree House** (AT Passport hostel, donations-based) - home hostel, owners welcome hikers, no charge but sign guest book, will drive to grocery stores. Etna Library, Etna General Store (deli, hot meals). Between Hanover (6 miles back) and Lyme Center (12 miles ahead). Small community after Dartmouth College town.',
     services: ['grocery', 'hostel', 'restaurants', 'library']
   },
   {
@@ -2301,7 +2301,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 1.3,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Lyme Center (1.3W) - Post office. Lyme (3.2W) - Post office, Stella\'s Italian Kitchen & Market (deli, dining room), Dowd\'s Country Inn B&B (lodging, breakfast, WiFi, shuttle), Lyme Country Store (local products, fresh cut meats, deli, ice cream), Lyme Veterinary Hospital. Vtrips shuttle service (S to Woodstock, VT ◄ ► N to Franconia, NH).',
+    notes: 'LIMITED - FARM/HOSTEL: Mile 1789 serves **Mount Cube Farm 1.9 mi W** (pets welcome, maple syrup products, camping), Wentworth 4.5 mi E (post office, Shawnee\'s General Store), Barn Door Hostel & Campground 14.7 mi E (showers, laundry, shuttle). Camp Ebb-n-Flow (camping on private land by permission, WiFi). Between Lyme (16 miles back) and Glencliff (6 miles ahead). Approaching White Mountains - last easy stops before serious terrain. Shuttle available.',
     services: ['post office', 'grocery', 'lodging', 'restaurants', 'veterinary', 'shuttle']
   },
   {
@@ -2325,7 +2325,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 1.9,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Mount Cube Farm (1.9W, pets welcome, maple syrup products, camping). Camp Ebb-n-Flow (camping on private land by permission only, WiFi). Wentworth (4.5E): post office, Shawnee\'s General Store. Barn Door Hostel & Campground (14.7E, $75/person/night, showers, laundry, shuttle, WiFi).',
+    notes: 'LIMITED - FARM/HOSTEL: Mile 1789 serves Mount Cube Farm (1.9 mi W - pets welcome, maple syrup, camping), Wentworth (4.5 mi E - post office, Shawnee\'s General Store), Barn Door Hostel (14.7 mi E - showers, laundry, shuttle). Between Lyme (16 miles back) and Glencliff (6 miles ahead). Camp Ebb-n-Flow camping with permission. Shuttle available.',
     services: ['post office', 'grocery', 'lodging', 'camping', 'laundry', 'showers', 'shuttle', 'wifi']
   },
   {
@@ -2348,7 +2348,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'limited',
     distanceFromTrail: 0.4,
     shuttleAvailable: true,
-    notes: 'Glencliff (0.4E) - Post office, Hikers Welcome Hostel (AT Passport, $35 bunk/$20 camping, showers, laundry, ice cream, gear repair, slackpacking, free shuttle to Warren). Warren (5.0E) - Green House Restaurant (0.7W from trail, hiker friendly, camping), post office, Calamity Jane\'s Restaurant (breakfast, lunch, dinner), Moose Scoops (AT Passport, ice cream, WiFi), Laundry, Joseph Patch Library. Hikers Welcome Hostel & Shuttle Service (slackpacking specialist).',
+    notes: 'MAJOR TOWN - WHITE MOUNTAINS HUB: At mile 1808 near Franconia Notch. **IN HEART OF WHITE MOUNTAINS** - Lincoln/North Woodstock (5-6 mi E) are essential resupply hubs. Price Chopper (24hr), Lahout\'s Summit Shop outfitter, Chet\'s One Stop hostel, Snowchasers\' Ski Club hostel, multiple lodging. Flume Visitor Center 0.7 mi E (cafeteria, mail drops). **Franconia Ridge Loop ahead - one of most spectacular sections of AT**. Presidential Range (most challenging) ahead. Between Glencliff (13 miles back) and Crawford Notch (44 miles ahead). Slackpacking highly popular. The Notch Hostel (one mile from downtown) - voted top 5 hostels on AT multiple years. Multiple shuttles essential.',
     services: ['hostel', 'post office', 'restaurants', 'laundry', 'showers', 'shuttle', 'slackpacking', 'ice cream', 'library']
   },
   {
@@ -2371,7 +2371,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'major_town',
     distanceFromTrail: 0.5,
     shuttleAvailable: true,
-    notes: 'Flume Visitor Center (0.7E, cafeteria, mail drops). Lafayette Place Campground (2.3W, $25, pets). Lost River Gorge (0.5E). Lost River Valley Campground (3.0E, $22-65). The Notch Hostel (5.0E). North Woodstock (5E): post office, Woodstock Inn (10% discount, breakfast), Carriage Motel, Wayne\'s Market, Fadden\'s (maple syrup). Lincoln (5.8E): post office, Chet\'s One Stop (AT Passport, hostel), Snowchasers\' Ski Club ($30/night hostel), Price Chopper (24hr), Lahout\'s Summit Shop (outfitter), laundromat. Franconia (11.0W): post office, Gale River Motel ($50-200, shuttle), Mac\'s Market, Franconia Village Store, library. Multiple shuttle services available.',
+    notes: 'MAJOR TOWN - WHITE MOUNTAINS HUB: At mile 1808 near Franconia Notch. Lincoln/North Woodstock (5-6 mi E) are major resupply hubs for White Mountains section. Price Chopper (24hr), Lahout\'s Summit Shop outfitter, multiple hostels. **IN THE HEART OF WHITE MOUNTAINS** - Presidential Range ahead (most challenging hiking). AMC hut system throughout area. Between Glencliff (13 miles back) and Crawford Notch (44 miles ahead). Many slackpack over difficult terrain. Popular zero day/resupply before or after Franconia Ridge. Multiple shuttle services essential for White Mountains navigation.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'camping', 'restaurants', 'laundry', 'showers', 'shuttle', 'slackpacking']
   },
   {
@@ -2395,7 +2395,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 1.0,
     directionFromTrail: 'W',
     shuttleAvailable: false,
-    notes: 'Willey House (1.0W, snack bar). Dry River Campground (1.8E, $25, pets, laundry, showers). AMC Highland Center (3.8W, no pets/smoking, rates vary, breakfast/lunch/dinner, store, WiFi, mail drops). Crawford Notch General Store & Campground (3.4E, cabins $75-95, tenting $30, 9% lodging tax, store, ice cream, mail drops).',
+    notes: 'LIMITED - WHITE MOUNTAINS: Crawford Notch at mile 1852. AMC Highland Center (3.8 mi W) - premier White Mountain lodge at southern base of Presidential Range. Lodging, home-cooked meals (dinner/breakfast included), L.L. Bean Gear Room, store, mail drops, charging, WiFi. **PRESIDENTIAL RANGE AHEAD** - Mt. Washington (6,288 ft, highest peak in Northeast, extreme weather danger). AMC High Mountain Huts system: 8 huts spaced day-hike apart along AT through Whites, meals included, \$75+. Between Lincoln (44 miles back) and Pinkham Notch (26 miles ahead). AMC Hiker Shuttle connects lodges and towns. Critical prep point for Presidential traverse. Weather can turn deadly - prepare carefully.',
     services: ['grocery', 'lodging', 'camping', 'restaurants', 'laundry', 'showers', 'ice cream', 'mail drops']
   },
   {
@@ -2418,7 +2418,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'limited',
     distanceFromTrail: 0,
     shuttleAvailable: true,
-    notes: 'Pinkham Notch Visitor Center & AMC Joe Dodge Lodge. Open year-round. No pets. Rates vary by season and holidays. AMC members get discount. Restrooms. Meals available to non-guests. AYCE breakfast 6:30am-9am daily, food to order for lunch, family style dinner Sat-Thurs 5pm, Friday dinner buffet. Coin-op shower available 24 hours, coin laundry, $2 towel rental. Vending machines. Coleman fuel and alcohol fuel by the ounce, canister fuel, free WiFi. Shuttle 7:30am daily. Accepts credit cards. Mail drops: AMC Visitor Center, C/O Front Desk, 361 Rte. 16, Gorham, NH 03581. AMC Hiker Shuttle (see mile 1819.3). Gorham, NH (10.7W from Pinkham Notch).',
+    notes: 'ON TRAIL - PINKHAM NOTCH VISITOR CENTER: Mile 1878. Joe Dodge Lodge open year-round. Meals available to non-guests (AYCE breakfast 6:30-9am, lunch to order, dinner Sat-Thu 5pm family style, Fri buffet). Coin-op showers 24hrs, coin laundry, \$2 towel rental. Fuel by ounce (Coleman, alcohol), canister fuel, free WiFi. AMC Hiker Shuttle 7:30am daily. Mail drops accepted. **WILDCAT MOUNTAIN & PRESIDENTIAL RANGE** - brutal terrain. Between Crawford Notch (26 miles back) and Gorham (21 miles ahead). After Mt. Washington summit (extreme weather - hikers have died from hypothermia in summer). Popular recovery stop. Gorham 10.7 mi W for full services.',
     services: ['grocery', 'outfitter', 'lodging', 'restaurant', 'laundry', 'showers', 'shuttle', 'wifi', 'fuel', 'mail drops']
   },
   {
@@ -2442,7 +2442,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 1.7,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'White Birches Camping Park (1.7W, AT Passport, bunks $20PP, tenting $20PP, laundry, pool, WiFi, fuel, free shuttle). Town & Country Inn (2.6W, $68-155, pets $25, WiFi, breakfast/dinner, pool). Gorham (3.5W): post office, Libby House Inn & The Barn Hikers Hostel (AT Passport, $28 bunks/$18PP tenting, breakfast, laundry, shuttle), Royalty Inn ($89 weekday/$99 weekend, pool, laundry, WiFi), Top Notch Inn (May-mid Oct, laundry, shuttles, WiFi, 10% discount), Northern Peaks Motor Inn ($70/up, pets $5, WiFi), Gorham Motor Inn ($58-158), Gorham Hardware & Sports Center (outfitter, fuel by ounce). Walmart (6.7W). AMC Hiker Shuttle. Trail Angels Hiker Services shuttle. Berlin, NH (10.1W): Androscoggin Valley Hospital.',
+    notes: 'MAJOR TOWN - WHITE MOUNTAINS GATEWAY: Essential resupply at mile 1899 after completing White Mountains (most challenging section of AT). Town 3.5 mi W with full services. Multiple hiker hostels including Libby House & The Barn ($28 bunks). Gorham Hardware & Sports Center outfitter, Walmart, post office, restaurants. Celebrate finishing Presidential Range, Wildcats, Mahoosuc Notch (hardest mile). AMC Hiker Shuttle service. Between White Mountains and Maine wilderness ahead. Hospital in nearby Berlin. Popular zero day for recovery after brutal NH section. Very hiker-friendly community.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'camping', 'restaurants', 'laundry', 'showers', 'shuttle', 'wifi', 'fuel', 'hospital']
   },
 
@@ -2468,7 +2468,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 12.8,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'Stony Brook Camping (12.8E, $30 tent/$35 lean-to, pool, laundry, showers, shuttle, mail drops). Bethel (17.9E): post office, Chapman Inn (18.6E, $35 bunks w/breakfast, $25 w/o, rooms $69+, laundry, WiFi, mail drops), Bethel Outdoor Adventure (campsites $24/night, laundry, WiFi, shuttle), Pat\'s Pizza, Sudbury Inn Restaurant & Pub ($89+, breakfast/lunch/dinner), Bethel Shop N Save (grocery), True North Adventureware (AT Passport, outfitter, fuel by ounce, freeze dried foods, WiFi), Bethel Animal Hospital. Two shuttle services: Stagecoach Shuttle Services & Mountain Courier Shuttle.',
+    notes: 'MAJOR TOWN - MAINE ENTRY: Bethel 17.9 mi E at mile 1930. **ENTERING MAINE - FINAL STATE!** Stony Brook Camping (12.8 mi E, $30 tent/$35 lean-to, pool, shuttle). Bethel: Chapman Inn (18.6 mi E, $35 bunks w/breakfast, laundry, WiFi, mail drops), Bethel Outdoor Adventure (campsites $24, shuttle), Pat\'s Pizza, Sudbury Inn, Bethel Shop N Save, **True North Adventureware** (AT Passport outfitter, freeze-dried foods, fuel by ounce). Bethel Animal Hospital. Between Gorham NH/White Mountains exit (31 miles back) and Andover (10 miles ahead). Stagecoach & Mountain Courier shuttles. Major resupply entering Maine mountains.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'camping', 'restaurants', 'laundry', 'showers', 'shuttle', 'wifi', 'fuel', 'hospital', 'slackpacking']
   },
   {
@@ -2492,7 +2492,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 7.9,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'Andover (8.0E): post office, Pine Ellis Lodging (7.9E, AT Passport, no pets, private rooms $45S/$65D/$75 triple/$20EAP, bunks $30PP, laundry, WiFi, shuttle, slackpacking, resupply, mail drops), Paul\'s AT Camp for Hikers Stay ($60 for 4, 3 miles from Andover, water/electricity in cabin and shower, round trip shuttle from hostel), Mills Market (groceries, deli, Friday Pizza Special), Andover Public Library, Donna Gifford (massage therapist), The Cabin (10.9E, AT Passport, $20PP, shuttles, hiker kitchen, laundry, WiFi). Four shuttle services: SD Shuttle, Rodney Kneeland, IRONMIKE.',
+    notes: 'LIMITED - MAINE TOWN: Andover 8 mi E at mile 1940. **Pine Ellis Lodging** (7.9 mi E, AT Passport) - past its prime but staff does their best, private rooms $45S/$65D, bunks $30PP, laundry, shuttle, slackpacking, resupply, mail drops. Paul\'s AT Camp (3 mi from Andover, $60 for 4, cabin with water/electricity/shower, round-trip shuttle). **Mills Market** - groceries, deli, Friday Pizza Special. Andover Public Library, Donna Gifford massage therapist. The Cabin (10.9 mi E, $20PP, kitchen, laundry). Between Bethel (10 miles back) and South Arm Road/Human-Nature Hostel (10 miles ahead). SD Shuttle, Rodney Kneeland, IRONMIKE, others. Centrally located for four seasons.',
     services: ['grocery', 'post office', 'lodging', 'camping', 'laundry', 'showers', 'shuttle', 'wifi', 'slackpacking', 'library', 'mail drops']
   },
   {
@@ -2516,7 +2516,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 17.4,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'The Human-Nature Hostel (17.4E, $60PP all inclusive, bunks/loft beds, kitchen, bathrooms, outdoor showers, loaner clothes, full laundry service, toiletries, ear plugs, lounge, tenting, patio/grills/picnic table/fire pit, soda/candy/ice cream/pizza/pockets, slackpacking East B Hill & South Arm Rd, free pickup/drop-off at trail head, multiple daily trips to Andover for resupply/post office, meals: breakfast $5/AYCE Maine Blueberry Pancake w/coffee & tea, dinner $10/Hiker Hunger Dinner, shuttles, parking, mail drops). Two shuttles a day to South Arm trailhead. Stops at Andover center for resupply/post office before returning to hostel.',
+    notes: 'LIMITED - ALL-INCLUSIVE HOSTEL: **Human-Nature Hostel 17.4 mi E** at mile 1950. **$60PP ALL-INCLUSIVE EXPERIENCE** - bunks/loft beds, shared kitchen, bathrooms, outdoor showers, loaner clothes, FULL laundry service (not coin-op!), toiletries, ear plugs, lounge, tenting, patio/grills/picnic/fire pit. Meals: $5 AYCE Maine Blueberry Pancake breakfast w/coffee & tea, $10 Hiker Hunger Dinner. Soda/candy/ice cream/pizza/pockets. Slackpacking East B Hill & South Arm Rd. FREE pickup/drop-off at trailhead, multiple daily trips. Two shuttles daily to South Arm trailhead stop at Andover center for resupply/PO before returning. Between Andover (10 miles back) and Rangeley (26 miles ahead). Remote but comprehensive hiker care.',
     services: ['lodging', 'camping', 'laundry', 'showers', 'shuttle', 'slackpacking', 'restaurant', 'breakfast', 'wifi', 'mail drops', 'parking']
   },
   {
@@ -2540,7 +2540,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 9.0,
     directionFromTrail: 'W',
     shuttleAvailable: true,
-    notes: 'Rangeley (9.0W): post office, Town & Lake Motel (hiker rate, pets $10, canoes), Rangeley Inn & Tavern (AT Passport, $125 summer/$75 fall, breakfast, kayaks/canoe, WiFi), Rangeley Saddleback Inn ($120+, continental breakfast, pets $10, WiFi, shuttle), Pine Tree Frosty (ice cream), Sarge\'s Sports Pub & Grub (lunch/dinner/bar), Moose Alley (bowling, billiards, darts, dance floor), IGA Supermarket (ATM), Ecopelagicon (AT Passport, outfitter, fuel by ounce, freeze dried foods, gear, charging station, WiFi, shuttles), Alpine Shop (outfitter, fuel by ounce), Back Woods (clothing/gear), Rangeley Family Medicine ($5 shower). Ecopelagicon shuttle (Farmington to Jackman, slackpacking, long distance shuttles).',
+    notes: 'MAJOR TOWN - MAINE LAKES TOURISM: Rangeley 9 mi W at mile 1977 (hitch from ME 4 parking area). Not every hiker stops (Andover 35 mi S, Stratton 34 mi N). Post office, IGA Supermarket (0.6 mi S downtown), **$5 shower at Rangeley Health & Wellness Center**. **Ecopelagicon Nature Store** (AT Passport outfitter downtown) - water filters, backpacks, tents, hiker box, fuel by ounce, shuttles throughout Maine. Farmhouse Inn (1 mi from downtown) offers shuttles, laundry, bunks, Hawaiian shirt town clothes, bikes to town, slackpacking, multi-night discounts. Red Onion restaurant, Sarge\'s Pub, Moose Alley bowling. Town Cove Park - see seaplanes land on water! Between Andover (35 miles back via difficult Mahoosuc Notch) and Stratton (32 miles ahead). Hiker-friendly tourism town.',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'restaurants', 'laundry', 'showers', 'shuttle', 'wifi', 'fuel', 'slackpacking', 'medical']
   },
   {
@@ -2564,7 +2564,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 2.7,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'Mountainside Grocers (2.7E). Hostel of Maine (3.4E, AT Passport, bunks/lodging rooms $109 for thru-hikers, shower, towels, linens, loaner clothes, breakfast, laundry, WiFi, ice cream, frozen pizza, scheduled pickups/drop-offs, local craft beer/cider, promo code "AT2022"). Stratton (5.0W): post office, White Wolf Inn & Restaurant (5.1W, AT Passport, private rooms $79 mid-week/$89 weekends/$15EAP, pets $15, WiFi, ATM, restaurant, 8oz Wolf Burger, Fish Fry Friday, mail drops), Spillover Motel ($89+, pets $15, continental breakfast, showers $5, full kitchen, gas grill, WiFi, mail drops), Fotter\'s Market (Coleman/alcohol fuel by ounce, ATM), Flagstaff General Store (deli, subs, pizza, salads, fried foods, canister fuel, WiFi, ATM), Stratton Public Library (WiFi). All Points Transportation shuttle (NH/MA to Baxter SP, slackpacking, parking).',
+    notes: 'LIMITED - MAINE TOWN: Mountainside Grocers 2.7 mi E. **Hostel of Maine 3.4 mi E** (AT Passport) - $109 thru-hikers includes bunks, showers, towels, linens, loaner clothes, breakfast, laundry, WiFi, ice cream, frozen pizza, local craft beer/cider, scheduled shuttles, promo code "AT2022". Stratton 5 mi W: post office, **White Wolf Inn & Restaurant** (AT Passport, rooms $79 mid-week/$89 weekends, pets $15, restaurant - 8oz Wolf Burger, Friday Fish Fry, venison on menu, mail drops), Spillover Motel ($89+, pets $15), Fotter\'s Market (Coleman/alcohol fuel by ounce), Flagstaff General Store (deli, subs, pizza, canister fuel). Between Rangeley (32 miles back) and Caratunk (37 miles ahead). All Points Transportation (NH/MA to Baxter SP, slackpacking). Approaching 100-Mile Wilderness.',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'showers', 'shuttle', 'wifi', 'fuel', 'slackpacking', 'library', 'mail drops']
   },
   {
@@ -2587,7 +2587,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'limited',
     distanceFromTrail: 0.3,
     shuttleAvailable: true,
-    notes: 'KENNEBEC RIVER FERRY: Free for hikers during open hours. May 24-Jun 30: 9am-11am, Jul 1-Sep 30: 9am-2pm. No service provided Oct 1-Apr 30. Off hours hikers can schedule crossing for $50. Cheryl Anderson ferry service ($40 per trip). US 201 Caratunk (0.3E): post office, The Sterling Inn (1.4E, AT Passport, pet friendly, bunks $40, private rooms starting $80/$100D/$110/3/$120/4, breakfast buffet, free laundry, shower, WiFi, recharge, long distance phone, mail drops, complete resupply, shuttle to/from trail and PO, free shuttle to/from Kennebec River BrewPub, shuttles throughout Maine, multi-night discount), Caratunk Country Store (inside Sterling Inn, resupply, fuel by ounce, canister fuel, batteries, meals, candy bars, ice cream, cold drinks, hygiene, first-aid, mail drops). The Sterling Inn Shuttles (Portland to Baxter SP, parking $10/weekends). The Forks (2.0W): Northern Outdoors (no pets, hiker rate, 20% lodging discount, coin laundry, hot tub, pool, WiFi, ATM, mail drops), Three Rivers Trading Post (campsites, bunkhouse, cabins, lodge, trading post, beer/wine, WiFi, ATM, shuttles, mail drops), Berry\'s General Store (open year round).',
+    notes: 'LIMITED - KENNEBEC RIVER FERRY: Mile 2046. **KENNEBEC RIVER FERRY FREE for AT thru-hikers** - operated by MATC (Maine AT Club). Schedule: May 24-Jun 30: 9-11am, Jul 1-Sep 30: 9am-2pm, NO SERVICE Oct 1-Apr 30. Off-hours: $50 scheduled crossing or Cheryl Anderson $40/trip. **DO NOT WADE - dangerous current, water releases from dam**. Sterling Inn 0.3 mi E (AT Passport): bunks $40, breakfast buffet (legendary), FREE laundry, complete resupply. Caratunk Country Store inside inn (fuel by ounce, canister fuel, meals, batteries, hygiene, first-aid). The Forks 2 mi W: Northern Outdoors (20% hiker discount), Three Rivers Trading Post. Between Stratton (37 miles back) and Monson (37 miles ahead). Sterling Inn shuttles Portland to Baxter ($10 parking/weekends). Critical safe crossing!',
     services: ['grocery', 'post office', 'lodging', 'restaurants', 'laundry', 'showers', 'shuttle', 'wifi', 'fuel', 'slackpacking', 'mail drops', 'parking']
   },
   {
@@ -2611,7 +2611,7 @@ export const resupplyPoints: ResupplyPoint[] = [
     distanceFromTrail: 3.6,
     directionFromTrail: 'E',
     shuttleAvailable: true,
-    notes: 'CRITICAL: Last resupply before 100 Mile Wilderness. Stock up well! Monson (3.6E): post office, Shaw\'s Hiker Hostel (AT Passport, bunks $30, private $50S-$100, $15 tenting, breakfast, laundry, $5 shower, WiFi, slackpacking, shuttles, gear supplies, fuel by ounce, freeze dried food, gear repair, full resupply, mail drops), Poet\'s Gear Emporium (ULA, hyperlite gear, Big Agnes, Altra, Salomon, Sawyer, full resupply), The Lakeshore House Lodge (AT Passport, bunkroom $30/full-queen $50, private $100, laundry, shower, WiFi, canoe, swimming, pub, mail drops), John Baptist Mission (private home, bunks, tenting, hammocking, showers, laundry, meals, group shuttles, WiFi, mail drops), Monson General Store (local foods, deli, sandwiches, baked goods), A.E. Robinson\'s Convenience Store (pizza, breakfast, ATM), Spring Creek Bar-B-Q, At The Quarry (restaurant). Five shuttle services: Charlie Anderson, Seven Pines Shuttle, Shaw\'s Hiker Hostel Shuttles, 100 Mile Wilderness. Monson Appalachian Trail Visitor Center (AT Passport, info for long-distance hikers). Greenville (10.4W from ME 15): Kineo View Motor Lodge ($79+, breakfast, WiFi), Kelly\'s Landing (breakfast), Dairy Bar (ice cream), Harris Drug Store (pharmacy, soda fountain), Indian Hill Trading Post & Supermarket, Jamos Pizza, Northwoods Outfitters (full outfitter, WiFi), Charles Dean Memorial Hospital.',
+    notes: '**CRITICAL - LAST TOWN BEFORE 100-MILE WILDERNESS**: Mile 2083. **Shaw\'s Hiker Hostel is THE place** - 50,000+ hikers hosted since opening! Dawn & Sue run tight but relaxed operation totally optimized for hikers. Breakfast is institution (order 2,3,4,5 = # of everything: eggs, pancakes, bacon, sausages, hash browns) - coffee flows 6:30am, orders 7am. Clean facility, new firm mattresses, fluffy towels, hot showers, washer/dryer, hiker fridge. Small stockroom on-site: food, fuel canisters, basic gear. Monson General Store in town (pop. 666) - owner in bush hog hat very helpful. Friday night jam session at general store 6pm (fiddlers, banjo, guitar, harp). **STOCK UP: Plan 8-10 days food + 1-2 days extra for 100-Mile Wilderness**. Poet\'s Gear Emporium for quality gear. Shuttles throughout remote area (logging roads). Mail drops accepted. Between Caratunk (37 miles back) and Abol Bridge/Millinocket (99+ miles). Prep mentally/physically - this is it!',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'camping', 'restaurants', 'laundry', 'showers', 'shuttle', 'wifi', 'fuel', 'slackpacking', 'mail drops', 'hospital', 'pharmacy']
   },
   {
@@ -2634,10 +2634,10 @@ export const resupplyPoints: ResupplyPoint[] = [
     resupplyQuality: 'major_town',
     distanceFromTrail: 0,
     shuttleAvailable: true,
-    notes: 'BAXTER STATE PARK PERMITS REQUIRED! Free AT long distance hiker permit at Katahdin Stream Campground when Hunt Trail opens. Limited to 3150 AT hikers/year. If full, obtain Day Use Hiking Reservation or campground reservation. Abol Bridge: Abol Bridge Campground & Store (open May-Sept, campsites, bunk cabin $75 for 2/$25 each additional, store, subs/sodas/ice cream, laundry, showers $5, satellite pay phone, Visa/MC), Abol Pines Campsite (100 yds N, primitive, $10PP ME residents/$15 non-residents, tent sites and lean-tos, riverbank views of Katahdin). Northern Woods Trading Post (10E, groceries, restaurant, WiFi, ATM). Abol Pines (shelters across from Abol Bridge). Katahdin Kritters Pet Resort (cage-free, 24hr supervision). Millinocket (19.6E): post office, Appalachian Trail Hostel & Outfitters (AT Passport, bunkroom $30/private $60-70/family suite $95-115, laundry, WiFi, showers $5, shuttle to Baxter/Monson/100 Mile Wilderness, Katahdin shuttle $60 for 1/$30 each for 2/$20PP after 3, slackpacking, free parking, mail drops), Outfitters (full resupply, fuel), 100 Mile Wilderness Inn (AT Passport, bunk $30/private $70+, shower/flush toilets, free WiFi, laundry, BBQ grill, slackpacking, free parking, mail drops), Katahdin Cabins (no pets, skip & Nicole Mohoff, eco-friendly cabins, breakfast, WiFi, mail drops), Parks Edge Inn ($65-150, WiFi, mail drops), Pamola Motor Lodge ($69+, breakfast, WiFi, pets $10, restaurant), Baxter Park Inn ($99+, pets $25, sauna, pool, WiFi), Hotel Terrace & Ruthie\'s Restaurant ($64.95S/$74.95D, WiFi, breakfast/lunch/dinner), Ice Fish Inn ($115+, breakfast, WiFi, mail drops), Katahdin Inn ($99-99/night for 2, breakfast, pool, hot tub, WiFi, laundry, mail drops), Wilderness Edge Campground (tent sites $10PP, hot showers, pool, laundry, WiFi, store, fuel, Baxter shuttle, mail drops), Appalachian Trail Cafe (AT Passport, breakfast/lunch), Sawmill Grill (AT Passport, pizza/burgers). Nine shuttle services including Maine Quest Adventures (Portland to Allagash, slackpacking, parking, food drops), Appalachian Trail Lodge, Katahdin Shuttle LLC, Wilderness Edge Campground Shuttles, Kim\'s Shuttle Services, Katahdin Air Seaplane Service.',
+    notes: '**BAXTER STATE PARK - FINAL APPROACH TO KATAHDIN**: Mile 2182 after 100-Mile Wilderness complete! **PERMITS REQUIRED** - free AT long-distance hiker permit at Katahdin Stream Campground (limited to 3,150 hikers/year). Only 15 miles to summit of Mt. Katahdin - northern terminus of AT! Abol Bridge Campground at trail crossing. Millinocket (19.6 mi E) is final town with full services: multiple hiker hostels, AT Cafe, outfitters, restaurants. Celebrate completing 100MW. Many hikers stay here night before summit attempt or after finishing. Emotional final stop - 2,190+ miles complete or about to be! Katahdin visible from town on clear days. Strong hiker community celebrates finishers. This is the END (or beginning for SOBOs)!',
     services: ['grocery', 'outfitter', 'post office', 'lodging', 'camping', 'restaurants', 'laundry', 'showers', 'shuttle', 'wifi', 'fuel', 'slackpacking', 'mail drops', 'parking', 'breakfast', 'pets']
   }
 ];
 
-// Export resupply count (76 total resupply points)
+// Export resupply count (112 total resupply points)
 export const RESUPPLY_COUNT = resupplyPoints.length;
