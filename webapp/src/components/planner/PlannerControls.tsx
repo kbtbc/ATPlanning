@@ -173,28 +173,8 @@ export function PlannerControls({
         </div>
       </div>
 
-      {/* Miles Per Day and Days to Plan on same row */}
+      {/* Days to Plan and Miles Per Day on same row */}
       <div className="grid grid-cols-2 gap-2.5">
-        {/* Miles Per Day */}
-        <div>
-          <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-0.5">
-            Miles Per Day: <span className="font-bold text-[var(--foreground)]">{targetMilesPerDay}</span>
-          </label>
-          <input
-            type="range"
-            value={targetMilesPerDay}
-            onChange={(e) => onMilesPerDayChange(Number(e.target.value))}
-            min={8}
-            max={25}
-            step={1}
-            className="w-full accent-[var(--accent)]"
-          />
-          <div className="flex justify-between text-xs text-[var(--foreground-muted)] -mt-0.5">
-            <span>8</span>
-            <span>25</span>
-          </div>
-        </div>
-
         {/* Days Ahead */}
         <div>
           <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-0.5">
@@ -212,6 +192,26 @@ export function PlannerControls({
           <div className="flex justify-between text-xs text-[var(--foreground-muted)] -mt-0.5">
             <span>1</span>
             <span>14</span>
+          </div>
+        </div>
+
+        {/* Miles Per Day */}
+        <div>
+          <label className="block text-xs font-medium text-[var(--foreground-muted)] mb-0.5">
+            Miles Per Day: <span className="font-bold text-[var(--foreground)]">{targetMilesPerDay}</span>
+          </label>
+          <input
+            type="range"
+            value={targetMilesPerDay}
+            onChange={(e) => onMilesPerDayChange(Number(e.target.value))}
+            min={8}
+            max={25}
+            step={1}
+            className="w-full accent-[var(--accent)]"
+          />
+          <div className="flex justify-between text-xs text-[var(--foreground-muted)] -mt-0.5">
+            <span>8</span>
+            <span>25</span>
           </div>
         </div>
       </div>
