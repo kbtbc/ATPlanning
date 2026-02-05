@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Package, Navigation, TrendingUp, Info, Home, Eye, EyeOff } from 'lucide-react';
+import { MapPin, Package, Navigation, TrendingUp, Info, Home } from 'lucide-react';
 import { getSheltersInRange, getResupplyInRange, getFeaturesInRange, TRAIL_LENGTH } from '../data';
 import { elevationProfile, getElevationAtMile, APPROACH_TRAIL_START } from '../data/elevation';
 import { cn, formatMile } from '../lib/utils';
@@ -281,13 +281,7 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                 className="absolute transform -translate-x-1/2 -translate-y-1/2 group z-10"
                 style={{ left: `${xPos}%`, top: `${yPos}%` }}
               >
-                <Package className={cn(
-                  'w-4 h-4 drop-shadow-sm',
-                  resupply.resupplyQuality === 'major_town' && 'text-[var(--category-major-town)]',
-                  resupply.resupplyQuality === 'trail_town' && 'text-[var(--category-trail-town)]',
-                  resupply.resupplyQuality === 'on_trail' && 'text-[var(--category-on-trail)]',
-                  resupply.resupplyQuality === 'limited' && 'text-[var(--category-limited)]'
-                )} />
+                <Package className="w-4 h-4 text-[var(--resupply-color)] drop-shadow-sm" />
                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity z-30 pointer-events-none">
                   <div className="bg-[var(--background)] border border-[var(--border)] rounded px-2 py-1.5 text-xs whitespace-nowrap shadow-lg">
                     <div className="font-medium">{resupply.name}</div>
@@ -379,7 +373,6 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
           >
             <Home className="w-3 h-3 text-[var(--shelter-color)]" />
             Shelter
-            {visibility.shelters ? <Eye className="w-3 h-3 ml-0.5" /> : <EyeOff className="w-3 h-3 ml-0.5" />}
           </button>
           <button
             onClick={() => toggleVisibility('resupply')}
@@ -388,9 +381,8 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
               visibility.resupply ? 'opacity-100' : 'opacity-50'
             )}
           >
-            <Package className="w-3 h-3 text-[var(--category-major-town)]" />
+            <Package className="w-3 h-3 text-[var(--resupply-color)]" />
             Resupply
-            {visibility.resupply ? <Eye className="w-3 h-3 ml-0.5" /> : <EyeOff className="w-3 h-3 ml-0.5" />}
           </button>
           <button
             onClick={() => toggleVisibility('features')}
@@ -401,7 +393,6 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
           >
             <Info className="w-3 h-3 text-[var(--feature-color)]" />
             Info
-            {visibility.features ? <Eye className="w-3 h-3 ml-0.5" /> : <EyeOff className="w-3 h-3 ml-0.5" />}
           </button>
         </div>
     </motion.div>
