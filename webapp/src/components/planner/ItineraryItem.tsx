@@ -241,7 +241,7 @@ function WarningBadge({ warningText, notes }: { warningText?: string; notes?: st
         <AlertTriangle className="w-3.5 h-3.5" />
       </span>
       {showTooltip && (
-        <div className="absolute z-50 bottom-full right-0 mb-2 w-64 p-2.5 bg-[var(--background-secondary)] border border-[var(--border)] rounded-lg shadow-lg text-xs leading-relaxed">
+        <div className="absolute z-50 bottom-full right-0 mb-2 w-64 px-3 py-2.5 bg-[var(--background-secondary)] border border-[var(--border)] rounded-lg shadow-lg text-xs leading-relaxed text-center">
           <p className="text-[var(--foreground)]">{displayText}</p>
           <div className="absolute bottom-0 right-3 translate-y-1/2 rotate-45 w-2 h-2 bg-[var(--background-secondary)] border-r border-b border-[var(--border)]" />
         </div>
