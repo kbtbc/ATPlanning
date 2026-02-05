@@ -3793,24 +3793,6 @@ export const resupplyContacts: ContactInfo[] = [
     ],
   },
   {
-    resupplyId: 'rs-027b', // Summit Station / Schuylkill Haven, PA
-    businesses: [
-      {
-        id: 'ss-001',
-        name: "Rock 'N Sole Hostel",
-        type: 'hostel',
-        phone: '(570) 617-6432',
-        address: 'Summit Station (near Schuylkill Haven), PA',
-        website: 'https://appalachiantrailtravelguide.com/directory/listing/rock-n-sole-hostel',
-        googleMapsUrl: 'https://maps.google.com/?q=40.5583,-76.1281',
-        notes: 'NoBo mile ~1202, 1.6mi N of PA 183 trailhead. Owners Craig (retired PA State Trooper) and Jody Stine. 6-bed bunkhouse + vintage 1958 camper "Trashy" for 2 (glamping!). Max 12 hikers. $40/night INCLUDES hot outdoor shower, linens, dinner & breakfast, rides to/from Rt 183 trailhead, daily resupply run. Chemical privy. Cash, PayPal, or credit via emailed invoice. Good cell service. Near Yuengling Brewery and largest Cabela\'s - perfect for zero day!',
-        pricing: '$40/night (meals included)',
-        services: ['hostel', 'showers', 'meals', 'shuttle', 'resupply'],
-        lastVerified: '2026-02-05',
-      },
-    ],
-  },
-  {
     resupplyId: 'rs-028', // Port Clinton, PA
     businesses: [
       {
@@ -6095,18 +6077,6 @@ export const resupplyContacts: ContactInfo[] = [
         notes: 'Sharon, CT is 4.7W from trail.',
         services: ['post office'],
         lastVerified: '2026-02-04',
-      },
-      {
-        id: 'falls-002b',
-        name: 'Bearded Woods Bunk & Dine',
-        type: 'hostel',
-        phone: '(860) 480-2966',
-        website: 'https://www.beardedwoods.com',
-        googleMapsUrl: 'https://maps.google.com/?q=41.8800,-73.4733',
-        notes: 'CUSTOM-BUILT hiker hostel! Owner Hudson thru-hiked twice, built exactly what hikers want. ~0.5mi from AT on wooded hillside. AT Passport location. OPEN MAY 1-AUG 1 (limited services other dates). $45-50PP includes: shuttle to/from trail (between W. Cornwall Rd & Salisbury), comfy bunk w/clean linens, shower w/amenities, communal laundry, loaner clothes, WiFi, HEARTY BREAKFAST, rides to local PO. Pizza, ice cream, drinks, snacks available for purchase. FREE slackpacking between W. Cornwall Rd & Salisbury with 2nd night stay! Natural log bunkroom, common area, dartboard. Reservations recommended. Mail drops: PO Box 1068, Sharon, CT 06069.',
-        pricing: '$45-50PP (includes breakfast)',
-        services: ['hostel', 'shuttle', 'showers', 'laundry', 'breakfast', 'wifi', 'slackpacking', 'resupply', 'AT passport', 'mail drops'],
-        lastVerified: '2026-02-05',
       },
       {
         id: 'falls-003',
@@ -9143,19 +9113,6 @@ export const resupplyContacts: ContactInfo[] = [
         pricing: 'Bunks $20PP, tenting $20PP',
         services: ['camping', 'hostel', 'laundry', 'pool', 'wifi', 'fuel', 'shuttle', 'pets', 'mail drops', 'AT passport'],
         lastVerified: '2026-02-04',
-      },
-      {
-        id: 'gor-001b',
-        name: 'Rattle River Lodge and Hostel',
-        type: 'hostel',
-        phone: '(603) 466-5049',
-        address: '592 U.S. Route 2, Shelburne, NH 03581',
-        website: 'https://www.rattleriverhostel.com',
-        googleMapsUrl: 'https://maps.google.com/?q=44.3908,-71.1117',
-        notes: 'RATED "BEST HOSTEL ON THE AT" by many hikers! Steps from AT at US 2 trailhead. Owner Erik Barstow (since 2017). On 7 beautiful acres adjoining White Mountain National Forest. Private rooms + dorm beds from $37. INCLUDES: hot showers, comfy beds, laundry, WAFFLES BREAKFAST! Freezer with pizza/ice cream to purchase. Free shuttle to Pinkham Notch. Full-service for slackpacking. Large dining area, living room with DVDs. Serene backyard with patio, pond, fire pit. Mail drops: 592 US 2, Shelburne, NH 03581.',
-        pricing: 'Dorms from $37, private rooms available',
-        services: ['hostel', 'showers', 'laundry', 'breakfast', 'shuttle', 'slackpacking', 'wifi', 'mail drops'],
-        lastVerified: '2026-02-05',
       },
       {
         id: 'gor-002',

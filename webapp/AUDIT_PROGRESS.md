@@ -39,8 +39,8 @@
 
 ### Pennsylvania ✅
 - **REMOVED:** Palmerton Jail Hostel (CLOSED permanently in 2015 after 40 years)
+- **REMOVED:** Rock 'N Sole Hostel (no longer in operation)
 - Enhanced: The Doyle Hotel, Kind of Outdoorsy, Trail of Hope, Ironmaster's Mansion, Church of the Mountain
-- **ADDED:** Rock 'N Sole Hostel, Summit Station (mile ~1202, $40 w/meals)
 - **ADDED:** The Lookout Hostel, New Tripoli (mile 1246.6, est. 2021)
 
 ### New Jersey ✅
@@ -53,7 +53,7 @@
 - Existing entries already comprehensive
 
 ### Connecticut ✅
-- **ADDED:** Bearded Woods Bunk & Dine, Sharon (custom-built hostel, $45-50 w/breakfast)
+- **REMOVED:** Bearded Woods Bunk & Dine (no longer in operation)
 - Maria McCabe's Place updated (grandson continuing legacy)
 - Existing entries already comprehensive
 
@@ -68,7 +68,7 @@
 - Existing entries already comprehensive
 
 ### New Hampshire ✅
-- **ADDED:** Rattle River Lodge and Hostel, Shelburne (rated "best hostel on AT")
+- **REMOVED:** Rattle River Lodge and Hostel (no longer in operation)
 - AMC facilities (Highland Center, Joe Dodge Lodge) entries comprehensive
 - Existing entries already comprehensive
 
@@ -84,13 +84,13 @@
 - NJ: Enhanced AMC Mohican Outdoor Center with full details
 - NY: Added Graymoor Spiritual Life Center (free camping)
 - NY: Enhanced Lost and Found Hostel (corrected pricing, added email)
-- CT: Added Bearded Woods Bunk & Dine hostel
+- CT: REMOVED Bearded Woods Bunk & Dine hostel (no longer in operation)
 - MA: Added Bascom Lodge at Mt. Greylock summit
-- NH: Added Rattle River Lodge and Hostel
+- NH: REMOVED Rattle River Lodge and Hostel (no longer in operation)
 
 ### 2026-02-05 (Pennsylvania)
 - REMOVED: Palmerton Jail Hostel (closed 2015)
-- ADDED: Rock 'N Sole Hostel (Summit Station, mile ~1202)
+- REMOVED: Rock 'N Sole Hostel (no longer in operation)
 - ADDED: The Lookout Hostel (New Tripoli, mile 1246.6)
 - Enhanced: Doyle Hotel, Kind of Outdoorsy, Trail of Hope, Ironmaster's Mansion, Church of the Mountain
 
