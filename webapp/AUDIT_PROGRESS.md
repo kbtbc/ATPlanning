@@ -2,7 +2,7 @@
 
 ## Audit Status
 **Last Updated:** 2026-02-05
-**Current State Being Audited:** West Virginia (next)
+**Current State Being Audited:** New Jersey
 **Data Source:** https://appalachiantrailtravelguide.com/
 
 ## Completed States
@@ -27,11 +27,28 @@
 - Updated phone numbers, detailed notes, pricing models
 - Stanimal's 328 locations already comprehensive
 
+### West Virginia ✅
+- Enhanced: The Town's Inn (added address, updated to hostel type, detailed amenities)
+- Enhanced: ATC Headquarters (added tradition details)
+- Note: WV has only ~4 miles of AT, Harpers Ferry is main stop
+
+### Maryland ✅
+- Enhanced: Cross Trails Hostel (formerly HI Harpers Ferry)
+- Sunflower Cottage already well-documented
+- Note: Zero Day Stay hostel at Pen Mar CLOSED July 2025 (owner still doing shuttles)
+
+### Pennsylvania ✅
+- **REMOVED:** Palmerton Jail Hostel (CLOSED permanently in 2015 after 40 years)
+- Enhanced: The Doyle Hotel (added historic 1770s/1803 details, current pricing $49/$89)
+- Enhanced: Kind of Outdoorsy (veteran-owned, 6 bunks $25, pool table, Darn Tough exchange)
+- Enhanced: Trail of Hope Outreach Ministries (added address, Wednesday free dinner, loaner bikes)
+- Enhanced: Ironmaster's Mansion Hostel (1829 mansion, AT Museum connection, detailed meal pricing)
+- Enhanced: Church of the Mountain Hiker Center (oldest AT hostel since 1976, Thursday potlucks, corrected address)
+- **ADDED:** Rock 'N Sole Hostel, Summit Station (mile ~1202, $40 w/meals, Yuengling/Cabela's nearby)
+- **ADDED:** The Lookout Hostel, New Tripoli (mile 1246.6, est. 2021, 40-mile valley views)
+
 ## Pending States
-- [ ] West Virginia
-- [ ] Maryland
-- [ ] Pennsylvania
-- [ ] New Jersey
+- [ ] New Jersey (in progress)
 - [ ] New York
 - [ ] Connecticut
 - [ ] Massachusetts
@@ -41,7 +58,13 @@
 
 ## Change Log
 
-### 2026-02-05
+### 2026-02-05 (Pennsylvania)
+- REMOVED: Palmerton Jail Hostel (closed 2015)
+- ADDED: Rock 'N Sole Hostel (Summit Station, mile ~1202)
+- ADDED: The Lookout Hostel (New Tripoli, mile 1246.6)
+- Enhanced: Doyle Hotel, Kind of Outdoorsy, Trail of Hope, Ironmaster's Mansion, Church of the Mountain
+
+### 2026-02-05 (GA-MD)
 - GA: Added phone2/email to Above The Clouds, updated Barefoot Hills name/address
 - GA: Enhanced Mountain Crossings with historic CCC info, mile marker
 - GA: Updated Green Dragon pricing ($60+tax), amenities
