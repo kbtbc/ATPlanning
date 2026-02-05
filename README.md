@@ -77,7 +77,7 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 
 - **Trail Length**: 2,197.4 miles (plus 8.5 mile approach trail)
 - **Elevation Data**: ~5,000 points from FKT GPX (0.5mi resolution)
-- **Shelters**: 252 shelters from GA to ME
+- **Shelters**: 252 shelters from GA to ME with accurate GPS coordinates (from ATC official data), icon-coded amenities, mile markers, capacity, and elevation
 - **Resupply Points**: 69 locations covering entire trail
 - **Business Contacts**: 986 businesses with complete contact information
 - **Features**: 50 notable landmarks
@@ -85,11 +85,12 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 
 ### Direction Conventions
 
-**IMPORTANT:** When viewing off-trail distances with directions (E/W):
-- **NOBO (Northbound)**: East (E) = RIGHT, West (W) = LEFT when exiting the trail
-- **SOBO (Southbound)**: East (E) = LEFT, West (W) = RIGHT when exiting the trail
+**IMPORTANT - Appalachian Trail Convention:**
+When referring to off-trail locations (shelters, resupply, water sources):
+- **NOBO (Northbound)**: **EAST is ALWAYS RIGHT**, **WEST is ALWAYS LEFT** when exiting the trail
+- **SOBO (Southbound)**: **WEST is ALWAYS RIGHT**, **EAST is ALWAYS LEFT** when exiting the trail
 
-This follows the hiker's perspective looking ahead in their direction of travel, regardless of the actual compass heading at that point on the trail.
+This is the standard AT hiker's perspective convention - it holds true regardless of the actual compass direction the trail is facing at any given point.
 
 ## Tech Stack
 
@@ -158,11 +159,20 @@ bun run preview # or: npm run preview
 ## Data Sources
 
 Trail data compiled from:
+- **AWOL AT Guide** (2025 edition) - Primary shelter amenity data with icon-coded amenities
+- **ATC Official Data** (via guymott.com) - Authoritative GPS coordinates for all shelters
 - Appalachian Trail Conservancy
 - The Trek resupply guides
-- tnlandforms.us shelter data
+- tnlandforms.us shelter data (secondary verification)
 - FarOut/Guthook community data
 - FKT (Fastest Known Time) GPX data with elevation
+
+**Data Quality:** 
+- All 252 shelters have accurate GPS coordinates from official ATC data (guymott.com)
+- Mile markers verified against AWOL AT Guide 2025 edition
+- 228 shelters cross-validated with ATC coordinates
+- 24 shelters use original GPS (naming variations not in ATC dataset)
+- Icon recognition completed for amenities (water, tenting, privy, bear cables/boxes, showers, views, hammock friendly)
 
 Always verify with current guidebooks and local conditions before hiking.
 
@@ -176,6 +186,7 @@ This app is for informational purposes only. Not affiliated with the Appalachian
 
 Historical audit and progress files have been moved to `docs/archive/`:
 - Business audit progress and changelog
+- Shelter audit files (SHELTER_AUDIT.md, SHELTER_AI_COMMAND.md)
 - Data enrichment records
 - Deployment summaries
 
