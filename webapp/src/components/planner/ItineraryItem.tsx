@@ -33,8 +33,8 @@ function ShelterItem({ shelter, onSetStart }: { shelter: Shelter; onSetStart: (m
   return (
     <div className="card flex items-center justify-between">
       <div className="flex items-center gap-2">
-        <div className="w-6 h-6 rounded bg-[var(--shelter-color)] flex items-center justify-center">
-          <Home className="w-3 h-3 text-white" />
+        <div className="w-6 h-6 flex items-center justify-center">
+          <Home className="w-5 h-5 text-[var(--shelter-color)]" />
         </div>
         <div>
           <p className="font-medium text-sm">{shelter.name}</p>
@@ -83,14 +83,14 @@ function ResupplyItem({ resupply, onSetStart, onResupplyClick }: ResupplyItemPro
     >
       <div className="flex items-start justify-between">
         <div className="flex items-start gap-2">
-          <div className={cn(
-            'w-6 h-6 rounded-full flex items-center justify-center shrink-0',
-            resupply.resupplyQuality === 'major_town' && 'bg-[var(--category-major-town)]',
-            resupply.resupplyQuality === 'trail_town' && 'bg-[var(--category-trail-town)]',
-            resupply.resupplyQuality === 'on_trail' && 'bg-[var(--category-on-trail)]',
-            resupply.resupplyQuality === 'limited' && 'bg-[var(--category-limited)]'
-          )}>
-            <Package className="w-3 h-3 text-white" />
+          <div className="w-6 h-6 flex items-center justify-center shrink-0">
+            <Package className={cn(
+              'w-5 h-5',
+              resupply.resupplyQuality === 'major_town' && 'text-[var(--category-major-town)]',
+              resupply.resupplyQuality === 'trail_town' && 'text-[var(--category-trail-town)]',
+              resupply.resupplyQuality === 'on_trail' && 'text-[var(--category-on-trail)]',
+              resupply.resupplyQuality === 'limited' && 'text-[var(--category-limited)]'
+            )} />
           </div>
           <div>
             <p className="font-medium text-sm">{resupply.name}</p>
@@ -127,8 +127,8 @@ function FeatureItem({ feature, onSetStart }: { feature: Waypoint; onSetStart: (
   return (
     <div className="card flex items-center justify-between">
       <div className="flex items-center gap-2">
-        <div className="w-6 h-6 rounded-full bg-[var(--feature-color)] flex items-center justify-center">
-          <Info className="w-3 h-3 text-white" />
+        <div className="w-6 h-6 flex items-center justify-center">
+          <Info className="w-5 h-5 text-[var(--category-limited)]" />
         </div>
         <div>
           <p className="font-medium text-sm">{feature.name}</p>
