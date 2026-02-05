@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, TrendingUp } from 'lucide-react';
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import { useHikePlanner } from '../hooks/useHikePlanner';
 import { getContactsByResupplyId } from '../data/contacts';
 import { MiniMap } from './MiniMap';
@@ -34,6 +34,7 @@ export function HikePlanner({ initialMile = 0, onMileChange }: HikePlannerProps)
 
   const [expandedDay, setExpandedDay] = useState<number | null>(null);
   const [selectedResupply, setSelectedResupply] = useState<ResupplyPoint | null>(null);
+  const dayCardsRef = useRef<HTMLDivElement>(null);
 
   // Notify parent when startMile changes
   useEffect(() => {
@@ -62,6 +63,32 @@ export function HikePlanner({ initialMile = 0, onMileChange }: HikePlannerProps)
   const handleBackFromResupply = () => {
     setSelectedResupply(null);
   };
+
+  // Handle waypoint click from MiniMap - find the day containing this mile and scroll to it
+  const handleWaypointClick = useCallback((mile: number) => {
+    // Find which day contains this mile
+    const dayIndex = plan.findIndex(day => {
+      const dayStart = day.day === 1 ? startMile : plan[day.day - 2]?.endMile ?? startMile;
+      return mile >= dayStart && mile <= day.endMile;
+    });
+
+    if (dayIndex !== -1) {
+      const targetDay = plan[dayIndex].day;
+
+      // Expand that day
+      setExpandedDay(targetDay);
+
+      // Scroll to the day card after a brief delay to allow expansion
+      setTimeout(() => {
+        if (dayCardsRef.current) {
+          const dayCard = dayCardsRef.current.querySelector(`[data-day="${targetDay}"]`);
+          if (dayCard) {
+            dayCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      }, 100);
+    }
+  }, [plan, startMile]);
 
   // Get businesses for a resupply point
   const getBusinesses = (resupply: ResupplyPoint): Business[] => {
@@ -96,6 +123,7 @@ export function HikePlanner({ initialMile = 0, onMileChange }: HikePlannerProps)
         rangeAhead={totalMiles}
         direction={direction}
         dayMarkers={dayMarkers}
+        onWaypointClick={handleWaypointClick}
       />
 
       {/* Controls Section */}
@@ -137,7 +165,7 @@ export function HikePlanner({ initialMile = 0, onMileChange }: HikePlannerProps)
           Daily Itinerary
         </h3>
 
-        <div className="space-y-0.5">
+        <div className="space-y-0.5" ref={dayCardsRef}>
           {plan.map((day, index) => (
             <DayCard
               key={day.day}
@@ -149,6 +177,7 @@ export function HikePlanner({ initialMile = 0, onMileChange }: HikePlannerProps)
               onToggle={() => setExpandedDay(expandedDay === day.day ? null : day.day)}
               onSetStart={handleSetStart}
               onResupplyClick={handleResupplyClick}
+              data-day={day.day}
             />
           ))}
         </div>

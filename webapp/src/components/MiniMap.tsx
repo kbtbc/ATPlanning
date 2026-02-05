@@ -11,6 +11,7 @@ interface MiniMapProps {
   rangeAhead?: number;
   direction?: Direction;
   dayMarkers?: { mile: number; day: number }[];
+  onWaypointClick?: (mile: number) => void;
 }
 
 type WaypointVisibility = {
@@ -19,7 +20,7 @@ type WaypointVisibility = {
   features: boolean;
 };
 
-export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayMarkers = [] }: MiniMapProps) {
+export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayMarkers = [], onWaypointClick }: MiniMapProps) {
   const [visibility, setVisibility] = useState<WaypointVisibility>({
     shelters: true,
     resupply: true,
@@ -260,6 +261,9 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
             const tooltipTransform = tooltipAlign === 'left' ? 'translateX(0)' : tooltipAlign === 'right' ? 'translateX(-100%)' : 'translateX(-50%)';
             const tooltipLeft = tooltipAlign === 'left' ? '0' : tooltipAlign === 'right' ? '100%' : '50%';
 
+            // Vertical positioning: show below if near top of map
+            const showBelow = yPos < 35;
+
             // Check if shelter is closed
             const isClosed = shelter.capacity === 0 || shelter.notes?.includes('REMOVED') || shelter.notes?.includes('Closed');
 
@@ -272,10 +276,15 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                   e.stopPropagation();
                   setActiveTooltip(isActive ? null : `shelter-${shelter.id}`);
                 }}
+                onDoubleClick={(e) => {
+                  e.stopPropagation();
+                  onWaypointClick?.(shelter.mile);
+                }}
               >
                 <Home className={cn("w-4 h-4 drop-shadow-sm", isClosed ? "text-[var(--foreground-muted)]" : "text-[var(--shelter-color)]")} />
                 <div className={cn(
-                  "absolute bottom-full mb-2 transition-opacity z-30 pointer-events-none",
+                  "absolute transition-opacity z-30 pointer-events-none",
+                  showBelow ? "top-full mt-2" : "bottom-full mb-2",
                   isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
                 )} style={{ left: tooltipLeft, transform: tooltipTransform }}>
                   <div className="bg-[var(--background)] border border-[var(--border)] rounded px-2 py-1.5 text-xs shadow-lg min-w-[180px] max-w-[280px]">
@@ -323,6 +332,11 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                         {shelter.notes}
                       </p>
                     )}
+                    {onWaypointClick && (
+                      <p className="text-[9px] text-[var(--primary)] mt-1 pt-1 border-t border-[var(--border-light)] text-center">
+                        Double-click to view in itinerary
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -341,6 +355,9 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
             const tooltipTransform = tooltipAlign === 'left' ? 'translateX(0)' : tooltipAlign === 'right' ? 'translateX(-100%)' : 'translateX(-50%)';
             const tooltipLeft = tooltipAlign === 'left' ? '0' : tooltipAlign === 'right' ? '100%' : '50%';
 
+            // Vertical positioning: show below if near top of map
+            const showBelow = yPos < 35;
+
             return (
               <div
                 key={resupply.id}
@@ -350,10 +367,15 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                   e.stopPropagation();
                   setActiveTooltip(isActive ? null : `resupply-${resupply.id}`);
                 }}
+                onDoubleClick={(e) => {
+                  e.stopPropagation();
+                  onWaypointClick?.(resupply.mile);
+                }}
               >
                 <Package className="w-4 h-4 text-[var(--resupply-color)] drop-shadow-sm" />
                 <div className={cn(
-                  "absolute bottom-full mb-2 transition-opacity z-30 pointer-events-none",
+                  "absolute transition-opacity z-30 pointer-events-none",
+                  showBelow ? "top-full mt-2" : "bottom-full mb-2",
                   isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
                 )} style={{ left: tooltipLeft, transform: tooltipTransform }}>
                   <div className="bg-[var(--background)] border border-[var(--border)] rounded px-2 py-1.5 text-xs shadow-lg min-w-[150px]">
@@ -370,6 +392,11 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                         {resupply.resupplyQuality.replace('_', ' ')}
                       </span>
                     </div>
+                    {onWaypointClick && (
+                      <p className="text-[9px] text-[var(--primary)] mt-1 pt-1 border-t border-[var(--border-light)] text-center">
+                        Double-click to view in itinerary
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -388,6 +415,9 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
             const tooltipTransform = tooltipAlign === 'left' ? 'translateX(0)' : tooltipAlign === 'right' ? 'translateX(-100%)' : 'translateX(-50%)';
             const tooltipLeft = tooltipAlign === 'left' ? '0' : tooltipAlign === 'right' ? '100%' : '50%';
 
+            // Vertical positioning: show below if near top of map
+            const showBelow = yPos < 35;
+
             return (
               <div
                 key={feature.id}
@@ -397,10 +427,15 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                   e.stopPropagation();
                   setActiveTooltip(isActive ? null : `feature-${feature.id}`);
                 }}
+                onDoubleClick={(e) => {
+                  e.stopPropagation();
+                  onWaypointClick?.(feature.mile);
+                }}
               >
                 <Info className="w-3.5 h-3.5 text-[var(--category-limited)] drop-shadow-sm" />
                 <div className={cn(
-                  "absolute bottom-full mb-2 transition-opacity z-30 pointer-events-none",
+                  "absolute transition-opacity z-30 pointer-events-none",
+                  showBelow ? "top-full mt-2" : "bottom-full mb-2",
                   isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
                 )} style={{ left: tooltipLeft, transform: tooltipTransform }}>
                   <div className="bg-[var(--background)] border border-[var(--border)] rounded px-2 py-1.5 text-xs shadow-lg max-w-[200px]">
@@ -410,6 +445,11 @@ export function MiniMap({ currentMile, rangeAhead = 50, direction = 'NOBO', dayM
                       <span>·</span>
                       <span>{feature.elevation.toLocaleString()} ft</span>
                     </div>
+                    {onWaypointClick && (
+                      <p className="text-[9px] text-[var(--primary)] mt-1 pt-1 border-t border-[var(--border-light)] text-center">
+                        Double-click to view in itinerary
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>

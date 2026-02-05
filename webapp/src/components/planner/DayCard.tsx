@@ -22,6 +22,7 @@ interface DayCardProps {
   onToggle: () => void;
   onSetStart: (mile: number, date: Date) => void;
   onResupplyClick?: (resupply: ResupplyPoint) => void;
+  'data-day'?: number;
 }
 
 export function DayCard({
@@ -33,6 +34,7 @@ export function DayCard({
   onToggle,
   onSetStart,
   onResupplyClick,
+  'data-day': dataDay,
 }: DayCardProps) {
   const dayDate = addDays(startDate, day.day - 1);
   const dailyMiles = Math.abs(day.endMile - day.startMile);
@@ -58,6 +60,7 @@ export function DayCard({
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: index * 0.05 }}
       className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-lg overflow-hidden"
+      data-day={dataDay}
     >
       {/* Day Header */}
       <div
