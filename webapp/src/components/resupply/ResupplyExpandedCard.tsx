@@ -141,7 +141,7 @@ export function ResupplyExpandedCard({
             </div>
             {/* Summary description from notes */}
             {resupply.notes && (
-              <p className="text-xs text-[var(--foreground-muted)] mt-1 line-clamp-2">
+              <p className="text-xs text-[var(--foreground-muted)] mt-1">
                 {resupply.notes}
               </p>
             )}
