@@ -68,8 +68,8 @@
   --category-trail-town-bg: rgba(74, 159, 196, 0.12);
   --category-on-trail: #6aad72;
   --category-on-trail-bg: rgba(106, 173, 114, 0.12);
-  --category-limited: #d4a85a;
-  --category-limited-bg: rgba(212, 168, 90, 0.15);
+  --category-limited: #d9a088;
+  --category-limited-bg: rgba(217, 160, 136, 0.15);
 
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(26, 46, 40, 0.04);
@@ -95,8 +95,8 @@
   --category-trail-town-bg: rgba(154, 208, 232, 0.15);
   --category-on-trail: #a8d4ac;
   --category-on-trail-bg: rgba(168, 212, 172, 0.12);
-  --category-limited: #e8c888;
-  --category-limited-bg: rgba(232, 200, 136, 0.18);
+  --category-limited: #e8bba8;
+  --category-limited-bg: rgba(232, 187, 168, 0.18);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
   --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.3);
