@@ -62,8 +62,8 @@
   --feature-color: #7a8a94;
 
   /* Resupply category colors - muted palette (slightly brighter) */
-  --category-major-town: #358563;
-  --category-major-town-bg: rgba(53, 133, 99, 0.12);
+  --category-major-town: #d4883a;
+  --category-major-town-bg: rgba(212, 136, 58, 0.12);
   --category-trail-town: #4a9fc4;
   --category-trail-town-bg: rgba(74, 159, 196, 0.12);
   --category-on-trail: #6aad72;
@@ -89,8 +89,8 @@
   --border-light: #3d4f46;
 
   /* Resupply category colors - dark mode (slightly brighter) */
-  --category-major-town: #8fc4a8;
-  --category-major-town-bg: rgba(143, 196, 168, 0.15);
+  --category-major-town: #e8a55c;
+  --category-major-town-bg: rgba(232, 165, 92, 0.15);
   --category-trail-town: #9ad0e8;
   --category-trail-town-bg: rgba(154, 208, 232, 0.15);
   --category-on-trail: #a8d4ac;
