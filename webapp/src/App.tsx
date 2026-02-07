@@ -1,20 +1,18 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Map, Package, Search, Menu, X, BarChart3, Footprints } from 'lucide-react';
+import { Map, Package, Menu, X, BarChart3, Footprints } from 'lucide-react';
 import { HikePlanner } from './components/HikePlanner';
-import { WaypointList } from './components/WaypointList';
 import { ResupplyPlanner } from './components/ResupplyPlanner';
 import { TrailProgress } from './components/TrailProgress';
 import { ThemeToggle } from './components/ui';
 import { cn } from './lib/utils';
 import './index.css';
 
-type Tab = 'planner' | 'resupply' | 'waypoints';
+type Tab = 'planner' | 'resupply';
 
 const tabs: { id: Tab; label: string; icon: React.ReactNode }[] = [
   { id: 'planner', label: 'Planner', icon: <Map className="w-4 h-4" /> },
   { id: 'resupply', label: 'Resupply', icon: <Package className="w-4 h-4" /> },
-  { id: 'waypoints', label: 'Waypoints', icon: <Search className="w-4 h-4" /> },
 ];
 
 const pageTransition = {
@@ -131,12 +129,6 @@ function App() {
           {activeTab === 'resupply' && (
             <motion.div key="resupply" {...pageTransition}>
               <ResupplyPlanner currentMile={currentMile} onMileChange={setCurrentMile} />
-            </motion.div>
-          )}
-
-          {activeTab === 'waypoints' && (
-            <motion.div key="waypoints" {...pageTransition}>
-              <WaypointList />
             </motion.div>
           )}
         </AnimatePresence>

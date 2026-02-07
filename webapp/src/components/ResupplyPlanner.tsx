@@ -357,6 +357,12 @@ export function ResupplyPlanner({ currentMile = 0, direction = 'NOBO', onMileCha
                         {serviceSummary}
                       </div>
                     )}
+                    {/* Third line: description preview */}
+                    {resupply.notes && (
+                      <div className="text-[11px] text-[var(--foreground-muted)] mt-0.5 truncate opacity-70">
+                        {resupply.notes}
+                      </div>
+                    )}
                   </div>
 
                   {/* Chevron */}
