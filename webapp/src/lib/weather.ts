@@ -220,7 +220,7 @@ export async function fetchWeather(location: WeatherLocation): Promise<WeatherDa
     temperature_unit: 'fahrenheit',
     wind_speed_unit: 'mph',
     precipitation_unit: 'inch',
-    forecast_days: '5',
+    forecast_days: '7',
     timezone: 'America/New_York',
   });
 

@@ -219,7 +219,7 @@ export function DailyForecastList({ daily, temperatureAdjustment }: DailyForecas
       className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl overflow-hidden"
     >
       <p className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)] font-semibold px-5 pt-3 pb-1">
-        5-Day Forecast
+        7-Day Forecast
       </p>
       <div className="divide-y divide-[var(--border-light)]">
         {daily.map((day, i) => {
