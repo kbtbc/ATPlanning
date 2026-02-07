@@ -112,7 +112,7 @@ export function HourlyForecastCard({ hours, temperatureAdjustment }: HourlyForec
                 <Wind className="w-3 h-3 text-[#c4916a] mr-1" />
                 <span className="text-[#c4916a]">{current.windSpeed}/{current.windGusts} mph/</span>
                 <span className="text-[var(--warning)] font-semibold">gusts</span>
-                <span className="text-[var(--foreground-muted)] ml-1">{getWindDirection(current.windDirection)}</span>
+                <span className="text-[var(--foreground-muted)]">&nbsp;{getWindDirection(current.windDirection)}</span>
               </div>
             ) : (
               <div className="flex items-center justify-end gap-1 text-xs text-[var(--foreground-muted)]">
@@ -292,12 +292,11 @@ export function DailyForecastList({ daily, temperatureAdjustment }: DailyForecas
                     <Wind className="w-2.5 h-2.5 text-[#c4916a] mr-0.5" />
                     <span className="text-[#c4916a]">{day.windSpeedMax}/{day.windGustsMax} mph/</span>
                     <span className="text-[var(--warning)] font-semibold">gusts</span>
-                    <span className="text-[var(--foreground-muted)] ml-1">{getWindDirection(day.windDirection)}</span>
                   </span>
                 ) : (
                   <span className="text-[10px] text-[var(--foreground-muted)] flex items-center gap-0.5">
                     <Wind className="w-2.5 h-2.5" />
-                    {day.windSpeedMax} mph {getWindDirection(day.windDirection)}
+                    {day.windSpeedMax} mph
                   </span>
                 )}
                 <span className={`text-[10px] flex items-center gap-0.5 ${uvInfo.color}`}>
