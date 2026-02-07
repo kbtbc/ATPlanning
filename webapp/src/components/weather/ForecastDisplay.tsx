@@ -108,13 +108,12 @@ export function HourlyForecastCard({ hours, temperatureAdjustment }: HourlyForec
           </div>
           <div className="text-right space-y-1.5 shrink-0">
             {current.windGusts > current.windSpeed + 5 ? (
-              <div className="flex items-center justify-end gap-1 text-xs">
-                <Wind className="w-3 h-3 text-[var(--color-sunset)]/60" />
-                <span className="text-[var(--color-sunset)]/60">{current.windSpeed}/</span>
-                <span className="text-[var(--warning)] font-semibold">{current.windGusts}</span>
-                <span className="text-[var(--color-sunset)]/60">mph/</span>
+              <div className="flex items-center justify-end text-xs">
+                <Wind className="w-3 h-3 text-[#c4916a] mr-1" />
+                <span className="text-[#c4916a]">{current.windSpeed}/{current.windGusts}</span>
+                <span className="text-[#c4916a] mx-0.5">mph/</span>
                 <span className="text-[var(--warning)] font-semibold">gusts</span>
-                <span className="text-[var(--foreground-muted)]">{getWindDirection(current.windDirection)}</span>
+                <span className="text-[var(--foreground-muted)] ml-1">{getWindDirection(current.windDirection)}</span>
               </div>
             ) : (
               <div className="flex items-center justify-end gap-1 text-xs text-[var(--foreground-muted)]">
@@ -290,11 +289,10 @@ export function DailyForecastList({ daily, temperatureAdjustment }: DailyForecas
               {/* Second row: wind, UV, feels-like, station temps */}
               <div className="flex items-center gap-3 mt-1.5 ml-20 pl-3 flex-wrap">
                 {day.windGustsMax > day.windSpeedMax + 10 ? (
-                  <span className="text-[10px] flex items-center gap-0.5">
-                    <Wind className="w-2.5 h-2.5 text-[var(--color-sunset)]/60" />
-                    <span className="text-[var(--color-sunset)]/60">{day.windSpeedMax}/</span>
-                    <span className="text-[var(--warning)] font-semibold">{day.windGustsMax}</span>
-                    <span className="text-[var(--color-sunset)]/60">mph/</span>
+                  <span className="text-[10px] flex items-center">
+                    <Wind className="w-2.5 h-2.5 text-[#c4916a] mr-0.5" />
+                    <span className="text-[#c4916a]">{day.windSpeedMax}/{day.windGustsMax}</span>
+                    <span className="text-[#c4916a] mx-0.5">mph/</span>
                     <span className="text-[var(--warning)] font-semibold">gusts</span>
                   </span>
                 ) : (
