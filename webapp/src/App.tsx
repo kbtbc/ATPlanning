@@ -1,18 +1,20 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Map, Package, Menu, X, BarChart3, Footprints } from 'lucide-react';
+import { Map, Package, CloudSun, Menu, X, BarChart3, Footprints } from 'lucide-react';
 import { HikePlanner } from './components/HikePlanner';
 import { ResupplyPlanner } from './components/ResupplyPlanner';
+import { WeatherForecast } from './components/weather/WeatherForecast';
 import { TrailProgress } from './components/TrailProgress';
 import { ThemeToggle } from './components/ui';
 import { cn } from './lib/utils';
 import './index.css';
 
-type Tab = 'planner' | 'resupply';
+type Tab = 'planner' | 'resupply' | 'weather';
 
 const tabs: { id: Tab; label: string; icon: React.ReactNode }[] = [
   { id: 'planner', label: 'Planner', icon: <Map className="w-4 h-4" /> },
   { id: 'resupply', label: 'Resupply', icon: <Package className="w-4 h-4" /> },
+  { id: 'weather', label: 'Weather', icon: <CloudSun className="w-4 h-4" /> },
 ];
 
 const pageTransition = {
@@ -129,6 +131,12 @@ function App() {
           {activeTab === 'resupply' && (
             <motion.div key="resupply" {...pageTransition}>
               <ResupplyPlanner currentMile={currentMile} onMileChange={setCurrentMile} />
+            </motion.div>
+          )}
+
+          {activeTab === 'weather' && (
+            <motion.div key="weather" {...pageTransition}>
+              <WeatherForecast currentMile={currentMile} />
             </motion.div>
           )}
         </AnimatePresence>

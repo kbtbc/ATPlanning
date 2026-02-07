@@ -66,12 +66,25 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - **Complete coverage** for all 14 states from Georgia to Maine
 - **Last Verified:** January 2025 (ongoing verification)
 
-### Waypoint Browser
+### Waypoint Data
 - **252 shelters** with enhanced descriptions, capacity, water, and privy info
 - All major towns and resupply points
 - Notable features and landmarks
-- Filter by type, state, and mile range
-- Full-text search
+
+### Trail Weather Forecast
+- **Elevation-adjusted temperatures** using the standard environmental lapse rate (3.5°F per 1,000 ft)
+- Compares trail elevation vs weather station elevation and auto-corrects temps
+- Three location input modes:
+  - **Mile entry**: Type any mile marker on the trail
+  - **Shelter/Resupply picker**: Search and select from 252 shelters + 112 resupply points
+  - **GPS**: Use your phone's location to get weather for your current position
+- Current conditions with feels-like temperature, wind, humidity, UV index, visibility
+- Scrollable hourly forecast for the next 24 hours
+- 5-day daily forecast with high/low temps, precipitation probability, wind, UV
+- Temperature color coding (blue=cold, green=comfortable, orange=hot)
+- Wind gust warnings when gusts exceed sustained speed by 5+ mph
+- Powered by Open-Meteo API (free, no API key required)
+- Methodology note shows exact elevation difference and temperature adjustment applied
 
 **Shelter Enhancements (Updated 2026-02-05):**
 - All 252 shelters with verified amenity keys from WBP PDF icon codes
