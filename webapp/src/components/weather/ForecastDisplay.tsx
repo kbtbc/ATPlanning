@@ -30,15 +30,8 @@ function WeatherIcon({ iconKey, className }: { iconKey: WeatherIconKey; classNam
   return <Icon className={className} />;
 }
 
-function getSeverityColor(severity: string): string {
-  switch (severity) {
-    case 'clear': return 'text-[var(--sunrise)]';
-    case 'mild': return 'text-[var(--foreground-muted)]';
-    case 'moderate': return 'text-[var(--info)]';
-    case 'severe': return 'text-[var(--warning)]';
-    default: return 'text-[var(--foreground-muted)]';
-  }
-}
+// All weather icons use warm golden color
+const WEATHER_ICON_COLOR = 'text-[var(--color-sunrise)]';
 
 // --- Helpers ---
 
@@ -109,7 +102,7 @@ export function HourlyForecastCard({ hours, temperatureAdjustment }: HourlyForec
               </p>
             )}
             <div className="flex items-center gap-1.5 mt-2">
-              <WeatherIcon iconKey={condition.icon} className={`w-5 h-5 ${getSeverityColor(condition.severity)}`} />
+              <WeatherIcon iconKey={condition.icon} className={`w-5 h-5 ${WEATHER_ICON_COLOR}`} />
               <span className="text-sm text-[var(--foreground)]">{condition.label}</span>
             </div>
           </div>
@@ -118,7 +111,7 @@ export function HourlyForecastCard({ hours, temperatureAdjustment }: HourlyForec
               <Wind className="w-3 h-3" />
               <span>{current.windSpeed} mph {getWindDirection(current.windDirection)}</span>
               {current.windGusts > current.windSpeed + 5 && (
-                <span className="text-[var(--warning)]">G{current.windGusts}</span>
+                <span className="text-[var(--warning)]">gusts {current.windGusts}</span>
               )}
             </div>
             <div className="flex items-center justify-end gap-1 text-xs text-[var(--foreground-muted)]">
@@ -161,7 +154,7 @@ export function HourlyForecastCard({ hours, temperatureAdjustment }: HourlyForec
                   </span>
                   <WeatherIcon
                     iconKey={cond.icon}
-                    className={`w-4 h-4 my-1 ${getSeverityColor(cond.severity)}`}
+                    className={`w-4 h-4 my-1 ${WEATHER_ICON_COLOR}`}
                   />
                   <span className={`text-xs font-semibold ${getTempColor(hour.temperature)}`}>
                     {hour.temperature}°
@@ -205,6 +198,13 @@ function formatDay(date: Date): string {
 export function DailyForecastList({ daily, temperatureAdjustment }: DailyForecastListProps) {
   const hasAdjustment = Math.abs(temperatureAdjustment) >= 1;
 
+  // Find global min/max across all days for consistent positioning
+  const allLows = daily.map(d => d.temperatureLow);
+  const allHighs = daily.map(d => d.temperatureHigh);
+  const globalMin = Math.min(...allLows);
+  const globalMax = Math.max(...allHighs);
+  const globalRange = globalMax - globalMin || 1; // avoid div by zero
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
@@ -220,6 +220,10 @@ export function DailyForecastList({ daily, temperatureAdjustment }: DailyForecas
           const condition = getWeatherCondition(day.weatherCode);
           const uvInfo = getUvLabel(day.uvIndexMax);
           const isToday = i === 0;
+
+          // Position this day's bar relative to the global range
+          const barLeft = ((day.temperatureLow - globalMin) / globalRange) * 100;
+          const barWidth = ((day.temperatureHigh - day.temperatureLow) / globalRange) * 100;
 
           return (
             <motion.div
@@ -240,7 +244,7 @@ export function DailyForecastList({ daily, temperatureAdjustment }: DailyForecas
                 {/* Weather icon */}
                 <WeatherIcon
                   iconKey={condition.icon}
-                  className={`w-5 h-5 shrink-0 ${getSeverityColor(condition.severity)}`}
+                  className={`w-5 h-5 shrink-0 ${WEATHER_ICON_COLOR}`}
                 />
 
                 {/* Precip probability */}
@@ -254,17 +258,18 @@ export function DailyForecastList({ daily, temperatureAdjustment }: DailyForecas
                   )}
                 </div>
 
-                {/* Temp bar visualization */}
+                {/* Temp range: low — bar — high */}
                 <div className="flex-1 flex items-center gap-2">
                   <span className={`text-xs font-medium w-8 text-right ${getTempColor(day.temperatureLow)}`}>
                     {day.temperatureLow}°
                   </span>
-                  <div className="flex-1 h-1.5 bg-[var(--background)] rounded-full overflow-hidden">
+                  <div className="flex-1 h-1.5 rounded-full overflow-hidden relative" style={{ backgroundColor: 'var(--background)' }}>
                     <div
-                      className="h-full rounded-full bg-gradient-to-r from-[var(--info)] via-[var(--accent)] to-[var(--warning)]"
+                      className="absolute top-0 h-full rounded-full"
                       style={{
-                        marginLeft: `${Math.max(0, ((day.temperatureLow - 10) / 90) * 100)}%`,
-                        width: `${Math.min(100, ((day.temperatureHigh - day.temperatureLow) / 90) * 100)}%`,
+                        left: `${barLeft}%`,
+                        width: `${Math.max(barWidth, 4)}%`,
+                        background: `linear-gradient(to right, ${getTempBarColor(day.temperatureLow)}, ${getTempBarColor(day.temperatureHigh)})`,
                       }}
                     />
                   </div>
@@ -280,7 +285,7 @@ export function DailyForecastList({ daily, temperatureAdjustment }: DailyForecas
                   <Wind className="w-2.5 h-2.5" />
                   {day.windSpeedMax} mph
                   {day.windGustsMax > day.windSpeedMax + 10 && (
-                    <span className="text-[var(--warning)]"> G{day.windGustsMax}</span>
+                    <span className="text-[var(--warning)]"> gusts {day.windGustsMax}</span>
                   )}
                 </span>
                 <span className={`text-[10px] flex items-center gap-0.5 ${uvInfo.color}`}>
@@ -303,4 +308,15 @@ export function DailyForecastList({ daily, temperatureAdjustment }: DailyForecas
       </div>
     </motion.div>
   );
+}
+
+/** Returns a hex color for the temp bar gradient based on temperature */
+function getTempBarColor(temp: number): string {
+  if (temp <= 10) return '#60a5fa';   // blue-400
+  if (temp <= 25) return '#38bdf8';   // sky-400
+  if (temp <= 40) return '#67c7c3';   // teal-ish
+  if (temp <= 55) return '#7a9e7e';   // meadow (accent)
+  if (temp <= 70) return '#c4a77d';   // trail-light (warm)
+  if (temp <= 85) return '#d4846a';   // sunset (warning)
+  return '#f87171';                    // red-400
 }
