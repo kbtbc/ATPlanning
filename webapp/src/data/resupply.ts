@@ -6,8 +6,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'amicalola-falls-ga',
     name: 'Amicalola Falls, GA',
-    mile: -8.5,
-    soboMile: 2205.9,
+    mile: -8.5, soboMile: 2206.4,
     elevation: 1900,
     lat: 34.5654,
     lng: -84.2503,
@@ -30,8 +29,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-001',
     name: 'Mountain Crossings at Neel Gap',
-    mile: 31.0,
-    soboMile: 2166.4,
+    mile: 31.0, soboMile: 2166.9,
     elevation: 3125,
     lat: 34.7358,
     lng: -83.9181,
@@ -52,8 +50,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'suches-ga',
     name: 'Suches, GA',
-    mile: 15.7,
-    soboMile: 2181.7,
+    mile: 15.7, soboMile: 2182.2,
     elevation: 2881,
     lat: 34.69709,
     lng: -84.01439,
@@ -75,8 +72,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-002',
     name: 'Hiawassee, GA',
-    mile: 69.0,
-    soboMile: 2128.4,
+    mile: 69.0, soboMile: 2128.9,
     elevation: 1980,
     lat: 34.9500,
     lng: -83.7567,
@@ -101,8 +97,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-003',
     name: 'Franklin, NC',
-    mile: 109.0,
-    soboMile: 2088.4,
+    mile: 109.0, soboMile: 2088.9,
     elevation: 2100,
     lat: 35.1823,
     lng: -83.3815,
@@ -125,8 +120,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-004',
     name: 'Nantahala Outdoor Center',
-    mile: 137.0,
-    soboMile: 2060.4,
+    mile: 137.0, soboMile: 2060.9,
     elevation: 1723,
     lat: 35.3341,
     lng: -83.5897,
@@ -147,8 +141,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-005',
     name: 'Fontana Dam',
-    mile: 164.0,
-    soboMile: 2033.4,
+    mile: 164.0, soboMile: 2033.9,
     elevation: 1700,
     lat: 35.4500,
     lng: -83.8167,
@@ -169,8 +162,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-006',
     name: 'Gatlinburg, TN',
-    mile: 208.0,
-    soboMile: 1989.4,
+    mile: 208.0, soboMile: 1989.9,
     elevation: 1289,
     lat: 35.7143,
     lng: -83.5102,
@@ -195,8 +187,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-007',
     name: 'Standing Bear Farm',
-    mile: 242.0,
-    soboMile: 1955.4,
+    mile: 242.0, soboMile: 1955.9,
     elevation: 1800,
     lat: 35.7833,
     lng: -83.1333,
@@ -217,8 +208,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-008',
     name: 'Hot Springs, NC',
-    mile: 275.0,
-    soboMile: 1922.4,
+    mile: 275.0, soboMile: 1922.9,
     elevation: 1326,
     lat: 35.8972,
     lng: -82.8283,
@@ -239,8 +229,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-009',
     name: 'Erwin, TN',
-    mile: 344.0,
-    soboMile: 1853.4,
+    mile: 344.0, soboMile: 1853.9,
     elevation: 1700,
     lat: 36.1450,
     lng: -82.4167,
@@ -263,8 +252,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-009b',
     name: 'Roan Mountain, TN',
-    mile: 395.3,
-    soboMile: 1801.0,
+    mile: 395.3, soboMile: 1802.6,
     elevation: 2700,
     lat: 36.1833,
     lng: -82.1167,
@@ -287,8 +275,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-010',
     name: 'Mountain Harbour Hostel',
-    mile: 396.0,
-    soboMile: 1801.4,
+    mile: 396.0, soboMile: 1801.9,
     elevation: 3600,
     lat: 36.2667,
     lng: -82.0667,
@@ -309,8 +296,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-010b',
     name: 'Dennis Cove, TN',
-    mile: 420.0,
-    soboMile: 1776.5,
+    mile: 420.0, soboMile: 1777.9,
     elevation: 2600,
     lat: 36.3167,
     lng: -82.0833,
@@ -331,8 +317,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-011',
     name: 'Hampton, TN',
-    mile: 420.0,
-    soboMile: 1777.4,
+    mile: 420.0, soboMile: 1777.9,
     elevation: 2000,
     lat: 36.2833,
     lng: -82.1667,
@@ -356,8 +341,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-012',
     name: 'Damascus, VA',
-    mile: 471.0,
-    soboMile: 1726.4,
+    mile: 471.0, soboMile: 1726.9,
     elevation: 1928,
     lat: 36.6347,
     lng: -81.7847,
@@ -378,8 +362,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-012b',
     name: 'Troutdale, VA',
-    mile: 521.0,
-    soboMile: 1676.3,
+    mile: 521.0, soboMile: 1676.9,
     elevation: 2500,
     lat: 36.7000,
     lng: -81.4333,
@@ -402,8 +385,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-013',
     name: 'Marion, VA',
-    mile: 535.0,
-    soboMile: 1662.4,
+    mile: 535.0, soboMile: 1662.9,
     elevation: 2080,
     lat: 36.8350,
     lng: -81.5147,
@@ -426,8 +408,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-014',
     name: 'Atkins, VA (Quarter Way Inn)',
-    mile: 556.0,
-    soboMile: 1641.4,
+    mile: 556.0, soboMile: 1641.9,
     elevation: 2480,
     lat: 36.8667,
     lng: -81.4167,
@@ -448,8 +429,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-015',
     name: 'Bland, VA',
-    mile: 592.0,
-    soboMile: 1605.4,
+    mile: 592.0, soboMile: 1605.9,
     elevation: 2350,
     lat: 37.1000,
     lng: -81.1167,
@@ -472,8 +452,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-015b',
     name: 'Narrows, VA',
-    mile: 638.0,
-    soboMile: 1559.4,
+    mile: 638.0, soboMile: 1559.9,
     elevation: 1600,
     lat: 37.3333,
     lng: -80.8167,
@@ -496,8 +475,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-016',
     name: 'Pearisburg, VA',
-    mile: 637.0,
-    soboMile: 1560.4,
+    mile: 637.0, soboMile: 1560.9,
     elevation: 1800,
     lat: 37.3267,
     lng: -80.7350,
@@ -518,8 +496,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-017',
     name: 'Catawba, VA',
-    mile: 705.0,
-    soboMile: 1492.4,
+    mile: 705.0, soboMile: 1492.9,
     elevation: 1900,
     lat: 37.3833,
     lng: -80.0833,
@@ -540,8 +517,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-018',
     name: 'Daleville, VA',
-    mile: 730.0,
-    soboMile: 1467.4,
+    mile: 730.0, soboMile: 1467.9,
     elevation: 1200,
     lat: 37.4100,
     lng: -79.9117,
@@ -562,8 +538,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-018b',
     name: 'Buchanan, VA',
-    mile: 753.0,
-    soboMile: 1444.6,
+    mile: 753.0, soboMile: 1444.9,
     elevation: 850,
     lat: 37.5333,
     lng: -79.6833,
@@ -586,8 +561,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-019',
     name: 'Glasgow, VA',
-    mile: 788.0,
-    soboMile: 1409.4,
+    mile: 788.0, soboMile: 1409.9,
     elevation: 680,
     lat: 37.6333,
     lng: -79.4500,
@@ -610,8 +584,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'big-island',
     name: 'Big Island, VA',
-    mile: 787.6,
-    soboMile: 1409.8,
+    mile: 787.6, soboMile: 1410.3,
     elevation: 680,
     lat: 37.53027,
     lng: -79.36108,
@@ -634,8 +607,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'buena-vista',
     name: 'Buena Vista, VA',
-    mile: 810.0,
-    soboMile: 1387.4,
+    mile: 810.0, soboMile: 1387.9,
     elevation: 850,
     lat: 37.73335,
     lng: -79.35624,
@@ -658,8 +630,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'montebello',
     name: 'Montebello, VA',
-    mile: 850.0,
-    soboMile: 1347.4,
+    mile: 850.0, soboMile: 1347.9,
     elevation: 1200,
     lat: 37.78537,
     lng: -79.13128,
@@ -682,8 +653,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'reeds-gap',
     name: 'Reeds Gap, VA',
-    mile: 845.5,
-    soboMile: 1351.9,
+    mile: 845.5, soboMile: 1352.4,
     elevation: 2645,
     lat: 37.90130,
     lng: -78.98521,
@@ -706,8 +676,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-020',
     name: 'Waynesboro, VA',
-    mile: 865.0,
-    soboMile: 1332.4,
+    mile: 865.0, soboMile: 1332.9,
     elevation: 1340,
     lat: 38.0686,
     lng: -78.8895,
@@ -730,8 +699,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'elkton',
     name: 'Elkton, VA',
-    mile: 900.0,
-    soboMile: 1297.4,
+    mile: 900.0, soboMile: 1297.9,
     elevation: 1300,
     lat: 38.40853,
     lng: -78.61915,
@@ -754,8 +722,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'big-meadows',
     name: 'Big Meadows, VA',
-    mile: 926.8,
-    soboMile: 1270.6,
+    mile: 926.8, soboMile: 1271.1,
     elevation: 3500,
     lat: 38.51741,
     lng: -78.43839,
@@ -777,8 +744,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-020b',
     name: 'Luray, VA',
-    mile: 945.0,
-    soboMile: 1252.1,
+    mile: 945.0, soboMile: 1252.9,
     elevation: 800,
     lat: 38.6650,
     lng: -78.4594,
@@ -801,8 +767,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-021',
     name: 'Front Royal, VA',
-    mile: 972.0,
-    soboMile: 1225.4,
+    mile: 972.0, soboMile: 1225.9,
     elevation: 550,
     lat: 38.9181,
     lng: -78.1944,
@@ -825,8 +790,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'linden',
     name: 'Manassas Gap / Linden',
-    mile: 978.7,
-    soboMile: 1218.7,
+    mile: 978.7, soboMile: 1219.2,
     elevation: 900,
     lat: 38.90926,
     lng: -78.07495,
@@ -849,8 +813,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-021b',
     name: 'Bluemont / Bears Den Hostel',
-    mile: 1006.0,
-    soboMile: 1190.9,
+    mile: 1006.0, soboMile: 1191.9,
     elevation: 1200,
     lat: 39.0833,
     lng: -77.8833,
@@ -872,8 +835,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'keys-gap',
     name: 'Keys Gap, VA',
-    mile: 1020.1,
-    soboMile: 1177.3,
+    mile: 1020.1, soboMile: 1177.8,
     elevation: 935,
     lat: 39.26140,
     lng: -77.76245,
@@ -895,8 +857,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-022',
     name: 'Harpers Ferry, WV',
-    mile: 1026.0,
-    soboMile: 1171.4,
+    mile: 1026.0, soboMile: 1171.9,
     elevation: 310,
     lat: 39.3256,
     lng: -77.7297,
@@ -917,8 +878,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'knoxville',
     name: 'Knoxville, MD',
-    mile: 1030.0,
-    soboMile: 1167.4,
+    mile: 1030.0, soboMile: 1167.9,
     elevation: 300,
     lat: 39.32649,
     lng: -77.70051,
@@ -940,8 +900,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'brunswick',
     name: 'Brunswick, MD',
-    mile: 1030.5,
-    soboMile: 1166.9,
+    mile: 1030.5, soboMile: 1167.4,
     elevation: 280,
     lat: 39.31470,
     lng: -77.63116,
@@ -966,8 +925,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-023',
     name: 'Boonsboro, MD',
-    mile: 1058.0,
-    soboMile: 1139.4,
+    mile: 1058.0, soboMile: 1139.9,
     elevation: 560,
     lat: 39.5067,
     lng: -77.6533,
@@ -990,8 +948,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'pen-mar-md-550',
     name: 'Pen Mar Rd / MD-550 (Cascade / Rouzerville / Waynesboro)',
-    mile: 1067.7,
-    soboMile: 1129.7,
+    mile: 1067.7, soboMile: 1130.2,
     elevation: 640,
     lat: 39.72087,
     lng: -77.50697,
@@ -1013,8 +970,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'blue-ridge-summit-pa',
     name: 'Blue Ridge Summit, PA',
-    mile: 1070.8,
-    soboMile: 1126.6,
+    mile: 1070.8, soboMile: 1127.1,
     elevation: 1200,
     lat: 39.79561,
     lng: -77.35790,
@@ -1037,8 +993,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'pa-94-gardners-mt-holly-springs',
     name: 'PA 94 (Gardners / Mt. Holly Springs)',
-    mile: 1081.6,
-    soboMile: 1115.8,
+    mile: 1081.6, soboMile: 1116.3,
     elevation: 900,
     lat: 40.09184,
     lng: -77.16787,
@@ -1060,8 +1015,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'fayetteville-pa',
     name: 'Fayetteville, PA',
-    mile: 1085.5,
-    soboMile: 1111.9,
+    mile: 1085.5, soboMile: 1112.4,
     elevation: 900,
     lat: 39.90591,
     lng: -77.48958,
@@ -1084,8 +1038,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-025',
     name: 'Pine Grove Furnace State Park',
-    mile: 1105.0,
-    soboMile: 1092.4,
+    mile: 1105.0, soboMile: 1092.9,
     elevation: 850,
     lat: 40.03236,
     lng: -77.30709,
@@ -1106,8 +1059,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-026',
     name: 'Boiling Springs, PA',
-    mile: 1124.0,
-    soboMile: 1073.4,
+    mile: 1124.0, soboMile: 1073.9,
     elevation: 500,
     lat: 40.15051,
     lng: -77.12698,
@@ -1128,8 +1080,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'carlisle-pa',
     name: 'Carlisle, PA (New Kingston / Mechanicsburg)',
-    mile: 1133.2,
-    soboMile: 1064.2,
+    mile: 1133.2, soboMile: 1064.7,
     elevation: 420,
     lat: 40.23396,
     lng: -77.11664,
@@ -1151,8 +1102,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-027',
     name: 'Duncannon, PA',
-    mile: 1150.0,
-    soboMile: 1047.4,
+    mile: 1150.0, soboMile: 1047.9,
     elevation: 380,
     lat: 40.38989,
     lng: -77.03046,
@@ -1173,8 +1123,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'pa-72-swatara-gap-lickdale-jonestown',
     name: 'PA 72 / Swatara Gap (Lickdale / Jonestown)',
-    mile: 1185.3,
-    soboMile: 1012.1,
+    mile: 1185.3, soboMile: 1012.6,
     elevation: 480,
     lat: 40.48012,
     lng: -76.53257,
@@ -1197,8 +1146,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'pa-645-pine-grove',
     name: 'PA 645 (Pine Grove, PA)',
-    mile: 1194.8,
-    soboMile: 1002.6,
+    mile: 1194.8, soboMile: 1003.1,
     elevation: 480,
     lat: 40.50688,
     lng: -76.37708,
@@ -1221,8 +1169,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-028',
     name: 'Port Clinton, PA',
-    mile: 1220.2,
-    soboMile: 977.2,
+    mile: 1220.2, soboMile: 977.7,
     elevation: 380,
     lat: 40.58022,
     lng: -76.02503,
@@ -1243,8 +1190,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-028b',
     name: 'Hamburg, PA',
-    mile: 1220.9,
-    soboMile: 976.5,
+    mile: 1220.9, soboMile: 977,
     elevation: 400,
     lat: 40.55605,
     lng: -75.98461,
@@ -1267,8 +1213,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-029c',
     name: 'The Lookout Hostel',
-    mile: 1246.6,
-    soboMile: 950.8,
+    mile: 1246.6, soboMile: 951.3,
     elevation: 1400,
     lat: 40.6833,
     lng: -75.6333,
@@ -1291,8 +1236,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-029',
     name: 'Palmerton, PA (Walnutport / Slatington)',
-    mile: 1261.0,
-    soboMile: 936.4,
+    mile: 1261.0, soboMile: 936.9,
     elevation: 400,
     lat: 40.8011,
     lng: -75.6117,
@@ -1315,8 +1259,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'danielsville-pa',
     name: 'Danielsville, PA',
-    mile: 1266.9,
-    soboMile: 930.5,
+    mile: 1266.9, soboMile: 931,
     elevation: 719,
     lat: 40.79466,
     lng: -75.52916,
@@ -1339,8 +1282,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'smith-gap-road-pa',
     name: 'Smith Gap Road, PA',
-    mile: 1273.8,
-    soboMile: 923.2,
+    mile: 1273.8, soboMile: 924.1,
     elevation: 1540,
     lat: 40.82550,
     lng: -75.41430,
@@ -1362,8 +1304,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-029b',
     name: 'Wind Gap, PA',
-    mile: 1282.0,
-    soboMile: 915.1,
+    mile: 1282.0, soboMile: 915.9,
     elevation: 900,
     lat: 40.8483,
     lng: -75.2911,
@@ -1385,8 +1326,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-030',
     name: 'Delaware Water Gap, PA',
-    mile: 1298.0,
-    soboMile: 899.4,
+    mile: 1298.0, soboMile: 899.9,
     elevation: 350,
     lat: 40.9667,
     lng: -75.1333,
@@ -1409,8 +1349,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'mohican-outdoor-center-nj',
     name: 'Mohican Outdoor Center, NJ',
-    mile: 1308.0,
-    soboMile: 889.4,
+    mile: 1308.0, soboMile: 889.9,
     elevation: 1150,
     lat: 41.03220,
     lng: -75.00498,
@@ -1432,8 +1371,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'culvers-gap-branchville-nj',
     name: 'Culvers Gap / Branchville, NJ',
-    mile: 1326.0,
-    soboMile: 871.4,
+    mile: 1326.0, soboMile: 871.9,
     elevation: 935,
     lat: 41.17706,
     lng: -74.79113,
@@ -1455,8 +1393,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'high-point-nj23-port-jervis-ny',
     name: 'NJ 23 (High Point State Park HQ) / Port Jervis, NY',
-    mile: 1340.3,
-    soboMile: 857.1,
+    mile: 1340.3, soboMile: 857.6,
     elevation: 1500,
     lat: 41.30260,
     lng: -74.66780,
@@ -1478,8 +1415,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-031b',
     name: 'Unionville, NY',
-    mile: 1349.1,
-    soboMile: 848.3,
+    mile: 1349.1, soboMile: 848.8,
     elevation: 590,
     lat: 41.30151,
     lng: -74.56210,
@@ -1500,8 +1436,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'glenwood-nj',
     name: 'Glenwood, NJ',
-    mile: 1357.1,
-    soboMile: 840.3,
+    mile: 1357.1, soboMile: 840.8,
     elevation: 720,
     lat: 41.24928,
     lng: -74.47815,
@@ -1524,8 +1459,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-031',
     name: 'Vernon, NJ',
-    mile: 1360.9,
-    soboMile: 836.5,
+    mile: 1360.9, soboMile: 837,
     elevation: 1450,
     lat: 41.19508,
     lng: -74.48318,
@@ -1548,8 +1482,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'warwick-ny',
     name: 'Warwick, NY',
-    mile: 1366.8,
-    soboMile: 830.6,
+    mile: 1366.8, soboMile: 831.1,
     elevation: 538,
     lat: 41.25913,
     lng: -74.35725,
@@ -1572,8 +1505,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'bellvale-farms-creamery-ny',
     name: 'Bellvale Farms Creamery, NY',
-    mile: 1375.9,
-    soboMile: 821.5,
+    mile: 1375.9, soboMile: 822,
     elevation: 1144,
     lat: 41.24668,
     lng: -74.28918,
@@ -1595,8 +1527,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'bellvale-ny',
     name: 'Bellvale, NY',
-    mile: 1376.4,
-    soboMile: 821.0,
+    mile: 1376.4, soboMile: 821.5,
     elevation: 1180,
     lat: 41.25039,
     lng: -74.31124,
@@ -1619,8 +1550,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-032',
     name: 'Greenwood Lake, NY',
-    mile: 1376.4,
-    soboMile: 821.0,
+    mile: 1376.4, soboMile: 821.5,
     elevation: 620,
     lat: 41.22641,
     lng: -74.29175,
@@ -1642,8 +1572,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-033',
     name: 'Bear Mountain, NY (Fort Montgomery / Highland Falls)',
-    mile: 1409.0,
-    soboMile: 788.4,
+    mile: 1409.0, soboMile: 788.9,
     elevation: 124,
     lat: 41.31650,
     lng: -73.98956,
@@ -1665,8 +1594,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-034',
     name: 'Peekskill, NY',
-    mile: 1415.0,
-    soboMile: 782.4,
+    mile: 1415.0, soboMile: 782.9,
     elevation: 200,
     lat: 41.2900,
     lng: -73.9206,
@@ -1689,8 +1617,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-033b',
     name: 'Graymoor Spiritual Life Center, NY',
-    mile: 1420.0,
-    soboMile: 777.4,
+    mile: 1420.0, soboMile: 777.9,
     elevation: 900,
     lat: 41.3567,
     lng: -73.9167,
@@ -1713,8 +1640,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'poughquag-ny',
     name: 'Poughquag, NY',
-    mile: 1446.8,
-    soboMile: 750.6,
+    mile: 1446.8, soboMile: 751.1,
     elevation: 720,
     lat: 41.62478,
     lng: -73.68801,
@@ -1736,8 +1662,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-035',
     name: 'Pawling, NY / Wingdale, NY',
-    mile: 1452.0,
-    soboMile: 745.4,
+    mile: 1452.0, soboMile: 745.9,
     elevation: 410,
     lat: 41.5622,
     lng: -73.6028,
@@ -1760,8 +1685,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'gaylordsville-ct',
     name: 'Gaylordsville, CT',
-    mile: 1462.0,
-    soboMile: 735.4,
+    mile: 1462.0, soboMile: 735.9,
     elevation: 580,
     lat: 41.64688,
     lng: -73.51654,
@@ -1786,8 +1710,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-036',
     name: 'Kent, CT',
-    mile: 1473.0,
-    soboMile: 724.4,
+    mile: 1473.0, soboMile: 724.9,
     elevation: 350,
     lat: 41.7247,
     lng: -73.4769,
@@ -1834,8 +1757,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-036c',
     name: 'Falls Village, CT (West Cornwall / Sharon)',
-    mile: 1489.0,
-    soboMile: 700.6,
+    mile: 1489.0, soboMile: 708.9,
     elevation: 500,
     lat: 41.9500,
     lng: -73.3667,
@@ -1857,8 +1779,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-037',
     name: 'Salisbury, CT (includes Lakeville)',
-    mile: 1508.0,
-    soboMile: 689.4,
+    mile: 1508.0, soboMile: 689.9,
     elevation: 700,
     lat: 41.9847,
     lng: -73.4256,
@@ -1881,8 +1802,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'sheffield-ma',
     name: 'Sheffield, MA',
-    mile: 1528.0,
-    soboMile: 669.4,
+    mile: 1528.0, soboMile: 669.9,
     elevation: 700,
     lat: 42.10980,
     lng: -73.35421,
@@ -1905,8 +1825,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-038',
     name: 'Great Barrington, MA',
-    mile: 1528.0,
-    soboMile: 669.4,
+    mile: 1528.0, soboMile: 669.9,
     elevation: 720,
     lat: 42.1958,
     lng: -73.3622,
@@ -1929,8 +1848,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'lee-ma',
     name: 'Lee, MA',
-    mile: 1557.3,
-    soboMile: 640.1,
+    mile: 1557.3, soboMile: 640.6,
     elevation: 1400,
     lat: 42.30521,
     lng: -73.25071,
@@ -1952,8 +1870,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-038b',
     name: 'Cheshire, MA / Adams, MA',
-    mile: 1585.0,
-    soboMile: 612.3,
+    mile: 1585.0, soboMile: 612.9,
     elevation: 1000,
     lat: 42.5500,
     lng: -73.1500,
@@ -1975,8 +1892,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'mt-greylock-ma',
     name: 'Bascom Lodge',
-    mile: 1593.0,
-    soboMile: 604.4,
+    mile: 1593.0, soboMile: 604.9,
     elevation: 3491,
     lat: 42.6375,
     lng: -73.1661,
@@ -1998,8 +1914,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-039',
     name: 'Dalton, MA',
-    mile: 1576.0,
-    soboMile: 621.4,
+    mile: 1576.0, soboMile: 621.9,
     elevation: 1200,
     lat: 42.4706,
     lng: -73.1656,
@@ -2021,8 +1936,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-039b',
     name: 'Williamstown, MA / North Adams, MA',
-    mile: 1599.0,
-    soboMile: 597.8,
+    mile: 1599.0, soboMile: 598.9,
     elevation: 600,
     lat: 42.7083,
     lng: -73.2039,
@@ -2046,8 +1960,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-041',
     name: 'Bennington, VT',
-    mile: 1618.0,
-    soboMile: 579.4,
+    mile: 1618.0, soboMile: 579.9,
     elevation: 680,
     lat: 42.8783,
     lng: -73.1967,
@@ -2070,8 +1983,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-042',
     name: 'Manchester Center, VT / Peru, VT',
-    mile: 1658.0,
-    soboMile: 539.4,
+    mile: 1658.0, soboMile: 539.9,
     elevation: 900,
     lat: 43.1769,
     lng: -73.0575,
@@ -2094,8 +2006,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'wallingford-vt',
     name: 'Wallingford, VT',
-    mile: 1684.2,
-    soboMile: 513.2,
+    mile: 1684.2, soboMile: 513.7,
     elevation: 1160,
     lat: 43.45577,
     lng: -72.93409,
@@ -2118,8 +2029,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'north-clarendon-vt',
     name: 'North Clarendon, VT',
-    mile: 1690.5,
-    soboMile: 506.9,
+    mile: 1690.5, soboMile: 507.4,
     elevation: 860,
     lat: 43.52146,
     lng: -72.92511,
@@ -2142,8 +2052,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-043',
     name: 'Rutland, VT / Killington, VT',
-    mile: 1708.0,
-    soboMile: 489.4,
+    mile: 1708.0, soboMile: 489.9,
     elevation: 540,
     lat: 43.6106,
     lng: -72.9731,
@@ -2165,8 +2074,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-044',
     name: 'Killington, VT',
-    mile: 1712.0,
-    soboMile: 485.4,
+    mile: 1712.0, soboMile: 485.9,
     elevation: 2000,
     lat: 43.6533,
     lng: -72.8203,
@@ -2187,8 +2095,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'woodstock-vt',
     name: 'Woodstock, VT',
-    mile: 1731.9,
-    soboMile: 465.5,
+    mile: 1731.9, soboMile: 466,
     elevation: 882,
     lat: 43.62566,
     lng: -72.51756,
@@ -2211,8 +2118,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'south-pomfret-vt',
     name: 'South Pomfret, VT',
-    mile: 1734.1,
-    soboMile: 463.3,
+    mile: 1734.1, soboMile: 463.8,
     elevation: 820,
     lat: 43.67190,
     lng: -72.55397,
@@ -2235,8 +2141,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-045',
     name: 'Norwich, VT / Hanover, NH',
-    mile: 1755.0,
-    soboMile: 442.4,
+    mile: 1755.0, soboMile: 442.9,
     elevation: 531,
     lat: 43.7022,
     lng: -72.2897,
@@ -2260,8 +2165,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-045b',
     name: 'Etna, NH',
-    mile: 1760.9,
-    soboMile: 436.5,
+    mile: 1760.9, soboMile: 437,
     elevation: 845,
     lat: 43.70393,
     lng: -72.21199,
@@ -2283,8 +2187,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'lyme-center-nh',
     name: 'Lyme Center, NH',
-    mile: 1772.6,
-    soboMile: 424.8,
+    mile: 1772.6, soboMile: 425.3,
     elevation: 880,
     lat: 43.79246,
     lng: -72.10286,
@@ -2307,8 +2210,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'wentworth-nh',
     name: 'Wentworth, NH',
-    mile: 1788.6,
-    soboMile: 408.8,
+    mile: 1788.6, soboMile: 409.3,
     elevation: 900,
     lat: 43.90110,
     lng: -71.98187,
@@ -2331,8 +2233,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-046',
     name: 'Glencliff, NH / Warren, NH',
-    mile: 1795.0,
-    soboMile: 402.4,
+    mile: 1795.0, soboMile: 402.9,
     elevation: 1080,
     lat: 43.98551,
     lng: -71.89640,
@@ -2354,8 +2255,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-047',
     name: 'Lincoln/North Woodstock, NH',
-    mile: 1807.8,
-    soboMile: 389.6,
+    mile: 1807.8, soboMile: 390.1,
     elevation: 870,
     lat: 44.04074,
     lng: -71.79190,
@@ -2377,8 +2277,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-048',
     name: 'Crawford Notch, NH',
-    mile: 1851.8,
-    soboMile: 345.6,
+    mile: 1851.8, soboMile: 346.1,
     elevation: 1275,
     lat: 44.17082,
     lng: -71.38758,
@@ -2401,8 +2300,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-049',
     name: 'Pinkham Notch, NH',
-    mile: 1877.8,
-    soboMile: 319.6,
+    mile: 1877.8, soboMile: 320.1,
     elevation: 2050,
     lat: 44.25681,
     lng: -71.25230,
@@ -2424,8 +2322,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-050',
     name: 'Gorham, NH',
-    mile: 1898.7,
-    soboMile: 298.7,
+    mile: 1898.7, soboMile: 299.2,
     elevation: 780,
     lat: 44.40109,
     lng: -71.10951,
@@ -2450,8 +2347,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'bethel-me',
     name: 'Bethel, ME',
-    mile: 1930.0,
-    soboMile: 267.4,
+    mile: 1930.0, soboMile: 267.9,
     elevation: 1495,
     lat: 44.59025,
     lng: -70.94645,
@@ -2474,8 +2370,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-051',
     name: 'Andover, ME',
-    mile: 1940.3,
-    soboMile: 257.1,
+    mile: 1940.3, soboMile: 257.6,
     elevation: 1485,
     lat: 44.66780,
     lng: -70.89315,
@@ -2498,8 +2393,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'south-arm-road-me',
     name: 'South Arm Road, ME',
-    mile: 1950.4,
-    soboMile: 247.0,
+    mile: 1950.4, soboMile: 247.5,
     elevation: 1410,
     lat: 44.72151,
     lng: -70.78580,
@@ -2522,8 +2416,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-052',
     name: 'Rangeley, ME',
-    mile: 1976.8,
-    soboMile: 220.6,
+    mile: 1976.8, soboMile: 221.1,
     elevation: 1700,
     lat: 44.88696,
     lng: -70.54037,
@@ -2546,8 +2439,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-053',
     name: 'Stratton, ME',
-    mile: 2009.0,
-    soboMile: 188.4,
+    mile: 2009.0, soboMile: 188.9,
     elevation: 1450,
     lat: 45.10354,
     lng: -70.35681,
@@ -2570,8 +2462,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-054',
     name: 'Caratunk, ME',
-    mile: 2046.0,
-    soboMile: 151.4,
+    mile: 2046.0, soboMile: 151.9,
     elevation: 520,
     lat: 45.23822,
     lng: -69.96932,
@@ -2593,8 +2484,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-055',
     name: 'Monson, ME / Greenville, ME',
-    mile: 2082.7,
-    soboMile: 114.7,
+    mile: 2082.7, soboMile: 115.2,
     elevation: 1215,
     lat: 45.33119,
     lng: -69.53578,
@@ -2617,8 +2507,7 @@ export const resupplyPoints: ResupplyPoint[] = [
   {
     id: 'rs-056',
     name: 'Abol Bridge / Millinocket, ME',
-    mile: 2182.1,
-    soboMile: 15.3,
+    mile: 2182.1, soboMile: 15.8,
     elevation: 600,
     lat: 45.83527,
     lng: -68.97168,

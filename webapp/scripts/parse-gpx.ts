@@ -56,8 +56,8 @@ for (let i = 0; i < points.length; i++) {
   });
 }
 
-// Scale miles to match actual trail length (2197.4 miles)
-const ACTUAL_TRAIL_LENGTH = 2197.4;
+// Scale miles to match actual trail length (2197.9 miles - official 2026 AT length)
+const ACTUAL_TRAIL_LENGTH = 2197.9;
 const scaleFactor = ACTUAL_TRAIL_LENGTH / cumulativeDistance;
 console.log(`Scale factor: ${scaleFactor.toFixed(3)} (raw distance: ${cumulativeDistance.toFixed(1)} miles)`);
 
@@ -109,7 +109,7 @@ const tsContent = `/**
  * Resolution: ~0.5 miles between points
  * Mile -8.5 = Amicalola Falls Visitor Center (approach trail start)
  * Mile 0 = Springer Mountain (official AT southern terminus)
- * Mile 2197.4 = Mt. Katahdin (northern terminus)
+ * Mile 2197.9 = Mt. Katahdin (northern terminus)
  */
 
 export interface ElevationPoint {

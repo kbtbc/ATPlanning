@@ -154,7 +154,7 @@ ${pointsStr}
 ];
 
 // Total trail length in miles
-export const TRAIL_LENGTH = ${points.length > 0 ? points[points.length - 1].mile.toFixed(1) : 2197.4};
+export const TRAIL_LENGTH = ${points.length > 0 ? points[points.length - 1].mile.toFixed(1) : 2197.9};
 
 /**
  * Get elevation at a specific mile marker using linear interpolation

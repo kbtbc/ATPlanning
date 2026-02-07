@@ -21,7 +21,7 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 - Daily itinerary with shelters, resupply, and features sorted by mileage (in order of encounter)
 - Tap resupply items in daily itinerary to view full details in Resupply tab
 - "Set as start" button on each day and each location to quickly re-plan from any point
-- Interactive elevation profile with high-resolution GPX data (~5,000 points at 0.5mi intervals)
+- Interactive elevation profile with high-resolution GPX data (~22,000 points at 0.1mi intervals)
 - Mini-map showing:
   - Shelters (home icon)
   - Resupply points (orange package icon)
@@ -86,8 +86,8 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 
 > **Note:** Record counts are subject to change as data is continuously updated and verified.
 
-- **Trail Length**: 2,197.4 miles (plus 8.5 mile approach trail)
-- **Elevation Data**: ~5,000 points from FKT GPX (0.5mi resolution)
+- **Trail Length**: 2,197.9 miles (official 2026 measurement, plus 8.5 mile approach trail)
+- **Elevation Data**: ~22,000 points from FKT GPX (0.1mi resolution)
 - **Shelters**: 252 shelters from GA to ME with accurate GPS coordinates (from ATC official data), icon-coded amenities, mile markers, capacity, and elevation
 - **Resupply Points**: 112 locations covering entire trail
 - **Business Contacts**: 891 businesses with complete contact information
