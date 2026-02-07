@@ -113,10 +113,10 @@ export function WeatherForecast({ currentMile }: WeatherForecastProps) {
           </motion.div>
 
           {/* Hourly Forecast (today) */}
-          <HourlyForecastCard hours={weather.hourly} />
+          <HourlyForecastCard hours={weather.hourly} temperatureAdjustment={weather.temperatureAdjustment} />
 
           {/* Daily Forecast (5-day) */}
-          <DailyForecastList daily={weather.daily} />
+          <DailyForecastList daily={weather.daily} temperatureAdjustment={weather.temperatureAdjustment} />
 
           {/* Methodology Note */}
           <motion.div

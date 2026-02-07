@@ -1,10 +1,50 @@
 import { motion } from 'framer-motion';
-import { Droplets, Wind, Eye, Sun, Thermometer } from 'lucide-react';
+import {
+  Sun, CloudSun, Cloud, CloudFog, CloudDrizzle, CloudRain,
+  CloudRainWind, CloudSnow, Snowflake, CloudHail, CloudLightning,
+  CircleHelp, Droplets, Wind, Eye, Thermometer,
+} from 'lucide-react';
 import { getWeatherCondition, getWindDirection } from '../../lib/weather';
-import type { HourlyForecast } from '../../lib/weather';
+import type { WeatherIconKey } from '../../lib/weather';
+import type { HourlyForecast, DailyForecast } from '../../lib/weather';
+
+// --- Lucide icon renderer for weather codes ---
+
+const WEATHER_ICONS: Record<WeatherIconKey, React.ComponentType<{ className?: string }>> = {
+  'sun': Sun,
+  'cloud-sun': CloudSun,
+  'cloud': Cloud,
+  'cloud-fog': CloudFog,
+  'cloud-drizzle': CloudDrizzle,
+  'cloud-rain': CloudRain,
+  'cloud-rain-wind': CloudRainWind,
+  'cloud-snow': CloudSnow,
+  'snowflake': Snowflake,
+  'cloud-hail': CloudHail,
+  'cloud-lightning': CloudLightning,
+  'unknown': CircleHelp,
+};
+
+function WeatherIcon({ iconKey, className }: { iconKey: WeatherIconKey; className?: string }) {
+  const Icon = WEATHER_ICONS[iconKey] || CircleHelp;
+  return <Icon className={className} />;
+}
+
+function getSeverityColor(severity: string): string {
+  switch (severity) {
+    case 'clear': return 'text-[var(--sunrise)]';
+    case 'mild': return 'text-[var(--foreground-muted)]';
+    case 'moderate': return 'text-[var(--info)]';
+    case 'severe': return 'text-[var(--warning)]';
+    default: return 'text-[var(--foreground-muted)]';
+  }
+}
+
+// --- Helpers ---
 
 interface HourlyForecastCardProps {
   hours: HourlyForecast[];
+  temperatureAdjustment: number;
 }
 
 function formatHour(date: Date): string {
@@ -31,13 +71,12 @@ function getUvLabel(uv: number): { label: string; color: string } {
   return { label: 'Extreme', color: 'text-red-600' };
 }
 
-export function HourlyForecastCard({ hours }: HourlyForecastCardProps) {
+// --- Current + Hourly ---
+
+export function HourlyForecastCard({ hours, temperatureAdjustment }: HourlyForecastCardProps) {
   if (hours.length === 0) return null;
 
-  // Show next 24 hours
   const next24 = hours.slice(0, 24);
-
-  // Current conditions (first hour)
   const current = next24[0];
   const condition = getWeatherCondition(current.weatherCode);
   const uvInfo = getUvLabel(current.uvIndex);
@@ -48,12 +87,12 @@ export function HourlyForecastCard({ hours }: HourlyForecastCardProps) {
       <motion.div
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl p-4"
+        className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl px-5 py-4"
       >
-        <p className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)] font-semibold mb-2">
+        <p className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)] font-semibold mb-3">
           Right Now
         </p>
-        <div className="flex items-start justify-between">
+        <div className="flex items-start justify-between gap-4">
           <div>
             <div className="flex items-baseline gap-2">
               <span className={`text-4xl font-bold ${getTempColor(current.temperature)}`}>
@@ -63,30 +102,36 @@ export function HourlyForecastCard({ hours }: HourlyForecastCardProps) {
                 Feels {current.apparentTemperature}°
               </span>
             </div>
-            <p className="text-sm text-[var(--foreground)] mt-1">
-              <span className="text-lg mr-1">{condition.icon}</span>
-              {condition.label}
-            </p>
+            {/* Show station temp if adjustment is significant */}
+            {Math.abs(temperatureAdjustment) >= 1 && (
+              <p className="text-[10px] text-[var(--foreground-muted)] mt-0.5 opacity-70">
+                Station: {current.stationTemperature}° ({temperatureAdjustment > 0 ? '+' : ''}{temperatureAdjustment.toFixed(1)}° elev adj)
+              </p>
+            )}
+            <div className="flex items-center gap-1.5 mt-2">
+              <WeatherIcon iconKey={condition.icon} className={`w-5 h-5 ${getSeverityColor(condition.severity)}`} />
+              <span className="text-sm text-[var(--foreground)]">{condition.label}</span>
+            </div>
           </div>
-          <div className="text-right space-y-1">
-            <div className="flex items-center gap-1 text-xs text-[var(--foreground-muted)]">
+          <div className="text-right space-y-1.5 shrink-0">
+            <div className="flex items-center justify-end gap-1 text-xs text-[var(--foreground-muted)]">
               <Wind className="w-3 h-3" />
-              {current.windSpeed} mph {getWindDirection(current.windDirection)}
+              <span>{current.windSpeed} mph {getWindDirection(current.windDirection)}</span>
               {current.windGusts > current.windSpeed + 5 && (
-                <span className="text-[var(--warning)]"> G{current.windGusts}</span>
+                <span className="text-[var(--warning)]">G{current.windGusts}</span>
               )}
             </div>
-            <div className="flex items-center gap-1 text-xs text-[var(--foreground-muted)]">
+            <div className="flex items-center justify-end gap-1 text-xs text-[var(--foreground-muted)]">
               <Droplets className="w-3 h-3" />
-              {current.humidity}% · {current.precipitationProbability}% rain
+              <span>{current.humidity}% · {current.precipitationProbability}% rain</span>
             </div>
-            <div className="flex items-center gap-1 text-xs text-[var(--foreground-muted)]">
+            <div className="flex items-center justify-end gap-1 text-xs text-[var(--foreground-muted)]">
               <Eye className="w-3 h-3" />
-              {current.visibility} mi
+              <span>{current.visibility} mi vis</span>
             </div>
-            <div className={`flex items-center gap-1 text-xs ${uvInfo.color}`}>
+            <div className={`flex items-center justify-end gap-1 text-xs ${uvInfo.color}`}>
               <Sun className="w-3 h-3" />
-              UV {current.uvIndex.toFixed(0)} ({uvInfo.label})
+              <span>UV {current.uvIndex.toFixed(0)} ({uvInfo.label})</span>
             </div>
           </div>
         </div>
@@ -97,9 +142,9 @@ export function HourlyForecastCard({ hours }: HourlyForecastCardProps) {
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.05 }}
-        className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl p-3"
+        className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl px-4 py-3"
       >
-        <p className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)] font-semibold mb-2 px-1">
+        <p className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)] font-semibold mb-2">
           Next 24 Hours
         </p>
         <div className="overflow-x-auto -mx-1">
@@ -114,7 +159,10 @@ export function HourlyForecastCard({ hours }: HourlyForecastCardProps) {
                   <span className="text-[10px] text-[var(--foreground-muted)]">
                     {i === 0 ? 'Now' : formatHour(hour.time)}
                   </span>
-                  <span className="text-sm my-0.5">{cond.icon}</span>
+                  <WeatherIcon
+                    iconKey={cond.icon}
+                    className={`w-4 h-4 my-1 ${getSeverityColor(cond.severity)}`}
+                  />
                   <span className={`text-xs font-semibold ${getTempColor(hour.temperature)}`}>
                     {hour.temperature}°
                   </span>
@@ -144,7 +192,8 @@ export function HourlyForecastCard({ hours }: HourlyForecastCardProps) {
 // --- Daily Forecast ---
 
 interface DailyForecastListProps {
-  daily: import('../../lib/weather').DailyForecast[];
+  daily: DailyForecast[];
+  temperatureAdjustment: number;
 }
 
 function formatDay(date: Date): string {
@@ -153,7 +202,9 @@ function formatDay(date: Date): string {
   return `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}`;
 }
 
-export function DailyForecastList({ daily }: DailyForecastListProps) {
+export function DailyForecastList({ daily, temperatureAdjustment }: DailyForecastListProps) {
+  const hasAdjustment = Math.abs(temperatureAdjustment) >= 1;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
@@ -161,7 +212,7 @@ export function DailyForecastList({ daily }: DailyForecastListProps) {
       transition={{ delay: 0.1 }}
       className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl overflow-hidden"
     >
-      <p className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)] font-semibold px-4 pt-3 pb-1">
+      <p className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)] font-semibold px-5 pt-3 pb-1">
         5-Day Forecast
       </p>
       <div className="divide-y divide-[var(--border-light)]">
@@ -176,10 +227,10 @@ export function DailyForecastList({ daily }: DailyForecastListProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: i * 0.03 }}
-              className="px-4 py-2.5"
+              className="px-5 py-3"
             >
               <div className="flex items-center gap-3">
-                {/* Day + Icon */}
+                {/* Day */}
                 <div className="w-20 shrink-0">
                   <p className="text-sm font-medium text-[var(--foreground)]">
                     {isToday ? 'Today' : formatDay(day.date)}
@@ -187,10 +238,13 @@ export function DailyForecastList({ daily }: DailyForecastListProps) {
                 </div>
 
                 {/* Weather icon */}
-                <span className="text-lg w-8 text-center">{condition.icon}</span>
+                <WeatherIcon
+                  iconKey={condition.icon}
+                  className={`w-5 h-5 shrink-0 ${getSeverityColor(condition.severity)}`}
+                />
 
                 {/* Precip probability */}
-                <div className="w-10 text-center">
+                <div className="w-10 text-center shrink-0">
                   {day.precipitationProbability > 0 ? (
                     <span className="text-xs text-[var(--info)]">
                       {day.precipitationProbability}%
@@ -220,8 +274,8 @@ export function DailyForecastList({ daily }: DailyForecastListProps) {
                 </div>
               </div>
 
-              {/* Second row: wind, UV, sunrise/sunset */}
-              <div className="flex items-center gap-3 mt-1 ml-20 pl-3">
+              {/* Second row: wind, UV, feels-like, station temps */}
+              <div className="flex items-center gap-3 mt-1.5 ml-20 pl-3 flex-wrap">
                 <span className="text-[10px] text-[var(--foreground-muted)] flex items-center gap-0.5">
                   <Wind className="w-2.5 h-2.5" />
                   {day.windSpeedMax} mph
@@ -237,6 +291,11 @@ export function DailyForecastList({ daily }: DailyForecastListProps) {
                   <Thermometer className="w-2.5 h-2.5" />
                   Feels {day.apparentTempLow}°–{day.apparentTempHigh}°
                 </span>
+                {hasAdjustment && (
+                  <span className="text-[10px] text-[var(--foreground-muted)] opacity-60">
+                    Stn: {day.temperatureLow - Math.round(temperatureAdjustment)}°–{day.temperatureHigh - Math.round(temperatureAdjustment)}°
+                  </span>
+                )}
               </div>
             </motion.div>
           );

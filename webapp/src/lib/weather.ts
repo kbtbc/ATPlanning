@@ -69,51 +69,53 @@ const LAPSE_RATE_F_PER_1000FT = 3.5;
 /** Meters to feet conversion */
 const METERS_TO_FEET = 3.28084;
 
-/** km to miles */
-const KM_TO_MILES = 0.621371;
+/** Meters to miles */
+const METERS_TO_MILES = 0.000621371;
 
 // --- WMO Weather Codes ---
 // https://open-meteo.com/en/docs#weathervariables
 
+export type WeatherIconKey = 'sun' | 'cloud-sun' | 'cloud' | 'cloud-fog' | 'cloud-drizzle' | 'cloud-rain' | 'cloud-rain-wind' | 'cloud-snow' | 'snowflake' | 'cloud-hail' | 'cloud-lightning' | 'unknown';
+
 interface WeatherCondition {
   label: string;
-  icon: string; // emoji for simple display
+  icon: WeatherIconKey;
   severity: 'clear' | 'mild' | 'moderate' | 'severe';
 }
 
 const WMO_CODES: Record<number, WeatherCondition> = {
-  0: { label: 'Clear sky', icon: '☀️', severity: 'clear' },
-  1: { label: 'Mostly clear', icon: '🌤️', severity: 'clear' },
-  2: { label: 'Partly cloudy', icon: '⛅', severity: 'clear' },
-  3: { label: 'Overcast', icon: '☁️', severity: 'mild' },
-  45: { label: 'Fog', icon: '🌫️', severity: 'mild' },
-  48: { label: 'Rime fog', icon: '🌫️', severity: 'mild' },
-  51: { label: 'Light drizzle', icon: '🌦️', severity: 'mild' },
-  53: { label: 'Drizzle', icon: '🌦️', severity: 'mild' },
-  55: { label: 'Heavy drizzle', icon: '🌧️', severity: 'moderate' },
-  56: { label: 'Freezing drizzle', icon: '🌧️', severity: 'moderate' },
-  57: { label: 'Heavy freezing drizzle', icon: '🌧️', severity: 'severe' },
-  61: { label: 'Light rain', icon: '🌦️', severity: 'mild' },
-  63: { label: 'Rain', icon: '🌧️', severity: 'moderate' },
-  65: { label: 'Heavy rain', icon: '🌧️', severity: 'severe' },
-  66: { label: 'Freezing rain', icon: '🌧️', severity: 'severe' },
-  67: { label: 'Heavy freezing rain', icon: '🌧️', severity: 'severe' },
-  71: { label: 'Light snow', icon: '🌨️', severity: 'moderate' },
-  73: { label: 'Snow', icon: '❄️', severity: 'moderate' },
-  75: { label: 'Heavy snow', icon: '❄️', severity: 'severe' },
-  77: { label: 'Snow grains', icon: '❄️', severity: 'moderate' },
-  80: { label: 'Light showers', icon: '🌦️', severity: 'mild' },
-  81: { label: 'Showers', icon: '🌧️', severity: 'moderate' },
-  82: { label: 'Heavy showers', icon: '🌧️', severity: 'severe' },
-  85: { label: 'Light snow showers', icon: '🌨️', severity: 'moderate' },
-  86: { label: 'Heavy snow showers', icon: '❄️', severity: 'severe' },
-  95: { label: 'Thunderstorm', icon: '⛈️', severity: 'severe' },
-  96: { label: 'Thunderstorm with hail', icon: '⛈️', severity: 'severe' },
-  99: { label: 'Thunderstorm with heavy hail', icon: '⛈️', severity: 'severe' },
+  0: { label: 'Clear sky', icon: 'sun', severity: 'clear' },
+  1: { label: 'Mostly clear', icon: 'cloud-sun', severity: 'clear' },
+  2: { label: 'Partly cloudy', icon: 'cloud-sun', severity: 'clear' },
+  3: { label: 'Overcast', icon: 'cloud', severity: 'mild' },
+  45: { label: 'Fog', icon: 'cloud-fog', severity: 'mild' },
+  48: { label: 'Rime fog', icon: 'cloud-fog', severity: 'mild' },
+  51: { label: 'Light drizzle', icon: 'cloud-drizzle', severity: 'mild' },
+  53: { label: 'Drizzle', icon: 'cloud-drizzle', severity: 'mild' },
+  55: { label: 'Heavy drizzle', icon: 'cloud-rain', severity: 'moderate' },
+  56: { label: 'Freezing drizzle', icon: 'cloud-rain', severity: 'moderate' },
+  57: { label: 'Heavy freezing drizzle', icon: 'cloud-rain-wind', severity: 'severe' },
+  61: { label: 'Light rain', icon: 'cloud-drizzle', severity: 'mild' },
+  63: { label: 'Rain', icon: 'cloud-rain', severity: 'moderate' },
+  65: { label: 'Heavy rain', icon: 'cloud-rain-wind', severity: 'severe' },
+  66: { label: 'Freezing rain', icon: 'cloud-rain-wind', severity: 'severe' },
+  67: { label: 'Heavy freezing rain', icon: 'cloud-rain-wind', severity: 'severe' },
+  71: { label: 'Light snow', icon: 'cloud-snow', severity: 'moderate' },
+  73: { label: 'Snow', icon: 'snowflake', severity: 'moderate' },
+  75: { label: 'Heavy snow', icon: 'snowflake', severity: 'severe' },
+  77: { label: 'Snow grains', icon: 'snowflake', severity: 'moderate' },
+  80: { label: 'Light showers', icon: 'cloud-drizzle', severity: 'mild' },
+  81: { label: 'Showers', icon: 'cloud-rain', severity: 'moderate' },
+  82: { label: 'Heavy showers', icon: 'cloud-rain-wind', severity: 'severe' },
+  85: { label: 'Light snow showers', icon: 'cloud-snow', severity: 'moderate' },
+  86: { label: 'Heavy snow showers', icon: 'snowflake', severity: 'severe' },
+  95: { label: 'Thunderstorm', icon: 'cloud-lightning', severity: 'severe' },
+  96: { label: 'Thunderstorm with hail', icon: 'cloud-hail', severity: 'severe' },
+  99: { label: 'Thunderstorm with heavy hail', icon: 'cloud-hail', severity: 'severe' },
 };
 
 export function getWeatherCondition(code: number): WeatherCondition {
-  return WMO_CODES[code] || { label: 'Unknown', icon: '❓', severity: 'mild' };
+  return WMO_CODES[code] || { label: 'Unknown', icon: 'unknown' as WeatherIconKey, severity: 'mild' };
 }
 
 export function getWindDirection(degrees: number): string {
@@ -250,7 +252,7 @@ export async function fetchWeather(location: WeatherLocation): Promise<WeatherDa
       humidity: data.hourly.relative_humidity_2m[i],
       uvIndex: data.hourly.uv_index[i],
       cloudCover: data.hourly.cloud_cover[i],
-      visibility: Math.round(data.hourly.visibility[i] * KM_TO_MILES * 10) / 10,
+      visibility: Math.round(data.hourly.visibility[i] * METERS_TO_MILES * 10) / 10,
     }))
     .filter(h => h.time >= now)
     .slice(0, 48);
