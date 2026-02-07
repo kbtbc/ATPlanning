@@ -167,7 +167,7 @@ function App() {
           </AnimatePresence>
 
           <p className="text-xs text-[var(--foreground-muted)]">
-            AT Thru-Hike Planner · 2,197.4 miles from Springer Mountain, GA to Mt. Katahdin, ME
+            AT Thru-Hike Planner · 2,197.9 miles from Springer Mountain, GA to Mt. Katahdin, ME
           </p>
           <p className="text-[11px] text-[var(--foreground-muted)] mt-1.5 opacity-70">
             © 2026 BigFunHikes.com · Always verify content beforehand!
