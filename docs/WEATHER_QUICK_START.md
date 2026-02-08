@@ -24,4 +24,5 @@
 - Look ahead: check the weather at tonight's camp, not where you are now
 - "Feels like" matters more than actual temp on windy ridges
 - Use the 7-day view to plan big-mile days around good weather
-- Hit refresh for updated data
+- **Refresh** re-fetches from the nearest station to your current location (shelter, mile, or GPS). Different trail locations may use different stations.
+- Hit refresh when weather is changing fast or the forecast has been open a while

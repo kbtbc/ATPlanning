@@ -144,11 +144,19 @@ export function useWeather() {
     setState(prev => ({ ...prev, locationMode: mode }));
   }, []);
 
+  /** Re-fetch weather for the current location (preserves original coordinates) */
+  const refresh = useCallback(() => {
+    if (state.location) {
+      return fetchForLocation(state.location);
+    }
+  }, [state.location, fetchForLocation]);
+
   return {
     ...state,
     fetchForMile,
     fetchForWaypoint,
     fetchForGps,
     setLocationMode,
+    refresh,
   };
 }

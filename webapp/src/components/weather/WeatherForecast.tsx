@@ -15,12 +15,12 @@ export function WeatherForecast({ currentMile }: WeatherForecastProps) {
     weather,
     loading,
     error,
-    location,
     locationMode,
     fetchForMile,
     fetchForWaypoint,
     fetchForGps,
     setLocationMode,
+    refresh,
   } = useWeather();
 
   // Auto-fetch on first load using planner's current mile
@@ -85,10 +85,10 @@ export function WeatherForecast({ currentMile }: WeatherForecastProps) {
                 )}
               </div>
               <button
-                onClick={() => location && fetchForMile(location.mile ?? currentMile)}
+                onClick={refresh}
                 disabled={loading}
                 className="p-1.5 rounded-lg hover:bg-[var(--background)] transition-colors text-[var(--foreground-muted)]"
-                title="Refresh forecast"
+                title="Re-fetch latest weather from the nearest station to this location"
               >
                 <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
               </button>
