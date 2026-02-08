@@ -25,10 +25,10 @@ function MockupA() {
         Set your location by Trail Mile or Shelter Name, or use GPS
       </p>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1.5">
         {/* Search input */}
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[var(--foreground-muted)] pointer-events-none" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--foreground-muted)] pointer-events-none" />
           <input
             type="text"
             value={query}
@@ -36,12 +36,12 @@ function MockupA() {
             onFocus={() => setFocused(true)}
             onBlur={() => setTimeout(() => setFocused(false), 150)}
             placeholder="Mile number or shelter name..."
-            className="w-full bg-[var(--background)] border border-[var(--border)] rounded-xl pl-9 pr-3 py-2.5 text-sm text-[var(--foreground)] placeholder:text-[var(--foreground-muted)] focus:outline-none focus:border-[var(--primary)] transition-colors"
+            className="w-full bg-[var(--background)] border border-[var(--border)] rounded-lg pl-10 pr-3 py-2 text-sm text-[var(--foreground)] placeholder:text-[var(--foreground-muted)] focus:outline-none focus:border-[var(--primary)] transition-colors"
           />
         </div>
 
         {/* GPS button - outside the input */}
-        <button className="flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-[var(--background)] border border-[var(--border)] text-xs font-medium text-[var(--foreground-muted)] hover:text-[var(--foreground)] hover:border-[var(--primary)] transition-colors shrink-0">
+        <button className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[var(--background)] border border-[var(--border)] text-xs font-medium text-[var(--foreground-muted)] hover:text-[var(--foreground)] hover:border-[var(--primary)] transition-colors shrink-0">
           <Navigation className="w-3.5 h-3.5" />
           GPS
         </button>
