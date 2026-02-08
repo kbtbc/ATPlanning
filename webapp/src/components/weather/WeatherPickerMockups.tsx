@@ -25,54 +25,58 @@ function MockupA() {
         Set your location by Trail Mile or Shelter Name, or use GPS
       </p>
 
-      <div className="flex items-center gap-1.5">
-        {/* Search input */}
-        <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--foreground-muted)] pointer-events-none" />
-          <input
-            type="text"
-            value={query}
-            onChange={e => setQuery(e.target.value)}
-            onFocus={() => setFocused(true)}
-            onBlur={() => setTimeout(() => setFocused(false), 150)}
-            placeholder="Mile number or shelter name..."
-            className="w-full bg-[var(--background)] border border-[var(--border)] rounded-lg pl-10 pr-3 py-2 text-sm text-[var(--foreground)] placeholder:text-[var(--foreground-muted)] focus:outline-none focus:border-[var(--primary)] transition-colors"
-          />
-        </div>
+      <div className="flex justify-center px-4">
+        <div className="flex items-center gap-2 w-full max-w-md">
+          {/* Search input */}
+          <div className="relative flex-1">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--foreground-muted)] pointer-events-none" />
+            <input
+              type="text"
+              value={query}
+              onChange={e => setQuery(e.target.value)}
+              onFocus={() => setFocused(true)}
+              onBlur={() => setTimeout(() => setFocused(false), 150)}
+              placeholder="Mile number or shelter name..."
+              className="w-full bg-[var(--background)] border border-[var(--border)] rounded-lg pl-12 pr-3 py-2 text-sm text-[var(--foreground)] placeholder:text-[var(--foreground-muted)] focus:outline-none focus:border-[var(--primary)] transition-colors"
+            />
+          </div>
 
-        {/* GPS button - outside the input */}
-        <button className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[var(--background)] border border-[var(--border)] text-xs font-medium text-[var(--foreground-muted)] hover:text-[var(--foreground)] hover:border-[var(--primary)] transition-colors shrink-0">
-          <Navigation className="w-3.5 h-3.5" />
-          GPS
-        </button>
+          {/* GPS button - outside the input */}
+          <button className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[var(--background)] border border-[var(--border)] text-xs font-medium text-[var(--foreground-muted)] hover:text-[var(--foreground)] hover:border-[var(--primary)] transition-colors shrink-0">
+            <Navigation className="w-3.5 h-3.5" />
+            GPS
+          </button>
+        </div>
       </div>
 
       {/* Results dropdown */}
       {showResults && (
-        <div className="mt-2 rounded-lg border border-[var(--border)] bg-[var(--background)] overflow-hidden shadow-sm">
-          {isNumeric ? (
-            <button className="w-full text-left px-3.5 py-2.5 hover:bg-[var(--background-secondary)] transition-colors flex items-center gap-3">
-              <Mountain className="w-4 h-4 text-[var(--accent)]" />
-              <div>
-                <span className="text-xs font-medium text-[var(--foreground)]">Mile {query}</span>
-                <span className="text-[10px] text-[var(--foreground-muted)] ml-2">3,200 ft elev</span>
-              </div>
-              <ChevronRight className="w-3.5 h-3.5 text-[var(--foreground-muted)] ml-auto" />
-            </button>
-          ) : (
-            <>
-              {['Neel Gap', 'Neels Gap Hostel', 'Near Blood Mountain'].map((name, i) => (
-                <button key={i} className="w-full text-left px-3.5 py-2.5 hover:bg-[var(--background-secondary)] transition-colors flex items-center gap-3 border-t border-[var(--border-light)] first:border-0">
-                  <MapPin className="w-4 h-4 text-[var(--accent)]" />
-                  <div className="flex-1 min-w-0">
-                    <span className="text-xs font-medium text-[var(--foreground)]">{name}</span>
-                    <span className="text-[10px] text-[var(--foreground-muted)] ml-2">mi {30.7 + i * 2}</span>
-                  </div>
-                  <ChevronRight className="w-3.5 h-3.5 text-[var(--foreground-muted)]" />
-                </button>
-              ))}
-            </>
-          )}
+        <div className="flex justify-center px-4 mt-2">
+          <div className="w-full max-w-md rounded-lg border border-[var(--border)] bg-[var(--background)] overflow-hidden shadow-sm">
+            {isNumeric ? (
+              <button className="w-full text-left px-3.5 py-2.5 hover:bg-[var(--background-secondary)] transition-colors flex items-center gap-3">
+                <Mountain className="w-4 h-4 text-[var(--accent)]" />
+                <div>
+                  <span className="text-xs font-medium text-[var(--foreground)]">Mile {query}</span>
+                  <span className="text-[10px] text-[var(--foreground-muted)] ml-2">3,200 ft elev</span>
+                </div>
+                <ChevronRight className="w-3.5 h-3.5 text-[var(--foreground-muted)] ml-auto" />
+              </button>
+            ) : (
+              <>
+                {['Neel Gap', 'Neels Gap Hostel', 'Near Blood Mountain'].map((name, i) => (
+                  <button key={i} className="w-full text-left px-3.5 py-2.5 hover:bg-[var(--background-secondary)] transition-colors flex items-center gap-3 border-t border-[var(--border-light)] first:border-0">
+                    <MapPin className="w-4 h-4 text-[var(--accent)]" />
+                    <div className="flex-1 min-w-0">
+                      <span className="text-xs font-medium text-[var(--foreground)]">{name}</span>
+                      <span className="text-[10px] text-[var(--foreground-muted)] ml-2">mi {30.7 + i * 2}</span>
+                    </div>
+                    <ChevronRight className="w-3.5 h-3.5 text-[var(--foreground-muted)]" />
+                  </button>
+                ))}
+              </>
+            )}
+          </div>
         </div>
       )}
     </div>
