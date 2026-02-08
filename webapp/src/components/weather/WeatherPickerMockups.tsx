@@ -16,7 +16,6 @@ function MockupA() {
   const [query, setQuery] = useState('');
   const [focused, setFocused] = useState(false);
 
-  const showResults = focused && query.length > 0;
   const isNumeric = /^\d+(\.\d+)?$/.test(query.trim());
 
   return (
@@ -49,32 +48,26 @@ function MockupA() {
         </div>
       </div>
 
-      {/* Results dropdown */}
-      {showResults && (
-        <div className="flex justify-center px-4 mt-2">
-          <div className="w-full max-w-md rounded-lg border border-[var(--border)] bg-[var(--background)] overflow-hidden shadow-sm">
+      {/* Results / hints */}
+      {focused && query.length > 0 && (
+        <div className="flex justify-center px-4 mt-1.5">
+          <div className="w-full max-w-md">
             {isNumeric ? (
-              <button className="w-full text-left px-3.5 py-2.5 hover:bg-[var(--background-secondary)] transition-colors flex items-center gap-3">
-                <Mountain className="w-4 h-4 text-[var(--accent)]" />
-                <div>
-                  <span className="text-xs font-medium text-[var(--foreground)]">Mile {query}</span>
-                  <span className="text-[10px] text-[var(--foreground-muted)] ml-2">3,200 ft elev</span>
-                </div>
-                <ChevronRight className="w-3.5 h-3.5 text-[var(--foreground-muted)] ml-auto" />
-              </button>
+              /* Mile entered — just show a hint, no dropdown */
+              <p className="text-[10px] text-[var(--foreground-muted)] text-center">
+                Press Enter for Mile {query} forecast
+              </p>
             ) : (
-              <>
+              /* Text entered — show shelter search results */
+              <div className="rounded-lg border border-[var(--border)] bg-[var(--background)] overflow-hidden shadow-sm">
                 {['Neel Gap', 'Neels Gap Hostel', 'Near Blood Mountain'].map((name, i) => (
-                  <button key={i} className="w-full text-left px-3.5 py-2.5 hover:bg-[var(--background-secondary)] transition-colors flex items-center gap-3 border-t border-[var(--border-light)] first:border-0">
-                    <MapPin className="w-4 h-4 text-[var(--accent)]" />
-                    <div className="flex-1 min-w-0">
-                      <span className="text-xs font-medium text-[var(--foreground)]">{name}</span>
-                      <span className="text-[10px] text-[var(--foreground-muted)] ml-2">mi {30.7 + i * 2}</span>
-                    </div>
-                    <ChevronRight className="w-3.5 h-3.5 text-[var(--foreground-muted)]" />
+                  <button key={i} className="w-full text-left px-3.5 py-2 hover:bg-[var(--background-secondary)] transition-colors flex items-center gap-3 border-t border-[var(--border-light)] first:border-0">
+                    <MapPin className="w-3.5 h-3.5 text-[var(--accent)] shrink-0" />
+                    <span className="text-xs font-medium text-[var(--foreground)] flex-1 min-w-0 truncate">{name}</span>
+                    <span className="text-[10px] text-[var(--foreground-muted)] tabular-nums shrink-0">mi {(30.7 + i * 2).toFixed(1)}</span>
                   </button>
                 ))}
-              </>
+              </div>
             )}
           </div>
         </div>
