@@ -41,7 +41,10 @@ function MockupA() {
           </div>
 
           {/* GPS button — separate, matched height to search input */}
-          <button className="flex items-center gap-2 bg-[var(--background)] border border-[var(--border)] rounded-lg px-4 py-2 text-sm font-medium text-[var(--foreground-muted)] hover:text-[var(--foreground)] hover:border-[var(--primary)] transition-colors shrink-0 whitespace-nowrap">
+          <button
+            style={{ paddingLeft: '24px', paddingRight: '24px' }}
+            className="flex items-center gap-2 bg-[var(--background)] border border-[var(--border)] rounded-lg py-2 text-sm font-medium text-[var(--foreground-muted)] hover:text-[var(--foreground)] hover:border-[var(--primary)] transition-colors shrink-0 whitespace-nowrap"
+          >
             <Navigation className="w-4 h-4 shrink-0" />
             GPS
           </button>
