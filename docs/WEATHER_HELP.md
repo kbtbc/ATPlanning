@@ -116,9 +116,7 @@ This is your planning view. Use it to decide whether to push miles on a good-wea
 
 - **The elevation adjustment is your friend.** Valley forecasts can be 10-15 degrees warmer than what you'll experience on the ridge. This forecast accounts for that.
 
-- **Hit refresh** to pull the latest data from the nearest weather station to your current location. The refresh always re-fetches for the exact spot you're viewing - so if you picked a shelter, it pulls fresh data for that shelter's coordinates, not some other nearby point. This is useful when weather is changing fast or you've had the forecast open for a while.
-
-- **Switching locations:** When you select a new shelter or enter a different mile, the forecast pulls from whichever weather station is closest to that new location. Different spots on the trail may use different stations, so the station elevation shown in the info banner may change.
+- **Refresh vs. new location:** Selecting a new shelter, mile, or GPS location automatically fetches a fresh forecast from the nearest weather station to that spot. The refresh button (circular arrow) is for pulling *updated* data for the location you're already viewing - useful if weather is changing fast or you've had the forecast open for a while. You don't need to hit refresh after picking a new location; the forecast updates automatically.
 
 - **All times are Eastern Time** (America/New_York), which covers the entire AT corridor.
 

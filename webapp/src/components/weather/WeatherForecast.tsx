@@ -88,7 +88,7 @@ export function WeatherForecast({ currentMile }: WeatherForecastProps) {
                 onClick={refresh}
                 disabled={loading}
                 className="p-1.5 rounded-lg hover:bg-[var(--background)] transition-colors text-[var(--foreground-muted)]"
-                title="Re-fetch latest weather from the nearest station to this location"
+                title="Pull updated data for this location — useful if weather is changing fast"
               >
                 <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
               </button>
