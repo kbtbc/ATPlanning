@@ -15,11 +15,9 @@ export function WeatherForecast({ currentMile }: WeatherForecastProps) {
     weather,
     loading,
     error,
-    locationMode,
     fetchForMile,
     fetchForWaypoint,
     fetchForGps,
-    setLocationMode,
     refresh,
   } = useWeather();
 
@@ -37,8 +35,6 @@ export function WeatherForecast({ currentMile }: WeatherForecastProps) {
       {/* Location Picker */}
       <WeatherLocationPicker
         currentMile={currentMile}
-        locationMode={locationMode}
-        onModeChange={setLocationMode}
         onFetchForMile={fetchForMile}
         onFetchForWaypoint={fetchForWaypoint}
         onFetchForGps={fetchForGps}
