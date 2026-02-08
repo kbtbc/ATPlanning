@@ -74,13 +74,11 @@ A modern web app for planning Appalachian Trail thru-hikes and resupply stops. F
 ### Trail Weather Forecast
 - **Elevation-adjusted temperatures** using the standard environmental lapse rate (3.5°F per 1,000 ft)
 - Compares trail elevation vs weather station elevation and auto-corrects temps
-- Three location input modes:
-  - **Mile entry**: Type any mile marker on the trail
-  - **Shelter/Resupply picker**: Search and select from 252 shelters + 112 resupply points
-  - **GPS**: Use your phone's location to get weather for your current position
+- **Unified search bar**: Type a mile number and press Enter, or type a shelter/town name and pick from the dropdown
+- **GPS button**: One tap to get weather for your current position
 - Current conditions with feels-like temperature, wind, humidity, UV index, visibility
 - Scrollable hourly forecast for the next 24 hours
-- 5-day daily forecast with high/low temps, precipitation probability, wind, UV
+- 7-day daily forecast with high/low temps, precipitation probability, wind, UV
 - Temperature color coding (blue=cold, green=comfortable, orange=hot)
 - Wind gust warnings when gusts exceed sustained speed by 5+ mph
 - Powered by Open-Meteo API (free, no API key required)
@@ -143,6 +141,11 @@ webapp/src/
 │   │   ├── ResupplyDirectory.tsx     # Full directory browser
 │   │   ├── ContactCard.tsx           # Contact info card
 │   │   └── businessCategories.ts     # Category utilities
+│   ├── weather/          # Weather forecast components
+│   │   ├── WeatherForecast.tsx       # Main forecast container
+│   │   ├── WeatherLocationPicker.tsx # Unified search bar + GPS
+│   │   └── ForecastDisplay.tsx       # Hourly and daily rendering
+│   ├── ui/               # UI primitives (ThemeToggle, Skeleton)
 │   ├── HikePlanner.tsx   # Main planner component
 │   ├── MiniMap.tsx       # Elevation profile visualization
 │   ├── LocationPanel.tsx # GPS/manual location
@@ -152,7 +155,7 @@ webapp/src/
 ├── hooks/                # Custom React hooks
 ├── data/                 # Trail data (shelters, resupply, elevation, contacts)
 ├── types/                # TypeScript definitions
-├── lib/                  # Utilities
+├── lib/                  # Utilities (including weather API client)
 ├── index.css            # Design system (CSS variables + Tailwind)
 └── App.tsx              # Root component
 ```
@@ -217,9 +220,17 @@ This app is for informational purposes only. Not affiliated with the Appalachian
 
 ## Documentation
 
-### Active Documentation
+### User Guides
+- `docs/QUICK_START.md` - One-page quick start for new users
+- `docs/USER_GUIDE.md` - Comprehensive guide to all features
+- `docs/WEATHER_QUICK_START.md` - Weather tab quick start
+- `docs/WEATHER_HELP.md` - Detailed weather feature guide
+
+### Technical Documentation
+- `docs/TECHNICAL.md` - Architecture, deployment options, and developer reference
 - `docs/AI_WORK_PROTOCOL.md` - Transparency and honesty requirements for AI work
-- `docs/AI_RESUME_COMMAND.md` - Context restoration guide
+- `docs/AI_RESUME_COMMAND.md` - Context restoration guide for AI sessions
+- `docs/SHELTER_VERIFICATION_SOURCES.md` - Data source documentation
 - `docs/RESUPPLY_ENHANCEMENT_AUDIT.md` - Resupply enhancement progress tracking
 
 ### Archived Documentation
@@ -227,9 +238,6 @@ This app is for informational purposes only. Not affiliated with the Appalachian
 Historical audit and progress files have been moved to `docs/archive/`:
 - **Business audit** (`archive/`) - Contact directory enrichment progress and changelog
 - **Shelter enhancement** (`archive/shelter_enhancement/`) - Completed 2025-01-15
-  - SHELTER_ENHANCEMENT_AUDIT.md (full project audit trail)
-  - AI_RESUME_COMMAND.md (AI context restoration guide)
-  - SHELTER_VERIFICATION_SOURCES.md (data source documentation)
 - **Data extraction** (`archive/data_extraction/`) - PDF extraction and integration reports
 - Data enrichment records and deployment summaries
 
@@ -270,8 +278,19 @@ Do not modify the CORS configuration in `backend/src/index.ts` unless you unders
 
 ### Deployment
 
+**Vibecode (Current)**
 To deploy, click the **Deploy** button on vibecode.dev. The platform handles:
 - Building the frontend (`bun run build`)
 - Starting the backend (`scripts/start`)
 - Database migrations (if Prisma is configured)
 - SSL certificates and domain routing
+
+**Free Deployment Options**
+Since the frontend is a static Vite build and uses no backend APIs (all data is bundled, weather uses the free Open-Meteo API directly from the browser), it can be deployed to any static hosting:
+
+- **Vercel** - `cd webapp && bun run build`, deploy the `dist/` folder. Free tier includes custom domains and SSL.
+- **Netlify** - Same build, drag-and-drop the `dist/` folder or connect a Git repo. Free tier available.
+- **GitHub Pages** - Push `dist/` to a `gh-pages` branch. Free for public repos.
+- **Cloudflare Pages** - Connect repo, set build command to `cd webapp && bun run build`, output to `webapp/dist`. Free tier with generous limits.
+
+See `docs/TECHNICAL.md` for detailed deployment instructions.
