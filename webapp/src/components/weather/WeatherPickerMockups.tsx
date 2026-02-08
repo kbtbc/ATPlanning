@@ -22,22 +22,27 @@ function MockupA() {
   return (
     <div className="bg-[var(--background-secondary)] border border-[var(--border)] rounded-xl px-5 py-4">
       <p className="text-[10px] uppercase tracking-wider text-[var(--foreground-muted)] font-semibold mb-3 text-center">
-        Search by mile, shelter name, or use GPS
+        Set your location by Trail Mile or Shelter Name, or use GPS
       </p>
 
-      <div className="relative">
-        <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--foreground-muted)]" />
-        <input
-          type="text"
-          value={query}
-          onChange={e => setQuery(e.target.value)}
-          onFocus={() => setFocused(true)}
-          onBlur={() => setTimeout(() => setFocused(false), 150)}
-          placeholder='Try "mile 450" or "Neel Gap" ...'
-          className="w-full bg-[var(--background)] border border-[var(--border)] rounded-xl pl-10 pr-20 py-2.5 text-sm text-[var(--foreground)] placeholder:text-[var(--foreground-muted)] focus:outline-none focus:border-[var(--primary)] transition-colors"
-        />
-        <button className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[var(--background-secondary)] border border-[var(--border-light)] text-[10px] font-medium text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors">
-          <Navigation className="w-3 h-3" />
+      <div className="flex items-center gap-2">
+        {/* Search input */}
+        <div className="relative flex-1">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[var(--foreground-muted)] pointer-events-none" />
+          <input
+            type="text"
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+            onFocus={() => setFocused(true)}
+            onBlur={() => setTimeout(() => setFocused(false), 150)}
+            placeholder="Mile number or shelter name..."
+            className="w-full bg-[var(--background)] border border-[var(--border)] rounded-xl pl-9 pr-3 py-2.5 text-sm text-[var(--foreground)] placeholder:text-[var(--foreground-muted)] focus:outline-none focus:border-[var(--primary)] transition-colors"
+          />
+        </div>
+
+        {/* GPS button - outside the input */}
+        <button className="flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-[var(--background)] border border-[var(--border)] text-xs font-medium text-[var(--foreground-muted)] hover:text-[var(--foreground)] hover:border-[var(--primary)] transition-colors shrink-0">
+          <Navigation className="w-3.5 h-3.5" />
           GPS
         </button>
       </div>
