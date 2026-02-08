@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Map, Package, CloudSun, Menu, X, BarChart3, Footprints } from 'lucide-react';
 import { HikePlanner } from './components/HikePlanner';
 import { ResupplyPlanner } from './components/ResupplyPlanner';
-import { WeatherForecast } from './components/weather/WeatherForecast';
+// import { WeatherForecast } from './components/weather/WeatherForecast';
+import { WeatherPickerMockups } from './components/weather/WeatherPickerMockups';
 import { TrailProgress } from './components/TrailProgress';
 import { ThemeToggle } from './components/ui';
 import { cn } from './lib/utils';
@@ -136,7 +137,7 @@ function App() {
 
           {activeTab === 'weather' && (
             <motion.div key="weather" {...pageTransition}>
-              <WeatherForecast currentMile={currentMile} />
+              <WeatherPickerMockups />
             </motion.div>
           )}
         </AnimatePresence>
