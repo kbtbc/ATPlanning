@@ -27,9 +27,9 @@ function MockupA() {
 
       <div className="flex justify-center px-4">
         <div className="flex items-center gap-2 w-full max-w-md">
-          {/* Search input */}
-          <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--foreground-muted)] pointer-events-none" />
+          {/* Search input — icon and input in flex row to prevent any overlap */}
+          <div className="flex items-center gap-2.5 flex-1 bg-[var(--background)] border border-[var(--border)] rounded-lg px-3 py-2 focus-within:border-[var(--primary)] transition-colors">
+            <Search className="w-4 h-4 text-[var(--foreground-muted)] shrink-0" />
             <input
               type="text"
               value={query}
@@ -37,7 +37,7 @@ function MockupA() {
               onFocus={() => setFocused(true)}
               onBlur={() => setTimeout(() => setFocused(false), 150)}
               placeholder="Mile number or shelter name..."
-              className="w-full bg-[var(--background)] border border-[var(--border)] rounded-lg pl-12 pr-3 py-2 text-sm text-[var(--foreground)] placeholder:text-[var(--foreground-muted)] focus:outline-none focus:border-[var(--primary)] transition-colors"
+              className="flex-1 min-w-0 bg-transparent text-sm text-[var(--foreground)] placeholder:text-[var(--foreground-muted)] focus:outline-none"
             />
           </div>
 
