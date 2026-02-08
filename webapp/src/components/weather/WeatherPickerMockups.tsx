@@ -25,9 +25,9 @@ function MockupA() {
       </p>
 
       <div className="flex justify-center px-4">
-        <div className="flex items-center gap-2 w-full max-w-md">
-          {/* Search input — icon and input in flex row to prevent any overlap */}
-          <div className="flex items-center gap-2.5 flex-1 bg-[var(--background)] border border-[var(--border)] rounded-lg px-3 py-2 focus-within:border-[var(--primary)] transition-colors">
+        <div className="flex items-stretch w-full max-w-md bg-[var(--background)] border border-[var(--border)] rounded-lg overflow-hidden focus-within:border-[var(--primary)] transition-colors">
+          {/* Search input */}
+          <div className="flex items-center gap-2.5 flex-1 px-3 py-2">
             <Search className="w-4 h-4 text-[var(--foreground-muted)] shrink-0" />
             <input
               type="text"
@@ -40,8 +40,8 @@ function MockupA() {
             />
           </div>
 
-          {/* GPS button - outside the input */}
-          <button className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[var(--background)] border border-[var(--border)] text-xs font-medium text-[var(--foreground-muted)] hover:text-[var(--foreground)] hover:border-[var(--primary)] transition-colors shrink-0">
+          {/* GPS button — joined to the right side of the input */}
+          <button className="flex items-center gap-1.5 px-4 border-l border-[var(--border)] text-xs font-medium text-[var(--foreground-muted)] hover:bg-[var(--background-secondary)] hover:text-[var(--foreground)] transition-colors shrink-0">
             <Navigation className="w-3.5 h-3.5" />
             GPS
           </button>
